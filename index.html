@@ -1,0 +1,1860 @@
+<!DOCTYPE html>
+
+<html itemscope="" itemtype="https://schema.org/WebSite" lang="en">
+<head><link href="https://www.googletagmanager.com" rel="preconnect"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="l5eTcG6sOckWj5gweZ69rmC8Cv46H4qrr8jwaJYIyZI" name="google-site-verification"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta name="msvalidate.01" content="E52357189F937431B03526A0893255A0" />
+<meta name="yandex-verification" content="454d32b8663c24dd"/>
+<title>USAFinCalc — Financial Calculators for Americans</title>
+<meta content="Free financial calculators for salary, tax, mortgage, retirement and more. Built on official IRS and BLS data. No account required." name="description"/>
+<meta content="salary calculator, tax calculator, mortgage calculator, retirement calculator, financial planning tools" name="keywords"/>
+<meta content="USAFinCalc Editorial Team" name="author"/>
+<meta content="#04060f" name="theme-color"/>
+<meta content="US" name="geo.region"/>
+<meta content="United States" name="geo.placename"/>
+<link href="https://usafincalc.com/" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%2304060f'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300d4ff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc — Financial Calculators for Americans" property="og:title"/>
+<meta content="Free calculators for salary, tax, mortgage, retirement and more. Built on IRS and BLS data." property="og:description"/>
+<meta content="https://usafincalc.com/" property="og:url">
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@usafincalc" name="twitter:site"/>
+<meta content="USAFinCalc — Financial Calculators for Americans" name="twitter:title"/>
+<meta content="Free calculators for salary, tax, mortgage and retirement planning. No signup required." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<!-- GA4 — Replace G-XXXXXXXXXX with your real Measurement ID -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-XXXXXXXXXX');
+function trackCalc(n){if(typeof gtag!=='undefined')gtag('event','calculator_click',{calc_name:n});}
+function trackSearch(q){if(typeof gtag!=='undefined')gtag('event','search',{search_term:q});}
+var _s={25:0,50:0,75:0,90:0};
+window.addEventListener('scroll',function(){
+  var sb=document.body.scrollHeight-window.innerHeight;
+  if(sb<=0)return;
+  var p=Math.round((window.scrollY/sb)*100);
+  [25,50,75,90].forEach(function(d){if(p>=d&&!_s[d]){_s[d]=1;gtag('event','scroll',{percent_scrolled:d});}});
+});
+/* Load GTM + Ahrefs analytics after the page is interactive instead of
+   blocking the initial render/main thread. Fires on first user interaction,
+   or after a short delay post-load for users (and crawlers) who never interact. */
+(function(){
+  var loaded=false;
+  function loadThirdPartyAnalytics(){
+    if(loaded)return; loaded=true;
+    var ga=document.createElement('script');
+    ga.async=true;
+    ga.src='https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+    document.head.appendChild(ga);
+    var ah=document.createElement('script');
+    ah.async=true;
+    ah.src='https://analytics.ahrefs.com/analytics.js';
+    ah.setAttribute('data-key','VmqStOhNtLiTsE983txKMA');
+    document.head.appendChild(ah);
+    ['scroll','keydown','mousemove','touchstart','click'].forEach(function(ev){
+      window.removeEventListener(ev, loadThirdPartyAnalytics, {passive:true});
+    });
+  }
+  ['scroll','keydown','mousemove','touchstart','click'].forEach(function(ev){
+    window.addEventListener(ev, loadThirdPartyAnalytics, {passive:true, once:true});
+  });
+  window.addEventListener('load', function(){ setTimeout(loadThirdPartyAnalytics, 3000); });
+})();
+</script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/></noscript>
+<style>:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--bg4:#121828;--bg5:#171f30;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--border3:rgba(255,255,255,0.16);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--cdim:rgba(0,212,255,0.1);--cglow:rgba(0,212,255,0.22);--blue:#3b9eff;--bdim:rgba(59,158,255,0.1);--green:#00e676;--orange:#ff7043;--red:#ff4d6d;--purple:#b39dff;--yellow:#ffd740;--emerald:#00c896;--pink:#ff4d8f;--r:14px;--rs:8px;}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden;}.skip-link{position:absolute;left:-9999px;top:auto;z-index:9999;}.skip-link:focus{left:16px;top:16px;background:var(--cyan);color:#000;padding:8px 16px;border-radius:6px;font-weight:600;}.fc-topbar{background:linear-gradient(90deg,rgba(0,212,255,0.08),rgba(179,157,255,0.08));border-bottom:1px solid rgba(0,212,255,0.12);padding:9px 24px;text-align:center;font-size:12.5px;color:var(--text2);display:flex;align-items:center;justify-content:center;gap:8px;position:relative;}.fc-topbar strong{color:var(--cyan);}.fc-topbar-x{position:absolute;right:16px;top:50%;transform:translateY(-50%);cursor:pointer;background:none;border:none;color:var(--text3);font-size:18px;line-height:1;transition:color .15s;}.fc-topbar-x:hover{color:var(--text);}.fc-nav{position:sticky;top:0;z-index:200;display:flex;align-items:center;gap:12px;padding:0 24px;height:62px;background:rgba(4,6,15,0.97);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}.fc-nav.scrolled{box-shadow:0 4px 32px rgba(0,0,0,.5);}.fc-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0;}.fc-logo-icon{width:34px;height:34px;background:linear-gradient(135deg,var(--cyan),var(--blue));border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px;color:#000;flex-shrink:0;box-shadow:0 0 14px rgba(0,212,255,0.35);}.fc-logo-text{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-.3px;}.fc-logo-text span{color:var(--cyan);}.fc-logo-sub{font-size:10px;color:var(--text3);display:block;line-height:1;margin-top:2px;letter-spacing:.2px;}.fc-nav-search{flex:1;max-width:280px;position:relative;}#fc-search{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:8px 50px 8px 32px;color:var(--text);font-size:13px;outline:none;font-family:inherit;transition:border-color .2s,box-shadow .2s;}#fc-search:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,212,255,0.08);}#fc-search::placeholder{color:var(--text3);}.fc-si{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none;}.fc-sk{position:absolute;right:9px;top:50%;transform:translateY(-50%);background:var(--bg4);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;}.fc-nav-links{display:flex;gap:2px;list-style:none;}.fc-nav-dd{position:relative;}.fc-nav-dd>a{color:var(--text2);text-decoration:none;padding:6px 11px;border-radius:7px;font-size:13.5px;font-weight:500;display:flex;align-items:center;gap:4px;cursor:pointer;transition:all .2s;}.fc-nav-dd>a::after{content:'▾';font-size:9px;opacity:.6;}.fc-nav-dd:hover>a{color:var(--text);background:var(--bg3);}.fc-dd{display:none;position:absolute;top:calc(100%+10px);left:0;background:var(--bg2);border:1px solid var(--border2);border-radius:12px;padding:8px;min-width:210px;z-index:300;box-shadow:0 16px 48px rgba(0,0,0,.6);}.fc-nav-dd:hover .fc-dd{display:block;animation:ddFade .15s ease;}@keyframes ddFade{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}.fc-dd a{display:block;color:var(--text2);text-decoration:none;padding:8px 12px;border-radius:7px;font-size:13px;transition:all .15s;}.fc-dd a:hover{background:var(--bg3);color:var(--text);}.fc-nav-plain{color:var(--text2);text-decoration:none;padding:6px 11px;border-radius:7px;font-size:13.5px;font-weight:500;transition:all .2s;}.fc-nav-plain:hover{color:var(--text);background:var(--bg3);}.fc-nav-r{display:flex;align-items:center;gap:8px;margin-left:auto;}.fc-badge{background:var(--cdim);color:var(--cyan);border:1px solid rgba(0,212,255,0.2);border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:.5px;white-space:nowrap;}.fc-hbg{display:none;background:none;border:none;cursor:pointer;padding:6px;border-radius:6px;transition:background .15s;}.fc-hbg:hover{background:var(--bg3);}.fc-hbg span{display:block;width:20px;height:2px;background:var(--text2);margin:4px 0;border-radius:2px;transition:all .25s;}.fc-mm{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:500;padding:80px 24px 24px;overflow-y:auto;}.fc-mm-x{position:absolute;top:18px;right:20px;background:none;border:none;color:var(--text);font-size:26px;cursor:pointer;transition:color .15s;}.fc-mm-x:hover{color:var(--cyan);}.fc-mm a{display:block;color:var(--text2);text-decoration:none;padding:13px 0;border-bottom:1px solid var(--border);font-size:16px;font-weight:500;transition:color .15s;}.fc-mm a:hover{color:var(--cyan);}.fc-mm-sec{font-size:10.5px;color:var(--text3);font-weight:700;letter-spacing:1.2px;text-transform:uppercase;padding:22px 0 8px;}@media(max-width:900px){.fc-nav-links{display:none;}.fc-hbg{display:block;}.fc-nav-search{max-width:190px;}}@media(max-width:560px){.fc-nav-search{display:none;}}.fc-hero{text-align:center;padding:88px 24px 60px;max-width:860px;margin:0 auto;position:relative;}.fc-hero-glow{position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse at center,rgba(0,212,255,0.06) 0%,transparent 70%);pointer-events:none;}.fc-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,0.06);color:var(--cyan);border:1px solid rgba(0,212,255,0.18);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:26px;}.fc-dot{position:relative;width:6px;height:6px;border-radius:50%;background:var(--cyan);}.fc-dot::after{content:'';position:absolute;inset:0;border-radius:50%;background:var(--cyan);animation:pulseRing 2s infinite;}@keyframes pulseRing{0%{transform:scale(1);opacity:.5}100%{transform:scale(3.2);opacity:0}}.fc-hero h1{font-size:clamp(32px,5.5vw,56px);font-weight:700;line-height:1.1;margin-bottom:20px;letter-spacing:-.5px;}.fc-hero h1 .hi{background:linear-gradient(120deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}.fc-hero-sub{color:var(--text2);font-size:16px;line-height:1.75;max-width:520px;margin:0 auto 32px;font-weight:400;}.fc-ctas{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:44px;}.fc-btn-p{background:var(--cyan);color:#000;border:none;border-radius:8px;padding:12px 26px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 2px 12px rgba(0,212,255,0.2);}.fc-btn-p:hover{background:#00bfe8;box-shadow:0 4px 20px rgba(0,212,255,0.3);transform:translateY(-1px);}.fc-btn-g{background:transparent;color:var(--text2);border:1px solid var(--border2);border-radius:8px;padding:12px 26px;font-size:14px;font-weight:500;cursor:pointer;font-family:inherit;transition:all .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px;}.fc-btn-g:hover{border-color:rgba(255,255,255,0.2);color:var(--text);}.fc-btn-sm{padding:9px 20px;font-size:13px;}.fc-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:580px;margin:0 auto;}.fc-stat{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;transition:border-color .2s;}.fc-stat:hover{border-color:var(--border2);}.fc-stat-n{font-size:22px;font-weight:700;color:var(--cyan);font-family:'JetBrains Mono',monospace;}.fc-stat-l{font-size:11px;color:var(--text3);margin-top:4px;font-weight:500;}@media(max-width:540px){.fc-stats{grid-template-columns:repeat(2,1fr);}}#sr{max-width:980px;margin:0 auto 24px;padding:0 24px;display:none;}.sr-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;}.sr-lb{font-size:13px;color:var(--text3);}.sr-cl{font-size:12px;color:var(--cyan);cursor:pointer;background:none;border:none;font-family:inherit;transition:opacity .15s;}.sr-cl:hover{opacity:.7;}.sr-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;}.fc-trust{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-trust-in{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 28px;display:flex;align-items:center;justify-content:space-around;gap:16px;flex-wrap:wrap;}.fc-ti{display:flex;align-items:center;gap:9px;}.fc-ti-ico{font-size:18px;}.fc-ti-t{font-size:13px;color:var(--text2);}.fc-ti-t strong{color:var(--text);font-weight:600;}.fc-sec{max-width:980px;margin:0 auto 56px;padding:0 24px;}.fc-sec-hd{display:flex;align-items:center;gap:14px;margin-bottom:20px;}.fc-sec-line{flex:1;height:1px;background:linear-gradient(90deg,var(--border),transparent);}.fc-sec-title{font-size:11px;font-weight:700;letter-spacing:1.3px;text-transform:uppercase;color:var(--text3);white-space:nowrap;display:flex;align-items:center;gap:6px;}.fc-cnt{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:2px 10px;font-size:10px;color:var(--text3);}.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;}@media(max-width:640px){.fc-grid{grid-template-columns:1fr;}}.fc-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,background .2s,box-shadow .15s;position:relative;overflow:hidden;}.fc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--card-ac,var(--cyan)),transparent);opacity:0;transition:opacity .3s;}.fc-card:hover::before{opacity:.6;}.fc-card:hover{border-color:rgba(255,255,255,0.08);background:var(--bg3);box-shadow:0 4px 24px rgba(0,0,0,0.3);}.fc-card.coming{opacity:.5;cursor:default;pointer-events:none;}.fc-card.coming:hover{transform:none;background:var(--bg2);box-shadow:none;}.fc-card-ft{grid-column:span 2;}@media(max-width:740px){.fc-card-ft{grid-column:span 1;}}.fc-ct{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}.fc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}.fc-bdgs{display:flex;flex-direction:column;align-items:flex-end;gap:5px;}.fc-bdg{font-size:10px;font-weight:600;letter-spacing:.3px;padding:2px 8px;border-radius:5px;text-transform:uppercase;}.bl{background:rgba(0,230,118,0.08);color:var(--green);border:1px solid rgba(0,230,118,0.18);}.bh{background:rgba(255,77,109,0.08);color:var(--red);border:1px solid rgba(255,77,109,0.18);}.bs{background:rgba(255,215,64,0.08);color:var(--yellow);border:1px solid rgba(255,215,64,0.18);}.bn{background:rgba(179,157,255,0.1);color:var(--purple);border:1px solid rgba(179,157,255,0.22);}.bc{background:rgba(0,212,255,0.08);color:var(--cyan);border:1px solid rgba(0,212,255,0.18);}.fc-ct2{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid var(--border);}.fc-tags{display:flex;flex-wrap:wrap;gap:5px;}.fc-tag{font-size:11px;background:var(--bg3);color:var(--text3);border:1px solid var(--border);border-radius:5px;padding:2px 8px;}.fc-arr{font-size:15px;color:var(--text3);transition:color .2s,transform .15s;flex-shrink:0;}.fc-card:hover .fc-arr{color:var(--cyan);transform:translateX(4px);}.fc-cb{position:absolute;bottom:0;left:0;right:0;height:3px;background:repeating-linear-gradient(90deg,var(--bg3) 0,var(--bg3) 6px,var(--border2) 6px,var(--border2) 12px);}.fc-upcoming{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-upcoming-in{background:linear-gradient(135deg,rgba(0,212,255,0.05),rgba(179,157,255,0.05));border:1px solid rgba(0,212,255,0.12);border-radius:16px;padding:24px 28px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}.fc-upcoming-label{font-size:10.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:8px;}.fc-upcoming-title{font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px;}.fc-upcoming-sub{font-size:13px;color:var(--text2);}.fc-upcoming-badges{display:flex;flex-wrap:wrap;gap:8px;margin-left:auto;}.fc-upcoming-bdg{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:8px 14px;font-size:12px;color:var(--text2);white-space:nowrap;}.fc-featured{max-width:980px;margin:0 auto 64px;padding:0 24px;}.fc-featured-in{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:44px 48px;align-items:center;}@media(max-width:760px){.fc-featured-in{grid-template-columns:1fr;padding:28px 24px;gap:28px;}.fc-featured-right{order:-1;}}.fc-featured-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;}.fc-featured-title{font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.2;color:var(--text);margin-bottom:14px;letter-spacing:-.3px;}.fc-featured-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px;}.fc-featured-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;}.fc-featured-meta span{font-size:12px;color:var(--text3);background:var(--bg3);border:1px solid var(--border);border-radius:6px;padding:4px 10px;}.fc-featured-note{font-size:12px;color:var(--text3);margin-top:12px;}.fc-featured-note a{color:var(--cyan);text-decoration:none;}.fc-featured-note a:hover{text-decoration:underline;}.fc-featured-chart-label{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-bottom:14px;}.fc-featured-legend{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;}.fc-legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text2);}.fc-legend-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}.fc-visual-section{max-width:980px;margin:0 auto 64px;padding:0 24px;}.fc-visual-in{display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--bg2);border:1px solid var(--border);border-radius:16px;padding:44px 48px;align-items:center;}@media(max-width:760px){.fc-visual-in{grid-template-columns:1fr;padding:28px 24px;gap:28px;}}.fc-visual-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;}.fc-visual-title{font-size:clamp(20px,2.5vw,28px);font-weight:700;line-height:1.2;color:var(--text);margin-bottom:14px;letter-spacing:-.3px;}.fc-visual-desc{font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:20px;}@media(max-width:600px){.fc-nav-search{display:none;}.fc-hero{padding:60px 20px 44px;}.fc-hero h1{font-size:28px;}.fc-hero-sub{font-size:15px;}.fc-btn-p,.fc-btn-g{width:100%;justify-content:center;padding:13px 20px;font-size:15px;}.fc-ctas{flex-direction:column;gap:8px;}.fc-trust-in{gap:10px;}.fc-ti-t{font-size:12px;}}.fc-states{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-sg{display:flex;flex-wrap:wrap;gap:8px;}.fc-sp{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:7px 14px;font-size:12px;color:var(--text2);text-decoration:none;transition:all .15s;white-space:nowrap;}.fc-sp:hover{border-color:rgba(0,212,255,0.3);color:var(--cyan);background:var(--cdim);}.fc-sm-wrap{display:none;}.fc-sm-wrap.open{display:flex;flex-wrap:wrap;gap:8px;}.fc-sm-btn{background:none;border:1px solid var(--border);border-radius:8px;padding:7px 16px;font-size:12px;color:var(--text3);cursor:pointer;font-family:inherit;transition:all .15s;margin-top:8px;}.fc-sm-btn:hover{border-color:var(--border2);color:var(--text2);}.fc-eeat{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-eeat-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:14px;}.fc-eeat-c{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:9px;transition:border-color .2s;}.fc-eeat-c:hover{border-color:var(--border2);}.fc-eeat-ic{font-size:28px;}.fc-eeat-ti{font-size:14px;font-weight:700;color:var(--text);}.fc-eeat-de{font-size:13px;color:var(--text2);line-height:1.65;}.fc-blog{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-blog-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;}@media(max-width:740px){.fc-blog-g{grid-template-columns:1fr;}}.fc-blog-c{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:22px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:9px;transition:border-color .2s,transform .15s;}.fc-blog-c:hover{border-color:var(--border2);transform:translateY(-2px);}.fc-blog-cat{font-size:10px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--cyan);}.fc-blog-ti{font-size:15px;font-weight:700;color:var(--text);line-height:1.4;}.fc-blog-ti.sm{font-size:13.5px;}.fc-blog-m{font-size:12px;color:var(--text3);margin-top:auto;}.fc-blog-r{font-size:12px;color:var(--cyan);margin-top:6px;display:inline-flex;align-items:center;gap:4px;}.fc-email{max-width:640px;margin:0 auto 56px;padding:0 24px;}.fc-email-in{background:linear-gradient(135deg,rgba(0,212,255,0.06),rgba(179,157,255,0.06));border:1px solid rgba(0,212,255,0.15);border-radius:18px;padding:38px 34px;text-align:center;}.fc-email-ti{font-size:23px;font-weight:800;margin-bottom:8px;}.fc-email-su{font-size:14px;color:var(--text2);margin-bottom:26px;line-height:1.7;}.fc-email-fm{display:flex;gap:10px;max-width:420px;margin:0 auto;}.fc-email-ip{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:9px;padding:12px 16px;color:var(--text);font-size:14px;outline:none;font-family:inherit;transition:border-color .2s;}.fc-email-ip:focus{border-color:var(--cyan);}.fc-email-bt{background:var(--cyan);color:#000;border:none;border-radius:9px;padding:12px 20px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;transition:all .2s;}.fc-email-bt:hover{background:#33daff;transform:translateY(-1px);}.fc-email-nt{font-size:11px;color:var(--text3);margin-top:10px;}@media(max-width:460px){.fc-email-fm{flex-direction:column;}.fc-email-in{padding:26px 18px;}}.fc-aff{max-width:980px;margin:0 auto 52px;padding:0 24px;}.fc-aff-in{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:18px 22px;}.fc-aff-lb{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:12px;}.fc-aff-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;}.fc-aff-c{background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:14px;text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px;transition:border-color .15s,background .15s;}.fc-aff-c:hover{border-color:var(--border2);background:var(--bg4);}.fc-aff-ic{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}.fc-aff-nm{font-size:13px;font-weight:600;color:var(--text);}.fc-aff-de{font-size:11px;color:var(--text3);}.fc-faq-wr{max-width:720px;margin:0 auto 56px;padding:0 24px;}.fc-faq-ti{font-size:26px;font-weight:800;margin-bottom:8px;text-align:center;}.fc-faq-su{font-size:14px;color:var(--text2);text-align:center;margin-bottom:30px;}.fc-faq-it{border-bottom:1px solid var(--border);}.fc-faq-q{width:100%;background:none;border:none;color:var(--text);font-family:inherit;font-size:14.5px;font-weight:600;padding:17px 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;transition:color .15s;}.fc-faq-q:hover{color:var(--cyan);}.fc-faq-q::after{content:'+';font-size:22px;color:var(--text3);flex-shrink:0;transition:transform .25s,color .15s;line-height:1;}.fc-faq-it.open .fc-faq-q::after{transform:rotate(45deg);color:var(--cyan);}.fc-faq-a{display:none;font-size:14px;color:var(--text2);padding-bottom:17px;line-height:1.8;}.fc-faq-it.open .fc-faq-a{display:block;}.fc-footer{border-top:1px solid var(--border);padding:52px 24px 32px;margin-top:20px;}.fc-footer-in{max-width:980px;margin:0 auto;}.fc-footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:36px;}@media(max-width:740px){.fc-footer-top{grid-template-columns:1fr 1fr;}}@media(max-width:460px){.fc-footer-top{grid-template-columns:1fr;}}.fc-footer-brand p{font-size:13px;color:var(--text2);line-height:1.75;margin-top:12px;max-width:270px;}.fc-footer-col-h{font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--text3);margin-bottom:16px;}.fc-footer-ls{list-style:none;display:flex;flex-direction:column;gap:9px;}.fc-footer-ls a{color:var(--text2);text-decoration:none;font-size:13px;transition:color .15s;}.fc-footer-ls a:hover{color:var(--cyan);}.fc-footer-bt{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:22px;border-top:1px solid var(--border);}.fc-footer-cp{font-size:12px;color:var(--text3);}.fc-footer-lg{display:flex;gap:16px;}.fc-footer-lg a{font-size:12px;color:var(--text3);text-decoration:none;transition:color .15s;}.fc-footer-lg a:hover{color:var(--text2);}.fc-disc{background:rgba(255,215,64,0.05);border:1px solid rgba(255,215,64,0.12);border-radius:9px;padding:13px 17px;font-size:12px;color:var(--text3);line-height:1.7;margin-bottom:24px;}.fca{opacity:0;transform:translateY(20px);animation:fadeUp .55s ease forwards;}@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}.fca:nth-child(2){animation-delay:.07s;}.fca:nth-child(3){animation-delay:.14s;}.fca:nth-child(4){animation-delay:.21s;}.fca:nth-child(5){animation-delay:.28s;}.fca:nth-child(6){animation-delay:.35s;}.container{max-width:980px;margin:0 auto;padding:0 24px;}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+.a11y-chart-data{margin-top:12px;}
+.a11y-chart-data summary{font-size:12px;color:var(--text3,#6b7fa3);cursor:pointer;padding:4px 0;}
+.a11y-chart-data summary:hover{color:var(--cyan,#00d4ff);}
+.a11y-chart-data table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px;}
+.a11y-chart-data th,.a11y-chart-data td{padding:6px 10px;border:1px solid var(--border,rgba(255,255,255,0.08));text-align:left;}
+.a11y-chart-data th{background:var(--bg3,#0d1220);color:var(--text2,#7a8aaa);}
+.a11y-chart-data td{color:var(--text,#dde4f0);}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot::after { animation: none !important; opacity: 0 !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+</meta><link href="/manifest.json" rel="manifest"/>
+<link href="/css/search.css" rel="stylesheet"/>
+<link href="/css/calculator.css" rel="stylesheet"/>
+<link href="/css/privacy-disclosure.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are USAFinCalc calculators free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. All calculators are 100% free with no sign-up or subscription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are the 2026 tax calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We use 2026 IRS brackets from Rev. Proc. 2025-32. Results are estimates — consult a CPA for filing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the 401k limit for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "$24,500 for under 50; $32,500 for age 50+ (including $8,000 catch-up contribution)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does USAFinCalc store my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. All calculations run locally in your browser. Zero data stored or transmitted."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "USAFinCalc — Financial calculators you can actually trust",
+  "url": "https://usafincalc.com/",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Financial calculators you can actually trust",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "url": "https://usafincalc.com/rsu-tax-calculator",
+        "name": "RSU Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "url": "https://usafincalc.com/tax-refund-calculator",
+        "name": "Tax Refund Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://usafincalc.com/tax-bracket-calculator",
+        "name": "Tax Bracket Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://usafincalc.com/w4-calculator",
+        "name": "W-4 Withholding Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "url": "https://usafincalc.com/tax-calculator-usa",
+        "name": "Federal Income Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "url": "https://usafincalc.com/capital-gains-tax-calculator",
+        "name": "Capital Gains Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "url": "https://usafincalc.com/self-employment-tax-calculator",
+        "name": "Self-Employment Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 8,
+        "url": "https://usafincalc.com/crypto-tax-calculator",
+        "name": "Crypto Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 9,
+        "url": "https://usafincalc.com/sales-tax-calculator",
+        "name": "Sales Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 10,
+        "url": "https://usafincalc.com/business-tax-calculator",
+        "name": "Business Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 11,
+        "url": "https://usafincalc.com/federal-tax-withholding-calculator",
+        "name": "Federal Tax Withholding Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 12,
+        "url": "https://usafincalc.com/federal-income-tax-calculator",
+        "name": "Federal Income Tax Calculator (Fast)"
+      },
+      {
+        "@type": "ListItem",
+        "position": 13,
+        "url": "https://usafincalc.com/child-tax-credit-calculator",
+        "name": "Child Tax Credit Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 14,
+        "url": "https://usafincalc.com/earned-income-tax-credit-calculator",
+        "name": "Earned Income Tax Credit Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 15,
+        "url": "https://usafincalc.com/tip-calculator",
+        "name": "Tip Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 16,
+        "url": "https://usafincalc.com/overtime-calculator",
+        "name": "Overtime Pay Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 17,
+        "url": "https://usafincalc.com/salary-calculator-usa",
+        "name": "Salary & Paycheck Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 18,
+        "url": "https://usafincalc.com/hourly-to-salary-calculator",
+        "name": "Hourly to Salary Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 19,
+        "url": "https://usafincalc.com/cost-of-living-calculator",
+        "name": "Cost of Living Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 20,
+        "url": "https://usafincalc.com/take-home-pay-calculator",
+        "name": "Take-Home Pay Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 21,
+        "url": "https://usafincalc.com/gross-pay-calculator",
+        "name": "Gross Pay Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 22,
+        "url": "https://usafincalc.com/net-pay-calculator",
+        "name": "Net Pay Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 23,
+        "url": "https://usafincalc.com/biweekly-pay-calculator",
+        "name": "Biweekly Pay Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 24,
+        "url": "https://usafincalc.com/monthly-salary-calculator",
+        "name": "Monthly Salary Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 25,
+        "url": "https://usafincalc.com/payroll-tax-calculator",
+        "name": "Payroll Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 26,
+        "url": "https://usafincalc.com/401k-calculator-usa",
+        "name": "401(k) Retirement Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 27,
+        "url": "https://usafincalc.com/roth-ira-calculator",
+        "name": "Roth IRA Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 28,
+        "url": "https://usafincalc.com/social-security-calculator",
+        "name": "Social Security Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 29,
+        "url": "https://usafincalc.com/hsa-calculator",
+        "name": "HSA Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 30,
+        "url": "https://usafincalc.com/fire-calculator",
+        "name": "FIRE Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 31,
+        "url": "https://usafincalc.com/retirement-withdrawal-calculator",
+        "name": "Retirement Withdrawal Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 32,
+        "url": "https://usafincalc.com/mortgage-calculator-usa",
+        "name": "Mortgage Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 33,
+        "url": "https://usafincalc.com/home-affordability-calculator-usa",
+        "name": "Home Affordability Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 34,
+        "url": "https://usafincalc.com/auto-loan-calculator",
+        "name": "Auto Loan Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 35,
+        "url": "https://usafincalc.com/stock-return-calculator-usa",
+        "name": "Stock Return Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 36,
+        "url": "https://usafincalc.com/refinance-calculator",
+        "name": "Mortgage Refinance Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 37,
+        "url": "https://usafincalc.com/property-tax-calculator",
+        "name": "Property Tax Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 38,
+        "url": "https://usafincalc.com/dti-calculator",
+        "name": "Debt-to-Income (DTI) Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 39,
+        "url": "https://usafincalc.com/student-loan-calculator-usa",
+        "name": "Student Loan Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 40,
+        "url": "https://usafincalc.com/debt-payoff-calculator",
+        "name": "Debt Payoff Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 41,
+        "url": "https://usafincalc.com/emergency-fund-calculator",
+        "name": "Emergency Fund Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 42,
+        "url": "https://usafincalc.com/budget-planner",
+        "name": "Budget Planner"
+      },
+      {
+        "@type": "ListItem",
+        "position": 43,
+        "url": "https://usafincalc.com/net-worth-calculator",
+        "name": "Net Worth Calculator"
+      },
+      {
+        "@type": "ListItem",
+        "position": 44,
+        "url": "https://usafincalc.com/college-savings-calculator",
+        "name": "College Savings / 529 Calculator"
+      }
+    ]
+  }
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+</head>
+<body>
+<a class="skip-link" href="#calculators">Skip to calculators</a>
+<!-- ANNOUNCEMENT BAR -->
+<div class="fc-topbar" id="fc-topbar" role="banner">
+<span>🎉 <strong>Tax Season 2026</strong> — All calculators updated with 2026 IRS brackets, limits &amp; FICA rates</span>
+<button aria-label="Close announcement" class="fc-topbar-x" onclick="document.getElementById('fc-topbar').style.display='none'">×</button>
+</div>
+<!-- NAV -->
+<nav aria-label="Main navigation" class="fc-nav" id="fc-nav" role="navigation">
+<a aria-label="USAFinCalc Home" class="fc-logo" href="/">
+<div aria-hidden="true" class="fc-logo-icon">F</div>
+<div>
+<span class="fc-logo-text">Fin<span>Calc</span></span>
+<span class="fc-logo-sub">USA 2026</span>
+</div>
+</a>
+<div class="fc-nav-search" role="search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search all calculators" autocomplete="off" id="fc-search" placeholder="Search calculators… ( / )" type="search"/>
+<span aria-hidden="true" class="fc-sk">/</span>
+</div>
+<ul class="fc-nav-links" role="list">
+<li class="fc-nav-dd">
+<a aria-haspopup="true" aria-expanded="false" role="button" tabindex="0">Tax</a>
+<div class="fc-dd" role="menu">
+<a href="/tax-calculator-usa" role="menuitem">Federal Tax Calculator</a>
+<a href="/capital-gains-tax-calculator" role="menuitem">Capital Gains Tax</a>
+<a href="/self-employment-tax-calculator" role="menuitem">Self-Employment Tax</a>
+<a href="/crypto-tax-calculator" role="menuitem">Crypto Tax Calculator</a>
+<a href="/sales-tax-calculator" role="menuitem">Sales Tax Calculator</a>
+</div>
+</li>
+<li class="fc-nav-dd">
+<a aria-haspopup="true" aria-expanded="false" role="button" tabindex="0">Retirement</a>
+<div class="fc-dd" role="menu">
+<a href="/401k-calculator-usa" role="menuitem">401(k) Calculator</a>
+<a href="/roth-ira-calculator" role="menuitem">Roth IRA Calculator</a>
+<a href="/social-security-calculator" role="menuitem">Social Security</a>
+<a href="/fire-calculator" role="menuitem">FIRE Calculator</a>
+</div>
+</li>
+<li class="fc-nav-dd">
+<a aria-haspopup="true" aria-expanded="false" role="button" tabindex="0">Home</a>
+<div class="fc-dd" role="menu">
+<a href="/mortgage-calculator-usa" role="menuitem">Mortgage Calculator</a>
+<a href="/home-affordability-calculator-usa" role="menuitem">Home Affordability</a>
+<a href="/refinance-calculator" role="menuitem">Refinance Calculator</a>
+<a href="/rent-vs-buy-calculator" role="menuitem">Rent vs Buy</a>
+</div>
+</li>
+<li class="fc-nav-dd">
+<a aria-haspopup="true" aria-expanded="false" role="button" tabindex="0">Income</a>
+<div class="fc-dd" role="menu">
+<a href="/salary-calculator-usa" role="menuitem">Salary Calculator</a>
+<a href="/hourly-to-salary-calculator" role="menuitem">Hourly to Salary</a>
+<a href="/cost-of-living-calculator" role="menuitem">Cost of Living</a>
+<a href="/salary-calculator-usa" role="menuitem">Texas Salary</a>
+</div>
+</li>
+<li class="fc-nav-dd">
+<a aria-haspopup="true" aria-expanded="false" role="button" tabindex="0">Investing</a>
+<div class="fc-dd" role="menu">
+<a href="/compound-interest-calculator" role="menuitem">Compound Interest</a>
+<a href="/stock-return-calculator-usa" role="menuitem">Stock Return</a>
+<a href="/net-worth-calculator" role="menuitem">Net Worth</a>
+<a href="/currency-converter" role="menuitem">Currency Converter</a>
+</div>
+</li>
+<li><a class="fc-nav-plain" href="/blog">Blog</a></li>
+</ul>
+<div class="fc-nav-r">
+<div aria-label="Updated for 2026" class="fc-badge">2026 Data</div>
+<button aria-expanded="false" aria-label="Open menu" class="fc-hbg" id="fc-hbg">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+<!-- MOBILE MENU -->
+<div aria-modal="true" aria-label="Navigation menu" class="fc-mm" id="fc-mm" role="dialog">
+<button aria-label="Close menu" class="fc-mm-x" id="fc-mm-x">×</button>
+<div class="fc-mm-search"><span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search-m" placeholder="Search calculators…" type="search"/>
+</div>
+<div aria-label="Search results" aria-live="polite" id="sr-m" role="region">
+<div class="sr-hd"><div class="sr-lb" id="sr-lb-m"></div><button aria-label="Clear search" class="sr-cl" onclick="window.clearSearchMobile()">Clear ×</button></div>
+<div class="sr-g" id="sr-g-m"></div>
+</div>
+<div class="fc-mm-sec">Tax Calculators</div>
+<a href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a href="/capital-gains-tax-calculator">📈 Capital Gains Tax</a>
+<a href="/self-employment-tax-calculator">💼 Self-Employment Tax</a>
+<div class="fc-mm-sec">Retirement</div>
+<a href="/401k-calculator-usa">🏦 401(k) Calculator</a>
+<a href="/roth-ira-calculator">🐷 Roth IRA Calculator</a>
+<div class="fc-mm-sec">Home &amp; Mortgage</div>
+<a href="/mortgage-calculator-usa">🏠 Mortgage Calculator</a>
+<a href="/home-affordability-calculator-usa">🏡 Home Affordability</a>
+<a href="/auto-loan-calculator">🚗 Auto Loan Calculator</a>
+<div class="fc-mm-sec">Income &amp; Investing</div>
+<a href="/salary-calculator-usa">💵 Salary Calculator</a>
+<a href="/stock-return-calculator-usa">📊 Stock Return Calculator</a>
+<div class="fc-mm-sec">Debt &amp; Loans</div>
+<a href="/student-loan-calculator-usa">🎓 Student Loan Calculator</a>
+<a href="/debt-payoff-calculator">💳 Debt Payoff Calculator</a>
+<div class="fc-mm-sec">Company</div>
+<a href="/blog">✍️ Finance Blog</a>
+<a href="/about">🏛️ About Us</a>
+<a href="/contact">📬 Contact</a>
+</div>
+<!-- HERO -->
+<header class="fc-hero fca" role="banner">
+<div aria-hidden="true" class="fc-hero-glow"></div>
+<div class="fc-eyebrow"><div aria-hidden="true" class="fc-dot"></div> Updated for Tax Year 2026</div>
+<h1>Financial calculators<br/>you can <span class="hi">actually trust</span></h1>
+<p class="fc-hero-sub">Salary, tax, mortgage, and retirement tools built on IRS and Bureau of Labor Statistics data. No account required. No signup. Calculations run locally in your browser.</p>
+<div class="fc-ctas">
+<a class="fc-btn-p" href="#calculators" onclick="gtag('event','hero_cta',{label:'start'})">Explore calculators ↓</a>
+<a class="fc-btn-g" href="/salary-calculator-usa" onclick="trackCalc('Salary Calculator')">Try salary calculator →</a>
+</div>
+<div class="fc-stats">
+<div class="fc-stat"><div class="fc-stat-n">100+</div><div class="fc-stat-l">Calculators</div></div>
+<div class="fc-stat"><div class="fc-stat-n">IRS</div><div class="fc-stat-l">Data source</div></div>
+<div class="fc-stat"><div class="fc-stat-n">0</div><div class="fc-stat-l">Data stored</div></div>
+<div class="fc-stat"><div class="fc-stat-n">Free</div><div class="fc-stat-l">No signup</div></div>
+</div>
+</header>
+<!-- QUESTIONS SECTION -->
+<section aria-label="Common financial questions" style="max-width:980px;margin:0 auto 52px;padding:0 24px;">
+<div style="margin-bottom:24px;">
+<div style="font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:8px;">Common questions</div>
+<h2 style="font-size:clamp(18px,2.5vw,24px);font-weight:700;color:var(--text);">What are you trying to figure out?</h2>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;">
+<a href="/home-affordability-calculator-usa" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'" onmouseover="this.style.borderColor='rgba(0,212,255,0.3)';this.style.transform='translateY(-3px)'" style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .15s;">
+<span style="font-size:28px;">🏠</span>
+<span style="font-size:14px;font-weight:700;color:var(--text);">How much house can I afford?</span>
+<span style="font-size:12px;color:var(--text2);">Based on your income and down payment</span>
+<span style="font-size:12px;color:var(--cyan);margin-top:auto;">Calculate →</span>
+</a>
+<a href="/salary-calculator-usa" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'" onmouseover="this.style.borderColor='rgba(0,212,255,0.3)';this.style.transform='translateY(-3px)'" style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .15s;">
+<span style="font-size:28px;">💵</span>
+<span style="font-size:14px;font-weight:700;color:var(--text);">What is my real take-home salary?</span>
+<span style="font-size:12px;color:var(--text2);">After federal, state tax &amp; deductions</span>
+<span style="font-size:12px;color:var(--cyan);margin-top:auto;">Calculate →</span>
+</a>
+<a href="/compound-interest-calculator" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'" onmouseover="this.style.borderColor='rgba(0,212,255,0.3)';this.style.transform='translateY(-3px)'" style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .15s;">
+<span style="font-size:28px;">📈</span>
+<span style="font-size:14px;font-weight:700;color:var(--text);">How much should I invest monthly?</span>
+<span style="font-size:12px;color:var(--text2);">See compound growth over time</span>
+<span style="font-size:12px;color:var(--cyan);margin-top:auto;">Calculate →</span>
+</a>
+<a href="/401k-calculator-usa" onmouseout="this.style.borderColor='rgba(255,255,255,0.06)';this.style.transform='translateY(0)'" onmouseover="this.style.borderColor='rgba(0,212,255,0.3)';this.style.transform='translateY(-3px)'" style="background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:8px;transition:border-color .2s,transform .15s;">
+<span style="font-size:28px;">🏦</span>
+<span style="font-size:14px;font-weight:700;color:var(--text);">What will my retirement look like?</span>
+<span style="font-size:12px;color:var(--text2);">401k &amp; IRA growth projections</span>
+<span style="font-size:12px;color:var(--cyan);margin-top:auto;">Calculate →</span>
+</a>
+</div>
+</section>
+<!-- SEARCH RESULTS -->
+<div aria-label="Search results" aria-live="polite" id="sr" role="region">
+<div class="sr-hd">
+<div class="sr-lb" id="sr-lb"></div>
+<button aria-label="Clear search" class="sr-cl" onclick="clearSearch()">Clear ×</button>
+</div>
+<div class="sr-g" id="sr-g"></div>
+</div>
+<!-- TRUST BAR -->
+<div aria-label="Editorial credibility" class="fc-trust" role="region">
+<div class="fc-trust-in">
+<div class="fc-ti"><span aria-hidden="true" class="fc-ti-ico">📋</span><div class="fc-ti-t">Data from <strong>IRS Rev. Proc. 2025-28</strong></div></div>
+<div class="fc-ti"><span aria-hidden="true" class="fc-ti-ico">🔒</span><div class="fc-ti-t"><strong>No data stored</strong> — runs in your browser</div></div>
+<div class="fc-ti"><span aria-hidden="true" class="fc-ti-ico">🗓️</span><div class="fc-ti-t">Last reviewed <strong>July 2026</strong></div></div>
+<div class="fc-ti"><span aria-hidden="true" class="fc-ti-ico">📍</span><div class="fc-ti-t">Covers <strong>all 50 states</strong></div></div>
+</div>
+</div>
+<!-- FEATURED CALCULATOR -->
+<section id="salary-calculator" class="salary-calculator-wrapper" aria-label="Salary Calculator">
+    <h2 class="section-title">Calculate Your Take-Home Pay</h2>
+    <p class="section-subtitle">Enter your salary and filing details — results update in real-time</p>
+
+    <div class="calculator-grid">
+        <!-- LEFT: INPUTS -->
+        <div class="calc-card" role="form" aria-label="Calculator inputs">
+            <div class="calc-card-title">
+                <span aria-hidden="true">📊</span> Your Details
+            </div>
+
+            <!-- Salary -->
+            <div class="input-group">
+                <label for="salary-slider">Annual Gross Salary</label>
+                <div class="range-wrapper">
+                    <input type="range" id="salary-slider"
+                           min="0" max="500000" step="1000" value="85000"
+                           aria-label="Salary slider"
+                           aria-valuetext="$85,000">
+                    <div class="input-with-suffix">
+                        <span class="currency" aria-hidden="true">$</span>
+                        <label for="salary-input" class="visually-hidden">Salary amount in dollars</label>
+                        <input type="number" id="salary-input"
+                               value="85000" min="0" max="500000" step="1000"
+                               inputmode="numeric">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filing Status -->
+            <div class="input-group">
+                <label for="filing-status">Filing Status</label>
+                <select id="filing-status" aria-label="Select your filing status">
+                    <option value="single">Single</option>
+                    <option value="married">Married Filing Jointly</option>
+                    <option value="head">Head of Household</option>
+                </select>
+            </div>
+
+            <!-- State -->
+            <div class="input-group">
+                <label for="state-select">State</label>
+                <select id="state-select" aria-label="Select your state of residence">
+                    <!-- Populated by calculator.js from tax-data.js -->
+                </select>
+            </div>
+
+            <!-- 401(k) -->
+            <div class="input-group">
+                <label for="retirement-401k">
+                    401(k) Contribution (Annual)
+                    <span class="tax-bracket-tip" tabindex="0" role="note"
+                          aria-label="2026 limit: 23,500 dollars under age 50, 31,000 dollars over age 50">ⓘ</span>
+                </label>
+                <div class="input-with-suffix">
+                    <span class="currency" aria-hidden="true">$</span>
+                    <label for="retirement-401k" class="visually-hidden">Annual 401k contribution amount in dollars</label>
+                    <input type="number" id="retirement-401k"
+                           value="0" min="0" max="23500" step="100"
+                           inputmode="numeric">
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: RESULTS -->
+        <div class="calc-card" role="region" aria-label="Calculation results">
+            <div class="calc-card-title">
+                <span aria-hidden="true">💰</span> Your Take-Home
+            </div>
+
+            <div class="results-grid" aria-live="polite" aria-atomic="false">
+                <div class="result-item">
+                    <span class="label" id="take-home-annual-label">Annual Take-Home</span>
+                    <span class="value positive" id="take-home-annual" aria-labelledby="take-home-annual-label">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="take-home-monthly-label">Monthly Take-Home</span>
+                    <span class="value positive" id="take-home-monthly" aria-labelledby="take-home-monthly-label">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="federal-tax-label">Federal Tax</span>
+                    <span class="value negative" id="federal-tax" aria-labelledby="federal-tax-label">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="state-tax-label">State Tax</span>
+                    <span class="value negative" id="state-tax" aria-labelledby="state-tax-label">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="fica-tax-label">FICA (SS + Medicare)</span>
+                    <span class="value negative" id="fica-tax" aria-labelledby="fica-tax-label">$0</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="effective-rate-label">Effective Tax Rate</span>
+                    <span class="value neutral" id="effective-rate" aria-labelledby="effective-rate-label">0.0%</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="marginal-rate-label">Marginal Tax Rate</span>
+                    <span class="value neutral" id="marginal-rate" aria-labelledby="marginal-rate-label">0.0%</span>
+                </div>
+                <div class="result-item">
+                    <span class="label" id="tax-savings-label">Tax Savings from 401(k)</span>
+                    <span class="value neutral" id="tax-savings" aria-labelledby="tax-savings-label">$0</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar (decorative — the results grid above already
+                 conveys this info to screen readers via aria-live) -->
+            <div class="progress-section" aria-hidden="true">
+                <div class="progress-label">
+                    <span>Take-Home <span id="take-home-percent">0%</span></span>
+                    <span>Taxes <span id="tax-percent">0%</span></span>
+                </div>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                    <div class="progress-fill tax-fill" id="progress-tax"></div>
+                </div>
+                <div class="progress-breakdown" id="progress-breakdown">
+                    <span>Take-Home: 0%</span>
+                    <span>Taxes: 0%</span>
+                    <span>401(k): 0%</span>
+                </div>
+            </div>
+
+            <p class="calc-disclaimer">
+                ⚠️ Estimate only. Consult a licensed CPA for official filing.
+                <span id="tax-year-display">2026</span> IRS data.
+            </p>
+        </div>
+    </div>
+
+    <div class="fc-result-disclosure">
+        <div class="fc-rd-row fc-rd-row--safe">
+            <span class="fc-rd-icon" aria-hidden="true">✅</span>
+            <span><strong>This calculation:</strong> processed in your browser only — 0 data stored or sent to us.</span>
+        </div>
+        <div class="fc-rd-row fc-rd-row--ads">
+            <span class="fc-rd-icon" aria-hidden="true">⚠️</span>
+            <span><strong>This page:</strong> shows ads (Google AdSense) and may include affiliate links, which use their own third-party cookies.</span>
+        </div>
+        <button type="button" class="fc-rd-toggle" id="fc-rd-toggle-home" aria-expanded="false" aria-controls="fc-rd-details-home">
+            Show details &amp; ad opt-out options ▾
+        </button>
+        <div class="fc-rd-details" id="fc-rd-details-home">
+            <p>
+                Your calculator inputs are never transmitted to our servers — the math runs entirely in this
+                browser tab. Separately, this page is supported by advertising, and Google AdSense (plus any
+                affiliate partners linked from this page, like TurboTax or Betterment) may set cookies to measure
+                ad performance or show ads based on your browsing elsewhere. We don't control those cookies and
+                don't share your calculator data with them.
+            </p>
+            <p>To limit ad personalization:</p>
+            <ul>
+                <li><a href="https://adssettings.google.com" rel="noopener" target="_blank">Google Ad Settings</a> — manage or turn off Google ad personalization</li>
+                <li><a href="https://optout.networkadvertising.org" rel="noopener" target="_blank">NAI Opt-Out Tool</a> — opt out of participating ad networks</li>
+                <li><a href="https://optout.aboutads.info" rel="noopener" target="_blank">DAA Opt-Out (US)</a> — Digital Advertising Alliance opt-out</li>
+            </ul>
+            <p><a href="/privacy">Read the full privacy policy →</a></p>
+        </div>
+    </div>
+</section>
+
+<!-- MORTGAGE VISUAL SECTION -->
+<section aria-label="Mortgage amortization" class="fc-visual-section">
+<div class="fc-visual-in">
+<div class="fc-visual-right">
+<div class="fc-visual-label">See how your mortgage works</div>
+<h3 class="fc-visual-title">$400,000 mortgage<br/>at 6.8% — 30 years</h3>
+<p class="fc-visual-desc">Most of your early payments go toward interest. Over time, the balance shifts. This chart shows the first 10 years of a $400K mortgage.</p>
+<a class="fc-btn-g" href="/mortgage-calculator-usa" onclick="trackCalc('Mortgage Visual CTA')">Run your numbers →</a>
+<p class="fc-featured-note">Includes principal, interest breakdown · <a href="/data-sources">Data sources</a></p>
+</div>
+<div class="fc-visual-left">
+<div class="fc-featured-chart-label">Principal vs Interest paid · Years 1–10</div>
+<canvas aria-label="Mortgage amortization bar chart showing principal vs interest for first 10 years of a $400,000 loan" height="240" id="mortgageChart" role="img" width="340"></canvas>
+<details class="a11y-chart-data">
+<summary>View mortgage amortization data as table</summary>
+<table>
+<caption>First 10 years: $400,000 mortgage at 6.8% (30-year term)</caption>
+<thead><tr><th scope="col">Year</th><th scope="col">Principal Paid</th><th scope="col">Interest Paid</th></tr></thead>
+<tbody>
+<tr><td>Year 1</td><td>~$7,200</td><td>~$26,800</td></tr>
+<tr><td>Year 2</td><td>~$7,700</td><td>~$26,300</td></tr>
+<tr><td>Year 3</td><td>~$8,300</td><td>~$25,700</td></tr>
+<tr><td>Year 4</td><td>~$8,900</td><td>~$25,100</td></tr>
+<tr><td>Year 5</td><td>~$9,500</td><td>~$24,500</td></tr>
+<tr><td>Year 10</td><td>~$14,200</td><td>~$19,800</td></tr>
+</tbody>
+</table>
+</details>
+</div>
+</div>
+</section>
+<!-- ════════════ CALCULATORS ════════════ -->
+<main id="calculators" role="main">
+<!-- TAX -->
+<section aria-labelledby="tax-h" class="fc-sec" id="tax">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="tax-h">🧾 Tax Calculators <span class="fc-cnt">14 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/rsu-tax-calculator" onclick="trackCalc('RSU Tax Calculator')" style="--card-ac:var(--emerald)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,200,150,0.1)">📈</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">RSU Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">See your real marginal tax rate vs. the flat 22% withholding — and the gap that catches tech workers off guard.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Withholding Gap</span><span class="fc-tag">Sell vs Hold</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/tax-refund-calculator" onclick="trackCalc('Tax Refund Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">🧾</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span><span class="fc-bdg bh">🔥 Seasonal</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Tax Refund Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Find out if you're getting a refund or owe the IRS. Compare withholding vs. 2026 tax liability instantly.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Refund Estimator</span><span class="fc-tag">Withholding</span><span class="fc-tag">2026</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/tax-bracket-calculator" onclick="trackCalc('Tax Bracket Calculator')" style="--card-ac:var(--purple)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(179,157,255,0.1)">🎯</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Tax Bracket Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Find your 2026 marginal tax bracket, effective rate, and how much room is left before the next bracket.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Marginal Rate</span><span class="fc-tag">2026</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/w4-calculator" onclick="trackCalc('W-4 Calculator')" style="--card-ac:var(--orange)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,112,67,0.1)">⚙️</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">W-4 Withholding Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Check if your paycheck withholding is set correctly, and exactly how to adjust your W-4.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Withholding</span><span class="fc-tag">Paycheck</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/tax-calculator-usa" onclick="trackCalc('Federal Tax Calculator')" style="--card-ac:var(--purple)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(179,157,255,0.1)">🧾</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Federal Income Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">2026 IRS brackets, standard vs itemized deductions, AGI, effective &amp; marginal rate for all filing statuses.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">2026 Brackets</span><span class="fc-tag">AGI</span><span class="fc-tag">Filing Status</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/capital-gains-tax-calculator" onclick="trackCalc('Capital Gains Tax Calculator')" style="--card-ac:var(--emerald)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,200,150,0.1)">📈</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span><span class="fc-bdg bh">🔥 High RPM</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Capital Gains Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Short-term vs long-term capital gains, 3.8% NIIT surcharge, state tax — stocks, crypto, real estate. 2026 rates.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Short-term</span><span class="fc-tag">Long-term</span><span class="fc-tag">NIIT</span><span class="fc-tag">Crypto</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/self-employment-tax-calculator" onclick="trackCalc('Self-Employment Tax Calculator')" style="--card-ac:var(--orange)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,112,67,0.1)">💼</div>
+<div class="fc-bdgs"><span class="fc-bdg bh">🔥 Popular</span><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Self-Employment Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">1099 freelancer income, SE tax 15.3%, quarterly estimated payments, Schedule C deductions, net profit.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">1099 Income</span><span class="fc-tag">SE Tax</span><span class="fc-tag">Quarterly</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/crypto-tax-calculator" onclick="trackCalc('Crypto Tax Calculator')" style="--card-ac:#f7931a">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(247,147,26,0.1)">₿</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Crypto Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate Bitcoin, Ethereum &amp; all coin taxes. Short-term vs long-term rates, FIFO/LIFO, NIIT. IRS-accurate 2026.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Bitcoin</span><span class="fc-tag">Ethereum</span><span class="fc-tag">FIFO/LIFO</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/sales-tax-calculator" onclick="trackCalc('Sales Tax Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">🔢</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Sales Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate sales tax for all 50 US states instantly. Find total price, tax amount, and pre-tax price.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">All 50 States</span><span class="fc-tag">Reverse Calc</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/business-tax-calculator" onclick="trackCalc('Business Tax Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">💼</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Business Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate small business tax liability. C-Corp, S-Corp, LLC, Sole Proprietor. Includes QBI deduction.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">LLC</span><span class="fc-tag">S-Corp</span><span class="fc-tag">QBI</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/federal-tax-withholding-calculator" onclick="trackCalc('Federal Tax Withholding Calculator')" style="--card-ac:var(--purple)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(179,157,255,0.1)">📋</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Federal Tax Withholding Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate federal withholding per paycheck using the IRS Percentage Method for the 2026 W-4.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">W-4</span><span class="fc-tag">Per Paycheck</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/federal-income-tax-calculator" onclick="trackCalc('Federal Income Tax Calculator (Fast)')" style="--card-ac:var(--emerald)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,200,150,0.1)">⚡</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Federal Income Tax Calculator (Fast)</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">A quick, federal-only estimate — total tax, marginal bracket, and effective rate in seconds.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Federal Only</span><span class="fc-tag">Fast</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/child-tax-credit-calculator" onclick="trackCalc('Child Tax Credit Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">👨‍👩‍👧</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Child Tax Credit Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate your Child Tax Credit including income phase-outs and the refundable Additional Child Tax Credit.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">CTC</span><span class="fc-tag">ACTC</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/earned-income-tax-credit-calculator" onclick="trackCalc('Earned Income Tax Credit Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">💵</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Earned Income Tax Credit Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate your refundable EITC based on earned income, filing status, and number of qualifying children.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">EITC</span><span class="fc-tag">Refundable</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- INCOME -->
+<section aria-labelledby="income-h" class="fc-sec" id="income">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="income-h">💵 Income &amp; Salary <span class="fc-cnt">10 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/tip-calculator" onclick="trackCalc('Tip Calculator')" style="--card-ac:var(--green)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,230,118,0.1)">💵</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Tip Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Split the bill, pick a tip percentage, and see exactly what each person owes.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Bill Splitter</span><span class="fc-tag">Any %</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/overtime-calculator" onclick="trackCalc('Overtime Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">⏱️</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Overtime Pay Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Time-and-a-half math for your weekly hours — regular pay, overtime pay, and the total.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">1.5x Rate</span><span class="fc-tag">Weekly Pay</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fc-card-ft fca" href="/salary-calculator-usa" onclick="trackCalc('Salary Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">💵</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span><span class="fc-bdg bn">⭐ Most Used</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Salary &amp; Paycheck Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Take-home pay after federal + all 50 state taxes, Social Security &amp; Medicare (FICA), 401k pre-tax, HSA, and other deductions. Supports hourly, weekly, biweekly, semi-monthly &amp; annual pay.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Federal Tax</span><span class="fc-tag">All 50 States</span><span class="fc-tag">FICA</span><span class="fc-tag">401k</span><span class="fc-tag">HSA</span><span class="fc-tag">All Pay Frequencies</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/hourly-to-salary-calculator" onclick="trackCalc('Hourly to Salary Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">⏱️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Hourly to Salary Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Convert hourly wage to annual, monthly, weekly and daily salary. Instant USA pay conversion for 2026.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Hourly</span><span class="fc-tag">Annual</span><span class="fc-tag">Monthly</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/cost-of-living-calculator" onclick="trackCalc('Cost of Living Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🗺️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Cost of Living Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Compare cost of living between 20+ US cities. Find out how much salary you need if you move.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">City Compare</span><span class="fc-tag">Salary Adjust</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/take-home-pay-calculator" onclick="trackCalc('Take-Home Pay Calculator')" style="--card-ac:var(--green)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,230,118,0.1)">💰</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Take-Home Pay Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">See exactly what you keep from your salary after federal tax, state tax, FICA, and 401(k) contributions.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Annual Salary</span><span class="fc-tag">Net Pay</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/gross-pay-calculator" onclick="trackCalc('Gross Pay Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">⏱️</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Gross Pay Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Convert hourly rate and hours worked — including overtime — into gross pay per check and per year.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Overtime</span><span class="fc-tag">FLSA Rules</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/net-pay-calculator" onclick="trackCalc('Net Pay Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">🧾</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Net Pay Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Enter any paycheck's gross amount and see exactly what you'll take home after taxes and deductions.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Per Paycheck</span><span class="fc-tag">FICA</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/biweekly-pay-calculator" onclick="trackCalc('Biweekly Pay Calculator')" style="--card-ac:var(--emerald)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,200,150,0.1)">📅</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Biweekly Pay Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Convert your annual salary or hourly rate into your exact biweekly paycheck — gross and net.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">26 Checks/Year</span><span class="fc-tag">Gross &amp; Net</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/monthly-salary-calculator" onclick="trackCalc('Monthly Salary Calculator')" style="--card-ac:var(--purple)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(167,139,250,0.1)">🗓️</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Monthly Salary Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Convert your annual salary or hourly rate into a clear monthly gross and net pay figure.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">12 Payments/Year</span><span class="fc-tag">Budgeting</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/payroll-tax-calculator" onclick="trackCalc('Payroll Tax Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🏛️</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Payroll Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate Social Security, Medicare, and Additional Medicare Tax for W-2 employees or self-employed.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">FICA</span><span class="fc-tag">Self-Employed</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- RETIREMENT -->
+<section aria-labelledby="retire-h" class="fc-sec" id="retire">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="retire-h">🏦 Retirement Calculators <span class="fc-cnt">6 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/401k-calculator-usa" onclick="trackCalc('401k Calculator')" style="--card-ac:var(--emerald)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,200,150,0.1)">🏦</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">401(k) Retirement Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Retirement balance projection with employer match, annual tax savings, and 2026 IRS limits ($24,500 under 50 / $32,500 age 50+).</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Employer Match</span><span class="fc-tag">Tax Savings</span><span class="fc-tag">IRS 2026</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/roth-ira-calculator" onclick="trackCalc('Roth IRA Calculator')" style="--card-ac:var(--purple)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(179,157,255,0.1)">🐷</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Roth IRA Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Tax-free retirement growth, 2026 income phase-out limits ($150K–$165K single), Roth vs Traditional IRA comparison.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">$7,500 Limit</span><span class="fc-tag">Phase-out</span><span class="fc-tag">Tax-free Growth</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/social-security-calculator" onclick="trackCalc('Social Security Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🏛️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Social Security Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate your monthly Social Security benefit. Compare claiming at 62, 67 or 70. SSA AIME/PIA formula.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">SSA Formula</span><span class="fc-tag">Early vs Late</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/hsa-calculator" onclick="trackCalc('HSA Calculator')" style="--card-ac:var(--green)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,230,118,0.1)">🏥</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">HSA Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate HSA contribution limits, tax savings and long-term growth. 2026 contribution limits included.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Tax-Free Growth</span><span class="fc-tag">2026 Limits</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/fire-calculator" onclick="trackCalc('FIRE Calculator')" style="--card-ac:#ff9800">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,152,0,0.1)">🔥</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">FIRE Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate your Financial Independence Retire Early number and exact retirement date based on savings rate.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">FIRE Number</span><span class="fc-tag">Retire Date</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/retirement-withdrawal-calculator" onclick="trackCalc('Retirement Withdrawal Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">📅</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Retirement Withdrawal Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">How long will your savings last? Find safe withdrawal rate and monthly income using the 4% rule.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">4% Rule</span><span class="fc-tag">SWR</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- HOME -->
+<section aria-labelledby="home-h" class="fc-sec" id="home">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="home-h">🏠 Home &amp; Mortgage <span class="fc-cnt">3 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/mortgage-calculator-usa" onclick="trackCalc('Mortgage Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🏠</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Mortgage Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Monthly P&amp;I payment, PMI, PITI breakdown, full amortization schedule with extra payment savings.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">PMI</span><span class="fc-tag">PITI</span><span class="fc-tag">Amortization</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/home-affordability-calculator-usa" onclick="trackCalc('Home Affordability Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.08)">🏡</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Home Affordability Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">How much house can you afford? Based on income, debt-to-income ratio (28/36 rule), down payment, and rates.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">DTI 28/36</span><span class="fc-tag">Down Payment</span><span class="fc-tag">Max Price</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/auto-loan-calculator" onclick="trackCalc('Auto Loan Calculator')" style="--card-ac:var(--orange)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,112,67,0.1)">🚗</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Auto Loan Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Monthly car payment, sales tax, trade-in value, total cost of ownership and early payoff savings.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Monthly Payment</span><span class="fc-tag">Sales Tax</span><span class="fc-tag">Trade-in</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- INVESTING -->
+<section aria-labelledby="invest-h" class="fc-sec" id="invest">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="invest-h">📊 Investment Calculators <span class="fc-cnt">3 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/stock-return-calculator-usa" onclick="trackCalc('Stock Return Calculator')" style="--card-ac:var(--yellow)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,215,64,0.1)">📊</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Stock Return Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Total return, CAGR, and dividend reinvestment — see how any stock investment or S&amp;P 500 portfolio would have grown historically.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">CAGR</span><span class="fc-tag">Dividends</span><span class="fc-tag">Total Return</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/refinance-calculator" onclick="trackCalc('Refinance Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🔄</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Mortgage Refinance Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Should you refinance? Calculate monthly savings, break-even point and lifetime savings instantly.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Break-even</span><span class="fc-tag">Monthly Savings</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/property-tax-calculator" onclick="trackCalc('Property Tax Calculator')" style="--card-ac:var(--orange)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,112,67,0.1)">🏛️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Property Tax Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Estimate annual property tax for all 50 states. Uses actual effective tax rates for accurate results.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">All 50 States</span><span class="fc-tag">2026 Rates</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- DEBT -->
+<section aria-labelledby="debt-h" class="fc-sec" id="debt">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="debt-h">💳 Debt &amp; Loans <span class="fc-cnt">4 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/dti-calculator" onclick="trackCalc('DTI Calculator')" style="--card-ac:var(--red)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,77,109,0.1)">📊</div>
+<div class="fc-bdgs"><span class="fc-bdg bn">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Debt-to-Income (DTI) Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Check your DTI ratio before applying for a mortgage or loan, with lender thresholds explained.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Pre-Qualification</span><span class="fc-tag">Mortgage Ready</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/student-loan-calculator-usa" onclick="trackCalc('Student Loan Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🎓</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Student Loan Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Repayment plans (Standard, IDR, PAYE, IBR), total interest over life of loan, PSLF eligibility, and payoff timeline.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">IDR Plans</span><span class="fc-tag">PSLF</span><span class="fc-tag">Total Interest</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/debt-payoff-calculator" onclick="trackCalc('Debt Payoff Calculator')" style="--card-ac:var(--red)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(255,77,109,0.08)">💳</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">Live</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Debt Payoff Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Snowball vs avalanche debt payoff — compare total interest saved, payoff date, and monthly payment plan.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Snowball</span><span class="fc-tag">Avalanche</span><span class="fc-tag">Interest Saved</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/emergency-fund-calculator" onclick="trackCalc('Emergency Fund Calculator')" style="--card-ac:var(--green)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,230,118,0.1)">🛡️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Emergency Fund Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Enter your monthly expenses and see your target emergency fund amount and how long it takes to get there.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">3-6 Months</span><span class="fc-tag">Progress Track</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+<!-- PLANNING TOOLS -->
+<section aria-labelledby="planning-h" class="fc-sec" id="planning">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="planning-h">📊 Financial Planning <span class="fc-cnt">4 tools</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-grid">
+<a class="fc-card fca" href="/budget-planner" onclick="trackCalc('Budget Planner')" style="--card-ac:var(--green)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,230,118,0.1)">📊</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Budget Planner</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Create a complete monthly budget. Track income vs expenses, savings rate and financial goals. 50/30/20 rule.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">50/30/20</span><span class="fc-tag">Monthly Budget</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/net-worth-calculator" onclick="trackCalc('Net Worth Calculator')" style="--card-ac:var(--cyan)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(0,212,255,0.1)">💎</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Net Worth Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate your total net worth. Track assets vs liabilities and see your complete financial picture.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">Assets</span><span class="fc-tag">Liabilities</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/college-savings-calculator" onclick="trackCalc('College Savings Calculator')" style="--card-ac:#b39dff">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(179,157,255,0.1)">🎓</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">College Savings / 529 Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Calculate monthly savings needed for college. See 529 plan projections and total cost estimates.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">529 Plan</span><span class="fc-tag">Monthly Goal</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+<a class="fc-card fca" href="/cost-of-living-calculator" onclick="trackCalc('Cost of Living Calculator')" style="--card-ac:var(--blue)">
+<div class="fc-ct">
+<div aria-hidden="true" class="fc-icon" style="background:rgba(59,158,255,0.1)">🗺️</div>
+<div class="fc-bdgs"><span class="fc-bdg bl">New</span></div>
+</div>
+<div style="font-size:15px;font-weight:700;color:var(--text)">Cost of Living Calculator</div>
+<div style="font-size:13px;color:var(--text2);line-height:1.6;flex:1">Compare cost of living between 20+ US cities. Find out how much salary you need if you move.</div>
+<div class="fc-ct2">
+<div class="fc-tags"><span class="fc-tag">City Compare</span><span class="fc-tag">Salary Adjust</span></div>
+<span aria-hidden="true" class="fc-arr">→</span>
+</div>
+</a>
+</div>
+</section>
+</main>
+<!-- UPCOMING TOOLS BANNER -->
+<div class="fc-upcoming">
+<div class="fc-upcoming-in">
+<div>
+<div class="fc-upcoming-label">✨ Popular Tools</div>
+<div class="fc-upcoming-title">More free calculators</div>
+<div class="fc-upcoming-sub">Explore all our finance tools</div>
+</div>
+<div class="fc-upcoming-badges">
+<a href="/credit-score-simulator" class="fc-upcoming-bdg" style="text-decoration:none">💳 Credit Score Simulator</a>
+<a href="/currency-converter" class="fc-upcoming-bdg" style="text-decoration:none">🌍 Currency Converter</a>
+<a href="/inflation-calculator" class="fc-upcoming-bdg" style="text-decoration:none">📉 Inflation Calculator</a>
+<a href="/rent-vs-buy-calculator" class="fc-upcoming-bdg" style="text-decoration:none">🏡 Rent vs Buy Calculator</a>
+</div>
+</div>
+</div>
+<!-- STATE PAGES -->
+<div aria-labelledby="states-h" class="fc-states" role="region">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="states-h">🗺️ Tax Calculators by State</h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<p style="font-size:13px;color:var(--text3);margin-bottom:14px;">State-specific salary &amp; tax calculators with local income tax rates</p>
+<div class="fc-sg">
+<a class="fc-sp" href="/california-tax-calculator">California</a>
+<a class="fc-sp" href="/salary-calculator-usa">Texas 🤠</a>
+<a class="fc-sp" href="/new-york-tax-calculator">New York</a>
+<a class="fc-sp" href="/florida-tax-calculator">Florida</a>
+<a class="fc-sp" href="/illinois-tax-calculator">Illinois</a>
+<a class="fc-sp" href="/washington-tax-calculator">Washington</a>
+<a class="fc-sp" href="/georgia-tax-calculator">Georgia</a>
+<a class="fc-sp" href="/pennsylvania-tax-calculator">Pennsylvania</a>
+<a class="fc-sp" href="/ohio-tax-calculator">Ohio</a>
+<a class="fc-sp" href="/michigan-tax-calculator">Michigan</a>
+</div>
+<div class="fc-sm-wrap" id="states-more">
+<a class="fc-sp" href="/arizona-tax-calculator">Arizona</a>
+<a class="fc-sp" href="/north-carolina-tax-calculator">North Carolina</a>
+<a class="fc-sp" href="/virginia-tax-calculator">Virginia</a>
+<a class="fc-sp" href="/new-jersey-tax-calculator">New Jersey</a>
+<a class="fc-sp" href="/colorado-tax-calculator">Colorado</a>
+<a class="fc-sp" href="/nevada-tax-calculator">Nevada</a>
+<a class="fc-sp" href="/oregon-tax-calculator">Oregon</a>
+<a class="fc-sp" href="/minnesota-tax-calculator">Minnesota</a>
+<a class="fc-sp" href="/wisconsin-tax-calculator">Wisconsin</a>
+<a class="fc-sp" href="/maryland-tax-calculator">Maryland</a>
+<a class="fc-sp" href="/massachusetts-tax-calculator">Massachusetts</a>
+<a class="fc-sp" href="/tennessee-tax-calculator">Tennessee</a>
+<a class="fc-sp" href="/indiana-tax-calculator">Indiana</a>
+<a class="fc-sp" href="/missouri-tax-calculator">Missouri</a>
+<a class="fc-sp" href="/south-carolina-tax-calculator">South Carolina</a>
+<a class="fc-sp" href="/alabama-tax-calculator">Alabama</a>
+<a class="fc-sp" href="/kentucky-tax-calculator">Kentucky</a>
+<a class="fc-sp" href="/utah-tax-calculator">Utah</a>
+<a class="fc-sp" href="/iowa-tax-calculator">Iowa</a>
+<a class="fc-sp" href="/connecticut-tax-calculator">Connecticut</a>
+</div>
+<button class="fc-sm-btn" id="states-btn" onclick="toggleStates()">Show all states ↓</button>
+</div>
+<!-- EEAT / TRUST SIGNALS -->
+<div aria-labelledby="eeat-h" class="fc-eeat" role="region">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="eeat-h">🏆 Why Trust USAFinCalc</h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-eeat-g">
+<div class="fc-eeat-c fca">
+<div aria-hidden="true" class="fc-eeat-ic">🏛️</div>
+<div class="fc-eeat-ti">IRS-Sourced Data</div>
+<div class="fc-eeat-de">All tax figures come directly from official IRS publications — Rev. Proc. 2025-32, IRS Pub. 15, and more. Updated every January.</div>
+</div>
+<div class="fc-eeat-c fca">
+<div aria-hidden="true" class="fc-eeat-ic">🔒</div>
+<div class="fc-eeat-ti">100% Private</div>
+<div class="fc-eeat-de">All calculations run entirely in your browser. We never receive, store, or transmit your financial data. Zero.</div>
+</div>
+<div class="fc-eeat-c fca">
+<div aria-hidden="true" class="fc-eeat-ic">🆓</div>
+<div class="fc-eeat-ti">Free Forever</div>
+<div class="fc-eeat-de">No sign-up, no subscription, no credit card. Supported by non-intrusive advertising. Financial tools should be accessible to everyone.</div>
+</div>
+<div class="fc-eeat-c fca">
+<div aria-hidden="true" class="fc-eeat-ic">👨‍💼</div>
+<div class="fc-eeat-ti">Expert Reviewed</div>
+<div class="fc-eeat-de">Our lead CPA reviews all calculators before publishing. Methodology is documented publicly for full transparency.</div>
+</div>
+</div>
+</div>
+<!-- BLOG -->
+<div aria-labelledby="blog-h" class="fc-blog" role="region">
+<div class="fc-sec-hd">
+<h2 class="fc-sec-title" id="blog-h">✍️ Finance Blog <span class="fc-cnt">Latest</span></h2>
+<div aria-hidden="true" class="fc-sec-line"></div>
+</div>
+<div class="fc-blog-g">
+<a class="fc-blog-c fca" href="/blog">
+<div class="fc-blog-cat">Tax Planning</div>
+<div class="fc-blog-ti">2026 Federal Tax Brackets: What Every American Needs to Know</div>
+<p style="font-size:13px;color:var(--text2);line-height:1.65;">The IRS released new inflation-adjusted brackets for 2026. Here's exactly how your income is taxed and how to reduce your bill legally.</p>
+<div class="fc-blog-r">Read guide →</div>
+<div class="fc-blog-m">8 min read · Tax 2026</div>
+</a>
+<a class="fc-blog-c fca" href="/blog">
+<div class="fc-blog-cat">Retirement</div>
+<div class="fc-blog-ti sm">401(k) vs Roth IRA: Which Is Better in 2026?</div>
+<div class="fc-blog-r">Read →</div>
+<div class="fc-blog-m">6 min read</div>
+</a>
+<a class="fc-blog-c fca" href="/blog">
+<div class="fc-blog-cat">Mortgage</div>
+<div class="fc-blog-ti sm">How Much House Can You Afford on $80K Salary?</div>
+<div class="fc-blog-r">Read →</div>
+<div class="fc-blog-m">5 min read</div>
+</a>
+</div>
+</div>
+<!-- EMAIL SIGNUP -->
+<div aria-labelledby="email-h" class="fc-email" role="region">
+<div class="fc-email-in">
+<div class="fc-email-ti" id="email-h">📬 Get the Monthly Finance Digest</div>
+<div class="fc-email-su">2026 tax tips, calculator updates, and personal finance guides. No spam, unsubscribe anytime.</div>
+<div class="fc-email-fm">
+<input aria-label="Email address" autocomplete="email" class="fc-email-ip" aria-label="Email address" id="em-ip" placeholder="your@email.com" type="email"/>
+<button aria-label="Subscribe to newsletter" class="fc-email-bt" onclick="doEmail()">Subscribe</button>
+</div>
+<div class="fc-email-nt" id="em-msg">Join 50,000+ Americans who get our monthly finance digest.</div>
+</div>
+</div>
+<!-- AFFILIATE PARTNERS -->
+<div aria-label="Sponsored partners" class="fc-aff" role="region">
+<div class="fc-aff-in">
+<div class="fc-aff-lb">Sponsored — Advertising keeps our calculators free</div>
+<div class="fc-aff-g">
+<a class="fc-aff-c" href="#" onclick="gtag('event','affiliate_click',{partner:'TurboTax'})" rel="sponsored noopener">
+<div aria-hidden="true" class="fc-aff-ic" style="background:rgba(59,158,255,0.1)">🧾</div>
+<div><div class="fc-aff-nm">TurboTax</div><div class="fc-aff-de">File taxes online</div></div>
+</a>
+<a class="fc-aff-c" href="#" onclick="gtag('event','affiliate_click',{partner:'Betterment'})" rel="sponsored noopener">
+<div aria-hidden="true" class="fc-aff-ic" style="background:rgba(0,200,150,0.1)">📈</div>
+<div><div class="fc-aff-nm">Betterment</div><div class="fc-aff-de">Automated investing</div></div>
+</a>
+<a class="fc-aff-c" href="#" onclick="gtag('event','affiliate_click',{partner:'Credible'})" rel="sponsored noopener">
+<div aria-hidden="true" class="fc-aff-ic" style="background:rgba(255,215,64,0.1)">🏠</div>
+<div><div class="fc-aff-nm">Credible</div><div class="fc-aff-de">Compare mortgage rates</div></div>
+</a>
+<a class="fc-aff-c" href="#" onclick="gtag('event','affiliate_click',{partner:'SoFi'})" rel="sponsored noopener">
+<div aria-hidden="true" class="fc-aff-ic" style="background:rgba(179,157,255,0.1)">🎓</div>
+<div><div class="fc-aff-nm">SoFi</div><div class="fc-aff-de">Student loan refi</div></div>
+</a>
+</div>
+</div>
+</div>
+<!-- FAQ -->
+<div aria-labelledby="faq-h" class="fc-faq-wr" role="region">
+<h2 class="fc-faq-ti" id="faq-h">Frequently Asked Questions</h2>
+<p class="fc-faq-su">How the calculators work and what to keep in mind</p>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">Are all USAFinCalc calculators free?</button>
+<div class="fc-faq-a" role="region">Yes — 100% free forever. No sign-up, no subscription, no credit card. Supported by non-intrusive advertising and affiliate partnerships.</div>
+</div>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">How accurate are the 2026 tax calculations?</button>
+<div class="fc-faq-a" role="region">We use 2026 IRS tax brackets (Rev. Proc. 2025-32), current FICA rates (6.2% SS / 1.45% Medicare), and state tax tables updated each January. Results are strong estimates — consult a licensed CPA for official filing.</div>
+</div>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">What are the 2026 federal income tax brackets?</button>
+<div class="fc-faq-a" role="region">For single filers: 10% (up to $12,400) · 12% (up to $50,400) · 22% (up to $105,700) · 24% (up to $201,775) · 32% (up to $256,225) · 35% (up to $640,600) · 37% (above $640,600). Standard deduction: $16,100 single / $32,200 married filing jointly.</div>
+</div>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">What is the 401(k) contribution limit for 2026?</button>
+<div class="fc-faq-a" role="region">$24,500 for employees under 50; $32,500 for those 50 or older (including $8,000 catch-up). IRA limit is $7,500 / $8,600 for 50+. SIMPLE IRA: $17,000 / $18,100 for 50+.</div>
+</div>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">Does USAFinCalc store or sell my data?</button>
+<div class="fc-faq-a" role="region">No. All calculations run 100% in your browser using JavaScript. We never receive, store, or transmit your income, tax, or personal information.</div>
+</div>
+<div class="fc-faq-it">
+<button aria-expanded="false" class="fc-faq-q">Which US states are covered?</button>
+<div class="fc-faq-a" role="region">All 50 states plus Washington D.C. This includes states with zero income tax: Texas, Florida, Nevada, Washington, Wyoming, Alaska, South Dakota, and Tennessee.</div>
+</div>
+</div>
+<!-- FOOTER -->
+<footer role="contentinfo">
+<a href="/">Home</a><a href="/tax-calculator-usa">Tax Calculator</a><a href="/salary-calculator-usa">Salary Calculator</a><a href="/mortgage-calculator-usa">Mortgage Calculator</a><a href="/about">About</a><a href="/methodology">Methodology</a><a href="/editorial-policy">Editorial Policy</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a>
+<p style="margin-top:16px">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a professional.</p>
+<a href="/disclaimer" style="color:#888;margin:0 6px;">Disclaimer</a>
+<a href="/terms" style="color:#888;margin:0 6px;">Terms</a>
+</footer>
+<script defer="" src="js/fincalc-ui.js"></script>
+<script>
+/* ══════════════════════════════
+   PAGE-SPECIFIC: charts unique to the homepage
+   (search is handled by js/search.js; topbar dismiss, nav
+   scroll shadow, FAQ accordion, states toggle and email
+   signup are handled by js/fincalc-ui.js; mobile menu and
+   nav dropdown keyboard behavior are handled by the WCAG
+   inline script further down this page; the salary section
+   is now the live calculator in js/calculator.js)
+   ══════════════════════════════ */
+// ── MORTGAGE BAR CHART ──
+(function(){
+  var canvas=document.getElementById('mortgageChart');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  var dpr=window.devicePixelRatio||1;
+  canvas.width=340*dpr; canvas.height=240*dpr;
+  canvas.style.width='340px'; canvas.style.height='240px';
+  ctx.scale(dpr,dpr);
+
+  var loan=400000,rate=0.068/12,n=360;
+  var monthlyPmt=loan*rate*Math.pow(1+rate,n)/(Math.pow(1+rate,n)-1);
+  var years=[];
+  var bal=loan;
+  for(var y=1;y<=10;y++){
+    var yPrincipal=0,yInterest=0;
+    for(var m=0;m<12;m++){
+      var interest=bal*rate;
+      var principal=monthlyPmt-interest;
+      yInterest+=interest;
+      yPrincipal+=principal;
+      bal-=principal;
+    }
+    years.push({year:y,principal:Math.round(yPrincipal),interest:Math.round(yInterest)});
+  }
+
+  var maxVal=Math.max.apply(null,years.map(function(y){return y.principal+y.interest;}));
+  var padL=32,padB=28,padT=16,padR=10;
+  var chartW=340-padL-padR;
+  var chartH=240-padT-padB;
+  var barW=(chartW/years.length)*0.6;
+  var barGap=(chartW/years.length);
+
+  // Grid lines
+  ctx.strokeStyle='rgba(255,255,255,0.04)';
+  ctx.lineWidth=1;
+  for(var i=0;i<=4;i++){
+    var y2=padT+chartH-(i/4)*chartH;
+    ctx.beginPath();ctx.moveTo(padL,y2);ctx.lineTo(340-padR,y2);ctx.stroke();
+  }
+
+  years.forEach(function(d,i){
+    var x=padL+i*barGap+(barGap-barW)/2;
+    var totalH=(d.principal+d.interest)/maxVal*chartH;
+    var principalH=d.principal/maxVal*chartH;
+    var interestH=d.interest/maxVal*chartH;
+
+    // Interest bar (bottom)
+    ctx.fillStyle='rgba(179,157,255,0.7)';
+    ctx.fillRect(x,padT+chartH-interestH,barW,interestH);
+
+    // Principal bar (top)
+    ctx.fillStyle='rgba(0,212,255,0.8)';
+    ctx.fillRect(x,padT+chartH-totalH,barW,principalH);
+
+    // Year label
+    ctx.fillStyle='#6b7fa3';
+    ctx.font='500 10px Outfit,sans-serif';
+    ctx.textAlign='center';
+    ctx.fillText('Yr '+d.year,x+barW/2,padT+chartH+16);
+  });
+
+  // Legend
+  ctx.fillStyle='#00d4ff';
+  ctx.fillRect(padL,10,10,8);
+  ctx.fillStyle='#7a8aaa';
+  ctx.font='500 11px Outfit,sans-serif';
+  ctx.textAlign='left';
+  ctx.fillText('Principal',padL+14,18);
+
+  ctx.fillStyle='rgba(179,157,255,0.7)';
+  ctx.fillRect(110,10,10,8);
+  ctx.fillStyle='#7a8aaa';
+  ctx.fillText('Interest',124,18);
+})();
+
+</script>
+<script defer="" src="/js/search.js"></script>
+<script defer="" src="/js/tax-data.js"></script>
+<script defer="" src="/js/calculator.js"></script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script>
+/* ── WCAG 2.2 AA: Keyboard navigation for dropdowns & mobile menu ── */
+(function(){
+  /* ── Dropdown keyboard nav ── */
+  var dds = document.querySelectorAll(".fc-nav-dd");
+  dds.forEach(function(dd){
+    var trigger = dd.querySelector("a[role=\"button\"]");
+    var menu = dd.querySelector(".fc-dd");
+    if(!trigger || !menu) return;
+    var items = Array.from(menu.querySelectorAll("a[role=\"menuitem\"]"));
+
+    function openDD(){
+      menu.style.display = "block";
+      trigger.setAttribute("aria-expanded","true");
+      if(items[0]) items[0].focus();
+    }
+    function closeDD(){
+      menu.style.display = "";
+      trigger.setAttribute("aria-expanded","false");
+      trigger.focus();
+    }
+
+    trigger.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " " || e.key === "ArrowDown"){
+        e.preventDefault(); openDD();
+      }
+      if(e.key === "Escape") closeDD();
+    });
+
+    menu.addEventListener("keydown", function(e){
+      var idx = items.indexOf(document.activeElement);
+      if(e.key === "ArrowDown"){
+        e.preventDefault();
+        (items[idx+1] || items[0]).focus();
+      } else if(e.key === "ArrowUp"){
+        e.preventDefault();
+        (items[idx-1] || items[items.length-1]).focus();
+      } else if(e.key === "Escape"){
+        e.preventDefault(); closeDD();
+      } else if(e.key === "Home"){
+        e.preventDefault(); items[0].focus();
+      } else if(e.key === "End"){
+        e.preventDefault(); items[items.length-1].focus();
+      }
+    });
+
+    dd.addEventListener("focusout", function(e){
+      if(!dd.contains(e.relatedTarget)){
+        menu.style.display = "";
+        trigger.setAttribute("aria-expanded","false");
+      }
+    });
+  });
+
+  /* ── Mobile menu focus trap ── */
+  var hbg = document.getElementById("fc-hbg");
+  var mm  = document.getElementById("fc-mm");
+  var mmx = document.getElementById("fc-mm-x");
+
+  function getFocusable(el){
+    return Array.from(el.querySelectorAll("a,button,input,[tabindex]:not([tabindex='-1'])"))
+      .filter(function(n){ return !n.disabled && n.offsetParent !== null; });
+  }
+  function openMM(){
+    if(!mm) return;
+    mm.style.display = "flex";
+    mm.style.flexDirection = "column";
+    document.body.style.overflow = "hidden";
+    if(hbg) hbg.setAttribute("aria-expanded","true");
+    var f = getFocusable(mm); if(f[0]) f[0].focus();
+  }
+  function closeMM(){
+    if(!mm) return;
+    mm.style.display = "";
+    document.body.style.overflow = "";
+    if(hbg){ hbg.setAttribute("aria-expanded","false"); hbg.focus(); }
+  }
+
+  if(hbg) hbg.addEventListener("click", function(){
+    mm && mm.style.display === "flex" ? closeMM() : openMM();
+  });
+  if(mmx) mmx.addEventListener("click", closeMM);
+
+  if(mm) mm.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeMM(); return; }
+    if(e.key === "Tab"){
+      var f = getFocusable(mm);
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){
+        e.preventDefault(); f[f.length-1].focus();
+      } else if(!e.shiftKey && document.activeElement === f[f.length-1]){
+        e.preventDefault(); f[0].focus();
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

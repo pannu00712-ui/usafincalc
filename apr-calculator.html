@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Calculate the true Annual Percentage Rate on any loan, including fees. Compare loan offers on an apples-to-apples basis." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/apr-calculator"/>
+<title>APR Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "APR Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/apr-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "APR Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/apr-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "APR Calculator — Coming Soon | USAFinCalc",
+  "description": "APR Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/apr-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1><span>APR Calculator</span></h1>
+  <p class="sub">Calculate the true Annual Percentage Rate on any loan, including fees. Compare loan offers on an apples-to-apples basis. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/auto-loan-calculator">Auto Loan Calculator</a></li><li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li><li><a href="/personal-loan-calculator">Personal Loan Calculator</a></li><li><a href="/credit-card-calculator">Credit Card Calculator</a></li><li><a href="/debt-payoff-calculator">Debt Payoff Calculator</a></li><li><a href="/amortization-calculator">Amortization Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="apr-guide">
+<h2>What This APR Calculator Does</h2>
+<p>The Annual Percentage Rate (APR) is the true annual cost of borrowing money, expressed as a percentage. Unlike a simple interest rate, APR includes fees, discount points, and other charges — making it the standardized metric lenders are legally required to disclose under the Truth in Lending Act (TILA). This calculator converts a nominal interest rate plus associated fees into the equivalent APR so you can make apples-to-apples comparisons between loan offers with different fee structures.</p>
+<p>A loan with a 6.5% rate and $3,000 in origination fees will have a higher APR than a 6.75% loan with no fees — but which is cheaper depends on how long you keep the loan. This calculator shows you both APR and break-even point.</p>
+<h2>How It Works</h2>
+<p>APR is calculated by finding the discount rate that equates the present value of all future payments to net loan proceeds (loan amount minus upfront fees):</p>
+<p><strong>Loan Amount − Fees = Σ [Payment / (1 + r/12)ᵗ]</strong></p>
+<p>This is essentially an internal rate of return (IRR) calculation. For mortgages, APR includes origination fees, discount points, and mortgage broker fees — but not title insurance, appraisal fees, or prepaids, which is why APR can still understate total upfront cost.</p>
+<h2>Key Concepts Explained</h2>
+<h3>APR vs. Interest Rate</h3>
+<p>The interest rate determines your monthly payment; APR determines the total loan cost including fees. A loan can have a lower interest rate but higher APR if it has substantial fees. For short holding periods, the lower-fee loan often wins; for long periods, the lower-rate loan typically wins even with higher upfront fees.</p>
+<h3>APR vs. APY</h3>
+<p>APR (for borrowing) does not compound within the year. APY (for savings) accounts for within-year compounding. A savings account advertising 5% APY has an effective daily rate that equals 5% over the full year — the periodic rate is slightly lower than 5% ÷ 365.</p>
+<h3>Discount Points</h3>
+<p>One discount point costs 1% of the loan amount and typically reduces the interest rate by 0.25%. Points are prepaid interest included in APR. Whether buying points makes sense depends entirely on how long you keep the loan — calculate the break-even (point cost ÷ monthly savings) to decide.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Always compare APRs, not just interest rates</strong> — lenders sometimes advertise low rates with high fees; APR forces an honest comparison.</li>
+<li><strong>Ask for the Loan Estimate</strong> — federal law requires lenders to provide a standardized Loan Estimate within 3 days of application, disclosing the APR alongside all fees.</li>
+<li><strong>Adjust for your expected hold period</strong> — APR assumes you keep the loan to term. If you'll sell or refinance in 5 years, run the actual cash flow math for that shorter horizon.</li>
+<li><strong>For credit cards, focus on carrying costs</strong> — if you pay in full monthly, APR is irrelevant. If you carry a balance, lower APR matters more than rewards.</li>
+<li><strong>Watch for rate changes on ARMs</strong> — adjustable-rate mortgage APRs are based on initial rates; after adjustment, your actual cost changes significantly.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What is a good APR for a personal loan?</h3><p class="faq-a">Personal loan APRs in 2024 range from about 6% for excellent credit to over 36% for poor credit. The Federal Reserve reports average rates around 12–13% for 24-month personal loans. Anything below 10% is generally considered good; above 20% is expensive and suggests exploring credit improvement or secured alternatives.</p></div>
+<div class="faq-item"><h3 class="faq-q">Does APR affect my monthly payment?</h3><p class="faq-a">No — your monthly payment is determined by your interest rate and loan term, not APR. APR includes upfront fees that don't change your payment. It's a cost-comparison tool. Use the interest rate (not APR) when calculating monthly payments.</p></div>
+<div class="faq-item"><h3 class="faq-q">Why is my mortgage APR higher than the interest rate?</h3><p class="faq-a">Mortgage APR includes origination fees, points, and certain closing costs spread over the loan life. On a $400,000 mortgage, $4,000 in fees adds about 0.05–0.10% to APR. If you paid 2 discount points ($8,000), the APR difference would be more noticeable — about 0.20–0.25% on a 30-year loan.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is 0% APR really free?</h3><p class="faq-a">0% promotional offers mean no interest during the promotional period — but read the fine print. Many cards will retroactively charge interest on the entire original balance if you don't pay it off completely before the period ends. Auto dealer 0% financing sometimes means forgoing a cash rebate that would have been worth more.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Once you know your APR, use the <a href="/mortgage-calculator-usa">Mortgage Calculator</a> for home loan costs, or the <a href="/auto-loan-calculator">Auto Loan Calculator</a> for car payments. The <a href="/debt-payoff-calculator">Debt Payoff Calculator</a> and <a href="/credit-card-calculator">Credit Card Calculator</a> help you build a strategy for paying down existing high-APR debt.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

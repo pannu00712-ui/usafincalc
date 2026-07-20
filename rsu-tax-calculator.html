@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="USAFinCalc Editorial Team" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RSU Tax Calculator 2026 — Find Your Real Withholding Gap</title>
+<meta content="Free RSU tax calculator. See your real marginal tax rate vs. the flat 22% your employer withholds, plus sell-vs-hold capital gains comparison." name="description"/>
+<meta content="rsu tax calculator, rsu withholding gap, restricted stock units tax, rsu vesting tax 2026, sell to cover rsu" name="keywords"/>
+<link href="https://usafincalc.com/rsu-tax-calculator" rel="canonical"/>
+<meta content="RSU Tax Calculator 2026 — Find Your Real Withholding Gap" property="og:title"/>
+<meta content="See your real marginal tax rate vs. the flat 22% your employer withholds on RSU vests." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/rsu-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="RSU Tax Calculator 2026 — Find Your Real Withholding Gap" name="twitter:title"/>
+<meta content="See your real marginal tax rate vs. the flat 22% your employer withholds on RSU vests." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;
+  --font:'Segoe UI',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#10b981;font-family:var(--mono);text-decoration:none}
+.hero{padding:48px 24px 24px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.22);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:18px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:10px 13px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:14px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sectionlbl{font-size:11px;color:var(--accent);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px;border-top:1px solid var(--border);padding-top:14px}
+.sectionlbl:first-child{margin-top:0;border-top:none;padding-top:0}
+.radio-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.radio-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:var(--font);font-size:13px;font-weight:600;padding:10px 8px;cursor:pointer;transition:all .15s;text-align:center}
+.radio-btn:hover{border-color:var(--accent)}
+.radio-btn.active{background:rgba(16,185,129,0.12);border-color:var(--accent);color:var(--accent)}
+.btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:.3px}
+.btn:hover{background:#059669}
+.btn:active{transform:scale(.98)}
+.net-card{border-radius:var(--r);padding:22px;text-align:center;margin-bottom:14px}
+.net-card.good{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22)}
+.net-card.gap{background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.22)}
+.nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:36px;font-weight:600;font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.na.good{color:var(--accent)}
+.na.gap{color:#f87171}
+.nm{font-size:12px;color:var(--muted);margin-top:8px;font-family:var(--mono);line-height:1.6}
+.nm span{color:var(--text)}
+.cards4{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.mc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px;text-align:center}
+.ml{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.mv{font-family:var(--mono);font-size:14px;font-weight:600}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.brows{display:flex;flex-direction:column;gap:8px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500}
+.divider{height:1px;background:var(--border);margin:8px 0}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px}
+@media(max-width:480px){.compare-grid{grid-template-columns:1fr}}
+.compare-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px}
+.compare-card .ml{margin-bottom:8px}
+.compare-card .mv{font-size:18px}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:280px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.faq{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.faq h2{font-size:20px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:340px;padding-top:10px}
+.intro{max-width:980px;margin:0 auto;padding:0 24px 8px}
+.intro p{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:14px;max-width:760px}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+footer a:hover{color:var(--accent)}
+.a11y-skip{position:absolute;left:-9999px;top:auto}
+.a11y-skip:focus{left:16px;top:16px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;font-weight:600;z-index:9999}
+
+input:focus-visible,select:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {"@type": "ImageObject", "url": "https://usafincalc.com/logo.png", "width": 200, "height": 60},
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "hello@usafincalc.com", "availableLanguage": "English"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"}, "query-input": "required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "RSU Tax Calculator 2026",
+  "url": "https://usafincalc.com/rsu-tax-calculator",
+  "isPartOf": {"@type": "WebSite", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "description": "Free RSU tax calculator. See your real marginal tax rate vs. the flat 22% your employer withholds, plus sell-vs-hold capital gains comparison."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usafincalc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tax Calculators", "item": "https://usafincalc.com/tax-calculator-usa"},
+    {"@type": "ListItem", "position": 3, "name": "RSU Tax Calculator", "item": "https://usafincalc.com/rsu-tax-calculator"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "RSU Tax Calculator 2026",
+  "description": "Free RSU tax calculator. See your real marginal tax rate vs. the flat 22% your employer withholds, plus sell-vs-hold capital gains comparison.",
+  "url": "https://usafincalc.com/rsu-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Why does my employer only withhold 22% on RSUs?", "acceptedAnswer": {"@type": "Answer", "text": "The IRS classifies RSU income as supplemental wages, which by default are withheld at a flat 22% federal rate (37% on the portion of a single vest exceeding $1 million), regardless of your actual tax bracket. If your combined salary and RSU income puts you in the 24%, 32%, or 35% bracket, the 22% withholding will not cover your real tax liability, creating a withholding gap you may owe at filing time."}},
+    {"@type": "Question", "name": "When are RSUs taxed — at grant, vesting, or sale?", "acceptedAnswer": {"@type": "Answer", "text": "RSUs are taxed as ordinary income at vesting, based on the fair market value of the shares on the vesting date — not at grant. If you hold the shares after vesting and the price changes before you sell, that additional gain or loss is taxed separately as a capital gain or loss when you sell."}},
+    {"@type": "Question", "name": "Should I sell my RSUs immediately or hold them?", "acceptedAnswer": {"@type": "Answer", "text": "Selling immediately at vesting avoids any additional capital gains tax since there has been no price change yet, and many financial planners recommend this to avoid overconcentration in a single company's stock. Holding for over a year before selling qualifies any further appreciation for long-term capital gains rates, which are lower than ordinary income rates, but exposes you to the stock's price risk in the meantime."}},
+    {"@type": "Question", "name": "What is sell-to-cover?", "acceptedAnswer": {"@type": "Answer", "text": "Sell-to-cover is when your employer automatically sells enough of your newly vested shares to pay the required tax withholding, and deposits the remaining shares into your account. It is the most common settlement method and requires no cash from you, but it does reduce your total share count."}},
+    {"@type": "Question", "name": "How do I avoid an unexpected tax bill from RSU vesting?", "acceptedAnswer": {"@type": "Answer", "text": "Estimate your true marginal tax rate (not the 22% withholding rate) using a calculator like this one, then either make a quarterly estimated tax payment for the shortfall or submit a new W-4 requesting additional withholding from your regular paycheck to cover the gap."}}
+  ]
+}
+</script>
+<meta content="2026-06-29" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge">USA 2026 • Withholding Gap Estimator</div>
+<h1>RSU Tax <span>Calculator</span></h1>
+<p class="hero-sub">Your employer withholds a flat 22% on vested RSUs — but your real tax rate is usually higher. See the gap before it becomes a surprise bill.</p>
+</div>
+<div class="intro">
+<p>When your RSUs vest, the IRS treats the value as ordinary income, and your employer withholds federal tax at a flat 22% supplemental rate (37% above $1M in a single vest). The problem: once that RSU income stacks on top of your regular salary, your real marginal tax rate is often 24%, 32%, or higher — meaning the 22% withholding doesn't cover what you actually owe. This calculator shows you that gap, plus what happens if you sell immediately versus hold for long-term capital gains.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">📈 Vesting Details</div>
+<label for="shares">Shares vesting</label>
+<input id="shares" min="0" oninput="calc()" step="1" type="number" value="500"/>
+<label for="fmv">Fair market value per share at vesting</label>
+<div class="pfx"><span>$</span><input id="fmv" min="0" oninput="calc()" step="1" type="number" value="80"/></div>
+<div class="sectionlbl">💼 Your Tax Situation</div>
+<label for="salary">Other annual income (salary, before this vest)</label>
+<div class="pfx"><span>$</span><input id="salary" min="0" oninput="calc()" step="1000" type="number" value="150000"/></div>
+<label for="status">Filing status</label>
+<select id="status" onchange="calc()">
+<option value="single">Single</option>
+<option value="mfj">Married filing jointly</option>
+<option value="hoh">Head of household</option>
+</select>
+<label for="state-rate">State supplemental tax rate (0 if no state tax)</label>
+<div class="pfx"><input id="state-rate" min="0" oninput="calc()" step="0.1" type="number" value="5"/><span style="left:auto;right:12px">%</span></div>
+<div class="sectionlbl">📊 Sell Strategy</div>
+<div class="radio-row">
+<button class="radio-btn active" data-mode="sell" onclick="setMode('sell')" type="button">Sell Immediately</button>
+<button class="radio-btn" data-mode="hold" onclick="setMode('hold')" type="button">Hold &gt; 1 Year</button>
+</div>
+<div id="hold-extra" style="display:none">
+<label for="future-price">Expected future price per share</label>
+<div class="pfx"><span>$</span><input id="future-price" min="0" oninput="calc()" step="1" type="number" value="100"/></div>
+</div>
+<button class="btn" onclick="calc()">Calculate My RSU Tax →</button>
+</div>
+<div id="result-col">
+<div class="placeholder">
+<div style="font-size:36px;opacity:.35">📈</div>
+<div>Enter your vesting details</div>
+<div style="font-size:12px;font-family:var(--mono);color:var(--muted)">Withholding gap • Net proceeds</div>
+</div>
+</div>
+</div>
+</main>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why does my employer only withhold 22% on RSUs?</div>
+<div class="faq-a">The IRS classifies RSU income as supplemental wages, which by default are withheld at a flat 22% federal rate (37% on the portion of a single vest exceeding $1 million), regardless of your actual tax bracket. If your combined salary and RSU income puts you in the 24%, 32%, or 35% bracket, the 22% withholding will not cover your real tax liability, creating a withholding gap you may owe at filing time.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">When are RSUs taxed — at grant, vesting, or sale?</div>
+<div class="faq-a">RSUs are taxed as ordinary income at vesting, based on the fair market value of the shares on the vesting date — not at grant. If you hold the shares after vesting and the price changes before you sell, that additional gain or loss is taxed separately as a capital gain or loss when you sell.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Should I sell my RSUs immediately or hold them?</div>
+<div class="faq-a">Selling immediately at vesting avoids any additional capital gains tax since there has been no price change yet, and many financial planners recommend this to avoid overconcentration in a single company's stock. Holding for over a year before selling qualifies any further appreciation for long-term capital gains rates, which are lower than ordinary income rates, but exposes you to the stock's price risk in the meantime.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is sell-to-cover?</div>
+<div class="faq-a">Sell-to-cover is when your employer automatically sells enough of your newly vested shares to pay the required tax withholding, and deposits the remaining shares into your account. It is the most common settlement method and requires no cash from you, but it does reduce your total share count.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I avoid an unexpected tax bill from RSU vesting?</div>
+<div class="faq-a">Estimate your true marginal tax rate (not the 22% withholding rate) using a calculator like this one, then either make a quarterly estimated tax payment for the shortfall or submit a new W-4 requesting additional withholding from your regular paycheck to cover the gap.</div>
+</div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li><li><a href="/bonus-tax-calculator">Bonus Tax Calculator</a></li><li><a href="/tax-bracket-calculator">Tax Bracket Calculator</a></li><li><a href="/w4-calculator">W-4 Withholding Calculator</a></li><li><a href="/income-tax-calculator">Income Tax Calculator</a></li><li><a href="/stock-return-calculator-usa">Stock Return Calculator</a></li>
+</ul>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+const BRACKETS = {
+  single: [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:    [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+  hoh:    [[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]]
+};
+const STD_DED = {single:15000,mfj:30000,hoh:22500};
+const SS_WAGE_BASE = 184500;
+const SS_RATE = 0.062;
+const MEDICARE_RATE = 0.0145;
+const ADDL_MEDICARE_RATE = 0.009;
+const ADDL_MEDICARE_THRESHOLD = {single:200000,mfj:250000,hoh:200000};
+const RSU_WITHHOLDING_RATE = 0.22;
+const RSU_WITHHOLDING_RATE_HIGH = 0.37;
+const RSU_HIGH_THRESHOLD = 1000000;
+
+let mode = 'sell';
+
+function setMode(m) {
+  mode = m;
+  document.querySelectorAll('.radio-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === m));
+  document.getElementById('hold-extra').style.display = m === 'hold' ? 'block' : 'none';
+  calc();
+}
+
+function calcBrackets(income, brackets) {
+  let tax = 0, prev = 0;
+  for (const [top, rate] of brackets) {
+    if (income <= prev) break;
+    const ceiling = top === Infinity ? income : Math.min(income, top);
+    tax += (ceiling - prev) * rate;
+    prev = ceiling;
+  }
+  return tax;
+}
+
+function fmt(n) { return '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+function pct(n) { return n.toFixed(1) + '%'; }
+
+function calc() {
+  const shares = +document.getElementById('shares').value || 0;
+  const fmv = +document.getElementById('fmv').value || 0;
+  const otherIncome = +document.getElementById('salary').value || 0;
+  const status = document.getElementById('status').value;
+  const stateRate = (+document.getElementById('state-rate').value || 0) / 100;
+  const futurePrice = +document.getElementById('future-price').value || fmv;
+
+  const vestValue = shares * fmv;
+  const stdDed = STD_DED[status];
+  const brackets = BRACKETS[status];
+
+  // Real marginal federal tax: tax on (other + vest) minus tax on (other alone), against taxable income after std deduction
+  const taxableWithout = Math.max(0, otherIncome - stdDed);
+  const taxableWith = Math.max(0, otherIncome + vestValue - stdDed);
+  const taxWithout = calcBrackets(taxableWithout, brackets);
+  const taxWith = calcBrackets(taxableWith, brackets);
+  const realFederalTax = taxWith - taxWithout;
+  const realMarginalRate = vestValue > 0 ? (realFederalTax / vestValue) : 0;
+
+  // What employer actually withholds (flat supplemental rate)
+  let withheldFederal;
+  if (vestValue > RSU_HIGH_THRESHOLD) {
+    withheldFederal = RSU_HIGH_THRESHOLD * RSU_WITHHOLDING_RATE + (vestValue - RSU_HIGH_THRESHOLD) * RSU_WITHHOLDING_RATE_HIGH;
+  } else {
+    withheldFederal = vestValue * RSU_WITHHOLDING_RATE;
+  }
+
+  // FICA: SS only on remaining wage base room, Medicare always applies, plus additional medicare above threshold
+  const ssRoom = Math.max(0, SS_WAGE_BASE - otherIncome);
+  const ssTaxable = Math.min(vestValue, ssRoom);
+  const ssTax = ssTaxable * SS_RATE;
+  const medicareTax = vestValue * MEDICARE_RATE;
+  const addlThreshold = ADDL_MEDICARE_THRESHOLD[status];
+  const totalWageForAddl = otherIncome + vestValue;
+  const addlMedicareBase = Math.max(0, Math.min(vestValue, totalWageForAddl - addlThreshold));
+  const addlMedicareTax = addlMedicareBase * ADDL_MEDICARE_RATE;
+  const ficaTax = ssTax + medicareTax + addlMedicareTax;
+
+  const stateTax = vestValue * stateRate;
+
+  const realTotalTax = realFederalTax + ficaTax + stateTax;
+  const withheldTotal = withheldFederal + ficaTax + stateTax; // FICA & state assumed withheld accurately; federal supplemental is the gap driver
+  const gap = realTotalTax - withheldTotal;
+
+  const netAfterRealTax = vestValue - realTotalTax;
+
+  // Sell vs hold
+  let holdResultHtml = '';
+  if (mode === 'hold') {
+    const gain = (futurePrice - fmv) * shares;
+    const ltcgRate = realMarginalRate >= 0.35 ? 0.20 : (taxableWith > (status === 'mfj' ? 96950 : 48475) ? 0.15 : 0);
+    const capGainsTax = Math.max(0, gain) * ltcgRate;
+    const netAfterHold = netAfterRealTax + gain - capGainsTax;
+    holdResultHtml = `
+      <div class="compare-grid">
+        <div class="compare-card">
+          <div class="ml">If sold at vest</div>
+          <div class="mv" style="color:#a78bfa">${fmt(netAfterRealTax)}</div>
+        </div>
+        <div class="compare-card">
+          <div class="ml">If held & sold later</div>
+          <div class="mv" style="color:#10b981">${fmt(netAfterHold)}</div>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--muted);line-height:1.7">Holding assumes the price moves from ${fmt(fmv)} to ${fmt(futurePrice)}/share and you sell after 12+ months, taxing the ${fmt(gain)} gain at the long-term capital gains rate (${pct(ltcgRate*100)}). This ignores price risk while you hold — the stock could also fall.</p>`;
+  }
+
+  const gapIsOwed = gap > 0;
+
+  document.getElementById('result-col').innerHTML = `
+    <div class="net-card ${gapIsOwed ? 'gap' : 'good'}">
+      <div class="nl">${gapIsOwed ? 'Withholding gap — you may owe' : 'You are adequately withheld'}</div>
+      <div class="na ${gapIsOwed ? 'gap' : 'good'}">${fmt(gap)}</div>
+      <div class="nm">Real marginal rate: <span>${pct(realMarginalRate*100)}</span> vs. 22% flat withholding</div>
+    </div>
+    <div class="cards4">
+      <div class="mc"><div class="ml">Vest value</div><div class="mv">${fmt(vestValue)}</div></div>
+      <div class="mc"><div class="ml">Net after real tax</div><div class="mv" style="color:#10b981">${fmt(netAfterRealTax)}</div></div>
+    </div>
+    ${mode === 'hold' ? holdResultHtml : ''}
+    <div class="bcard">
+      <div class="bt">🧾 Tax breakdown on this vest</div>
+      <div class="brows">
+        <div class="br"><div class="blbl">Real federal income tax (marginal)</div><div class="ba">${fmt(realFederalTax)}</div></div>
+        <div class="br"><div class="blbl">Social Security (6.2%)</div><div class="ba">${fmt(ssTax)}</div></div>
+        <div class="br"><div class="blbl">Medicare (1.45% + surtax)</div><div class="ba">${fmt(medicareTax + addlMedicareTax)}</div></div>
+        <div class="br"><div class="blbl">State tax (${pct(stateRate*100)})</div><div class="ba">${fmt(stateTax)}</div></div>
+        <div class="divider"></div>
+        <div class="br"><div class="blbl" style="color:var(--text)">Total real tax owed</div><div class="ba" style="color:var(--text)">${fmt(realTotalTax)}</div></div>
+        <div class="br"><div class="blbl">Employer withheld (22% flat + FICA + state)</div><div class="ba" style="color:#a78bfa">${fmt(withheldTotal)}</div></div>
+        <div class="br"><div class="blbl" style="color:var(--text);font-weight:600">${gapIsOwed ? 'Shortfall to set aside' : 'Surplus withheld'}</div><div class="ba" style="color:${gapIsOwed ? '#f87171' : '#10b981'};font-size:14px;font-weight:600">${fmt(gap)}</div></div>
+      </div>
+    </div>`;
+}
+
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 29, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Net Pay Calculator 2026 — Calculate Your Take-Home Paycheck</title>
+<meta content="Calculate net pay from any paycheck's gross amount. See federal tax, state tax, FICA, and total deductions instantly — accurate 2026 per-check estimate." name="description"/>
+<meta content="net pay calculator, paycheck net pay, take home paycheck calculator, net pay estimator, payroll deductions calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/net-pay-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Net Pay Calculator 2026 — Calculate Your Take-Home Paycheck" property="og:title"/>
+<meta content="Calculate net pay from any paycheck's gross amount, including federal tax, state tax, FICA, and deductions." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/net-pay-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Net Pay Calculator 2026 — Calculate Your Take-Home Paycheck" name="twitter:title"/>
+<meta content="Calculate net pay from any paycheck's gross amount, including federal tax, state tax, FICA, and deductions." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--fica:#a78bfa;--pretax:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:640px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Net Pay Calculator 2026 — Calculate Your Take-Home Paycheck",
+  "url": "https://usafincalc.com/net-pay-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Net Pay Calculator",
+      "item": "https://usafincalc.com/net-pay-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Net Pay Calculator 2026",
+  "description": "Calculate net pay from a paycheck's gross amount, including federal tax, state tax, FICA, and deductions.",
+  "url": "https://usafincalc.com/net-pay-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What's the difference between this and the Take-Home Pay Calculator?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator starts from a single paycheck's gross amount; the Take-Home Pay Calculator starts from your fixed annual salary."}},
+    {"@type": "Question", "name": "Why does my net pay estimate change if I change my pay frequency?", "acceptedAnswer": {"@type": "Answer", "text": "Pay frequency affects how the calculator annualizes your income for tax bracket purposes, changing the effective tax rate applied."}},
+    {"@type": "Question", "name": "Does net pay include overtime?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as long as you include your overtime earnings in the gross pay figure you enter."}},
+    {"@type": "Question", "name": "What counts as a pre-tax deduction?", "acceptedAnswer": {"@type": "Answer", "text": "Common pre-tax deductions include 401(k) contributions, health insurance premiums, and HSA/FSA contributions, which reduce taxable income."}},
+    {"@type": "Question", "name": "Is this calculator accurate for salaried employees too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 enter your regular per-check gross amount and it works the same way as it does for hourly workers."}}
+  ]
+}
+</script>
+<meta name="date" content="2026-06-30">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 IRS brackets + FICA rates</div>
+  <h1>Net Pay <span>Calculator</span></h1>
+  <p class="hero-sub">Enter any paycheck's gross amount and see exactly what you'll take home after federal tax, state tax, FICA, and your own deductions.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">This Paycheck's Details</div>
+    <label for="grossCheckNP">Gross Pay This Paycheck</label>
+    <div class="pfx"><span>$</span><input id="grossCheckNP" oninput="calcNetPay()" type="number" value="2500" min="0" step="10"/></div>
+    <label for="payFreqNP">Pay Frequency (for annualizing tax)</label>
+    <select id="payFreqNP" onchange="calcNetPay()">
+      <option value="52">Weekly (52/year)</option>
+      <option selected value="26">Biweekly (26/year)</option>
+      <option value="24">Semi-monthly (24/year)</option>
+      <option value="12">Monthly (12/year)</option>
+    </select>
+    <label for="filingNP">Filing Status</label>
+    <select id="filingNP" onchange="calcNetPay()">
+      <option value="single">Single</option>
+      <option value="mfj">Married Filing Jointly</option>
+      <option value="mfs">Married Filing Separately</option>
+      <option value="hoh">Head of Household</option>
+    </select>
+    <label for="stateRateNP">State Tax Rate (approx., 0 if none)</label>
+    <div class="sfx"><input id="stateRateNP" oninput="calcNetPay()" type="number" value="5" step="0.1" min="0" max="13.3"/><span>%</span></div>
+    <label for="preTaxNP">Pre-Tax Deductions This Check (401k, insurance)</label>
+    <div class="pfx"><span>$</span><input id="preTaxNP" oninput="calcNetPay()" type="number" value="100" min="0" step="10"/></div>
+    <label for="postTaxNP">Post-Tax Deductions This Check (Roth 401k, garnishments)</label>
+    <div class="pfx"><span>$</span><input id="postTaxNP" oninput="calcNetPay()" type="number" value="0" min="0" step="10"/></div>
+  </div>
+  <div class="card">
+    <div class="ct">Your Net Pay</div>
+    <div class="res-main">
+      <div class="res-label">Net Pay This Paycheck</div>
+      <div class="res-val" id="netCheckNP">—</div>
+      <div class="res-sub" id="netCheckSubNP">calculating…</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Gross This Check</div><div class="bk-v" id="grossDisplayNP" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Federal Tax</div><div class="bk-v" id="fedCheckNP" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">State Tax</div><div class="bk-v" id="stateCheckNP" style="color:var(--state)">—</div></div>
+      <div class="bk"><div class="bk-l">FICA</div><div class="bk-v" id="ficaCheckNP" style="color:var(--fica)">—</div></div>
+      <div class="bk"><div class="bk-l">Total Deductions</div><div class="bk-v" id="totalDedNP" style="color:var(--muted)">—</div></div>
+      <div class="bk"><div class="bk-l">Annualized Net</div><div class="bk-v" id="annualNetNP" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator estimates tax by annualizing your entered paycheck amount — the standard method payroll systems use. Your actual withholding may differ slightly based on your specific W-4 elections and your employer's payroll software. For an annual-salary-based estimate instead, try the <a href="/take-home-pay-calculator" style="color:var(--accent)">Take-Home Pay Calculator</a>.</div>
+<div class="content-block">
+
+<h2>What This Net Pay Calculator Does</h2>
+<p>Net pay is the amount that actually deposits into your bank account after every tax and deduction has been subtracted from your gross paycheck. This calculator works directly from a specific paycheck's gross amount — rather than your annual salary — making it ideal for hourly workers whose gross pay varies from check to check, or for anyone who wants to verify a specific paystub is correct.</p>
+<p>You enter the gross amount for a single paycheck, your pay frequency (so the calculator can correctly annualize your income for tax bracket purposes), your filing status, an estimated state tax rate, and any pre-tax or post-tax deductions taken from that check. The calculator then shows exactly how much of that paycheck is take-home, and projects what your net pay would total for the year if every check looked the same.</p>
+<p>This tool is especially useful for gig workers, hourly employees with variable schedules, or anyone who just received a paystub and wants a quick second opinion on whether the withholding looks right.</p>
+
+<h2>How It Works</h2>
+<p>Because federal and state income tax are calculated on an annual basis even though you're paid per check, the calculator "annualizes" your entered gross paycheck amount — multiplying it by your pay frequency to estimate your yearly income — then calculates the tax on that annualized figure and divides the result back down to a per-check amount. This mirrors how payroll systems actually withhold tax throughout the year: the same logic is applied to every check, assuming consistent pay.</p>
+<p>Pre-tax deductions (like a traditional 401(k) contribution or health insurance premium) are subtracted before federal and state tax is calculated, reducing your taxable income. Post-tax deductions (like Roth 401(k) contributions, wage garnishments, or after-tax insurance products) are subtracted after tax is calculated and don't reduce your taxable income at all.</p>
+
+<h2>Formula &amp; Methodology</h2>
+<p><strong>Net Pay = Gross Pay − Federal Tax − State Tax − FICA − Pre-Tax Deductions − Post-Tax Deductions</strong></p>
+<p>Federal tax per check is calculated as: <strong>(Annualized Taxable Income run through 2026 brackets) ÷ Pay Frequency</strong>, where annualized taxable income is (Gross Pay × Frequency) − (Pre-Tax Deductions × Frequency) − Standard Deduction. FICA applies 6.2% Social Security (up to the annual wage base of $176,100 for 2026 projections) and 1.45% Medicare (no cap) directly to each check's gross pay, since FICA doesn't use annualized brackets the way income tax does.</p>
+
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Use your most typical paycheck amount</strong> — if your hours vary, run the calculator with a few different gross amounts to see the range of net pay you might expect, rather than relying on a single unusual week.</li>
+<li><strong>Watch your Social Security cap late in the year</strong> — once your year-to-date wages exceed the Social Security wage base, that 6.2% portion of FICA stops being withheld for the rest of the year, which is why late-year paychecks for high earners sometimes look larger.</li>
+<li><strong>Separate pre-tax and post-tax deductions correctly</strong> — mixing these up in your inputs will throw off your tax calculation, since only pre-tax deductions reduce your taxable income.</li>
+<li><strong>Compare against your actual paystub regularly</strong> — small discrepancies are normal due to rounding and exact W-4 elections, but large differences may indicate a payroll error worth flagging to HR.</li>
+</ul>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Entering an annual salary instead of a per-check gross amount.</strong> This calculator is built around a single paycheck's gross figure — if you want to start from an annual salary, use the Take-Home Pay Calculator instead.</li>
+<li><strong>Forgetting that bonuses are often withheld differently.</strong> Many employers withhold federal tax on bonus checks at a flat 22% supplemental rate rather than running it through your regular annualized calculation, which can make a bonus paycheck's net amount look different than this calculator's estimate.</li>
+<li><strong>Not accounting for the Social Security wage base correctly.</strong> If your total annual income is close to or above $176,100, your FICA withholding will drop partway through the year — a detail easy to overlook when estimating a single check in isolation.</li>
+<li><strong>Assuming net pay is constant across all checks.</strong> If your gross pay varies (common for hourly, commission, or tipped workers), your net pay will vary correspondingly — plan your budget around your typical or minimum expected check, not your best one.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-q">What's the difference between this and the Take-Home Pay Calculator?</div><div class="faq-a">This calculator starts from a single paycheck's gross amount, which is ideal if your pay varies. The Take-Home Pay Calculator starts from your fixed annual salary. Both use the same underlying tax logic, just anchored to different inputs.</div></div>
+<div class="faq-item"><div class="faq-q">Why does my net pay estimate change if I change my pay frequency?</div><div class="faq-a">Pay frequency affects how the calculator annualizes your income for tax bracket purposes — a $2,000 biweekly check annualizes to $52,000, while the same $2,000 paid monthly annualizes to $24,000, producing very different effective tax rates.</div></div>
+<div class="faq-item"><div class="faq-q">Does net pay include overtime?</div><div class="faq-a">Yes, as long as you include your overtime earnings in the gross pay figure you enter. This calculator doesn't separate regular and overtime pay — it treats your entered amount as your total gross for the period.</div></div>
+<div class="faq-item"><div class="faq-q">Why is FICA withheld even in a year I might get a big tax refund?</div><div class="faq-a">FICA (Social Security and Medicare) is a separate payroll tax that funds specific federal programs — it isn't part of your federal income tax liability and isn't affected by your refund or amount owed at filing time.</div></div>
+<div class="faq-item"><div class="faq-q">What counts as a pre-tax deduction?</div><div class="faq-a">Common pre-tax deductions include traditional 401(k) or 403(b) contributions, health insurance premiums, HSA and FSA contributions, and certain other employer-sponsored benefit plans. These reduce your taxable income before federal and (usually) state tax is calculated.</div></div>
+<div class="faq-item"><div class="faq-q">Is this calculator accurate for salaried employees too?</div><div class="faq-a">Yes — simply enter your regular per-check gross amount (annual salary divided by number of pay periods) and it will work the same way as it does for hourly workers.</div></div>
+</div>
+
+<h2>Net Pay Across Different Life Situations</h2>
+<p>Net pay calculations look different depending on your work situation. Hourly workers with variable schedules should run this calculator with a few different gross amounts — a typical week, a slow week, and a busy week — to understand the realistic range of take-home pay they can expect, rather than budgeting off a single best-case number. Salaried employees generally see a consistent net pay figure each period, aside from occasional changes to benefit elections during open enrollment or a mid-year raise.</p>
+<p>Workers with multiple jobs face a particular wrinkle: each employer withholds independently based on what that specific job pays, without knowledge of your other income. This can lead to underwithholding across your combined income even if each individual paycheck's withholding looks correct in isolation — a good reason to periodically check your combined withholding against your actual expected tax liability using a full annual calculator.</p>
+
+<h2>Why Net Pay Matters More Than Gross Pay for Budgeting</h2>
+<p>It's tempting to budget around your gross salary, especially when comparing job offers, but net pay is what actually determines your spending power. Two job offers with identical gross salaries can produce meaningfully different net pay if they're in different states with different income tax rates, or if one offer includes more generous pre-tax benefit options that lower your taxable income. Building your monthly budget, savings targets, and debt repayment plan around your realistic net pay — not your gross salary — avoids the common trap of overcommitting based on a number you'll never actually see in your bank account.</p>
+
+<h2>Related Calculators</h2>
+<p>If you're working from an annual salary instead of a single paycheck, use the <a href="/take-home-pay-calculator">Take-Home Pay Calculator</a> or the more detailed <a href="/paycheck-calculator">Paycheck Calculator</a>. To calculate your gross pay from hours worked first, try the <a href="/gross-pay-calculator">Gross Pay Calculator</a>. For a full annual tax liability estimate with more deduction options, use the <a href="/income-tax-calculator">Income Tax Calculator</a> or <a href="/tax-calculator-usa">Tax Calculator</a>. To fine-tune your W-4 so your withholding matches your actual tax bill, visit the <a href="/w4-calculator">W-4 Withholding Calculator</a>.</p>
+
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+const BRACKETS = {
+  single: [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:    [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+  mfs:    [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]],
+  hoh:    [[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]]
+};
+const STD_DED = {single:15000,mfj:30000,mfs:15000,hoh:22500};
+function calcFedTax(income, status){
+  const brackets = BRACKETS[status];
+  let tax = 0, prev = 0;
+  for (const [top, rate] of brackets){
+    if (income <= prev) break;
+    const ceiling = top === Infinity ? income : Math.min(income, top);
+    tax += (ceiling - prev) * rate;
+    prev = ceiling;
+  }
+  return tax;
+}
+function calcNetPay(){
+  var grossCheck = parseFloat(document.getElementById('grossCheckNP').value)||0;
+  var freq = parseFloat(document.getElementById('payFreqNP').value)||26;
+  var status = document.getElementById('filingNP').value;
+  var stateRatePct = parseFloat(document.getElementById('stateRateNP').value)/100||0;
+  var preTax = parseFloat(document.getElementById('preTaxNP').value)||0;
+  var postTax = parseFloat(document.getElementById('postTaxNP').value)||0;
+
+  var annualGross = grossCheck * freq;
+  var annualPreTax = preTax * freq;
+  var stdDed = STD_DED[status];
+
+  var fedTaxableAnnual = Math.max(0, annualGross - annualPreTax - stdDed);
+  var annualFed = calcFedTax(fedTaxableAnnual, status);
+  var fedCheck = annualFed / freq;
+
+  var stateCheck = Math.max(0, grossCheck - preTax) * stateRatePct;
+
+  var ssWageBase = 176100;
+  var ssCheck = (annualGross <= ssWageBase) ? (grossCheck * 0.062) : Math.max(0, (ssWageBase - (annualGross - grossCheck)) * 0.062);
+  ssCheck = Math.max(0, ssCheck);
+  var medicareCheck = grossCheck * 0.0145;
+  var ficaCheck = ssCheck + medicareCheck;
+
+  var totalDedCheck = fedCheck + stateCheck + ficaCheck + preTax + postTax;
+  var netCheck = grossCheck - fedCheck - stateCheck - ficaCheck - preTax - postTax;
+
+  document.getElementById('netCheckNP').textContent = fmt(netCheck);
+  document.getElementById('netCheckSubNP').textContent = 'after all deductions';
+  document.getElementById('grossDisplayNP').textContent = fmt(grossCheck);
+  document.getElementById('fedCheckNP').textContent = fmt(fedCheck);
+  document.getElementById('stateCheckNP').textContent = stateRatePct===0 ? '$0 (none)' : fmt(stateCheck);
+  document.getElementById('ficaCheckNP').textContent = fmt(ficaCheck);
+  document.getElementById('totalDedNP').textContent = fmt(totalDedCheck);
+  document.getElementById('annualNetNP').textContent = fmt(netCheck * freq);
+}
+calcNetPay();
+
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">2026-06-30</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

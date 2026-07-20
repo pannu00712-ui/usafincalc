@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock & Investment Calculators (2026) – Average, Profit, Future Value</title>
+    <meta name="description" content="Calculate stock average cost basis, stock profit/loss, and future value of investments. Essential tools for investors." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="stock investments calculator, stock investment calculators, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/stock-investment-calculators" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Stock & Investment Calculators (2026) – Average, Profit, Future Value" property="og:title"/>
+<meta content="Calculate stock average cost basis, stock profit/loss, and future value of investments. Essential tools for investors." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/stock-investment-calculators" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Stock & Investment Calculators (2026) – Average, Profit, Future Value" name="twitter:title"/>
+<meta content="Calculate stock average cost basis, stock profit/loss, and future value of investments. Essential tools for investors." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>S</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .tabs {
+            display: flex;
+            gap: 4px;
+            background: var(--bg3);
+            border-radius: var(--r);
+            padding: 4px;
+            margin-bottom: 24px;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+        }
+        .tab-btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 10px 16px;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-family: var(--font);
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: background .2s, color .2s;
+        }
+        .tab-btn:hover {
+            color: var(--text);
+            background: rgba(255,255,255,0.04);
+        }
+        .tab-btn.active {
+            background: var(--accent);
+            color: #04140d;
+        }
+        .tab-content {
+            display: none;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 14px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 34px;
+            font-weight: 700;
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-val.positive {
+            color: var(--accent);
+        }
+        .res-val.negative {
+            color: var(--fed);
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .btn-add {
+            background: var(--accent);
+            border: none;
+            color: #04140d;
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: opacity .2s;
+            width: 100%;
+            margin-top: 4px;
+        }
+        .btn-add:hover {
+            opacity: 0.8;
+        }
+        .btn-remove {
+            background: transparent;
+            border: 1px solid var(--border2);
+            color: var(--fed);
+            font-family: var(--font);
+            font-size: 12px;
+            padding: 4px 12px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s;
+        }
+        .btn-remove:hover {
+            border-color: var(--fed);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 20px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .trade-item {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 12px;
+            margin-bottom: 8px;
+            display: grid;
+            grid-template-columns: 1fr 1fr auto;
+            gap: 8px;
+            align-items: end;
+        }
+        .trade-item .field {
+            margin-bottom: 0;
+        }
+        .trade-item label {
+            font-size: 11px;
+            margin-bottom: 2px;
+        }
+        .trade-item input {
+            padding: 6px 10px;
+            font-size: 13px;
+        }
+        .trade-item .btn-remove {
+            align-self: center;
+            padding: 6px 12px;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .status-bad {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--fed);
+        }
+        .grid3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .timeline {
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: var(--mono);
+            font-size: 12px;
+        }
+        .timeline::-webkit-scrollbar {
+            width: 6px;
+        }
+        .timeline::-webkit-scrollbar-track {
+            background: var(--bg3);
+            border-radius: 3px;
+        }
+        .timeline::-webkit-scrollbar-thumb {
+            background: var(--border2);
+            border-radius: 3px;
+        }
+        .timeline-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-row:last-child {
+            border-bottom: none;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Stock & Investment Calculators (2026) – Average, Profit, Future Value",
+  "url": "https://usafincalc.com/stock-investment-calculators",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stock & Investment Calculators (2026) – Average, Profit, Future Value",
+      "item": "https://usafincalc.com/stock-investment-calculators"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Stock & Investment Calculators (2026) – Average, Profit, Future Value",
+  "description": "Calculate stock average cost basis, stock profit/loss, and future value of investments. Essential tools for investors.",
+  "url": "https://usafincalc.com/stock-investment-calculators",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">S</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 investment tools</div>
+        <h1>Stock &amp; Investment <span>Calculators</span></h1>
+        <p class="hero-sub">Three essential tools for investors: calculate your average stock cost basis, profit/loss on trades, and future value of investments with compound growth.</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs" role="tablist">
+        <button class="tab-btn active" role="tab" data-tab="tab1" onclick="switchTab('tab1')">📊 Stock Average</button>
+        <button class="tab-btn" role="tab" data-tab="tab2" onclick="switchTab('tab2')">💰 Stock Profit</button>
+        <button class="tab-btn" role="tab" data-tab="tab3" onclick="switchTab('tab3')">📈 Future Value</button>
+    </div>
+
+    <!-- ===== TAB 1: STOCK AVERAGE CALCULATOR ===== -->
+    <div id="tab1" class="tab-content active">
+        <form id="avgForm" novalidate>
+            <div class="main-grid">
+                <div>
+                    <div class="card">
+                        <div class="ct">Your Stock Purchases</div>
+                        <div id="purchaseList"></div>
+                        <button type="button" class="btn-add" onclick="addPurchase()">+ Add Purchase</button>
+                        <div class="btn-row" style="margin-top:10px;">
+                            <button type="reset" class="btn-reset" onclick="resetAvg()">Reset</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Quick Presets</div>
+                        <div class="grid2">
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadAvgPreset('dca')">DCA Example</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadAvgPreset('lump')">Lump Sum</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadAvgPreset('multiple')">Multiple Buys</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="ct">Average Cost Basis</div>
+                        <div class="res-main">
+                            <div class="res-label">Average Cost Per Share</div>
+                            <div class="res-val positive" id="avgCostPerShare">$0.00</div>
+                            <div class="res-sub" id="avgSub">based on your purchases</div>
+                        </div>
+                        <div class="grid4">
+                            <div class="bk"><div class="bk-l">Total Shares</div><div class="bk-v" id="avgTotalShares">0</div></div>
+                            <div class="bk"><div class="bk-l">Total Cost</div><div class="bk-v" id="avgTotalCost">$0</div></div>
+                            <div class="bk"><div class="bk-l">Current Price</div><div class="bk-v" id="avgCurrentPrice">$0</div></div>
+                            <div class="bk"><div class="bk-l">Current Value</div><div class="bk-v" id="avgCurrentValue">$0</div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Profit/Loss at Current Price</div>
+                        <div class="grid3">
+                            <div class="bk"><div class="bk-l">Total Gain/Loss</div><div class="bk-v" id="avgGainLoss">$0</div></div>
+                            <div class="bk"><div class="bk-l">Gain/Loss %</div><div class="bk-v" id="avgGainLossPct">0%</div></div>
+                            <div class="bk"><div class="bk-l">Status</div><div class="bk-v" id="avgStatus" style="font-size:13px;">—</div></div>
+                        </div>
+                        <div class="field" style="margin-top:10px;">
+                            <label for="avgCurrentPriceInput">Current Market Price</label>
+                            <div class="pfx"><span>$</span><input type="number" id="avgCurrentPriceInput" value="50" min="0" step="0.01" oninput="calculateAvg()" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- ===== TAB 2: STOCK PROFIT CALCULATOR ===== -->
+    <div id="tab2" class="tab-content">
+        <form id="profitForm" novalidate>
+            <div class="main-grid">
+                <div>
+                    <div class="card">
+                        <div class="ct">Trade Details</div>
+                        <div class="field">
+                            <label for="buyPrice">Buy Price (per share)</label>
+                            <div class="pfx"><span>$</span><input type="number" id="buyPrice" value="45.00" min="0" step="0.01" oninput="calculateProfit()" /></div>
+                        </div>
+                        <div class="field">
+                            <label for="sellPrice">Sell Price (per share)</label>
+                            <div class="pfx"><span>$</span><input type="number" id="sellPrice" value="52.50" min="0" step="0.01" oninput="calculateProfit()" /></div>
+                        </div>
+                        <div class="field">
+                            <label for="sharesTraded">Number of Shares</label>
+                            <input type="number" id="sharesTraded" value="100" min="0" step="1" oninput="calculateProfit()" />
+                        </div>
+                        <div class="field">
+                            <label for="commission">Commission per Trade</label>
+                            <div class="pfx"><span>$</span><input type="number" id="commission" value="0" min="0" step="0.5" oninput="calculateProfit()" /></div>
+                            <div class="hint">Total commission for both buy and sell.</div>
+                        </div>
+                        <div class="btn-row">
+                            <button type="reset" class="btn-reset" onclick="resetProfit()">Reset</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Quick Presets</div>
+                        <div class="grid2">
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadProfitPreset('win')">Winner (+15%)</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadProfitPreset('loss')">Loser (-20%)</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadProfitPreset('break')">Break Even</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="ct">Profit / Loss Summary</div>
+                        <div class="res-main">
+                            <div class="res-label">Total Profit / Loss</div>
+                            <div class="res-val positive" id="profitTotal">$750.00</div>
+                            <div class="res-sub" id="profitSub">on 100 shares</div>
+                        </div>
+                        <div class="grid4">
+                            <div class="bk"><div class="bk-l">Total Buy Cost</div><div class="bk-v" id="profitBuyCost">$4,500</div></div>
+                            <div class="bk"><div class="bk-l">Total Sell Value</div><div class="bk-v" id="profitSellValue">$5,250</div></div>
+                            <div class="bk"><div class="bk-l">Gain/Loss %</div><div class="bk-v" id="profitPct">16.67%</div></div>
+                            <div class="bk"><div class="bk-l">Commission</div><div class="bk-v" id="profitCommission">$0</div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Trade Analysis</div>
+                        <div style="font-family:var(--mono);font-size:13px;color:var(--muted);">
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                                <span>Buy Price</span><span style="color:var(--text);" id="profitBuyDisplay">$45.00</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                                <span>Sell Price</span><span style="color:var(--text);" id="profitSellDisplay">$52.50</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                                <span>Price Difference</span><span style="color:var(--text);" id="profitDiffDisplay">$7.50</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                                <span>Shares</span><span style="color:var(--text);" id="profitSharesDisplay">100</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                                <span>Net Profit</span><span style="color:var(--accent);font-weight:700;" id="profitNetDisplay">$750.00</span>
+                            </div>
+                            <div style="display:flex;justify-content:space-between;padding:6px 0;">
+                                <span>Return on Investment</span><span style="color:var(--accent);font-weight:700;" id="profitROIDisplay">16.67%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- ===== TAB 3: FUTURE VALUE CALCULATOR ===== -->
+    <div id="tab3" class="tab-content">
+        <form id="fvForm" novalidate>
+            <div class="main-grid">
+                <div>
+                    <div class="card">
+                        <div class="ct">Investment Details</div>
+                        <div class="field">
+                            <label for="fvInitial">Initial Investment</label>
+                            <div class="pfx"><span>$</span><input type="number" id="fvInitial" value="10000" min="0" step="500" oninput="calculateFV()" /></div>
+                        </div>
+                        <div class="field">
+                            <label for="fvMonthly">Monthly Contribution</label>
+                            <div class="pfx"><span>$</span><input type="number" id="fvMonthly" value="500" min="0" step="50" oninput="calculateFV()" /></div>
+                            <div class="hint">Amount added each month.</div>
+                        </div>
+                        <div class="field">
+                            <label for="fvRate">Annual Return Rate</label>
+                            <div class="pct-suffix"><input type="number" id="fvRate" value="8" min="0" max="30" step="0.1" oninput="calculateFV()" /><span>%</span></div>
+                        </div>
+                        <div class="field">
+                            <label for="fvYears">Time Horizon (Years)</label>
+                            <input type="number" id="fvYears" value="20" min="1" max="80" step="1" oninput="calculateFV()" />
+                        </div>
+                        <div class="field">
+                            <label for="fvCompound">Compound Frequency</label>
+                            <select id="fvCompound" onchange="calculateFV()">
+                                <option value="12">Monthly</option>
+                                <option value="4">Quarterly</option>
+                                <option value="1">Yearly</option>
+                                <option value="365">Daily</option>
+                            </select>
+                        </div>
+                        <div class="btn-row">
+                            <button type="reset" class="btn-reset" onclick="resetFV()">Reset</button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Quick Presets</div>
+                        <div class="grid2">
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('retire')">Retirement</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('college')">College Savings</button>
+                            <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('house')">House Down Payment</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card">
+                        <div class="ct">Future Value</div>
+                        <div class="res-main">
+                            <div class="res-label">Projected Future Value</div>
+                            <div class="res-val positive" id="fvResult">$0</div>
+                            <div class="res-sub" id="fvSub">after 20 years</div>
+                        </div>
+                        <div class="grid4">
+                            <div class="bk"><div class="bk-l">Total Contributions</div><div class="bk-v" id="fvTotalContrib">$0</div></div>
+                            <div class="bk"><div class="bk-l">Total Interest Earned</div><div class="bk-v positive" id="fvTotalInterest">$0</div></div>
+                            <div class="bk"><div class="bk-l">Growth %</div><div class="bk-v" id="fvGrowthPct">0%</div></div>
+                            <div class="bk"><div class="bk-l">Monthly Income (4% rule)</div><div class="bk-v positive" id="fvMonthlyIncome">$0</div></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Balance Over Time</div>
+                        <div id="fvTimeline" class="timeline">
+                            <div class="timeline-row"><span>Year 0</span><span>$10,000</span></div>
+                            <div class="timeline-row"><span>Year 5</span><span>$46,000</span></div>
+                            <div class="timeline-row"><span>Year 10</span><span>$110,000</span></div>
+                            <div class="timeline-row"><span>Year 15</span><span>$225,000</span></div>
+                            <div class="timeline-row"><span>Year 20</span><span>$1,234,567</span></div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="ct">Contributions vs. Growth</div>
+                        <div id="fvChart"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="fc-warn">
+        ⚠️ These calculators provide estimates for educational purposes. Actual investment returns vary. Past performance doesn't guarantee future results. Consult a financial advisor for personalized advice.
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ============================================================
+        // TAB SWITCHING
+        // ============================================================
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.querySelector(`.tab-btn[data-tab="${tabId}"]`).classList.add('active');
+        }
+        window.switchTab = switchTab;
+
+        // ============================================================
+        // STOCK AVERAGE CALCULATOR
+        // ============================================================
+        let purchaseIdCounter = 0;
+        let purchases = [];
+
+        function addPurchase(shares, price) {
+            const id = purchaseIdCounter++;
+            purchases.push({
+                id: id,
+                shares: shares || 10,
+                price: price || 50
+            });
+            renderPurchases();
+            calculateAvg();
+        }
+        window.addPurchase = addPurchase;
+
+        function removePurchase(id) {
+            purchases = purchases.filter(p => p.id !== id);
+            renderPurchases();
+            calculateAvg();
+        }
+        window.removePurchase = removePurchase;
+
+        function renderPurchases() {
+            const container = document.getElementById('purchaseList');
+            let html = '';
+            purchases.forEach((p, index) => {
+                html += `
+                    <div class="trade-item">
+                        <div class="field">
+                            <label>Shares</label>
+                            <input type="number" value="${p.shares}" min="0.01" step="0.01" onchange="updatePurchase(${p.id}, 'shares', parseFloat(this.value) || 0)" />
+                        </div>
+                        <div class="field">
+                            <label>Price per Share</label>
+                            <div class="pfx"><span>$</span><input type="number" value="${p.price}" min="0.01" step="0.01" onchange="updatePurchase(${p.id}, 'price', parseFloat(this.value) || 0)" /></div>
+                        </div>
+                        <button type="button" class="btn-remove" onclick="removePurchase(${p.id})">✕</button>
+                    </div>
+                `;
+            });
+            if (purchases.length === 0) {
+                html = `<div class="hint" style="padding:16px 0;text-align:center;">No purchases added yet. Click "Add Purchase" to get started.</div>`;
+            }
+            container.innerHTML = html;
+        }
+
+        function updatePurchase(id, field, value) {
+            const p = purchases.find(p => p.id === id);
+            if (p) {
+                p[field] = value;
+                calculateAvg();
+            }
+        }
+        window.updatePurchase = updatePurchase;
+
+        function calculateAvg() {
+            let totalShares = 0;
+            let totalCost = 0;
+
+            for (const p of purchases) {
+                const shares = parseFloat(p.shares) || 0;
+                const price = parseFloat(p.price) || 0;
+                totalShares += shares;
+                totalCost += shares * price;
+            }
+
+            const avgCost = totalShares > 0 ? totalCost / totalShares : 0;
+            const currentPrice = parseFloat(document.getElementById('avgCurrentPriceInput').value) || 0;
+            const currentValue = totalShares * currentPrice;
+            const gainLoss = currentValue - totalCost;
+            const gainLossPct = totalCost > 0 ? (gainLoss / totalCost) * 100 : 0;
+
+            document.getElementById('avgCostPerShare').textContent = '$' + avgCost.toFixed(2);
+            document.getElementById('avgSub').textContent = `based on ${purchases.length} purchase${purchases.length !== 1 ? 's' : ''}`;
+            document.getElementById('avgTotalShares').textContent = totalShares.toFixed(2);
+            document.getElementById('avgTotalCost').textContent = '$' + totalCost.toFixed(2);
+            document.getElementById('avgCurrentPrice').textContent = '$' + currentPrice.toFixed(2);
+            document.getElementById('avgCurrentValue').textContent = '$' + currentValue.toFixed(2);
+
+            const gainEl = document.getElementById('avgGainLoss');
+            gainEl.textContent = '$' + gainLoss.toFixed(2);
+            gainEl.className = 'bk-v ' + (gainLoss >= 0 ? 'positive' : 'negative');
+
+            const pctEl = document.getElementById('avgGainLossPct');
+            pctEl.textContent = (gainLossPct >= 0 ? '+' : '') + gainLossPct.toFixed(2) + '%';
+            pctEl.className = 'bk-v ' + (gainLossPct >= 0 ? 'positive' : 'negative');
+
+            const statusEl = document.getElementById('avgStatus');
+            if (gainLoss > 0) {
+                statusEl.textContent = '✅ Profit';
+                statusEl.className = 'bk-v positive';
+            } else if (gainLoss < 0) {
+                statusEl.textContent = '❌ Loss';
+                statusEl.className = 'bk-v negative';
+            } else {
+                statusEl.textContent = '— Break Even';
+                statusEl.className = 'bk-v';
+            }
+        }
+
+        function resetAvg() {
+            purchases = [];
+            purchaseIdCounter = 0;
+            document.getElementById('avgCurrentPriceInput').value = '50';
+            renderPurchases();
+            calculateAvg();
+        }
+        window.resetAvg = resetAvg;
+
+        function loadAvgPreset(type) {
+            purchases = [];
+            purchaseIdCounter = 0;
+            switch (type) {
+                case 'dca':
+                    addPurchase(10, 45);
+                    addPurchase(15, 48);
+                    addPurchase(20, 52);
+                    addPurchase(25, 50);
+                    document.getElementById('avgCurrentPriceInput').value = '55';
+                    break;
+                case 'lump':
+                    addPurchase(100, 50);
+                    document.getElementById('avgCurrentPriceInput').value = '50';
+                    break;
+                case 'multiple':
+                    addPurchase(50, 40);
+                    addPurchase(50, 50);
+                    addPurchase(50, 60);
+                    document.getElementById('avgCurrentPriceInput').value = '55';
+                    break;
+            }
+            renderPurchases();
+            calculateAvg();
+        }
+        window.loadAvgPreset = loadAvgPreset;
+
+        // ============================================================
+        // STOCK PROFIT CALCULATOR
+        // ============================================================
+        function calculateProfit() {
+            const buyPrice = parseFloat(document.getElementById('buyPrice').value) || 0;
+            const sellPrice = parseFloat(document.getElementById('sellPrice').value) || 0;
+            const shares = parseFloat(document.getElementById('sharesTraded').value) || 0;
+            const commission = parseFloat(document.getElementById('commission').value) || 0;
+
+            const buyCost = buyPrice * shares;
+            const sellValue = sellPrice * shares;
+            const grossProfit = sellValue - buyCost;
+            const netProfit = grossProfit - commission;
+            const profitPct = buyCost > 0 ? (netProfit / buyCost) * 100 : 0;
+
+            document.getElementById('profitTotal').textContent = '$' + netProfit.toFixed(2);
+            document.getElementById('profitTotal').className = 'res-val ' + (netProfit >= 0 ? 'positive' : 'negative');
+            document.getElementById('profitSub').textContent = `on ${shares} share${shares !== 1 ? 's' : ''}`;
+
+            document.getElementById('profitBuyCost').textContent = '$' + buyCost.toFixed(2);
+            document.getElementById('profitSellValue').textContent = '$' + sellValue.toFixed(2);
+            document.getElementById('profitPct').textContent = (profitPct >= 0 ? '+' : '') + profitPct.toFixed(2) + '%';
+            document.getElementById('profitPct').className = 'bk-v ' + (profitPct >= 0 ? 'positive' : 'negative');
+            document.getElementById('profitCommission').textContent = '$' + commission.toFixed(2);
+
+            document.getElementById('profitBuyDisplay').textContent = '$' + buyPrice.toFixed(2);
+            document.getElementById('profitSellDisplay').textContent = '$' + sellPrice.toFixed(2);
+            document.getElementById('profitDiffDisplay').textContent = '$' + (sellPrice - buyPrice).toFixed(2);
+            document.getElementById('profitSharesDisplay').textContent = shares;
+            document.getElementById('profitNetDisplay').textContent = '$' + netProfit.toFixed(2);
+            document.getElementById('profitNetDisplay').style.color = netProfit >= 0 ? 'var(--accent)' : 'var(--fed)';
+            document.getElementById('profitROIDisplay').textContent = (profitPct >= 0 ? '+' : '') + profitPct.toFixed(2) + '%';
+            document.getElementById('profitROIDisplay').style.color = profitPct >= 0 ? 'var(--accent)' : 'var(--fed)';
+        }
+
+        function resetProfit() {
+            document.getElementById('buyPrice').value = '45.00';
+            document.getElementById('sellPrice').value = '52.50';
+            document.getElementById('sharesTraded').value = '100';
+            document.getElementById('commission').value = '0';
+            calculateProfit();
+        }
+        window.resetProfit = resetProfit;
+
+        function loadProfitPreset(type) {
+            switch (type) {
+                case 'win':
+                    document.getElementById('buyPrice').value = '45.00';
+                    document.getElementById('sellPrice').value = '51.75';
+                    document.getElementById('sharesTraded').value = '100';
+                    document.getElementById('commission').value = '0';
+                    break;
+                case 'loss':
+                    document.getElementById('buyPrice').value = '60.00';
+                    document.getElementById('sellPrice').value = '48.00';
+                    document.getElementById('sharesTraded').value = '100';
+                    document.getElementById('commission').value = '0';
+                    break;
+                case 'break':
+                    document.getElementById('buyPrice').value = '50.00';
+                    document.getElementById('sellPrice').value = '50.00';
+                    document.getElementById('sharesTraded').value = '100';
+                    document.getElementById('commission').value = '0';
+                    break;
+            }
+            calculateProfit();
+        }
+        window.loadProfitPreset = loadProfitPreset;
+
+        // ============================================================
+        // FUTURE VALUE CALCULATOR
+        // ============================================================
+        function calculateFV() {
+            const initial = parseFloat(document.getElementById('fvInitial').value) || 0;
+            const monthly = parseFloat(document.getElementById('fvMonthly').value) || 0;
+            const rate = parseFloat(document.getElementById('fvRate').value) / 100 || 0;
+            const years = parseFloat(document.getElementById('fvYears').value) || 0;
+            const compoundPerYear = parseInt(document.getElementById('fvCompound').value) || 12;
+
+            const periods = years * compoundPerYear;
+            const periodRate = rate / compoundPerYear;
+            const monthlyPerPeriod = monthly * (12 / compoundPerYear);
+
+            let fv = 0;
+            if (periods > 0 && periodRate > 0) {
+                fv = initial * Math.pow(1 + periodRate, periods) +
+                    monthlyPerPeriod * ((Math.pow(1 + periodRate, periods) - 1) / periodRate);
+            } else if (periods > 0) {
+                fv = initial + monthly * 12 * years;
+            } else {
+                fv = initial;
+            }
+
+            const totalContrib = initial + monthly * 12 * years;
+            const totalInterest = fv - totalContrib;
+            const growthPct = totalContrib > 0 ? (totalInterest / totalContrib) * 100 : 0;
+            const monthlyIncome4Percent = fv * 0.04 / 12;
+
+            document.getElementById('fvResult').textContent = '$' + fv.toLocaleString(undefined, { minimumFractionDigits: 0,
+                maximumFractionDigits: 0 });
+            document.getElementById('fvSub').textContent = `after ${years} years`;
+            document.getElementById('fvTotalContrib').textContent = '$' + totalContrib.toLocaleString(undefined, { minimumFractionDigits: 0,
+                maximumFractionDigits: 0 });
+            document.getElementById('fvTotalInterest').textContent = '$' + totalInterest.toLocaleString(undefined, { minimumFractionDigits: 0,
+                maximumFractionDigits: 0 });
+            document.getElementById('fvGrowthPct').textContent = growthPct.toFixed(1) + '%';
+            document.getElementById('fvMonthlyIncome').textContent = '$' + monthlyIncome4Percent.toFixed(0);
+
+            // Timeline
+            const steps = Math.min(10, Math.max(3, Math.floor(years / 5)));
+            const stepSize = Math.ceil(years / steps);
+            let timelineHtml = '';
+            for (let i = 0; i <= steps; i++) {
+                const y = Math.min(i * stepSize, years);
+                const p = y * compoundPerYear;
+                let bal = 0;
+                if (p > 0 && periodRate > 0) {
+                    bal = initial * Math.pow(1 + periodRate, p) +
+                        monthlyPerPeriod * ((Math.pow(1 + periodRate, p) - 1) / periodRate);
+                } else if (p > 0) {
+                    bal = initial + monthly * 12 * y;
+                } else {
+                    bal = initial;
+                }
+                const isLast = y === years;
+                timelineHtml += `<div class="timeline-row" style="${!isLast ? 'border-bottom:1px solid var(--border);' : ''}">
+                    <span>Year ${y}</span>
+                    <span>$${bal.toFixed(0)}</span>
+                </div>`;
+            }
+            document.getElementById('fvTimeline').innerHTML = timelineHtml;
+
+            // Chart
+            const maxVal = Math.max(fv, totalContrib, 1);
+            const contribPct = (totalContrib / maxVal) * 100;
+            const interestPct = (totalInterest / maxVal) * 100;
+
+            document.getElementById('fvChart').innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Total Contributions</span><span>$${totalContrib.toFixed(0)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${contribPct}%;background:var(--local);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Total Interest Earned</span><span>$${totalInterest.toFixed(0)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${interestPct}%;background:var(--accent);"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Interest accounts for ${(totalInterest / fv * 100 || 0).toFixed(1)}% of your final balance.</div>
+            `;
+        }
+
+        function resetFV() {
+            document.getElementById('fvInitial').value = '10000';
+            document.getElementById('fvMonthly').value = '500';
+            document.getElementById('fvRate').value = '8';
+            document.getElementById('fvYears').value = '20';
+            document.getElementById('fvCompound').value = '12';
+            calculateFV();
+        }
+        window.resetFV = resetFV;
+
+        function loadFVPreset(type) {
+            switch (type) {
+                case 'retire':
+                    document.getElementById('fvInitial').value = '25000';
+                    document.getElementById('fvMonthly').value = '1000';
+                    document.getElementById('fvRate').value = '8';
+                    document.getElementById('fvYears').value = '30';
+                    document.getElementById('fvCompound').value = '12';
+                    break;
+                case 'college':
+                    document.getElementById('fvInitial').value = '5000';
+                    document.getElementById('fvMonthly').value = '300';
+                    document.getElementById('fvRate').value = '6';
+                    document.getElementById('fvYears').value = '18';
+                    document.getElementById('fvCompound').value = '12';
+                    break;
+                case 'house':
+                    document.getElementById('fvInitial').value = '10000';
+                    document.getElementById('fvMonthly').value = '500';
+                    document.getElementById('fvRate').value = '7';
+                    document.getElementById('fvYears').value = '5';
+                    document.getElementById('fvCompound').value = '12';
+                    break;
+            }
+            calculateFV();
+        }
+        window.loadFVPreset = loadFVPreset;
+
+        // ============================================================
+        // INIT
+        // ============================================================
+        // Stock Average - initial with 3 purchases
+        addPurchase(10, 45);
+        addPurchase(15, 48);
+        addPurchase(20, 52);
+        document.getElementById('avgCurrentPriceInput').value = '50';
+
+        // Stock Profit - calculate
+        calculateProfit();
+
+        // Future Value - calculate
+        calculateFV();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

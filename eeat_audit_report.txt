@@ -1,0 +1,21 @@
+USAFinCalc EEAT Audit Report
+Generated: 2026-06-28 08:37
+============================================================
+
+Total HTML files audited: 125
+Total EEAT issues found: 6
+Total EEAT issues fixed: 2
+Files modified: 1
+Remaining issues: 4
+EEAT Score: 87/100
+
+FILES MODIFIED:
+  - .\about.html
+
+ALL ISSUES:
+  [FIXED] [ABOUT_CONTENT] .\about.html: Added EEAT about content (missing: united states)
+  [OPEN] [TRUST_LINKS] about.html: Missing links to: data-sources
+  [OPEN] [TRUST_LINKS] data-sources.html: Missing links to: data-sources
+  [OPEN] [TRUST_LINKS] disclaimer.html: Missing links to: disclaimer
+  [OPEN] [TRUST_LINKS] pricing.html: Missing links to: data-sources
+  [FIXED] [TRUST_LINKS] pricing.html: Added footer links: data-sources

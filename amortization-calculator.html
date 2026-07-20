@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Free amortization calculator 2026. See exact monthly payment, full amortization schedule, year-by-year summary, and how extra payments save interest. Works for mortgage, auto, personal, and student loans." name="description"/>
+<meta content="amortization calculator, loan amortization schedule, mortgage amortization, amortization table 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Amortization Calculator 2026 — Schedule, Chart &amp; Extra Payments" property="og:title"/>
+<meta content="Full amortization schedule with year-by-year breakdown, visual chart, and extra payment savings. Works for any loan type." property="og:description"/>
+<meta content="https://usafincalc.com/amortization-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@usafincalc" name="twitter:site"/>
+<meta content="Amortization Calculator 2026 — Schedule, Chart &amp; Extra Payments" name="twitter:title"/>
+<meta content="Full amortization schedule, year-by-year summary, and extra payment savings for any loan." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="https://usafincalc.com/amortization-calculator" rel="canonical"/>
+<title>Amortization Calculator 2026 — Schedule, Chart &amp; Extra Payments | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#00e5a0;--accent2:#00b87a;
+  --danger:#ff6b6b;--info:#74b9ff;--warn:#ffa94d;--purple:#7c6ff7;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:20px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:600px;line-height:1.8}
+
+/* Loan type tabs */
+.type-row{max-width:980px;margin:0 auto;padding:0 24px 20px;display:flex;gap:8px;flex-wrap:wrap}
+.type-btn{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:6px 16px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all .2s}
+.type-btn.active{background:rgba(0,229,160,0.12);border-color:rgba(0,229,160,0.35);color:var(--accent)}
+
+/* Quick answer bar */
+.qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 20px}
+.qa{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:var(--r);padding:14px 18px;font-size:14px;color:var(--muted)}
+.qa strong{color:var(--accent)}
+
+/* Main grid */
+.main{max-width:980px;margin:0 auto;padding:0 24px 32px;display:grid;grid-template-columns:340px 1fr;gap:20px}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ct{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:11px 14px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:16px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:16px}
+.pfx span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.pfx input{padding-left:28px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:16px}
+.sfx span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.sfx input{padding-right:30px;margin-bottom:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.divider-line{border:none;border-top:1px solid var(--border);margin:4px 0 18px}
+.section-sub{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;font-family:var(--mono)}
+.btn{width:100%;background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:-.2px}
+.btn:hover{background:#00c98c}
+.btn:active{transform:scale(.98)}
+
+/* Summary cards */
+.sum-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.sum-card{background:var(--bg3);border-radius:var(--rs);padding:14px 16px}
+.sum-card.accent{background:linear-gradient(135deg,rgba(0,229,160,0.13),rgba(0,184,122,0.06));border:1px solid rgba(0,229,160,0.25)}
+.sum-lbl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
+.sum-val{font-size:22px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-0.5px}
+.sum-val.white{color:var(--text)}
+.sum-val.red{color:var(--danger)}
+.sum-val.warn{color:var(--warn)}
+
+/* Breakdown bar */
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.bt{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.sbar{height:12px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;background:var(--bg3)}
+.seg{height:100%;transition:width .7s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:9px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500;color:var(--text)}
+
+/* Detail rows */
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dv.g{color:var(--accent)}.dv.r{color:var(--danger)}.dv.w{color:var(--warn)}
+
+/* Savings highlight */
+.save-banner{background:rgba(0,229,160,0.07);border:1px solid rgba(0,229,160,0.22);border-radius:var(--rs);padding:14px 16px;font-size:13px;color:var(--muted);margin-bottom:12px;display:none}
+.save-banner.show{display:block}
+.save-banner strong{color:var(--accent)}
+
+/* Chart */
+.chart-wrap{max-width:980px;margin:0 auto;padding:0 24px 32px}
+.chart-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.chart-head h2{font-size:18px;font-weight:600;letter-spacing:-.3px}
+.chart-legend{display:flex;gap:16px;font-size:12px;font-family:var(--mono)}
+.chart-legend span{display:flex;align-items:center;gap:6px;color:var(--muted)}
+.chart-legend span::before{content:"";width:12px;height:3px;border-radius:2px;display:inline-block}
+.leg-p::before{background:var(--purple)}
+.leg-i::before{background:var(--danger)}
+.leg-b::before{background:var(--accent)}
+canvas#amort-chart{width:100%;border-radius:var(--rs)}
+
+/* Tab switcher */
+.tab-row{max-width:980px;margin:0 auto;padding:0 24px 16px;display:flex;gap:4px}
+.tab-btn{background:none;border:1px solid var(--border);border-radius:var(--rs);padding:7px 16px;font-size:13px;color:var(--muted);cursor:pointer;font-family:var(--font);transition:all .2s}
+.tab-btn.active{background:var(--bg3);border-color:var(--border2);color:var(--text)}
+
+/* Tables */
+.table-wrap{max-width:980px;margin:0 auto;padding:0 24px 32px}
+.tbl-panel{display:none}
+.tbl-panel.show{display:block}
+.tbl-scroll{overflow-x:auto;border-radius:var(--r);border:1px solid var(--border)}
+table.data-tbl{width:100%;border-collapse:collapse;font-size:13px;min-width:500px}
+table.data-tbl th{text-align:right;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.5px;white-space:nowrap}
+table.data-tbl th:first-child{text-align:left}
+table.data-tbl td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--muted);text-align:right;font-family:var(--mono);font-size:12px}
+table.data-tbl td:first-child{color:var(--text);text-align:left;font-weight:500;font-size:13px}
+table.data-tbl tr:last-child td{border-bottom:none}
+table.data-tbl .p-cell{color:var(--purple)}
+table.data-tbl .i-cell{color:var(--danger)}
+table.data-tbl .b-cell{color:var(--text)}
+table.data-tbl .yr-row td{background:rgba(0,229,160,0.04);font-weight:500}
+table.data-tbl .yr-row td:first-child{color:var(--accent)}
+table.data-tbl .total-row td{background:var(--bg3);font-weight:600;border-top:1px solid var(--border2)}
+table.data-tbl .total-row td:first-child{color:var(--text)}
+
+/* Comparison section */
+.cmp-wrap{max-width:980px;margin:0 auto;padding:0 24px 32px;display:none}
+.cmp-wrap.show{display:block}
+.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.cmp-grid{grid-template-columns:1fr}}
+.cmp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.cmp-card.better{border-color:rgba(0,229,160,0.35)}
+.cmp-title{font-size:13px;font-weight:600;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.8px;margin-bottom:14px}
+.cmp-title.g{color:var(--accent)}
+.cmp-val{font-size:28px;font-weight:600;font-family:var(--mono);letter-spacing:-0.5px;margin-bottom:4px}
+.cmp-sub{font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:14px}
+
+/* Content */
+.cs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.cs h2{font-size:22px;font-weight:600;margin-bottom:14px;letter-spacing:-.3px}
+.cs h3{font-size:17px;font-weight:500;margin:28px 0 10px;letter-spacing:-.2px}
+.cs p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px}
+.cs p strong{color:var(--text);font-weight:500}
+.cs a{color:var(--accent);text-decoration:none}
+.cs a:hover{text-decoration:underline}
+.ttbl{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 24px}
+.ttbl th{text-align:left;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.5px}
+.ttbl td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+.ttbl td:last-child,.ttbl th:last-child{text-align:right;font-family:var(--mono);color:var(--text)}
+.ttbl tr:last-child td{border-bottom:none}
+.abox{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px 18px;font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.9;margin:24px 0}
+
+/* FAQ */
+.fqs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.fqs h2{font-size:22px;font-weight:600;margin-bottom:20px;letter-spacing:-.3px}
+.fqi{border-bottom:1px solid var(--border);padding:18px 0;cursor:pointer}
+.fqq{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:500;color:var(--text)}
+.fqa-arrow{color:var(--muted);font-size:18px;transition:transform .2s}
+.fqa{color:var(--muted);font-size:14px;line-height:1.8;margin-top:12px;display:none}
+.fqi.open .fqa{display:block}
+.fqi.open .fqa-arrow{transform:rotate(180deg)}
+
+/* Related */
+.rels{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.rels h2{font-size:17px;font-weight:500;margin-bottom:16px;color:var(--muted)}
+.relg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.relc{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:14px 16px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:10px;transition:border-color .2s,background .2s}
+.relc:hover{border-color:var(--border2);background:var(--bg3)}
+footer{border-top:1px solid var(--border);padding:28px 24px;max-width:980px;margin:0 auto;font-size:12px;color:var(--muted);line-height:1.9}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+.a11y-chart-data{margin-top:8px;}.a11y-chart-data summary{font-size:12px;color:var(--muted,#7e859f);cursor:pointer;padding:4px 0;}.a11y-chart-data summary:hover{color:var(--accent);}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Amortization Calculator 2026 — Schedule, Chart & Extra Payments | USAFinCalc",
+  "url": "https://usafincalc.com/amortization-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mortgage Calculators",
+      "item": "https://usafincalc.com/mortgage-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Amortization Calculator 2026 — Schedule, Chart & Extra Payments | USAFinCalc",
+      "item": "https://usafincalc.com/amortization-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Amortization Calculator",
+  "description": "Free amortization calculator with full schedule, chart, and extra payment analysis.",
+  "url": "https://usafincalc.com/amortization-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<!-- HERO -->
+<div class="hero">
+<div class="badge">📊 Amortization Calculator · 2026</div>
+<h1>Amortization <span>Calculator</span></h1>
+<p class="hero-sub">See exactly how every payment splits between principal and interest — month by month, year by year. Works for mortgages, auto loans, personal loans, and student loans.</p>
+</div>
+<!-- LOAN TYPE TABS -->
+<div class="type-row">
+<button class="type-btn active" onclick="setType('mortgage',this)">🏠 Mortgage</button>
+<button class="type-btn" onclick="setType('auto',this)">🚗 Auto Loan</button>
+<button class="type-btn" onclick="setType('personal',this)">💳 Personal Loan</button>
+<button class="type-btn" onclick="setType('student',this)">🎓 Student Loan</button>
+</div>
+<!-- QUICK ANSWER -->
+<div class="qa-wrap">
+<div class="qa" id="qa-bar">
+<strong>Quick answer:</strong> A $300,000 mortgage at 7% for 30 years = <strong>$1,996/mo</strong> · Total interest: <strong>$418,527</strong> · You pay more in interest than principal for the first <strong>21 years</strong>.
+  </div>
+</div>
+<!-- MAIN CALC -->
+<div class="main">
+<!-- INPUTS PANEL -->
+<div class="card">
+<div class="ct">Loan Details</div>
+<label for="loanAmt">Loan Amount</label>
+<div class="pfx"><span>$</span><input id="loanAmt" max="10000000" min="100" oninput="calc()" step="1000" type="number" value="300000"/></div>
+<label for="apr">Annual Interest Rate (APR)</label>
+<div class="sfx"><span>%</span><input id="apr" max="30" min="0.1" oninput="calc()" step="0.05" type="number" value="7"/></div>
+<div class="row2">
+<div>
+<label for="termVal">Loan Term</label>
+<input id="termVal" max="50" min="1" oninput="calc()" step="1" type="number" value="30"/>
+</div>
+<div>
+<label for="termUnit">Unit</label>
+<select id="termUnit" onchange="calc()">
+<option selected="" value="years">Years</option>
+<option value="months">Months</option>
+</select>
+</div>
+</div>
+<label for="startMonth">First Payment Month</label>
+<select id="startMonth" onchange="calc()">
+<option value="0">January 2026</option><option value="1">February 2026</option>
+<option selected="" value="2">March 2026</option><option value="3">April 2026</option>
+<option value="4">May 2026</option><option value="5">June 2026</option>
+<option value="6">July 2026</option><option value="7">August 2026</option>
+<option value="8">September 2026</option><option value="9">October 2026</option>
+<option value="10">November 2026</option><option value="11">December 2026</option>
+</select>
+<hr class="divider-line"/>
+<div class="section-sub">Extra Payments (optional)</div>
+<label for="extraMonthly">Extra Monthly Payment</label>
+<div class="pfx"><span>$</span><input id="extraMonthly" min="0" oninput="calc()" step="50" type="number" value="0"/></div>
+<label for="extraLump">One-Time Lump Sum</label>
+<div class="pfx"><span>$</span><input id="extraLump" min="0" oninput="calc()" step="500" type="number" value="0"/></div>
+<label for="lumpMonth">Lump Sum In Month #</label>
+<input id="lumpMonth" max="600" min="1" oninput="calc()" type="number" value="1"/>
+<button class="btn" onclick="calc()">Recalculate →</button>
+</div>
+<!-- RESULTS PANEL -->
+<div>
+<!-- 4 summary cards -->
+<div class="sum-grid">
+<div class="sum-card accent">
+<div class="sum-lbl">Monthly Payment</div>
+<div class="sum-val" id="r-monthly">$1,996</div>
+</div>
+<div class="sum-card">
+<div class="sum-lbl">Total Cost</div>
+<div class="sum-val warn" id="r-total">$718,527</div>
+</div>
+<div class="sum-card">
+<div class="sum-lbl">Total Interest</div>
+<div class="sum-val red" id="r-interest">$418,527</div>
+</div>
+<div class="sum-card">
+<div class="sum-lbl">Payoff Date</div>
+<div class="sum-val white" id="r-payoff" style="font-size:16px;line-height:1.4;margin-top:4px">March 2056</div>
+</div>
+</div>
+<!-- Breakdown bar -->
+<div class="bcard">
+<div class="bt">Payment Breakdown</div>
+<div class="sbar">
+<div class="seg" id="seg-p" style="background:var(--purple);width:42%"></div>
+<div class="seg" id="seg-i" style="background:var(--danger);width:58%"></div>
+</div>
+<div class="brows">
+<div class="br"><div class="bl"><div class="dot" style="background:var(--purple)"></div><span class="blbl">Principal (Loan Amount)</span></div><span class="ba" id="lbl-p">$300,000</span></div>
+<div class="br"><div class="bl"><div class="dot" style="background:var(--danger)"></div><span class="blbl">Total Interest Paid</span></div><span class="ba" id="lbl-i">$418,527</span></div>
+</div>
+</div>
+<!-- Detail rows -->
+<div class="dcard">
+<div class="dr"><span class="dk">Loan Amount</span><span class="dv g" id="d-amount">$300,000</span></div>
+<div class="dr"><span class="dk">APR</span><span class="dv" id="d-apr">7.00%</span></div>
+<div class="dr"><span class="dk">Term</span><span class="dv" id="d-term">360 months</span></div>
+<div class="dr"><span class="dk">Monthly Payment</span><span class="dv g" id="d-monthly">$1,996</span></div>
+<div class="dr"><span class="dk">Total Payments</span><span class="dv w" id="d-totalpay">$718,527</span></div>
+<div class="dr"><span class="dk">Total Interest</span><span class="dv r" id="d-interest">$418,527</span></div>
+<div class="dr"><span class="dk">Interest / Principal Crossover</span><span class="dv" id="d-crossover">Month 253 (Year 22)</span></div>
+<div class="dr"><span class="dk">Payoff Date</span><span class="dv" id="d-payoff2">March 2056</span></div>
+</div>
+<!-- Savings banner (extra payments) -->
+<div class="save-banner" id="save-banner">
+      Extra payments save <strong id="sv-amount">$0</strong> in interest and cut <strong id="sv-months">0 months</strong> off your loan term. New payoff: <strong id="sv-payoff">—</strong>.
+    </div>
+<!-- Comparison when extra payments active -->
+<div class="cmp-wrap" id="cmp-wrap">
+<div style="font-size:13px;color:var(--muted);margin-bottom:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.8px;font-size:11px">Side-by-side comparison</div>
+<div class="cmp-grid">
+<div class="cmp-card">
+<div class="cmp-title">Standard</div>
+<div class="cmp-val" id="cmp-std-pay" style="color:var(--muted)">$1,996</div>
+<div class="cmp-sub">monthly payment</div>
+<div class="dr" style="padding:6px 0"><span class="dk">Total interest</span><span class="dv r" id="cmp-std-int">$418,527</span></div>
+<div class="dr" style="padding:6px 0;border:none"><span class="dk">Payoff</span><span class="dv" id="cmp-std-po">Mar 2056</span></div>
+</div>
+<div class="cmp-card better">
+<div class="cmp-title g">With Extra Payments</div>
+<div class="cmp-val" id="cmp-ex-pay" style="color:var(--accent)">$1,996</div>
+<div class="cmp-sub">monthly payment</div>
+<div class="dr" style="padding:6px 0"><span class="dk">Total interest</span><span class="dv g" id="cmp-ex-int">$418,527</span></div>
+<div class="dr" style="padding:6px 0;border:none"><span class="dk">Payoff</span><span class="dv g" id="cmp-ex-po">Mar 2056</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CHART -->
+<div class="chart-wrap">
+<div class="chart-head">
+<h2>Balance &amp; Payment Breakdown Over Time</h2>
+<div class="chart-legend">
+<span class="leg-b">Remaining Balance</span>
+<span class="leg-p">Principal Paid</span>
+<span class="leg-i">Interest Paid</span>
+</div>
+</div>
+<canvas aria-label="Line chart showing remaining balance, cumulative principal, and cumulative interest over the loan term" height="220" id="amort-chart" role="img"></canvas>
+<details class="a11y-chart-data">
+<summary>View amortization chart data as table</summary>
+<p style="font-size:12px;color:var(--muted);margin:6px 0;">The full amortization schedule is available in the Year-by-Year and Month-by-Month tabs below.</p>
+</details>
+</div>
+<!-- TABLE TABS -->
+<div class="tab-row">
+<button class="tab-btn active" id="tab-yr" onclick="switchTab('year')">Year-by-Year</button>
+<button class="tab-btn" id="tab-mo" onclick="switchTab('month')">Month-by-Month</button>
+</div>
+<!-- YEAR TABLE -->
+<div class="table-wrap">
+<div class="tbl-panel show" id="panel-year">
+<div class="tbl-scroll">
+<table class="data-tbl" id="year-table">
+<thead><tr>
+<th scope="col">Year</th><th scope="col">Principal Paid</th><th scope="col">Interest Paid</th><th scope="col">Total Paid</th><th scope="col">Remaining Balance</th>
+</tr></thead>
+<tbody id="year-body"></tbody>
+</table>
+</div>
+</div>
+<div class="tbl-panel" id="panel-month">
+<div class="tbl-scroll">
+<table class="data-tbl" id="month-table">
+<thead><tr>
+<th scope="col">#</th><th scope="col">Date</th><th scope="col">Payment</th><th scope="col">Principal</th><th scope="col">Interest</th><th scope="col">Balance</th>
+</tr></thead>
+<tbody id="month-body"></tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- CONTENT -->
+<div class="cs">
+<h2>How Amortization Works</h2>
+<p>Amortization is the process of paying off a loan through equal periodic payments. Each payment covers <strong>that month's interest first</strong>, and whatever's left reduces your principal balance. This is why in the early years of a 30-year mortgage, most of your payment goes to interest — and the last few years are almost entirely principal.</p>
+<h3>The amortization formula</h3>
+<p>Monthly payment = <strong>P × r / (1 − (1 + r)<sup>−n</sup>)</strong> where P = loan amount, r = monthly interest rate (APR ÷ 12), and n = total number of monthly payments. Each month's interest = remaining balance × r. Each month's principal = monthly payment − interest.</p>
+<h3>Why the first payment is mostly interest</h3>
+<p>On a $300,000 mortgage at 7% APR, month 1 interest = $300,000 × 0.5833% = <strong>$1,750</strong>. Your $1,996 payment covers that, leaving only <strong>$246</strong> to reduce your balance. By month 360, your balance is ~$1,990 and your interest is only ~$12 — almost the entire payment kills the remaining debt.</p>
+<h3>Extra payments — the math</h3>
+<p>Extra payments <strong>reduce the principal directly</strong>, which lowers every future month's interest. On a $300,000 / 7% / 30-year mortgage, adding just $200/month extra saves <strong>~$86,000 in interest</strong> and cuts the term by <strong>~6 years</strong>. A $10,000 lump sum in year 1 saves ~$31,000 in total interest. Use the calculator above to model your exact scenario.</p>
+<h3>Typical loan terms and rates (2026)</h3>
+<table class="ttbl">
+<thead><tr><th scope="col">Loan Type</th><th scope="col">Typical Term</th><th scope="col">2026 Rate Range</th><th scope="col">$300K / Best Rate / Monthly</th></tr></thead>
+<tbody>
+<tr><td>30-Year Mortgage</td><td>30 years</td><td>6.5% – 7.5%</td><td>$1,896 – $2,098</td></tr>
+<tr><td>15-Year Mortgage</td><td>15 years</td><td>6.0% – 7.0%</td><td>$2,532 – $2,694</td></tr>
+<tr><td>Auto Loan (new)</td><td>5–7 years</td><td>5.5% – 8.5%</td><td>$3,212/mo (5yr, $30K)</td></tr>
+<tr><td>Personal Loan</td><td>2–7 years</td><td>7% – 25%</td><td>varies by amount</td></tr>
+<tr><td>Student Loan (federal)</td><td>10–25 years</td><td>5.5% – 8.0%</td><td>fixed by program</td></tr>
+</tbody>
+</table>
+<h3>Amortization vs simple interest</h3>
+<p>Standard loans (mortgages, auto, personal) use <strong>amortizing interest</strong> — the balance and interest recalculate monthly. Some older car loans use <strong>Rule of 78s</strong> (pre-computed interest front-loaded), which penalizes early payoff. Always confirm your loan uses simple monthly amortization before making extra payments, especially on older auto loans.</p>
+<div class="abox">
+    Calculations use standard amortization formula per IRS Publication 936 and CFPB mortgage guidelines. Rates are national averages for illustrative purposes. Freddie Mac PMMS (Primary Mortgage Market Survey) is the authoritative source for current mortgage rates. · <a href="/methodology">Methodology</a>
+</div>
+</div>
+<!-- FAQ -->
+<div class="fqs">
+<h2>Frequently Asked Questions</h2>
+<div class="fqi"><div class="fqq"><span>What is the difference between an amortization schedule and a payment schedule?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">A payment schedule shows only how much you owe each month and when. An amortization schedule goes deeper — it shows exactly how each payment is split between principal and interest, and what your remaining balance is after each payment. Amortization schedules are critical for understanding the true cost of a loan and for planning extra payments.</div>
+</div>
+<div class="fqi"><div class="fqq"><span>When does a 30-year mortgage reach 50% principal paid?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">For a standard 30-year mortgage at 7%, you cross the 50% principal paid mark around year 21–22. This is the "crossover" point shown in the calculator. Before that point, every payment you make goes more toward interest than principal. After year 22, your monthly payment starts killing more debt than it costs in interest. This is why paying even a little extra in the first 5–10 years has an outsized impact.</div>
+</div>
+<div class="fqi"><div class="fqq"><span>Does making extra payments reduce the monthly amount or shorten the term?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">By default, most lenders apply extra payments to reduce the term — your required monthly payment stays the same, but your loan ends earlier. Some lenders let you choose to "recast" the loan, which recalculates a lower required payment on the reduced balance. Recasting is better for cash flow; keeping the payment the same is better for total interest savings. Ask your lender which option they support.</div>
+</div>
+<div class="fqi"><div class="fqq"><span>What is negative amortization?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">Negative amortization happens when your monthly payment is less than the interest accrued for that month. The unpaid interest gets added to your principal balance — meaning your debt grows even as you're making payments. This happened on some adjustable-rate mortgages (ARMs) during 2004–2008. Modern QM (Qualified Mortgage) rules prohibit negative amortization on most consumer loans, but it can still occur on some student loans during deferment or income-driven repayment periods.</div>
+</div>
+<div class="fqi"><div class="fqq"><span>Can I deduct mortgage interest on my taxes?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">Yes, for most homeowners. The mortgage interest deduction allows you to deduct interest paid on up to $750,000 of mortgage debt (for loans originated after December 15, 2017). This deduction is only available if you itemize deductions — with the 2026 standard deduction at $15,000 (single) and $30,000 (married), most taxpayers don't itemize. The amortization schedule shows exactly how much interest you pay each year, which is the figure you would report on Schedule A.</div>
+</div>
+<div class="fqi"><div class="fqq"><span>How does a 15-year mortgage compare to a 30-year mortgage?</span><span class="fqa-arrow">▾</span></div>
+<div class="fqa">On a $300,000 loan: a 30-year at 7% costs $1,996/month and $418,527 in total interest. A 15-year at 6.5% costs $2,614/month and $170,520 in total interest. The 15-year payment is $618/month higher, but you save nearly $248,000 in interest and own your home outright 15 years earlier. If you can afford the payment, the 15-year almost always wins on total cost. Use the calculator to run both scenarios side by side.</div>
+</div>
+</div>
+<!-- RELATED -->
+<div class="rels">
+<h2>Related Calculators</h2>
+<div class="relg">
+<a class="relc" href="/mortgage-calculator-usa">🏠 Mortgage Calculator</a>
+<a class="relc" href="/personal-loan-calculator">💳 Personal Loan</a>
+<a class="relc" href="/auto-loan-calculator">🚗 Auto Loan</a>
+<a class="relc" href="/refinance-calculator">🔁 Refinance Calculator</a>
+<a class="relc" href="/debt-payoff-calculator">💡 Debt Payoff</a>
+<a class="relc" href="/student-loan-calculator-usa">🎓 Student Loan</a>
+</div>
+</div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><script defer="True" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script>
+// ── Constants ──
+var MONTHS_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+var MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+// Loan type presets
+var PRESETS = {
+  mortgage: { amount: 300000, apr: 7, term: 30, unit: 'years' },
+  auto:     { amount: 30000,  apr: 7, term: 5,  unit: 'years' },
+  personal: { amount: 10000,  apr: 11, term: 3,  unit: 'years' },
+  student:  { amount: 35000,  apr: 6.5, term: 10, unit: 'years' }
+};
+
+function setType(type, btn) {
+  document.querySelectorAll('.type-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+  var p = PRESETS[type];
+  document.getElementById('loanAmt').value = p.amount;
+  document.getElementById('apr').value = p.apr;
+  document.getElementById('termVal').value = p.term;
+  document.getElementById('termUnit').value = p.unit;
+  document.getElementById('extraMonthly').value = 0;
+  document.getElementById('extraLump').value = 0;
+  document.getElementById('lumpMonth').value = 1;
+  calc();
+}
+
+// ── Formatters ──
+function fmt(n){ return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtD(n){ return '$' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtDate(startIdx, offset){
+  var total = startIdx + offset - 1;
+  var mo = total % 12;
+  var yr = 2026 + Math.floor(total / 12);
+  return MONTHS_SHORT[mo] + ' ' + yr;
+}
+function fmtDateFull(startIdx, offset){
+  var total = startIdx + offset - 1;
+  var mo = total % 12;
+  var yr = 2026 + Math.floor(total / 12);
+  return MONTHS_FULL[mo] + ' ' + yr;
+}
+
+// ── Core amortization ──
+function amortize(P, apr, n, extraMonthly, extraLump, lumpMonth){
+  var r = apr / 100 / 12;
+  var mp;
+  if(r === 0){ mp = P / n; } else {
+    mp = P * r * Math.pow(1+r,n) / (Math.pow(1+r,n) - 1);
+  }
+  var rows = [];
+  var balance = P;
+  var cumPrincipal = 0, cumInterest = 0;
+  for(var i = 1; i <= n + 600; i++){
+    if(balance <= 0.005) break;
+    var intPmt = balance * r;
+    var extra = (extraMonthly || 0) + (i === lumpMonth ? (extraLump || 0) : 0);
+    var prinPmt = mp - intPmt + extra;
+    if(prinPmt > balance) prinPmt = balance;
+    balance -= prinPmt;
+    if(balance < 0.005) balance = 0;
+    cumPrincipal += prinPmt;
+    cumInterest += intPmt;
+    rows.push({
+      month: i,
+      payment: prinPmt + intPmt,
+      principal: prinPmt,
+      interest: intPmt,
+      balance: balance,
+      cumPrincipal: cumPrincipal,
+      cumInterest: cumInterest
+    });
+    if(balance === 0) break;
+  }
+  return { mp: mp, rows: rows, totalInt: cumInterest, totalPaid: P + cumInterest, months: rows.length };
+}
+
+// ── Chart ──
+var chartInst = null;
+function renderChart(stdRows, exRows){
+  var canvas = document.getElementById('amort-chart');
+  if(!canvas) return;
+  var ctx = canvas.getContext('2d');
+
+  // Sample every N months for chart performance
+  var rows = exRows || stdRows;
+  var step = Math.max(1, Math.floor(rows.length / 60));
+  var labels = [], balData = [], prinData = [], intData = [];
+  var exBalData = null;
+  if(exRows && exRows !== stdRows){ exBalData = []; }
+
+  for(var i = 0; i < rows.length; i += step){
+    var r = rows[i];
+    labels.push(r.month);
+    balData.push(Math.round(r.balance));
+    prinData.push(Math.round(r.cumPrincipal));
+    intData.push(Math.round(r.cumInterest));
+    if(exBalData){ exBalData.push(Math.round(r.balance)); }
+  }
+  // Always include last point
+  var last = rows[rows.length-1];
+  if(labels[labels.length-1] !== last.month){
+    labels.push(last.month);
+    balData.push(0);
+    prinData.push(Math.round(last.cumPrincipal));
+    intData.push(Math.round(last.cumInterest));
+    if(exBalData) exBalData.push(0);
+  }
+
+  var datasets = [
+    { label:'Remaining Balance', data:balData, borderColor:'#00e5a0', backgroundColor:'rgba(0,229,160,0.08)', borderWidth:2, fill:true, pointRadius:0, tension:0.3 },
+    { label:'Cumulative Principal', data:prinData, borderColor:'#7c6ff7', backgroundColor:'rgba(124,111,247,0.07)', borderWidth:2, fill:true, pointRadius:0, tension:0.3 },
+    { label:'Cumulative Interest', data:intData, borderColor:'#ff6b6b', backgroundColor:'rgba(255,107,107,0.07)', borderWidth:2, fill:true, pointRadius:0, tension:0.3 },
+  ];
+
+  var config = {
+    type:'line',
+    data:{ labels: labels, datasets: datasets },
+    options:{
+      responsive:true, maintainAspectRatio:true,
+      interaction:{ mode:'index', intersect:false },
+      plugins:{
+        legend:{ display:false },
+        tooltip:{
+          callbacks:{
+            title:function(items){ return 'Month ' + items[0].label; },
+            label:function(item){ return item.dataset.label + ': ' + fmt(item.parsed.y); }
+          },
+          backgroundColor:'#181c26', borderColor:'rgba(255,255,255,0.12)', borderWidth:1,
+          titleColor:'#f0f2f8', bodyColor:'#7e859f', padding:10
+        }
+      },
+      scales:{
+        x:{ grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#7e859f', font:{size:11,family:'DM Mono'}, maxTicksLimit:10 } },
+        y:{ grid:{ color:'rgba(255,255,255,0.04)' }, ticks:{ color:'#7e859f', font:{size:11,family:'DM Mono'}, callback:function(v){ return '$'+(v/1000).toFixed(0)+'K'; } } }
+      }
+    }
+  };
+
+  if(chartInst){ chartInst.destroy(); }
+  chartInst = new Chart(ctx, config);
+}
+
+// ── Build tables ──
+function buildYearTable(rows, startIdx){
+  var tbody = document.getElementById('year-body');
+  tbody.innerHTML = '';
+  var yearData = {};
+  rows.forEach(function(r){
+    var yr = 2026 + Math.floor((startIdx + r.month - 2) / 12);
+    if(!yearData[yr]) yearData[yr] = { principal:0, interest:0, balance:0 };
+    yearData[yr].principal += r.principal;
+    yearData[yr].interest += r.interest;
+    yearData[yr].balance = r.balance;
+  });
+  var totP = 0, totI = 0;
+  Object.keys(yearData).forEach(function(yr){
+    var d = yearData[yr];
+    totP += d.principal; totI += d.interest;
+    var tr = document.createElement('tr');
+    tr.className = 'yr-row';
+    tr.innerHTML = '<td>'+yr+'</td><td class="p-cell">'+fmt(d.principal)+'</td><td class="i-cell">'+fmt(d.interest)+'</td><td>'+fmt(d.principal+d.interest)+'</td><td class="b-cell">'+fmt(d.balance)+'</td>';
+    tbody.appendChild(tr);
+  });
+  var tot = document.createElement('tr');
+  tot.className = 'total-row';
+  tot.innerHTML = '<td>Total</td><td class="p-cell">'+fmt(totP)+'</td><td class="i-cell">'+fmt(totI)+'</td><td>'+fmt(totP+totI)+'</td><td class="b-cell">$0</td>';
+  tbody.appendChild(tot);
+}
+
+function buildMonthTable(rows, startIdx){
+  var tbody = document.getElementById('month-body');
+  tbody.innerHTML = '';
+  rows.forEach(function(r){
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>'+r.month+'</td><td style="color:var(--muted)">'+fmtDate(startIdx,r.month)+'</td><td>'+fmtD(r.payment)+'</td><td class="p-cell">'+fmtD(r.principal)+'</td><td class="i-cell">'+fmtD(r.interest)+'</td><td class="b-cell">'+fmtD(r.balance)+'</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+// ── Tab switcher ──
+function switchTab(t){
+  document.getElementById('panel-year').classList.toggle('show', t==='year');
+  document.getElementById('panel-month').classList.toggle('show', t==='month');
+  document.getElementById('tab-yr').classList.toggle('active', t==='year');
+  document.getElementById('tab-mo').classList.toggle('active', t==='month');
+}
+
+// ── Main calculation ──
+function calc(){
+  var P = parseFloat(document.getElementById('loanAmt').value) || 300000;
+  var apr = parseFloat(document.getElementById('apr').value) || 7;
+  var termVal = parseFloat(document.getElementById('termVal').value) || 30;
+  var termUnit = document.getElementById('termUnit').value;
+  var startIdx = parseInt(document.getElementById('startMonth').value);
+  var extraMonthly = parseFloat(document.getElementById('extraMonthly').value) || 0;
+  var extraLump = parseFloat(document.getElementById('extraLump').value) || 0;
+  var lumpMonth = parseInt(document.getElementById('lumpMonth').value) || 1;
+
+  var n = termUnit === 'years' ? Math.round(termVal * 12) : Math.round(termVal);
+
+  // Standard amortization
+  var std = amortize(P, apr, n, 0, 0, 0);
+  // With extra payments
+  var hasExtra = extraMonthly > 0 || extraLump > 0;
+  var ex = hasExtra ? amortize(P, apr, n, extraMonthly, extraLump, lumpMonth) : std;
+
+  var rows = ex.rows;
+  var mp = std.mp;
+
+  // Crossover month (interest < principal in payment)
+  var crossover = null;
+  std.rows.forEach(function(r){ if(!crossover && r.principal >= r.interest) crossover = r.month; });
+
+  // Update summary cards
+  document.getElementById('r-monthly').textContent = fmtD(Math.round(mp * 100)/100);
+  document.getElementById('r-total').textContent = fmt(std.totalPaid);
+  document.getElementById('r-interest').textContent = fmt(std.totalInt);
+  document.getElementById('r-payoff').textContent = fmtDateFull(startIdx, std.months);
+
+  // Breakdown bar
+  var pPct = P / std.totalPaid * 100;
+  document.getElementById('seg-p').style.width = pPct.toFixed(1) + '%';
+  document.getElementById('seg-i').style.width = (100-pPct).toFixed(1) + '%';
+  document.getElementById('lbl-p').textContent = fmt(P);
+  document.getElementById('lbl-i').textContent = fmt(std.totalInt);
+
+  // Detail rows
+  document.getElementById('d-amount').textContent = fmt(P);
+  document.getElementById('d-apr').textContent = apr.toFixed(2) + '%';
+  document.getElementById('d-term').textContent = n + ' months';
+  document.getElementById('d-monthly').textContent = fmtD(Math.round(mp*100)/100);
+  document.getElementById('d-totalpay').textContent = fmt(std.totalPaid);
+  document.getElementById('d-interest').textContent = fmt(std.totalInt);
+  document.getElementById('d-crossover').textContent = crossover ? 'Month ' + crossover + ' (Year ' + Math.ceil(crossover/12) + ')' : 'N/A';
+  document.getElementById('d-payoff2').textContent = fmtDateFull(startIdx, std.months);
+
+  // Extra payment savings
+  if(hasExtra){
+    var saved = std.totalInt - ex.totalInt;
+    var monthsEarly = std.months - ex.months;
+    document.getElementById('save-banner').classList.add('show');
+    document.getElementById('sv-amount').textContent = fmt(saved);
+    document.getElementById('sv-months').textContent = monthsEarly + ' month' + (monthsEarly !== 1 ? 's' : '');
+    document.getElementById('sv-payoff').textContent = fmtDateFull(startIdx, ex.months);
+    document.getElementById('cmp-wrap').classList.add('show');
+    document.getElementById('cmp-std-pay').textContent = fmtD(Math.round(mp*100)/100);
+    document.getElementById('cmp-std-int').textContent = fmt(std.totalInt);
+    document.getElementById('cmp-std-po').textContent = fmtDate(startIdx, std.months);
+    var exMonthly = Math.round((mp + extraMonthly) * 100) / 100;
+    document.getElementById('cmp-ex-pay').textContent = fmtD(exMonthly) + (extraLump > 0 ? ' + lump' : '');
+    document.getElementById('cmp-ex-int').textContent = fmt(ex.totalInt);
+    document.getElementById('cmp-ex-po').textContent = fmtDate(startIdx, ex.months);
+  } else {
+    document.getElementById('save-banner').classList.remove('show');
+    document.getElementById('cmp-wrap').classList.remove('show');
+  }
+
+  // Quick answer bar
+  var qaHtml = '<strong>Result:</strong> ' + fmt(P) + ' at ' + apr.toFixed(2) + '% APR for ' + (termUnit==='years' ? termVal + ' years' : termVal + ' months') + ' = <strong>' + fmtD(Math.round(mp*100)/100) + '/mo</strong>';
+  if(crossover) qaHtml += ' · Principal exceeds interest in month <strong>' + crossover + ' (Year ' + Math.ceil(crossover/12) + ')</strong>';
+  if(hasExtra) qaHtml += ' · Extra payments save <strong>' + fmt(std.totalInt - ex.totalInt) + '</strong>';
+  document.getElementById('qa-bar').innerHTML = qaHtml;
+
+  // Build tables
+  buildYearTable(rows, startIdx);
+  buildMonthTable(rows, startIdx);
+
+  // Chart
+  renderChart(std.rows, hasExtra ? ex.rows : null);
+}
+
+// FAQ accordion
+document.querySelectorAll('.fqi').forEach(function(item){
+  item.querySelector('.fqq').addEventListener('click', function(){ item.classList.toggle('open'); });
+});
+
+// Init
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

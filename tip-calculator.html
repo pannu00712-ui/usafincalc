@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="USAFinCalc Editorial Team" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tip Calculator — Split the Bill & Calculate Tip Instantly</title>
+<meta content="Free tip calculator. Enter your bill, choose a tip percentage, and split between any number of people. Instant per-person total." name="description"/>
+<meta content="tip calculator, how much should I tip, bill splitter, tip percentage calculator, split the bill calculator" name="keywords"/>
+<link href="https://usafincalc.com/tip-calculator" rel="canonical"/>
+<meta content="Tip Calculator — Split the Bill & Calculate Tip Instantly" property="og:title"/>
+<meta content="Enter your bill, pick a tip percentage, split between people — get an instant per-person total." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/tip-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Tip Calculator — Split the Bill & Calculate Tip Instantly" name="twitter:title"/>
+<meta content="Enter your bill, pick a tip percentage, split between people — get an instant per-person total." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;
+  --font:'Segoe UI',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#10b981;font-family:var(--mono);text-decoration:none}
+.hero{padding:48px 24px 24px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.22);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:18px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+input[type=number]{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:10px 13px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none;appearance:none}
+input:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:14px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.tip-pct-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:14px}
+.tip-pct-btn{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-family:var(--mono);font-size:13px;font-weight:600;padding:10px 4px;cursor:pointer;transition:all .15s}
+.tip-pct-btn:hover{border-color:var(--accent)}
+.tip-pct-btn.active{background:rgba(16,185,129,0.12);border-color:var(--accent);color:var(--accent)}
+.stepper{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.step-btn{width:38px;height:38px;flex-shrink:0;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:18px;font-weight:600;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s}
+.step-btn:hover{border-color:var(--accent)}
+.step-val{flex:1;text-align:center;font-family:var(--mono);font-size:16px;font-weight:600}
+.net-card{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22);border-radius:var(--r);padding:22px;text-align:center;margin-bottom:14px}
+.nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:40px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text)}
+.cards4{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.mc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px;text-align:center}
+.ml{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.mv{font-family:var(--mono);font-size:14px;font-weight:600}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:280px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.faq{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.faq h2{font-size:20px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:320px;padding-top:10px}
+.intro{max-width:980px;margin:0 auto;padding:0 24px 8px}
+.intro p{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:14px;max-width:760px}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+footer a:hover{color:var(--accent)}
+.a11y-skip{position:absolute;left:-9999px;top:auto}
+.a11y-skip:focus{left:16px;top:16px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;font-weight:600;z-index:9999}
+
+input:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {"@type": "ImageObject", "url": "https://usafincalc.com/logo.png", "width": 200, "height": 60},
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "hello@usafincalc.com", "availableLanguage": "English"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"}, "query-input": "required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Tip Calculator",
+  "url": "https://usafincalc.com/tip-calculator",
+  "isPartOf": {"@type": "WebSite", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "description": "Free tip calculator. Enter your bill, choose a tip percentage, and split between any number of people. Instant per-person total."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usafincalc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Tip Calculator", "item": "https://usafincalc.com/tip-calculator"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tip Calculator",
+  "description": "Free tip calculator. Enter your bill, choose a tip percentage, and split between any number of people. Instant per-person total.",
+  "url": "https://usafincalc.com/tip-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How much should I tip at a restaurant?", "acceptedAnswer": {"@type": "Answer", "text": "In the US, 18-20% of the pre-tax bill is the standard range for sit-down restaurant service. 15% is considered the low end for adequate service, and 20-25% is common for excellent service. For counter service or takeout, 10% or no tip is typical."}},
+    {"@type": "Question", "name": "Should I tip on the pre-tax or post-tax amount?", "acceptedAnswer": {"@type": "Answer", "text": "Tipping on the pre-tax subtotal is technically correct etiquette, since tax is not part of the service being tipped. In practice, the difference is small and many people simply tip on the total receipt amount for convenience."}},
+    {"@type": "Question", "name": "How do I split a bill evenly between people?", "acceptedAnswer": {"@type": "Answer", "text": "Add the tip to the bill total first, then divide that combined amount by the number of people. This calculator does that automatically — enter the bill, choose a tip percentage, and set the number of people to see exactly what each person owes."}},
+    {"@type": "Question", "name": "What is a fair tip for delivery drivers?", "acceptedAnswer": {"@type": "Answer", "text": "For food delivery, 15-20% of the order total or a minimum of $3-5 for smaller orders is standard, with more for difficult weather, long distances, or large/heavy orders."}}
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge">Bill Splitter • Any Tip %</div>
+<h1>Tip <span>Calculator</span></h1>
+<p class="hero-sub">Enter your bill, pick a tip percentage, and split it between everyone at the table. Instant per-person total.</p>
+</div>
+<div class="intro">
+<p>No more doing tip math in your head at the table. Enter the bill amount, choose a tip percentage (or type your own), and set how many people are splitting it — you'll get the tip amount, the grand total, and exactly what each person owes, all updating live as you type.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">🧾 Bill Details</div>
+<label for="bill">Bill amount</label>
+<div class="pfx"><span>$</span><input id="bill" min="0" oninput="calc()" step="1" type="number" value="50"/></div>
+<label>Tip percentage</label>
+<div class="tip-pct-grid">
+<button class="tip-pct-btn" data-pct="10" onclick="setPct(10)" type="button">10%</button>
+<button class="tip-pct-btn" data-pct="15" onclick="setPct(15)" type="button">15%</button>
+<button class="tip-pct-btn active" data-pct="18" onclick="setPct(18)" type="button">18%</button>
+<button class="tip-pct-btn" data-pct="20" onclick="setPct(20)" type="button">20%</button>
+<button class="tip-pct-btn" data-pct="25" onclick="setPct(25)" type="button">25%</button>
+</div>
+<label for="custom-pct">Or enter a custom tip %</label>
+<div class="pfx" style="margin-bottom:14px"><input id="custom-pct" min="0" oninput="this.value === '' ? setPct(18) : setPct(+this.value, true)" placeholder="e.g. 22" step="1" type="number"/><span style="left:auto;right:12px">%</span></div>
+<label>Number of people splitting</label>
+<div class="stepper">
+<button class="step-btn" onclick="changePeople(-1)" type="button">−</button>
+<div class="step-val" id="people-display">1</div>
+<button class="step-btn" onclick="changePeople(1)" type="button">+</button>
+</div>
+</div>
+<div id="result-col">
+<div class="placeholder">
+<div style="font-size:36px;opacity:.35">💵</div>
+<div>Enter your bill amount</div>
+<div style="font-size:12px;font-family:var(--mono);color:var(--muted)">Tip • Total • Per person</div>
+</div>
+</div>
+</div>
+</main>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much should I tip at a restaurant?</div>
+<div class="faq-a">In the US, 18-20% of the pre-tax bill is the standard range for sit-down restaurant service. 15% is considered the low end for adequate service, and 20-25% is common for excellent service. For counter service or takeout, 10% or no tip is typical.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Should I tip on the pre-tax or post-tax amount?</div>
+<div class="faq-a">Tipping on the pre-tax subtotal is technically correct etiquette, since tax isn't part of the service being tipped. In practice, the difference is small and many people simply tip on the total receipt amount for convenience.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I split a bill evenly between people?</div>
+<div class="faq-a">Add the tip to the bill total first, then divide that combined amount by the number of people. This calculator does that automatically — enter the bill, choose a tip percentage, and set the number of people to see exactly what each person owes.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is a fair tip for delivery drivers?</div>
+<div class="faq-a">For food delivery, 15-20% of the order total or a minimum of $3-5 for smaller orders is standard, with more for difficult weather, long distances, or large/heavy orders.</div>
+</div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/discount-calculator">Discount Calculator</a></li><li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li><li><a href="/budget-planner">Budget Planner</a></li><li><a href="/hourly-to-salary-calculator">Hourly to Salary</a></li><li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+</ul>
+</section>
+<section class="content-block" id="tip-guide">
+<h2>What This Tip Calculator Does</h2>
+<p>This tip calculator computes your tip amount, total bill, and per-person share for any restaurant, service, or hospitality experience. Enter the bill subtotal, choose your tip percentage, and split the total across your party — the calculator handles the math instantly. It also shows you the total tip amount in dollars alongside the percentage, so you can verify you're tipping what you intend.</p>
+<h2>How It Works</h2>
+<p><strong>Tip Amount = Bill Total × (Tip Percentage / 100)</strong></p>
+<p><strong>Grand Total = Bill Total + Tip Amount</strong></p>
+<p><strong>Per Person = Grand Total / Number of People</strong></p>
+<p>Note: in most states, sales tax is already included in the "bill total" when you receive your check. You can choose to tip on the pre-tax subtotal (the base price of food and drinks) or the post-tax total. Tipping on the pre-tax amount is mathematically accurate; tipping on the post-tax is more generous and increasingly common.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Standard US Tipping Norms by Service Type</h3>
+<p>US tipping culture has shifted upward in recent years, particularly since the rise of digital POS systems that prompt for tips in more contexts. General 2024 norms: full-service restaurant (15–20% for adequate service, 20–25% for excellent), food delivery (10–20% of order value), rideshare (10–20%), hotel housekeeping ($2–$5 per night), taxi/car service (15–20%), hair salon/barber (15–25%), hotel doorman for hailing a cab ($1–$2), hotel porter ($1–$2 per bag), bartender ($1–$2 per drink or 15–20% of tab).</p>
+<h3>Tip on Pre-Tax vs. Post-Tax Amount</h3>
+<p>Technically, tips are meant to compensate service workers based on the value of service received, which is the pre-tax food and beverage total. Tipping on the post-tax total gives the server a small additional amount. In high-tax jurisdictions (NYC with 8.875% tax), tipping on pre-tax vs post-tax makes a meaningful difference on large bills. Either approach is widely accepted; tipping on the total is increasingly common and simplifies the calculation.</p>
+<h3>Gratuity Already Included</h3>
+<p>Many restaurants automatically add an 18–20% gratuity (also called a "service charge" or "auto-gratuity") for large parties (typically 6+) or for all parties as a policy choice. Check your bill carefully — if gratuity is already included, adding another tip on top is optional (usually done for exceptional service). Some restaurants now include a mandatory service charge that goes to the house, not directly to the server — in this case, an additional cash tip to your server may be appropriate.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Use the bill subtotal, not the total including tax</strong> — if you want to tip strictly on the service value, calculate the percentage on the food and drink total before tax is added.</li>
+<li><strong>Don't penalize servers for kitchen errors</strong> — if your food arrives wrong or undercooked, that's typically a kitchen issue, not a server failure. Mention it directly and give your server a chance to make it right before adjusting the tip.</li>
+<li><strong>Tip in cash when possible if the restaurant uses tip-pooling</strong> — at restaurants that pool all tips, cash tips go directly to your specific server; digital tips may be shared across the team. Ask your server if you want to understand how tips are distributed.</li>
+<li><strong>Tipping on delivery apps</strong> — delivery driver tips on apps like DoorDash and UberEats go directly to the driver. The service fees charged by the app do not go to the driver. Tip at least $3–$5 for short distances, more for large orders or long distances.</li>
+<li><strong>Adjust for exceptional service</strong> — a 25–30% tip for genuinely outstanding service is a meaningful expression of appreciation in an industry where tipped workers in many states earn a lower minimum wage.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">How much should I tip at a restaurant?</h3><p class="faq-a">The current US norm for full-service restaurants is 18–20% for adequate service and 20–25% for good to excellent service. 15% was once the standard but is now considered the low end of acceptable. For truly exceptional service, 25–30% is a strong signal of appreciation. For counter service or fast-casual (where you order at the counter), tipping is optional — 10–15% is appreciated if you chose to tip.</p></div>
+<div class="faq-item"><h3 class="faq-q">Should I tip if service was bad?</h3><p class="faq-a">For poor service caused by the server (inattentive, rude, long waits with an empty restaurant), reducing the tip is appropriate feedback. However, many servers make the federal tipped minimum wage of $2.13/hour in some states and rely on tips for the majority of their income. A 10–15% tip for poor service signals dissatisfaction while still providing income. For service problems caused by the kitchen or management, the server isn't responsible — maintain a normal tip and address the issue with management.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is tipping at coffee shops and fast casual expected?</h3><p class="faq-a">Tipping norms for counter service have changed significantly since digital tip prompts became standard on POS systems. At coffee shops with full barista service (custom drinks, specialty preparation), 10–15% or rounding up to the next dollar is common. At pure counter-service or fast-food restaurants where you order and pick up your own order, tipping is not expected, though leaving small change or 10% for friendly service is appreciated.</p></div>
+<div class="faq-item"><h3 class="faq-q">Are tips taxable income for servers?</h3><p class="faq-a">Yes — tips are taxable income that servers are legally required to report. The IRS requires tipped employees to report all tip income to their employer, who includes it on W-2s. Many restaurants use the TRAC (Tip Rate Alternative Commitment) system with the IRS, which estimates total tip income based on credit card tips and applies it to cash service periods. Servers who underreport tips can face IRS audits and back taxes.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>The <a href="/sales-tax-calculator">Sales Tax Calculator</a> shows your tax amount to help distinguish pre-tax from post-tax totals. The <a href="/discount-calculator">Discount Calculator</a> is useful when calculating tips on discounted bills or when group coupons change the base amount. For budgeting dining expenses, the <a href="/budget-planner">Budget Planner</a> helps allocate a monthly dining and entertainment budget.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+let tipPct = 18;
+let people = 1;
+
+function setPct(val, fromCustom) {
+  if (isNaN(val) || val < 0) val = 0;
+  tipPct = val;
+  document.querySelectorAll('.tip-pct-btn').forEach(b => {
+    b.classList.toggle('active', !fromCustom && +b.dataset.pct === val);
+  });
+  if (!fromCustom) document.getElementById('custom-pct').value = '';
+  calc();
+}
+
+function changePeople(delta) {
+  people = Math.max(1, people + delta);
+  document.getElementById('people-display').textContent = people;
+  calc();
+}
+
+function fmt(n) { return '$' + n.toFixed(2); }
+
+function calc() {
+  const bill = +document.getElementById('bill').value || 0;
+  const tipAmount = bill * (tipPct / 100);
+  const total = bill + tipAmount;
+  const perPerson = total / people;
+  const tipPerPerson = tipAmount / people;
+
+  document.getElementById('result-col').innerHTML = `
+    <div class="net-card">
+      <div class="nl">${people > 1 ? 'Each person owes' : 'Total with tip'}</div>
+      <div class="na">${fmt(people > 1 ? perPerson : total)}</div>
+      <div class="nm">${people > 1 ? `Total bill: <span>${fmt(total)}</span>` : `Tip: <span>${fmt(tipAmount)}</span> at ${tipPct}%`}</div>
+    </div>
+    <div class="cards4">
+      <div class="mc"><div class="ml">Tip amount</div><div class="mv" style="color:#f59e0b">${fmt(tipAmount)}</div></div>
+      <div class="mc"><div class="ml">Grand total</div><div class="mv" style="color:#10b981">${fmt(total)}</div></div>
+      <div class="mc"><div class="ml">Tip / person</div><div class="mv" style="color:#a78bfa">${fmt(tipPerPerson)}</div></div>
+    </div>
+    ${people > 1 ? `<p style="font-size:12px;color:var(--muted);line-height:1.7;text-align:center">Splitting ${fmt(total)} between ${people} people = ${fmt(perPerson)} each (includes ${fmt(tipPerPerson)} tip per person)</p>` : ''}`;
+}
+
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

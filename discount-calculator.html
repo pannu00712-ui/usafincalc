@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Quickly calculate sale price, discount amount, and percentage saved for any purchase." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/discount-calculator"/>
+<title>Discount Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Discount Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/discount-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Discount Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/discount-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Discount Calculator — Coming Soon | USAFinCalc",
+  "description": "Discount Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/discount-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1><span>Discount Calculator</span></h1>
+  <p class="sub">Quickly calculate sale price, discount amount, and percentage saved for any purchase. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li><li><a href="/budget-planner">Budget Planner</a></li><li><a href="/salary-calculator-usa">Salary Calculator</a></li><li><a href="/cost-of-living-calculator">Cost of Living Calculator</a></li><li><a href="/savings-calculator">Savings Calculator</a></li><li><a href="/net-worth-calculator">Net Worth Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="discount-guide">
+<h2>What This Discount Calculator Does</h2>
+<p>This calculator quickly computes the sale price, dollar savings, and effective discount percentage for any item or purchase. Whether you're comparing sale prices, calculating the value of a coupon or promo code, figuring out bulk discount savings, or working out markdowns on your own products, this tool does the math instantly without manual percentage calculations.</p>
+<p>You can use it three ways: enter original price and discount percentage to find sale price; enter original price and sale price to find percentage off; or work backwards from a desired price to find the required discount percentage. It also handles stacked discounts — which are different from simply adding the percentages.</p>
+<h2>How It Works</h2>
+<p>The core discount formulas are:</p>
+<p><strong>Sale Price = Original Price × (1 − Discount % / 100)</strong></p>
+<p><strong>Savings Amount = Original Price − Sale Price</strong></p>
+<p><strong>Discount % = (Savings Amount / Original Price) × 100</strong></p>
+<p>For stacked discounts (e.g., 20% off, then additional 10% off), the combined discount is NOT simply 30%. Correct calculation: 20% off leaves 80%, then 10% off that leaves 72% of original. Combined savings is 28%, not 30%.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Percentage Off vs. Dollar Off</h3>
+<p>Percentage discounts scale with purchase price; fixed-dollar discounts do not. A 20% discount on a $50 item saves $10. "$10 off" saves the same on a $50 item but only $10 on a $200 item (vs $40 for 20% off). Always convert to the same unit for the specific item you're buying.</p>
+<h3>BOGO Discounts</h3>
+<p>"Buy One Get One Free" equals a 50% discount on each item if you need both. "Buy One Get One 50% Off" equals a 25% overall discount. These are less favorable than they appear — only if you genuinely need both items does the offer represent real savings.</p>
+<h3>Markdown vs. Margin</h3>
+<p>For retailers, a markdown reduces the retail price by a percentage of that price. Margin is profit as a percentage of the selling price. If an item costs $40 and retails for $100 (60% margin), discounting it 30% to $70 reduces margin to approximately 43%.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Check price history before assuming it's a deal</strong> — some retailers inflate regular prices to make discounts appear larger. Use tools like CamelCamelCamel for Amazon or Google Shopping for price comparisons.</li>
+<li><strong>Stack coupons strategically</strong> — manufacturer coupons can often be combined with store sales and cashback apps (Ibotta, Rakuten). Each layer applies to the already-reduced price.</li>
+<li><strong>Know the return policy for discounted items</strong> — some sale and clearance items are non-returnable. Factor this risk into the "deal" calculation.</li>
+<li><strong>For business pricing, use gross margin not markup</strong> — markup is calculated on cost; margin is on selling price. A 50% markup gives only a 33% margin.</li>
+<li><strong>Calculate cost-per-unit for bulk discounts</strong> — divide the discounted total by units to compare per-unit costs across different quantity tiers.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">How do I calculate 30% off a price?</h3><p class="faq-a">Multiply the original price by 0.70 (which is 1 minus 0.30). For example, 30% off $85 = $85 × 0.70 = $59.50. Or find 30% of the price ($85 × 0.30 = $25.50) and subtract from the original ($85 − $25.50 = $59.50).</p></div>
+<div class="faq-item"><h3 class="faq-q">If I take 20% off and then 10% off, is that 30% total?</h3><p class="faq-a">No. Stacked percentage discounts multiply rather than add. 20% off leaves 80%. An additional 10% off that reduces it to 72% of the original (0.80 × 0.90 = 0.72). Total discount is 28%, not 30%.</p></div>
+<div class="faq-item"><h3 class="faq-q">How do I find the original price from a discounted price?</h3><p class="faq-a">Divide the sale price by (1 − discount percentage). If an item is $63 after a 30% discount: $63 ÷ 0.70 = $90 original price. This formula is essential for reverse-engineering sale prices.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is sales tax applied to the original or discounted price?</h3><p class="faq-a">In most US states, sales tax is applied to the final sale price after discounts. If you buy a $100 item at 20% off for $80 in a state with 8% sales tax, you pay tax on $80 ($6.40), not $100 ($8.00). Manufacturer coupons may be handled differently in some states.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>For sales tax on your final purchase price, use the <a href="/sales-tax-calculator">Sales Tax Calculator</a>. Retailers evaluating pricing strategy will find the <a href="/roi-calculator">ROI Calculator</a> useful for analyzing margin impact of discounts. The <a href="/savings-calculator">Savings Calculator</a> helps model the opportunity cost of spending versus investing those dollars.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

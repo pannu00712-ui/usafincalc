@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Paycheck Calculator 2026 — Per-Check Take-Home Pay Breakdown</title>
+<meta content="Calculate your exact paycheck for 2026 — federal tax, state tax, FICA, and 401(k) deductions broken down per pay period. Weekly, biweekly, semi-monthly, or monthly." name="description"/>
+<meta content="paycheck calculator 2026, take home pay calculator, net pay calculator, payroll calculator, W-4 calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/paycheck-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="Paycheck Calculator 2026 — Per-Check Take-Home Pay Breakdown" property="og:title"/>
+<meta content="Calculate your exact paycheck for 2026 — federal tax, state tax, FICA, and 401(k) deductions broken down per pay period." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/paycheck-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Paycheck Calculator 2026 — Per-Check Take-Home Pay Breakdown" name="twitter:title"/>
+<meta content="Calculate your exact paycheck for 2026 — federal tax, state tax, FICA, and 401(k) deductions broken down per pay period." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--fica:#a78bfa;--pretax:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:600px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.content-block{max-width:780px;margin:20px auto 0;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:600;margin:36px 0 14px;color:var(--text)}
+.content-block h3{font-size:17px;font-weight:600;margin:22px 0 10px;color:var(--text)}
+.content-block p{color:var(--muted);font-size:15px;margin-bottom:14px;line-height:1.75}
+.content-block ul{color:var(--muted);font-size:15px;margin:0 0 14px 20px;line-height:1.75}
+.content-block li{margin-bottom:8px}
+.content-block a{color:var(--accent);text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Paycheck Calculator 2026 — Per-Check Take-Home Pay Breakdown",
+  "url": "https://usafincalc.com/paycheck-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Paycheck Calculator",
+      "item": "https://usafincalc.com/paycheck-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Paycheck Calculator 2026",
+  "description": "Calculate your exact paycheck — federal tax, state tax, FICA, and 401(k) deductions broken down per pay period.",
+  "url": "https://usafincalc.com/paycheck-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is my paycheck smaller than I expected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common reasons: pre-tax deductions (401k, health insurance) reduce your taxable pay before tax is even calculated; your W-4 withholding may be set higher than needed; or your pay period has more deductions than you accounted for, like an extra insurance premium taken every other check."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between gross pay and net pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gross pay is your total earnings before any deductions. Net pay (take-home pay) is what actually hits your bank account after federal tax, state tax, FICA (Social Security and Medicare), and any pre-tax or post-tax deductions like 401(k) contributions or insurance premiums."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many paychecks will I get in 2026 if I'm paid biweekly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most biweekly payroll calendars produce 26 paychecks per year, though in some years with a specific calendar alignment it can be 27. Check your employer's specific pay calendar to confirm."
+      }
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 IRS brackets + FICA rates</div>
+  <h1>Paycheck <span>Calculator</span></h1>
+  <p class="hero-sub">See exactly what lands in your bank account each pay period — federal tax, state tax, Social Security, Medicare, and your 401(k) contribution, broken down per check.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">Your Pay Details</div>
+    <label for="salary">Annual Salary</label>
+    <div class="pfx"><span>$</span><input id="salary" oninput="calcPaycheck()" type="number" value="65000"/></div>
+    <label for="frequency">Pay Frequency</label>
+    <select id="frequency" onchange="calcPaycheck()">
+      <option value="52">Weekly (52/year)</option>
+      <option selected value="26">Biweekly (26/year)</option>
+      <option value="24">Semi-monthly (24/year)</option>
+      <option value="12">Monthly (12/year)</option>
+    </select>
+    <label for="filing">Filing Status</label>
+    <select id="filing" onchange="calcPaycheck()">
+      <option value="single">Single</option>
+      <option value="married">Married Filing Jointly</option>
+    </select>
+    <label for="stateRate">State Income Tax Rate (approx., enter 0 if none)</label>
+    <div class="sfx"><input id="stateRate" oninput="calcPaycheck()" type="number" value="5" step="0.1"/><span>%</span></div>
+    <label for="k401Pct">401(k) Contribution (% of salary, pre-tax)</label>
+    <div class="sfx"><input id="k401Pct" oninput="calcPaycheck()" type="number" value="5" step="0.5"/><span>%</span></div>
+    <label for="preTaxOther">Other Pre-Tax Deductions Per Check (health insurance, etc.)</label>
+    <div class="pfx"><span>$</span><input id="preTaxOther" oninput="calcPaycheck()" type="number" value="0"/></div>
+  </div>
+  <div class="card">
+    <div class="ct">Your Take-Home Per Paycheck</div>
+    <div class="res-main">
+      <div class="res-label">Net Pay Per Paycheck</div>
+      <div class="res-val" id="netPay">—</div>
+      <div class="res-sub" id="netPaySub">calculating…</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Gross Per Check</div><div class="bk-v" id="grossPerCheck" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Federal Tax</div><div class="bk-v" id="fedPerCheck" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">State Tax</div><div class="bk-v" id="statePerCheck" style="color:var(--state)">—</div></div>
+      <div class="bk"><div class="bk-l">FICA (SS + Medicare)</div><div class="bk-v" id="ficaPerCheck" style="color:var(--fica)">—</div></div>
+      <div class="bk"><div class="bk-l">401(k) Contribution</div><div class="bk-v" id="k401PerCheck" style="color:var(--pretax)">—</div></div>
+      <div class="bk"><div class="bk-l">Annual Net Pay</div><div class="bk-v" id="annualNet" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator uses 2026 federal brackets and a simplified flat state-rate estimate. Your actual paycheck depends on your specific W-4 elections, exact state and local tax rules, and any additional benefit deductions not modeled here. For an exact state-specific figure, use one of our <a href="/tax-calculator-usa" style="color:var(--accent)">state tax calculators</a>.</div>
+
+<div class="content-block">
+
+<h2>What This Paycheck Calculator Does</h2>
+<p>This calculator breaks your annual salary down into what actually lands in your bank account each pay period, after federal income tax, an estimated state tax, Social Security, Medicare, and your own 401(k) contribution. It's built for checking whether your current paycheck looks right, planning a budget around your actual take-home amount, or seeing how changing your 401(k) contribution percentage changes your per-check amount.</p>
+<p>Unlike an annual salary calculator, this tool focuses on the per-paycheck number — which is what you actually budget against every two weeks or every month, depending on your employer's pay schedule.</p>
+
+<h2>Understanding Your Results</h2>
+
+<h3>Gross Per Check</h3>
+<p>Your annual salary divided by the number of pay periods you selected. This is your pay before any deductions — what shows at the top of your paystub.</p>
+
+<h3>Federal Tax Per Check</h3>
+<p>An estimate of the federal income tax withheld from this specific paycheck, based on 2026 IRS brackets applied to your annualized taxable income (after your 401(k) contribution and other pre-tax deductions reduce it), then divided back down to a per-check amount.</p>
+
+<h3>FICA (Social Security + Medicare)</h3>
+<p>A flat 7.65% of your gross pay (6.2% Social Security + 1.45% Medicare) up to the Social Security wage base ($184,500 for 2026). Unlike income tax, FICA doesn't change based on filing status or deductions.</p>
+
+<h3>401(k) Contribution</h3>
+<p>Your chosen percentage of gross pay, deducted before federal (and most state) tax is calculated. This is why increasing your 401(k) percentage doesn't reduce your take-home pay by the full contribution amount — part of what you're "giving up" would have gone to taxes anyway.</p>
+
+<h2>Why Your Paycheck Might Not Match Your Expectations</h2>
+<ul>
+<li><strong>Pre-tax deductions lower your taxable wages</strong> — health insurance premiums, HSA/FSA contributions, and 401(k) contributions all reduce the income that federal and state tax get calculated on.</li>
+<li><strong>Your W-4 affects withholding, not your actual tax bill</strong> — claiming more allowances or using the multiple-jobs adjustment changes how much is withheld per check, but your real tax liability is settled at filing time regardless.</li>
+<li><strong>Bonuses are often withheld at a flat 22% federal rate</strong> — separate from your regular paycheck withholding — which is why a bonus check can look like it was taxed "extra," even though it usually evens out at filing time.</li>
+<li><strong>Some deductions are post-tax</strong> — Roth 401(k) contributions and certain insurance products are deducted after tax is calculated, so they reduce your take-home pay by the full deducted amount.</li>
+</ul>
+
+<h2>Related Calculators You May Need</h2>
+<ul>
+<li><strong><a href="/salary-calculator-usa">Salary Calculator</a></strong> — for the full annual breakdown rather than a per-paycheck view.</li>
+<li><strong><a href="/overtime-calculator">Overtime Pay Calculator</a></strong> — to see your time-and-a-half pay for any hours beyond 40.</li>
+<li><strong><a href="/tip-calculator">Tip Calculator</a></strong> — to split a bill or check your tip math.</li>
+<li><strong><a href="/tax-calculator-usa">Tax Calculator</a></strong> — for a detailed federal tax estimate with itemized deduction support.</li>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — to project how your current contribution rate grows over time.</li>
+<li><strong><a href="/budget-planner">Budget Planner</a></strong> — to build a monthly budget around your actual net pay.</li>
+<li><strong><a href="/take-home-pay-calculator">Take-Home Pay Calculator</a></strong> — a simpler annual-salary-first version of this same take-home math.</li>
+<li><strong><a href="/net-pay-calculator">Net Pay Calculator</a></strong> — to check any single paycheck's net amount from its gross figure directly.</li>
+<li><strong><a href="/biweekly-pay-calculator">Biweekly Pay Calculator</a></strong> — for a dedicated 26-paycheck-a-year breakdown.</li>
+<li><strong><a href="/payroll-tax-calculator">Payroll Tax Calculator</a></strong> — to see your Social Security and Medicare tax in more detail.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item">
+<div class="faq-q">Why is my paycheck smaller than I expected?</div>
+<div class="faq-a">Common reasons: pre-tax deductions (401k, health insurance) reduce your taxable pay before tax is even calculated; your W-4 withholding may be set higher than needed; or your pay period has more deductions than you accounted for, like an extra insurance premium taken every other check.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">What's the difference between gross pay and net pay?</div>
+<div class="faq-a">Gross pay is your total earnings before any deductions. Net pay (take-home pay) is what actually hits your bank account after federal tax, state tax, FICA, and any pre-tax or post-tax deductions like 401(k) contributions or insurance premiums.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q">How many paychecks will I get in 2026 if I'm paid biweekly?</div>
+<div class="faq-a">Most biweekly payroll calendars produce 26 paychecks per year, though in some years with a specific calendar alignment it can be 27. Check your employer's specific pay calendar to confirm.</div>
+</div>
+</div>
+
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">State Tax Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/alabama-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Alabama Tax Calculator</a></li><li><a href="/arizona-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Arizona Tax Calculator</a></li><li><a href="/california-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">California Tax Calculator</a></li><li><a href="/colorado-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Colorado Tax Calculator</a></li><li><a href="/connecticut-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Connecticut Tax Calculator</a></li><li><a href="/florida-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Florida Tax Calculator</a></li><li><a href="/georgia-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Georgia Tax Calculator</a></li><li><a href="/illinois-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Illinois Tax Calculator</a></li><li><a href="/indiana-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Indiana Tax Calculator</a></li><li><a href="/iowa-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Iowa Tax Calculator</a></li><li><a href="/kentucky-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Kentucky Tax Calculator</a></li><li><a href="/maryland-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Maryland Tax Calculator</a></li><li><a href="/massachusetts-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Massachusetts Tax Calculator</a></li><li><a href="/michigan-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Michigan Tax Calculator</a></li><li><a href="/minnesota-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Minnesota Tax Calculator</a></li><li><a href="/missouri-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Missouri Tax Calculator</a></li><li><a href="/nevada-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Nevada Tax Calculator</a></li><li><a href="/new-jersey-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">New Jersey Tax Calculator</a></li><li><a href="/new-york-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">New York Tax Calculator</a></li><li><a href="/north-carolina-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">North Carolina Tax Calculator</a></li><li><a href="/ohio-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Ohio Tax Calculator</a></li><li><a href="/oregon-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Oregon Tax Calculator</a></li><li><a href="/pennsylvania-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Pennsylvania Tax Calculator</a></li><li><a href="/south-carolina-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">South Carolina Tax Calculator</a></li><li><a href="/tennessee-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Tennessee Tax Calculator</a></li><li><a href="/texas-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Texas Tax Calculator</a></li><li><a href="/utah-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Utah Tax Calculator</a></li><li><a href="/virginia-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Virginia Tax Calculator</a></li><li><a href="/washington-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Washington Tax Calculator</a></li><li><a href="/wisconsin-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Wisconsin Tax Calculator</a></li>
+</ul>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+
+function fedTax(taxable, filing){
+  var brackets = filing === 'married'
+    ? [[24800,0.10],[100800,0.12],[211400,0.22],[403550,0.24],[512450,0.32],[768700,0.35],[Infinity,0.37]]
+    : [[12400,0.10],[50400,0.12],[105700,0.22],[201775,0.24],[256225,0.32],[640600,0.35],[Infinity,0.37]];
+  var tax=0, prev=0;
+  brackets.forEach(function(b){
+    if(taxable>prev){tax+=(Math.min(taxable,b[0])-prev)*b[1];prev=b[0];}
+  });
+  return tax;
+}
+
+function calcPaycheck(){
+  var salary = parseFloat(document.getElementById('salary').value)||0;
+  var freq = parseFloat(document.getElementById('frequency').value)||26;
+  var filing = document.getElementById('filing').value;
+  var stateRatePct = parseFloat(document.getElementById('stateRate').value)/100||0;
+  var k401Pct = parseFloat(document.getElementById('k401Pct').value)/100||0;
+  var preTaxOtherPerCheck = parseFloat(document.getElementById('preTaxOther').value)||0;
+
+  var stdDed = filing === 'married' ? 32200 : 16100;
+  var k401Annual = salary * k401Pct;
+  var preTaxOtherAnnual = preTaxOtherPerCheck * freq;
+
+  var fedTaxable = Math.max(0, salary - k401Annual - preTaxOtherAnnual - stdDed);
+  var annualFed = fedTax(fedTaxable, filing);
+  var annualState = Math.max(0, salary - k401Annual - preTaxOtherAnnual) * stateRatePct;
+
+  var ssWageBase = 184500;
+  var annualSS = Math.min(salary, ssWageBase) * 0.062;
+  var annualMedicare = salary * 0.0145;
+  var annualFica = annualSS + annualMedicare;
+
+  var annualNet = salary - annualFed - annualState - annualFica - k401Annual - preTaxOtherAnnual;
+
+  var grossPerCheck = salary / freq;
+  var fedPerCheck = annualFed / freq;
+  var statePerCheck = annualState / freq;
+  var ficaPerCheck = annualFica / freq;
+  var k401PerCheck = k401Annual / freq;
+  var netPerCheck = annualNet / freq;
+
+  document.getElementById('netPay').textContent = fmt(netPerCheck);
+  document.getElementById('netPaySub').textContent = freq + ' paychecks/year';
+  document.getElementById('grossPerCheck').textContent = fmt(grossPerCheck);
+  document.getElementById('fedPerCheck').textContent = fmt(fedPerCheck);
+  document.getElementById('statePerCheck').textContent = stateRatePct===0?'$0 (none)':fmt(statePerCheck);
+  document.getElementById('ficaPerCheck').textContent = fmt(ficaPerCheck);
+  document.getElementById('k401PerCheck').textContent = fmt(k401PerCheck);
+  document.getElementById('annualNet').textContent = fmt(annualNet);
+}
+calcPaycheck();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

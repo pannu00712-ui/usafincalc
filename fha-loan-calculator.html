@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>FHA Loan Calculator 2026 — Monthly Payment with MIP</title>
+<meta content="Calculate your FHA loan monthly payment including upfront MIP, annual MIP, and full amortization. See how FHA compares to conventional for your down payment." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/fha-loan-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%230d0f14'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="FHA Loan Calculator 2026" property="og:title"/>
+<meta content="Monthly FHA payment including upfront MIP (1.75%) and annual MIP. See your full cost and how it compares to conventional." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/fha-loan-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="FHA Loan Calculator 2026" name="twitter:title"/>
+<meta content="Monthly FHA payment including upfront MIP (1.75%) and annual MIP. See your full cost and how it compares to conventional." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--principal:#60a5fa;--interest:#f87171;--mip:#f59e0b;--ins:#a78bfa;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:20px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:580px;line-height:1.8}
+.qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 20px}
+.qa{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:var(--r);padding:14px 18px;font-size:14px;color:var(--muted)}
+.qa strong{color:var(--accent)}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:680px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ct{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:14px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none}
+.pfx input{padding-left:28px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:14px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px;pointer-events:none}
+.sfx input{margin-bottom:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:4px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+.btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s}
+.btn:hover{background:#059669}
+.btn:active{transform:scale(.98)}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:320px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.net-card{background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(5,150,105,0.04));border:1px solid rgba(16,185,129,0.25);border-radius:var(--r);padding:24px;text-align:center}
+.nl{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:42px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:13px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text)}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px;text-align:center}
+.pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.pay-v{font-family:var(--mono);font-size:14px;font-weight:600}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:14px}
+.bt{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;background:var(--bg3)}
+.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:8px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500}
+.divider{height:1px;background:var(--border);margin:8px 0}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.dr{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500}
+.amort-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;grid-column:1/-1}
+.amort-head{display:grid;grid-template-columns:50px 1fr 1fr 1fr 1fr;gap:8px;font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;padding:8px 0;border-bottom:1px solid var(--border)}
+.amort-row{display:grid;grid-template-columns:50px 1fr 1fr 1fr 1fr;gap:8px;font-size:12px;padding:9px 0;border-bottom:1px solid var(--border);font-family:var(--mono)}
+.amort-row:last-child{border-bottom:none}
+@media(max-width:500px){.amort-head,.amort-row{grid-template-columns:40px 1fr 1fr 1fr;font-size:10px}.amort-head .col-bal,.amort-row .col-bal{display:none}}
+.mip-note{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:var(--rs);padding:10px 14px;font-size:12px;color:var(--muted);margin-top:10px}
+.mip-note strong{color:var(--mip)}
+.faq{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.faq h2{font-size:20px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding-top:10px}
+.related{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;text-decoration:none;display:block;transition:all .2s}
+.rel-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+.rel-card .rd{font-size:11px;color:var(--muted)}
+.meth{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+.meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:6px}
+.meth-box a{color:var(--accent);text-decoration:none}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--accent)}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "FHA Loan Calculator 2026 — Monthly Payment with MIP",
+  "url": "https://usafincalc.com/fha-loan-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FHA Loan Calculator",
+      "item": "https://usafincalc.com/fha-loan-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "FHA Loan Calculator 2026",
+  "description": "Calculate your FHA loan monthly payment including upfront and annual mortgage insurance premiums, with full amortization schedule.",
+  "url": "https://usafincalc.com/fha-loan-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is MIP on an FHA loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MIP stands for Mortgage Insurance Premium — FHA's version of mortgage insurance. There are two parts: an upfront MIP of 1.75% of the loan amount (added to your loan balance at closing) and an annual MIP of 0.55%–1.05% of the outstanding balance, paid monthly. The annual rate depends on your loan term, LTV, and loan amount. Source: HUD Mortgagee Letter 2023-05."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When can I remove FHA MIP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on when your loan originated and your down payment. For loans originated after June 3, 2013: if you put down less than 10%, MIP stays for the life of the loan. If you put down 10% or more, MIP cancels after 11 years. The only way to remove lifetime MIP is to refinance into a conventional loan once you have enough equity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What credit score do I need for an FHA loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FHA allows a minimum credit score of 500, but with a 10% down payment required. With a 580+ credit score, the minimum down payment drops to 3.5%. Individual lenders often set their own overlays above these FHA minimums — many require 620+. Check with multiple lenders if you're near the minimums."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the FHA loan limits for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FHA loan limits vary by county. For 2026, the baseline limit (low-cost areas) is $524,225 for a single-family home, and the ceiling (high-cost areas like parts of California, New York, and Hawaii) is $1,209,750. Alaska, Hawaii, Guam, and the US Virgin Islands have higher limits. Look up your county's specific limit at HUD.gov."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "FHA vs conventional — which is cheaper?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your down payment and credit score. With a score below 680 and less than 20% down, FHA's MIP is often cheaper than conventional PMI. With a score above 720, conventional PMI rates tend to be lower and can be removed once you hit 20% equity — whereas FHA MIP on a low-down-payment loan stays for the life of the loan. Run both through a calculator with your actual numbers."
+      }
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🏛️ FHA 2026 • HUD-Sourced MIP Rates</div>
+  <h1>FHA Loan <span>Calculator</span></h1>
+  <div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;">
+    <div style="font-weight:600;font-size:14px">Maintained by <strong>USAFinCalc</strong></div>
+    <div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+  </div>
+  <p class="hero-sub">Calculate your FHA monthly payment including upfront MIP (1.75%) and annual MIP. See total loan cost and how long MIP stays on your loan.</p>
+</div>
+
+<div class="qa-wrap">
+  <div class="qa" id="qa-box">Enter your home price and down payment to calculate your FHA loan payment.</div>
+</div>
+
+<div class="main">
+  <div class="card">
+    <div class="ct">🏛️ FHA Loan Details</div>
+
+    <label for="price">Home Price</label>
+    <div class="pfx"><span>$</span><input id="price" min="0" oninput="calculate()" type="number" value="300000"/></div>
+
+    <label for="down-amt">Down Payment</label>
+    <div class="row2">
+      <div class="pfx"><span>$</span><input id="down-amt" min="0" oninput="syncDown('amt')" type="number" value="10500"/></div>
+      <div class="sfx"><input id="down-pct" max="100" min="3.5" oninput="syncDown('pct')" step="0.5" type="number" value="3.5"/><span>%</span></div>
+    </div>
+
+    <label for="rate">Interest Rate (Annual)</label>
+    <div class="sfx"><input id="rate" max="20" min="0.1" oninput="calculate()" step="0.05" type="number" value="6.75"/><span>%</span></div>
+
+    <label for="term">Loan Term</label>
+    <select id="term" onchange="calculate()">
+      <option selected value="30">30 Years (Fixed)</option>
+      <option value="20">20 Years (Fixed)</option>
+      <option value="15">15 Years (Fixed)</option>
+    </select>
+
+    <div class="sec-label">PITI Extras</div>
+    <div class="row2">
+      <div>
+        <label for="prop-tax">Property Tax (Annual)</label>
+        <div class="pfx"><span>$</span><input id="prop-tax" min="0" oninput="calculate()" type="number" value="3600"/></div>
+      </div>
+      <div>
+        <label for="insurance">Home Insurance (Annual)</label>
+        <div class="pfx"><span>$</span><input id="insurance" min="0" oninput="calculate()" type="number" value="1200"/></div>
+      </div>
+    </div>
+
+    <button class="btn" onclick="calculate()">Calculate FHA Payment →</button>
+  </div>
+
+  <div id="result-col">
+    <div class="placeholder">
+      <div style="font-size:36px;opacity:.4">🏛️</div>
+      <div>Enter your home details</div>
+      <div style="font-size:12px;font-family:var(--mono)">P+I • MIP • Tax • Insurance</div>
+    </div>
+  </div>
+
+  <div class="wide" id="detail-col" style="display:none">
+    <div class="dcard">
+      <div class="bt">📋 Complete FHA Breakdown</div>
+      <div id="detail-rows"></div>
+    </div>
+  </div>
+
+  <div class="wide" id="amort-section" style="display:none">
+    <div class="amort-wrap">
+      <div class="bt">📅 Amortization Schedule (Year-wise)</div>
+      <div class="amort-head"><div>Yr</div><div>Payment</div><div>Principal</div><div>Interest</div><div class="col-bal">Balance</div></div>
+      <div id="amort-rows"></div>
+    </div>
+  </div>
+</div>
+</section>
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is MIP on an FHA loan?</div><div class="faq-a">MIP stands for Mortgage Insurance Premium — FHA's version of mortgage insurance. There are two parts: an upfront MIP of 1.75% of the loan amount (added to your loan balance at closing) and an annual MIP of 0.55%–1.05% of the outstanding balance, paid monthly. The annual rate depends on your loan term, LTV, and loan amount. Source: HUD Mortgagee Letter 2023-05.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">When can I remove FHA MIP?</div><div class="faq-a">For loans originated after June 3, 2013: if you put down less than 10%, MIP stays for the life of the loan. If you put down 10% or more, MIP cancels after 11 years. The only way to remove lifetime MIP is to refinance into a conventional loan once you have enough equity.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What credit score do I need for an FHA loan?</div><div class="faq-a">FHA allows a minimum credit score of 500 with 10% down, or 580+ with 3.5% down. Individual lenders often set higher minimums (many require 620+). Check with multiple lenders if you're near the floor — requirements vary by lender, not just by FHA guidelines.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What are the FHA loan limits for 2026?</div><div class="faq-a">For 2026, the baseline FHA loan limit (low-cost areas) is $524,225 for a single-family home. High-cost areas (parts of California, New York, and Hawaii) can go up to $1,209,750. Alaska, Hawaii, Guam, and the US Virgin Islands have higher ceilings. Look up your county's specific limit at HUD.gov.</div></div>
+  <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">FHA vs conventional — which is cheaper?</div><div class="faq-a">It depends on your credit score and down payment. With a score below 680 and less than 20% down, FHA's MIP is often cheaper than conventional PMI. With a score above 720, conventional PMI rates tend to be lower and can be removed once you hit 20% equity — whereas FHA MIP on a low-down-payment loan stays for the life of the loan.</div></div>
+</div>
+</section>
+<section class="related-section"><div class="related">
+  <h2>Related Calculators</h2>
+  <div class="related-grid">
+    <a class="related-card" href="/mortgage-calculator-usa"><div class="rc-title">🏠 Conventional Mortgage</div><div class="rc-desc">Compare to FHA side by side</div></a>
+    <a class="related-card" href="/va-mortgage-calculator"><div class="rc-title">🎖️ VA Loan Calculator</div><div class="rc-desc">No down payment, no MIP</div></a>
+    <a class="related-card" href="/home-affordability-calculator-usa"><div class="rc-title">🏡 Home Affordability</div><div class="rc-desc">How much can you afford?</div></a>
+    <a class="related-card" href="/"><div class="rc-title">📊 All Calculators</div><div class="rc-desc">Browse full toolkit</div></a>
+  </div>
+</div>
+</section>
+<div class="meth">
+  <div class="meth-box">
+    <p><strong style="color:var(--text)">📊 Data &amp; Methodology</strong></p>
+    <p>Upfront MIP: 1.75% of base loan amount, financed into the loan (HUD Mortgagee Letter 2023-05). Annual MIP rates: 30-yr loan, LTV &gt;95% → 0.55%; LTV ≤95% → 0.50%. 15-yr loan, LTV &gt;90% → 0.40%; LTV ≤90% → 0.15%. MIP duration: less than 10% down → life of loan; 10%+ down → 11 years. 2026 loan limits: <a href="https://www.hud.gov/program_offices/housing/sfh/lender/origination/mortgage_limits" target="_blank">HUD.gov Mortgage Limits</a>. Monthly payment uses standard amortization formula. Updated: January 2026.</p>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function syncDown(type) {
+  const price = +document.getElementById('price').value || 0;
+  if (type === 'amt') {
+    const amt = +document.getElementById('down-amt').value || 0;
+    document.getElementById('down-pct').value = price > 0 ? (amt / price * 100).toFixed(1) : 3.5;
+  } else {
+    const pct = +document.getElementById('down-pct').value || 3.5;
+    document.getElementById('down-amt').value = Math.round(price * pct / 100);
+  }
+  calculate();
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+
+function getMipRate(ltv, years) {
+  // HUD Mortgagee Letter 2023-05 annual MIP rates
+  if (years <= 15) {
+    return ltv > 0.90 ? 0.0040 : 0.0015;
+  }
+  return ltv > 0.95 ? 0.0055 : 0.0050;
+}
+
+function calculate() {
+  const price    = +document.getElementById('price').value || 0;
+  const downAmt  = +document.getElementById('down-amt').value || 0;
+  const annualRate = +document.getElementById('rate').value || 0;
+  const years    = +document.getElementById('term').value;
+  const propTaxA = +document.getElementById('prop-tax').value || 0;
+  const insA     = +document.getElementById('insurance').value || 0;
+
+  const baseLoan = Math.max(0, price - downAmt);
+  const ltv      = price > 0 ? baseLoan / price : 0;
+  const downPct  = price > 0 ? (downAmt / price * 100) : 0;
+
+  // Upfront MIP financed into loan
+  const ufmip    = baseLoan * 0.0175;
+  const loanAmt  = baseLoan + ufmip;
+
+  // Annual MIP rate
+  const annualMipRate = getMipRate(ltv, years);
+  // MIP duration
+  const mipForever = downPct < 10;
+  const mipYears   = mipForever ? years : Math.min(11, years);
+
+  const r = annualRate / 12 / 100;
+  const n = years * 12;
+  const pi = r > 0 ? loanAmt * r * Math.pow(1+r,n) / (Math.pow(1+r,n)-1) : loanAmt/n;
+
+  const annualMipMo = loanAmt * annualMipRate / 12;
+  const propTaxMo = propTaxA / 12;
+  const insMo = insA / 12;
+  const totalMo = pi + annualMipMo + propTaxMo + insMo;
+
+  const totalMipPaid = annualMipMo * 12 * mipYears + ufmip;
+  const totalInterest = pi * n - baseLoan;
+
+  document.getElementById('qa-box').innerHTML =
+    `Monthly Payment: <strong>${fmt(totalMo)}</strong> &nbsp;|&nbsp; Loan: <strong>${fmt(loanAmt)}</strong> @ <strong>${annualRate}%</strong> for <strong>${years} yrs</strong> &nbsp;|&nbsp; Annual MIP: <strong>${(annualMipRate*100).toFixed(2)}%</strong>`;
+
+  document.getElementById('result-col').innerHTML = `
+    <div class="net-card">
+      <div class="nl">Total Monthly Payment</div>
+      <div class="na">${fmt(totalMo)}</div>
+      <div class="nm">P+I: <span>${fmt(pi)}</span> + MIP: <span>${fmt(annualMipMo)}</span> + Extras: <span>${fmt(propTaxMo + insMo)}</span></div>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-box"><div class="pay-l">Base Loan</div><div class="pay-v" style="color:var(--principal)">${fmt(baseLoan)}</div></div>
+      <div class="pay-box"><div class="pay-l">Upfront MIP (1.75%)</div><div class="pay-v" style="color:var(--mip)">${fmt(ufmip)}</div></div>
+      <div class="pay-box"><div class="pay-l">Total MIP Cost</div><div class="pay-v" style="color:var(--mip)">${fmt(Math.round(totalMipPaid))}</div></div>
+      <div class="pay-box"><div class="pay-l">Total Interest</div><div class="pay-v" style="color:var(--interest)">${fmt(Math.round(totalInterest))}</div></div>
+    </div>
+    <div class="bcard">
+      <div class="bt">Monthly Breakdown</div>
+      <div class="sbar">
+        <div class="seg" style="width:${(pi/totalMo*100).toFixed(1)}%;background:var(--principal)"></div>
+        <div class="seg" style="width:${(annualMipMo/totalMo*100).toFixed(1)}%;background:var(--mip)"></div>
+        <div class="seg" style="width:${(propTaxMo/totalMo*100).toFixed(1)}%;background:var(--ins)"></div>
+        <div class="seg" style="flex:1;background:#374151"></div>
+      </div>
+      <div class="brows">
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--principal)"></div><div class="blbl">Principal + Interest</div></div><div class="ba" style="color:var(--principal)">${fmt(pi)}</div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--mip)"></div><div class="blbl">Annual MIP (monthly)</div></div><div class="ba" style="color:var(--mip)">${fmt(annualMipMo)}</div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--ins)"></div><div class="blbl">Property Tax</div></div><div class="ba">${fmt(propTaxMo)}</div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#6b7280"></div><div class="blbl">Home Insurance</div></div><div class="ba">${fmt(insMo)}</div></div>
+        <div class="divider"></div>
+        <div class="br"><div class="bl"><div class="blbl"><strong>Total Monthly</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">${fmt(totalMo)}</div></div>
+      </div>
+    </div>
+    <div class="mip-note"><strong>MIP Duration:</strong> ${mipForever ? 'MIP stays for the life of this loan (down payment &lt; 10%). Refinancing into conventional is the only removal path.' : `MIP cancels after 11 years (down payment ≥ 10%).`}</div>
+  `;
+
+  document.getElementById('detail-col').style.display = 'block';
+  document.getElementById('detail-rows').innerHTML = `
+    <div class="dr"><span class="dk">Home Price</span><span class="dv">${fmt(price)}</span></div>
+    <div class="dr"><span class="dk">Down Payment (${downPct.toFixed(1)}%)</span><span class="dv">${fmt(downAmt)}</span></div>
+    <div class="dr"><span class="dk">Base Loan Amount</span><span class="dv">${fmt(baseLoan)}</span></div>
+    <div class="dr"><span class="dk">Upfront MIP (1.75%, financed)</span><span class="dv" style="color:var(--mip)">${fmt(ufmip)}</span></div>
+    <div class="dr"><span class="dk">Total Financed Amount</span><span class="dv">${fmt(loanAmt)}</span></div>
+    <div class="dr"><span class="dk">Annual MIP Rate</span><span class="dv">${(annualMipRate*100).toFixed(2)}%</span></div>
+    <div class="dr"><span class="dk">MIP Duration</span><span class="dv">${mipForever ? 'Life of loan' : '11 years'}</span></div>
+    <div class="dr"><span class="dk">Monthly P+I</span><span class="dv">${fmt(pi)}</span></div>
+    <div class="dr"><span class="dk">Total Interest Paid</span><span class="dv" style="color:var(--interest)">${fmt(Math.round(totalInterest))}</span></div>
+    <div class="dr"><span class="dk">Total MIP Cost</span><span class="dv" style="color:var(--mip)">${fmt(Math.round(totalMipPaid))}</span></div>
+  `;
+
+  document.getElementById('amort-section').style.display = 'block';
+  let balance = loanAmt, rows = '';
+  for (let y = 1; y <= years; y++) {
+    let yPay=0, yPrin=0, yInt=0;
+    for (let m=0; m<12; m++) {
+      const intPart  = balance * r;
+      const prinPart = pi - intPart;
+      yPay += pi; yInt += intPart; yPrin += prinPart;
+      balance -= prinPart;
+    }
+    rows += `<div class="amort-row"><div>${y}</div><div>${fmt(yPay)}</div><div style="color:var(--principal)">${fmt(yPrin)}</div><div style="color:var(--interest)">${fmt(yInt)}</div><div class="col-bal">${fmt(Math.max(0,balance))}</div></div>`;
+  }
+  document.getElementById('amort-rows').innerHTML = rows;
+}
+
+calculate();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

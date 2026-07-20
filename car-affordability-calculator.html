@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Affordability Calculator (2026) – How Much Car Can You Afford?</title>
+    <meta name="description" content="Find out how much car you can afford based on your income, down payment, and monthly budget. Get personalized recommendations and avoid overpaying." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="car affordability calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/car-affordability-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Car Affordability Calculator (2026) – How Much Car Can You Afford?" property="og:title"/>
+<meta content="Find out how much car you can afford based on your income, down payment, and monthly budget. Get personalized recommendations and avoid overpaying." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/car-affordability-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Car Affordability Calculator (2026) – How Much Car Can You Afford?" name="twitter:title"/>
+<meta content="Find out how much car you can afford based on your income, down payment, and monthly budget. Get personalized recommendations and avoid overpaying." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>C</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .affordability-meter {
+            margin-top: 10px;
+            padding: 14px;
+            background: var(--bg3);
+            border-radius: var(--rs);
+            border: 1px solid var(--border);
+        }
+        .meter-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .meter-track {
+            background: var(--bg);
+            border-radius: 10px;
+            height: 10px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+        .meter-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width .3s;
+        }
+        .meter-fill.safe {
+            background: var(--accent);
+        }
+        .meter-fill.warning {
+            background: var(--state);
+        }
+        .meter-fill.danger {
+            background: var(--fed);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-safe {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .status-danger {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--fed);
+        }
+        .recommendation-box {
+            background: var(--bg3);
+            border-radius: var(--rs);
+            padding: 14px;
+            border: 1px solid var(--border);
+            margin-top: 10px;
+        }
+        .recommendation-box .rec-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .recommendation-box .rec-value {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: var(--mono);
+            color: var(--text);
+            margin-top: 2px;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Car Affordability Calculator (2026) – How Much Car Can You Afford?",
+  "url": "https://usafincalc.com/car-affordability-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Car Affordability Calculator (2026) – How Much Car Can You Afford?",
+      "item": "https://usafincalc.com/car-affordability-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Car Affordability Calculator (2026) – How Much Car Can You Afford?",
+  "description": "Find out how much car you can afford based on your income, down payment, and monthly budget. Get personalized recommendations and avoid overpaying.",
+  "url": "https://usafincalc.com/car-affordability-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 20/4/10 rule for car buying?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 20/4/10 rule is a guideline for affordable car buying: put 20% down, finance for no more than 4 years, and keep your total monthly car expenses under 10% of your gross monthly income. This helps you avoid being upside down on your loan and ensures your car payment doesn't strain your budget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much car can I afford with a $60,000 salary?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "With a $60,000 salary ($5,000/month), the 10% rule suggests a maximum monthly car payment of $500. With $5,000 down and a 6.5% APR for 48 months, you can afford a vehicle price of about $34,500. This includes payment, insurance, and other car-related expenses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I buy new or used?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your budget and priorities. New cars offer the latest features, full warranty, and lower interest rates (0-2% promotions) but depreciate 20-30% in the first year. Used cars are cheaper upfront, depreciate slower, but may have higher interest rates (2-3% higher) and less warranty coverage. Certified Pre-Owned (CPO) often offers the best balance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much should I put down on a car?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aim for at least 20% of the purchase price. For a $35,000 car, that's $7,000. A larger down payment reduces your loan amount, lowers your monthly payment, saves interest, and helps avoid negative equity. If you can't put 20% down, consider a less expensive car."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good APR for a car loan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good APR for a new car is 5-7% for excellent credit (780+), 6-8% for good credit (700-779), and 8-12% for fair credit (600-699). Used car loans typically have slightly higher rates. The best rates are often available through credit unions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do insurance costs affect affordability?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Insurance can add $100-200/month to your car costs. Sports cars, luxury vehicles, and cars with high theft rates cost more to insure. Always get an insurance quote before buying to ensure the total monthly cost (payment + insurance) stays within your 10% budget."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">C</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 car buying guide</div>
+        <h1>Car Affordability <span>Calculator</span></h1>
+        <p class="hero-sub">Find out how much car you can afford based on your income, down payment, and monthly budget. Get personalized recommendations and avoid overpaying.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Your Financial Situation</div>
+
+                    <div class="field">
+                        <label for="monthlyIncome">Monthly Gross Income</label>
+                        <div class="pfx"><span>$</span><input type="number" id="monthlyIncome" value="5000" min="0" step="100" /></div>
+                        <div class="hint">Your gross income before taxes and deductions.</div>
+                    </div>
+                    <div class="field">
+                        <label for="monthlyExpenses">Monthly Expenses (excluding car)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="monthlyExpenses" value="2500" min="0" step="100" /></div>
+                        <div class="hint">Rent, utilities, groceries, insurance, existing debts, etc.</div>
+                    </div>
+                    <div class="field">
+                        <label for="downPayment">Down Payment Available</label>
+                        <div class="pfx"><span>$</span><input type="number" id="downPayment" value="5000" min="0" step="500" /></div>
+                        <div class="hint">Cash you can put down upfront.</div>
+                    </div>
+                    <div class="field">
+                        <label for="tradeIn">Trade-In Value</label>
+                        <div class="pfx"><span>$</span><input type="number" id="tradeIn" value="0" min="0" step="500" /></div>
+                        <div class="hint">Value of your current vehicle if trading in.</div>
+                    </div>
+                    <div class="field">
+                        <label for="apr">Interest Rate (APR)</label>
+                        <div class="pct-suffix"><input type="number" id="apr" value="6.5" min="0" max="30" step="0.1" /><span>%</span></div>
+                        <div class="hint">Estimated auto loan rate based on your credit.</div>
+                    </div>
+                    <div class="field">
+                        <label for="loanTerm">Loan Term</label>
+                        <select id="loanTerm">
+                            <option value="24">24 months (2 years)</option>
+                            <option value="36">36 months (3 years)</option>
+                            <option value="48" selected>48 months (4 years)</option>
+                            <option value="60">60 months (5 years)</option>
+                            <option value="72">72 months (6 years)</option>
+                            <option value="84">84 months (7 years)</option>
+                        </select>
+                        <div class="hint">Longer terms lower monthly payments but increase total interest.</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('single')">Single ($5k/mo)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('couple')">Couple ($8k/mo)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('family')">Family ($10k/mo)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('student')">Student ($3k/mo)</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common income scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">How Much Car You Can Afford</div>
+                    <div class="res-main">
+                        <div class="res-label">Maximum Vehicle Price</div>
+                        <div class="res-val" id="maxPrice">$34,500</div>
+                        <div class="res-sub" id="priceSub">with $5,000 down and 48-month loan</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Monthly Payment</div><div class="bk-v negative" id="monthlyPayment">$673</div></div>
+                        <div class="bk"><div class="bk-l">Affordable Payment</div><div class="bk-v positive" id="affordablePayment">$500</div></div>
+                        <div class="bk"><div class="bk-l">Remaining Budget</div><div class="bk-v" id="remainingBudget">$1,827</div></div>
+                        <div class="bk"><div class="bk-l">Loan Amount</div><div class="bk-v negative" id="loanAmount">$29,500</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Affordability Score</div>
+                    <div id="affordabilityMeter" class="affordability-meter">
+                        <div class="meter-label">
+                            <span>Payment-to-Income Ratio</span>
+                            <span id="paymentPctLabel">8%</span>
+                        </div>
+                        <div class="meter-track">
+                            <div class="meter-fill safe" id="meterFill" style="width:8%;"></div>
+                        </div>
+                        <div style="margin-top:6px;font-size:13px;font-weight:500;" id="affordabilityStatus">✅ Safe – You can afford this car</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Recommendations</div>
+                    <div class="recommendation-box">
+                        <div class="rec-label">Recommended Vehicle Price</div>
+                        <div class="rec-value" id="recPrice">$32,000 – $38,000</div>
+                    </div>
+                    <div class="recommendation-box" style="margin-top:8px;">
+                        <div class="rec-label">Monthly Payment Target</div>
+                        <div class="rec-value" id="recPayment">$450 – $500</div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-safe" id="statusBadge">✅ On Track</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">You're in a good position to buy a car.</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Monthly Budget Breakdown</div>
+                    <div id="budgetChart"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides estimates based on the 20/4/10 rule (20% down, 4-year term, 10% of income). Actual affordability depends on your full financial picture, including existing debts, savings goals, and lifestyle preferences.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>How Much Car Can You Really Afford?</h2>
+        <p>Buying a car is one of the largest purchases most people make, yet many buyers focus on the monthly payment rather than the total cost. This Car Affordability Calculator helps you determine how much car you can truly afford based on your income, expenses, down payment, and the proven 20/4/10 rule.</p>
+        <p>The average new car price in the U.S. is now over $48,000, while the average used car price is around $27,000. Without a clear understanding of your budget, it's easy to overextend yourself and end up with a payment that strains your finances for years.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> If you earn $5,000/month and follow the 20/4/10 rule, you can afford a car payment of $500/month. With $5,000 down and a 6.5% APR for 48 months, that means you can afford a vehicle price of about $34,500.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator uses the 20/4/10 rule as a foundation, combined with your personal financial situation, to determine your maximum affordable car price. Here's the process:</p>
+        <ol>
+            <li><strong>Calculate disposable income:</strong> Monthly Income - Monthly Expenses = Available for car + other savings</li>
+            <li><strong>Apply the 10% rule:</strong> Your total car expenses (payment + insurance) should be ≤ 10% of gross income</li>
+            <li><strong>Calculate affordable payment:</strong> The lower of (10% of income) or (disposable income after expenses)</li>
+            <li><strong>Reverse calculate loan amount:</strong> Using the affordable payment, APR, and term to find the max loan amount</li>
+            <li><strong>Add down payment and trade-in:</strong> Loan Amount + Down Payment + Trade-In = Maximum Vehicle Price</li>
+        </ol>
+
+        <h2>The 20/4/10 Rule Explained</h2>
+        <p>This rule is a time-tested guideline for car buying that helps you avoid financial strain:</p>
+        <ul>
+            <li><strong>20% down payment:</strong> Put at least 20% of the purchase price as a down payment. This protects you from being upside down on the loan (owing more than the car is worth) and reduces your monthly payment.</li>
+            <li><strong>4-year term:</strong> Finance the car for no more than 4 years (48 months). Longer terms may lower your payment but cost thousands more in interest and keep you in debt longer.</li>
+            <li><strong>10% of income:</strong> Your total car costs (payment, insurance, maintenance, gas) should be less than 10% of your gross monthly income. Some experts say 15% including all costs, but 10% is more conservative.</li>
+        </ul>
+
+        <h2>True Cost of Car Ownership</h2>
+        <p>The purchase price is just the beginning. Here's what else you need to budget for:</p>
+        <table>
+            <thead>
+                <tr><th>Expense</th><th>Annual Cost (Average)</th><th>Monthly Cost</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Insurance (full coverage)</td><td>$1,800</td><td>$150</td></tr>
+                <tr><td>Fuel (12,000 miles/year)</td><td>$1,800</td><td>$150</td></tr>
+                <tr><td>Maintenance &amp; Repairs</td><td>$1,000</td><td>$83</td></tr>
+                <tr><td>Registration &amp; Taxes</td><td>$400</td><td>$33</td></tr>
+                <tr><td>Depreciation (new car)</td><td>$4,000+</td><td>$333+</td></tr>
+                <tr><td><strong>Total (excluding depreciation)</strong></td><td><strong>$5,000</strong></td><td><strong>$416</strong></td></tr>
+            </tbody>
+        </table>
+        <p>This calculator focuses on the payment and insurance, but remember to budget for these other costs as well.</p>
+
+        <h2>Affordability Scenarios</h2>
+        <p>Here's how different incomes affect your affordable car price (assuming $5,000 down, 6.5% APR, 48-month term):</p>
+        <table>
+            <thead>
+                <tr><th>Monthly Income</th><th>Max Payment (10%)</th><th>Loan Amount</th><th>Max Vehicle Price</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$3,000</td><td>$300</td><td>$13,500</td><td>$18,500</td></tr>
+                <tr><td>$4,000</td><td>$400</td><td>$18,000</td><td>$23,000</td></tr>
+                <tr><td>$5,000</td><td>$500</td><td>$22,500</td><td>$27,500</td></tr>
+                <tr><td>$6,000</td><td>$600</td><td>$27,000</td><td>$32,000</td></tr>
+                <tr><td>$7,500</td><td>$750</td><td>$33,750</td><td>$38,750</td></tr>
+                <tr><td>$10,000</td><td>$1,000</td><td>$45,000</td><td>$50,000</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Tips for Buying a Car Within Your Budget</h2>
+        <div class="two-col">
+            <div>
+                <h3>Shop for Financing First</h3>
+                <p>Get pre-approved for a loan from a bank or credit union before visiting the dealership. This gives you negotiating power and helps you stay within your budget.</p>
+            </div>
+            <div>
+                <h3>Consider Total Cost, Not Just Payment</h3>
+                <p>Dealers often focus on monthly payments to make expensive cars seem affordable. Always negotiate the total price first, then discuss financing.</p>
+            </div>
+        </div>
+        <div class="two-col">
+            <div>
+                <h3>Look at Used or CPO Vehicles</h3>
+                <p>Certified Pre-Owned (CPO) vehicles offer newer features and warranties at a lower price than new cars. You can often get more car for your money.</p>
+            </div>
+            <div>
+                <h3>Factor in Insurance Costs</h3>
+                <p>Get insurance quotes before buying. Luxury and sports cars cost significantly more to insure, which affects your total monthly cost.</p>
+            </div>
+        </div>
+
+        <h2>Common Car Buying Mistakes</h2>
+        <ul>
+            <li><strong>Focusing only on the monthly payment:</strong> Dealerships can stretch loan terms to lower payments while hiding the total cost.</li>
+            <li><strong>Buying new when used would work:</strong> New cars depreciate 20-30% in the first year. A 2-3 year old car offers similar features at a much lower price.</li>
+            <li><strong>Rolling negative equity:</strong> If you owe more on your current car than it's worth, that negative equity gets added to your new loan—a dangerous cycle.</li>
+            <li><strong>Skipping the test drive:</strong> Always test drive multiple cars to ensure you're comfortable with the vehicle you're buying.</li>
+            <li><strong>Not checking the vehicle history:</strong> For used cars, always get a vehicle history report and have a mechanic inspect it.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the 20/4/10 rule for car buying?</div>
+            <div class="faq-a">The 20/4/10 rule is a guideline for affordable car buying: put 20% down, finance for no more than 4 years, and keep your total monthly car expenses under 10% of your gross monthly income. This helps you avoid being upside down on your loan and ensures your car payment doesn't strain your budget.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How much car can I afford with a $60,000 salary?</div>
+            <div class="faq-a">With a $60,000 salary ($5,000/month), the 10% rule suggests a maximum monthly car payment of $500. With $5,000 down and a 6.5% APR for 48 months, you can afford a vehicle price of about $34,500. This includes payment, insurance, and other car-related expenses.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Should I buy new or used?</div>
+            <div class="faq-a">It depends on your budget and priorities. New cars offer the latest features, full warranty, and lower interest rates (0-2% promotions) but depreciate 20-30% in the first year. Used cars are cheaper upfront, depreciate slower, but may have higher interest rates (2-3% higher) and less warranty coverage. Certified Pre-Owned (CPO) often offers the best balance.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How much should I put down on a car?</div>
+            <div class="faq-a">Aim for at least 20% of the purchase price. For a $35,000 car, that's $7,000. A larger down payment reduces your loan amount, lowers your monthly payment, saves interest, and helps avoid negative equity. If you can't put 20% down, consider a less expensive car.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a good APR for a car loan?</div>
+            <div class="faq-a">A good APR for a new car is 5-7% for excellent credit (780+), 6-8% for good credit (700-779), and 8-12% for fair credit (600-699). Used car loans typically have slightly higher rates. The best rates are often available through credit unions.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How do insurance costs affect affordability?</div>
+            <div class="faq-a">Insurance can add $100-200/month to your car costs. Sports cars, luxury vehicles, and cars with high theft rates cost more to insure. Always get an insurance quote before buying to ensure the total monthly cost (payment + insurance) stays within your 10% budget.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Auto Loan Payment Calculator</a></li>
+            <li><a href="#">Budget Planner</a></li>
+            <li><a href="#">Debt Snowball Calculator</a></li>
+            <li><a href="#">Net Worth Calculator</a></li>
+            <li><a href="#">Savings Goal Calculator</a></li>
+            <li><a href="#">Refinance Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const monthlyIncome = $('monthlyIncome');
+        const monthlyExpenses = $('monthlyExpenses');
+        const downPayment = $('downPayment');
+        const tradeIn = $('tradeIn');
+        const apr = $('apr');
+        const loanTerm = $('loanTerm');
+
+        const maxPrice = $('maxPrice');
+        const priceSub = $('priceSub');
+        const monthlyPayment = $('monthlyPayment');
+        const affordablePayment = $('affordablePayment');
+        const remainingBudget = $('remainingBudget');
+        const loanAmount = $('loanAmount');
+        const paymentPctLabel = $('paymentPctLabel');
+        const meterFill = $('meterFill');
+        const affordabilityStatus = $('affordabilityStatus');
+        const recPrice = $('recPrice');
+        const recPayment = $('recPayment');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+        const budgetChart = $('budgetChart');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- main calculation -----
+        function calculate() {
+            const income = getVal(monthlyIncome);
+            const expenses = getVal(monthlyExpenses);
+            const down = getVal(downPayment);
+            const trade = getVal(tradeIn);
+            const rate = getVal(apr) / 100;
+            const term = parseInt(loanTerm.value) || 48;
+
+            // 10% of income for total car expenses (payment + insurance)
+            const maxCarExpense = income * 0.10;
+            const availableAfterExpenses = Math.max(0, income - expenses);
+            // Reasonable to allocate up to 100% of available after expenses, but cap at 10% of income
+            const affordablePaymentAmount = Math.min(maxCarExpense, availableAfterExpenses * 0.7);
+            const maxMonthlyPayment = affordablePaymentAmount;
+
+            // Reverse calculate loan amount
+            const monthlyRate = rate / 12;
+            const numPayments = term;
+            let maxLoan = 0;
+
+            if (maxMonthlyPayment > 0 && monthlyRate > 0) {
+                maxLoan = maxMonthlyPayment * (1 - Math.pow(1 + monthlyRate, -numPayments)) / monthlyRate;
+            } else if (maxMonthlyPayment > 0) {
+                maxLoan = maxMonthlyPayment * numPayments;
+            }
+
+            const maxVehiclePrice = maxLoan + down + trade;
+            const actualLoan = maxLoan;
+
+            // Calculate the payment for the max loan (for display)
+            let payment = 0;
+            if (actualLoan > 0 && monthlyRate > 0) {
+                payment = actualLoan * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+            } else if (actualLoan > 0) {
+                payment = actualLoan / numPayments;
+            }
+
+            const remainingBudgetAfterCar = Math.max(0, income - expenses - payment);
+
+            // Update results
+            maxPrice.textContent = fmt(maxVehiclePrice);
+            priceSub.textContent = `with ${fmt(down)} down and ${term}-month loan`;
+
+            monthlyPayment.textContent = fmt(payment);
+            monthlyPayment.className = 'bk-v negative';
+            affordablePayment.textContent = fmt(maxMonthlyPayment);
+            affordablePayment.className = 'bk-v positive';
+            remainingBudget.textContent = fmt(remainingBudgetAfterCar);
+            remainingBudget.className = 'bk-v ' + (remainingBudgetAfterCar >= 0 ? 'positive' : 'negative');
+            loanAmount.textContent = fmt(actualLoan);
+            loanAmount.className = 'bk-v negative';
+
+            // Payment to income ratio
+            const pctOfIncome = income > 0 ? (payment / income) * 100 : 0;
+            paymentPctLabel.textContent = pctOfIncome.toFixed(1) + '%';
+
+            // Meter
+            const meterWidth = Math.min(100, pctOfIncome * 4);
+            meterFill.style.width = meterWidth + '%';
+
+            let statusText, statusClass, noteText;
+            if (pctOfIncome <= 8) {
+                statusText = '✅ Safe – You can afford this car';
+                statusClass = 'safe';
+                noteText = 'Your payment is well within the recommended 10% guideline.';
+                statusBadge.textContent = '✅ On Track';
+                statusBadge.className = 'status-badge status-safe';
+            } else if (pctOfIncome <= 10) {
+                statusText = '⚠️ At the Limit – Proceed with caution';
+                statusClass = 'warning';
+                noteText = 'Your payment is at the 10% guideline. Consider a slightly cheaper car.';
+                statusBadge.textContent = '⚠️ At Limit';
+                statusBadge.className = 'status-badge status-warning';
+            } else {
+                statusText = '❌ Over Budget – Consider a cheaper car';
+                statusClass = 'danger';
+                noteText = 'Your payment exceeds 10% of your income. Look for a less expensive vehicle.';
+                statusBadge.textContent = '❌ Over Budget';
+                statusBadge.className = 'status-badge status-danger';
+            }
+
+            affordabilityStatus.textContent = statusText;
+            affordabilityStatus.style.color = statusClass === 'safe' ? 'var(--accent)' : (statusClass === 'warning' ? 'var(--state)' : 'var(--fed)');
+            meterFill.className = 'meter-fill ' + statusClass;
+            statusNote.textContent = noteText;
+
+            // Recommendations
+            const lowRec = Math.max(0, maxVehiclePrice * 0.85);
+            const highRec = maxVehiclePrice * 1.05;
+            recPrice.textContent = `${fmt(lowRec)} – ${fmt(highRec)}`;
+
+            const paymentLow = Math.max(0, payment * 0.85);
+            const paymentHigh = payment * 1.05;
+            recPayment.textContent = `${fmt(paymentLow)} – ${fmt(paymentHigh)}`;
+
+            // Budget chart
+            const rentPct = expenses > 0 ? Math.min(40, (expenses / income) * 100) : 0;
+            const carPct = pctOfIncome;
+            const savingsPct = Math.max(0, 100 - rentPct - carPct - 15); // assume 15% other
+            const otherPct = Math.max(0, 100 - rentPct - carPct - savingsPct);
+
+            budgetChart.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Housing &amp; Living Expenses</span><span>${(rentPct).toFixed(1)}%</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${rentPct}%;background:var(--local);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Car Expenses</span><span>${carPct.toFixed(1)}%</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${Math.min(100, carPct)}%;background:var(--accent);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Savings &amp; Investments</span><span>${savingsPct.toFixed(1)}%</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${Math.min(100, savingsPct)}%;background:var(--state);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Other Expenses</span><span>${otherPct.toFixed(1)}%</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${Math.min(100, otherPct)}%;background:var(--border2);"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Based on your income and expenses breakdown.</div>
+            `;
+        }
+
+        // ----- presets -----
+        function applyPreset(key) {
+            switch (key) {
+                case 'single':
+                    monthlyIncome.value = '5000';
+                    monthlyExpenses.value = '2500';
+                    downPayment.value = '5000';
+                    tradeIn.value = '0';
+                    apr.value = '6.5';
+                    loanTerm.value = '48';
+                    break;
+                case 'couple':
+                    monthlyIncome.value = '8000';
+                    monthlyExpenses.value = '4000';
+                    downPayment.value = '8000';
+                    tradeIn.value = '3000';
+                    apr.value = '5.9';
+                    loanTerm.value = '48';
+                    break;
+                case 'family':
+                    monthlyIncome.value = '10000';
+                    monthlyExpenses.value = '5500';
+                    downPayment.value = '10000';
+                    tradeIn.value = '5000';
+                    apr.value = '5.5';
+                    loanTerm.value = '60';
+                    break;
+                case 'student':
+                    monthlyIncome.value = '3000';
+                    monthlyExpenses.value = '1800';
+                    downPayment.value = '2000';
+                    tradeIn.value = '0';
+                    apr.value = '8.5';
+                    loanTerm.value = '60';
+                    break;
+                default:
+                    return;
+            }
+            calculate();
+        }
+        window.applyPreset = applyPreset;
+
+        // ----- reset -----
+        function resetCalc() {
+            monthlyIncome.value = '5000';
+            monthlyExpenses.value = '2500';
+            downPayment.value = '5000';
+            tradeIn.value = '0';
+            apr.value = '6.5';
+            loanTerm.value = '48';
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [monthlyIncome, monthlyExpenses, downPayment, tradeIn, apr, loanTerm];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

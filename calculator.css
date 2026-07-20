@@ -1,0 +1,378 @@
+/**
+ * USAFinCalc - Salary Calculator Styles
+ * Responsive | Accessible | Dark Mode Compatible
+ */
+
+/* ===== CONTAINER ===== */
+.salary-calculator-wrapper {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 968px) {
+    .calculator-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* ===== CARDS ===== */
+.calc-card {
+    background: var(--card-bg, #ffffff);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--card-border, #e8edf2);
+    transition: box-shadow 0.3s ease;
+}
+
+.calc-card:hover {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.calc-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a1a2e);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ===== INPUTS ===== */
+.input-group {
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary, #4a4a5a);
+    margin-bottom: 0.4rem;
+}
+
+.input-with-suffix {
+    position: relative;
+}
+
+.input-with-suffix .currency {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: var(--text-secondary, #6b6b7b);
+}
+
+.input-with-suffix input[type="number"] {
+    padding-left: 28px;
+    width: 100%;
+}
+
+.input-group input[type="number"],
+.input-group select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid var(--input-border, #d1d9e6);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary, #1a1a2e);
+    background: var(--input-bg, #f8fafc);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.input-group input[type="number"]:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: #2d6a4f;
+    box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.input-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7b8b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+/* ===== SLIDER ===== */
+.range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.range-wrapper input[type="range"] {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--slider-track, #d1d9e6);
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+.range-wrapper input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2d6a4f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.range-wrapper input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.range-wrapper input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2d6a4f;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 8px rgba(45, 106, 79, 0.3);
+}
+
+.range-wrapper input[type="number"] {
+    width: 120px;
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ===== RESULTS ===== */
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.result-item {
+    background: var(--result-bg, #f8fafc);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    transition: background 0.3s ease;
+}
+
+.result-item .label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted, #8a8a9a);
+    margin-bottom: 0.2rem;
+}
+
+.result-item .value {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary, #1a1a2e);
+    transition: all 0.3s ease;
+}
+
+.result-item .value.positive {
+    color: #2d6a4f;
+}
+
+.result-item .value.negative {
+    color: #dc3545;
+}
+
+.result-item .value.neutral {
+    color: #6c757d;
+}
+
+.result-item .sub-value {
+    font-size: 0.75rem;
+    color: var(--text-muted, #8a8a9a);
+    margin-top: 0.1rem;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-section {
+    margin-top: 1.25rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-secondary, #4a4a5a);
+    margin-bottom: 0.3rem;
+}
+
+.progress-track {
+    height: 12px;
+    background: var(--slider-track, #e8edf2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #2d6a4f, #52b788);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.progress-fill.tax-fill {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform-origin: right;
+    background: linear-gradient(90deg, #e63946, #f4a261);
+}
+
+/* ===== DISCLAIMER TEXT (was inline style="" in the HTML) ===== */
+.calc-disclaimer {
+    font-size: 0.7rem;
+    color: var(--text-muted, #8a8a9a);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.progress-breakdown {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7rem;
+    color: var(--text-muted, #8a8a9a);
+    margin-top: 0.3rem;
+}
+
+/* ===== TOOLTIP ===== */
+.tax-bracket-tip {
+    display: inline-block;
+    background: var(--info-bg, #f0f4ff);
+    color: var(--info-text, #1a3a6a);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    cursor: help;
+}
+
+/* ===== DARK MODE ===== */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-bg: #1e2a3a;
+        --card-border: #2a3a4a;
+        --text-primary: #e8edf2;
+        --text-secondary: #b0c0d0;
+        --text-muted: #7a8a9a;
+        --input-bg: #15202b;
+        --input-border: #2a3a4a;
+        --slider-track: #2a3a4a;
+        --result-bg: #15202b;
+        --info-bg: #1a2a3a;
+        --info-text: #8ab4f8;
+    }
+    
+    .calc-card {
+        background: #1e2a3a;
+        border-color: #2a3a4a;
+    }
+    
+    .result-item {
+        background: #15202b;
+    }
+    
+    .input-group input[type="number"],
+    .input-group select {
+        background: #15202b;
+        color: #e8edf2;
+        border-color: #2a3a4a;
+    }
+}
+
+/* ===== ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+:focus-visible {
+    outline: 3px solid #2d6a4f;
+    outline-offset: 2px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .salary-calculator-wrapper {
+        padding: 0 0.75rem;
+        margin: 1rem auto;
+    }
+    
+    .calc-card {
+        padding: 1rem;
+    }
+    
+    .range-wrapper {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .range-wrapper input[type="number"] {
+        width: 100%;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+    
+    .result-item .value {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}

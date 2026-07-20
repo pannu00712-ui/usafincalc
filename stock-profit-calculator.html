@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Profit Calculator (2026) – Calculate Your Investment Returns</title>
+    <meta name="description" content="Calculate stock profit, loss, ROI, and break-even price. Analyze your investment returns with commissions, dividends, and holding period." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="stock profit calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/stock-profit-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Stock Profit Calculator (2026) – Calculate Your Investment Returns" property="og:title"/>
+<meta content="Calculate stock profit, loss, ROI, and break-even price. Analyze your investment returns with commissions, dividends, and holding period." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/stock-profit-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Stock Profit Calculator (2026) – Calculate Your Investment Returns" name="twitter:title"/>
+<meta content="Calculate stock profit, loss, ROI, and break-even price. Analyze your investment returns with commissions, dividends, and holding period." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>P</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-val.positive {
+            color: var(--accent);
+        }
+        .res-val.negative {
+            color: var(--fed);
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .status-bad {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--fed);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .breakdown-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--mono);
+            font-size: 13px;
+        }
+        .breakdown-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .breakdown-row .label {
+            color: var(--muted);
+        }
+        .breakdown-row .amount {
+            color: var(--text);
+        }
+        .breakdown-row.total .amount {
+            color: var(--accent);
+        }
+        .breakdown-row.total.negative .amount {
+            color: var(--fed);
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Stock Profit Calculator (2026) – Calculate Your Investment Returns",
+  "url": "https://usafincalc.com/stock-profit-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stock Profit Calculator (2026) – Calculate Your Investment Returns",
+      "item": "https://usafincalc.com/stock-profit-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Stock Profit Calculator (2026) – Calculate Your Investment Returns",
+  "description": "Calculate stock profit, loss, ROI, and break-even price. Analyze your investment returns with commissions, dividends, and holding period.",
+  "url": "https://usafincalc.com/stock-profit-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between total return and annualized return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Total return is the percentage gain or loss over the entire holding period. Annualized return is the average yearly return over that period, allowing you to compare investments with different holding periods. For example, a 40% gain over 3 years is about 11.9% annualized."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do dividends affect stock returns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividends increase your total return. If a stock rises 10% and pays a 2% dividend, your total return is 12%. Over long periods, dividends can account for 30-40% of total stock market returns. Always include dividends when calculating your profit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good return on investment (ROI) for stocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The historical average return of the S&P 500 is about 10% annually (including dividends). A good ROI depends on your risk tolerance and goals. A 7-10% annualized return is reasonable for a balanced stock portfolio, while 15%+ is considered excellent but comes with higher risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the break-even price and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The break-even price is the price you need to sell at to recover your total investment cost, including commissions. It matters because it tells you the minimum price you need to avoid losing money. Selling below this price means you're taking a loss."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I include commissions in my profit calculation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, absolutely. Commissions reduce your net profit. Even with commission-free trading becoming more common, always include any fees you pay. This calculator allows you to include total commissions for a more accurate profit calculation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good annualized return for a stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good annualized return is generally 8-12% for long-term stock investments. The S&P 500 has historically returned about 10% annually. Anything above 15% is excellent but often comes with higher risk. Use the holding period field to see your annualized return."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">P</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 investment returns</div>
+        <h1>Stock Profit <span>Calculator</span></h1>
+        <p class="hero-sub">Calculate your stock investment profit or loss, ROI, break-even price, and total return. Analyze your trades with commissions, dividends, and holding period.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Trade Details</div>
+
+                    <div class="field">
+                        <label for="buyPrice">Buy Price (per share)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="buyPrice" value="45.00" min="0" step="0.01" oninput="calculateProfit()" /></div>
+                    </div>
+                    <div class="field">
+                        <label for="sellPrice">Sell Price (per share)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="sellPrice" value="52.50" min="0" step="0.01" oninput="calculateProfit()" /></div>
+                    </div>
+                    <div class="field">
+                        <label for="shares">Number of Shares</label>
+                        <input type="number" id="shares" value="100" min="0" step="1" oninput="calculateProfit()" />
+                    </div>
+                    <div class="field">
+                        <label for="commission">Total Commission</label>
+                        <div class="pfx"><span>$</span><input type="number" id="commission" value="0" min="0" step="0.5" oninput="calculateProfit()" /></div>
+                        <div class="hint">Total commission for both buy and sell trades.</div>
+                    </div>
+                    <div class="field">
+                        <label for="dividends">Dividends Received</label>
+                        <div class="pfx"><span>$</span><input type="number" id="dividends" value="0" min="0" step="0.5" oninput="calculateProfit()" /></div>
+                        <div class="hint">Total dividends received while holding the stock.</div>
+                    </div>
+                    <div class="field">
+                        <label for="holdingPeriod">Holding Period (Years)</label>
+                        <input type="number" id="holdingPeriod" value="1.5" min="0" max="50" step="0.25" oninput="calculateProfit()" />
+                        <div class="hint">How long you held the investment (for annualized return).</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetProfit()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadPreset('win')">Big Winner (+40%)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadPreset('loss')">Loss (-25%)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadPreset('dividend')">Dividend Stock</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadPreset('longterm')">Long Term Hold</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common investment scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Profit / Loss Summary</div>
+                    <div class="res-main">
+                        <div class="res-label">Total Profit / Loss</div>
+                        <div class="res-val positive" id="totalProfit">$750.00</div>
+                        <div class="res-sub" id="profitSub">with dividends and commissions</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Total Buy Cost</div><div class="bk-v" id="totalBuyCost">$4,500</div></div>
+                        <div class="bk"><div class="bk-l">Total Sell Value</div><div class="bk-v" id="totalSellValue">$5,250</div></div>
+                        <div class="bk"><div class="bk-l">Total Return %</div><div class="bk-v" id="totalReturnPct">16.67%</div></div>
+                        <div class="bk"><div class="bk-l">Annualized Return</div><div class="bk-v" id="annualizedReturn">10.8%</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Detailed Breakdown</div>
+                    <div id="profitBreakdown">
+                        <div class="breakdown-row"><span class="label">Buy Cost (Shares × Buy Price)</span><span class="amount" id="bdBuyCost">$4,500.00</span></div>
+                        <div class="breakdown-row"><span class="label">Sell Value (Shares × Sell Price)</span><span class="amount" id="bdSellValue">$5,250.00</span></div>
+                        <div class="breakdown-row"><span class="label">Price Difference</span><span class="amount" id="bdPriceDiff">$750.00</span></div>
+                        <div class="breakdown-row"><span class="label">Commissions</span><span class="amount" id="bdCommission">$0.00</span></div>
+                        <div class="breakdown-row"><span class="label">Dividends Received</span><span class="amount" id="bdDividends">$0.00</span></div>
+                        <div class="breakdown-row total" id="bdTotalRow"><span class="label">Net Profit / Loss</span><span class="amount" id="bdNetProfit">$750.00</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Key Metrics</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Cost vs. Return Breakdown</div>
+                        <div id="profitChart"></div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-good" id="statusBadge">✅ Profitable</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">Your investment generated a positive return.</span>
+                    </div>
+                    <div style="margin-top:8px;font-family:var(--mono);font-size:12px;color:var(--muted);">
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);">
+                            <span>Break-Even Price</span>
+                            <span style="color:var(--text);" id="breakEvenPrice">$45.00</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;">
+                            <span>Price Target for 20% Return</span>
+                            <span style="color:var(--text);" id="priceTarget">$54.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides estimates based on your inputs. Actual returns may vary due to taxes, slippage, and other factors. Consult a financial advisor for personalized advice.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>Understanding Stock Profit and Loss</h2>
+        <p>Calculating your stock profit or loss is essential for evaluating your investment performance. This Stock Profit Calculator helps you determine your total return, ROI, and annualized return, taking into account commissions, dividends, and your holding period.</p>
+        <p>Whether you're a day trader, a long-term investor, or somewhere in between, understanding your actual returns is crucial for making informed investment decisions. Many investors focus only on the price difference between buy and sell, but true profit also includes dividends and must account for trading costs.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> A stock that rises from $45 to $52.50 (16.67% gain) with 100 shares generates a $750 profit. If you held it for 1.5 years, your annualized return is about 10.8%—solid but lower than the simple percentage gain suggests.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator computes your stock investment returns using the following steps:</p>
+        <ol>
+            <li><strong>Total Buy Cost:</strong> Shares × Buy Price</li>
+            <li><strong>Total Sell Value:</strong> Shares × Sell Price</li>
+            <li><strong>Gross Profit:</strong> Sell Value - Buy Cost</li>
+            <li><strong>Net Profit:</strong> Gross Profit - Commissions + Dividends</li>
+            <li><strong>Return Percentage:</strong> (Net Profit ÷ Buy Cost) × 100</li>
+            <li><strong>Annualized Return:</strong> (1 + Total Return)^(1/Holding Period) - 1</li>
+            <li><strong>Break-Even Price:</strong> (Buy Cost + Commissions) ÷ Shares</li>
+            <li><strong>Price Target:</strong> (Buy Cost × (1 + Target Return) + Commissions) ÷ Shares</li>
+        </ol>
+
+        <h2>Key Metrics Explained</h2>
+        <ul>
+            <li><strong>Total Return %:</strong> The total percentage gain or loss on your investment. This includes price appreciation, dividends, and subtracts commissions.</li>
+            <li><strong>Annualized Return:</strong> Your return expressed as a yearly percentage. This allows you to compare investments with different holding periods.</li>
+            <li><strong>Break-Even Price:</strong> The price at which you neither make nor lose money, accounting for commissions.</li>
+            <li><strong>Price Target:</strong> The price needed to achieve a specific return (default 20%).</li>
+            <li><strong>ROI (Return on Investment):</strong> The same as total return percentage, showing how much profit you made relative to your investment.</li>
+        </ul>
+
+        <h2>Understanding Stock Returns</h2>
+        <p>Stock returns come from two sources:</p>
+        <ul>
+            <li><strong>Price Appreciation:</strong> The increase in the stock's price over time (capital gains).</li>
+            <li><strong>Dividends:</strong> Cash payments made to shareholders from company profits.</li>
+        </ul>
+        <p>Total return includes both price appreciation and dividends. This is why you should always include dividends in your calculations, especially for dividend-paying stocks like those in the S&P 500.</p>
+
+        <h2>Historical Stock Market Returns</h2>
+        <p>Here's how different investment periods have performed historically (S&P 500):</p>
+        <table>
+            <thead>
+                <tr><th>Time Period</th><th>Average Annual Return</th><th>Total Return</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1 Year</td><td>~10%</td><td>~10%</td></tr>
+                <tr><td>5 Years</td><td>~10%</td><td>~61%</td></tr>
+                <tr><td>10 Years</td><td>~10%</td><td>~159%</td></tr>
+                <tr><td>20 Years</td><td>~10%</td><td>~573%</td></tr>
+                <tr><td>30 Years</td><td>~10%</td><td>~1,745%</td></tr>
+            </tbody>
+        </table>
+        <p>Source: Historical S&P 500 returns (including dividends). Past performance doesn't guarantee future results.</p>
+
+        <h2>Investment Strategies</h2>
+        <div class="two-col">
+            <div>
+                <h3>Long-Term Investing</h3>
+                <ul>
+                    <li>Hold for 5+ years</li>
+                    <li>Benefit from compound growth</li>
+                    <li>Lower taxes (long-term capital gains)</li>
+                    <li>Less stress from short-term volatility</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Short-Term Trading</h3>
+                <ul>
+                    <li>Hold for days, weeks, or months</li>
+                    <li>Potential for quick profits</li>
+                    <li>Higher risk and volatility</li>
+                    <li>Higher taxes (short-term capital gains)</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Common Stock Investing Mistakes</h2>
+        <ul>
+            <li><strong>Ignoring commissions and fees:</strong> These eat into your profits. Even small commissions add up over many trades.</li>
+            <li><strong>Forgetting about dividends:</strong> Dividends can significantly boost total returns, especially over long periods.</li>
+            <li><strong>Not calculating annualized return:</strong> A 20% gain over 3 years is only about 6.3% annualized—lower than the S&P 500 average.</li>
+            <li><strong>Focusing only on price:</strong> Total return (price + dividends) is what matters for your portfolio.</li>
+            <li><strong>Chasing past performance:</strong> Past returns don't guarantee future results. Always evaluate the fundamentals.</li>
+        </ul>
+
+        <h2>Tax Considerations</h2>
+        <p>Your actual after-tax profit depends on your tax situation:</p>
+        <ul>
+            <li><strong>Short-Term Capital Gains:</strong> Held for 1 year or less, taxed at ordinary income rates (10-37%).</li>
+            <li><strong>Long-Term Capital Gains:</strong> Held for more than 1 year, taxed at preferential rates (0%, 15%, or 20%).</li>
+            <li><strong>Qualified Dividends:</strong> Taxed at long-term capital gains rates.</li>
+            <li><strong>Ordinary Dividends:</strong> Taxed at ordinary income rates.</li>
+        </ul>
+        <p>This calculator shows pre-tax returns. Use the Tax Calculator to estimate your after-tax returns.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between total return and annualized return?</div>
+            <div class="faq-a">Total return is the percentage gain or loss over the entire holding period. Annualized return is the average yearly return over that period, allowing you to compare investments with different holding periods. For example, a 40% gain over 3 years is about 11.9% annualized.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How do dividends affect stock returns?</div>
+            <div class="faq-a">Dividends increase your total return. If a stock rises 10% and pays a 2% dividend, your total return is 12%. Over long periods, dividends can account for 30-40% of total stock market returns. Always include dividends when calculating your profit.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a good return on investment (ROI) for stocks?</div>
+            <div class="faq-a">The historical average return of the S&P 500 is about 10% annually (including dividends). A good ROI depends on your risk tolerance and goals. A 7-10% annualized return is reasonable for a balanced stock portfolio, while 15%+ is considered excellent but comes with higher risk.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the break-even price and why does it matter?</div>
+            <div class="faq-a">The break-even price is the price you need to sell at to recover your total investment cost, including commissions. It matters because it tells you the minimum price you need to avoid losing money. Selling below this price means you're taking a loss.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Should I include commissions in my profit calculation?</div>
+            <div class="faq-a">Yes, absolutely. Commissions reduce your net profit. Even with commission-free trading becoming more common, always include any fees you pay. This calculator allows you to include total commissions for a more accurate profit calculation.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a good annualized return for a stock?</div>
+            <div class="faq-a">A good annualized return is generally 8-12% for long-term stock investments. The S&P 500 has historically returned about 10% annually. Anything above 15% is excellent but often comes with higher risk. Use the holding period field to see your annualized return.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Stock Average Calculator</a></li>
+            <li><a href="#">Future Value Calculator</a></li>
+            <li><a href="#">Compound Interest Calculator</a></li>
+            <li><a href="#">Dividend Calculator</a></li>
+            <li><a href="#">ROI Calculator</a></li>
+            <li><a href="#">Tax Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const buyPrice = $('buyPrice');
+        const sellPrice = $('sellPrice');
+        const shares = $('shares');
+        const commission = $('commission');
+        const dividends = $('dividends');
+        const holdingPeriod = $('holdingPeriod');
+
+        const totalProfit = $('totalProfit');
+        const profitSub = $('profitSub');
+        const totalBuyCost = $('totalBuyCost');
+        const totalSellValue = $('totalSellValue');
+        const totalReturnPct = $('totalReturnPct');
+        const annualizedReturn = $('annualizedReturn');
+
+        const bdBuyCost = $('bdBuyCost');
+        const bdSellValue = $('bdSellValue');
+        const bdPriceDiff = $('bdPriceDiff');
+        const bdCommission = $('bdCommission');
+        const bdDividends = $('bdDividends');
+        const bdNetProfit = $('bdNetProfit');
+        const bdTotalRow = $('bdTotalRow');
+
+        const profitChart = $('profitChart');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+        const breakEvenPrice = $('breakEvenPrice');
+        const priceTarget = $('priceTarget');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function fmtInt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function pct(n) {
+            if (!isFinite(n)) n = 0;
+            return (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- main calculation -----
+        function calculateProfit() {
+            const buy = getVal(buyPrice);
+            const sell = getVal(sellPrice);
+            const sharesVal = getVal(shares);
+            const comm = getVal(commission);
+            const divs = getVal(dividends);
+            const years = getVal(holdingPeriod);
+
+            const buyCost = buy * sharesVal;
+            const sellValue = sell * sharesVal;
+            const grossProfit = sellValue - buyCost;
+            const netProfit = grossProfit - comm + divs;
+            const returnPct = buyCost > 0 ? (netProfit / buyCost) * 100 : 0;
+
+            // Annualized return
+            let annualized = 0;
+            if (years > 0 && netProfit > 0) {
+                annualized = (Math.pow(1 + returnPct / 100, 1 / years) - 1) * 100;
+            } else if (years > 0 && netProfit < 0) {
+                annualized = (Math.pow(1 + returnPct / 100, 1 / years) - 1) * 100;
+            }
+
+            // Break-even price
+            const breakEven = sharesVal > 0 ? (buyCost + comm) / sharesVal : 0;
+
+            // Price target for 20% return
+            const targetReturn = 0.20;
+            const priceTargetVal = sharesVal > 0 ? (buyCost * (1 + targetReturn) + comm) / sharesVal : 0;
+
+            // Update results
+            const isPositive = netProfit >= 0;
+            totalProfit.textContent = fmt(netProfit);
+            totalProfit.className = 'res-val ' + (isPositive ? 'positive' : 'negative');
+            profitSub.textContent = `with dividends (${fmt(divs)}) and commissions (${fmt(comm)})`;
+
+            totalBuyCost.textContent = fmtInt(buyCost);
+            totalBuyCost.className = 'bk-v ' + (buyCost > 0 ? 'negative' : '');
+
+            totalSellValue.textContent = fmtInt(sellValue);
+            totalSellValue.className = 'bk-v ' + (sellValue > buyCost ? 'positive' : 'negative');
+
+            totalReturnPct.textContent = pct(returnPct);
+            totalReturnPct.className = 'bk-v ' + (returnPct >= 0 ? 'positive' : 'negative');
+
+            annualized.textContent = (annualized >= 0 ? '+' : '') + annualized.toFixed(1) + '%';
+            annualized.className = 'bk-v ' + (annualized >= 0 ? 'positive' : 'negative');
+
+            // Detailed breakdown
+            bdBuyCost.textContent = fmt(buyCost);
+            bdSellValue.textContent = fmt(sellValue);
+
+            const priceDiff = sell - buy;
+            bdPriceDiff.textContent = fmt(priceDiff * sharesVal);
+            bdPriceDiff.style.color = priceDiff >= 0 ? 'var(--accent)' : 'var(--fed)';
+
+            bdCommission.textContent = fmt(comm);
+            bdDividends.textContent = fmt(divs);
+
+            bdNetProfit.textContent = fmt(netProfit);
+            bdNetProfit.style.color = netProfit >= 0 ? 'var(--accent)' : 'var(--fed)';
+            bdTotalRow.className = 'breakdown-row total' + (netProfit < 0 ? ' negative' : '');
+
+            // Status
+            if (returnPct > 20) {
+                statusBadge.textContent = '🚀 Excellent!';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `Your ${pct(returnPct)} return is well above the market average.`;
+            } else if (returnPct > 10) {
+                statusBadge.textContent = '✅ Good Return';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `Your ${pct(returnPct)} return is solid. Keep it up!`;
+            } else if (returnPct > 0) {
+                statusBadge.textContent = '📈 Positive Return';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `Your ${pct(returnPct)} return is positive but below market average.`;
+            } else if (returnPct > -10) {
+                statusBadge.textContent = '⚠️ Small Loss';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = `Your ${pct(returnPct)} loss is manageable. Review your strategy.`;
+            } else {
+                statusBadge.textContent = '❌ Significant Loss';
+                statusBadge.className = 'status-badge status-bad';
+                statusNote.textContent = `Your ${pct(returnPct)} loss suggests reviewing your investment approach.`;
+            }
+
+            // Break-even and price target
+            breakEvenPrice.textContent = fmt(breakEven);
+            priceTarget.textContent = fmt(priceTargetVal);
+
+            // Chart
+            const maxVal = Math.max(buyCost, sellValue, 1);
+            const buyPct = (buyCost / maxVal) * 100;
+            const sellPct = (sellValue / maxVal) * 100;
+            const profitPct = Math.abs(netProfit / maxVal) * 100;
+
+            profitChart.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Total Buy Cost</span><span>${fmt(buyCost)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${buyPct}%;background:var(--fed);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Total Sell Value</span><span>${fmt(sellValue)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${sellPct}%;background:var(--accent);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Net Profit</span><span>${fmt(netProfit)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${profitPct}%;background:${netProfit >= 0 ? 'var(--accent)' : 'var(--fed)'};"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Net profit includes dividends (${fmt(divs)}) minus commissions (${fmt(comm)}).</div>
+            `;
+        }
+
+        // ----- presets -----
+        function loadPreset(key) {
+            switch (key) {
+                case 'win':
+                    buyPrice.value = '45.00';
+                    sellPrice.value = '63.00';
+                    shares.value = '100';
+                    commission.value = '0';
+                    dividends.value = '0';
+                    holdingPeriod.value = '2';
+                    break;
+                case 'loss':
+                    buyPrice.value = '60.00';
+                    sellPrice.value = '45.00';
+                    shares.value = '100';
+                    commission.value = '0';
+                    dividends.value = '0';
+                    holdingPeriod.value = '1';
+                    break;
+                case 'dividend':
+                    buyPrice.value = '50.00';
+                    sellPrice.value = '55.00';
+                    shares.value = '100';
+                    commission.value = '5';
+                    dividends.value = '200';
+                    holdingPeriod.value = '3';
+                    break;
+                case 'longterm':
+                    buyPrice.value = '30.00';
+                    sellPrice.value = '55.00';
+                    shares.value = '200';
+                    commission.value = '10';
+                    dividends.value = '300';
+                    holdingPeriod.value = '5';
+                    break;
+                default:
+                    return;
+            }
+            calculateProfit();
+        }
+        window.loadPreset = loadPreset;
+
+        // ----- reset -----
+        function resetProfit() {
+            buyPrice.value = '45.00';
+            sellPrice.value = '52.50';
+            shares.value = '100';
+            commission.value = '0';
+            dividends.value = '0';
+            holdingPeriod.value = '1.5';
+            calculateProfit();
+        }
+        window.resetProfit = resetProfit;
+
+        // ----- event listeners -----
+        const inputs = [buyPrice, sellPrice, shares, commission, dividends, holdingPeriod];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculateProfit);
+            el.addEventListener('change', calculateProfit);
+        });
+
+        // ----- init -----
+        calculateProfit();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

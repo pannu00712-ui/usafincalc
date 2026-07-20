@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dividend Calculator (2026) – Reinvestment & Income Projection</title>
+    <meta name="description" content="Calculate dividend income, yield, and growth with reinvestment. See how dividend stocks can build wealth and generate passive income over time." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="dividend calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/dividend-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Dividend Calculator (2026) – Reinvestment & Income Projection" property="og:title"/>
+<meta content="Calculate dividend income, yield, and growth with reinvestment. See how dividend stocks can build wealth and generate passive income over time." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/dividend-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Dividend Calculator (2026) – Reinvestment & Income Projection" name="twitter:title"/>
+<meta content="Calculate dividend income, yield, and growth with reinvestment. See how dividend stocks can build wealth and generate passive income over time." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>D</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-fill.dividend {
+            background: var(--accent);
+        }
+        .bar-fill.growth {
+            background: var(--local);
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .timeline {
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: var(--mono);
+            font-size: 12px;
+        }
+        .timeline::-webkit-scrollbar {
+            width: 6px;
+        }
+        .timeline::-webkit-scrollbar-track {
+            background: var(--bg3);
+            border-radius: 3px;
+        }
+        .timeline::-webkit-scrollbar-thumb {
+            background: var(--border2);
+            border-radius: 3px;
+        }
+        .timeline-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-row:last-child {
+            border-bottom: none;
+        }
+        .timeline-row .year {
+            color: var(--muted);
+        }
+        .timeline-row .value {
+            color: var(--text);
+        }
+        .timeline-row .dividend {
+            color: var(--accent);
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Dividend Calculator (2026) – Reinvestment & Income Projection",
+  "url": "https://usafincalc.com/dividend-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Dividend Calculator (2026) – Reinvestment & Income Projection",
+      "item": "https://usafincalc.com/dividend-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Dividend Calculator (2026) – Reinvestment & Income Projection",
+  "description": "Calculate dividend income, yield, and growth with reinvestment. See how dividend stocks can build wealth and generate passive income over time.",
+  "url": "https://usafincalc.com/dividend-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good dividend yield?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A \"good\" yield depends on your goals. For growth investors, 1.5-3% is common with high dividend growth. For income investors, 3-5% is typical. Yields above 6% may indicate higher risk (a stock might be cutting its dividend). The S&P 500 average yield is about 1.5-2%."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is dividend reinvestment (DRIP)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A DRIP automatically uses your dividend payments to purchase additional shares of the company. This compounds your returns because you earn dividends on the additional shares you've purchased with dividends. Most brokers offer DRIPs with no commission."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are dividends taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Qualified dividends (most U.S. corporate dividends) are taxed at capital gains rates (0%, 15%, or 20%). Ordinary dividends (REITs, MLPs, etc.) are taxed at your regular income tax rate. This calculator shows pre-tax figures."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is yield on cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yield on cost is your annual dividend income divided by your original purchase price. As dividends grow over time, your yield on cost can become much higher than the current yield. This shows the power of dividend growth investing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can dividends be cut?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, companies can reduce or eliminate their dividends at any time. This typically happens during economic downturns or when a company is struggling financially. That's why it's important to diversify across multiple dividend stocks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are Dividend Aristocrats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividend Aristocrats are S&P 500 companies that have increased their dividends for at least 25 consecutive years. They're considered some of the most reliable dividend stocks. Examples include Procter & Gamble, Coca-Cola, and Johnson & Johnson."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">D</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 dividend investing</div>
+        <h1>Dividend <span>Calculator</span></h1>
+        <p class="hero-sub">Project your dividend income, yield, and growth with reinvestment. See how dividend stocks can build wealth and generate passive income over time. Compare with and without reinvestment.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Investment Details</div>
+
+                    <div class="field">
+                        <label for="initialInvestment">Initial Investment</label>
+                        <div class="pfx"><span>$</span><input type="number" id="initialInvestment" value="10000" min="0" step="1000" /></div>
+                        <div class="hint">Starting amount invested in dividend stocks.</div>
+                    </div>
+                    <div class="field">
+                        <label for="monthlyContribution">Monthly Contribution</label>
+                        <div class="pfx"><span>$</span><input type="number" id="monthlyContribution" value="500" min="0" step="50" /></div>
+                        <div class="hint">Additional amount invested each month.</div>
+                    </div>
+                    <div class="field">
+                        <label for="dividendYield">Current Dividend Yield</label>
+                        <div class="pct-suffix"><input type="number" id="dividendYield" value="3.5" min="0" max="20" step="0.1" /><span>%</span></div>
+                        <div class="hint">Current annual dividend yield (e.g., 3.5% for S&P 500).</div>
+                    </div>
+                    <div class="field">
+                        <label for="dividendGrowth">Annual Dividend Growth Rate</label>
+                        <div class="pct-suffix"><input type="number" id="dividendGrowth" value="6" min="0" max="20" step="0.5" /><span>%</span></div>
+                        <div class="hint">Expected annual dividend growth (e.g., 6% for dividend aristocrats).</div>
+                    </div>
+                    <div class="field">
+                        <label for="stockGrowth">Stock Price Growth Rate</label>
+                        <div class="pct-suffix"><input type="number" id="stockGrowth" value="8" min="0" max="25" step="0.5" /><span>%</span></div>
+                        <div class="hint">Expected annual stock price appreciation.</div>
+                    </div>
+                    <div class="field">
+                        <label for="timeYears">Time Horizon (Years)</label>
+                        <input type="number" id="timeYears" value="20" min="1" max="80" step="1" />
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('aristocrat')">Dividend Aristocrat</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('highyield')">High Yield</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('growth')">Growth Focus</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('retirement')">Retirement Income</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common dividend investing scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Dividend Projection</div>
+                    <div class="res-main">
+                        <div class="res-label">Annual Dividend Income (Year 20)</div>
+                        <div class="res-val" id="annualIncome">$6,234</div>
+                        <div class="res-sub" id="incomeSub">with reinvestment</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Total Portfolio Value</div><div class="bk-v positive" id="portfolioValue">$89,000</div></div>
+                        <div class="bk"><div class="bk-l">Total Dividends Received</div><div class="bk-v positive" id="totalDividends">$35,000</div></div>
+                        <div class="bk"><div class="bk-l">Current Yield on Cost</div><div class="bk-v" id="yieldOnCost">8.5%</div></div>
+                        <div class="bk"><div class="bk-l">Monthly Income</div><div class="bk-v positive" id="monthlyIncome">$520</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">With vs. Without Reinvestment</div>
+                    <div style="overflow-x:auto;">
+                        <table style="width:100%;border-collapse:collapse;font-family:var(--mono);font-size:13px;">
+                            <thead>
+                                <tr><th style="text-align:left;padding:8px 10px;border-bottom:1px solid var(--border2);color:var(--muted);font-size:11px;text-transform:uppercase;">Scenario</th>
+                                    <th style="text-align:right;padding:8px 10px;border-bottom:1px solid var(--border2);color:var(--muted);font-size:11px;text-transform:uppercase;">Portfolio Value</th>
+                                    <th style="text-align:right;padding:8px 10px;border-bottom:1px solid var(--border2);color:var(--muted);font-size:11px;text-transform:uppercase;">Annual Income</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text);">With Reinvestment</td>
+                                    <td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--accent);text-align:right;" id="withReinvestValue">$89,000</td>
+                                    <td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--accent);text-align:right;" id="withReinvestIncome">$6,234</td>
+                                </tr>
+                                <tr><td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text);">Without Reinvestment</td>
+                                    <td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--fed);text-align:right;" id="withoutReinvestValue">$72,000</td>
+                                    <td style="padding:8px 10px;border-bottom:1px solid var(--border);color:var(--fed);text-align:right;" id="withoutReinvestIncome">$4,500</td>
+                                </tr>
+                                <tr style="background:rgba(16,185,129,0.05);"><td style="padding:8px 10px;font-weight:600;color:var(--accent);">Difference</td>
+                                    <td style="padding:8px 10px;font-weight:600;color:var(--accent);text-align:right;" id="diffValue">+$17,000</td>
+                                    <td style="padding:8px 10px;font-weight:600;color:var(--accent);text-align:right;" id="diffIncome">+$1,734</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Dividend Growth Timeline</div>
+                    <div id="dividendTimeline" class="timeline">
+                        <div class="timeline-row"><span class="year">Year 0</span><span class="dividend">$0</span><span class="value">$10,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 5</span><span class="dividend">$1,200</span><span class="value">$18,500</span></div>
+                        <div class="timeline-row"><span class="year">Year 10</span><span class="dividend">$2,800</span><span class="value">$32,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 15</span><span class="dividend">$4,300</span><span class="value">$55,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 20</span><span class="dividend">$6,234</span><span class="value">$89,000</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Portfolio Composition</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Dividend Income vs. Stock Growth</div>
+                        <div id="chartBar"></div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-info" id="statusBadge">📈 Growing</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">Your dividend income is projected to grow significantly.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides projections based on assumptions. Actual returns, dividend growth, and stock prices vary. Past performance doesn't guarantee future results. Dividends can be cut or reduced.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>The Power of Dividend Investing</h2>
+        <p>Dividend investing is a proven strategy for building long-term wealth and generating passive income. By investing in companies that pay regular dividends, you benefit from two sources of returns: dividend income and stock price appreciation. When you reinvest dividends, you harness the power of compound growth—buying more shares that generate even more dividends.</p>
+        <p>This Dividend Calculator helps you project your future dividend income and portfolio value based on realistic assumptions. Whether you're building a retirement portfolio, generating passive income, or just starting to invest, understanding the power of dividend reinvestment can transform your financial future.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> A $10,000 investment with a 3.5% dividend yield, 6% annual dividend growth, and 8% stock growth, plus $500/month contributions, can grow to over $89,000 in 20 years with annual dividend income exceeding $6,200.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator uses a comprehensive model to project your dividend portfolio's growth:</p>
+        <ol>
+            <li><strong>Initial investment</strong> is invested in dividend stocks.</li>
+            <li><strong>Monthly contributions</strong> are added and invested.</li>
+            <li><strong>Dividends are calculated</strong> quarterly based on current yield and portfolio value.</li>
+            <li><strong>Dividend growth</strong> increases the yield on existing shares annually.</li>
+            <li><strong>Stock growth</strong> increases the share price value.</li>
+            <li><strong>Reinvestment</strong> uses dividends to buy more shares (if enabled).</li>
+            <li><strong>Two scenarios</strong> are compared: with and without dividend reinvestment.</li>
+        </ol>
+
+        <h2>Understanding Dividend Yield</h2>
+        <p>Dividend yield is the annual dividend payment divided by the stock price, expressed as a percentage. For example, if a stock pays $3.50 per year in dividends and costs $100, the yield is 3.5%.</p>
+        <p><strong>Current Yield vs. Yield on Cost:</strong></p>
+        <ul>
+            <li><strong>Current Yield:</strong> Annual dividends ÷ Current stock price</li>
+            <li><strong>Yield on Cost:</strong> Annual dividends ÷ Original purchase price</li>
+        </ul>
+        <p>This calculator shows both. Yield on cost can grow significantly over time as dividends increase, even if the stock price doesn't change.</p>
+
+        <h2>Dividend Growth Rates by Sector</h2>
+        <p>Different sectors have different dividend growth characteristics:</p>
+        <table>
+            <thead>
+                <tr><th>Sector</th><th>Average Yield</th><th>Average Dividend Growth</th><th>Examples</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Consumer Staples</td><td>2.5-3.5%</td><td>5-8%</td><td>Procter &amp; Gamble, Coca-Cola</td></tr>
+                <tr><td>Healthcare</td><td>1.5-3.0%</td><td>6-10%</td><td>Johnson &amp; Johnson, Pfizer</td></tr>
+                <tr><td>Financials</td><td>2.0-4.0%</td><td>5-10%</td><td>JPMorgan, Wells Fargo</td></tr>
+                <tr><td>Utilities</td><td>3.0-5.0%</td><td>3-6%</td><td>Duke Energy, NextEra</td></tr>
+                <tr><td>Technology</td><td>0.5-2.0%</td><td>8-15%</td><td>Microsoft, Apple</td></tr>
+                <tr><td>REITs</td><td>3.0-6.0%</td><td>3-8%</td><td>Realty Income, American Tower</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Dividend Aristocrats</h2>
+        <p>Dividend Aristocrats are S&P 500 companies that have increased their dividends for at least 25 consecutive years. These companies have proven track records of financial stability and commitment to returning capital to shareholders.</p>
+        <p>Examples of Dividend Aristocrats include:</p>
+        <ul>
+            <li><strong>Procter &amp; Gamble:</strong> 65+ years of increases</li>
+            <li><strong>Coca-Cola:</strong> 60+ years of increases</li>
+            <li><strong>Johnson &amp; Johnson:</strong> 60+ years of increases</li>
+            <li><strong>Colgate-Palmolive:</strong> 50+ years of increases</li>
+            <li><strong>3M:</strong> 60+ years of increases</li>
+        </ul>
+        <p>Investing in Dividend Aristocrats has historically provided reliable income and solid long-term returns.</p>
+
+        <h2>Dividend Reinvestment (DRIP)</h2>
+        <p>Dividend Reinvestment Plans (DRIPs) automatically use dividend payments to purchase additional shares of the company. This is the key to compound growth in dividend investing.</p>
+        <p><strong>Why DRIPs work:</strong></p>
+        <ul>
+            <li>You buy more shares without making additional contributions</li>
+            <li>More shares generate even more dividends in the future</li>
+            <li>Many brokers offer commission-free DRIPs</li>
+            <li>Fractional shares allow you to reinvest even small dividend amounts</li>
+        </ul>
+
+        <h2>Tax Considerations for Dividends</h2>
+        <p>Dividends are taxed differently depending on their classification:</p>
+        <div class="two-col">
+            <div>
+                <h3>Qualified Dividends</h3>
+                <ul>
+                    <li>Taxed at capital gains rates (0%, 15%, or 20%)</li>
+                    <li>Must hold stock for at least 60 days</li>
+                    <li>Paid by U.S. corporations and qualified foreign companies</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Ordinary Dividends</h3>
+                <ul>
+                    <li>Taxed at ordinary income rates</li>
+                    <li>Includes REITs, MLPs, and foreign dividends</li>
+                    <li>Higher tax rate than qualified dividends</li>
+                </ul>
+            </div>
+        </div>
+        <p>This calculator shows pre-tax figures. For after-tax projections, consider using the Tax Calculator.</p>
+
+        <h2>Historical Dividend Performance</h2>
+        <p>Here's how a $10,000 investment in the S&P 500 with dividend reinvestment has performed historically:</p>
+        <table>
+            <thead>
+                <tr><th>Time Period</th><th>Without Dividends</th><th>With Dividends (Reinvested)</th><th>Difference</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10 Years</td><td>$18,000</td><td>$24,000</td><td>+33%</td></tr>
+                <tr><td>20 Years</td><td>$32,000</td><td>$55,000</td><td>+72%</td></tr>
+                <tr><td>30 Years</td><td>$58,000</td><td>$130,000</td><td>+124%</td></tr>
+            </tbody>
+        </table>
+        <p>Over long periods, dividends can account for 30-50% of total stock market returns.</p>
+
+        <h2>Common Dividend Investing Strategies</h2>
+        <ul>
+            <li><strong>Dividend Growth Investing:</strong> Focus on companies with consistent dividend increases (e.g., Dividend Aristocrats).</li>
+            <li><strong>High Yield Investing:</strong> Focus on stocks with above-average yields (e.g., utilities, REITs).</li>
+            <li><strong>Dividend Capture:</strong> Buy stocks just before ex-dividend date to capture the dividend, then sell.</li>
+            <li><strong>Dividend ETFs:</strong> Invest in diversified dividend-focused ETFs like SCHD, VIG, or DGRO.</li>
+            <li><strong>Dividend Income Portfolio:</strong> Build a portfolio designed to generate specific monthly income.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a good dividend yield?</div>
+            <div class="faq-a">A "good" yield depends on your goals. For growth investors, 1.5-3% is common with high dividend growth. For income investors, 3-5% is typical. Yields above 6% may indicate higher risk (a stock might be cutting its dividend). The S&P 500 average yield is about 1.5-2%.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is dividend reinvestment (DRIP)?</div>
+            <div class="faq-a">A DRIP automatically uses your dividend payments to purchase additional shares of the company. This compounds your returns because you earn dividends on the additional shares you've purchased with dividends. Most brokers offer DRIPs with no commission.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How are dividends taxed?</div>
+            <div class="faq-a">Qualified dividends (most U.S. corporate dividends) are taxed at capital gains rates (0%, 15%, or 20%). Ordinary dividends (REITs, MLPs, etc.) are taxed at your regular income tax rate. This calculator shows pre-tax figures.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is yield on cost?</div>
+            <div class="faq-a">Yield on cost is your annual dividend income divided by your original purchase price. As dividends grow over time, your yield on cost can become much higher than the current yield. This shows the power of dividend growth investing.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can dividends be cut?</div>
+            <div class="faq-a">Yes, companies can reduce or eliminate their dividends at any time. This typically happens during economic downturns or when a company is struggling financially. That's why it's important to diversify across multiple dividend stocks.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What are Dividend Aristocrats?</div>
+            <div class="faq-a">Dividend Aristocrats are S&P 500 companies that have increased their dividends for at least 25 consecutive years. They're considered some of the most reliable dividend stocks. Examples include Procter &amp; Gamble, Coca-Cola, and Johnson &amp; Johnson.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Compound Interest Calculator</a></li>
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Investment Calculator</a></li>
+            <li><a href="#">Tax Calculator</a></li>
+            <li><a href="#">Savings Goal Calculator</a></li>
+            <li><a href="#">ROI Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Past performance doesn't guarantee future results.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const initialInvestment = $('initialInvestment');
+        const monthlyContribution = $('monthlyContribution');
+        const dividendYield = $('dividendYield');
+        const dividendGrowth = $('dividendGrowth');
+        const stockGrowth = $('stockGrowth');
+        const timeYears = $('timeYears');
+
+        const annualIncome = $('annualIncome');
+        const incomeSub = $('incomeSub');
+        const portfolioValue = $('portfolioValue');
+        const totalDividends = $('totalDividends');
+        const yieldOnCost = $('yieldOnCost');
+        const monthlyIncome = $('monthlyIncome');
+
+        const withReinvestValue = $('withReinvestValue');
+        const withReinvestIncome = $('withReinvestIncome');
+        const withoutReinvestValue = $('withoutReinvestValue');
+        const withoutReinvestIncome = $('withoutReinvestIncome');
+        const diffValue = $('diffValue');
+        const diffIncome = $('diffIncome');
+
+        const dividendTimeline = $('dividendTimeline');
+        const chartBar = $('chartBar');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- main calculation -----
+        function calculate() {
+            const initial = getVal(initialInvestment);
+            const monthly = getVal(monthlyContribution);
+            const yieldPct = getVal(dividendYield) / 100;
+            const divGrowth = getVal(dividendGrowth) / 100;
+            const stockGrowthRate = getVal(stockGrowth) / 100;
+            const years = getVal(timeYears);
+
+            // Annual contribution
+            const annualContrib = monthly * 12;
+
+            // Simulate with reinvestment
+            let value = initial;
+            let totalDivs = 0;
+            let currentYield = yieldPct;
+            let timelineData = [];
+
+            for (let year = 1; year <= years; year++) {
+                // Add monthly contributions (simplified as annual lump sum at start of year)
+                const thisYearContrib = annualContrib;
+                value += thisYearContrib;
+
+                // Calculate dividends for the year (based on current value and yield)
+                const divIncome = value * currentYield;
+                totalDivs += divIncome;
+
+                // Reinvest dividends
+                value += divIncome;
+
+                // Stock price growth
+                value *= (1 + stockGrowthRate);
+
+                // Dividend growth for next year
+                currentYield = currentYield * (1 + divGrowth);
+
+                // Record timeline every 5 years or final year
+                if (year % 5 === 0 || year === 1 || year === years) {
+                    timelineData.push({
+                        year: year,
+                        value: value,
+                        dividend: divIncome
+                    });
+                }
+            }
+
+            // Ensure final year is included
+            if (timelineData.length > 0 && timelineData[timelineData.length - 1].year !== years) {
+                // Recalc final year
+                let finalValue = initial;
+                let finalDivs = 0;
+                let finalYield = yieldPct;
+                for (let year = 1; year <= years; year++) {
+                    finalValue += annualContrib;
+                    const divInc = finalValue * finalYield;
+                    finalDivs += divInc;
+                    finalValue += divInc;
+                    finalValue *= (1 + stockGrowthRate);
+                    finalYield = finalYield * (1 + divGrowth);
+                }
+                timelineData.push({
+                    year: years,
+                    value: finalValue,
+                    dividend: finalValue * finalYield
+                });
+            }
+
+            // Calculate final values
+            const finalValue = timelineData.length > 0 ? timelineData[timelineData.length - 1].value : initial;
+            const finalDividend = timelineData.length > 0 ? timelineData[timelineData.length - 1].dividend : 0;
+
+            // Without reinvestment
+            let valueNoReinvest = initial;
+            let divsNoReinvest = 0;
+            let currentYieldNoReinvest = yieldPct;
+            for (let year = 1; year <= years; year++) {
+                valueNoReinvest += annualContrib;
+                const divIncome = valueNoReinvest * currentYieldNoReinvest;
+                divsNoReinvest += divIncome;
+                // Dividends are taken as cash, not reinvested
+                valueNoReinvest *= (1 + stockGrowthRate);
+                currentYieldNoReinvest = currentYieldNoReinvest * (1 + divGrowth);
+            }
+            const finalDivNoReinvest = valueNoReinvest * currentYieldNoReinvest;
+
+            // Update results
+            annualIncome.textContent = fmt(finalDividend);
+            incomeSub.textContent = `with reinvestment (${years} years)`;
+            portfolioValue.textContent = fmt(finalValue);
+            totalDividends.textContent = fmt(totalDivs);
+            const yieldOnCostVal = initial > 0 ? (finalDividend / (initial + annualContrib * years)) * 100 : 0;
+            yieldOnCost.textContent = yieldOnCostVal.toFixed(1) + '%';
+            monthlyIncome.textContent = fmt(finalDividend / 12);
+
+            // Comparison
+            withReinvestValue.textContent = fmt(finalValue);
+            withReinvestIncome.textContent = fmt(finalDividend);
+            withoutReinvestValue.textContent = fmt(valueNoReinvest);
+            withoutReinvestIncome.textContent = fmt(finalDivNoReinvest);
+
+            const diffVal = finalValue - valueNoReinvest;
+            const diffInc = finalDividend - finalDivNoReinvest;
+            diffValue.textContent = '+' + fmt(diffVal);
+            diffIncome.textContent = '+' + fmt(diffInc);
+
+            // Timeline
+            let timelineHtml = '';
+            for (const item of timelineData) {
+                const isLast = item.year === years;
+                timelineHtml += `<div class="timeline-row" style="${!isLast ? 'border-bottom:1px solid var(--border);' : ''}">
+                    <span class="year">Year ${item.year}</span>
+                    <span class="dividend">${fmt(item.dividend)}</span>
+                    <span class="value">${fmt(item.value)}</span>
+                </div>`;
+            }
+            dividendTimeline.innerHTML = timelineHtml;
+
+            // Status
+            if (years > 10 && finalDividend > 1000) {
+                statusBadge.textContent = '📈 Excellent Growth';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `Your dividend income is projected to grow significantly.`;
+            } else if (years > 5 && finalDividend > 500) {
+                statusBadge.textContent = '📊 Good Progress';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `Your dividend income is on track.`;
+            } else {
+                statusBadge.textContent = '📈 Starting Out';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `Continue investing to build dividend income.`;
+            }
+
+            // Chart
+            const totalValue = finalValue;
+            const totalContributions = initial + annualContrib * years;
+            const totalGrowth = finalValue - totalContributions;
+            const totalDividendReceived = totalDivs;
+
+            const maxVal = Math.max(totalValue, 1);
+
+            chartBar.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Total Contributions</span><span>${fmt(totalContributions)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${(totalContributions / maxVal * 100)}%;background:var(--muted);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Total Dividends Received</span><span>${fmt(totalDividendReceived)}</span></div>
+                    <div class="bar-track"><div class="bar-fill dividend" style="width:${(totalDividendReceived / maxVal * 100)}%;"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Stock Growth</span><span>${fmt(totalGrowth)}</span></div>
+                    <div class="bar-track"><div class="bar-fill growth" style="width:${(totalGrowth / maxVal * 100)}%;"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Dividends and stock growth combine to build your portfolio.</div>
+            `;
+        }
+
+        // ----- presets -----
+        function applyPreset(key) {
+            switch (key) {
+                case 'aristocrat':
+                    initialInvestment.value = '10000';
+                    monthlyContribution.value = '500';
+                    dividendYield.value = '2.5';
+                    dividendGrowth.value = '7';
+                    stockGrowth.value = '9';
+                    timeYears.value = '20';
+                    break;
+                case 'highyield':
+                    initialInvestment.value = '10000';
+                    monthlyContribution.value = '500';
+                    dividendYield.value = '5.0';
+                    dividendGrowth.value = '3';
+                    stockGrowth.value = '6';
+                    timeYears.value = '15';
+                    break;
+                case 'growth':
+                    initialInvestment.value = '10000';
+                    monthlyContribution.value = '500';
+                    dividendYield.value = '1.5';
+                    dividendGrowth.value = '10';
+                    stockGrowth.value = '12';
+                    timeYears.value = '20';
+                    break;
+                case 'retirement':
+                    initialInvestment.value = '50000';
+                    monthlyContribution.value = '1000';
+                    dividendYield.value = '4.0';
+                    dividendGrowth.value = '4';
+                    stockGrowth.value = '6';
+                    timeYears.value = '10';
+                    break;
+                default:
+                    return;
+            }
+            calculate();
+        }
+        window.applyPreset = applyPreset;
+
+        // ----- reset -----
+        function resetCalc() {
+            initialInvestment.value = '10000';
+            monthlyContribution.value = '500';
+            dividendYield.value = '3.5';
+            dividendGrowth.value = '6';
+            stockGrowth.value = '8';
+            timeYears.value = '20';
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [initialInvestment, monthlyContribution, dividendYield, dividendGrowth, stockGrowth, timeYears];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sales Tax Calculator 2026 — All 50 US States | USAFinCalc</title>
+<meta content="Free US sales tax calculator for all 50 states. Enter a price, pick your state, and instantly get the tax amount, total price, and effective rate. Reverse calculation included. Updated 2026." name="description"/>
+<meta content="sales tax calculator, sales tax by state 2026, US sales tax calculator, state sales tax rates, reverse sales tax calculator, how to calculate sales tax" name="keywords"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="USAFinCalc" name="author"/>
+<link href="https://usafincalc.com/sales-tax-calculator" rel="canonical"/>
+<meta content="website" property="og:type"/>
+<meta content="Sales Tax Calculator 2026 — All 50 US States" property="og:title"/>
+<meta content="Free sales tax calculator for every US state. Get the tax amount, total price with tax, and effective rate in one click. Reverse calculation included. Updated January 2026." property="og:description"/>
+<meta content="https://usafincalc.com/sales-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Sales Tax Calculator 2026 — All 50 US States" name="twitter:title"/>
+<meta content="Free sales tax calculator for every US state. Tax amount, total price, and effective rate instantly. Reverse calculation included." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#050810" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<!-- PAGE-SPECIFIC CALCULATOR STYLES (scoped to .stc- prefix to avoid collisions with shared fincalc.css) -->
+<style>
+.stc-main{max-width:980px;margin:0 auto;padding:0 24px 8px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.stc-main{grid-template-columns:1fr;}}
+.stc-wide{grid-column:1/-1;}
+.stc-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.stc-ct{font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;}
+.stc-card label{display:block;font-size:13px;color:var(--text2);margin-bottom:5px;}
+.stc-card input,.stc-card select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .2s;margin-bottom:14px;}
+.stc-card input:focus,.stc-card select:focus{border-color:var(--cyan);}
+.stc-pfx{position:relative;margin-bottom:14px;}.stc-pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);pointer-events:none;}.stc-pfx input{padding-left:28px;margin-bottom:0;}
+.stc-chk{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text2);margin-bottom:14px;cursor:pointer;}
+.stc-chk input{width:auto;margin:0;}
+.stc-btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;font-family:inherit;}
+.stc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.3);}
+.stc-res-main{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(59,158,255,0.04));border:1px solid rgba(0,212,255,0.2);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:12px;}
+.stc-res-main-label{font-size:12px;color:var(--text2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.stc-res-main-val{font-size:48px;font-weight:800;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:-2px;}
+.stc-rg{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.stc-rb{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;text-align:center;}
+.stc-rl{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
+.stc-rv{font-size:20px;font-weight:700;font-family:'JetBrains Mono',monospace;}
+.stc-state-table{width:100%;border-collapse:collapse;font-size:13px;}
+.stc-state-table th{text-align:left;color:var(--text3);font-size:11px;text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border);}
+.stc-state-table td{padding:8px 12px;border-bottom:1px solid var(--border);color:var(--text2);}
+.stc-state-table tr:hover td{background:var(--bg3);}
+
+/* ── SEO CONTENT SECTIONS (scoped .seo-) ── */
+.seo-sec{max-width:720px;margin:0 auto 48px;padding:0 24px;}
+.seo-sec h2{font-size:20px;font-weight:700;color:var(--text);margin:0 0 14px;}
+.seo-sec h2 .hl{color:var(--cyan);}
+.seo-sec h3{font-size:16px;font-weight:600;color:var(--text);margin:22px 0 10px;}
+.seo-sec p{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:14px;}
+.seo-sec p:last-child{margin-bottom:0;}
+.seo-sec a{color:var(--cyan);text-decoration:none;}
+.seo-sec a:hover{text-decoration:underline;}
+.seo-sec strong{color:var(--text);font-weight:600;}
+.seo-divider{max-width:720px;margin:0 auto 48px;padding:0 24px;}
+.seo-divider hr{border:none;border-top:1px solid var(--border);}
+
+/* Formula blocks */
+.seo-formula{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--cyan);border-radius:var(--rs);padding:16px 20px;margin:16px 0;font-family:'JetBrains Mono',monospace;font-size:13.5px;}
+.seo-formula .sf-label{font-size:10.5px;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-family:'Space Grotesk','JetBrains Mono',monospace;}
+.seo-formula .sf-line{color:var(--text);margin-bottom:4px;}
+.seo-formula .sf-line:last-child{margin-bottom:0;}
+.seo-formula .sf-line span{color:var(--cyan);}
+.seo-formula .sf-note{font-size:12px;color:var(--text3);margin-top:8px;font-family:'Space Grotesk',sans-serif;font-style:italic;}
+
+/* Step walkthrough */
+.seo-steps{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin:16px 0;}
+.seo-step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;}
+.seo-step:last-child{margin-bottom:0;}
+.seo-step-n{width:28px;height:28px;flex-shrink:0;background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--cyan);font-family:'JetBrains Mono',monospace;}
+.seo-step-b h4{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:4px;}
+.seo-step-b p{font-size:13px;color:var(--text2);margin:0;line-height:1.7;}
+.seo-step-b .seo-calc{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--cyan);margin-top:4px;}
+
+/* Benefit grid */
+.seo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:16px 0;}
+.seo-gcrd{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px;}
+.seo-gcrd .sgi{font-size:20px;margin-bottom:9px;}
+.seo-gcrd h4{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.seo-gcrd p{font-size:13px;color:var(--text2);line-height:1.65;margin:0;}
+
+/* Mistake items */
+.seo-mistake{background:var(--bg2);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:var(--rs);padding:14px 18px;margin-bottom:10px;}
+.seo-mistake h4{font-size:13.5px;font-weight:600;color:var(--text);margin-bottom:5px;}
+.seo-mistake p{font-size:13px;color:var(--text2);line-height:1.7;margin:0;}
+
+/* Use case list */
+.seo-uclist{list-style:none;padding:0;margin:14px 0;}
+.seo-uclist li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text2);line-height:1.75;}
+.seo-uclist li:last-child{border-bottom:none;}
+.seo-uci{color:var(--cyan);flex-shrink:0;font-size:14px;margin-top:2px;}
+
+/* Tips list */
+.seo-tips{list-style:none;padding:0;margin:14px 0;}
+.seo-tips li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);font-size:14px;color:var(--text2);line-height:1.75;align-items:flex-start;}
+.seo-tips li:last-child{border-bottom:none;}
+.seo-tipn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.18);border-radius:5px;padding:2px 7px;flex-shrink:0;margin-top:2px;font-weight:700;}
+
+/* Comparison table */
+.seo-tbl-wrap{overflow-x:auto;margin:16px 0;}
+.seo-tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:460px;}
+.seo-tbl th{text-align:left;background:var(--bg3);color:var(--text3);font-size:11px;text-transform:uppercase;letter-spacing:.7px;padding:10px 13px;border-bottom:1px solid var(--border2);}
+.seo-tbl td{padding:10px 13px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;}
+.seo-tbl tr:last-child td{border-bottom:none;}
+.seo-tbl tr:hover td{background:var(--bg3);}
+.seo-tbl td:first-child{color:var(--text);font-weight:500;}
+.t-yes{color:var(--green);font-weight:600;}
+.t-no{color:var(--red);font-weight:600;}
+
+/* FAQ section */
+.fc-faq-list{padding:0 0 8px;}
+.fc-faq-item{border-bottom:1px solid var(--border);padding:16px 0;}
+.fc-faq-item:last-child{border-bottom:none;}
+.fc-faq-item h3{font-size:15px;font-weight:600;color:var(--text);margin-bottom:8px;line-height:1.4;}
+.fc-faq-item p{font-size:14px;color:var(--text2);line-height:1.8;margin:0;}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<link href="/css/search.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sales Tax Calculator 2026 — All 50 US States | USAFinCalc",
+  "url": "https://usafincalc.com/sales-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tax Calculators",
+      "item": "https://usafincalc.com/tax-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sales Tax Calculator",
+      "item": "https://usafincalc.com/sales-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sales Tax Calculator 2026 — All 50 US States",
+  "description": "Free US sales tax calculator for all 50 states. Calculates tax amount, total price, and effective rate. Supports reverse calculation from tax-included totals. Updated for 2026.",
+  "url": "https://usafincalc.com/sales-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which US states have no sales tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Five states have no statewide general sales tax: Alaska, Delaware, Montana, New Hampshire, and Oregon. Delaware, Montana, New Hampshire, and Oregon have zero sales tax at any level. Alaska has no state-level tax but allows local municipalities to levy their own — the average local rate across Alaska is about 1.82% as of 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate sales tax on a purchase?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Multiply the pre-tax price by the tax rate expressed as a decimal. Tax Amount = Pre-tax Price × (Rate ÷ 100). Total = Pre-tax Price + Tax Amount. For example, a $200 item in Texas at 6.25%: $200 × 0.0625 = $12.50 tax, total $212.50. Enter the price and select your state above — the calculator does this instantly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I reverse-calculate the pre-tax price from a tax-included total?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Divide the tax-inclusive total by (1 + tax rate as a decimal). Pre-tax price = Total ÷ (1 + rate/100). For example, if you paid $162.50 and the rate is 8.5%: $162.50 ÷ 1.085 = $149.77 pre-tax. Check the 'Amount entered already includes tax' box on this calculator to do this automatically."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this calculator match the exact tax I'm charged at checkout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually close, but not guaranteed exact. This calculator uses state-level rates. If your city or county adds its own local tax on top — common in places like Chicago, New York City, or parts of Louisiana — your actual checkout total can be higher. Use the custom rate field if you know your precise local combined rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the effective tax rate and how is it different from the stated rate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The stated (nominal) rate is applied to the pre-tax price. The effective rate is the tax expressed as a percentage of the total amount paid — including the tax in the denominator. A 6.25% nominal rate produces a 5.88% effective rate. Effective rate = (Tax ÷ Total) × 100. It is always slightly lower than the nominal rate and is useful for comparing real tax burden as a share of total spending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are groceries taxable in all US states?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Many states fully exempt unprepared grocery foods from sales tax, including Texas, California, New York, and Florida. A smaller group of states taxes groceries at a reduced rate. Prepared foods — restaurant meals, hot deli items, anything sold for immediate consumption — are taxed at the full rate in nearly every state. This calculator applies the standard rate to all items; adjust for exemptions based on your state's rules."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is sales tax charged on online purchases?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in most cases. Following the 2018 Supreme Court ruling in South Dakota v. Wayfair, online retailers with significant sales into a state are required to collect that state's sales tax — even without a physical presence there. Most major platforms including Amazon, eBay, and Etsy now collect tax automatically based on the buyer's shipping address."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my state's rate look different from what I remember?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "State sales tax rates do change — Louisiana raised its state rate from 4.45% to 5.00% effective January 2025, for example. Local rates within a state can change even more frequently, sometimes quarterly. If a number here doesn't match what you expected, it is worth checking whether the rate actually changed. Rates on this calculator are verified against Tax Foundation data as of January 1, 2026."
+      }
+    }
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="/css/fincalc.css" rel="stylesheet"/><link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- TOPBAR -->
+<div class="fc-topbar" id="fc-topbar" role="banner">
+<strong>🆕 2026 IRS tax brackets now live</strong> — All calculators updated Jan 2026
+  <button aria-label="Dismiss notice" class="fc-topbar-x">×</button>
+</div>
+<!-- NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<!-- MOBILE MENU -->
+<div aria-modal="true" aria-label="Navigation menu" class="fc-mm" id="fc-mm" role="dialog">
+<button aria-label="Close menu" class="fc-mm-x" id="fc-mm-x">×</button>
+<div class="fc-mm-search" role="search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search all calculators" autocomplete="off" id="fc-search-m" placeholder="Search calculators…" type="search"/>
+</div>
+<div aria-label="Search results" aria-live="polite" id="sr-m" role="region">
+<div class="sr-hd">
+<div class="sr-lb" id="sr-lb-m"></div>
+<button aria-label="Clear search" class="sr-cl" onclick="window.clearSearchMobile()">Clear ×</button>
+</div>
+<div class="sr-g" id="sr-g-m"></div>
+</div>
+<div class="fc-mm-sec">Calculators</div>
+<a href="/salary-calculator-usa">💵 Salary Calculator</a>
+<a href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a href="/sales-tax-calculator">🛒 Sales Tax Calculator</a>
+<a href="/mortgage-calculator-usa">🏠 Mortgage Calculator</a>
+<a href="/401k-calculator-usa">🏦 401(k) Calculator</a>
+<a href="/roth-ira-calculator">🐷 Roth IRA Calculator</a>
+<div class="fc-mm-sec">Company</div>
+<a href="/about">About Us</a>
+<a href="/blog">Finance Blog</a>
+<a href="/contact">Contact</a>
+</div>
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="fc-breadcrumb">
+<a href="/">Home</a>
+<span aria-hidden="true" class="fc-breadcrumb-sep">›</span>
+<span aria-current="page" class="fc-breadcrumb-cur">Sales Tax Calculator</span>
+</nav>
+<main id="main" role="main">
+
+<!-- SEARCH RESULTS (desktop) -->
+<div aria-label="Search results" aria-live="polite" id="sr" role="region">
+<div class="sr-hd">
+<div class="sr-lb" id="sr-lb"></div>
+<button aria-label="Clear search" class="sr-cl" onclick="window.clearSearch()">Clear ×</button>
+</div>
+<div class="sr-g" id="sr-g"></div>
+</div>
+<!-- PAGE HEADER -->
+<div class="fc-page-hero container">
+<div aria-hidden="true" style="font-size:36px;margin-bottom:16px">🛒</div>
+<h1>Sales Tax Calculator — All 50 US States (2026)</h1>
+<p>Pick a state, enter a price, and instantly get the tax amount, total price, and effective rate. Works in reverse too — enter a tax-included receipt total to find the original pre-tax price.</p>
+</div>
+<!-- CALCULATOR -->
+<div class="stc-main">
+<div class="stc-card">
+<div class="stc-ct">Calculate Sales Tax</div>
+<label id="amtLabel">Purchase Amount</label>
+<div class="stc-pfx"><span>$</span><input id="price" step="0.01" type="number" value="100"/></div>
+<label>State</label>
+<!--
+  STATE RATE NOTES — "NOMAD" states (no statewide general sales tax):
+  These rates are STATE-LEVEL rates (matches the rest of this page's content,
+  including the "States with No Sales Tax" table below). Mandatory statewide
+  local add-ons (CA, UT, VA) are folded in since they apply everywhere in
+  those states and are commonly quoted as part of the "state" rate.
+
+  • New Hampshire — 0%. No state or local general sales tax at all.
+  • Montana        — 0%. No state or local general sales tax (a few resort
+                      towns levy a local option tax, but it's not a statewide
+                      sales tax and is excluded here).
+  • Oregon         — 0%. No state or local general sales tax of any kind.
+  • Delaware       — 0%. No state or local sales tax; DE instead taxes
+                      business gross receipts, which is not charged to the
+                      buyer at checkout, so it is not modeled here.
+  • Alaska         — 0% STATE rate, but many Alaska municipalities/boroughs
+                      levy their own local sales tax (no statewide tax).
+                      We show 1.82%, the population-weighted AVERAGE local
+                      rate (Tax Foundation, Jan 2026), as a single estimate
+                      since Alaska has no single state-level number to
+                      display. This is the one deliberate exception to
+                      "state-level only" on this page, and is labeled
+                      accordingly.
+
+  Rates verified against Tax Foundation, "State and Local Sales Tax Rates,
+  2026" (data as of Jan 1, 2026). Two notable 2026 updates vs. prior years:
+    - Louisiana raised its state rate from 4.45% to 5.00% effective Jan 2025.
+    - New Mexico's gross receipts tax rate is 4.875% combined as of Jan 2026
+      (state rate cut to 5% in July 2022, reflected with population-weighted
+      adjustment per Tax Foundation methodology).
+-->
+<select id="state">
+<option value="0">Delaware (0%)</option><option value="0">Montana (0%)</option><option value="0">New Hampshire (0%)</option><option value="0">Oregon (0%)</option><option value="1.82">Alaska (avg local, no state tax)</option><option value="2.9">Colorado (2.9%)</option><option value="4">Alabama (4%)</option><option value="4">Georgia (4%)</option><option value="4">Hawaii (4%)</option><option value="4">New York (4%)</option><option value="4">Wyoming (4%)</option><option value="4.2">South Dakota (4.2%)</option><option value="4.225">Missouri (4.225%)</option><option value="4.5">Oklahoma (4.5%)</option><option value="4.75">North Carolina (4.75%)</option><option value="4.875">New Mexico (4.875%)</option><option value="5">Louisiana (5%)</option><option value="5">North Dakota (5%)</option><option value="5">Wisconsin (5%)</option><option value="5.3">Virginia (5.3%)</option><option value="5.5">Maine (5.5%)</option><option value="5.5">Nebraska (5.5%)</option><option value="5.6">Arizona (5.6%)</option><option value="5.75">Ohio (5.75%)</option><option value="6">Florida (6%)</option><option value="6">Idaho (6%)</option><option value="6">Iowa (6%)</option><option value="6">Kentucky (6%)</option><option value="6">Maryland (6%)</option><option value="6">Michigan (6%)</option><option value="6">Pennsylvania (6%)</option><option value="6">South Carolina (6%)</option><option value="6">Vermont (6%)</option><option value="6">West Virginia (6%)</option><option value="6.1">Utah (6.1%)</option><option value="6.25">Illinois (6.25%)</option><option value="6.25">Massachusetts (6.25%)</option><option selected="" value="6.25">Texas (6.25%)</option><option value="6.35">Connecticut (6.35%)</option><option value="6.5">Arkansas (6.5%)</option><option value="6.5">Kansas (6.5%)</option><option value="6.5">Washington (6.5%)</option><option value="6.625">New Jersey (6.625%)</option><option value="6.85">Nevada (6.85%)</option><option value="6.875">Minnesota (6.875%)</option><option value="7">Indiana (7%)</option><option value="7">Mississippi (7%)</option><option value="7">Rhode Island (7%)</option><option value="7">Tennessee (7%)</option><option value="7.25">California (7.25%)</option></select>
+<label>Custom Tax Rate (optional)</label>
+<input id="custom" placeholder="Enter custom % rate" step="0.01" type="number"/>
+<label class="stc-chk"><input id="reverse" type="checkbox"/> Amount entered already includes tax (reverse calculate)</label>
+<button class="stc-btn" onclick="calc()">Calculate Sales Tax →</button>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Results</div>
+<div class="stc-res-main"><div class="stc-res-main-label" id="resMainLabel">Total Price with Tax</div><div class="stc-res-main-val" id="total">$106.25</div></div>
+<div class="stc-rg">
+<div class="stc-rb"><div class="stc-rl">Pre-tax Price</div><div class="stc-rv" id="pretax" style="color:var(--text2);">$100.00</div></div>
+<div class="stc-rb"><div class="stc-rl">Tax Amount</div><div class="stc-rv" id="taxamt" style="color:var(--cyan);">$6.25</div></div>
+<div class="stc-rb"><div class="stc-rl">Tax Rate</div><div class="stc-rv" id="rate" style="color:#ffd740;">6.25%</div></div>
+<div class="stc-rb"><div class="stc-rl">Effective Rate</div><div class="stc-rv" id="eff" style="color:var(--green);">5.88%</div></div>
+</div>
+</div>
+<div class="stc-card stc-wide">
+<div class="stc-ct">States with No Sales Tax</div>
+<!--
+  These rows must stay numerically consistent with the <select id="state">
+  options above. All five are state-level 0% (no statewide general sales
+  tax). Alaska is the only one with non-zero local sales taxes; the 1.82%
+  shown is an average, not an exact statewide figure — see the detailed
+  per-state notes above the State <select>.
+-->
+<table class="stc-state-table">
+<tr><th scope="col">State</th><th scope="col">Sales Tax</th><th scope="col">Note</th></tr>
+<tr><td>Oregon</td><td style="color:var(--green);">0%</td><td>No sales tax</td></tr>
+<tr><td>Montana</td><td style="color:var(--green);">0%</td><td>No sales tax</td></tr>
+<tr><td>New Hampshire</td><td style="color:var(--green);">0%</td><td>No sales tax</td></tr>
+<tr><td>Delaware</td><td style="color:var(--green);">0%</td><td>No sales tax</td></tr>
+<tr><td>Alaska</td><td style="color:var(--green);">~1.82%</td><td>Local only, no state tax</td></tr>
+</table>
+</div>
+</div>
+<!-- HOW IT WORKS + LIMITATIONS -->
+<div class="fc-prose fc-seo-upgrade">
+<h2>How Sales Tax Works in the US</h2>
+<p>There's no federal sales tax in the US — each state sets its own rate, and in most states, cities and counties tack on more on top of that. That's why a $100 purchase costs different amounts in different places, sometimes even within the same state. A $200 jacket in Chicago costs more in tax than the same jacket purchased in suburban DuPage County — both are in Illinois, but the city adds its own layer.</p>
+<p>This calculator uses state-level rates, which include the mandatory statewide local add-on in California, Utah, and Virginia — those apply everywhere in those states and are commonly quoted as part of the "state" rate. If you know your exact city or county rate, drop it into the custom rate field and it will override the dropdown.</p>
+<h2>Reverse Calculation — Working Backward from a Total</h2>
+<p>If all you have is a final, tax-included number — a receipt total, an invoice line item, a price that already has tax baked in — check <strong>"Amount entered already includes tax"</strong> and the calculator works backward to split it into the pre-tax price and the tax itself.</p>
+<div class="fc-callout">
+  💡 <strong>The math behind it:</strong> Pre-tax price = Total ÷ (1 + tax rate). Tax amount = Total − Pre-tax price. For example: $108.50 total at 8.5% → $108.50 ÷ 1.085 = $100.00 pre-tax, $8.50 tax.
+</div>
+<h2>What This Calculator Doesn't Know</h2>
+<p>It uses general state-level rates, not your specific city or county rate, and it doesn't know about item-level exemptions. Groceries, prescription drugs, and clothing are tax-exempt or taxed at reduced rates in many states, and this tool applies the standard rate across the board. If you're buying groceries in Texas or prescription drugs in California, the number here will run a bit high. For an exact local rate, use the custom field; for exemption details, your state's Department of Revenue website has the specifics.</p>
+</div>
+<!-- ═══ FORMULA SECTION ═══ -->
+<div class="seo-sec">
+<h2>The Sales Tax <span class="hl">Formula</span></h2>
+<p>Three formulas cover every sales tax scenario. Knowing them lets you verify any receipt, catch an overcharge at checkout, or estimate costs before you shop.</p>
+<div class="seo-formula">
+<div class="sf-label">Forward — Pre-tax Price to Total</div>
+<div class="sf-line">Tax Amount = <span>Pre-tax Price × (Tax Rate ÷ 100)</span></div>
+<div class="sf-line">Total Price = <span>Pre-tax Price + Tax Amount</span></div>
+</div>
+<div class="seo-formula">
+<div class="sf-label">Reverse — Tax-Included Total to Pre-tax Price</div>
+<div class="sf-line">Pre-tax Price = <span>Total ÷ (1 + Tax Rate ÷ 100)</span></div>
+<div class="sf-line">Tax Amount = <span>Total − Pre-tax Price</span></div>
+<div class="sf-note">This is the correct reverse formula. A common mistake is subtracting the tax percentage directly from the total — that gives the wrong answer because the rate was applied to the pre-tax base, not the total.</div>
+</div>
+<div class="seo-formula">
+<div class="sf-label">Effective Tax Rate</div>
+<div class="sf-line">Effective Rate = <span>(Tax Amount ÷ Total Price) × 100</span></div>
+<div class="sf-note">Always slightly lower than the nominal rate. Useful for comparing real tax burden as a percentage of what you actually spent.</div>
+</div>
+<h3>Worked Example — $350 Purchase in Tennessee</h3>
+<p>Tennessee has a state rate of 7%. Most major Tennessee cities add local taxes that bring the common combined rate to 9.55%. Here's both scenarios side by side:</p>
+<div class="seo-steps">
+<div class="seo-step">
+<div class="seo-step-n">1</div>
+<div class="seo-step-b">
+<h4>Enter the pre-tax price</h4>
+<p>Purchase price: <strong>$350.00</strong></p>
+</div>
+</div>
+<div class="seo-step">
+<div class="seo-step-n">2</div>
+<div class="seo-step-b">
+<h4>Apply state rate (7%) — using dropdown</h4>
+<p>Tax = $350 × 0.07 = $24.50  |  Total = $374.50</p>
+<div class="seo-calc">Effective rate = $24.50 ÷ $374.50 = 6.54%</div>
+</div>
+</div>
+<div class="seo-step">
+<div class="seo-step-n">3</div>
+<div class="seo-step-b">
+<h4>Apply Memphis combined rate (9.75%) — using custom field</h4>
+<p>Tax = $350 × 0.0975 = $34.13  |  Total = $384.13</p>
+<div class="seo-calc">Effective rate = $34.13 ÷ $384.13 = 8.89%</div>
+</div>
+</div>
+<div class="seo-step">
+<div class="seo-step-n">4</div>
+<div class="seo-step-b">
+<h4>Reverse-check from a receipt total</h4>
+<p>Got a receipt showing $384.13 at 9.75%? Check the box and enter $384.13 — the calculator confirms $350.00 pre-tax.</p>
+<div class="seo-calc">$384.13 ÷ 1.0975 = $350.00 ✓</div>
+</div>
+</div>
+</div>
+</div>
+<div class="seo-divider"><hr/></div>
+<!-- ═══ BENEFITS SECTION ═══ -->
+<div class="seo-sec">
+<h2>Why a <span class="hl">Dedicated Calculator</span> Beats Mental Math</h2>
+<p>Rough estimates work for small purchases. For anything larger, the difference between guessing and calculating can be real money.</p>
+<div class="seo-grid">
+<div class="seo-gcrd"><div class="sgi">🔄</div><h4>Forward and Reverse in One Tool</h4><p>Most calculators only go one direction. This one also pulls a pre-tax price out of a total you already have — receipts, invoices, tax-included prices online.</p></div>
+<div class="seo-gcrd"><div class="sgi">🗺️</div><h4>All 50 States Built In</h4><p>No tab-switching to look up rates. Select a state and the 2026 verified rate loads instantly. Override it anytime with a custom rate for city-level precision.</p></div>
+<div class="seo-gcrd"><div class="sgi">🔒</div><h4>No Account, No Data Stored</h4><p>The math runs in your browser. Nothing you enter is sent to a server. Close the tab and there's no record of what you calculated.</p></div>
+<div class="seo-gcrd"><div class="sgi">📊</div><h4>Effective Rate Display</h4><p>See both the nominal rate (what's charged on the pre-tax price) and the effective rate (tax as a share of total spending) — useful for comparing real costs across states.</p></div>
+<div class="seo-gcrd"><div class="sgi">✅</div><h4>2026 Verified Rates</h4><p>Rates are sourced from Tax Foundation data as of January 1, 2026, including Louisiana's 2025 rate increase and Alaska's updated local average.</p></div>
+<div class="seo-gcrd"><div class="sgi">⚡</div><h4>Live Updates as You Type</h4><p>Results update instantly with every keystroke — no need to hit Calculate after changing the price or switching states. Fast and frictionless.</p></div>
+</div>
+</div>
+<div class="seo-divider"><hr/></div>
+<!-- ═══ COMMON MISTAKES ═══ -->
+<div class="seo-sec">
+<h2>Common <span class="hl">Mistakes</span> to Avoid</h2>
+<p>These errors come up constantly when people estimate sales tax on their own. Knowing them takes about two minutes; fixing them after the fact can take much longer.</p>
+<div class="seo-mistake">
+<h4>Adding Tax to a Total That Already Includes Tax</h4>
+<p>This is the most frequent error on invoice reconciliations. If a supplier quotes a tax-inclusive price and you apply the tax rate again, you're double-taxing the amount. Always confirm whether a price is pre-tax or tax-inclusive before doing any math. The reverse checkbox on this calculator exists exactly for this situation.</p>
+</div>
+<div class="seo-mistake">
+<h4>Using a Memorized Rate That's Gone Stale</h4>
+<p>Louisiana raised its state rate from 4.45% to 5.00% in January 2025. New Mexico's effective rate changed following its gross receipts restructuring. If you're working from memory — or from a rate you Googled a year ago — it may already be wrong. State rates don't change often, but they do change.</p>
+</div>
+<div class="seo-mistake">
+<h4>Using the State Rate When the Combined Rate Applies</h4>
+<p>A shopper in New York City pays roughly 8.875% in combined sales tax, not New York State's 4% base rate. Colorado's state rate is only 2.9%, but Denver's combined rate exceeds 8.5%. Using just the state dropdown for a city-specific purchase will underestimate your actual cost. For any significant purchase in a major city, look up the combined rate and use the custom field.</p>
+</div>
+<div class="seo-mistake">
+<h4>Assuming Online Purchases Are Tax-Free</h4>
+<p>Since the 2018 Supreme Court ruling in <em>South Dakota v. Wayfair</em>, most online retailers must collect tax based on where the item ships — not where the retailer is based. Amazon, eBay, and Walmart all collect tax in virtually every taxable state. Planning to "save" on tax by buying online almost never works anymore.</p>
+</div>
+<div class="seo-mistake">
+<h4>Not Accounting for Exemptions on Qualifying Items</h4>
+<p>Groceries are exempt from sales tax in Texas, California, New York, Florida, and more than 30 other states. Prescription medications are exempt almost everywhere. Applying the full state rate to a grocery run will significantly overstate the tax. This calculator charges the standard rate on everything — adjust manually for exempt items or mixed carts.</p>
+</div>
+</div>
+<div class="seo-divider"><hr/></div>
+<!-- ═══ PRACTICAL USE CASES ═══ -->
+<div class="seo-sec">
+<h2>When This Calculator Is <span class="hl">Actually Useful</span></h2>
+<ul class="seo-uclist">
+<li><span class="seo-uci">›</span><div><strong>Pre-purchase budget check.</strong> Looking at a $1,200 laptop in California? That's $103.50 in tax at the 8.625% average combined rate — over $100 that won't appear on the sticker price. Know the real total before you decide.</div></li>
+<li><span class="seo-uci">›</span><div><strong>Car buying.</strong> A used car priced at $18,500 in a state with 8.5% combined tax adds $1,572.50 in sales tax due at registration. Sales tax is typically financed separately from the vehicle price — knowing it in advance prevents surprises at the dealership. Pair with the <a href="/auto-loan-calculator">Auto Loan Calculator</a> to model the full financed amount.</div></li>
+<li><span class="seo-uci">›</span><div><strong>Expense reporting.</strong> Separating the tax portion from a business expense total — meals, equipment, supplies — is required for accurate accounting. Enter the tax-inclusive receipt total and use the reverse mode to get the clean pre-tax figure for each line item.</div></li>
+<li><span class="seo-uci">›</span><div><strong>Cross-state purchase comparison.</strong> Considering a major purchase while visiting a no-tax state like Oregon or New Hampshire? On a $5,000 purchase, a 9% home-state tax rate means $450 in savings by buying while traveling — worth calculating before you leave home without it.</div></li>
+<li><span class="seo-uci">›</span><div><strong>Freelancer invoicing.</strong> Self-employed professionals in states that tax services need to collect and remit sales tax on eligible work. Calculate the tax component before issuing an invoice so clients pay the exact correct amount — and you're not covering the difference.</div></li>
+<li><span class="seo-uci">›</span><div><strong>Home improvement budgeting.</strong> A $20,000 kitchen remodel has roughly $1,600–$2,000 in materials tax at typical combined rates. Budget this in before signing a contractor quote. For the full picture, see the <a href="/home-affordability-calculator-usa">Home Affordability Calculator</a> and <a href="/mortgage-calculator-usa">Mortgage Calculator</a>.</div></li>
+<li><span class="seo-uci">›</span><div><strong>SALT deduction tracking.</strong> Taxpayers who itemize and claim the state sales tax deduction instead of state income tax need an accurate running tally of sales taxes paid throughout the year. Use this calculator to log each significant purchase and sum them up at year-end for Schedule A. The combined SALT deduction cap is $10,000 under current federal law — see the <a href="/tax-calculator-usa">Federal Tax Calculator</a> to model its impact on your return.</div></li>
+</ul>
+</div>
+<div class="seo-divider"><hr/></div>
+<!-- ═══ TAX PLANNING TIPS ═══ -->
+<div class="seo-sec">
+<h2>Sales Tax <span class="hl">Planning Tips</span></h2>
+<ul class="seo-tips">
+<li><span class="seo-tipn">01</span><div><strong>Know your state's sales tax holidays.</strong> About 20 states offer annual sales tax holidays — typically 2–3 day windows when clothing, back-to-school supplies, emergency preparedness items, or energy-efficient appliances are exempt. Florida's is one of the largest. Timing significant purchases around these windows is entirely legal and can save several percentage points on the total.</div></li>
+<li><span class="seo-tipn">02</span><div><strong>Large purchases deserve the exact local rate.</strong> For anything over $500, pull the precise combined rate for your city or county from your state's Department of Revenue website and enter it in the custom field. The difference between a state average and an actual city rate can be 2–3 percentage points — that's $10–$15 on a $500 purchase.</div></li>
+<li><span class="seo-tipn">03</span><div><strong>Track sales tax paid for your SALT deduction.</strong> If you live in a state with no income tax — Texas, Florida, Washington, Nevada, Wyoming, South Dakota, Alaska, or New Hampshire — you'll likely claim the sales tax deduction on Schedule A instead of a state income tax deduction. Keep a log of major purchases throughout the year, or use the IRS Optional Sales Tax Tables as a shortcut. Either way, running each purchase through this calculator makes documentation simple.</div></li>
+<li><span class="seo-tipn">04</span><div><strong>For business purchases, separate tax from cost immediately.</strong> If you're tracking deductible business expenses, recording the pre-tax cost and the tax amount separately from the start avoids reconciliation headaches at tax time. The reverse mode handles this automatically for any receipt where the tax isn't broken out on a separate line.</div></li>
+<li><span class="seo-tipn">05</span><div><strong>Verify e-commerce checkout math before paying.</strong> Online cart calculators occasionally apply an incorrect rate — especially on orders that ship to a different address than the billing address, or orders containing a mix of taxable and exempt items. Run the taxable items through this calculator before finalizing any large online order and compare the numbers.</div></li>
+</ul>
+</div>
+<div class="seo-divider"><hr/></div>
+<!-- ═══ FAQ ═══ -->
+<h2 class="container" style="margin-bottom:16px;font-size:20px;font-weight:700;">Frequently Asked Questions</h2>
+<div class="fc-faq-list container">
+<div class="fc-faq-item">
+<h3>Which US states have no sales tax?</h3>
+<p>Five states have no statewide general sales tax: Delaware, Montana, New Hampshire, Oregon, and Alaska. The first four have zero sales tax at any level. Alaska has no state-level tax but allows local municipalities to levy their own — the average across Alaska is about 1.82% as of 2026.</p>
+</div>
+<div class="fc-faq-item">
+<h3>How do I calculate sales tax on a purchase?</h3>
+<p>Multiply the pre-tax price by the rate as a decimal: Tax = Price × (Rate ÷ 100). Add the result to the price for the total. For a $150 item in Texas at 6.25%: $150 × 0.0625 = $9.38 tax, total $159.38. Enter your price and select a state above — the calculator does this instantly and also shows the effective rate.</p>
+</div>
+<div class="fc-faq-item">
+<h3>How do I reverse-calculate the pre-tax price from a receipt total?</h3>
+<p>Divide the tax-inclusive total by (1 + rate as a decimal): Pre-tax = Total ÷ (1 + Rate/100). If you paid $162.50 at 8.5%: $162.50 ÷ 1.085 = $149.77. Check the "Amount entered already includes tax" box on this calculator — it handles the math automatically.</p>
+</div>
+<div class="fc-faq-item">
+<h3>Will this match the exact tax I'm charged at checkout?</h3>
+<p>Usually close, but not guaranteed exact. This uses state-level rates. If your city or county adds its own local surcharge — common in Chicago, New York City, and parts of Louisiana — the real total will be higher. Use the custom rate field if you know your precise combined rate for more accurate results.</p>
+</div>
+<div class="fc-faq-item">
+<h3>What is the effective tax rate and how is it different from the stated rate?</h3>
+<p>The stated (nominal) rate is applied to the pre-tax price. The effective rate is the tax as a percentage of the total amount paid — with the tax included in the denominator. A 6.25% nominal rate produces a 5.88% effective rate. The effective rate is always slightly lower and is the right number for comparing how much of your total spending actually went to tax.</p>
+</div>
+<div class="fc-faq-item">
+<h3>Are groceries taxable in every state?</h3>
+<p>No. Many states fully exempt unprepared groceries — Texas, California, New York, Florida, and Illinois among them. Some states tax groceries at a reduced rate. Prepared foods (restaurant meals, hot deli items) are taxed at the full rate nearly everywhere. This calculator applies the standard rate to all items; adjust manually if you're calculating tax on a grocery-heavy cart.</p>
+</div>
+<div class="fc-faq-item">
+<h3>Is sales tax charged on online purchases?</h3>
+<p>Yes, in most cases. Following the 2018 Supreme Court ruling in <em>South Dakota v. Wayfair</em>, online retailers with significant sales into a state must collect that state's tax — even without a physical presence there. Most major platforms (Amazon, eBay, Etsy, Walmart) now collect tax automatically based on the buyer's shipping address.</p>
+</div>
+<div class="fc-faq-item">
+<h3>Why does my state's rate look different from what I remember?</h3>
+<p>State rates do change. Louisiana raised its state rate from 4.45% to 5.00% effective January 2025. New Mexico's effective rate shifted following its gross receipts restructuring. Local rates within states change more frequently — sometimes quarterly. Rates on this calculator are verified against Tax Foundation data as of January 1, 2026. If a specific number looks off, it may be that the rate genuinely changed, or that you're remembering a combined rate versus the state-only rate.</p>
+</div>
+</div>
+<!-- RELATED CALCULATORS -->
+<div class="fc-page-hero container" style="padding-top:24px;padding-bottom:8px;">
+<h2 style="font-size:clamp(22px,3.5vw,32px);font-weight:800;letter-spacing:-.3px;margin-bottom:10px;">Related Calculators</h2>
+<p>Sales tax is just one piece of the picture. These free calculators cover other everyday money decisions worth running the numbers on.</p>
+</div>
+<div class="stc-main" style="margin-bottom:40px;">
+<div class="stc-card">
+<div class="stc-ct">Federal Income Tax</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">See how much you'll actually owe (or get back) based on your income, filing status, and deductions for the current tax year.</div>
+<a href="/tax-calculator-usa" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Federal Tax Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Mortgage Payments</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">Estimate your monthly mortgage payment, including principal, interest, taxes, and PMI, before you make an offer on a home.</div>
+<a href="/mortgage-calculator-usa" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Mortgage Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Auto Loan Costs</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">Calculate your monthly car payment and total loan cost based on price, down payment, interest rate, and loan term.</div>
+<a href="/auto-loan-calculator" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Auto Loan Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Roth IRA Growth</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">Project how your Roth IRA contributions could grow over time, and check them against current annual contribution limits.</div>
+<a href="/roth-ira-calculator" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Roth IRA Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Compound Interest</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">See how savings or investments grow over time with daily, monthly, or annual compounding and regular contributions.</div>
+<a href="/compound-interest-calculator" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Compound Interest Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Student Loan Repayment</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">Compare repayment plans, including income-driven options, and estimate how long it will take to pay off your student loans.</div>
+<a href="/student-loan-calculator-usa" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Student Loan Calculator →</a>
+</div>
+<div class="stc-card">
+<div class="stc-ct">Home Affordability</div>
+<div style="font-size:14px;color:var(--text2);line-height:1.7;margin-bottom:14px;">Find out how much house you can realistically afford based on your income, debts, and down payment.</div>
+<a href="/home-affordability-calculator-usa" style="font-size:13px;font-weight:700;color:var(--cyan);text-decoration:none;">Try the Home Affordability Calculator →</a>
+</div>
+</div>
+<!-- DATA METHODOLOGY -->
+<div class="fc-prose" style="margin-top:16px;">
+<div class="fc-callout">
+<strong>📊 Data Sources &amp; Methodology:</strong> State sales tax rates are sourced from Tax Foundation, "State and Local Sales Tax Rates, 2026" (data as of January 1, 2026). Corrections applied in this version include Louisiana's rate increase from 4.45% to 5.00% (effective January 1, 2025), New Mexico's updated gross receipts rate of 4.875%, and Alaska's revised population-weighted average local rate of 1.82%. Mandatory statewide local add-ons for California, Utah, and Virginia are included in their stated rates. This calculator covers general sales tax only — it does not account for item-specific exemptions, special district taxes, or occupancy taxes. For an exact rate at a specific address, use your state's Department of Revenue lookup tool. <a href="/methodology">Full methodology →</a>
+</div>
+<div class="fc-warn" style="margin-top:14px;">
+⚠️ <strong>Disclaimer:</strong> This calculator is for informational and planning purposes only. Results are estimates based on state-level rates and may not reflect the exact tax charged at a specific location. Not tax, financial, or legal advice. <a href="/disclaimer">Full disclaimer →</a>
+</div>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script async="True" defer="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script defer="" src="/js/search.js"></script>
+<script defer="" src="/js/fincalc-ui.js"></script>
+<script>
+/*
+  Rate source/consistency note (sales tax audit, verified against Tax
+  Foundation "State and Local Sales Tax Rates, 2026", data as of Jan 1, 2026):
+  All <select id="state"> values are STATE-LEVEL general sales tax rates,
+  matching the "Sales tax by state" framing used throughout this page's
+  copy (hero text, no-sales-tax table). Mandatory statewide local add-ons
+  for CA/UT/VA are included since they're not optional and are commonly
+  quoted as part of the state rate. The sole exception is Alaska, which
+  has no state-level rate at all (0%) — its 1.82% value is a population-
+  weighted AVERAGE of local rates (Jan 2026), included so the calculator
+  still produces a usable estimate for AK, and clearly labeled as an
+  average in its option text.
+
+  Corrections applied during this audit:
+    - Louisiana: 4.45% → 5.00% (state rate increase effective Jan 1, 2025)
+    - New Mexico: 5.125% → 4.875% (current combined gross receipts rate)
+    - Alaska avg local: 1.76% → 1.82% (updated population-weighted figure)
+
+  Reverse-calculation math below is unchanged and verified correct:
+    pretax = total / (1 + r/100); tax = total - pretax.
+*/
+function fmt(n){return '$'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
+
+function calc(){
+  var amt=parseFloat(document.getElementById('price').value)||0;
+  var cr=parseFloat(document.getElementById('custom').value);
+  var sr=parseFloat(document.getElementById('state').value);
+  var r=isNaN(cr)?sr:cr;
+  var isReverse=document.getElementById('reverse').checked;
+
+  var pretax, tax, total;
+
+  if(isReverse){
+    // amt is tax-inclusive total; back out the pre-tax price and tax amount
+    total=amt;
+    pretax=total/(1+r/100);
+    tax=total-pretax;
+  }else{
+    // amt is the pre-tax price; add tax to get total
+    pretax=amt;
+    tax=pretax*r/100;
+    total=pretax+tax;
+  }
+
+  document.getElementById('amtLabel').textContent=isReverse?'Total Amount (tax included)':'Purchase Amount';
+  document.getElementById('resMainLabel').textContent=isReverse?'Pre-tax Price':'Total Price with Tax';
+  document.getElementById('total').textContent=fmt(isReverse?pretax:total);
+  document.getElementById('pretax').textContent=fmt(pretax);
+  document.getElementById('taxamt').textContent=fmt(tax);
+  document.getElementById('rate').textContent=r.toFixed(2)+'%';
+  // Effective rate = tax as a percentage of the total (tax-inclusive) price
+  document.getElementById('eff').textContent=(total>0?(tax/total*100):0).toFixed(2)+'%';
+  if(typeof window.trackCalc==='function')window.trackCalc('Sales Tax Calculator');
+}
+
+calc();
+document.getElementById('state').addEventListener('change',calc);
+document.getElementById('price').addEventListener('input',calc);
+document.getElementById('custom').addEventListener('input',calc);
+document.getElementById('reverse').addEventListener('change',calc);
+</script>
+
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script>
+/* ── WCAG 2.2 AA: Keyboard navigation for dropdowns & mobile menu ── */
+(function(){
+  /* ── Dropdown keyboard nav ── */
+  var dds = document.querySelectorAll(".fc-nav-dd");
+  dds.forEach(function(dd){
+    var trigger = dd.querySelector("a[role=\"button\"]");
+    var menu = dd.querySelector(".fc-dd");
+    if(!trigger || !menu) return;
+    var items = Array.from(menu.querySelectorAll("a[role=\"menuitem\"]"));
+
+    function openDD(){
+      menu.style.display = "block";
+      trigger.setAttribute("aria-expanded","true");
+      if(items[0]) items[0].focus();
+    }
+    function closeDD(){
+      menu.style.display = "";
+      trigger.setAttribute("aria-expanded","false");
+      trigger.focus();
+    }
+
+    trigger.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " " || e.key === "ArrowDown"){
+        e.preventDefault(); openDD();
+      }
+      if(e.key === "Escape") closeDD();
+    });
+
+    menu.addEventListener("keydown", function(e){
+      var idx = items.indexOf(document.activeElement);
+      if(e.key === "ArrowDown"){
+        e.preventDefault();
+        (items[idx+1] || items[0]).focus();
+      } else if(e.key === "ArrowUp"){
+        e.preventDefault();
+        (items[idx-1] || items[items.length-1]).focus();
+      } else if(e.key === "Escape"){
+        e.preventDefault(); closeDD();
+      } else if(e.key === "Home"){
+        e.preventDefault(); items[0].focus();
+      } else if(e.key === "End"){
+        e.preventDefault(); items[items.length-1].focus();
+      }
+    });
+
+    dd.addEventListener("focusout", function(e){
+      if(!dd.contains(e.relatedTarget)){
+        menu.style.display = "";
+        trigger.setAttribute("aria-expanded","false");
+      }
+    });
+  });
+
+  /* ── Mobile menu focus trap ── */
+  var hbg = document.getElementById("fc-hbg");
+  var mm  = document.getElementById("fc-mm");
+  var mmx = document.getElementById("fc-mm-x");
+
+  function getFocusable(el){
+    return Array.from(el.querySelectorAll("a,button,input,[tabindex]:not([tabindex='-1'])"))
+      .filter(function(n){ return !n.disabled && n.offsetParent !== null; });
+  }
+  function openMM(){
+    if(!mm) return;
+    mm.style.display = "flex";
+    mm.style.flexDirection = "column";
+    document.body.style.overflow = "hidden";
+    if(hbg) hbg.setAttribute("aria-expanded","true");
+    var f = getFocusable(mm); if(f[0]) f[0].focus();
+  }
+  function closeMM(){
+    if(!mm) return;
+    mm.style.display = "";
+    document.body.style.overflow = "";
+    if(hbg){ hbg.setAttribute("aria-expanded","false"); hbg.focus(); }
+  }
+
+  if(hbg) hbg.addEventListener("click", function(){
+    mm && mm.style.display === "flex" ? closeMM() : openMM();
+  });
+  if(mmx) mmx.addEventListener("click", closeMM);
+
+  if(mm) mm.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeMM(); return; }
+    if(e.key === "Tab"){
+      var f = getFocusable(mm);
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){
+        e.preventDefault(); f[f.length-1].focus();
+      } else if(!e.shiftKey && document.activeElement === f[f.length-1]){
+        e.preventDefault(); f[0].focus();
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

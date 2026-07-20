@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Free personal loan calculator for 2026. Enter loan amount, interest rate, and term to see your exact monthly payment, total interest, and full amortization schedule." name="description"/>
+<meta content="personal loan calculator, loan payment calculator, monthly payment calculator, loan interest calculator 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Personal Loan Calculator 2026 — Monthly Payment & Total Interest" property="og:title"/>
+<meta content="Free personal loan calculator. See exact monthly payment, total interest, and full amortization schedule for any loan amount and rate." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/personal-loan-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@usafincalc" name="twitter:site"/>
+<meta content="Personal Loan Calculator 2026 — Monthly Payment & Total Interest" name="twitter:title"/>
+<meta content="Free personal loan calculator. Monthly payment, total interest, amortization schedule. All loan types." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link rel="canonical" href="https://usafincalc.com/personal-loan-calculator"/>
+<title>Personal Loan Calculator 2026 — Monthly Payment & Total Interest | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#00e5a0;--accent2:#00b87a;
+  --danger:#ff6b6b;--info:#74b9ff;--warn:#ffa94d;
+  --principal:#7c6ff7;--interest:#ff6b6b;--net:#00e5a0;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:20px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 20px}
+.qa{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:var(--r);padding:14px 18px;font-size:14px;color:var(--muted)}
+.qa strong{color:var(--accent)}
+.main{max-width:980px;margin:0 auto;padding:0 24px 32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:660px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ct{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:11px 14px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:16px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:16px}
+.pfx span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.pfx input{padding-left:28px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:16px}
+.sfx span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.sfx input{padding-right:30px;margin-bottom:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* extra payment toggle */
+.extra-toggle{display:flex;align-items:center;gap:10px;margin-bottom:16px;cursor:pointer;font-size:13px;color:var(--muted)}
+.toggle-btn{width:36px;height:20px;background:var(--bg3);border:1px solid var(--border2);border-radius:10px;position:relative;transition:background .2s;flex-shrink:0}
+.toggle-btn.on{background:var(--accent2);border-color:var(--accent)}
+.toggle-btn::after{content:"";position:absolute;width:14px;height:14px;border-radius:50%;background:#fff;top:2px;left:2px;transition:left .2s}
+.toggle-btn.on::after{left:18px}
+.extra-fields{display:none}
+.extra-fields.show{display:block}
+.btn{width:100%;background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:-.2px}
+.btn:hover{background:#00c98c}
+.btn:active{transform:scale(.98)}
+/* results */
+.net-card{background:linear-gradient(135deg,rgba(0,229,160,0.12),rgba(0,184,122,0.06));border:1px solid rgba(0,229,160,0.25);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:16px}
+.nl{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:42px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:13px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text);font-weight:500}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.bt{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;background:var(--bg3)}
+.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:9px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dv.g{color:var(--accent)}
+.dv.r{color:var(--danger)}
+.dv.w{color:var(--warn)}
+/* savings highlight */
+.save-card{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:var(--rs);padding:14px 16px;font-size:13px;color:var(--muted);margin-top:12px;display:none}
+.save-card.show{display:block}
+.save-card strong{color:var(--accent)}
+/* amortization table */
+.amort-wrap{max-width:980px;margin:0 auto;padding:0 24px 32px}
+.amort-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.amort-head h2{font-size:18px;font-weight:600;letter-spacing:-.3px}
+.amort-toggle{font-size:12px;color:var(--accent);cursor:pointer;font-family:var(--mono);background:none;border:1px solid rgba(0,229,160,0.25);padding:5px 12px;border-radius:20px}
+.amort-toggle:hover{background:rgba(0,229,160,0.08)}
+.amort-table-wrap{overflow-x:auto;display:none}
+.amort-table-wrap.show{display:block}
+.amort-table{width:100%;border-collapse:collapse;font-size:13px}
+.amort-table th{text-align:right;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.5px}
+.amort-table th:first-child{text-align:left}
+.amort-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--muted);text-align:right;font-family:var(--mono)}
+.amort-table td:first-child{color:var(--text);text-align:left;font-weight:500}
+.amort-table tr:last-child td{border-bottom:none}
+.amort-table .principal-cell{color:var(--principal)}
+.amort-table .interest-cell{color:var(--danger)}
+.amort-table .balance-cell{color:var(--text)}
+/* content */
+.cs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.cs h2{font-size:22px;font-weight:600;margin-bottom:14px;letter-spacing:-.3px}
+.cs h3{font-size:17px;font-weight:500;margin:28px 0 10px;letter-spacing:-.2px}
+.cs p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px}
+.cs p strong{color:var(--text);font-weight:500}
+.cs a{color:var(--accent);text-decoration:none}
+.cs a:hover{text-decoration:underline}
+.ttbl{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 24px}
+.ttbl th{text-align:left;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.5px}
+.ttbl td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+.ttbl td:last-child{font-family:var(--mono);color:var(--text);text-align:right}
+.ttbl th:last-child{text-align:right}
+.ttbl tr:last-child td{border-bottom:none}
+.abox{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px 18px;font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.9;margin:24px 0}
+.abox a{color:var(--info);text-decoration:none}
+/* FAQ */
+.fqs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.fqs h2{font-size:22px;font-weight:600;margin-bottom:20px;letter-spacing:-.3px}
+.fqi{border-bottom:1px solid var(--border);padding:18px 0;cursor:pointer}
+.fqq{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:500;color:var(--text)}
+.fqa-arrow{color:var(--muted);font-size:18px;transition:transform .2s}
+.fqa{color:var(--muted);font-size:14px;line-height:1.8;margin-top:12px;display:none}
+.fqi.open .fqa{display:block}
+.fqi.open .fqa-arrow{transform:rotate(180deg)}
+/* related */
+.rels{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.rels h2{font-size:17px;font-weight:500;margin-bottom:16px;color:var(--muted)}
+.relg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.relc{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:14px 16px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:10px;transition:border-color .2s,background .2s}
+.relc:hover{border-color:var(--border2);background:var(--bg3)}
+footer{border-top:1px solid var(--border);padding:28px 24px;max-width:980px;margin:0 auto;font-size:12px;color:var(--muted);line-height:1.9}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Personal Loan Calculator 2026 — Monthly Payment & Total Interest | USAFinCalc",
+  "url": "https://usafincalc.com/personal-loan-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Personal Loan Calculator 2026 — Monthly Payment & Total Interest | USAFinCalc",
+      "item": "https://usafincalc.com/personal-loan-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Personal Loan Calculator",
+  "description": "Calculate monthly payments, total interest, and amortization schedule for personal loans.",
+  "url": "https://usafincalc.com/personal-loan-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">💳 Personal Loan Calculator · 2026</div>
+  <h1>Personal <span>Loan</span> Calculator</h1>
+  <p class="hero-sub">Enter your loan amount, interest rate, and term to see your exact monthly payment, total interest paid, and full amortization schedule.</p>
+</div>
+
+<!-- QUICK ANSWER -->
+<div class="qa-wrap">
+  <div class="qa" id="qa-bar">
+    <strong>Quick answer:</strong> A $10,000 loan at 11% APR for 3 years = <strong>$327/mo</strong> and $1,770 in total interest. Adjust below for your exact numbers.
+  </div>
+</div>
+
+<!-- CALCULATOR -->
+<div class="main">
+  <!-- INPUTS -->
+  <div class="card">
+    <div class="ct">Your Loan Details</div>
+
+    <label for="loanAmt">Loan Amount</label>
+    <div class="pfx"><span>$</span><input type="number" id="loanAmt" value="10000" min="100" max="1000000" step="100"/></div>
+
+    <label for="apr">Annual Interest Rate (APR)</label>
+    <div class="sfx"><span>%</span><input type="number" id="apr" value="11" min="0.1" max="50" step="0.1"/></div>
+
+    <div class="row2">
+      <div>
+        <label for="termVal">Loan Term</label>
+        <input type="number" id="termVal" value="3" min="1" max="30" step="1"/>
+      </div>
+      <div>
+        <label for="termUnit">Term Unit</label>
+        <select id="termUnit">
+          <option value="years" selected>Years</option>
+          <option value="months">Months</option>
+        </select>
+      </div>
+    </div>
+
+    <label for="startMonth">First Payment</label>
+    <select id="startMonth">
+      <option value="0">January 2026</option>
+      <option value="1">February 2026</option>
+      <option value="2" selected>March 2026</option>
+      <option value="3">April 2026</option>
+      <option value="4">May 2026</option>
+      <option value="5">June 2026</option>
+      <option value="6">July 2026</option>
+      <option value="7">August 2026</option>
+      <option value="8">September 2026</option>
+      <option value="9">October 2026</option>
+      <option value="10">November 2026</option>
+      <option value="11">December 2026</option>
+    </select>
+
+    <!-- Extra payment toggle -->
+    <div class="extra-toggle" onclick="toggleExtra()" id="extra-row">
+      <div class="toggle-btn" id="extra-toggle-btn"></div>
+      <span>Add extra monthly payment</span>
+    </div>
+    <div class="extra-fields" id="extra-fields">
+      <label for="extraAmt">Extra Monthly Payment</label>
+      <div class="pfx"><span>$</span><input type="number" id="extraAmt" value="0" min="0" max="100000" step="10"/></div>
+    </div>
+
+    <button class="btn" onclick="calcLoan()">Calculate Payment →</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div>
+    <div class="net-card">
+      <div class="nl">Monthly Payment</div>
+      <div class="na" id="monthly-payment">$327</div>
+      <div class="nm">Total repaid: <span id="total-repaid">$11,770</span></div>
+    </div>
+
+    <div class="bcard">
+      <div class="bt">Payment Breakdown</div>
+      <div class="sbar">
+        <div class="seg" id="seg-principal" style="background:var(--principal);width:85%"></div>
+        <div class="seg" id="seg-interest" style="background:var(--interest);width:15%"></div>
+      </div>
+      <div class="brows">
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--principal)"></div><span class="blbl">Principal</span></div><span class="ba" id="lbl-principal">$10,000</span></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--interest)"></div><span class="blbl">Total Interest</span></div><span class="ba" id="lbl-interest">$1,770</span></div>
+      </div>
+    </div>
+
+    <div class="dcard">
+      <div class="dr"><span class="dk">Loan Amount</span><span class="dv g" id="d-amount">$10,000</span></div>
+      <div class="dr"><span class="dk">APR</span><span class="dv" id="d-apr">11.00%</span></div>
+      <div class="dr"><span class="dk">Loan Term</span><span class="dv" id="d-term">36 months</span></div>
+      <div class="dr"><span class="dk">Monthly Payment</span><span class="dv g" id="d-monthly">$327</span></div>
+      <div class="dr"><span class="dk">Total Interest</span><span class="dv r" id="d-interest">$1,770</span></div>
+      <div class="dr"><span class="dk">Total Cost</span><span class="dv w" id="d-total">$11,770</span></div>
+      <div class="dr"><span class="dk">Payoff Date</span><span class="dv" id="d-payoff">March 2029</span></div>
+      <div class="dr" id="d-save-row" style="display:none"><span class="dk">Interest Saved (extra pmts)</span><span class="dv g" id="d-saved">—</span></div>
+      <div class="dr" id="d-early-row" style="display:none"><span class="dk">Paid Off Early By</span><span class="dv g" id="d-early">—</span></div>
+    </div>
+
+    <div class="save-card" id="save-card">
+      Extra payments save you <strong id="save-amount">$0</strong> in interest and pay off your loan <strong id="save-months">0 months</strong> early.
+    </div>
+  </div>
+</div>
+
+<!-- AMORTIZATION TABLE -->
+<div class="amort-wrap">
+  <div class="amort-head">
+    <h2>Amortization Schedule</h2>
+    <button class="amort-toggle" id="amort-btn" onclick="toggleAmort()">Show Full Schedule ▾</button>
+  </div>
+  <div class="amort-table-wrap" id="amort-table-wrap">
+    <table class="amort-table" id="amort-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Principal</th>
+          <th scope="col">Interest</th>
+          <th scope="col">Balance</th>
+        </tr>
+      </thead>
+      <tbody id="amort-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- CONTENT / EDUCATIONAL SECTION -->
+<div class="cs">
+  <h2>How the Personal Loan Calculator Works</h2>
+  <p>This calculator uses the standard amortization formula to compute your exact monthly payment. Each payment covers that month's interest first, then the rest reduces your principal balance. Early payments are mostly interest; later payments are mostly principal.</p>
+
+  <h3>The formula</h3>
+  <p>Monthly payment = <strong>P × r / (1 − (1 + r)<sup>−n</sup>)</strong> where P = loan amount, r = monthly interest rate (APR ÷ 12), and n = number of monthly payments. This is the same formula lenders use.</p>
+
+  <h3>Typical personal loan rates in 2026</h3>
+  <table class="ttbl">
+    <thead><tr><th scope="col">Credit Score</th><th scope="col">Typical APR Range</th><th scope="col">$10K / 3-Year Monthly Payment</th></tr></thead>
+    <tbody>
+      <tr><td>Excellent (720–850)</td><td>6.99% – 12.99%</td><td>$309 – $337</td></tr>
+      <tr><td>Good (680–719)</td><td>13% – 18%</td><td>$337 – $362</td></tr>
+      <tr><td>Fair (640–679)</td><td>18% – 24%</td><td>$362 – $393</td></tr>
+      <tr><td>Poor (580–639)</td><td>25% – 35%</td><td>$398 – $454</td></tr>
+      <tr><td>Bad (&lt;580)</td><td>36%+</td><td>$454+</td></tr>
+    </tbody>
+  </table>
+
+  <h3>3-year vs 5-year loan — which is better?</h3>
+  <p>Shorter terms mean higher monthly payments but <strong>much less total interest</strong>. A $15,000 loan at 14% APR costs $512/mo over 3 years (total interest: $3,440) vs $349/mo over 5 years (total interest: $5,910). If you can afford the higher payment, the 3-year term saves you $2,470.</p>
+
+  <h3>How to lower your monthly payment</h3>
+  <p><strong>Improve your credit score</strong> before applying — going from a 650 to a 720 can drop your rate by 5–8 percentage points, saving hundreds of dollars over the loan's life. <strong>Extend the term</strong> to spread payments, but be aware this increases total interest paid. <strong>Borrow less</strong> — only take what you need, not the maximum you qualify for. <strong>Make extra payments</strong> when possible — use the extra payment feature above to see how much you save.</p>
+
+  <h3>What lenders look at</h3>
+  <p>Lenders evaluate your <strong>credit score</strong> (biggest factor), <strong>debt-to-income ratio</strong> (DTI — your monthly debts divided by gross monthly income; most lenders want this below 40%), <strong>employment history</strong> (at least 1–2 years at your current job), and <strong>income verification</strong>. Most lenders now give instant online decisions with a soft credit pull that doesn't affect your score.</p>
+
+  <div class="abox">
+    Rates and terms are estimates based on 2026 national averages. Actual rates vary by lender, credit profile, and loan purpose. Sources: Federal Reserve Consumer Credit G.19 report, CFPB Consumer Credit Market reports, lender rate disclosures.
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="fqs">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>What credit score do I need for a personal loan?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">Most banks and credit unions require a minimum score of 640–660 for approval. Online lenders sometimes approve scores as low as 580–600, but at rates above 30% APR. To get rates below 12%, you generally need a 720+ score. If your score is below 640, consider waiting 6–12 months and building credit before applying.</div>
+  </div>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>How is personal loan interest calculated?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">Personal loans use simple amortizing interest. Your APR is divided by 12 to get your monthly rate. Each month, interest is calculated on the remaining balance. In the first month, almost all interest applies to the full original balance. As you pay down principal each month, the interest portion decreases and the principal portion increases. There is no compounding between payments — you only owe interest on what you still owe.</div>
+  </div>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>What is the difference between APR and interest rate?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">The interest rate is the annual cost of borrowing. APR (Annual Percentage Rate) includes the interest rate plus fees (origination fees, application fees, etc.) expressed as an annual percentage. Always compare APRs, not just interest rates — a loan with a 10% rate and 3% origination fee has a higher effective APR than a loan at 10.5% with no fees, depending on the term.</div>
+  </div>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>Can I pay off a personal loan early?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">Most personal loans have no prepayment penalty — you can pay extra or pay off the entire balance any time without fees. Some lenders charge a prepayment fee (typically 1–5% of the remaining balance), so check your loan agreement before making a lump-sum payoff. Use the extra payment feature above to see exactly how much time and interest you save by paying extra each month.</div>
+  </div>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>What's a good debt-to-income ratio for a personal loan?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">Most lenders want your total monthly debt payments (including the new loan) to be below 40% of your gross monthly income. Some lenders allow up to 50% DTI but will charge higher rates. For example, if your gross income is $5,000/month, your total monthly debt payments (car, student loans, credit cards, new loan) should stay under $2,000. Lower DTI = better rate.</div>
+  </div>
+
+  <div class="fqi" onclick="this.classList.toggle('open')">
+    <div class="fqq"><span>Personal loan vs credit card — which is cheaper?</span><span class="fqa-arrow">▾</span></div>
+    <div class="fqa">For amounts over $1,000 that you can't repay within a few months, personal loans are almost always cheaper. Average credit card APR in 2026 is 21–24%. A personal loan for someone with good credit is typically 10–15% APR, saving 6–14 percentage points. On a $5,000 balance, that's the difference between $140/mo (credit card, minimum payment only) with years of debt vs. $170/mo (personal loan, 3 years) and being debt-free in 36 months.</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="rels">
+  <h2>Related Calculators</h2>
+  <div class="relg">
+    <a href="/auto-loan-calculator" class="relc">🚗 Auto Loan Calculator</a>
+    <a href="/mortgage-calculator-usa" class="relc">🏠 Mortgage Calculator</a>
+    <a href="/debt-payoff-calculator" class="relc">💳 Debt Payoff Calculator</a>
+    <a href="/student-loan-calculator-usa" class="relc">🎓 Student Loan Calculator</a>
+    <a href="/credit-score-calculator" class="relc">📊 Credit Score Calculator</a>
+    <a href="/compound-interest-calculator" class="relc">📈 Compound Interest</a>
+  </div>
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+// ── State ──
+var extraOn = false;
+
+function toggleExtra() {
+  extraOn = !extraOn;
+  document.getElementById('extra-toggle-btn').classList.toggle('on', extraOn);
+  document.getElementById('extra-fields').classList.toggle('show', extraOn);
+  if (!extraOn) { document.getElementById('extraAmt').value = 0; }
+  calcLoan();
+}
+
+// ── Format helpers ──
+function fmt(n) {
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+function fmtD(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+// ── Month name helper ──
+var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var MONTHS_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function monthName(offset, startMonthIdx) {
+  var total = startMonthIdx + offset;
+  var mo = total % 12;
+  var yr = 2026 + Math.floor(total / 12);
+  return MONTHS_FULL[mo] + ' ' + yr;
+}
+
+// ── Core calculation ──
+function calcLoan() {
+  var P = parseFloat(document.getElementById('loanAmt').value) || 10000;
+  var apr = parseFloat(document.getElementById('apr').value) || 11;
+  var termVal = parseFloat(document.getElementById('termVal').value) || 3;
+  var termUnit = document.getElementById('termUnit').value;
+  var startMonthIdx = parseInt(document.getElementById('startMonth').value);
+  var extra = extraOn ? (parseFloat(document.getElementById('extraAmt').value) || 0) : 0;
+
+  var n = termUnit === 'years' ? Math.round(termVal * 12) : Math.round(termVal);
+  var r = apr / 100 / 12;
+
+  // Monthly payment (standard amortization)
+  var mp;
+  if (r === 0) {
+    mp = P / n;
+  } else {
+    mp = P * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+  }
+
+  var totalStandard = mp * n;
+  var totalInterestStandard = totalStandard - P;
+
+  // ── Standard amortization ──
+  var balance = P;
+  var rows = [];
+  for (var i = 1; i <= n; i++) {
+    var intPmt = balance * r;
+    var prinPmt = mp - intPmt;
+    if (prinPmt > balance) prinPmt = balance;
+    balance -= prinPmt;
+    if (balance < 0.005) balance = 0;
+    rows.push({ month: i, payment: prinPmt + intPmt, principal: prinPmt, interest: intPmt, balance: balance });
+    if (balance === 0) { n = i; break; }
+  }
+
+  // ── Extra payment amortization ──
+  var rowsExtra = [];
+  var balanceE = P;
+  var totalIntExtra = 0;
+  var nExtra = 0;
+  if (extra > 0) {
+    for (var j = 1; j <= 600; j++) {
+      var intE = balanceE * r;
+      var prinE = mp - intE + extra;
+      if (prinE > balanceE) prinE = balanceE;
+      balanceE -= prinE;
+      totalIntExtra += intE;
+      nExtra = j;
+      rowsExtra.push({ month: j, payment: prinE + intE, principal: prinE, interest: intE, balance: Math.max(0, balanceE) });
+      if (balanceE <= 0.005) break;
+    }
+  } else {
+    totalIntExtra = totalInterestStandard;
+    nExtra = n;
+  }
+
+  var interestSaved = extra > 0 ? (totalInterestStandard - totalIntExtra) : 0;
+  var monthsSaved = extra > 0 ? (n - nExtra) : 0;
+
+  // ── Update UI ──
+  var mpR = Math.round(mp * 100) / 100;
+  document.getElementById('monthly-payment').textContent = fmtD(mpR);
+  document.getElementById('total-repaid').textContent = fmt(totalStandard);
+  document.getElementById('lbl-principal').textContent = fmt(P);
+  document.getElementById('lbl-interest').textContent = fmt(totalInterestStandard);
+  document.getElementById('d-amount').textContent = fmt(P);
+  document.getElementById('d-apr').textContent = apr.toFixed(2) + '%';
+  document.getElementById('d-term').textContent = n + ' months';
+  document.getElementById('d-monthly').textContent = fmtD(mpR);
+  document.getElementById('d-interest').textContent = fmt(totalInterestStandard);
+  document.getElementById('d-total').textContent = fmt(totalStandard);
+  document.getElementById('d-payoff').textContent = monthName(n, startMonthIdx);
+
+  // Segment bar
+  var pPct = P / totalStandard * 100;
+  var iPct = 100 - pPct;
+  document.getElementById('seg-principal').style.width = pPct.toFixed(1) + '%';
+  document.getElementById('seg-interest').style.width = iPct.toFixed(1) + '%';
+
+  // Extra savings
+  if (extra > 0 && interestSaved > 0) {
+    document.getElementById('d-save-row').style.display = 'flex';
+    document.getElementById('d-early-row').style.display = 'flex';
+    document.getElementById('d-saved').textContent = fmt(interestSaved);
+    document.getElementById('d-early').textContent = monthsSaved + ' months';
+    document.getElementById('save-card').classList.add('show');
+    document.getElementById('save-amount').textContent = fmt(interestSaved);
+    document.getElementById('save-months').textContent = monthsSaved + ' month' + (monthsSaved !== 1 ? 's' : '');
+  } else {
+    document.getElementById('d-save-row').style.display = 'none';
+    document.getElementById('d-early-row').style.display = 'none';
+    document.getElementById('save-card').classList.remove('show');
+  }
+
+  // Quick answer bar
+  document.getElementById('qa-bar').innerHTML = '<strong>Your loan:</strong> ' + fmt(P) + ' at ' + apr.toFixed(2) + '% APR for ' + (termUnit === 'years' ? termVal + ' year' + (termVal !== 1 ? 's' : '') : termVal + ' months') + ' = <strong>' + fmtD(mpR) + '/mo</strong> · Total interest: <strong>' + fmt(totalInterestStandard) + '</strong>';
+
+  // Build amortization table (use extra rows if extra>0)
+  var tableRows = extra > 0 ? rowsExtra : rows;
+  var tbody = document.getElementById('amort-body');
+  tbody.innerHTML = '';
+  tableRows.forEach(function(row) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + row.month + '</td>' +
+      '<td>' + fmtD(row.payment) + '</td>' +
+      '<td class="principal-cell">' + fmtD(row.principal) + '</td>' +
+      '<td class="interest-cell">' + fmtD(row.interest) + '</td>' +
+      '<td class="balance-cell">' + fmtD(row.balance) + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function toggleAmort() {
+  var wrap = document.getElementById('amort-table-wrap');
+  var btn = document.getElementById('amort-btn');
+  var showing = wrap.classList.toggle('show');
+  btn.textContent = showing ? 'Hide Schedule ▴' : 'Show Full Schedule ▾';
+}
+
+// FAQ accordion
+document.querySelectorAll('.fqi').forEach(function(item) {
+  item.addEventListener('click', function() {
+    this.classList.toggle('open');
+  });
+});
+
+// Init
+calcLoan();
+
+// Live recalc on input change
+['loanAmt','apr','termVal','termUnit','startMonth','extraAmt'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', calcLoan);
+});
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

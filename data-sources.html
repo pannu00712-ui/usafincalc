@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="USAFinCalc, free financial calculator USA, tax calculator 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Data Sources — IRS, SSA, BLS, Federal Reserve | USAFinCalc</title>
+<meta content="Where USAFinCalc's numbers come from: IRS, Social Security Administration, state tax agencies, Bureau of Labor Statistics, and the Federal Reserve — plus how each figure is verified and kept current." name="description"/>
+<link href="https://usafincalc.com/data-sources" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Data Sources — IRS, SSA, BLS, Federal Reserve | USAFinCalc" property="og:title"/>
+<meta content="Where USAFinCalc's numbers come from, and how every figure is verified and updated." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/data-sources" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Data Sources — IRS, SSA, BLS, Federal Reserve | USAFinCalc" name="twitter:title"/>
+<meta content="Where USAFinCalc's numbers come from, and how every figure is verified and updated." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="#050810" name="theme-color"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+
+<style>
+/* page-scoped additions — data sources only */
+.ds-src-g{display:flex;flex-direction:column;gap:14px;}
+.ds-src-c{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:24px 26px;display:flex;gap:20px;align-items:flex-start;transition:border-color .2s;}
+.ds-src-c:hover{border-color:var(--border3);}
+.ds-badge{font-family:'JetBrains Mono',monospace;font-size:12.5px;font-weight:700;background:var(--bg3);border:1px solid var(--border2);border-radius:8px;padding:8px 14px;white-space:nowrap;color:var(--cyan);min-width:78px;text-align:center;flex-shrink:0;}
+.ds-src-name{font-size:16px;font-weight:700;color:var(--text);margin-bottom:6px;}
+.ds-src-desc{font-size:13.5px;color:var(--text2);line-height:1.75;margin-bottom:10px;}
+.ds-src-link{font-size:12.5px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-decoration:none;}
+.ds-src-link:hover{text-decoration:underline;}
+.ds-used{font-size:11.5px;color:var(--text3);background:var(--bg3);border-radius:20px;padding:3px 11px;display:inline-block;margin-top:10px;}
+.ds-sec-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;}
+.ds-sec-c{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;}
+.ds-sec-n{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.ds-sec-d{font-size:12.5px;color:var(--text2);line-height:1.6;margin-bottom:8px;}
+.ds-sec-l{font-size:11.5px;font-family:'JetBrains Mono',monospace;color:var(--blue);text-decoration:none;}
+.ds-sec-l:hover{text-decoration:underline;}
+.ds-step-list{counter-reset:ds-step;list-style:none;margin:0 0 14px;padding:0;}
+.ds-step{counter-increment:ds-step;position:relative;padding:0 0 24px 44px;border-left:1px solid var(--border2);margin-left:17px;}
+.ds-step:last-child{border-color:transparent;padding-bottom:0;}
+.ds-step::before{content:counter(ds-step);position:absolute;left:-17px;top:0;width:34px;height:34px;border-radius:50%;background:var(--bg2);border:1px solid var(--border2);color:var(--cyan);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;}
+.ds-step h3{font-size:15px;font-weight:700;color:var(--text);margin:0 0 6px;}
+.ds-step p{font-size:14px;color:var(--text2);line-height:1.75;margin:0;}
+.ds-sched{width:100%;border-collapse:collapse;font-size:13.5px;margin:18px 0;}
+.ds-sched th{background:var(--bg3);color:var(--text);padding:10px 14px;text-align:left;font-weight:600;border:1px solid var(--border2);}
+.ds-sched td{padding:10px 14px;color:var(--text2);border:1px solid var(--border);}
+@media(max-width:600px){.ds-src-c{flex-direction:column;}.ds-badge{align-self:flex-start;}}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<link href="/css/search.css" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Data Sources — IRS, SSA, BLS, Federal Reserve | USAFinCalc",
+  "url": "https://usafincalc.com/data-sources",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Data Sources",
+      "item": "https://usafincalc.com/data-sources"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where does USAFinCalc get its tax and financial data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Directly from primary government sources — the IRS, Social Security Administration, individual state tax agencies, the Bureau of Labor Statistics, and the Federal Reserve. We don't use third-party aggregator data for anything that affects a calculator's output."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is the data updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Federal tax, SSA, and state figures are reviewed every fall and January following official annual releases. Rate-sensitive data is checked more often. Every update carries a visible revision date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you verify a number before publishing it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each figure is sourced from the original government document, built into the calculator, then tested against a worked example from the same agency. State-level figures get a second cross-check against an independent tracker like the Tax Foundation before publishing."
+      }
+    }
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="/css/fincalc.css" rel="stylesheet"/><link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<!-- TOPBAR -->
+<div class="fc-topbar" id="fc-topbar" role="banner">
+<strong>🆕 2026 IRS tax brackets now live</strong> — All calculators updated Jan 2026
+  <button aria-label="Dismiss notice" class="fc-topbar-x">×</button>
+</div>
+<!-- NAV -->
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<!-- MOBILE MENU -->
+<div aria-modal="true" aria-label="Navigation menu" class="fc-mm" id="fc-mm" role="dialog">
+<button aria-label="Close menu" class="fc-mm-x" id="fc-mm-x">×</button>
+<div class="fc-mm-search" role="search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search all calculators" autocomplete="off" id="fc-search-m" placeholder="Search calculators…" type="search"/>
+</div>
+<div aria-label="Search results" aria-live="polite" id="sr-m" role="region">
+<div class="sr-hd">
+<div class="sr-lb" id="sr-lb-m"></div>
+<button aria-label="Clear search" class="sr-cl" onclick="window.clearSearchMobile()">Clear ×</button>
+</div>
+<div class="sr-g" id="sr-g-m"></div>
+</div>
+<div class="fc-mm-sec">Calculators</div>
+<a href="/salary-calculator-usa">💵 Salary Calculator</a>
+<a href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a href="/mortgage-calculator-usa">🏠 Mortgage Calculator</a>
+<a href="/401k-calculator-usa">🏦 401(k) Calculator</a>
+<a href="/roth-ira-calculator">🐷 Roth IRA Calculator</a>
+<div class="fc-mm-sec">Company</div>
+<a href="/about">About Us</a>
+<a href="/blog">Finance Blog</a>
+<a href="/contact">Contact</a>
+</div>
+<!-- BREADCRUMB -->
+<nav aria-label="Breadcrumb" class="fc-breadcrumb">
+<a href="/">Home</a>
+<span aria-hidden="true" class="fc-breadcrumb-sep">›</span>
+<span aria-current="page" class="fc-breadcrumb-cur">Data Sources</span>
+</nav>
+<main id="main" role="main">
+<!-- SEARCH RESULTS (desktop) -->
+<div aria-label="Search results" aria-live="polite" id="sr" role="region">
+<div class="sr-hd">
+<div class="sr-lb" id="sr-lb"></div>
+<button aria-label="Clear search" class="sr-cl" onclick="window.clearSearch()">Clear ×</button>
+</div>
+<div class="sr-g" id="sr-g"></div>
+</div>
+<!-- PAGE HEADER -->
+<div class="fc-page-hero container">
+<div aria-hidden="true" style="font-size:36px;margin-bottom:16px">📑</div>
+<h1>Data Sources</h1>
+<p>Every number on USAFinCalc comes from an official, primary U.S. government source — never a third-party estimate or another site's table. Here's exactly where each figure comes from, what it feeds into, and how to verify it yourself.</p>
+</div>
+<div class="fc-callout container" style="max-width:760px;margin-left:auto;margin-right:auto">
+📅 <strong>Update schedule, in short:</strong> Federal and state tax figures are reviewed every fall and January following official releases. Rate-sensitive data is checked more often. Every change ships with a visible revision date. Full schedule below.
+</div>
+<!-- PRIMARY SOURCES -->
+<div class="fc-prose" style="margin-bottom:24px">
+<h2>Primary Sources</h2>
+<p>These five agencies supply the figures behind nearly every calculator on the site.</p>
+</div>
+<div class="container" style="margin-bottom:48px">
+<div class="ds-src-g">
+<div class="ds-src-c">
+<div class="ds-badge">IRS</div>
+<div class="ds-src-body">
+<div class="ds-src-name">Internal Revenue Service</div>
+<div class="ds-src-desc">Federal income tax brackets, standard deductions, filing-status rules, Additional Medicare Tax thresholds, and annual retirement contribution limits — sourced from IRS revenue procedures and Publication 15 (Circular E).</div>
+<a class="ds-src-link" href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments" target="_blank">→ irs.gov — Tax Inflation Adjustments</a>
+<div class="ds-used">Used in: Federal Tax Calculator, Salary Calculator, 401(k) Calculator, Capital Gains Tax</div>
+</div>
+</div>
+<div class="ds-src-c">
+<div class="ds-badge">SSA</div>
+<div class="ds-src-body">
+<div class="ds-src-name">Social Security Administration</div>
+<div class="ds-src-desc">The annual Social Security wage base, employee FICA rate, and Medicare rate, plus benefit and full-retirement-age rules used in retirement withdrawal planning. Updated each October for the following year.</div>
+<a class="ds-src-link" href="https://www.ssa.gov/oact/cola/cbb.html" target="_blank">→ ssa.gov — Contribution &amp; Benefit Base</a>
+<div class="ds-used">Used in: Salary Calculator, Federal Tax Calculator, Retirement Withdrawal Calculator</div>
+</div>
+</div>
+<div class="ds-src-c">
+<div class="ds-badge">STATE</div>
+<div class="ds-src-body">
+<div class="ds-src-name">State Tax Agencies (all 50 states)</div>
+<div class="ds-src-desc">State income tax brackets, standard deductions, and sales tax rates, pulled directly from each state's Department of Revenue (or equivalent) publications. Cross-checked against the Tax Foundation's independent state tax tracker before publishing.</div>
+<a class="ds-src-link" href="https://www.taxadmin.org/state-tax-agencies" target="_blank">→ taxadmin.org — Directory of State Tax Agencies</a>
+<div class="ds-used">Used in: State Tax Calculators (all 50 states), State Salary-After-Tax pages</div>
+</div>
+</div>
+<div class="ds-src-c">
+<div class="ds-badge">BLS</div>
+<div class="ds-src-body">
+<div class="ds-src-name">Bureau of Labor Statistics</div>
+<div class="ds-src-desc">Occupational Employment and Wage Statistics (OEWS), Consumer Price Index (CPI) data for inflation adjustments, and Consumer Expenditure Survey figures used in cost-of-living comparisons.</div>
+<a class="ds-src-link" href="https://www.bls.gov/oes/" target="_blank">→ bls.gov — Occupational Employment Statistics</a>
+<div class="ds-used">Used in: Salary Calculator, Cost of Living Calculator, Hourly-to-Salary Calculator</div>
+</div>
+</div>
+<div class="ds-src-c">
+<div class="ds-badge">FED</div>
+<div class="ds-src-body">
+<div class="ds-src-name">Federal Reserve (FRED — St. Louis Fed)</div>
+<div class="ds-src-desc">Historical S&amp;P 500 returns, average 30-year fixed mortgage rates, the federal funds rate, and inflation series (CPI and PCE) used as defaults and reference ranges in rate-based calculators.</div>
+<a class="ds-src-link" href="https://fred.stlouisfed.org/" target="_blank">→ fred.stlouisfed.org</a>
+<div class="ds-used">Used in: Mortgage Calculator, Refinance Calculator, Compound Interest Calculator, Inflation Calculator</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ADDITIONAL SOURCES -->
+<div class="fc-prose" style="margin-bottom:18px">
+<h2>Other Sources We Reference</h2>
+<p>A handful of calculators draw on additional federal data for specifics the five sources above don't cover:</p>
+</div>
+<div class="container" style="margin-bottom:48px">
+<div class="ds-sec-g">
+<div class="ds-sec-c">
+<div class="ds-sec-n">US Census Bureau — ACS</div>
+<div class="ds-sec-d">Median household income by state and metro-level cost-of-living inputs.</div>
+<a class="ds-sec-l" href="https://www.census.gov/programs-surveys/acs" target="_blank">census.gov →</a>
+</div>
+<div class="ds-sec-c">
+<div class="ds-sec-n">Federal Housing Finance Agency</div>
+<div class="ds-sec-d">Conforming loan limits and housing price index data for the mortgage calculator.</div>
+<a class="ds-sec-l" href="https://www.fhfa.gov/data" target="_blank">fhfa.gov →</a>
+</div>
+<div class="ds-sec-c">
+<div class="ds-sec-n">Federal Student Aid (Dept. of Education)</div>
+<div class="ds-sec-d">Federal student loan interest rates and income-driven repayment terms.</div>
+<a class="ds-sec-l" href="https://studentaid.gov/understand-aid/types/loans/interest-rates" target="_blank">studentaid.gov →</a>
+</div>
+</div>
+</div>
+<!-- HOW WE VERIFY -->
+<div class="fc-prose">
+<h2>How We Verify Each Figure</h2>
+<p>A number doesn't reach a calculator just because it sounds right. It follows the same sequence every time:</p>
+<ol class="ds-step-list">
+<li class="ds-step">
+<h3>Pull it from the primary document</h3>
+<p>Every figure starts at the source — an IRS revenue procedure, an SSA bulletin, a state Department of Revenue notice, a BLS release, or a FRED data series. We record the specific publication, not a paraphrase of it.</p>
+</li>
+<li class="ds-step">
+<h3>Build the formula around it</h3>
+<p>The figure goes into the calculator's logic, then gets tested against a worked example from the same agency — an IRS worksheet, for instance — to confirm the output matches exactly.</p>
+</li>
+<li class="ds-step">
+<h3>Cross-check where possible</h3>
+<p>State-level numbers get a second, independent check against the Tax Foundation's tracking before anything ships, to catch a transcription error or an outdated source on our end.</p>
+</li>
+<li class="ds-step">
+<h3>Publish with a visible date</h3>
+<p>Every trust page and calculator carries the date it was last reviewed, so it's clear whether a figure reflects the current tax year.</p>
+</li>
+</ol>
+<p>This process is maintained by USAFinCalc's research team. See the <a href="/editorial-policy">editorial policy</a> for the standards behind it.</p>
+<h2>Update Schedule</h2>
+<table class="ds-sched">
+<tr><th scope="col">Source</th><th scope="col">Review frequency</th><th scope="col">Why</th></tr>
+<tr><td>IRS</td><td>Annually, each January</td><td>New brackets, deductions &amp; limits release each fall for the coming tax year</td></tr>
+<tr><td>SSA</td><td>Annually, each January</td><td>Wage base &amp; FICA figures are announced each October</td></tr>
+<tr><td>State Tax Agencies</td><td>Annually, typically January; ad hoc if a state changes rates mid-year</td><td>Most states finalize rates ahead of the new tax year, but some legislate changes off-cycle</td></tr>
+<tr><td>BLS</td><td>As new releases publish (varies by series)</td><td>OEWS and CPI update on their own federal release calendars</td></tr>
+<tr><td>Federal Reserve / FRED</td><td>Monthly to quarterly</td><td>Mortgage and rate data move throughout the year, not just in January</td></tr>
+</table>
+<div class="fc-warn">
+⚠️ <strong>Found a number that looks outdated?</strong> Tell us — that's the fastest way it gets fixed. Reader-reported issues are investigated against the original source, usually within 24 hours. <a href="/contact">Report it →</a>
+</div>
+</div>
+<h2 class="container" style="margin-bottom:16px;font-size:20px;font-weight:700;">Frequently Asked Questions</h2>
+<div class="fc-faq-list container">
+<div class="fc-faq-item">
+<h3>Where does USAFinCalc get its tax and financial data?</h3>
+<p>Directly from primary government sources — the IRS, Social Security Administration, individual state tax agencies, the Bureau of Labor Statistics, and the Federal Reserve. We don't use third-party aggregator data for anything that affects a calculator's output.</p>
+</div>
+<div class="fc-faq-item">
+<h3>How often is the data updated?</h3>
+<p>Federal tax, SSA, and state figures are reviewed every fall and January after official annual releases. Rate-sensitive data like mortgage rates is refreshed more often. Every update carries a visible revision date.</p>
+</div>
+<div class="fc-faq-item">
+<h3>How do you verify a number before publishing it?</h3>
+<p>Each figure is sourced from the original government document, built into the calculator, then tested against a worked example from the same agency. State-level figures get a second cross-check against an independent tracker like the Tax Foundation before publishing.</p>
+</div>
+</div>
+<div class="fc-callout container" style="margin-top:32px;margin-bottom:48px">
+<strong>🔗 Related Pages</strong>
+<ul style="margin-top:8px;padding-left:20px">
+<li><a href="/methodology">Methodology — how calculators are built</a></li>
+<li><a href="/editorial-policy">Editorial Policy</a></li>
+<li><a href="/about">About USAFinCalc</a></li>
+</ul>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script async="True" defer="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script defer="" src="/js/search.js"></script>
+<script defer="" src="/js/fincalc-ui.js"></script>
+
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script>
+/* ── WCAG 2.2 AA: Keyboard navigation for dropdowns & mobile menu ── */
+(function(){
+  /* ── Dropdown keyboard nav ── */
+  var dds = document.querySelectorAll(".fc-nav-dd");
+  dds.forEach(function(dd){
+    var trigger = dd.querySelector("a[role=\"button\"]");
+    var menu = dd.querySelector(".fc-dd");
+    if(!trigger || !menu) return;
+    var items = Array.from(menu.querySelectorAll("a[role=\"menuitem\"]"));
+
+    function openDD(){
+      menu.style.display = "block";
+      trigger.setAttribute("aria-expanded","true");
+      if(items[0]) items[0].focus();
+    }
+    function closeDD(){
+      menu.style.display = "";
+      trigger.setAttribute("aria-expanded","false");
+      trigger.focus();
+    }
+
+    trigger.addEventListener("keydown", function(e){
+      if(e.key === "Enter" || e.key === " " || e.key === "ArrowDown"){
+        e.preventDefault(); openDD();
+      }
+      if(e.key === "Escape") closeDD();
+    });
+
+    menu.addEventListener("keydown", function(e){
+      var idx = items.indexOf(document.activeElement);
+      if(e.key === "ArrowDown"){
+        e.preventDefault();
+        (items[idx+1] || items[0]).focus();
+      } else if(e.key === "ArrowUp"){
+        e.preventDefault();
+        (items[idx-1] || items[items.length-1]).focus();
+      } else if(e.key === "Escape"){
+        e.preventDefault(); closeDD();
+      } else if(e.key === "Home"){
+        e.preventDefault(); items[0].focus();
+      } else if(e.key === "End"){
+        e.preventDefault(); items[items.length-1].focus();
+      }
+    });
+
+    dd.addEventListener("focusout", function(e){
+      if(!dd.contains(e.relatedTarget)){
+        menu.style.display = "";
+        trigger.setAttribute("aria-expanded","false");
+      }
+    });
+  });
+
+  /* ── Mobile menu focus trap ── */
+  var hbg = document.getElementById("fc-hbg");
+  var mm  = document.getElementById("fc-mm");
+  var mmx = document.getElementById("fc-mm-x");
+
+  function getFocusable(el){
+    return Array.from(el.querySelectorAll("a,button,input,[tabindex]:not([tabindex='-1'])"))
+      .filter(function(n){ return !n.disabled && n.offsetParent !== null; });
+  }
+  function openMM(){
+    if(!mm) return;
+    mm.style.display = "flex";
+    mm.style.flexDirection = "column";
+    document.body.style.overflow = "hidden";
+    if(hbg) hbg.setAttribute("aria-expanded","true");
+    var f = getFocusable(mm); if(f[0]) f[0].focus();
+  }
+  function closeMM(){
+    if(!mm) return;
+    mm.style.display = "";
+    document.body.style.overflow = "";
+    if(hbg){ hbg.setAttribute("aria-expanded","false"); hbg.focus(); }
+  }
+
+  if(hbg) hbg.addEventListener("click", function(){
+    mm && mm.style.display === "flex" ? closeMM() : openMM();
+  });
+  if(mmx) mmx.addEventListener("click", closeMM);
+
+  if(mm) mm.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeMM(); return; }
+    if(e.key === "Tab"){
+      var f = getFocusable(mm);
+      if(!f.length) return;
+      if(e.shiftKey && document.activeElement === f[0]){
+        e.preventDefault(); f[f.length-1].focus();
+      } else if(!e.shiftKey && document.activeElement === f[f.length-1]){
+        e.preventDefault(); f[0].focus();
+      }
+    }
+  });
+})();
+</script>
+</body>
+</html>

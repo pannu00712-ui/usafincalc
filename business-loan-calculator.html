@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Calculate monthly payments and total cost for any business loan. Compare SBA loans, term loans, and lines of credit." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/business-loan-calculator"/>
+<title>Business Loan Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Business Loan Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/business-loan-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Business Loan Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/business-loan-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Business Loan Calculator — Coming Soon | USAFinCalc",
+  "description": "Business Loan Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/business-loan-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>Business <span>Loan</span> Calculator</h1>
+  <p class="sub">Calculate monthly payments and total cost for any business loan. Compare SBA loans, term loans, and lines of credit. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/personal-loan-calculator">Personal Loan Calculator</a></li><li><a href="/amortization-calculator">Amortization Calculator</a></li><li><a href="/self-employment-tax-calculator">Self-Employment Tax</a></li><li><a href="/business-tax-calculator">Business Tax Calculator</a></li><li><a href="/debt-payoff-calculator">Debt Payoff Calculator</a></li><li><a href="/roi-calculator">ROI Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="business-loan-guide">
+<h2>What This Business Loan Calculator Does</h2>
+<p>This calculator estimates the monthly payment, total interest cost, and full repayment schedule for a business loan. Whether you're evaluating an SBA 7(a) loan, SBA 504 loan, bank term loan, or online lender offer, understanding the true cost of borrowing before you sign is essential for cash flow planning and ROI analysis.</p>
+<p>Business loan costs often involve additional fees — origination fees, packaging fees, annual fees, and prepayment penalties — that significantly affect the true cost. This calculator lets you include those costs to see the effective APR alongside the nominal rate for apples-to-apples comparisons.</p>
+<h2>How It Works</h2>
+<p>For a standard amortizing business term loan:</p>
+<p><strong>Monthly Payment = P × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]</strong></p>
+<p>Where P is the principal, r is monthly interest rate (annual rate ÷ 12), and n is number of months. For SBA loans, rates are tied to the prime rate plus a spread set by the lender — currently prime + 2.25% to prime + 4.75% depending on loan size and term.</p>
+<h2>Key Concepts Explained</h2>
+<h3>SBA 7(a) vs. SBA 504 Loans</h3>
+<p>The SBA 7(a) is the most flexible SBA loan — usable for working capital, equipment, real estate, or refinancing, up to $5 million with terms up to 25 years for real estate. The SBA 504 is for major fixed assets and involves two lenders: a bank covering 50% and a Certified Development Company covering 40% at a fixed rate, with 10% down from the borrower.</p>
+<h3>Debt Service Coverage Ratio (DSCR)</h3>
+<p>DSCR = Net Operating Income ÷ Total Annual Debt Service. Most lenders require a DSCR of at least 1.25 — meaning your business earns $1.25 for every $1.00 of debt obligation. A DSCR below 1.0 means the business cannot cover debt payments from operations alone.</p>
+<h3>Factor Rate vs. Interest Rate</h3>
+<p>Merchant cash advances quote a "factor rate" (e.g., 1.30) instead of an interest rate. A $100,000 advance at 1.30 factor means you repay $130,000 total. This converts to extremely high APRs — often 40–150% — especially when repaid quickly. Always convert factor rates to APR before comparing to traditional loans.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Improve your business credit score first</strong> — Dun &amp; Bradstreet, Experian Business, and Equifax Business scores affect your rate. Establish trade lines and check for errors before applying.</li>
+<li><strong>Compare APR, not factor rate or rate alone</strong> — online lenders often quote weekly rates or factor rates that obscure true annual cost.</li>
+<li><strong>Match loan term to asset life</strong> — finance equipment over 3–5 years, real estate over 10–25 years. Don't finance a 3-year-life piece of equipment with a 10-year loan.</li>
+<li><strong>Prepare 2 years of business tax returns</strong> — traditional banks and SBA lenders require at least 2 years of returns, P&amp;L statements, and balance sheets.</li>
+<li><strong>Avoid merchant cash advances except for true short-term emergencies</strong> — the implied APRs are among the highest of any business financing product.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What credit score do I need for a business loan?</h3><p class="faq-a">Traditional banks typically require a personal credit score of 680+ and 2+ years in business. SBA loans generally require 650+. Online lenders may approve at 600+ but at higher rates. Startups under 2 years old face more limited options, often needing strong personal credit (720+) or collateral.</p></div>
+<div class="faq-item"><h3 class="faq-q">How long does SBA loan approval take?</h3><p class="faq-a">Traditional SBA 7(a) loans take 30–90 days from application to funding. SBA Express loans (up to $500,000) have a 36-hour SBA response commitment but still take 30–45 days for full funding. SBA Preferred Lenders can sometimes fund in 2–3 weeks.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is business loan interest tax deductible?</h3><p class="faq-a">Yes — interest paid on business loans used for legitimate business purposes is generally deductible as a business expense on Schedule C or the entity's return. The deduction applies to interest only, not principal repayment.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can I get a business loan with no revenue?</h3><p class="faq-a">It's very difficult. Options for startups with no revenue include SBA Microloan programs (up to $50,000), CDFI lenders, personal loans used for business purposes, or business credit cards. Business plan loans based on projections alone are rare outside of venture or angel financing contexts.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Use the <a href="/roi-calculator">ROI Calculator</a> to determine whether the business investment will generate sufficient return to justify the borrowing cost. The <a href="/dti-calculator">DTI Calculator</a> helps assess whether your personal debt load affects qualification. The <a href="/self-employment-tax-calculator">Self-Employment Tax Calculator</a> is useful if you're a sole proprietor managing business income.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

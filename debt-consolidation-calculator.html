@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="See if consolidating multiple debts into one loan saves money. Compare your current total interest vs. a single consolidation loan." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/debt-consolidation-calculator"/>
+<title>Debt Consolidation Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Debt Consolidation Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/debt-consolidation-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Debt Consolidation Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/debt-consolidation-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Debt Consolidation Calculator — Coming Soon | USAFinCalc",
+  "description": "Debt Consolidation Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/debt-consolidation-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>Debt <span>Consolidation</span> Calculator</h1>
+  <p class="sub">See if consolidating multiple debts into one loan saves money. Compare your current total interest vs. a single consolidation loan. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/debt-payoff-calculator">Debt Payoff Calculator</a></li><li><a href="/credit-card-calculator">Credit Card Calculator</a></li><li><a href="/personal-loan-calculator">Personal Loan Calculator</a></li><li><a href="/budget-planner">Budget Planner</a></li><li><a href="/credit-score-calculator">Credit Score Calculator</a></li><li><a href="/amortization-calculator">Amortization Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="debt-consolidation-guide">
+<h2>What This Debt Consolidation Calculator Does</h2>
+<p>Debt consolidation combines multiple debts — credit cards, medical bills, personal loans — into a single new loan with one monthly payment, ideally at a lower interest rate. This calculator shows how much you could save in interest and how much sooner you could be debt-free by consolidating, compared to continuing to pay each debt separately at current minimum or fixed payments.</p>
+<h2>How It Works</h2>
+<p>The calculator runs a month-by-month amortization of each existing debt under your current payment schedule, then runs the same simulation for a single consolidation loan covering the total balance. The difference in total interest paid is your potential gross savings. Net savings deduct origination fees, balance transfer fees, or other consolidation costs.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Balance Transfer Cards</h3>
+<p>A 0% APR balance transfer card is often the cheapest consolidation option if you qualify. The 0% period runs 12–21 months, with transfer fees typically 3–5% of the transferred balance. If you pay off the balance within the promotional period, your total cost is just the transfer fee. After the promo period, rates jump to 20–30%.</p>
+<h3>Debt Consolidation Loans</h3>
+<p>Unsecured personal loans from banks, credit unions, or online lenders are the most common consolidation tool. Rates range from 6% for excellent credit to 36% for poor credit. Credit unions often offer the lowest rates for members. If your consolidation rate is higher than your weighted average current rate, consolidation saves nothing on interest.</p>
+<h3>Weighted Average Interest Rate</h3>
+<p>Your weighted average rate is the blended rate across all debts, proportional to their balances. A consolidation loan only saves money if its rate is meaningfully below this weighted average — accounting for fees.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Stop adding to the debt you're consolidating</strong> — the most common failure: people consolidate credit cards, then run the balances back up.</li>
+<li><strong>Don't extend your payoff timeline unnecessarily</strong> — a consolidation loan at 12% over 7 years can cost more total interest than paying higher-rate cards aggressively in 3 years.</li>
+<li><strong>Check for prepayment penalties</strong> — some auto loans and personal loans charge fees for early payoff. Factor these into your savings calculation.</li>
+<li><strong>Consider nonprofit credit counseling (NFCC member)</strong> — if you can't qualify for a good rate, NFCC agencies offer Debt Management Plans with reduced rates. Fees are typically $25–$50/month.</li>
+<li><strong>Avoid for-profit debt settlement companies</strong> — they charge substantial fees, damage credit severely, and offer no guarantees.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">Will debt consolidation hurt my credit score?</h3><p class="faq-a">Initially, yes — a new loan creates a hard inquiry and lowers average account age. However, reducing credit utilization on revolving accounts can improve your score medium-term. Paying the consolidated loan on time consistently will rebuild credit over 12–24 months.</p></div>
+<div class="faq-item"><h3 class="faq-q">What's the difference between debt consolidation and debt settlement?</h3><p class="faq-a">Consolidation pays debts in full through a new loan or DMP — credit is not severely damaged. Settlement negotiates with creditors to accept less than owed (typically 40–60 cents on the dollar), severely damages credit, and the forgiven amount is generally taxable as income (Form 1099-C).</p></div>
+<div class="faq-item"><h3 class="faq-q">Is it better to consolidate or use the avalanche/snowball method?</h3><p class="faq-a">The avalanche (highest rate first) and snowball (smallest balance first) methods cost nothing and are often better than consolidation if the rate reduction from consolidating would be minimal. Consolidation makes more sense when the rate reduction is significant (5+ percentage points) or when you genuinely need the simplicity of one payment.</p></div>
+<div class="faq-item"><h3 class="faq-q">How much debt should I have to consider consolidation?</h3><p class="faq-a">Consolidation is most compelling with $5,000+ in high-interest debt across multiple accounts, when primarily making minimum payments, and when you can qualify for a rate at least 3–5 percentage points below your weighted average. Amounts under $2,000 are often better handled directly with snowball or avalanche.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Use the <a href="/debt-payoff-calculator">Debt Payoff Calculator</a> to compare avalanche vs. snowball strategies without consolidating. The <a href="/credit-card-calculator">Credit Card Calculator</a> shows exactly how long minimum payments take on each card. For home equity consolidation options, see the <a href="/heloc-calculator">HELOC Calculator</a>.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

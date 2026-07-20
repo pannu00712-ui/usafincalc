@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Cost of Living Calculator (2026)</title>
+<meta content="Compare the cost of living between two cities and calculate the salary needed to maintain your lifestyle." name="description"/>
+<meta content="cost of living calculator, cost of living comparison, relocation salary calculator, city cost comparison, salary equivalent calculator, moving cost calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/cost-of-living-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Cost of Living Calculator (2026)" property="og:title"/>
+<meta content="Compare the cost of living between two cities and calculate the salary needed to maintain your lifestyle." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/cost-of-living-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Cost of Living Calculator (2026)" name="twitter:title"/>
+<meta content="Compare the cost of living between two cities and calculate the salary needed to maintain your lifestyle." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--local:#60a5fa;--fica:#a78bfa;--pretax:#34d399;--posttax:#f472b6;--err:#f87171;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:640px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.card + .card{margin-top:16px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:4px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select{margin-bottom:12px;-webkit-appearance:menulist}
+.field{margin-bottom:12px}
+.pfx{position:relative}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px}
+.field-err{display:none;color:var(--err);font-size:12px;margin:2px 0 8px;font-family:var(--mono)}
+.field-err.show{display:block}
+input.invalid,select.invalid{border-color:var(--err)}
+.hint{font-size:11px;color:var(--muted);margin:-2px 0 12px;line-height:1.5}
+.toggle-row{display:flex;gap:8px;margin-bottom:14px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:3px}
+.toggle-row button{flex:1;background:transparent;border:none;color:var(--muted);font-family:var(--font);font-size:13px;font-weight:500;padding:8px 6px;border-radius:6px;cursor:pointer;transition:background .2s,color .2s}
+.toggle-row button.active{background:var(--accent);color:#04140d}
+.index-fields{display:none}
+.index-fields.show{display:block}
+.city-fields.hide{display:none}
+.top-err{display:none;max-width:980px;margin:0 auto 16px;padding:12px 24px;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.3);border-radius:10px;color:#fca5a5;font-size:13px}
+.top-err.show{display:block;margin-left:24px;margin-right:24px}
+.preset-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:16px}
+@media(max-width:520px){.preset-grid{grid-template-columns:repeat(2,1fr)}}
+.preset-btn{background:var(--bg3);border:1px solid var(--border2);color:var(--muted);font-family:var(--mono);font-size:11px;padding:7px 4px;border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s}
+.preset-btn:hover{border-color:var(--accent);color:var(--text)}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:38px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:520px){.grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr 1fr}}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:16px;font-weight:600;font-family:var(--mono)}
+.bk-sm .bk-v{font-size:14px}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+.btn-row{display:flex;gap:10px;margin-top:4px}
+.btn-reset{flex:1;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font);font-size:13px;font-weight:500;padding:10px;border-radius:var(--rs);cursor:pointer;transition:border-color .2s,background .2s}
+.btn-reset:hover{border-color:var(--accent);background:rgba(16,185,129,0.06)}
+.chart-card .ct{margin-bottom:12px}
+.chart-legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+.chart-legend-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);font-family:var(--mono)}
+.chart-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.chart-wrap{margin-bottom:18px}
+.chart-wrap:last-child{margin-bottom:0}
+.chart-title{font-size:12px;color:var(--text);font-weight:600;margin-bottom:8px}
+.compare-table-wrap{overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;font-size:13px}
+.compare-table th{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border2);color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+.compare-table td{padding:9px 10px;border-bottom:1px solid var(--border);font-family:var(--mono);color:var(--text)}
+.compare-table tr:last-child td{border-bottom:none;font-weight:600;background:rgba(16,185,129,0.04)}
+.diff-pos{color:var(--fed)}
+.diff-neg{color:var(--accent)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.content-block table{width:100%;border-collapse:collapse;margin:0 0 16px}
+.content-block th,.content-block td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border);font-size:14px;color:var(--muted)}
+.content-block th{color:var(--text);font-family:var(--mono);font-size:12px;text-transform:uppercase}
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": ["Mortgage", "Tax", "Paycheck", "Salary", "All Tools"],
+  "url": [
+    "https://usafincalc.com/mortgage-calculator-usa",
+    "https://usafincalc.com/tax-calculator-usa",
+    "https://usafincalc.com/paycheck-calculator",
+    "https://usafincalc.com/salary-calculator-usa",
+    "https://usafincalc.com/"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cost of Living Calculator (2026)",
+  "url": "https://usafincalc.com/cost-of-living-calculator",
+  "description": "Compare the cost of living between two cities and calculate the salary needed to maintain your lifestyle.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Cost of Living Calculator",
+      "item": "https://usafincalc.com/cost-of-living-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cost of Living Calculator (2026)",
+  "description": "Compare the cost of living between two cities and calculate the salary needed to maintain your lifestyle.",
+  "url": "https://usafincalc.com/cost-of-living-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a cost of living index?", "acceptedAnswer": {"@type": "Answer", "text": "A cost of living index compares prices in a city to a baseline, usually the national average set at 100. An index of 150 means a city is roughly 50% more expensive than average; an index of 80 means it's roughly 20% cheaper."}},
+    {"@type": "Question", "name": "How do I calculate the salary I need in a new city?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply your current salary by the ratio of the new city's cost of living index to your current city's index. For example, $80,000 moving from an index of 100 to an index of 150 requires roughly $120,000 to maintain the same standard of living."}},
+    {"@type": "Question", "name": "Is housing the biggest driver of cost of living differences?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, in most city comparisons. Housing typically makes up 30–40% of a household budget and varies the most between cities, so it usually explains the majority of any overall cost of living gap."}},
+    {"@type": "Question", "name": "Does this calculator account for state and local taxes?", "acceptedAnswer": {"@type": "Answer", "text": "No, this calculator focuses on everyday living costs (housing, food, transportation, healthcare, utilities, childcare, and miscellaneous spending). Use the Tax Calculator or Take Home Pay Calculator alongside this tool to compare tax burdens between states."}},
+    {"@type": "Question", "name": "What if my city isn't in the preset list?", "acceptedAnswer": {"@type": "Answer", "text": "Switch to Cost of Living Index mode and enter the index values directly. You can find published cost of living indices for most U.S. metro areas from sources like the Council for Community and Economic Research (C2ER) or Numbeo."}},
+    {"@type": "Question", "name": "Why does buying power change even if I get an equivalent salary?", "acceptedAnswer": {"@type": "Answer", "text": "If your new salary is adjusted exactly by the cost of living ratio, your buying power stays the same by design. Buying Power Change in this calculator shows what happens if you keep your current salary unchanged after moving, which is a different (and common) scenario."}},
+    {"@type": "Question", "name": "How accurate are cost of living indices?", "acceptedAnswer": {"@type": "Answer", "text": "They are city-wide averages and won't match every household's actual spending. Someone who rents a small apartment and doesn't own a car will experience a different cost gap than someone with a large mortgage and two vehicles."}},
+    {"@type": "Question", "name": "Does childcare really vary that much between cities?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Full-time infant daycare can cost $3,000–$4,000/month in expensive metro areas versus $1,200–$1,800/month in many mid-sized cities, making childcare one of the largest line-item differences for families with young children."}},
+    {"@type": "Question", "name": "Should I negotiate salary based on cost of living alone?", "acceptedAnswer": {"@type": "Answer", "text": "Cost of living is a strong starting point, but also factor in local market pay rates for your role, state and local taxes, and your own spending habits. A cost of living adjustment estimates equivalent purchasing power, not necessarily equivalent market pay."}},
+    {"@type": "Question", "name": "How often do cost of living indices change?", "acceptedAnswer": {"@type": "Answer", "text": "Indices are typically updated quarterly or annually as rent, food, and utility prices shift. Rapidly growing cities can see meaningful year-over-year changes, especially in housing costs, so it's worth checking current data before finalizing a relocation decision."}}
+  ]
+}
+</script>
+<meta name="date" content="2026-07-10">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 city cost of living data</div>
+  <h1>Cost of Living <span>Calculator</span></h1>
+  <p class="hero-sub">Compare the cost of living between two U.S. cities and find the salary you'd need in a new city to keep the same standard of living — broken down by housing, food, transportation, healthcare, utilities, childcare, and more.</p>
+</div>
+
+<div class="top-err" id="topErr" role="alert" aria-live="assertive"></div>
+
+<form class="main" id="colForm" novalidate>
+  <div>
+  <div class="card">
+    <div class="ct">Salary &amp; Cities</div>
+
+    <label for="salary">Current Annual Salary</label>
+    <div class="pfx"><span>$</span><input id="salary" inputmode="decimal" oninput="calcCOL()" type="number" value="80000" min="0" step="500" aria-describedby="err-salary"/></div>
+    <div class="field-err" id="err-salary" role="alert"></div>
+
+    <div class="toggle-row" role="group" aria-label="Comparison input method">
+      <button type="button" id="btnCity" class="active" onclick="setInputMode('city')" aria-pressed="true">Pick Cities</button>
+      <button type="button" id="btnIndex" onclick="setInputMode('index')" aria-pressed="false">Enter Index</button>
+    </div>
+
+    <div class="city-fields" id="cityFields">
+      <label for="currentCity">Current City</label>
+      <select id="currentCity" onchange="calcCOL()"></select>
+
+      <label for="newCity">New City</label>
+      <select id="newCity" onchange="calcCOL()"></select>
+      <div class="hint">Presets use approximate 2026 metro-area cost of living indices (National Average = 100). Pick "Custom (enter index)" if your city isn't listed.</div>
+    </div>
+
+    <div class="index-fields" id="indexFields">
+      <label for="currentIndex">Current City Index</label>
+      <input id="currentIndex" inputmode="decimal" oninput="calcCOL()" type="number" value="100" min="1" step="1" aria-describedby="err-currentIndex"/>
+      <div class="field-err" id="err-currentIndex" role="alert"></div>
+
+      <label for="newIndex">New City Index</label>
+      <input id="newIndex" inputmode="decimal" oninput="calcCOL()" type="number" value="150" min="1" step="1" aria-describedby="err-newIndex"/>
+      <div class="field-err" id="err-newIndex" role="alert"></div>
+      <div class="hint">100 = national average. Above 100 is more expensive; below 100 is cheaper.</div>
+    </div>
+
+    <div class="ct" style="margin-top:14px">Quick Presets</div>
+    <div class="preset-grid">
+      <button type="button" class="preset-btn" onclick="applyPreset('national')">National Avg (100)</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('nyc')">New York</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('la')">Los Angeles</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('chicago')">Chicago</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('houston')">Houston</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('miami')">Miami</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('seattle')">Seattle</button>
+      <button type="button" class="preset-btn" onclick="applyPreset('sf')">San Francisco</button>
+    </div>
+    <div class="hint" style="margin-top:-8px">Presets set the New City field (or New City Index, in Index mode). Your Current City stays as selected above.</div>
+
+    <div class="btn-row">
+      <button type="reset" class="btn-reset" onclick="setTimeout(resetForm,0)">Reset Calculator</button>
+    </div>
+  </div>
+  </div>
+
+  <div>
+  <div class="card">
+    <div class="ct">Salary Comparison</div>
+    <div class="res-main">
+      <div class="res-label">Equivalent Salary Needed</div>
+      <div class="res-val" id="equivSalary">—</div>
+      <div class="res-sub" id="equivSalarySub">calculating…</div>
+    </div>
+    <div class="grid4">
+      <div class="bk bk-sm"><div class="bk-l">Salary Difference</div><div class="bk-v" id="salaryDiff">—</div></div>
+      <div class="bk bk-sm"><div class="bk-l">Percent Difference</div><div class="bk-v" id="pctDiff">—</div></div>
+      <div class="bk bk-sm"><div class="bk-l">Monthly Difference</div><div class="bk-v" id="monthlyDiff">—</div></div>
+      <div class="bk bk-sm"><div class="bk-l">Annual Difference</div><div class="bk-v" id="annualDiff">—</div></div>
+    </div>
+    <div class="grid3" style="margin-top:10px">
+      <div class="bk"><div class="bk-l">Cost of Living Change</div><div class="bk-v" id="colChange" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">Buying Power Change</div><div class="bk-v" id="buyingPowerChange" style="color:var(--accent)">—</div></div>
+      <div class="bk"><div class="bk-l">Income Adjustment Needed</div><div class="bk-v" id="incomeAdjust" style="color:var(--state)">—</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">Category Comparison</div>
+    <div class="compare-table-wrap">
+      <table class="compare-table" id="compareTable">
+        <thead>
+          <tr><th>Category</th><th>Current Cost</th><th>New Cost</th><th>Difference</th></tr>
+        </thead>
+        <tbody id="compareTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card chart-card">
+    <div class="ct">Interactive Charts</div>
+    <div class="chart-wrap">
+      <div class="chart-title">Salary Comparison</div>
+      <div id="chartSalary"></div>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">Cost Breakdown by Category (New City)</div>
+      <div id="chartBreakdown"></div>
+    </div>
+  </div>
+  </div>
+</form>
+
+<div class="fc-warn">⚠️ This calculator uses approximate, representative metro-area cost of living indices and a typical household spending-category split. Actual costs vary by neighborhood, household size, and lifestyle. For a precise number, research current housing prices directly and use the <a href="/tax-calculator-usa" style="color:var(--accent)">Tax Calculator</a> to compare state and local tax burden too.</div>
+
+<div class="content-block">
+
+<h2>Introduction</h2>
+<p>A salary that feels generous in one city can feel tight in another. Moving from a mid-sized metro to a coastal hub — or the other way around — changes what your paycheck actually buys, sometimes dramatically. This Cost of Living Calculator compares two U.S. cities across the expense categories that matter most (housing, food, transportation, healthcare, utilities, childcare, and miscellaneous spending) and tells you the salary you'd need in a new city to maintain the same standard of living you have today.</p>
+<p>Whether you're evaluating a job offer in a new city, considering a remote-work relocation, or just curious how far your income would stretch somewhere else, this tool gives you a fast, transparent estimate — with a full category-by-category breakdown, not just a single number.</p>
+
+<h2>What Is Cost of Living?</h2>
+<p>Cost of living is a measure of how much it costs to maintain a given standard of living in a specific place — covering housing, groceries, transportation, healthcare, utilities, childcare, and everyday goods and services. It's usually expressed as an index number relative to a baseline, most often the national average, which is set at 100. A city with an index of 130 is roughly 30% more expensive than the national average; a city with an index of 85 is roughly 15% cheaper.</p>
+<p>Cost of living indices are built from weighted baskets of goods and services, similar in concept to the Consumer Price Index, but they compare places rather than tracking price changes over time. Because housing costs vary so much more than other categories from one city to the next, it's normal for a city's overall index to be driven mostly by its housing sub-index.</p>
+
+<h2>How the Calculator Works</h2>
+<p>You can compare cities two ways. In <strong>Pick Cities</strong> mode, choose a current and new city from the preset list (or select Custom and switch to Index mode). Each preset city carries its own approximate index for each of the seven expense categories, reflecting the fact that a city can be expensive for housing but only average for groceries. In <strong>Enter Index</strong> mode, you supply a single current and new city index directly — useful if your city isn't in the preset list or you have a more precise index from another source.</p>
+<p>The calculator splits your current salary into the seven categories using typical U.S. household spending percentages (Housing 33%, Transportation 15%, Childcare 10%, Food 13%, Transportation, Healthcare 8%, Utilities 7%, and Miscellaneous 14%), then re-prices each category using the new city's index for that category (or the overall index ratio, in Index mode) to build the category comparison table and the equivalent salary figure.</p>
+
+<h2>Formula</h2>
+<p>The core relationship used throughout this calculator is:</p>
+<p><strong>New City Cost = Current Cost × (New City Index ÷ Current City Index)</strong></p>
+<p>This ratio is applied at the category level when preset cities are used (so housing, which usually has the widest swing, is repriced using the housing-specific index rather than the blended overall index), and applied uniformly across all categories in manual Index mode.</p>
+
+<h2>Salary Adjustment Formula</h2>
+<p>To find the salary you'd need in a new city to maintain your current lifestyle, the calculator applies the same ratio to your whole salary:</p>
+<p><strong>Equivalent Salary = Current Salary × (New City Overall Index ÷ Current City Overall Index)</strong></p>
+<p>Where the "overall index" for a preset city is the spending-weighted average of its seven category indices. Salary Difference is simply Equivalent Salary minus Current Salary, and Percentage Difference is that same ratio expressed as a percent change. Buying Power Change answers a different, related question: what happens to your purchasing power if you move but your salary stays exactly the same — calculated as (Current Index ÷ New Index − 1) × 100.</p>
+
+<h2>Housing Impact</h2>
+<p>Housing is almost always the single biggest driver of cost of living differences between U.S. cities, typically representing 30–40% of a household's budget. A one-bedroom apartment that rents for $1,000–$1,300/month in a moderately priced metro can easily run $3,000–$4,500/month in San Francisco or Manhattan. Because housing carries the largest budget weight and the widest index swings, it usually explains the majority of the total cost of living gap between two cities — which is why this calculator prices housing using its own city-specific index rather than a single blended number.</p>
+
+<h2>Transportation Costs</h2>
+<p>Transportation costs include car payments, insurance, fuel, parking, and public transit. Cities with strong public transit (New York, Chicago, San Francisco) can allow residents to skip car ownership entirely, saving $8,000–$12,000/year in some cases — but that savings is often offset by higher parking and insurance costs, or higher fares for those who do drive. Car-dependent metro areas (Houston, much of the Sun Belt) tend to have lower transit costs but higher fuel and insurance spending relative to income.</p>
+
+<h2>Healthcare Costs</h2>
+<p>Healthcare costs vary by region due to differences in provider density, insurance market competition, and state regulation. Premiums and out-of-pocket costs in the Northeast and West Coast tend to run above the national average, while much of the South and Midwest sits closer to or below it. Healthcare typically makes up a smaller share of the overall cost of living gap than housing, but it compounds with age and family size.</p>
+
+<h2>Food Costs</h2>
+<p>Grocery and restaurant prices differ by city due to distribution costs, local wages, and real estate costs passed through to menu and shelf prices. Expensive coastal metros often run 15–35% above the national average for food, while many Midwest and Southern cities sit close to or below the national baseline. Food costs are more stable across cities than housing, but they still add up meaningfully over a year.</p>
+
+<h2>Utilities</h2>
+<p>Utility costs — electricity, gas, water, and increasingly broadband — are shaped by climate, energy source mix, and local infrastructure. Extreme climates (very hot or very cold) push utility bills higher regardless of city cost tier, which is why utility indices don't always track overall cost of living rank as closely as housing does.</p>
+
+<h2>Childcare</h2>
+<p>Childcare is one of the most volatile categories in this calculator. Full-time infant daycare can run $3,000–$4,000/month in expensive metro areas, compared with $1,200–$1,800/month in many mid-sized cities — a gap that can rival housing for dual-income families with young children. If you don't have childcare expenses, you can effectively ignore this category's contribution to your comparison, though the calculator still includes it in the default spending split for households that do.</p>
+
+<h2>Cost of Living Examples</h2>
+<table>
+<tr><th>Move</th><th>Current Salary</th><th>Approx. Equivalent Salary</th></tr>
+<tr><td>Chicago → San Francisco</td><td>$100,000</td><td>~$145,000–$160,000</td></tr>
+<tr><td>New York City → Houston</td><td>$100,000</td><td>~$60,000–$70,000</td></tr>
+<tr><td>National Average → Seattle</td><td>$90,000</td><td>~$115,000–$120,000</td></tr>
+<tr><td>Miami → National Average</td><td>$75,000</td><td>~$65,000–$68,000</td></tr>
+</table>
+<p>These figures are approximate and will shift based on your specific spending mix — someone who rents modestly and doesn't own a car will see a smaller gap than these averages suggest, while someone with a larger household and higher housing needs will see a larger one.</p>
+
+<h2>Relocation Planning Tips</h2>
+<ul>
+<li><strong>Research actual rent prices for your target neighborhoods</strong> — city-wide averages include both luxury and budget areas that may not reflect where you'd realistically live.</li>
+<li><strong>Check state and local income tax separately</strong> — this calculator covers everyday living costs only; combine it with the <a href="/tax-calculator-usa">Tax Calculator</a> or <a href="/take-home-pay-calculator">Take Home Pay Calculator</a> for the full financial picture of a move.</li>
+<li><strong>Factor in one-time moving costs</strong> — movers, security deposits, and temporary housing can add thousands of dollars that a monthly cost of living comparison won't capture.</li>
+<li><strong>Ask about remote-work salary policies</strong> — some employers adjust pay by location, while others pay a flat national rate regardless of where you live.</li>
+<li><strong>Reassess after 6–12 months</strong> — your real spending pattern in a new city often looks different from your projection once you've settled in.</li>
+</ul>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Comparing gross salaries directly.</strong> A higher salary in a high cost of living city can leave you with less real purchasing power than a lower salary somewhere cheaper.</li>
+<li><strong>Ignoring category-level differences.</strong> Two cities with similar overall indices can have very different housing and childcare costs, which matters enormously depending on your household situation.</li>
+<li><strong>Forgetting state and local taxes.</strong> Cost of living indices generally don't include income tax; moving from a high-tax to a no-tax state can change your real take-home pay independently of everyday cost differences.</li>
+<li><strong>Using national averages for a specific neighborhood decision.</strong> City-level indices smooth over large intra-city variation — the actual block or suburb you'd live in matters more than the city average.</li>
+<li><strong>Assuming today's index will hold.</strong> Rents and housing costs in fast-growing metro areas can shift meaningfully within a single year.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-q">What is a cost of living index?</div><div class="faq-a">A cost of living index compares prices in a city to a baseline, usually the national average set at 100. An index of 150 means a city is roughly 50% more expensive than average; an index of 80 means it's roughly 20% cheaper.</div></div>
+<div class="faq-item"><div class="faq-q">How do I calculate the salary I need in a new city?</div><div class="faq-a">Multiply your current salary by the ratio of the new city's cost of living index to your current city's index. For example, $80,000 moving from an index of 100 to an index of 150 requires roughly $120,000 to maintain the same standard of living.</div></div>
+<div class="faq-item"><div class="faq-q">Is housing the biggest driver of cost of living differences?</div><div class="faq-a">Yes, in most city comparisons. Housing typically makes up 30–40% of a household budget and varies the most between cities, so it usually explains the majority of any overall cost of living gap.</div></div>
+<div class="faq-item"><div class="faq-q">Does this calculator account for state and local taxes?</div><div class="faq-a">No, this calculator focuses on everyday living costs (housing, food, transportation, healthcare, utilities, childcare, and miscellaneous spending). Use the <a href="/tax-calculator-usa">Tax Calculator</a> or <a href="/take-home-pay-calculator">Take Home Pay Calculator</a> alongside this tool to compare tax burdens between states.</div></div>
+<div class="faq-item"><div class="faq-q">What if my city isn't in the preset list?</div><div class="faq-a">Switch to Cost of Living Index mode and enter the index values directly. You can find published cost of living indices for most U.S. metro areas from sources like the Council for Community and Economic Research (C2ER) or Numbeo.</div></div>
+<div class="faq-item"><div class="faq-q">Why does buying power change even if I get an equivalent salary?</div><div class="faq-a">If your new salary is adjusted exactly by the cost of living ratio, your buying power stays the same by design. Buying Power Change in this calculator shows what happens if you keep your current salary unchanged after moving, which is a different (and common) scenario.</div></div>
+<div class="faq-item"><div class="faq-q">How accurate are cost of living indices?</div><div class="faq-a">They are city-wide averages and won't match every household's actual spending. Someone who rents a small apartment and doesn't own a car will experience a different cost gap than someone with a large mortgage and two vehicles.</div></div>
+<div class="faq-item"><div class="faq-q">Does childcare really vary that much between cities?</div><div class="faq-a">Yes. Full-time infant daycare can cost $3,000–$4,000/month in expensive metro areas versus $1,200–$1,800/month in many mid-sized cities, making childcare one of the largest line-item differences for families with young children.</div></div>
+<div class="faq-item"><div class="faq-q">Should I negotiate salary based on cost of living alone?</div><div class="faq-a">Cost of living is a strong starting point, but also factor in local market pay rates for your role, state and local taxes, and your own spending habits. A cost of living adjustment estimates equivalent purchasing power, not necessarily equivalent market pay.</div></div>
+<div class="faq-item"><div class="faq-q">How often do cost of living indices change?</div><div class="faq-a">Indices are typically updated quarterly or annually as rent, food, and utility prices shift. Rapidly growing cities can see meaningful year-over-year changes, especially in housing costs, so it's worth checking current data before finalizing a relocation decision.</div></div>
+</div>
+
+<h2>Related Calculators</h2>
+<p>To see how your income breaks down after taxes in either city, use the <a href="/salary-calculator-usa">Salary Calculator</a> or the <a href="/take-home-pay-calculator">Take Home Pay Calculator</a>. If you're negotiating pay as part of a relocation, run the numbers per paycheck with the <a href="/paycheck-calculator">Paycheck Calculator</a>. Once you know your equivalent salary, build a monthly budget around it with the <a href="/budget-planner">Budget Planner</a>, and see how your purchasing power might shift over time with the <a href="/inflation-calculator">Inflation Calculator</a>. Hourly workers can convert pay rates first with the <a href="/hourly-to-salary-calculator">Hourly to Salary Calculator</a>, and anyone buying a home in the new city should run the numbers with the <a href="/mortgage-calculator-usa">Mortgage Calculator</a>.</p>
+
+</div>
+
+<section class="related-section">
+  <h2>Related Calculators</h2>
+  <ul class="related-links">
+    <li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+    <li><a href="/take-home-pay-calculator">Take Home Pay Calculator</a></li>
+    <li><a href="/paycheck-calculator">Paycheck Calculator</a></li>
+    <li><a href="/budget-planner">Budget Planner</a></li>
+    <li><a href="/inflation-calculator">Inflation Calculator</a></li>
+    <li><a href="/hourly-to-salary-calculator">Hourly to Salary Calculator</a></li>
+    <li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li>
+  </ul>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+(function(){
+'use strict';
+
+function fmt2(n){
+  if (!isFinite(n)) n = 0;
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function fmt0(n){
+  if (!isFinite(n)) n = 0;
+  return '$' + Math.round(n).toLocaleString('en-US');
+}
+function pct2(n){
+  if (!isFinite(n)) n = 0;
+  return (n >= 0 ? '+' : '') + n.toFixed(1) + '%';
+}
+
+var CATS = ['housing','food','transportation','healthcare','utilities','childcare','misc'];
+var CAT_LABELS = {housing:'Housing', food:'Food', transportation:'Transportation', healthcare:'Healthcare', utilities:'Utilities', childcare:'Childcare', misc:'Miscellaneous'};
+var WEIGHTS = {housing:0.33, food:0.13, transportation:0.15, healthcare:0.08, utilities:0.07, childcare:0.10, misc:0.14};
+var CAT_COLORS = {housing:'var(--fed)', food:'var(--state)', transportation:'var(--local)', healthcare:'var(--fica)', utilities:'#c4b5fd', childcare:'var(--posttax)', misc:'var(--pretax)'};
+
+// Approximate 2026 representative metro cost of living indices per category (National Average = 100)
+var CITIES = {
+  national: {label:'National Average', housing:100, food:100, transportation:100, healthcare:100, utilities:100, childcare:100, misc:100},
+  nyc:      {label:'New York, NY',     housing:220, food:130, transportation:115, healthcare:112, utilities:125, childcare:155, misc:120},
+  la:       {label:'Los Angeles, CA',  housing:190, food:118, transportation:110, healthcare:105, utilities:108, childcare:130, misc:112},
+  chicago:  {label:'Chicago, IL',      housing:120, food:105, transportation:102, healthcare:100, utilities:105, childcare:110, misc:103},
+  houston:  {label:'Houston, TX',      housing:85,  food:95,  transportation:92,  healthcare:92,  utilities:98,  childcare:90,  misc:92},
+  miami:    {label:'Miami, FL',        housing:130, food:108, transportation:100, healthcare:98,  utilities:102, childcare:105, misc:105},
+  seattle:  {label:'Seattle, WA',      housing:165, food:115, transportation:108, healthcare:105, utilities:100, childcare:135, misc:110},
+  sf:       {label:'San Francisco, CA',housing:260, food:135, transportation:118, healthcare:115, utilities:118, childcare:165, misc:125},
+  custom:   {label:'Custom (enter index)'}
+};
+var CITY_ORDER = ['national','nyc','la','chicago','houston','miami','seattle','sf','custom'];
+
+function overallIndex(city){
+  var sum = 0;
+  for (var i=0;i<CATS.length;i++){ sum += WEIGHTS[CATS[i]] * city[CATS[i]]; }
+  return sum;
+}
+
+function populateCitySelects(){
+  var cur = document.getElementById('currentCity');
+  var neu = document.getElementById('newCity');
+  cur.innerHTML = ''; neu.innerHTML = '';
+  for (var i=0;i<CITY_ORDER.length;i++){
+    var key = CITY_ORDER[i];
+    var c = CITIES[key];
+    var o1 = document.createElement('option'); o1.value = key; o1.textContent = c.label + (key==='custom' ? '' : ' (' + Math.round(overallIndex(c)) + ')');
+    var o2 = o1.cloneNode(true);
+    if (key === 'national') o1.selected = true;
+    if (key === 'sf') o2.selected = true;
+    cur.appendChild(o1);
+    neu.appendChild(o2);
+  }
+}
+
+var inputMode = 'city';
+function setInputMode(mode){
+  inputMode = mode;
+  var cityEl = document.getElementById('cityFields');
+  var idxEl = document.getElementById('indexFields');
+  var btnC = document.getElementById('btnCity');
+  var btnI = document.getElementById('btnIndex');
+  if (mode === 'city'){
+    cityEl.classList.remove('hide');
+    idxEl.classList.remove('show');
+    btnC.classList.add('active'); btnC.setAttribute('aria-pressed','true');
+    btnI.classList.remove('active'); btnI.setAttribute('aria-pressed','false');
+  } else {
+    cityEl.classList.add('hide');
+    idxEl.classList.add('show');
+    btnI.classList.add('active'); btnI.setAttribute('aria-pressed','true');
+    btnC.classList.remove('active'); btnC.setAttribute('aria-pressed','false');
+  }
+  calcCOL();
+}
+window.setInputMode = setInputMode;
+
+function applyPreset(key){
+  var city = CITIES[key];
+  if (inputMode === 'city'){
+    document.getElementById('newCity').value = key;
+  } else {
+    document.getElementById('newIndex').value = key === 'custom' ? 100 : Math.round(overallIndex(city));
+  }
+  calcCOL();
+}
+window.applyPreset = applyPreset;
+
+var ALL_IDS = ['salary','currentIndex','newIndex'];
+
+function setFieldError(id, msg){
+  var errEl = document.getElementById('err-' + id);
+  var inputEl = document.getElementById(id);
+  if (!errEl || !inputEl) return;
+  if (msg){
+    errEl.textContent = msg;
+    errEl.classList.add('show');
+    inputEl.classList.add('invalid');
+    inputEl.setAttribute('aria-invalid','true');
+  } else {
+    errEl.textContent = '';
+    errEl.classList.remove('show');
+    inputEl.classList.remove('invalid');
+    inputEl.removeAttribute('aria-invalid');
+  }
+}
+
+function clearAllErrors(){
+  for (var i=0;i<ALL_IDS.length;i++){ setFieldError(ALL_IDS[i], ''); }
+  var topErr = document.getElementById('topErr');
+  topErr.classList.remove('show');
+  topErr.textContent = '';
+}
+
+function showTopError(msg){
+  var topErr = document.getElementById('topErr');
+  topErr.textContent = msg;
+  topErr.classList.add('show');
+}
+
+function num(id){
+  var v = parseFloat(document.getElementById(id).value);
+  return isFinite(v) ? v : NaN;
+}
+
+function validate(){
+  clearAllErrors();
+  var valid = true;
+  var messages = [];
+
+  var salary = num('salary');
+  if (isNaN(salary) || document.getElementById('salary').value === ''){
+    setFieldError('salary', 'Current annual salary is required.'); valid = false; messages.push('Enter your current annual salary.');
+  } else if (salary < 0){
+    setFieldError('salary', 'Salary cannot be negative.'); valid = false;
+  } else if (salary === 0){
+    setFieldError('salary', 'Salary must be greater than zero.'); valid = false;
+  }
+
+  if (inputMode === 'index'){
+    var ci = num('currentIndex');
+    if (isNaN(ci) || document.getElementById('currentIndex').value === ''){
+      setFieldError('currentIndex', 'Current city index is required.'); valid = false; messages.push('Enter your current city index.');
+    } else if (ci <= 0){
+      setFieldError('currentIndex', 'Index must be greater than zero.'); valid = false;
+    }
+    var ni = num('newIndex');
+    if (isNaN(ni) || document.getElementById('newIndex').value === ''){
+      setFieldError('newIndex', 'New city index is required.'); valid = false; messages.push('Enter the new city index.');
+    } else if (ni <= 0){
+      setFieldError('newIndex', 'Index must be greater than zero.'); valid = false;
+    }
+  }
+
+  if (!valid && messages.length){
+    showTopError('Please fix the highlighted fields: ' + messages.join(' '));
+  }
+  return valid;
+}
+
+function bar(pct, color){
+  pct = Math.max(0, Math.min(100, pct));
+  return '<div style="background:var(--bg3);border:1px solid var(--border);border-radius:6px;height:14px;overflow:hidden;width:100%">' +
+         '<div style="background:' + color + ';height:100%;width:' + pct.toFixed(2) + '%;transition:width .3s"></div></div>';
+}
+
+function renderSalaryChart(current, equivalent){
+  var maxVal = Math.max(current, equivalent, 1);
+  var html = '';
+  html += '<div style="font-size:12px;color:var(--muted);margin-bottom:4px;display:flex;justify-content:space-between"><span>Current Salary</span><span style="font-family:var(--mono);color:var(--text)">' + fmt0(current) + '</span></div>';
+  html += bar(current / maxVal * 100, 'var(--muted)');
+  html += '<div style="font-size:12px;color:var(--muted);margin:10px 0 4px;display:flex;justify-content:space-between"><span>Equivalent Salary Needed</span><span style="font-family:var(--mono);color:var(--accent)">' + fmt0(equivalent) + '</span></div>';
+  html += bar(equivalent / maxVal * 100, 'var(--accent)');
+  document.getElementById('chartSalary').innerHTML = html;
+}
+
+function renderBreakdownChart(newCosts, total){
+  var html = '<div style="display:flex;width:100%;height:18px;border-radius:6px;overflow:hidden;border:1px solid var(--border)">';
+  for (var i=0;i<CATS.length;i++){
+    var cat = CATS[i];
+    var pct = total > 0 ? (newCosts[cat] / total * 100) : 0;
+    if (pct <= 0) continue;
+    html += '<div style="width:' + pct.toFixed(2) + '%;background:' + CAT_COLORS[cat] + '" title="' + CAT_LABELS[cat] + '"></div>';
+  }
+  html += '</div>';
+  html += '<div class="chart-legend">';
+  for (var j=0;j<CATS.length;j++){
+    var c = CATS[j];
+    var p2 = total > 0 ? (newCosts[c] / total * 100) : 0;
+    html += '<div class="chart-legend-item"><span class="chart-dot" style="background:' + CAT_COLORS[c] + '"></span>' + CAT_LABELS[c] + ': ' + fmt0(newCosts[c]) + ' (' + p2.toFixed(1) + '%)</div>';
+  }
+  html += '</div>';
+  document.getElementById('chartBreakdown').innerHTML = html;
+}
+
+function renderCompareTable(currentCosts, newCosts){
+  var rows = '';
+  var totalCur = 0, totalNew = 0;
+  for (var i=0;i<CATS.length;i++){
+    var cat = CATS[i];
+    var cur = currentCosts[cat], neu = newCosts[cat];
+    var diff = neu - cur;
+    totalCur += cur; totalNew += neu;
+    var diffClass = diff > 0 ? 'diff-pos' : (diff < 0 ? 'diff-neg' : '');
+    rows += '<tr><td>' + CAT_LABELS[cat] + '</td><td>' + fmt0(cur) + '</td><td>' + fmt0(neu) + '</td><td class="' + diffClass + '">' + (diff>=0?'+':'') + fmt0(diff) + '</td></tr>';
+  }
+  var totalDiff = totalNew - totalCur;
+  var totalDiffClass = totalDiff > 0 ? 'diff-pos' : (totalDiff < 0 ? 'diff-neg' : '');
+  rows += '<tr><td>Total</td><td>' + fmt0(totalCur) + '</td><td>' + fmt0(totalNew) + '</td><td class="' + totalDiffClass + '">' + (totalDiff>=0?'+':'') + fmt0(totalDiff) + '</td></tr>';
+  document.getElementById('compareTableBody').innerHTML = rows;
+}
+
+function resetForm(){
+  document.getElementById('salary').value = 80000;
+  setInputMode('city');
+  populateCitySelects();
+  document.getElementById('currentIndex').value = 100;
+  document.getElementById('newIndex').value = 150;
+  clearAllErrors();
+  calcCOL();
+}
+window.resetForm = resetForm;
+
+function calcCOL(){
+  var isValid = validate();
+
+  var salary = num('salary'); if (!isFinite(salary) || salary < 0) salary = 0;
+
+  var currentCatIdx = {}, newCatIdx = {};
+  var currentOverall, newOverall;
+
+  if (inputMode === 'city'){
+    var curKey = document.getElementById('currentCity').value || 'national';
+    var newKey = document.getElementById('newCity').value || 'sf';
+    var curCity = CITIES[curKey].housing ? CITIES[curKey] : CITIES.national;
+    var newCity = CITIES[newKey].housing ? CITIES[newKey] : CITIES.national;
+    for (var i=0;i<CATS.length;i++){
+      currentCatIdx[CATS[i]] = curCity[CATS[i]];
+      newCatIdx[CATS[i]] = newCity[CATS[i]];
+    }
+    currentOverall = overallIndex(curCity);
+    newOverall = overallIndex(newCity);
+  } else {
+    var ci = num('currentIndex'); if (!isFinite(ci) || ci <= 0) ci = 100;
+    var ni = num('newIndex'); if (!isFinite(ni) || ni <= 0) ni = 100;
+    for (var j=0;j<CATS.length;j++){
+      currentCatIdx[CATS[j]] = ci;
+      newCatIdx[CATS[j]] = ci; // base equal; ratio applied uniformly below
+    }
+    currentOverall = ci;
+    newOverall = ni;
+    for (var k=0;k<CATS.length;k++){ newCatIdx[CATS[k]] = ni; }
+  }
+
+  var currentCosts = {}, newCosts = {};
+  for (var m=0;m<CATS.length;m++){
+    var cat = CATS[m];
+    var curCost = salary * WEIGHTS[cat];
+    var ratio = currentCatIdx[cat] > 0 ? (newCatIdx[cat] / currentCatIdx[cat]) : 1;
+    currentCosts[cat] = curCost;
+    newCosts[cat] = curCost * ratio;
+  }
+
+  var equivalentSalary = currentOverall > 0 ? salary * (newOverall / currentOverall) : salary;
+  var salaryDiff = equivalentSalary - salary;
+  var pctDiff = currentOverall > 0 ? ((newOverall - currentOverall) / currentOverall * 100) : 0;
+  var monthlyDiff = salaryDiff / 12;
+  var buyingPowerChange = newOverall > 0 ? ((currentOverall / newOverall) - 1) * 100 : 0;
+
+  document.getElementById('equivSalary').textContent = fmt0(equivalentSalary);
+  document.getElementById('equivSalarySub').textContent = 'to match your current lifestyle (index ' + currentOverall.toFixed(0) + ' \u2192 ' + newOverall.toFixed(0) + ')';
+  document.getElementById('salaryDiff').textContent = (salaryDiff>=0?'+':'') + fmt0(salaryDiff);
+  document.getElementById('pctDiff').textContent = pct2(pctDiff);
+  document.getElementById('monthlyDiff').textContent = (monthlyDiff>=0?'+':'') + fmt0(monthlyDiff);
+  document.getElementById('annualDiff').textContent = (salaryDiff>=0?'+':'') + fmt0(salaryDiff);
+  document.getElementById('colChange').textContent = pct2(pctDiff);
+  document.getElementById('buyingPowerChange').textContent = pct2(buyingPowerChange);
+  document.getElementById('incomeAdjust').textContent = pct2(pctDiff);
+
+  renderCompareTable(currentCosts, newCosts);
+  renderSalaryChart(salary, equivalentSalary);
+
+  var totalNewCosts = 0;
+  for (var n=0;n<CATS.length;n++){ totalNewCosts += newCosts[CATS[n]]; }
+  renderBreakdownChart(newCosts, totalNewCosts);
+
+  return isValid;
+}
+window.calcCOL = calcCOL;
+
+populateCitySelects();
+document.getElementById('colForm').addEventListener('submit', function(e){ e.preventDefault(); calcCOL(); });
+calcCOL();
+
+})();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">2026-07-10</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

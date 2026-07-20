@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paycheck Calculator by State (2026) – Take Home Pay</title>
+    <meta name="description" content="Calculate your take-home pay after federal, state, and local taxes. Compare paycheck amounts across all 50 states with 2026 tax rates." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="paycheck by state calculator, paycheck calculator by state, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/paycheck-calculator-by-state" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Paycheck Calculator by State (2026) – Take Home Pay" property="og:title"/>
+<meta content="Calculate your take-home pay after federal, state, and local taxes. Compare paycheck amounts across all 50 states with 2026 tax rates." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/paycheck-calculator-by-state" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Paycheck Calculator by State (2026) – Take Home Pay" name="twitter:title"/>
+<meta content="Calculate your take-home pay after federal, state, and local taxes. Compare paycheck amounts across all 50 states with 2026 tax rates." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>P</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .grid3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid3 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v .small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--muted);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .tax-breakdown {
+            font-family: var(--mono);
+            font-size: 13px;
+        }
+        .tax-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .tax-row:last-child {
+            border-bottom: none;
+            font-weight: 600;
+            color: var(--accent);
+        }
+        .tax-row .label {
+            color: var(--muted);
+        }
+        .tax-row .amount {
+            color: var(--text);
+        }
+        .tax-row.total .amount {
+            color: var(--accent);
+            font-size: 16px;
+        }
+        .state-badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .state-no-tax {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .state-low-tax {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .state-high-tax {
+            background: rgba(248, 113, 113, 0.15);
+            color: var(--fed);
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Paycheck Calculator by State (2026) – Take Home Pay",
+  "url": "https://usafincalc.com/paycheck-calculator-by-state",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Paycheck Calculator by State (2026) – Take Home Pay",
+      "item": "https://usafincalc.com/paycheck-calculator-by-state"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Paycheck Calculator by State (2026) – Take Home Pay",
+  "description": "Calculate your take-home pay after federal, state, and local taxes. Compare paycheck amounts across all 50 states with 2026 tax rates.",
+  "url": "https://usafincalc.com/paycheck-calculator-by-state",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which states have no income tax?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. New Hampshire taxes only interest and dividends, not wages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between gross and net pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gross pay is your total earnings before any deductions. Net pay (take-home pay) is the amount you receive after taxes and other deductions are withheld. This calculator shows you both so you can see the impact of taxes on your income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are federal tax brackets applied?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Federal tax brackets are progressive—you pay different rates on different portions of your income. For example, a single filer earning $75,000 pays 10% on the first $11,600, 12% on the next $35,550, and 22% on the remaining amount. This is called marginal taxation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Social Security wage base for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Social Security wage base for 2026 is $176,100. This is the maximum amount of earnings subject to the 6.2% Social Security tax. Earnings above this amount are not subject to Social Security tax (but Medicare tax still applies)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I deduct state income tax on my federal return?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can deduct state and local income taxes (SALT) on your federal return, but the deduction is capped at $10,000 per year ($5,000 if married filing separately). This cap applies to the combined total of state income taxes and property taxes."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a pre-tax and post-tax deduction?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pre-tax deductions (like 401k contributions and health insurance premiums) are taken from your pay before taxes are calculated, reducing your taxable income. Post-tax deductions (like Roth 401k contributions and wage garnishments) are taken after taxes, so they don't reduce your tax liability."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">P</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 tax rates</div>
+        <h1>Paycheck Calculator <span>by State</span></h1>
+        <p class="hero-sub">Calculate your take-home pay after federal, state, and local taxes. Compare paycheck amounts across all 50 states with 2026 tax rates, FICA, and deductions.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Your Paycheck Details</div>
+
+                    <div class="field">
+                        <label for="annualSalary">Annual Gross Salary</label>
+                        <div class="pfx"><span>$</span><input type="number" id="annualSalary" value="75000" min="0" step="500" /></div>
+                        <div class="hint">Your total gross income before taxes.</div>
+                    </div>
+                    <div class="field">
+                        <label for="stateSelect">State</label>
+                        <select id="stateSelect">
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                        <div class="hint">Select your state of residence for state income tax calculations.</div>
+                    </div>
+                    <div class="field">
+                        <label for="filingStatus">Filing Status</label>
+                        <select id="filingStatus">
+                            <option value="single">Single</option>
+                            <option value="married" selected>Married Filing Jointly</option>
+                            <option value="head">Head of Household</option>
+                        </select>
+                        <div class="hint">Your federal tax filing status.</div>
+                    </div>
+                    <div class="field">
+                        <label for="payFrequency">Pay Frequency</label>
+                        <select id="payFrequency">
+                            <option value="weekly">Weekly (52 paychecks)</option>
+                            <option value="biweekly" selected>Biweekly (26 paychecks)</option>
+                            <option value="semimonthly">Semi-Monthly (24 paychecks)</option>
+                            <option value="monthly">Monthly (12 paychecks)</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="preTaxDeductions">Pre-Tax Deductions (401k, Health, etc.)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="preTaxDeductions" value="0" min="0" step="50" /></div>
+                        <div class="hint">Amount deducted before taxes (e.g., 401k, health insurance).</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Compare</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="quickCompare('TX')">Texas (No Tax)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="quickCompare('FL')">Florida (No Tax)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="quickCompare('CA')">California</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="quickCompare('NY')">New York</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Compare take-home pay across different states.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Take-Home Pay</div>
+                    <div class="res-main">
+                        <div class="res-label">Net Pay Per Paycheck</div>
+                        <div class="res-val" id="netPayPerCheck">$2,500</div>
+                        <div class="res-sub" id="paySub">biweekly (26 paychecks per year)</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk bk-sm"><div class="bk-l">Annual Take-Home</div><div class="bk-v" id="annualNet">$65,000</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Monthly Net</div><div class="bk-v" id="monthlyNet">$5,417</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Total Taxes</div><div class="bk-v" id="totalTaxes">$10,000</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Effective Tax Rate</div><div class="bk-v" id="effectiveRate">13.3%</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Tax Breakdown</div>
+                    <div id="taxBreakdown" class="tax-breakdown">
+                        <div class="tax-row"><span class="label">Federal Income Tax</span><span class="amount" id="federalTax">$0</span></div>
+                        <div class="tax-row"><span class="label">State Income Tax</span><span class="amount" id="stateTax">$0</span></div>
+                        <div class="tax-row"><span class="label">Social Security (6.2%)</span><span class="amount" id="socialSecurity">$0</span></div>
+                        <div class="tax-row"><span class="label">Medicare (1.45%)</span><span class="amount" id="medicare">$0</span></div>
+                        <div class="tax-row total"><span class="label">Total Deductions</span><span class="amount" id="totalDeductions">$0</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Tax Comparison</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Gross vs. Net Pay</div>
+                        <div id="chartBar"></div>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <span class="state-badge" id="stateBadge">No State Income Tax</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="stateNote">You keep more of your paycheck.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides estimates for educational purposes. Actual tax liability depends on your specific situation, deductions, credits, and other factors. Consult a tax professional for accurate advice.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>Understanding Your Paycheck</h2>
+        <p>Your gross salary is the starting point, but your take-home pay—what actually lands in your bank account—can be significantly different depending on where you live. This Paycheck Calculator by State helps you understand exactly how federal, state, and local taxes impact your net income, so you can make informed decisions about where to live and work.</p>
+        <p>The difference between gross and net pay can be substantial. For example, a $75,000 salary in Texas (no state income tax) yields about $60,000 in take-home pay, while the same salary in California might net only $53,000—a difference of $7,000 per year. That's why comparing paycheck amounts across states is essential for anyone considering a move or evaluating job offers in different locations.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. New Hampshire taxes only interest and dividends, not wages.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator uses 2026 federal and state tax rates to estimate your take-home pay. Here's what it calculates:</p>
+        <ol>
+            <li><strong>Federal Income Tax:</strong> Uses 2026 IRS tax brackets (10%, 12%, 22%, 24%, 32%, 35%, 37%) based on your filing status.</li>
+            <li><strong>State Income Tax:</strong> Uses 2026 state tax rates, including flat-rate states (e.g., Pennsylvania 3.07%) and progressive states (e.g., California 1%-12.3%).</li>
+            <li><strong>FICA Taxes:</strong> Social Security at 6.2% (up to $176,100 wage base) and Medicare at 1.45% (no cap).</li>
+            <li><strong>Pre-Tax Deductions:</strong> Subtracts 401k contributions, health insurance, and other pre-tax deductions before calculating taxes.</li>
+            <li><strong>Pay Frequency:</strong> Converts annual net pay to weekly, biweekly, semi-monthly, or monthly paychecks.</li>
+        </ol>
+
+        <h2>2026 Federal Tax Brackets</h2>
+        <table>
+            <thead>
+                <tr><th>Tax Rate</th><th>Single</th><th>Married Filing Jointly</th><th>Head of Household</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10%</td><td>$0 – $11,600</td><td>$0 – $23,200</td><td>$0 – $16,550</td></tr>
+                <tr><td>12%</td><td>$11,601 – $47,150</td><td>$23,201 – $94,300</td><td>$16,551 – $63,100</td></tr>
+                <tr><td>22%</td><td>$47,151 – $100,525</td><td>$94,301 – $201,050</td><td>$63,101 – $100,500</td></tr>
+                <tr><td>24%</td><td>$100,526 – $191,950</td><td>$201,051 – $383,900</td><td>$100,501 – $191,950</td></tr>
+                <tr><td>32%</td><td>$191,951 – $243,725</td><td>$383,901 – $487,450</td><td>$191,951 – $243,700</td></tr>
+                <tr><td>35%</td><td>$243,726 – $609,350</td><td>$487,451 – $731,200</td><td>$243,701 – $609,350</td></tr>
+                <tr><td>37%</td><td>$609,351+</td><td>$731,201+</td><td>$609,351+</td></tr>
+            </tbody>
+        </table>
+        <p>These brackets are for 2026 and apply to taxable income after deductions and exemptions. The standard deduction for 2026 is $14,600 for single filers, $29,200 for married couples, and $21,900 for heads of household.</p>
+
+        <h2>State Income Tax Overview</h2>
+        <p>State income taxes vary widely across the United States. Here's a breakdown of the different approaches:</p>
+        <div class="two-col">
+            <div>
+                <h3>No Income Tax States</h3>
+                <ul>
+                    <li><strong>Alaska</strong> – No state income tax</li>
+                    <li><strong>Florida</strong> – No state income tax</li>
+                    <li><strong>Nevada</strong> – No state income tax</li>
+                    <li><strong>New Hampshire</strong> – No tax on wages</li>
+                    <li><strong>South Dakota</strong> – No state income tax</li>
+                    <li><strong>Tennessee</strong> – No state income tax</li>
+                    <li><strong>Texas</strong> – No state income tax</li>
+                    <li><strong>Washington</strong> – No state income tax</li>
+                    <li><strong>Wyoming</strong> – No state income tax</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Highest Income Tax States</h3>
+                <ul>
+                    <li><strong>California</strong> – Up to 13.3%</li>
+                    <li><strong>Hawaii</strong> – Up to 11%</li>
+                    <li><strong>New York</strong> – Up to 10.9%</li>
+                    <li><strong>New Jersey</strong> – Up to 10.75%</li>
+                    <li><strong>Oregon</strong> – Up to 9.9%</li>
+                    <li><strong>Minnesota</strong> – Up to 9.85%</li>
+                    <li><strong>District of Columbia</strong> – Up to 9.75%</li>
+                </ul>
+            </div>
+        </div>
+        <p>Flat-rate states (e.g., Illinois 4.95%, Pennsylvania 3.07%, Colorado 4.4%) apply a single rate to all income. Progressive states use brackets similar to the federal system.</p>
+
+        <h2>FICA Taxes: Social Security and Medicare</h2>
+        <p>FICA taxes fund Social Security and Medicare. In 2026:</p>
+        <ul>
+            <li><strong>Social Security:</strong> 6.2% on earnings up to $176,100. Employers match this amount (12.4% total).</li>
+            <li><strong>Medicare:</strong> 1.45% on all earnings, with an additional 0.9% for high earners ($200,000+ single, $250,000+ married).</li>
+        </ul>
+        <p>These are often the largest deductions from your paycheck after federal income tax. They're also known as payroll taxes and appear as FICA on your pay stub.</p>
+
+        <h2>Common Paycheck Deductions</h2>
+        <ul>
+            <li><strong>Pre-Tax Deductions:</strong> 401(k) contributions, health insurance premiums, HSA/FSA contributions, and commuter benefits. These reduce your taxable income.</li>
+            <li><strong>Post-Tax Deductions:</strong> Roth 401(k) contributions, union dues, and wage garnishments. These are taken after taxes.</li>
+            <li><strong>Local Taxes:</strong> Some cities (e.g., New York City, Philadelphia) impose local income taxes in addition to state taxes.</li>
+        </ul>
+
+        <h2>Salary Comparison Across States</h2>
+        <p>A $100,000 salary has very different purchasing power depending on where you live. Here's the estimated take-home pay for a single filer in select states:</p>
+        <table>
+            <thead>
+                <tr><th>State</th><th>Annual Take-Home</th><th>Effective Tax Rate</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Texas (No Tax)</td><td>$79,500</td><td>20.5%</td></tr>
+                <tr><td>Florida (No Tax)</td><td>$79,500</td><td>20.5%</td></tr>
+                <tr><td>Pennsylvania</td><td>$78,200</td><td>21.8%</td></tr>
+                <tr><td>Illinois</td><td>$77,400</td><td>22.6%</td></tr>
+                <tr><td>New York</td><td>$72,800</td><td>27.2%</td></tr>
+                <tr><td>California</td><td>$71,200</td><td>28.8%</td></tr>
+            </tbody>
+        </table>
+        <p>These differences are why many workers consider tax implications when choosing where to live. A 8-10% difference in take-home pay can mean thousands of dollars per year.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">Which states have no income tax?</div>
+            <div class="faq-a">Nine states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. New Hampshire taxes only interest and dividends, not wages.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between gross and net pay?</div>
+            <div class="faq-a">Gross pay is your total earnings before any deductions. Net pay (take-home pay) is the amount you receive after taxes and other deductions are withheld. This calculator shows you both so you can see the impact of taxes on your income.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How are federal tax brackets applied?</div>
+            <div class="faq-a">Federal tax brackets are progressive—you pay different rates on different portions of your income. For example, a single filer earning $75,000 pays 10% on the first $11,600, 12% on the next $35,550, and 22% on the remaining amount. This is called marginal taxation.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the Social Security wage base for 2026?</div>
+            <div class="faq-a">The Social Security wage base for 2026 is $176,100. This is the maximum amount of earnings subject to the 6.2% Social Security tax. Earnings above this amount are not subject to Social Security tax (but Medicare tax still applies).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I deduct state income tax on my federal return?</div>
+            <div class="faq-a">Yes, you can deduct state and local income taxes (SALT) on your federal return, but the deduction is capped at $10,000 per year ($5,000 if married filing separately). This cap applies to the combined total of state income taxes and property taxes.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between a pre-tax and post-tax deduction?</div>
+            <div class="faq-a">Pre-tax deductions (like 401k contributions and health insurance premiums) are taken from your pay before taxes are calculated, reducing your taxable income. Post-tax deductions (like Roth 401k contributions and wage garnishments) are taken after taxes, so they don't reduce your tax liability.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Tax Calculator</a></li>
+            <li><a href="#">Salary Calculator</a></li>
+            <li><a href="#">Cost of Living Calculator</a></li>
+            <li><a href="#">401k Contribution Calculator</a></li>
+            <li><a href="#">Hourly to Salary Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Tax rates subject to change.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- State tax data (2026 simplified) -----
+        const stateTaxData = {
+            'AL': { name: 'Alabama', rate: 0.05, flat: false, brackets: [{ up: 500, rate: 0.02 }, { up: 3000, rate: 0.04 }, { up: Infinity, rate: 0.05 }] },
+            'AK': { name: 'Alaska', rate: 0, flat: true },
+            'AZ': { name: 'Arizona', rate: 0.025, flat: true },
+            'AR': { name: 'Arkansas', rate: 0.049, flat: false, brackets: [{ up: 4400, rate: 0.02 }, { up: 8800, rate: 0.04 }, { up: Infinity, rate: 0.049 }] },
+            'CA': { name: 'California', rate: 0.093, flat: false, brackets: [{ up: 10400, rate: 0.01 }, { up: 24600, rate: 0.02 }, { up: 38900, rate: 0.04 }, { up: 53800, rate: 0.06 }, { up: 68000, rate: 0.08 }, { up: Infinity, rate: 0.093 }] },
+            'CO': { name: 'Colorado', rate: 0.044, flat: true },
+            'CT': { name: 'Connecticut', rate: 0.0699, flat: false, brackets: [{ up: 10000, rate: 0.03 }, { up: 50000, rate: 0.05 }, { up: 100000, rate: 0.055 }, { up: 200000, rate: 0.06 }, { up: 500000, rate: 0.0699 }] },
+            'DE': { name: 'Delaware', rate: 0.066, flat: false, brackets: [{ up: 2000, rate: 0.022 }, { up: 5000, rate: 0.039 }, { up: 10000, rate: 0.048 }, { up: 20000, rate: 0.052 }, { up: 25000, rate: 0.0555 }, { up: 60000, rate: 0.066 }] },
+            'FL': { name: 'Florida', rate: 0, flat: true },
+            'GA': { name: 'Georgia', rate: 0.0549, flat: true },
+            'HI': { name: 'Hawaii', rate: 0.11, flat: false, brackets: [{ up: 2400, rate: 0.014 }, { up: 4800, rate: 0.032 }, { up: 9600, rate: 0.055 }, { up: 14400, rate: 0.064 }, { up: 19200, rate: 0.068 }, { up: 24000, rate: 0.072 }, { up: 36000, rate: 0.076 }, { up: 48000, rate: 0.079 }, { up: 150000, rate: 0.0825 }, { up: Infinity, rate: 0.11 }] },
+            'ID': { name: 'Idaho', rate: 0.058, flat: false, brackets: [{ up: 4600, rate: 0.015 }, { up: 9200, rate: 0.031 }, { up: 13800, rate: 0.046 }, { up: 18400, rate: 0.058 }] },
+            'IL': { name: 'Illinois', rate: 0.0495, flat: true },
+            'IN': { name: 'Indiana', rate: 0.033, flat: true },
+            'IA': { name: 'Iowa', rate: 0.059, flat: false, brackets: [{ up: 6000, rate: 0.04 }, { up: 30000, rate: 0.045 }, { up: 75000, rate: 0.059 }] },
+            'KS': { name: 'Kansas', rate: 0.057, flat: false, brackets: [{ up: 15000, rate: 0.031 }, { up: 30000, rate: 0.0525 }, { up: Infinity, rate: 0.057 }] },
+            'KY': { name: 'Kentucky', rate: 0.045, flat: true },
+            'LA': { name: 'Louisiana', rate: 0.0425, flat: false, brackets: [{ up: 12500, rate: 0.0185 }, { up: 50000, rate: 0.035 }, { up: Infinity, rate: 0.0425 }] },
+            'ME': { name: 'Maine', rate: 0.0715, flat: false, brackets: [{ up: 24000, rate: 0.05 }, { up: 54000, rate: 0.0675 }, { up: Infinity, rate: 0.0715 }] },
+            'MD': { name: 'Maryland', rate: 0.0575, flat: false, brackets: [{ up: 1000, rate: 0.02 }, { up: 2000, rate: 0.03 }, { up: 3000, rate: 0.04 }, { up: 100000, rate: 0.0475 }, { up: 125000, rate: 0.05 }, { up: 150000, rate: 0.0525 }, { up: 250000, rate: 0.055 }, { up: Infinity, rate: 0.0575 }] },
+            'MA': { name: 'Massachusetts', rate: 0.05, flat: true },
+            'MI': { name: 'Michigan', rate: 0.0425, flat: true },
+            'MN': { name: 'Minnesota', rate: 0.0985, flat: false, brackets: [{ up: 31000, rate: 0.0535 }, { up: 92000, rate: 0.0675 }, { up: 170000, rate: 0.0785 }, { up: Infinity, rate: 0.0985 }] },
+            'MS': { name: 'Mississippi', rate: 0.05, flat: false, brackets: [{ up: 10000, rate: 0.03 }, { up: 20000, rate: 0.04 }, { up: Infinity, rate: 0.05 }] },
+            'MO': { name: 'Missouri', rate: 0.054, flat: false, brackets: [{ up: 1000, rate: 0.02 }, { up: 2000, rate: 0.025 }, { up: 3000, rate: 0.03 }, { up: 4000, rate: 0.035 }, { up: 5000, rate: 0.04 }, { up: 6000, rate: 0.045 }, { up: 7000, rate: 0.05 }, { up: 8000, rate: 0.054 }] },
+            'MT': { name: 'Montana', rate: 0.0675, flat: false, brackets: [{ up: 3200, rate: 0.01 }, { up: 6500, rate: 0.02 }, { up: 9800, rate: 0.03 }, { up: 13000, rate: 0.04 }, { up: 16300, rate: 0.05 }, { up: 19600, rate: 0.06 }, { up: Infinity, rate: 0.0675 }] },
+            'NE': { name: 'Nebraska', rate: 0.0684, flat: false, brackets: [{ up: 3500, rate: 0.02 }, { up: 21000, rate: 0.04 }, { up: 34000, rate: 0.052 }, { up: Infinity, rate: 0.0684 }] },
+            'NV': { name: 'Nevada', rate: 0, flat: true },
+            'NH': { name: 'New Hampshire', rate: 0, flat: true },
+            'NJ': { name: 'New Jersey', rate: 0.1075, flat: false, brackets: [{ up: 20000, rate: 0.014 }, { up: 35000, rate: 0.0175 }, { up: 40000, rate: 0.035 }, { up: 75000, rate: 0.055 }, { up: 500000, rate: 0.0637 }, { up: 1000000, rate: 0.0897 }, { up: Infinity, rate: 0.1075 }] },
+            'NM': { name: 'New Mexico', rate: 0.059, flat: false, brackets: [{ up: 5500, rate: 0.017 }, { up: 11000, rate: 0.032 }, { up: 16000, rate: 0.047 }, { up: 21000, rate: 0.049 }, { up: Infinity, rate: 0.059 }] },
+            'NY': { name: 'New York', rate: 0.109, flat: false, brackets: [{ up: 8500, rate: 0.04 }, { up: 11700, rate: 0.045 }, { up: 13900, rate: 0.0525 }, { up: 21400, rate: 0.055 }, { up: 80650, rate: 0.06 }, { up: 215400, rate: 0.0685 }, { up: 1077550, rate: 0.079 }, { up: 5000000, rate: 0.089 }, { up: Infinity, rate: 0.109 }] },
+            'NC': { name: 'North Carolina', rate: 0.0499, flat: true },
+            'ND': { name: 'North Dakota', rate: 0.029, flat: false, brackets: [{ up: 46700, rate: 0.011 }, { up: 112500, rate: 0.0204 }, { up: 189000, rate: 0.0227 }, { up: 462000, rate: 0.0264 }, { up: Infinity, rate: 0.029 }] },
+            'OH': { name: 'Ohio', rate: 0.0399, flat: false, brackets: [{ up: 26500, rate: 0.02 }, { up: 46000, rate: 0.025 }, { up: 92000, rate: 0.033 }, { up: Infinity, rate: 0.0399 }] },
+            'OK': { name: 'Oklahoma', rate: 0.0475, flat: false, brackets: [{ up: 1000, rate: 0.0025 }, { up: 2500, rate: 0.0075 }, { up: 3750, rate: 0.0175 }, { up: 4900, rate: 0.0275 }, { up: 7200, rate: 0.0375 }, { up: Infinity, rate: 0.0475 }] },
+            'OR': { name: 'Oregon', rate: 0.099, flat: false, brackets: [{ up: 4100, rate: 0.0475 }, { up: 10500, rate: 0.0675 }, { up: 125000, rate: 0.0875 }, { up: Infinity, rate: 0.099 }] },
+            'PA': { name: 'Pennsylvania', rate: 0.0307, flat: true },
+            'RI': { name: 'Rhode Island', rate: 0.0599, flat: false, brackets: [{ up: 78000, rate: 0.0375 }, { up: 155000, rate: 0.0475 }, { up: Infinity, rate: 0.0599 }] },
+            'SC': { name: 'South Carolina', rate: 0.064, flat: false, brackets: [{ up: 3300, rate: 0.03 }, { up: 6600, rate: 0.04 }, { up: 9900, rate: 0.05 }, { up: 13200, rate: 0.06 }, { up: 16500, rate: 0.064 }] },
+            'SD': { name: 'South Dakota', rate: 0, flat: true },
+            'TN': { name: 'Tennessee', rate: 0, flat: true },
+            'TX': { name: 'Texas', rate: 0, flat: true },
+            'UT': { name: 'Utah', rate: 0.0485, flat: true },
+            'VT': { name: 'Vermont', rate: 0.086, flat: false, brackets: [{ up: 43600, rate: 0.0335 }, { up: 105500, rate: 0.066 }, { up: 174000, rate: 0.077 }, { up: Infinity, rate: 0.086 }] },
+            'VA': { name: 'Virginia', rate: 0.0575, flat: false, brackets: [{ up: 3000, rate: 0.02 }, { up: 5000, rate: 0.03 }, { up: 17000, rate: 0.05 }, { up: Infinity, rate: 0.0575 }] },
+            'WA': { name: 'Washington', rate: 0, flat: true },
+            'WV': { name: 'West Virginia', rate: 0.065, flat: false, brackets: [{ up: 10000, rate: 0.03 }, { up: 25000, rate: 0.04 }, { up: 40000, rate: 0.045 }, { up: 60000, rate: 0.06 }, { up: Infinity, rate: 0.065 }] },
+            'WI': { name: 'Wisconsin', rate: 0.0765, flat: false, brackets: [{ up: 13810, rate: 0.035 }, { up: 27630, rate: 0.044 }, { up: 304170, rate: 0.053 }, { up: Infinity, rate: 0.0765 }] },
+            'WY': { name: 'Wyoming', rate: 0, flat: true }
+        };
+
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const annualSalary = $('annualSalary');
+        const stateSelect = $('stateSelect');
+        const filingStatus = $('filingStatus');
+        const payFrequency = $('payFrequency');
+        const preTaxDeductions = $('preTaxDeductions');
+
+        const netPayPerCheck = $('netPayPerCheck');
+        const paySub = $('paySub');
+        const annualNet = $('annualNet');
+        const monthlyNet = $('monthlyNet');
+        const totalTaxes = $('totalTaxes');
+        const effectiveRate = $('effectiveRate');
+        const federalTax = $('federalTax');
+        const stateTax = $('stateTax');
+        const socialSecurity = $('socialSecurity');
+        const medicare = $('medicare');
+        const totalDeductions = $('totalDeductions');
+        const chartBar = $('chartBar');
+        const stateBadge = $('stateBadge');
+        const stateNote = $('stateNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v > 0 ? v : 0;
+        }
+
+        // ----- federal tax calculation (2026 simplified) -----
+        function calcFederalTax(income, status) {
+            const standardDeduction = status === 'single' ? 14600 : (status === 'married' ? 29200 : 21900);
+            const taxable = Math.max(0, income - standardDeduction);
+
+            let brackets;
+            if (status === 'single') {
+                brackets = [{ up: 11600, rate: 0.10 }, { up: 47150, rate: 0.12 }, { up: 100525, rate: 0.22 }, { up: 191950, rate: 0.24 }, { up: 243725, rate: 0.32 }, { up: 609350, rate: 0.35 }, { up: Infinity, rate: 0.37 }];
+            } else if (status === 'married') {
+                brackets = [{ up: 23200, rate: 0.10 }, { up: 94300, rate: 0.12 }, { up: 201050, rate: 0.22 }, { up: 383900, rate: 0.24 }, { up: 487450, rate: 0.32 }, { up: 731200, rate: 0.35 }, { up: Infinity, rate: 0.37 }];
+            } else {
+                brackets = [{ up: 16550, rate: 0.10 }, { up: 63100, rate: 0.12 }, { up: 100500, rate: 0.22 }, { up: 191950, rate: 0.24 }, { up: 243700, rate: 0.32 }, { up: 609350, rate: 0.35 }, { up: Infinity, rate: 0.37 }];
+            }
+
+            let tax = 0;
+            let prev = 0;
+            for (const bracket of brackets) {
+                if (taxable > prev) {
+                    const amount = Math.min(taxable, bracket.up) - prev;
+                    tax += amount * bracket.rate;
+                    prev = bracket.up;
+                }
+                if (taxable <= bracket.up) break;
+            }
+            return tax;
+        }
+
+        // ----- state tax calculation -----
+        function calcStateTax(income, stateCode) {
+            const data = stateTaxData[stateCode];
+            if (!data || data.flat) {
+                return income * (data ? data.rate : 0);
+            }
+            let tax = 0;
+            let prev = 0;
+            for (const bracket of data.brackets) {
+                if (income > prev) {
+                    const amount = Math.min(income, bracket.up) - prev;
+                    tax += amount * bracket.rate;
+                    prev = bracket.up;
+                }
+                if (income <= bracket.up) break;
+            }
+            return tax;
+        }
+
+        // ----- main calculation -----
+        function calculate() {
+            const gross = getVal(annualSalary);
+            const stateCode = stateSelect.value;
+            const status = filingStatus.value;
+            const preTax = getVal(preTaxDeductions);
+            const freq = payFrequency.value;
+
+            // Taxable income after pre-tax deductions
+            const taxableIncome = Math.max(0, gross - preTax);
+
+            // Federal tax
+            const fedTax = calcFederalTax(taxableIncome, status);
+
+            // State tax
+            const stTax = calcStateTax(taxableIncome, stateCode);
+
+            // FICA
+            const ssWageBase = 176100;
+            const ssTax = Math.min(taxableIncome, ssWageBase) * 0.062;
+            const medicareTax = taxableIncome * 0.0145;
+
+            // Total taxes
+            const totalTax = fedTax + stTax + ssTax + medicareTax;
+            const netAnnual = gross - totalTax - preTax;
+
+            // Per paycheck
+            let checksPerYear = 26;
+            let freqLabel = 'biweekly (26 paychecks per year)';
+            if (freq === 'weekly') { checksPerYear = 52;
+                freqLabel = 'weekly (52 paychecks per year)'; } else if (freq === 'semimonthly') { checksPerYear = 24;
+                freqLabel = 'semi-monthly (24 paychecks per year)'; } else if (freq === 'monthly') { checksPerYear = 12;
+                freqLabel = 'monthly (12 paychecks per year)'; }
+
+            const netPerCheck = netAnnual / checksPerYear;
+            const monthlyNetVal = netAnnual / 12;
+            const effRate = gross > 0 ? (totalTax / gross) * 100 : 0;
+
+            // Update results
+            netPayPerCheck.textContent = fmt(netPerCheck);
+            paySub.textContent = freqLabel;
+            annualNet.textContent = fmt(netAnnual);
+            monthlyNet.textContent = fmt(monthlyNetVal);
+            totalTaxes.textContent = fmt(totalTax);
+            effectiveRate.textContent = effRate.toFixed(1) + '%';
+
+            federalTax.textContent = fmt(fedTax);
+            stateTax.textContent = fmt(stTax);
+            socialSecurity.textContent = fmt(ssTax);
+            medicare.textContent = fmt(medicareTax);
+            totalDeductions.textContent = fmt(totalTax + preTax);
+
+            // State badge
+            const stateData = stateTaxData[stateCode];
+            if (stateData && stateData.rate === 0) {
+                stateBadge.textContent = '✅ No State Income Tax';
+                stateBadge.className = 'state-badge state-no-tax';
+                stateNote.textContent = 'You keep more of your paycheck.';
+            } else if (stateData && stateData.rate < 0.04) {
+                stateBadge.textContent = '🟢 Low State Tax';
+                stateBadge.className = 'state-badge state-low-tax';
+                stateNote.textContent = 'Lower than average state tax burden.';
+            } else {
+                stateBadge.textContent = '🔴 High State Tax';
+                stateBadge.className = 'state-badge state-high-tax';
+                stateNote.textContent = 'State taxes significantly reduce take-home pay.';
+            }
+
+            // Chart
+            const grossPct = 100;
+            const netPct = gross > 0 ? (netAnnual / gross) * 100 : 0;
+            const taxPct = gross > 0 ? (totalTax / gross) * 100 : 0;
+
+            chartBar.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Gross Pay</span><span>${fmt(gross)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--border2);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Take-Home Pay</span><span>${fmt(netAnnual)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${netPct}%;background:var(--accent);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Total Taxes</span><span>${fmt(totalTax)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${taxPct}%;background:var(--fed);"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">You keep ${netPct.toFixed(1)}% of your gross income.</div>
+            `;
+        }
+
+        // ----- quick compare -----
+        function quickCompare(stateCode) {
+            stateSelect.value = stateCode;
+            calculate();
+        }
+        window.quickCompare = quickCompare;
+
+        // ----- reset -----
+        function resetCalc() {
+            annualSalary.value = '75000';
+            stateSelect.value = 'TX';
+            filingStatus.value = 'married';
+            payFrequency.value = 'biweekly';
+            preTaxDeductions.value = '0';
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [annualSalary, stateSelect, filingStatus, payFrequency, preTaxDeductions];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/remote-work-tax-rules">Remote Work Tax Rules by State 2026: Complete Guide</a></li>
+  </ul>
+</section>
+</body>
+</html>

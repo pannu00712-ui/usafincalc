@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biweekly Mortgage Payment Calculator (2026) – Save Thousands</title>
+    <meta name="description" content="See how biweekly mortgage payments can save you thousands in interest and pay off your mortgage years earlier. Compare biweekly vs. monthly payments." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="biweekly mortgage calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/biweekly-mortgage-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Biweekly Mortgage Payment Calculator (2026) – Save Thousands" property="og:title"/>
+<meta content="See how biweekly mortgage payments can save you thousands in interest and pay off your mortgage years earlier. Compare biweekly vs. monthly payments." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/biweekly-mortgage-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Biweekly Mortgage Payment Calculator (2026) – Save Thousands" name="twitter:title"/>
+<meta content="See how biweekly mortgage payments can save you thousands in interest and pay off your mortgage years earlier. Compare biweekly vs. monthly payments." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>B</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 34px;
+            font-weight: 700;
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-val.positive {
+            color: var(--accent);
+        }
+        .res-val.negative {
+            color: var(--fed);
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-fill.monthly {
+            background: var(--fed);
+        }
+        .bar-fill.biweekly {
+            background: var(--accent);
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            font-family: var(--mono);
+        }
+        .comparison-table th {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border2);
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .comparison-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .comparison-table .savings {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .comparison-table .highlight-row {
+            background: rgba(16, 185, 129, 0.05);
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Biweekly Mortgage Payment Calculator (2026) – Save Thousands",
+  "url": "https://usafincalc.com/biweekly-mortgage-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Biweekly Mortgage Payment Calculator (2026) – Save Thousands",
+      "item": "https://usafincalc.com/biweekly-mortgage-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Biweekly Mortgage Payment Calculator (2026) – Save Thousands",
+  "description": "See how biweekly mortgage payments can save you thousands in interest and pay off your mortgage years earlier. Compare biweekly vs. monthly payments.",
+  "url": "https://usafincalc.com/biweekly-mortgage-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does a biweekly mortgage payment work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Instead of making one monthly payment, you make half of your monthly payment every two weeks. Since there are 52 weeks in a year, you make 26 half-payments, which equals 13 full payments per year—one extra payment annually. This extra payment goes directly to the principal, reducing interest and shortening your loan term."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much can I save with biweekly payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "On a $300,000 mortgage at 6.5% APR for 30 years, biweekly payments could save you over $52,000 in interest and help you pay off your mortgage 4.5 years earlier. The savings are even larger on larger loans or higher interest rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are there fees for biweekly mortgage payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Some lenders charge fees to set up biweekly payment plans, ranging from $200-$500 upfront plus monthly fees of $5-$10. However, you can achieve the same result for free by making an extra payment each year or manually splitting your payments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a biweekly payment the same as making one extra payment per year?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the biweekly schedule results in exactly one extra full payment per year. You can achieve the same benefit by simply making one extra payment annually. However, biweekly payments also reduce interest slightly by being paid more frequently, which can add a small additional benefit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I pay biweekly or invest the extra money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This depends on your interest rate and risk tolerance. If your mortgage rate is 6.5%+, paying extra on your mortgage is a guaranteed return of 6.5% (risk-free). If you can earn higher returns in the stock market (historically 7-10%), investing might be better. However, paying down your mortgage provides guaranteed savings and reduces risk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I switch back to monthly payments after starting biweekly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, most lenders allow you to switch payment schedules. If you're using a lender-administered plan, you may need to cancel the program. If you're making extra payments manually, you can simply stop making extra payments. Always check with your lender for their specific policies."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">B</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 mortgage strategy</div>
+        <h1>Biweekly Mortgage <span>Payment Calculator</span></h1>
+        <p class="hero-sub">Discover how switching to biweekly mortgage payments can save you thousands in interest and help you pay off your mortgage years earlier. Compare monthly vs. biweekly side by side.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Mortgage Details</div>
+
+                    <div class="field">
+                        <label for="loanAmount">Loan Amount</label>
+                        <div class="pfx"><span>$</span><input type="number" id="loanAmount" value="300000" min="0" step="5000" /></div>
+                        <div class="hint">Total mortgage amount (purchase price minus down payment).</div>
+                    </div>
+                    <div class="field">
+                        <label for="interestRate">Interest Rate (APR)</label>
+                        <div class="pct-suffix"><input type="number" id="interestRate" value="6.5" min="0" max="20" step="0.125" /><span>%</span></div>
+                        <div class="hint">Your annual mortgage interest rate.</div>
+                    </div>
+                    <div class="field">
+                        <label for="loanTerm">Loan Term (Years)</label>
+                        <select id="loanTerm">
+                            <option value="10">10 years</option>
+                            <option value="15">15 years</option>
+                            <option value="20">20 years</option>
+                            <option value="30" selected>30 years</option>
+                        </select>
+                        <div class="hint">The original length of your mortgage.</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('30yr')">30yr @ 6.5%</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('15yr')">15yr @ 5.5%</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('jumbo')">Jumbo ($500k)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('fha')">FHA Loan</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common mortgage scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Comparison Results</div>
+                    <div class="res-main">
+                        <div class="res-label">Biweekly Payment</div>
+                        <div class="res-val positive" id="biweeklyPayment">$946</div>
+                        <div class="res-sub" id="paymentSub">(vs. monthly payment of $1,896)</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Interest Saved</div><div class="bk-v positive" id="interestSaved">$52,000</div></div>
+                        <div class="bk"><div class="bk-l">Years Saved</div><div class="bk-v positive" id="yearsSaved">4.5</div></div>
+                        <div class="bk"><div class="bk-l">Monthly Payment</div><div class="bk-v negative" id="monthlyPaymentDisplay">$1,896</div></div>
+                        <div class="bk"><div class="bk-l">Total Interest (Biweekly)</div><div class="bk-v negative" id="biweeklyInterest">$245,000</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Side-by-Side Comparison</div>
+                    <div style="overflow-x:auto;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr><th></th><th>Monthly</th><th>Biweekly</th><th>Savings</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Payment Amount</td><td id="cmpMonthlyPayment">$1,896</td><td id="cmpBiweeklyPayment">$948</td><td class="savings" id="cmpPaymentSavings">—</td></tr>
+                                <tr><td>Total Interest</td><td id="cmpMonthlyInterest">$382,633</td><td id="cmpBiweeklyInterest">$329,903</td><td class="savings" id="cmpInterestSavings">$52,730</td></tr>
+                                <tr class="highlight-row"><td><strong>Total Cost</strong></td><td id="cmpMonthlyTotal">$682,633</td><td id="cmpBiweeklyTotal">$629,903</td><td class="savings" id="cmpTotalSavings">$52,730</td></tr>
+                                <tr><td>Payoff Time</td><td id="cmpMonthlyTime">30 years</td><td id="cmpBiweeklyTime">25.5 years</td><td class="savings" id="cmpTimeSavings">4.5 years</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Visual Comparison</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Monthly vs. Biweekly Total Interest</div>
+                        <div id="chartBar"></div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-good" id="statusBadge">💰 Save Thousands</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">Biweekly payments could save you $52,000 in interest.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides estimates based on standard biweekly payment schedules. Some lenders may charge fees for biweekly payment plans. Always check with your lender before switching payment schedules.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>What Is a Biweekly Mortgage Payment?</h2>
+        <p>A biweekly mortgage payment plan involves making half of your monthly mortgage payment every two weeks. Since there are 52 weeks in a year, this results in 26 half-payments, which equals 13 full monthly payments per year—one extra payment annually. This simple adjustment can dramatically reduce your mortgage term and save you thousands in interest.</p>
+        <p>For example, on a $300,000 mortgage at 6.5% APR for 30 years, switching to biweekly payments could save you over $52,000 in interest and help you pay off your mortgage 4.5 years earlier. That's money you can use for retirement, college savings, or other financial goals.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> Making one extra mortgage payment per year (via biweekly payments) can shorten a 30-year mortgage by nearly 5 years and save over $50,000 in interest on a $300,000 loan at 6.5% APR.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator compares two scenarios: standard monthly payments vs. biweekly payments. Here's the calculation process:</p>
+        <ol>
+            <li><strong>Monthly payment:</strong> Calculated using the standard mortgage payment formula: PMT = P × [r(1+r)^n] / [(1+r)^n - 1]</li>
+            <li><strong>Biweekly payment:</strong> Half of the monthly payment, paid every two weeks (26 payments/year = 13 monthly payments/year)</li>
+            <li><strong>Amortization simulation:</strong> Both scenarios are simulated month by month to calculate total interest and payoff time</li>
+            <li><strong>Comparison:</strong> The calculator shows the difference in total interest, payoff time, and total cost</li>
+        </ol>
+
+        <h2>Biweekly vs. Monthly: The Numbers</h2>
+        <p>Here's how biweekly payments compare to monthly payments across different loan scenarios:</p>
+        <table>
+            <thead>
+                <tr><th>Loan Amount</th><th>Rate</th><th>Monthly Payment</th><th>Biweekly Payment</th><th>Interest Saved</th><th>Years Saved</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>$200,000</td><td>6.5%</td><td>$1,264</td><td>$632</td><td>$34,000</td><td>4.2</td></tr>
+                <tr><td>$300,000</td><td>6.5%</td><td>$1,896</td><td>$948</td><td>$52,000</td><td>4.5</td></tr>
+                <tr><td>$400,000</td><td>6.5%</td><td>$2,529</td><td>$1,264</td><td>$70,000</td><td>4.7</td></tr>
+                <tr><td>$300,000</td><td>5.0%</td><td>$1,610</td><td>$805</td><td>$38,000</td><td>3.8</td></tr>
+                <tr><td>$300,000</td><td>7.5%</td><td>$2,098</td><td>$1,049</td><td>$65,000</td><td>5.1</td></tr>
+            </tbody>
+        </table>
+
+        <h2>How Biweekly Payments Save You Money</h2>
+        <p>Biweekly payments work through two mechanisms:</p>
+        <ul>
+            <li><strong>Extra payment per year:</strong> By making 26 half-payments, you make 13 full payments per year instead of 12. This one extra payment goes directly toward the principal, reducing the balance faster.</li>
+            <li><strong>Reduced interest accrual:</strong> Since you're paying more frequently, interest has less time to accrue between payments. This slightly reduces the interest portion of each payment.</li>
+        </ul>
+        <p>The result is a snowball effect: lower principal means less interest, which means more of your payment goes to principal, which further accelerates the payoff. Over 25-30 years, this adds up to significant savings.</p>
+
+        <h2>Biweekly Payment Schedules</h2>
+        <p>There are two main ways to implement biweekly payments:</p>
+        <div class="two-col">
+            <div>
+                <h3>Lender-Administered Plans</h3>
+                <ul>
+                    <li>Some lenders offer official biweekly payment programs</li>
+                    <li>They automatically withdraw half-payments every two weeks</li>
+                    <li>May have setup fees ($200-$500) and monthly fees ($5-$10)</li>
+                    <li>Convenient but can be expensive</li>
+                </ul>
+            </div>
+            <div>
+                <h3>DIY Biweekly Payments</h3>
+                <ul>
+                    <li>Make one extra payment per year on your own</li>
+                    <li>No fees, more flexible</li>
+                    <li>Split your monthly payment in half and send every two weeks</li>
+                    <li>Confirm with your lender that extra payments go to principal</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Pros and Cons of Biweekly Payments</h2>
+        <div class="two-col">
+            <div>
+                <h3>Pros</h3>
+                <ul>
+                    <li>💰 Save tens of thousands in interest</li>
+                    <li>⏱️ Pay off your mortgage years earlier</li>
+                    <li>📈 Build home equity faster</li>
+                    <li>💵 Extra payment is relatively painless</li>
+                    <li>🔄 Aligns with many people's pay schedules</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Cons</h3>
+                <ul>
+                    <li>🏦 Some lenders charge fees for biweekly plans</li>
+                    <li>💳 Requires cash flow discipline</li>
+                    <li>📅 May not work with irregular income</li>
+                    <li>🔒 Extra payment could be used elsewhere</li>
+                    <li>💰 May not be worth it if you have high-interest debt</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Is Biweekly Right for You?</h2>
+        <p>Biweekly mortgage payments are a great strategy if:</p>
+        <ul>
+            <li>You have stable income and can handle the biweekly payment schedule</li>
+            <li>You don't have high-interest debt (credit cards, personal loans) that should be prioritized</li>
+            <li>You want to build equity faster and pay less interest over time</li>
+            <li>You plan to stay in your home for at least 5-7 years to realize the savings</li>
+        </ul>
+        <p>Biweekly payments may not be the best choice if:</p>
+        <ul>
+            <li>You have variable income or irregular cash flow</li>
+            <li>Your lender charges high fees for biweekly programs</li>
+            <li>You have higher-interest debt that should be paid first</li>
+            <li>You're planning to move soon (the savings may not outweigh the fees)</li>
+        </ul>
+
+        <h2>Common Biweekly Payment Mistakes</h2>
+        <ul>
+            <li><strong>Assuming lender does it automatically:</strong> You need to set up biweekly payments with your lender or DIY.</li>
+            <li><strong>Not specifying extra goes to principal:</strong> Ensure your extra payment is applied to the principal, not future payments.</li>
+            <li><strong>Paying fees unnecessarily:</strong> Avoid expensive lender programs; DIY is usually free.</li>
+            <li><strong>Not checking for prepayment penalties:</strong> Some mortgages have prepayment penalties. Check your loan documents.</li>
+            <li><strong>Neglecting other financial priorities:</strong> Pay off high-interest debt before making extra mortgage payments.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">How does a biweekly mortgage payment work?</div>
+            <div class="faq-a">Instead of making one monthly payment, you make half of your monthly payment every two weeks. Since there are 52 weeks in a year, you make 26 half-payments, which equals 13 full payments per year—one extra payment annually. This extra payment goes directly to the principal, reducing interest and shortening your loan term.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How much can I save with biweekly payments?</div>
+            <div class="faq-a">On a $300,000 mortgage at 6.5% APR for 30 years, biweekly payments could save you over $52,000 in interest and help you pay off your mortgage 4.5 years earlier. The savings are even larger on larger loans or higher interest rates.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Are there fees for biweekly mortgage payments?</div>
+            <div class="faq-a">Some lenders charge fees to set up biweekly payment plans, ranging from $200-$500 upfront plus monthly fees of $5-$10. However, you can achieve the same result for free by making an extra payment each year or manually splitting your payments.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Is a biweekly payment the same as making one extra payment per year?</div>
+            <div class="faq-a">Yes, the biweekly schedule results in exactly one extra full payment per year. You can achieve the same benefit by simply making one extra payment annually. However, biweekly payments also reduce interest slightly by being paid more frequently, which can add a small additional benefit.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Should I pay biweekly or invest the extra money?</div>
+            <div class="faq-a">This depends on your interest rate and risk tolerance. If your mortgage rate is 6.5%+, paying extra on your mortgage is a guaranteed return of 6.5% (risk-free). If you can earn higher returns in the stock market (historically 7-10%), investing might be better. However, paying down your mortgage provides guaranteed savings and reduces risk.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I switch back to monthly payments after starting biweekly?</div>
+            <div class="faq-a">Yes, most lenders allow you to switch payment schedules. If you're using a lender-administered plan, you may need to cancel the program. If you're making extra payments manually, you can simply stop making extra payments. Always check with your lender for their specific policies.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Mortgage Payment Calculator</a></li>
+            <li><a href="#">Mortgage Refinance Calculator</a></li>
+            <li><a href="#">Extra Payment Mortgage Calculator</a></li>
+            <li><a href="#">Loan Payment Calculator</a></li>
+            <li><a href="#">Amortization Calculator</a></li>
+            <li><a href="#">Home Affordability Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const loanAmount = $('loanAmount');
+        const interestRate = $('interestRate');
+        const loanTerm = $('loanTerm');
+
+        const biweeklyPayment = $('biweeklyPayment');
+        const paymentSub = $('paymentSub');
+        const interestSaved = $('interestSaved');
+        const yearsSaved = $('yearsSaved');
+        const monthlyPaymentDisplay = $('monthlyPaymentDisplay');
+        const biweeklyInterest = $('biweeklyInterest');
+
+        const cmpMonthlyPayment = $('cmpMonthlyPayment');
+        const cmpBiweeklyPayment = $('cmpBiweeklyPayment');
+        const cmpPaymentSavings = $('cmpPaymentSavings');
+        const cmpMonthlyInterest = $('cmpMonthlyInterest');
+        const cmpBiweeklyInterest = $('cmpBiweeklyInterest');
+        const cmpInterestSavings = $('cmpInterestSavings');
+        const cmpMonthlyTotal = $('cmpMonthlyTotal');
+        const cmpBiweeklyTotal = $('cmpBiweeklyTotal');
+        const cmpTotalSavings = $('cmpTotalSavings');
+        const cmpMonthlyTime = $('cmpMonthlyTime');
+        const cmpBiweeklyTime = $('cmpBiweeklyTime');
+        const cmpTimeSavings = $('cmpTimeSavings');
+
+        const chartBar = $('chartBar');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- mortgage calculation -----
+        function calculateMonthlyPayment(principal, annualRate, years) {
+            const monthlyRate = annualRate / 100 / 12;
+            const numPayments = years * 12;
+            if (monthlyRate === 0) return principal / numPayments;
+            return principal * (monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+        }
+
+        function simulateMortgage(principal, annualRate, years, isBiweekly) {
+            const monthlyRate = annualRate / 100 / 12;
+            let numPayments = years * 12;
+            let payment;
+
+            if (isBiweekly) {
+                const monthlyPayment = calculateMonthlyPayment(principal, annualRate, years);
+                const biweeklyPay = monthlyPayment / 2;
+                payment = biweeklyPay;
+                // Biweekly: 26 payments/year = 13 monthly payments/year
+                // Simulate monthly for simplicity (13/12 = 1.0833 extra payments per year)
+                // We'll simulate monthly with 13/12 extra payment factor
+                const adjustedMonthlyPayment = monthlyPayment * (13 / 12);
+                payment = adjustedMonthlyPayment;
+                // But we need actual biweekly payment for display
+                // Use biweeklyPay for display, but simulation uses adjusted
+                // We'll simulate with the adjusted monthly payment
+                // Actually, let's simulate month by month with biweekly timing
+                // Simpler: use monthly simulation with extra principal payments equivalent to 1 extra payment/year
+                const extraPerMonth = monthlyPayment / 12; // amount extra each month (equivalent to 1 extra payment/year)
+                return simulateWithExtra(principal, monthlyRate, numPayments, monthlyPayment, extraPerMonth);
+            } else {
+                payment = calculateMonthlyPayment(principal, annualRate, years);
+                return simulateWithExtra(principal, monthlyRate, numPayments, payment, 0);
+            }
+        }
+
+        function simulateWithExtra(principal, monthlyRate, numPayments, basePayment, extraPerMonth) {
+            let balance = principal;
+            let totalInterest = 0;
+            let totalPaid = 0;
+            let paymentsMade = 0;
+            const maxMonths = numPayments * 2;
+
+            for (let i = 0; i < maxMonths && balance > 0.01; i++) {
+                const interest = balance * monthlyRate;
+                let payment = basePayment + extraPerMonth;
+                if (payment > balance + interest) {
+                    payment = balance + interest;
+                }
+                const principalPaid = payment - interest;
+                balance -= principalPaid;
+                totalInterest += interest;
+                totalPaid += payment;
+                paymentsMade++;
+                if (balance < 0.01) break;
+            }
+
+            const years = paymentsMade / 12;
+            const totalPaidAll = principal + totalInterest;
+
+            return {
+                payments: paymentsMade,
+                totalInterest: totalInterest,
+                totalPaid: totalPaid,
+                years: years,
+                balance: Math.max(0, balance),
+                monthlyPayment: basePayment,
+                extraPerMonth: extraPerMonth
+            };
+        }
+
+        // ----- main calculation -----
+        function calculate() {
+            const principal = getVal(loanAmount);
+            const rate = getVal(interestRate);
+            const term = parseInt(loanTerm.value) || 30;
+
+            if (principal === 0) {
+                // Show empty state
+                return;
+            }
+
+            // Monthly simulation
+            const monthlyResult = simulateMortgage(principal, rate, term, false);
+            const monthlyPayment = monthlyResult.monthlyPayment || calculateMonthlyPayment(principal, rate, term);
+
+            // Biweekly simulation
+            const biweeklyResult = simulateMortgage(principal, rate, term, true);
+
+            // Biweekly payment is half of monthly
+            const biweeklyPay = monthlyPayment / 2;
+
+            // Results
+            const interestSaved = monthlyResult.totalInterest - biweeklyResult.totalInterest;
+            const yearsSaved = monthlyResult.years - biweeklyResult.years;
+
+            // Update display
+            biweeklyPayment.textContent = fmt(biweeklyPay);
+            paymentSub.textContent = `(vs. monthly payment of ${fmt(monthlyPayment)})`;
+
+            interestSaved.textContent = fmt(interestSaved);
+            interestSaved.className = 'bk-v positive';
+
+            yearsSaved.textContent = yearsSaved.toFixed(1);
+            yearsSaved.className = 'bk-v positive';
+
+            monthlyPaymentDisplay.textContent = fmt(monthlyPayment);
+            monthlyPaymentDisplay.className = 'bk-v negative';
+
+            biweeklyInterest.textContent = fmt(biweeklyResult.totalInterest);
+            biweeklyInterest.className = 'bk-v negative';
+
+            // Comparison table
+            cmpMonthlyPayment.textContent = fmt(monthlyPayment);
+            cmpBiweeklyPayment.textContent = fmt(biweeklyPay);
+            cmpPaymentSavings.textContent = fmt(monthlyPayment - biweeklyPay);
+
+            cmpMonthlyInterest.textContent = fmt(monthlyResult.totalInterest);
+            cmpBiweeklyInterest.textContent = fmt(biweeklyResult.totalInterest);
+            cmpInterestSavings.textContent = fmt(interestSaved);
+
+            cmpMonthlyTotal.textContent = fmt(monthlyResult.totalPaid);
+            cmpBiweeklyTotal.textContent = fmt(biweeklyResult.totalPaid);
+            cmpTotalSavings.textContent = fmt(monthlyResult.totalPaid - biweeklyResult.totalPaid);
+
+            const monthlyYears = monthlyResult.years;
+            const biweeklyYears = biweeklyResult.years;
+            cmpMonthlyTime.textContent = Math.round(monthlyYears) + ' years';
+            cmpBiweeklyTime.textContent = Math.round(biweeklyYears) + ' years';
+            cmpTimeSavings.textContent = (monthlyYears - biweeklyYears).toFixed(1) + ' years';
+
+            // Chart
+            const monthlyInterest = monthlyResult.totalInterest;
+            const biweeklyInterestVal = biweeklyResult.totalInterest;
+            const maxVal = Math.max(monthlyInterest, biweeklyInterestVal, 1);
+
+            chartBar.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Monthly Payment Interest</span><span class="negative">${fmt(monthlyInterest)}</span></div>
+                    <div class="bar-track"><div class="bar-fill monthly" style="width:${(monthlyInterest / maxVal * 100)}%;"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Biweekly Interest</span><span class="positive">${fmt(biweeklyInterestVal)}</span></div>
+                    <div class="bar-track"><div class="bar-fill biweekly" style="width:${(biweeklyInterestVal / maxVal * 100)}%;"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Biweekly saves ${fmt(interestSaved)} in interest (${(interestSaved / monthlyInterest * 100).toFixed(1)}% less).</div>
+            `;
+
+            // Status
+            if (interestSaved > 50000) {
+                statusBadge.textContent = '💰 Significant Savings!';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `Biweekly payments could save you ${fmt(interestSaved)} in interest.`;
+            } else if (interestSaved > 20000) {
+                statusBadge.textContent = '📊 Great Savings';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `Biweekly payments could save you ${fmt(interestSaved)} in interest.`;
+            } else if (interestSaved > 5000) {
+                statusBadge.textContent = '✅ Modest Savings';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = `Biweekly payments could save you ${fmt(interestSaved)} in interest.`;
+            } else {
+                statusBadge.textContent = 'ℹ️ Limited Savings';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = 'Biweekly payments may not be worth it for this loan.';
+            }
+        }
+
+        // ----- presets -----
+        function applyPreset(key) {
+            switch (key) {
+                case '30yr':
+                    loanAmount.value = '300000';
+                    interestRate.value = '6.5';
+                    loanTerm.value = '30';
+                    break;
+                case '15yr':
+                    loanAmount.value = '300000';
+                    interestRate.value = '5.5';
+                    loanTerm.value = '15';
+                    break;
+                case 'jumbo':
+                    loanAmount.value = '500000';
+                    interestRate.value = '6.75';
+                    loanTerm.value = '30';
+                    break;
+                case 'fha':
+                    loanAmount.value = '250000';
+                    interestRate.value = '7.0';
+                    loanTerm.value = '30';
+                    break;
+                default:
+                    return;
+            }
+            calculate();
+        }
+        window.applyPreset = applyPreset;
+
+        // ----- reset -----
+        function resetCalc() {
+            loanAmount.value = '300000';
+            interestRate.value = '6.5';
+            loanTerm.value = '30';
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [loanAmount, interestRate, loanTerm];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Calculate monthly payments for a VA loan with no down payment requirement. Includes VA funding fee and PMI-free benefit." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/va-mortgage-calculator"/>
+<title>VA Mortgage Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "VA Mortgage Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/va-mortgage-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mortgage Calculators",
+      "item": "https://usafincalc.com/mortgage-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "VA Mortgage Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/va-mortgage-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "VA Mortgage Calculator — Coming Soon | USAFinCalc",
+  "description": "VA Mortgage Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/va-mortgage-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>VA <span>Mortgage</span> Calculator</h1>
+  <p class="sub">Calculate monthly payments for a VA loan with no down payment requirement. Includes VA funding fee and PMI-free benefit. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li><li><a href="/fha-loan-calculator">FHA Loan Calculator</a></li><li><a href="/home-affordability-calculator-usa">Home Affordability</a></li><li><a href="/refinance-calculator">Refinance Calculator</a></li><li><a href="/closing-costs-calculator">Closing Costs Calculator</a></li><li><a href="/property-tax-calculator">Property Tax Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="va-mortgage-guide">
+<h2>What This VA Loan Calculator Does</h2>
+<p>VA home loans are one of the most powerful financial benefits available to eligible US military veterans, active duty service members, and surviving spouses. This calculator estimates your monthly VA loan payment, total loan cost including the VA funding fee, and compares your payment against a conventional loan to illustrate the VA loan's financial advantage — particularly the elimination of private mortgage insurance (PMI) and the no-down-payment option.</p>
+<h2>How It Works</h2>
+<p>VA loan monthly payments use the same amortization formula as conventional mortgages:</p>
+<p><strong>Monthly Payment = P × [r(1+r)ⁿ] / [(1+r)ⁿ − 1]</strong></p>
+<p>Where P is the loan principal (purchase price minus any down payment), r is monthly interest rate (annual rate ÷ 12), and n is number of monthly payments. The key VA-specific element is the funding fee, which is either paid upfront (commonly) or rolled into the loan balance, affecting the effective loan amount and therefore the payment.</p>
+<h2>Key Concepts Explained</h2>
+<h3>VA Funding Fee</h3>
+<p>The VA funding fee is a one-time charge that helps sustain the VA loan program. For first-time use with no down payment, the fee is 2.15% of the loan amount for regular military and 2.15% for Reserves/National Guard. For subsequent use, the fee increases to 3.3%. The fee is reduced to 1.25–1.65% if you put down 5% or 10%+. Certain veterans with service-connected disabilities are exempt from the funding fee entirely.</p>
+<h3>No Down Payment Requirement</h3>
+<p>VA loans allow eligible borrowers to purchase a home with zero down payment — one of the most valuable features. For a $400,000 home, avoiding a 20% conventional down payment ($80,000) provides immediate liquidity. The trade-off is a higher funding fee for $0 down vs. down payment options. However, even with the funding fee, VA loans almost always outperform conventional loans for eligible veterans.</p>
+<h3>No PMI Requirement</h3>
+<p>Conventional loans with less than 20% down require private mortgage insurance (PMI), typically costing 0.5–1.5% of the loan annually. On a $350,000 loan, PMI might cost $145–$437 per month. VA loans never require PMI regardless of down payment, creating significant monthly savings that persist until PMI would otherwise be eliminated (at 78–80% LTV on conventional loans).</p>
+<h3>VA Loan Limits</h3>
+<p>As of 2020, there are no VA loan limits for veterans with full entitlement (meaning no existing VA loan or fully paid off previous VA loan). Veterans with partial entitlement (active VA loan on another property) have loan limits in higher-cost counties. In most areas, the VA guarantees loans up to $766,550 (2024 conforming limit); loans above this amount are "VA jumbo loans" and may require some down payment.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Obtain your Certificate of Eligibility (COE) first</strong> — your COE confirms VA loan eligibility to lenders. Get it from VA.gov, through a VA-approved lender, or via the VA eBenefits portal. Most lenders can pull it directly through the VA system.</li>
+<li><strong>Shop multiple VA-approved lenders</strong> — VA loan rates vary significantly by lender despite using the same VA guarantee. Get quotes from at least 3–4 lenders, including VA-specialized lenders, credit unions serving military members (Navy Federal, USAA), and major banks.</li>
+<li><strong>Understand the funding fee exemption</strong> — if you have a service-connected disability rated at 10% or higher by the VA, you are exempt from the funding fee. This saves thousands of dollars. Confirm your rating status before closing.</li>
+<li><strong>Consider a small down payment to reduce the funding fee</strong> — putting 5% down reduces the first-use funding fee from 2.15% to 1.50% on a $400,000 home, saving $2,600 in upfront fees while keeping significant capital available.</li>
+<li><strong>VA loans are assumable</strong> — when you sell your home, a qualified buyer (veteran or civilian, subject to lender approval) can assume your VA loan at your original rate. In a rising-rate environment, this is a significant selling advantage.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">Who is eligible for a VA loan?</h3><p class="faq-a">VA loan eligibility requires military service meeting minimum active duty requirements: 90 consecutive days during wartime, 181 days during peacetime, 6 years in the National Guard or Reserves, or 90 days of active duty under Title 32 orders. Surviving spouses of veterans who died in service or from service-connected disability may also be eligible. There is no income limit to qualify, though lenders impose their own income and credit standards.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can I use my VA loan benefit more than once?</h3><p class="faq-a">Yes. VA loan entitlement can be restored after you sell a home and pay off your VA loan. You can also have multiple VA loans simultaneously if you have sufficient remaining entitlement. Veterans who have paid off prior VA loans can apply for "restoration of entitlement" to get full entitlement back. Subsequent use of the VA benefit carries a higher funding fee (3.3% vs. 2.15% for first use at $0 down).</p></div>
+<div class="faq-item"><h3 class="faq-q">Is the VA loan better than a conventional loan?</h3><p class="faq-a">For eligible veterans, VA loans are almost always more advantageous: no down payment required, no PMI, competitive interest rates (often 0.25–0.50% below conventional rates), limited closing costs, and no prepayment penalties. The main trade-off is the funding fee (waived for disabled veterans). For veterans comparing VA to FHA: VA loans typically offer lower rates, no mortgage insurance, and more favorable terms than FHA in most scenarios.</p></div>
+<div class="faq-item"><h3 class="faq-q">What is the VA IRRRL (Interest Rate Reduction Refinance Loan)?</h3><p class="faq-a">The IRRRL (often called the "VA streamline refinance") allows existing VA loan holders to refinance to a lower rate with minimal documentation and no appraisal requirement. You cannot receive cash out with an IRRRL (use a VA cash-out refinance for that). The funding fee for an IRRRL is only 0.5%, making it very cost-effective. You must be current on your existing VA loan to qualify.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Compare your VA loan payment against a conventional or FHA loan with the <a href="/mortgage-calculator-usa">Mortgage Calculator</a>. The <a href="/home-affordability-calculator-usa">Home Affordability Calculator</a> determines how much home you can qualify for with your income and the VA's DTI guidelines. The <a href="/refinance-calculator">Refinance Calculator</a> models whether an IRRRL or VA cash-out refinance makes financial sense given your current rate and remaining loan balance.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

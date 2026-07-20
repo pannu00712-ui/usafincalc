@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Roth IRA calculator 2026, Roth IRA growth calculator, retirement savings calculator, IRA contribution limit" name="keywords"/>
+<title>Roth IRA Calculator 2026 — Growth, Contribution &amp; Retirement Estimator</title>
+<meta content="Calculate your Roth IRA growth with 2026 contribution limits, tax-free projections, and retirement income estimate. All ages and filing statuses." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--teal:#2dd4bf;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(34,211,165,0.1);color:var(--green);border:1px solid rgba(34,211,165,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;margin-left:auto}
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:700px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+.fc-qa{max-width:980px;margin:0 auto 24px;padding:0 24px}
+.fc-qa-inner{background:rgba(34,211,165,0.06);border:1px solid rgba(34,211,165,0.2);border-radius:10px;padding:14px 18px;font-size:14px;color:var(--text2)}
+.fc-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:980px;margin:0 auto 40px;padding:0 24px}
+@media(max-width:680px){.fc-calc-wrap{grid-template-columns:1fr}}
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--green));display:block;box-shadow:0 0 8px var(--dot-color,var(--green))}
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace}
+.fc-sfx{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 26px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--green)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-input.with-sfx{padding-right:36px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s}
+.fc-select:focus{border-color:var(--green)}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#22d3a5,#0d9488);color:#050810;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;font-family:'Space Grotesk',sans-serif}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,211,165,0.35)}
+.fc-result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:48px 24px;gap:12px;color:var(--text3);font-size:14px;min-height:200px}
+.fc-result-placeholder-icon{font-size:40px;opacity:.5}
+.fc-result-hero{background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.25);border-radius:10px;padding:20px;text-align:center;margin-bottom:16px}
+.fc-result-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.fc-result-amount{font-size:36px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--green);line-height:1.1}
+.fc-result-sub{font-size:13px;color:var(--text2);margin-top:8px}
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(30,45,69,0.5);font-size:14px}
+.fc-detail-row:last-child{border:none}
+.fc-detail-key{color:var(--text2)}.fc-detail-val{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--text)}
+.fc-detail-val.green{color:var(--green)}.fc-detail-val.blue{color:var(--blue)}.fc-detail-val.orange{color:var(--orange)}.fc-detail-val.red{color:var(--red)}
+.fc-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px}
+.fc-mini-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.fc-mini-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.fc-mini-val{font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace}
+/* Growth chart */
+.fc-chart-wrap{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:14px}
+.fc-chart-title{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}
+.fc-bar-row{display:flex;align-items:center;gap:8px;margin-bottom:7px;font-size:12px}
+.fc-bar-year{color:var(--text3);width:40px;text-align:right;font-family:'JetBrains Mono',monospace}
+.fc-bar-track{flex:1;background:var(--border);border-radius:3px;height:8px;overflow:hidden}
+.fc-bar-fill{height:100%;border-radius:3px;transition:width .8s ease}
+.fc-bar-val{color:var(--text2);font-family:'JetBrains Mono',monospace;min-width:70px}
+/* content */
+.fc-content{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-content h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-table{width:100%;border-collapse:collapse;font-size:13px}
+.fc-table th{background:var(--panel2);color:var(--text2);text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+.fc-table td{padding:9px 12px;border-bottom:1px solid rgba(30,45,69,0.4);color:var(--text2)}
+.fc-table tr:hover td{background:var(--panel2);color:var(--text)}
+.fc-note{font-size:12px;color:var(--text3);margin-top:10px;padding:10px;background:var(--panel);border-radius:8px;border-left:3px solid var(--border)}
+.fc-faq{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-faq h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.fc-faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;background:var(--panel);transition:.2s}
+.fc-faq-q:hover{background:var(--panel2)}
+.fc-faq-arrow{transition:transform .2s;color:var(--text3)}
+.fc-faq-item.open .fc-faq-arrow{transform:rotate(180deg)}
+.fc-faq-a{display:none;padding:14px 16px;font-size:13px;color:var(--text2);background:var(--panel2);border-top:1px solid var(--border);line-height:1.7}
+.fc-faq-item.open .fc-faq-a{display:block}
+.fc-related{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-related h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.fc-rel-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:.2s;display:block}
+.fc-rel-card:hover{background:var(--panel2);border-color:var(--green);color:var(--text)}
+.fc-footer{border-top:1px solid var(--border);margin-top:40px;padding:32px 24px 20px}
+.fc-footer-inner{display:flex;gap:40px;max-width:980px;margin:0 auto 20px;flex-wrap:wrap}
+.fc-footer-brand{flex:1;min-width:200px}
+.fc-footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.fc-footer-desc{font-size:13px;color:var(--text3);line-height:1.6}
+.fc-footer-links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:flex-start;padding-top:4px}
+.fc-footer-link{color:var(--text3);text-decoration:none;font-size:13px;transition:.2s}
+.fc-footer-link:hover{color:var(--text)}
+.fc-footer-bottom{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);flex-wrap:wrap;gap:8px}
+@keyframes fcFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fc-animate{animation:fcFadeUp .4s ease both}
+/* limit warning */
+.fc-limit-warn{background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.3);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--orange);margin-top:10px;display:none}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="Roth IRA Calculator 2026 — Growth, Contribution &amp; Retirement Estimator" property="og:title"/>
+<meta content="Calculate your Roth IRA growth with 2026 contribution limits, tax-free projections, and retirement income estimate. All ages and filing statuses." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/roth-ira-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Roth IRA Calculator 2026 — Growth, Contribution &amp; Retirement Estimator" name="twitter:title"/>
+<meta content="Calculate your Roth IRA growth with 2026 contribution limits, tax-free projections, and retirement income estimate. All ages and filing statuses." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/><link href="https://usafincalc.com/roth-ira-calculator" rel="canonical"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Roth IRA Calculator 2026 — Growth, Contribution &amp; Retirement Estimator",
+  "url": "https://usafincalc.com/roth-ira-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Retirement",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Roth IRA Calculator 2026",
+      "item": "https://usafincalc.com/roth-ira-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "Roth IRA Calculator 2026 — Growth, Contribution &amp; Retirement Estimator",
+  "url": "https://usafincalc.com/roth-ira-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Roth IRA contribution limit for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 2026 Roth IRA contribution limit is $7,500 for individuals under 50, and $8,600 for those 50 and older. These limits apply across all IRAs combined (Roth + Traditional). The ability to contribute phases out at $150,000–$165,000 MAGI for single filers. Source: IRS Notice 2025-67."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I withdraw Roth IRA contributions before 59½?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Your Roth IRA contributions (not earnings) can be withdrawn at any time, for any reason, penalty-free and tax-free. However, withdrawing earnings before age 59½ and before the account is 5 years old may trigger a 10% penalty and income taxes on those earnings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between a Roth IRA and a Roth 401(k)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Roth IRA is an individual account with income limits and a $7,500 contribution cap. A Roth 401(k) is employer-sponsored with a $24,500 limit and no income restrictions. Both offer tax-free growth and withdrawals, but Roth 401(k)s historically had Required Minimum Distributions (though SECURE 2.0 eliminated RMDs from Roth 401(k)s starting 2024)."
+      }
+    }
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero fc-animate">
+<div class="fc-page-badge" style="background:rgba(34,211,165,0.1);color:#22d3a5;border-color:rgba(34,211,165,0.25)">Updated for IRS 2026 Limits</div>
+<h1>Roth IRA Calculator <span style="color:#22d3a5">2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Enter your age, current balance, and annual contribution. The calculator shows projected Roth IRA growth using 2026 contribution limits and income phase-out rules.</p>
+</div>
+<div class="fc-qa">
+<div class="fc-qa-inner">
+<strong style="color:#22d3a5">Quick answer:</strong> If you're 30 years old and contribute $7,500/year to a Roth IRA earning 7% annually, you'll have roughly <strong>$1.04 million</strong> tax-free by age 65 — from just $262,500 in contributions.
+  </div>
+</div>
+<div class="fc-calc-wrap">
+<div class="fc-panel fc-animate">
+<div class="fc-panel-title" style="--dot-color:#22d3a5">Your Roth IRA Details</div>
+<label for="currentAge" class="fc-label">Current Age</label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx" id="currentAge" max="80" min="18" placeholder="30" type="number" value="30"/>
+</div>
+<label for="retireAge" class="fc-label">Retirement Age</label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx" id="retireAge" max="90" min="50" placeholder="65" type="number" value="65"/>
+</div>
+<label for="contribution" class="fc-label">Annual Contribution</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="contribution" placeholder="7000" type="number" value="7000"/>
+</div>
+<div class="fc-limit-warn" id="limitWarn"></div>
+<label for="currentBalance" class="fc-label">Current Roth IRA Balance</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="currentBalance" placeholder="0" type="number" value="0"/>
+</div>
+<label for="returnRate" class="fc-label">Expected Annual Return (%)</label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx with-sfx" id="returnRate" placeholder="7" step="0.1" type="number" value="7"/>
+<span class="fc-sfx">%</span>
+</div>
+<label for="filingStatus" class="fc-label">Filing Status (for income limits)</label>
+<select class="fc-select" id="filingStatus">
+<option value="single">Single / MFS</option>
+<option value="married">Married Filing Jointly</option>
+<option value="hoh">Head of Household</option>
+</select>
+<label for="magi" class="fc-label">Annual Income (MAGI)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="magi" oninput="checkLimits()" placeholder="80000" type="number"/>
+</div>
+<button class="fc-btn" onclick="calcRoth()">Calculate Roth IRA Growth →</button>
+</div>
+<div id="rothResult">
+<div class="fc-result-placeholder">
+<div class="fc-result-placeholder-icon">📈</div>
+<div>Enter your details to see tax-free growth projection.</div>
+</div>
+</div>
+</div>
+<div class="fc-content">
+<h2>2026 Roth IRA Contribution Limits &amp; Income Phase-Outs</h2>
+<table class="fc-table">
+<thead><tr><th scope="col">Category</th><th scope="col">Limit / Range</th></tr></thead>
+<tbody>
+<tr><td>Under age 50 — Max Contribution</td><td style="color:#22d3a5;font-family:'JetBrains Mono',monospace">$7,500</td></tr>
+<tr><td>Age 50+ — Catch-Up Contribution</td><td style="color:#22d3a5;font-family:'JetBrains Mono',monospace">$8,600</td></tr>
+<tr><td>Single / HoH — Phase-out begins</td><td>$150,000</td></tr>
+<tr><td>Single / HoH — Phase-out ends (no contribution)</td><td>$165,000</td></tr>
+<tr><td>Married Filing Jointly — Phase-out begins</td><td>$242,000</td></tr>
+<tr><td>Married Filing Jointly — Phase-out ends</td><td>$252,000</td></tr>
+<tr><td>Married Filing Separately — Phase-out begins</td><td>$0</td></tr>
+<tr><td>Married Filing Separately — Phase-out ends</td><td>$10,000</td></tr>
+</tbody>
+</table>
+<div class="fc-note">Source: IRS Notice 2025-67. Limits apply to total IRA contributions across all accounts (Roth + Traditional combined).</div>
+</div>
+<div class="fc-faq">
+<h2>Frequently Asked Questions</h2>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What makes a Roth IRA different from a Traditional IRA? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">With a <strong>Roth IRA</strong>, you contribute after-tax dollars — meaning no tax deduction now, but all qualified withdrawals in retirement are completely <strong>tax-free</strong>, including growth. A Traditional IRA gives you a tax deduction today but you pay taxes on withdrawals. Roth wins if you expect higher taxes in retirement; Traditional wins if you expect lower taxes later.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What is the income limit for Roth IRA in 2026? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">For 2026: Single filers can contribute the full amount if MAGI is under <strong>$150,000</strong>, phasing out at $165,000. Married filing jointly: full contribution under <strong>$242,000</strong>, phasing out at $252,000. Above these limits you must use a <strong>Backdoor Roth IRA</strong> strategy.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Can I withdraw from my Roth IRA early? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">Contributions (not earnings) can be withdrawn anytime, tax-free and penalty-free. Earnings before age 59½ are subject to a 10% penalty plus taxes, unless an exception applies. Qualified distributions require the account to be at least 5 years old and the account holder to be 59½ or older.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Does Roth IRA have Required Minimum Distributions (RMDs)? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">No! Unlike Traditional IRAs and 401(k)s, <strong>Roth IRAs have no RMDs</strong> during the owner's lifetime. This makes them excellent for estate planning — you can let the money grow untouched as long as you live and pass it to heirs.</div>
+</div>
+</div>
+<div class="fc-related">
+<h2>Related Calculators</h2>
+<div class="fc-rel-grid">
+<a class="fc-rel-card" href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a class="fc-rel-card" href="/salary-calculator-usa">💵 Salary + State Tax</a>
+<a class="fc-rel-card" href="/capital-gains-tax-calculator">📊 Capital Gains Tax</a>
+<a class="fc-rel-card" href="/self-employment-tax-calculator">🧑‍💼 Self-Employment Tax</a>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/529-plan-vs-roth-ira-for-college">529 Plan vs Roth IRA for College 2026: Which Is Better?</a></li>
+<li><a href="/roth-vs-traditional-ira">Roth vs Traditional IRA in 2026: Which One Wins?</a></li>
+<li><a href="/401k-vs-roth-401k">401(k) vs Roth 401(k): Which to Choose in 2026?</a></li>
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="roth-ira-guide">
+<h2>What This Roth IRA Calculator Does</h2>
+<p>This calculator projects the future value of your Roth IRA contributions based on your annual contribution amount, expected return, and years until retirement. It also shows how much your balance would be worth in today's dollars (inflation-adjusted) and illustrates the tax-free nature of Roth growth by comparing it against a taxable account accumulating the same contributions.</p>
+<h2>Understanding Your Results</h2>
+<h3>Future Value</h3>
+<p>Your projected Roth IRA balance at retirement, assuming consistent contributions and your specified rate of return. Because Roth withdrawals in retirement are tax-free, this number represents spendable income — unlike a traditional IRA or 401(k), where you'll owe income tax on each withdrawal.</p>
+<h3>Tax-Free Income in Retirement</h3>
+<p>The calculator shows how much annual income your Roth balance can support using a 4% withdrawal rate. If your Roth IRA is projected to reach $400,000, that supports $16,000/year in completely tax-free income — not taxable income that may also affect your Medicare premiums or Social Security taxation.</p>
+<h2>Roth IRA vs. Traditional IRA</h2>
+<p>The fundamental tradeoff: with a Roth IRA, you contribute after-tax dollars and withdrawals in retirement are tax-free. With a traditional IRA, contributions may be tax-deductible, but withdrawals in retirement are taxed as ordinary income.</p>
+<p>Roth wins when: you expect to be in a higher tax bracket in retirement than today; you want to minimize taxable income in retirement for reasons beyond just income tax (Social Security taxation, Medicare premium calculations, estate planning); or you value the flexibility of no required minimum distributions.</p>
+<p>Traditional wins when: you're in a high bracket now and expect a meaningfully lower bracket in retirement; you want the tax deduction today to fund more investing; or your employer offers a 401(k) but no Roth option and you're deciding between pre-tax and after-tax contributions.</p>
+<h2>2024–2025 Roth IRA Rules</h2>
+<table>
+<thead><tr><th scope="col">Rule</th><th scope="col">Detail</th></tr></thead>
+<tbody>
+<tr><td>Contribution limit</td><td>$7,500/year ($8,600 if age 50+)</td></tr>
+<tr><td>Income limit (single)</td><td>Phase-out begins at $146,000; eliminated at $161,000</td></tr>
+<tr><td>Income limit (married)</td><td>Phase-out begins at $230,000; eliminated at $240,000</td></tr>
+<tr><td>Contribution deadline</td><td>April 15 of following tax year</td></tr>
+<tr><td>Required minimum distributions</td><td>None for Roth IRA during owner's lifetime</td></tr>
+<tr><td>Early withdrawal of contributions</td><td>Tax and penalty-free any time (earnings subject to rules)</td></tr>
+</tbody>
+</table>
+<h2>Real-World Examples</h2>
+<h3>Starting at 25 vs. 35</h3>
+<p>Contributing $7,500/year starting at 25 through age 65 (40 years, $300,000 total): at 7% annual return, ending balance approximately $1.50 million — all tax-free. Starting at 35 through 65 (30 years, $225,000 total): approximately $708,000. The 10-year difference roughly doubles the outcome despite only $75,000 more in contributions.</p>
+<h3>Backdoor Roth IRA (High Earners)</h3>
+<p>If your income exceeds the Roth contribution limit, a "backdoor Roth" involves making a non-deductible traditional IRA contribution and immediately converting it to Roth. This preserves Roth access for high earners but requires careful handling of the "pro-rata rule" if you have other traditional IRA balances.</p>
+<h2>Common Mistakes</h2>
+<h3>Over-contributing</h3>
+<p>Contributing more than the annual limit results in a 6% excise tax on the excess each year the excess remains. If you discover an over-contribution, you have until your tax filing deadline (including extensions) to withdraw the excess without penalty.</p>
+<h3>Missing the deadline</h3>
+<p>Roth IRA contributions for a given tax year can be made until April 15 of the following year — meaning you can contribute to your 2024 Roth IRA as late as April 15, 2025. Many people miss this window without realizing they had extra time.</p>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Contribute early in the tax year</strong> — making your contribution in January rather than April gives the money an extra 15 months of compound growth.</li>
+<li><strong>Prioritize Roth in lower-income years</strong> — early career, part-time years, or years with unusual deductions make Roth especially attractive since your marginal rate is lower.</li>
+<li><strong>Consider Roth conversions in down market years</strong> — converting traditional IRA funds to Roth when account values are depressed means you pay tax on a smaller amount, and all subsequent recovery happens tax-free.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — compare pre-tax retirement account growth.</li>
+<li><strong><a href="/compound-interest-calculator">Compound Interest Calculator</a></strong> — model general compound growth.</li>
+<li><strong><a href="/retirement-withdrawal-calculator">Retirement Withdrawal Calculator</a></strong> — plan distributions from your Roth balance.</li>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — understand your current bracket for Roth vs. traditional decision.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Can I contribute to both a Roth IRA and a 401(k)?</h3>
+<p>Yes. The IRA limit ($7,500) and 401(k) limit ($24,500 for 2026) are completely separate. You can max both if income and cash flow allow. Many financial planners suggest: first get your full employer 401(k) match, then max a Roth IRA, then return to max the 401(k).</p>
+<h3>Are Roth IRA withdrawals always tax-free?</h3>
+<p>Contributions can be withdrawn at any time tax and penalty-free. Earnings are tax-free if the account has been open at least 5 years and you're 59½ or older (or meet other qualifying exceptions like first home purchase or disability).</p>
+<h3>What happens to a Roth IRA when I die?</h3>
+<p>A Roth IRA passes to your named beneficiaries. Surviving spouses can treat it as their own. Non-spouse beneficiaries must generally empty the account within 10 years, but still benefit from the tax-free growth and withdrawals the original owner established.</p>
+<h3>Is there a Roth option in a 401(k)?</h3>
+<p>Many employers now offer a Roth 401(k) option — same high contribution limits as traditional 401(k) but with after-tax contributions and tax-free withdrawals in retirement, with no income limits. If your employer offers it, it's worth evaluating alongside a Roth IRA.</p>
+<h2>Key Takeaways</h2>
+<p>The Roth IRA's combination of tax-free growth, no required minimum distributions, and flexible early access to contributions makes it one of the most powerful savings vehicles available for people eligible to contribute. The income limits exclude high earners from direct contributions, but the backdoor conversion strategy preserves access. Contributing consistently — ideally early in each tax year — and leaving the funds invested through retirement is the formula that makes Roth accounts transformative in long-run financial planning.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+// 2026 Roth IRA limits
+const LIMITS = {
+  under50: 7500,
+  over50: 8600,
+  phaseout: {
+    single: { start: 150000, end: 165000 },
+    married: { start: 242000, end: 252000 },
+    hoh: { start: 150000, end: 165000 }
+  }
+};
+
+function maxContribution(age, magi, filing) {
+  const base = age >= 50 ? LIMITS.over50 : LIMITS.under50;
+  const po = LIMITS.phaseout[filing];
+  if (magi <= po.start) return base;
+  if (magi >= po.end) return 0;
+  const ratio = 1 - (magi - po.start) / (po.end - po.start);
+  // Round to nearest $10
+  return Math.max(0, Math.round((base * ratio) / 10) * 10);
+}
+
+function checkLimits() {
+  const age = parseInt(document.getElementById('currentAge').value) || 30;
+  const magi = parseFloat(document.getElementById('magi').value) || 0;
+  const filing = document.getElementById('filingStatus').value;
+  const contrib = parseFloat(document.getElementById('contribution').value) || 0;
+  const maxC = maxContribution(age, magi, filing);
+  const warn = document.getElementById('limitWarn');
+  if (magi > 0 && contrib > maxC) {
+    warn.style.display = 'block';
+    warn.textContent = maxC === 0
+      ? `⚠️ Your income exceeds the 2026 Roth IRA limit for ${filing} filers. Consider a Backdoor Roth IRA strategy.`
+      : `⚠️ Based on your income, your 2026 contribution limit is $${maxC.toLocaleString()}. Consider backdoor Roth for full amount.`;
+  } else {
+    warn.style.display = 'none';
+  }
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtP(n) { return n.toFixed(1) + '%'; }
+
+function calcRoth() {
+  const currentAge = parseInt(document.getElementById('currentAge').value) || 30;
+  const retireAge = parseInt(document.getElementById('retireAge').value) || 65;
+  const contrib = parseFloat(document.getElementById('contribution').value) || 7000;
+  const balance = parseFloat(document.getElementById('currentBalance').value) || 0;
+  const rate = (parseFloat(document.getElementById('returnRate').value) || 7) / 100;
+  const magi = parseFloat(document.getElementById('magi').value) || 0;
+  const filing = document.getElementById('filingStatus').value;
+
+  const years = Math.max(0, retireAge - currentAge);
+  if (years <= 0) { alert('Retirement age must be greater than current age.'); return; }
+
+  const age50 = Math.max(0, 50 - currentAge);
+  let bal = balance;
+  let totalContrib = balance;
+
+  // Year-by-year growth
+  const milestones = [];
+  const checkpoints = new Set([5, 10, 15, 20, 25, 30, 35, 40].filter(y => y < years));
+  checkpoints.add(years);
+
+  for (let y = 1; y <= years; y++) {
+    const ageNow = currentAge + y;
+    const annualContrib = ageNow >= 50 ? LIMITS.over50 : LIMITS.under50;
+    const actualContrib = Math.min(contrib, annualContrib);
+    bal = (bal + actualContrib) * (1 + rate);
+    totalContrib += actualContrib;
+    if (checkpoints.has(y)) {
+      milestones.push({ year: y, age: ageNow, bal, contrib: totalContrib });
+    }
+  }
+
+  const finalBal = bal;
+  const totalGrowth = finalBal - totalContrib;
+  const multiplier = totalContrib > 0 ? finalBal / totalContrib : 1;
+  // Monthly withdrawal at 4% rule
+  const monthly4 = finalBal * 0.04 / 12;
+
+  // Chart: pick up to 6 milestone points
+  const chartPoints = milestones.slice(-6);
+  const maxBal = Math.max(...chartPoints.map(m => m.bal));
+
+  let bars = chartPoints.map(m => `
+    <div class="fc-bar-row">
+      <span class="fc-bar-year">Yr ${m.year}</span>
+      <div class="fc-bar-track">
+        <div class="fc-bar-fill" style="width:${(m.bal/maxBal*100).toFixed(1)}%;background:linear-gradient(90deg,#22d3a5,#2dd4bf)"></div>
+      </div>
+      <span class="fc-bar-val">${fmt(m.bal)}</span>
+    </div>`).join('');
+
+  document.getElementById('rothResult').innerHTML = `
+    <div class="fc-panel fc-animate">
+      <div class="fc-panel-title" style="--dot-color:#22d3a5">Projected Roth IRA Growth</div>
+      <div class="fc-result-hero" style="background:rgba(34,211,165,0.08);border-color:rgba(34,211,165,0.25)">
+        <div class="fc-result-label">Tax-Free Balance at Age ${retireAge}</div>
+        <div class="fc-result-amount" style="color:#22d3a5">${fmt(finalBal)}</div>
+        <div class="fc-result-sub">Over <strong style="color:#22d3a5">${years} years</strong> · ${fmtP(rate*100)} annual return</div>
+      </div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Total Contributions</span><span class="fc-detail-val blue">${fmt(totalContrib)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Tax-Free Growth</span><span class="fc-detail-val green">${fmt(totalGrowth)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Money Multiplier</span><span class="fc-detail-val green">${multiplier.toFixed(1)}×</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Monthly Income (4% Rule)</span><span class="fc-detail-val green">${fmt(monthly4)}</span></div>
+      ${magi > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Your 2026 Contribution Limit</span><span class="fc-detail-val orange">${fmt(maxContribution(currentAge, magi, filing))}</span></div>` : ''}
+      <div class="fc-chart-wrap">
+        <div class="fc-chart-title">Growth Timeline</div>
+        ${bars}
+      </div>
+      <div class="fc-mini-grid" style="margin-top:14px">
+        <div class="fc-mini-box"><div class="fc-mini-label">Avg Annual Growth</div><div class="fc-mini-val" style="color:var(--green)">${fmt(totalGrowth/years)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Annual Withdrawal</div><div class="fc-mini-val" style="color:var(--blue)">${fmt(finalBal*0.04)}</div></div>
+      </div>
+    </div>`;
+}
+
+// FAQ accordion
+document.querySelectorAll('.fc-faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    q.parentElement.classList.toggle('open');
+  });
+});
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

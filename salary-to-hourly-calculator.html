@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salary to Hourly Calculator (2026)</title>
+    <meta name="description" content="Convert your annual salary to an hourly rate, or hourly wage to annual salary. Includes overtime, monthly, weekly, and biweekly pay." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="salary to hourly calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/salary-to-hourly-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Salary to Hourly Calculator (2026)" property="og:title"/>
+<meta content="Convert your annual salary to an hourly rate, or hourly wage to annual salary. Includes overtime, monthly, weekly, and biweekly pay." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/salary-to-hourly-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Salary to Hourly Calculator (2026)" name="twitter:title"/>
+<meta content="Convert your annual salary to an hourly rate, or hourly wage to annual salary. Includes overtime, monthly, weekly, and biweekly pay." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>S</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 980px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 640px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .toggle-row {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            padding: 3px;
+        }
+        .toggle-row button {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 8px 6px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background .2s, color .2s;
+        }
+        .toggle-row button.active {
+            background: var(--accent);
+            color: #04140d;
+        }
+        .mode-fields {
+            display: none;
+        }
+        .mode-fields.show {
+            display: block;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-sm .bk-v {
+            font-size: 14px;
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .field-err {
+            display: none;
+            color: var(--fed);
+            font-size: 12px;
+            margin-top: 2px;
+            font-family: var(--mono);
+        }
+        .field-err.show {
+            display: block;
+        }
+        input.invalid {
+            border-color: var(--fed);
+        }
+        .fc-warn {
+            max-width: 980px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 980px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin: 36px 0 12px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #7e859f;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .content-block ul {
+            color: #7e859f;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.8;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 980px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            background: var(--accent);
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .mt-2 {
+            margin-top: 12px;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Salary to Hourly Calculator (2026)",
+  "url": "https://usafincalc.com/salary-to-hourly-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Salary to Hourly Calculator (2026)",
+      "item": "https://usafincalc.com/salary-to-hourly-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Salary to Hourly Calculator (2026)",
+  "description": "Convert your annual salary to an hourly rate, or hourly wage to annual salary. Includes overtime, monthly, weekly, and biweekly pay.",
+  "url": "https://usafincalc.com/salary-to-hourly-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">S</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 salary conversion</div>
+        <h1>Salary to Hourly <span>Calculator</span></h1>
+        <p class="hero-sub">Convert annual salary to hourly rate, or hourly wage to annual salary. See monthly, weekly, biweekly pay, and overtime earnings.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Salary &amp; Hours</div>
+
+                    <div class="toggle-row" role="group" aria-label="Conversion direction">
+                        <button type="button" id="btnSalaryToHourly" class="active" onclick="setMode('salaryToHourly')" aria-pressed="true">Salary → Hourly</button>
+                        <button type="button" id="btnHourlyToSalary" onclick="setMode('hourlyToSalary')" aria-pressed="false">Hourly → Salary</button>
+                    </div>
+
+                    <!-- Salary to Hourly fields -->
+                    <div id="fieldsSalaryToHourly" class="mode-fields show">
+                        <div class="field">
+                            <label for="annualSalary">Annual Salary</label>
+                            <div class="pfx"><span>$</span><input type="number" id="annualSalary" value="75000" min="0" step="500" /></div>
+                            <div class="hint">Your gross annual income before taxes.</div>
+                        </div>
+                        <div class="field">
+                            <label for="hoursPerWeek">Hours per Week</label>
+                            <input type="number" id="hoursPerWeek" value="40" min="1" max="80" step="1" />
+                            <div class="hint">Standard full-time is 40 hours.</div>
+                        </div>
+                        <div class="field">
+                            <label for="weeksPerYear">Weeks per Year</label>
+                            <input type="number" id="weeksPerYear" value="52" min="1" max="52" step="1" />
+                            <div class="hint">Paid weeks per year (52 = full year).</div>
+                        </div>
+                    </div>
+
+                    <!-- Hourly to Salary fields -->
+                    <div id="fieldsHourlyToSalary" class="mode-fields">
+                        <div class="field">
+                            <label for="hourlyRate">Hourly Rate</label>
+                            <div class="pfx"><span>$</span><input type="number" id="hourlyRate" value="36.06" min="0" step="0.01" /></div>
+                            <div class="hint">Your gross hourly wage.</div>
+                        </div>
+                        <div class="field">
+                            <label for="hoursPerWeek2">Hours per Week</label>
+                            <input type="number" id="hoursPerWeek2" value="40" min="1" max="80" step="1" />
+                        </div>
+                        <div class="field">
+                            <label for="weeksPerYear2">Weeks per Year</label>
+                            <input type="number" id="weeksPerYear2" value="52" min="1" max="52" step="1" />
+                        </div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('40k')">$40,000/yr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('60k')">$60,000/yr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('80k')">$80,000/yr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('100k')">$100,000/yr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('15h')">$15/hr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('25h')">$25/hr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('35h')">$35/hr</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('50h')">$50/hr</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Presets set the main input based on current mode.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Conversion Result</div>
+                    <div class="res-main">
+                        <div class="res-label" id="resultLabel">Hourly Rate</div>
+                        <div class="res-val" id="resultValue">$36.06</div>
+                        <div class="res-sub" id="resultSub">based on 40 hours/week, 52 weeks/year</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk bk-sm"><div class="bk-l">Monthly</div><div class="bk-v" id="monthlyPay">$6,250</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Weekly</div><div class="bk-v" id="weeklyPay">$1,442</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Biweekly</div><div class="bk-v" id="biweeklyPay">$2,885</div></div>
+                        <div class="bk bk-sm"><div class="bk-l">Overtime (1.5×)</div><div class="bk-v" id="overtimeRate">$54.09</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Visual Comparison</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Annual vs. Hourly</div>
+                        <div id="chartBar"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Time-Based Breakdown</div>
+                    <div id="timeBreakdown" style="font-family:var(--mono);font-size:14px;color:var(--muted);">
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);"><span>Per hour</span><span class="highlight" id="perHourDisplay">$36.06</span></div>
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);"><span>Per day (8h)</span><span class="highlight" id="perDayDisplay">$288.46</span></div>
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);"><span>Per week (40h)</span><span class="highlight" id="perWeekDisplay">$1,442.31</span></div>
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--border);"><span>Per month (4.33 weeks)</span><span class="highlight" id="perMonthDisplay">$6,250.00</span></div>
+                        <div style="display:flex;justify-content:space-between;padding:4px 0;"><span>Per year</span><span class="highlight" id="perYearDisplay">$75,000.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator uses gross (pre-tax) figures. Actual take-home pay depends on federal, state, and local taxes, as well as deductions. Use the <a href="#">Paycheck Calculator</a> or <a href="#">Tax Calculator</a> for net pay estimates.
+    </div>
+
+    <div class="content-block">
+        <h2>How to Use This Calculator</h2>
+        <p>Switch between <strong>Salary → Hourly</strong> and <strong>Hourly → Salary</strong> modes using the toggle. Enter your annual salary or hourly rate, along with your typical hours per week and weeks worked per year. The calculator instantly shows your equivalent hourly rate or annual salary, plus monthly, weekly, biweekly, and overtime pay.</p>
+        <p>Use the <strong>Quick Presets</strong> to test common salaries or hourly wages. The <strong>Visual Comparison</strong> bar chart shows the relationship between annual and hourly figures, and the <strong>Time-Based Breakdown</strong> shows your pay at different time intervals.</p>
+
+        <h2>Formulas</h2>
+        <p><strong>Salary to Hourly:</strong> Hourly Rate = Annual Salary ÷ (Hours per Week × Weeks per Year)</p>
+        <p><strong>Hourly to Salary:</strong> Annual Salary = Hourly Rate × Hours per Week × Weeks per Year</p>
+        <p><strong>Overtime Rate:</strong> Hourly Rate × 1.5 (standard overtime multiplier)</p>
+        <p><strong>Monthly:</strong> Annual Salary ÷ 12  |  <strong>Weekly:</strong> Annual Salary ÷ 52  |  <strong>Biweekly:</strong> Annual Salary ÷ 26</p>
+
+        <h2>Common Use Cases</h2>
+        <ul>
+            <li><strong>Job offer evaluation:</strong> Compare a salaried offer to an hourly position.</li>
+            <li><strong>Freelance / contract work:</strong> Determine what hourly rate equals your target annual income.</li>
+            <li><strong>Budgeting:</strong> Understand your income at different time intervals.</li>
+            <li><strong>Overtime planning:</strong> See how overtime pay increases your effective hourly rate.</li>
+        </ul>
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- state -----
+        let mode = 'salaryToHourly'; // 'salaryToHourly' or 'hourlyToSalary'
+
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const annualSalary = $('annualSalary');
+        const hoursPerWeek = $('hoursPerWeek');
+        const weeksPerYear = $('weeksPerYear');
+        const hourlyRate = $('hourlyRate');
+        const hoursPerWeek2 = $('hoursPerWeek2');
+        const weeksPerYear2 = $('weeksPerYear2');
+
+        const fieldsSalary = $('fieldsSalaryToHourly');
+        const fieldsHourly = $('fieldsHourlyToSalary');
+        const btnSal = $('btnSalaryToHourly');
+        const btnHr = $('btnHourlyToSalary');
+
+        const resultValue = $('resultValue');
+        const resultLabel = $('resultLabel');
+        const resultSub = $('resultSub');
+        const monthlyPay = $('monthlyPay');
+        const weeklyPay = $('weeklyPay');
+        const biweeklyPay = $('biweeklyPay');
+        const overtimeRate = $('overtimeRate');
+        const perHourDisplay = $('perHourDisplay');
+        const perDayDisplay = $('perDayDisplay');
+        const perWeekDisplay = $('perWeekDisplay');
+        const perMonthDisplay = $('perMonthDisplay');
+        const perYearDisplay = $('perYearDisplay');
+        const chartBar = $('chartBar');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toFixed(2);
+        }
+
+        function fmtInt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + Math.round(n).toLocaleString();
+        }
+
+        function fmtShort(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v > 0 ? v : 0;
+        }
+
+        // ----- calculation -----
+        function calculate() {
+            let annual = 0,
+                hourly = 0,
+                hPerWeek = 40,
+                wPerYear = 52;
+
+            if (mode === 'salaryToHourly') {
+                annual = getVal(annualSalary);
+                hPerWeek = getVal(hoursPerWeek) || 40;
+                wPerYear = getVal(weeksPerYear) || 52;
+                if (hPerWeek > 0 && wPerYear > 0 && annual > 0) {
+                    hourly = annual / (hPerWeek * wPerYear);
+                } else {
+                    hourly = 0;
+                }
+            } else {
+                hourly = getVal(hourlyRate);
+                hPerWeek = getVal(hoursPerWeek2) || 40;
+                wPerYear = getVal(weeksPerYear2) || 52;
+                if (hPerWeek > 0 && wPerYear > 0 && hourly > 0) {
+                    annual = hourly * hPerWeek * wPerYear;
+                } else {
+                    annual = 0;
+                }
+            }
+
+            // derived
+            const monthly = annual / 12;
+            const weekly = annual / 52;
+            const biweekly = annual / 26;
+            const overtime = hourly * 1.5;
+            const perDay = hourly * 8;
+
+            // update result area
+            if (mode === 'salaryToHourly') {
+                resultLabel.textContent = 'Hourly Rate';
+                resultValue.textContent = fmt(hourly);
+                resultSub.textContent = `based on ${hPerWeek} hrs/week, ${wPerYear} weeks/year`;
+            } else {
+                resultLabel.textContent = 'Annual Salary';
+                resultValue.textContent = fmtInt(annual);
+                resultSub.textContent = `based on ${hPerWeek} hrs/week, ${wPerYear} weeks/year`;
+            }
+
+            monthlyPay.textContent = fmtInt(monthly);
+            weeklyPay.textContent = fmtInt(weekly);
+            biweeklyPay.textContent = fmtInt(biweekly);
+            overtimeRate.textContent = fmt(overtime);
+
+            perHourDisplay.textContent = fmt(hourly);
+            perDayDisplay.textContent = fmt(perDay);
+            perWeekDisplay.textContent = fmtInt(weekly);
+            perMonthDisplay.textContent = fmtInt(monthly);
+            perYearDisplay.textContent = fmtInt(annual);
+
+            // chart: annual vs hourly (normalized)
+            const maxAnnual = Math.max(annual, 1);
+            const maxHourly = Math.max(hourly * hPerWeek * wPerYear, 1);
+            const maxVal = Math.max(maxAnnual, maxHourly);
+
+            const annualPct = (annual / maxVal) * 100;
+            const hourlyAnnualEquivalent = hourly * hPerWeek * wPerYear;
+            const hourlyPct = (hourlyAnnualEquivalent / maxVal) * 100;
+
+            chartBar.innerHTML = `
+                <div style="margin-bottom:4px;">
+                    <div class="bar-label"><span>Annual Salary</span><span>${fmtInt(annual)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${annualPct}%;background:var(--fed);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Hourly Equivalent (annualized)</span><span>${fmtInt(hourlyAnnualEquivalent)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${hourlyPct}%;background:var(--accent);"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Hourly rate: ${fmt(hourly)} × ${hPerWeek} hrs × ${wPerYear} wks</div>
+            `;
+        }
+
+        // ----- mode switching -----
+        function setMode(newMode) {
+            mode = newMode;
+            if (mode === 'salaryToHourly') {
+                fieldsSalary.classList.add('show');
+                fieldsHourly.classList.remove('show');
+                btnSal.classList.add('active');
+                btnSal.setAttribute('aria-pressed', 'true');
+                btnHr.classList.remove('active');
+                btnHr.setAttribute('aria-pressed', 'false');
+            } else {
+                fieldsSalary.classList.remove('show');
+                fieldsHourly.classList.add('show');
+                btnHr.classList.add('active');
+                btnHr.setAttribute('aria-pressed', 'true');
+                btnSal.classList.remove('active');
+                btnSal.setAttribute('aria-pressed', 'false');
+            }
+            calculate();
+        }
+        window.setMode = setMode;
+
+        // ----- presets -----
+        function applyPreset(key) {
+            if (mode === 'salaryToHourly') {
+                switch (key) {
+                    case '40k':
+                        annualSalary.value = '40000';
+                        break;
+                    case '60k':
+                        annualSalary.value = '60000';
+                        break;
+                    case '80k':
+                        annualSalary.value = '80000';
+                        break;
+                    case '100k':
+                        annualSalary.value = '100000';
+                        break;
+                    case '15h':
+                        annualSalary.value = (15 * 40 * 52).toString();
+                        break;
+                    case '25h':
+                        annualSalary.value = (25 * 40 * 52).toString();
+                        break;
+                    case '35h':
+                        annualSalary.value = (35 * 40 * 52).toString();
+                        break;
+                    case '50h':
+                        annualSalary.value = (50 * 40 * 52).toString();
+                        break;
+                }
+            } else {
+                switch (key) {
+                    case '40k':
+                        hourlyRate.value = (40000 / 40 / 52).toFixed(2);
+                        break;
+                    case '60k':
+                        hourlyRate.value = (60000 / 40 / 52).toFixed(2);
+                        break;
+                    case '80k':
+                        hourlyRate.value = (80000 / 40 / 52).toFixed(2);
+                        break;
+                    case '100k':
+                        hourlyRate.value = (100000 / 40 / 52).toFixed(2);
+                        break;
+                    case '15h':
+                        hourlyRate.value = '15';
+                        break;
+                    case '25h':
+                        hourlyRate.value = '25';
+                        break;
+                    case '35h':
+                        hourlyRate.value = '35';
+                        break;
+                    case '50h':
+                        hourlyRate.value = '50';
+                        break;
+                }
+            }
+            calculate();
+        }
+        window.applyPreset = applyPreset;
+
+        // ----- reset -----
+        function resetCalc() {
+            annualSalary.value = '75000';
+            hoursPerWeek.value = '40';
+            weeksPerYear.value = '52';
+            hourlyRate.value = '36.06';
+            hoursPerWeek2.value = '40';
+            weeksPerYear2.value = '52';
+            setMode('salaryToHourly');
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [
+            annualSalary, hoursPerWeek, weeksPerYear,
+            hourlyRate, hoursPerWeek2, weeksPerYear2
+        ];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        setMode('salaryToHourly');
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

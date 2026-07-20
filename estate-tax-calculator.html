@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Estimate federal and state estate tax liability based on your net worth and applicable exemptions." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/estate-tax-calculator"/>
+<title>Estate Tax Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Estate Tax Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/estate-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tax Calculators",
+      "item": "https://usafincalc.com/tax-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Estate Tax Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/estate-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Estate Tax Calculator — Coming Soon | USAFinCalc",
+  "description": "Estate Tax Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/estate-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>Estate <span>Tax</span> Calculator</h1>
+  <p class="sub">Estimate federal and state estate tax liability based on your net worth and applicable exemptions. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li><li><a href="/tax-calculator-usa">Federal Tax Calculator</a></li><li><a href="/rmd-calculator">RMD Calculator</a></li><li><a href="/retirement-withdrawal-calculator">Retirement Withdrawal</a></li><li><a href="/net-worth-calculator">Net Worth Calculator</a></li><li><a href="/401k-calculator-usa">401k Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="estate-tax-guide">
+<h2>What This Estate Tax Calculator Does</h2>
+<p>The federal estate tax applies to wealth transfers at death when the taxable estate exceeds the lifetime exemption. This calculator estimates your potential federal estate tax liability based on total estate value, applicable deductions, and the current exemption amount. It also projects exposure under different scenarios — including the 2025 sunset of the elevated TCJA exemption — so you can plan with both current and post-sunset numbers.</p>
+<h2>How It Works</h2>
+<p><strong>Taxable Estate = Gross Estate − Deductions (marital, charitable, debts)</strong></p>
+<p><strong>Estate Tax = (Taxable Estate − Exemption) × 40%</strong></p>
+<p>The federal estate tax rate is a flat 40% on the taxable estate above the exemption. In 2024, the exemption is $13.61 million per individual ($27.22 million for married couples using portability). The TCJA's doubled exemption sunsets after December 31, 2025, reverting to approximately $7 million per person (inflation-adjusted) unless Congress acts.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Portability and the DSUE</h3>
+<p>Portability allows a surviving spouse to use the deceased spouse's unused exemption (DSUE). If a husband dies using $5 million of his $13.61 million exemption, his wife can elect to add the remaining $8.61 million DSUE to her own. Portability must be elected on a timely filed estate tax return (Form 706) even if no tax is due.</p>
+<h3>Step-Up in Basis</h3>
+<p>Assets included in a taxable estate receive a stepped-up cost basis at death — heirs inherit at fair market value on the date of death, eliminating capital gains tax on appreciation during the decedent's lifetime. A home bought for $100,000 worth $800,000 at death passes to heirs with an $800,000 basis.</p>
+<h3>Annual Gift Tax Exclusion</h3>
+<p>You can give up to $18,000 per recipient per year (2024) without using any lifetime exemption. A married couple can jointly give $36,000 per recipient. This reduces the taxable estate over time with no gift tax consequences.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Act before the 2025 TCJA sunset</strong> — if your estate exceeds $7 million, work with an estate attorney to use gifting strategies now while the $13.61M exemption is available.</li>
+<li><strong>Don't ignore state estate taxes</strong> — 12 states plus DC have estate taxes with much lower exemptions ($1–$2 million in some states).</li>
+<li><strong>Fund a Spousal Lifetime Access Trust (SLAT)</strong> — lets you gift your exemption to a trust benefiting your spouse, removing assets from your estate while maintaining indirect access.</li>
+<li><strong>Consider a Qualified Personal Residence Trust (QPRT)</strong> — transfer your home at a reduced gift tax value, removing future appreciation from your estate while retaining the right to live in it during the trust term.</li>
+<li><strong>Update beneficiary designations regularly</strong> — IRAs, 401(k)s, and life insurance pass outside your will via beneficiary designation.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">Is there a difference between estate tax and inheritance tax?</h3><p class="faq-a">Yes. Federal estate tax is paid by the estate before assets are distributed. Inheritance tax is paid by individual heirs on what they receive. The US has no federal inheritance tax, but 6 states (Iowa, Kentucky, Maryland, Nebraska, New Jersey, and Pennsylvania) have state inheritance taxes. Maryland has both.</p></div>
+<div class="faq-item"><h3 class="faq-q">Does my spouse inherit tax-free?</h3><p class="faq-a">Yes — the unlimited marital deduction allows unlimited asset transfers between US citizen spouses free of estate and gift tax. However, this only defers the tax. When the surviving spouse dies, the combined estate is subject to estate tax above their available exemption. Non-citizen spouses do not qualify for the unlimited marital deduction.</p></div>
+<div class="faq-item"><h3 class="faq-q">Are retirement accounts subject to estate tax?</h3><p class="faq-a">Yes — traditional IRAs, 401(k)s, and other pre-tax retirement accounts are included in the gross estate. Heirs also pay ordinary income tax on withdrawals — this "double taxation" makes retirement assets among the worst to leave in taxable estate scenarios. Consider Roth conversions or charitable bequests as strategies.</p></div>
+<div class="faq-item"><h3 class="faq-q">When is a federal estate tax return required?</h3><p class="faq-a">Form 706 must be filed within 9 months of death (with a 6-month extension available) if the gross estate exceeds $13.61 million in 2024. Even if no tax is due, filing may be advisable to elect portability of the DSUE for the surviving spouse.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>The <a href="/capital-gains-tax-calculator">Capital Gains Tax Calculator</a> helps you understand the step-up in basis benefit for appreciated assets. For Roth conversion planning (better assets to leave to heirs), use the <a href="/tax-calculator-usa">Tax Calculator</a>. The <a href="/net-worth-calculator">Net Worth Calculator</a> gives a complete picture of your current estate value.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

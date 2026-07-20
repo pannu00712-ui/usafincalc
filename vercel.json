@@ -1,0 +1,1545 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/30k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-california",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-florida",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-new-york",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-texas",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/terms-of-service.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/data-sources.html",
+      "destination": "/data-sources",
+      "permanent": true
+    },
+    {
+      "source": "/disclaimer.html",
+      "destination": "/disclaimer",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/methodology.html",
+      "destination": "/methodology",
+      "permanent": true
+    },
+    {
+      "source": "/editorial-policy.html",
+      "destination": "/editorial-policy",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/50000-salary-after-tax-washington.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/texas-salary-calculator.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/80k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/tax-calculator/state.html",
+      "destination": "/tax-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/tax-calculator/state",
+      "destination": "/tax-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/15-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/15-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/20-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/20-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/25-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/25-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/30-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/30-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/35-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/35-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/40-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/40-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/401k-calculator-usa.html",
+      "destination": "/401k-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/45-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/50-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/50-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/55-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/55-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/60-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/60-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/65-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/65-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/70-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/70-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/75-dollars-an-hour-is-how-much-a-year.html",
+      "destination": "/75-dollars-an-hour-is-how-much-a-year",
+      "permanent": true
+    },
+    {
+      "source": "/alabama-tax-calculator.html",
+      "destination": "/alabama-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/amortization-calculator.html",
+      "destination": "/amortization-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/annuity-calculator.html",
+      "destination": "/annuity-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/apr-calculator.html",
+      "destination": "/apr-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/arizona-tax-calculator.html",
+      "destination": "/arizona-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/auto-lease-calculator.html",
+      "destination": "/auto-lease-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/auto-loan-calculator.html",
+      "destination": "/auto-loan-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/best-budgeting-tips.html",
+      "destination": "/best-budgeting-tips",
+      "permanent": true
+    },
+    {
+      "source": "/biweekly-pay-calculator.html",
+      "destination": "/biweekly-pay-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/bond-calculator.html",
+      "destination": "/bond-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/bonus-tax-calculator.html",
+      "destination": "/bonus-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/budget-planner.html",
+      "destination": "/budget-planner",
+      "permanent": true
+    },
+    {
+      "source": "/business-loan-calculator.html",
+      "destination": "/business-loan-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/business-tax-calculator.html",
+      "destination": "/business-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/california-tax-calculator.html",
+      "destination": "/california-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/capital-gains-tax-calculator.html",
+      "destination": "/capital-gains-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/car-payment-calculator.html",
+      "destination": "/car-payment-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/cd-calculator.html",
+      "destination": "/cd-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/child-tax-credit-calculator.html",
+      "destination": "/child-tax-credit-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/closing-costs-calculator.html",
+      "destination": "/closing-costs-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/college-savings-calculator.html",
+      "destination": "/college-savings-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/colorado-tax-calculator.html",
+      "destination": "/colorado-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/compound-interest-calculator.html",
+      "destination": "/compound-interest-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/connecticut-tax-calculator.html",
+      "destination": "/connecticut-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/cost-of-living-calculator.html",
+      "destination": "/cost-of-living-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/credit-card-calculator.html",
+      "destination": "/credit-card-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/credit-score-calculator.html",
+      "destination": "/credit-score-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/credit-score-simulator.html",
+      "destination": "/credit-score-simulator",
+      "permanent": true
+    },
+    {
+      "source": "/crypto-tax-calculator.html",
+      "destination": "/crypto-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/currency-converter.html",
+      "destination": "/currency-converter",
+      "permanent": true
+    },
+    {
+      "source": "/debt-consolidation-calculator.html",
+      "destination": "/debt-consolidation-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/debt-payoff-calculator.html",
+      "destination": "/debt-payoff-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/discount-calculator.html",
+      "destination": "/discount-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/dti-calculator.html",
+      "destination": "/dti-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/earned-income-tax-credit-calculator.html",
+      "destination": "/earned-income-tax-credit-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/emergency-fund-calculator.html",
+      "destination": "/emergency-fund-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/estate-tax-calculator.html",
+      "destination": "/estate-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/federal-income-tax-calculator.html",
+      "destination": "/federal-income-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/federal-tax-withholding-calculator.html",
+      "destination": "/federal-tax-withholding-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/fha-loan-calculator.html",
+      "destination": "/fha-loan-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/fire-calculator.html",
+      "destination": "/fire-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/florida-tax-calculator.html",
+      "destination": "/florida-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/georgia-tax-calculator.html",
+      "destination": "/georgia-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/gross-pay-calculator.html",
+      "destination": "/gross-pay-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/heloc-calculator.html",
+      "destination": "/heloc-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/home-affordability-calculator-usa.html",
+      "destination": "/home-affordability-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/hourly-to-salary-calculator.html",
+      "destination": "/hourly-to-salary-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-improve-credit-score.html",
+      "destination": "/how-to-improve-credit-score",
+      "permanent": true
+    },
+    {
+      "source": "/hsa-calculator.html",
+      "destination": "/hsa-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/illinois-tax-calculator.html",
+      "destination": "/illinois-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/income-tax-calculator.html",
+      "destination": "/income-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/indiana-tax-calculator.html",
+      "destination": "/indiana-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/inflation-calculator.html",
+      "destination": "/inflation-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/investment-calculator.html",
+      "destination": "/investment-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/iowa-tax-calculator.html",
+      "destination": "/iowa-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/ira-calculator.html",
+      "destination": "/ira-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/kentucky-tax-calculator.html",
+      "destination": "/kentucky-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/marriage-tax-calculator.html",
+      "destination": "/marriage-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/maryland-tax-calculator.html",
+      "destination": "/maryland-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/massachusetts-tax-calculator.html",
+      "destination": "/massachusetts-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/michigan-tax-calculator.html",
+      "destination": "/michigan-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/minnesota-tax-calculator.html",
+      "destination": "/minnesota-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/missouri-tax-calculator.html",
+      "destination": "/missouri-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/monthly-salary-calculator.html",
+      "destination": "/monthly-salary-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/mortgage-calculator-usa.html",
+      "destination": "/mortgage-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/mortgage-on-200k-house.html",
+      "destination": "/mortgage-on-200k-house",
+      "permanent": true
+    },
+    {
+      "source": "/mortgage-on-300k-house.html",
+      "destination": "/mortgage-on-300k-house",
+      "permanent": true
+    },
+    {
+      "source": "/mortgage-on-400k-house.html",
+      "destination": "/mortgage-on-400k-house",
+      "permanent": true
+    },
+    {
+      "source": "/mortgage-on-500k-house.html",
+      "destination": "/mortgage-on-500k-house",
+      "permanent": true
+    },
+    {
+      "source": "/net-pay-calculator.html",
+      "destination": "/net-pay-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/net-worth-calculator.html",
+      "destination": "/net-worth-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/nevada-tax-calculator.html",
+      "destination": "/nevada-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/new-jersey-tax-calculator.html",
+      "destination": "/new-jersey-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/new-york-tax-calculator.html",
+      "destination": "/new-york-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/north-carolina-tax-calculator.html",
+      "destination": "/north-carolina-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/ohio-tax-calculator.html",
+      "destination": "/ohio-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/oregon-tax-calculator.html",
+      "destination": "/oregon-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/overtime-calculator.html",
+      "destination": "/overtime-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/paycheck-calculator.html",
+      "destination": "/paycheck-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/payroll-tax-calculator.html",
+      "destination": "/payroll-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/pennsylvania-tax-calculator.html",
+      "destination": "/pennsylvania-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/pension-calculator.html",
+      "destination": "/pension-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/personal-loan-calculator.html",
+      "destination": "/personal-loan-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/present-value-calculator.html",
+      "destination": "/present-value-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/pricing",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/property-tax-calculator.html",
+      "destination": "/property-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/refinance-calculator.html",
+      "destination": "/refinance-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rent-vs-buy-calculator.html",
+      "destination": "/rent-vs-buy-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rental-property-calculator.html",
+      "destination": "/rental-property-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/retirement-withdrawal-calculator.html",
+      "destination": "/retirement-withdrawal-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rmd-calculator.html",
+      "destination": "/rmd-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/roi-calculator.html",
+      "destination": "/roi-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/roth-ira-calculator.html",
+      "destination": "/roth-ira-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/rsu-tax-calculator.html",
+      "destination": "/rsu-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/salary-calculator-usa.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/sales-tax-calculator.html",
+      "destination": "/sales-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/savings-calculator.html",
+      "destination": "/savings-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/self-employment-tax-calculator.html",
+      "destination": "/self-employment-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/simple-interest-calculator.html",
+      "destination": "/simple-interest-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/social-security-calculator.html",
+      "destination": "/social-security-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/south-carolina-tax-calculator.html",
+      "destination": "/south-carolina-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/stock-return-calculator-usa.html",
+      "destination": "/stock-return-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/student-loan-calculator-usa.html",
+      "destination": "/student-loan-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/take-home-pay-calculator.html",
+      "destination": "/take-home-pay-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tax-bracket-calculator.html",
+      "destination": "/tax-bracket-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tax-calculator-usa.html",
+      "destination": "/tax-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/tax-refund-calculator.html",
+      "destination": "/tax-refund-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tennessee-tax-calculator.html",
+      "destination": "/tennessee-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/texas-tax-calculator.html",
+      "destination": "/texas-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/tip-calculator.html",
+      "destination": "/tip-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/utah-tax-calculator.html",
+      "destination": "/utah-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/va-mortgage-calculator.html",
+      "destination": "/va-mortgage-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/virginia-tax-calculator.html",
+      "destination": "/virginia-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/w4-calculator.html",
+      "destination": "/w4-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/washington-tax-calculator.html",
+      "destination": "/washington-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/wisconsin-tax-calculator.html",
+      "destination": "/wisconsin-tax-calculator",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/30k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/40k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/45k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/50k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/55k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/60k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/65k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/70k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/75k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/85k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/90k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/95k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/100k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/110k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/120k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/125k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/130k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/150k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-california.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-florida.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-new-york.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    },
+    {
+      "source": "/200k-salary-after-tax-texas.html",
+      "destination": "/salary-calculator-usa",
+      "permanent": true
+    }
+  ]
+}

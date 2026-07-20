@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Estimate your Home Equity Line of Credit limit, monthly payments, and total interest based on your home value and mortgage balance." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/heloc-calculator"/>
+<title>HELOC Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "HELOC Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/heloc-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mortgage Calculators",
+      "item": "https://usafincalc.com/mortgage-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "HELOC Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/heloc-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "HELOC Calculator — Coming Soon | USAFinCalc",
+  "description": "HELOC Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/heloc-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1><span>HELOC Calculator</span></h1>
+  <p class="sub">Estimate your Home Equity Line of Credit limit, monthly payments, and total interest based on your home value and mortgage balance. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li><li><a href="/refinance-calculator">Refinance Calculator</a></li><li><a href="/home-affordability-calculator-usa">Home Affordability Calculator</a></li><li><a href="/property-tax-calculator">Property Tax Calculator</a></li><li><a href="/amortization-calculator">Amortization Calculator</a></li><li><a href="/closing-costs-calculator">Closing Costs Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="heloc-guide">
+<h2>What This HELOC Calculator Does</h2>
+<p>A Home Equity Line of Credit (HELOC) lets you borrow against your home equity — the difference between your home's value and your mortgage balance. This calculator estimates your HELOC borrowing limit, monthly payment during the draw period (interest-only), monthly payment during the repayment period (principal + interest), and total cost over the life of the line. It also models rate changes on variable-rate HELOCs, which is critical in today's rate environment.</p>
+<h2>How It Works</h2>
+<p><strong>Available Equity = Home Value × CLTV Limit − Existing Mortgage Balance</strong></p>
+<p>Most lenders allow a combined loan-to-value (CLTV) of 80–85%. If your home is worth $500,000, mortgage balance is $300,000, and CLTV limit is 80%, your maximum HELOC is $100,000 ($500,000 × 0.80 − $300,000).</p>
+<p>During the draw period (typically 10 years), you pay interest only on amounts borrowed. During the repayment period (typically 10–20 years), you pay principal plus interest — often resulting in a payment 2–3x the draw period amount.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Variable Interest Rate Risk</h3>
+<p>Most HELOCs carry a variable rate tied to the Prime Rate plus a margin (typically 0.25–1.00%). When the Federal Reserve raises rates, your HELOC payment rises immediately. A $100,000 HELOC at 9.00% costs $750/month in interest-only. If rates rise 2%, the payment becomes $916/month.</p>
+<h3>Draw Period vs. Repayment Period</h3>
+<p>During the draw period, you can borrow and repay as needed. When it ends, the line closes and you repay the outstanding balance with full P&amp;I payments. This "HELOC reset" is where many borrowers are caught unprepared by the payment jump.</p>
+<h3>Tax Deductibility</h3>
+<p>Post-TCJA (2017), HELOC interest is only deductible if funds are used to "buy, build, or substantially improve" the home securing the loan. Using HELOC funds for vacations, debt consolidation, or investments is not deductible — a significant change from pre-2018 rules.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Lock a portion into a fixed-rate option if available</strong> — many lenders offer a rate-lock feature that converts drawn amounts to a fixed rate, hedging rate risk.</li>
+<li><strong>Never use a HELOC as an ATM for lifestyle expenses</strong> — your home is the collateral. Using home equity for vacations or consumer goods converts unsecured risk into possible foreclosure.</li>
+<li><strong>Plan your repayment period payment before drawing funds</strong> — run the calculator for worst-case (full draw at maximum rate) to ensure you can afford the repayment-period payment.</li>
+<li><strong>Keep a borrowing cushion</strong> — lenders can freeze or reduce HELOC limits if your home value drops or credit deteriorates. Don't rely entirely on HELOC availability for emergency funds.</li>
+<li><strong>Apply during low-rate environments</strong> — variable HELOC rates are most attractive when Prime is low. In rising-rate cycles, a home equity loan's fixed rate provides better protection.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What credit score do I need for a HELOC?</h3><p class="faq-a">Most lenders require a minimum score of 620–640, with best rates for 720+. Lenders also require sufficient equity (15–20% after the new line), stable income, and DTI below 43%. Credit unions often have more flexible underwriting than national banks for home equity products.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can a lender freeze my HELOC?</h3><p class="faq-a">Yes. Lenders can freeze or reduce your HELOC if your home value drops significantly, credit score falls substantially, or you experience a major change in financial circumstances. This happened widely during the 2008–2009 financial crisis. Lenders must provide notice before this action in most circumstances.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is a HELOC better than a cash-out refinance?</h3><p class="faq-a">If you have a low-rate first mortgage (3–4%), a cash-out refinance replaces it with today's higher rates (7%+), significantly increasing total housing cost. A HELOC adds a second lien without touching your existing mortgage — making it the better choice when your primary mortgage rate is well below current market rates.</p></div>
+<div class="faq-item"><h3 class="faq-q">How long does HELOC approval take?</h3><p class="faq-a">Typically 2–6 weeks from application to funding. The process includes a credit check, income verification, home appraisal, title search, and a closing with a 3-business-day right of rescission. Online lenders using automated property valuations can sometimes complete in as few as 5 days.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Compare a HELOC against a cash-out refinance with the <a href="/refinance-calculator">Refinance Calculator</a>. The <a href="/mortgage-calculator-usa">Mortgage Calculator</a> helps model different loan scenarios. For using home equity to consolidate debt, see the <a href="/debt-consolidation-calculator">Debt Consolidation Calculator</a>.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

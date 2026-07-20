@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Calculate Return on Investment for any business decision, purchase, or project. Includes annualized ROI." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/roi-calculator"/>
+<title>ROI Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "ROI Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/roi-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ROI Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/roi-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "ROI Calculator — Coming Soon | USAFinCalc",
+  "description": "ROI Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/roi-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1><span>ROI Calculator</span></h1>
+  <p class="sub">Calculate Return on Investment for any business decision, purchase, or project. Includes annualized ROI. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/investment-calculator">Investment Calculator</a></li><li><a href="/compound-interest-calculator">Compound Interest Calculator</a></li><li><a href="/stock-return-calculator-usa">Stock Return Calculator</a></li><li><a href="/savings-calculator">Savings Calculator</a></li><li><a href="/bond-calculator">Bond Calculator</a></li><li><a href="/fire-calculator">FIRE Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="roi-guide">
+<h2>What This ROI Calculator Does</h2>
+<p>Return on Investment (ROI) is one of the most widely used performance metrics in business and personal finance. This calculator computes your ROI from any investment — whether it's a stock, real estate, business investment, marketing campaign, or equipment purchase — showing both the total ROI percentage and the annualized ROI, which allows fair comparison of investments held for different time periods.</p>
+<h2>How It Works</h2>
+<p><strong>ROI = (Net Profit / Cost of Investment) × 100</strong></p>
+<p><strong>Annualized ROI = [(1 + ROI/100)^(1/Years)] − 1 × 100</strong></p>
+<p>Net profit is your total gain minus total cost, including purchase price, fees, taxes, and any ongoing expenses. Annualized ROI (also called Compound Annual Growth Rate or CAGR) converts your total return into a yearly equivalent, allowing you to compare a 3-year investment to a 5-year one on the same basis.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Simple ROI vs. Annualized ROI</h3>
+<p>Simple ROI tells you the total percentage gain. A 60% ROI sounds great — but if it took 10 years, the annualized ROI is only 4.8%, which barely outpaces inflation. If it took 2 years, the annualized ROI is 26.6% — exceptional. Always compare annualized returns for multi-period investments.</p>
+<h3>ROI Including Opportunity Cost</h3>
+<p>Basic ROI ignores opportunity cost — what you could have earned elsewhere. A 5% ROI on a business investment is poor if comparable-risk alternatives return 8%. Adjusted ROI compares your actual return against the benchmark return you gave up, giving a truer picture of value creation.</p>
+<h3>ROI vs. IRR</h3>
+<p>IRR (Internal Rate of Return) is the discount rate that makes the net present value of all cash flows zero. Unlike simple ROI, IRR accounts for the timing of cash inflows and outflows throughout the investment period — making it more accurate for complex multi-year projects with irregular cash flows. For simple investments with a single entry and exit, ROI and IRR calculations produce comparable results.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Always use annualized ROI for multi-year comparisons</strong> — raw percentage gains are meaningless without knowing the time period.</li>
+<li><strong>Include all costs in the denominator</strong> — purchase price, transaction fees, taxes on gains, ongoing maintenance, and opportunity cost all belong in a complete ROI calculation.</li>
+<li><strong>Separate ROI from cash flow</strong> — a real estate investment might show strong total ROI but negative monthly cash flow. Both matter for evaluating whether the investment fits your financial situation.</li>
+<li><strong>Benchmark against appropriate alternatives</strong> — compare your investment's ROI against an index like the S&amp;P 500, a risk-free rate (Treasury yield), or the specific industry standard, not just zero.</li>
+<li><strong>Use pre-tax ROI for comparison, after-tax for planning</strong> — taxes significantly affect net returns. A 15% pre-tax ROI in a high tax bracket might net only 11% after taxes, changing the attractiveness vs. tax-advantaged alternatives.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What is a good ROI?</h3><p class="faq-a">It depends entirely on the asset class, risk level, and time horizon. The S&amp;P 500 has returned approximately 10% annually over long periods — this is a common benchmark for stock investments. For real estate, 8–12% total annual return (including appreciation and cash flow) is generally considered solid. For business investments, ROI below your cost of capital destroys value; above it creates value. Risk-free alternatives (Treasuries) set the floor.</p></div>
+<div class="faq-item"><h3 class="faq-q">How do I calculate ROI on a rental property?</h3><p class="faq-a">For a rental property, total ROI includes: annual cash flow (rent minus all expenses and mortgage), equity paydown (portion of mortgage payment reducing principal), and appreciation (change in property value). Add all three together annually, divide by your total cash invested (down payment + closing costs + initial repairs), and you have your total annual ROI. The <a href="/rental-property-calculator">Rental Property Calculator</a> handles this in detail.</p></div>
+<div class="faq-item"><h3 class="faq-q">What is negative ROI?</h3><p class="faq-a">Negative ROI means the investment lost money — you received less back than you put in. A -20% ROI on a stock means the position declined 20% in value. For business decisions, negative ROI means the initiative cost more than it returned. Negative ROI isn't always disqualifying — some investments have negative early ROI but positive long-term returns as the investment matures.</p></div>
+<div class="faq-item"><h3 class="faq-q">How is ROI different from profit margin?</h3><p class="faq-a">Profit margin is revenue minus costs divided by revenue — it measures operating efficiency as a percentage of sales. ROI measures gain relative to the investment's cost. A business can have a 40% profit margin on a product but a low ROI if the fixed asset investment required to make that product is very large. Both metrics are useful but measure different dimensions of financial performance.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>For investment portfolio returns, use the <a href="/investment-calculator">Investment Calculator</a> with compound growth modeling. The <a href="/rental-property-calculator">Rental Property Calculator</a> provides property-specific ROI including cap rate and cash-on-cash return. The <a href="/present-value-calculator">Present Value Calculator</a> helps with NPV calculations for multi-year cash flow investments. The <a href="/business-loan-calculator">Business Loan Calculator</a> models the cost of debt used to fund an investment.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

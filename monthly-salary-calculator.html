@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Monthly Salary Calculator 2026 — Convert Annual or Hourly Pay to Monthly</title>
+<meta content="Convert your annual salary or hourly rate into a monthly gross and net pay figure. See federal tax, state tax, and FICA deductions — instant 2026 results." name="description"/>
+<meta content="monthly salary calculator, salary to monthly, monthly pay calculator, annual to monthly salary, monthly income calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/monthly-salary-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Monthly Salary Calculator 2026 — Convert Annual or Hourly Pay to Monthly" property="og:title"/>
+<meta content="Convert your annual salary or hourly rate into a monthly gross and net pay figure." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/monthly-salary-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Monthly Salary Calculator 2026 — Convert Annual or Hourly Pay to Monthly" name="twitter:title"/>
+<meta content="Convert your annual salary or hourly rate into a monthly gross and net pay figure." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--fica:#a78bfa;--pretax:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:640px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Monthly Salary Calculator 2026 — Convert Annual or Hourly Pay to Monthly",
+  "url": "https://usafincalc.com/monthly-salary-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Monthly Salary Calculator",
+      "item": "https://usafincalc.com/monthly-salary-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Monthly Salary Calculator 2026",
+  "description": "Convert annual salary or hourly rate into monthly gross and net pay figures.",
+  "url": "https://usafincalc.com/monthly-salary-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How do I calculate my monthly salary from my annual salary?", "acceptedAnswer": {"@type": "Answer", "text": "Divide your annual salary by 12 for gross monthly pay; subtract taxes first for net monthly pay."}},
+    {"@type": "Question", "name": "Is monthly pay the same as semi-monthly pay?", "acceptedAnswer": {"@type": "Answer", "text": "No, monthly pay is one paycheck per month (12/year); semi-monthly is two paychecks per month on fixed dates (24/year)."}},
+    {"@type": "Question", "name": "How do I convert an hourly wage to a monthly salary?", "acceptedAnswer": {"@type": "Answer", "text": "Multiply hourly rate by weekly hours by 52 weeks for an annual figure, then divide by 12."}},
+    {"@type": "Question", "name": "What monthly income do I need to afford a certain rent?", "acceptedAnswer": {"@type": "Answer", "text": "A common guideline is rent shouldn't exceed 30% of gross monthly income, though many landlords require 2.5-3x the rent in gross monthly income."}},
+    {"@type": "Question", "name": "Does this calculator account for bonuses?", "acceptedAnswer": {"@type": "Answer", "text": "No, it assumes a consistent monthly salary; bonuses should be calculated separately since they're often withheld differently."}}
+  ]
+}
+</script>
+<meta name="date" content="2026-06-30">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 IRS brackets + FICA rates</div>
+  <h1>Monthly Salary <span>Calculator</span></h1>
+  <p class="hero-sub">Convert your annual salary or hourly rate into a clear monthly take-home figure, after federal tax, state tax, and FICA.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">Your Salary or Hourly Rate</div>
+    <label for="inputTypeMS">I know my...</label>
+    <select id="inputTypeMS" onchange="toggleInputMS(); calcMonthly()">
+      <option value="annual">Annual Salary</option>
+      <option value="hourly">Hourly Rate</option>
+    </select>
+    <div id="annualWrapMS">
+      <label for="annualMS">Annual Salary</label>
+      <div class="pfx"><span>$</span><input id="annualMS" oninput="calcMonthly()" type="number" value="72000" min="0" step="500"/></div>
+    </div>
+    <div id="hourlyWrapMS" style="display:none">
+      <label for="hourlyMS">Hourly Rate</label>
+      <div class="pfx"><span>$</span><input id="hourlyMS" oninput="calcMonthly()" type="number" value="30" min="0" step="0.25"/></div>
+      <label for="hoursWeekMS">Hours Per Week</label>
+      <input id="hoursWeekMS" oninput="calcMonthly()" type="number" value="40" min="0" max="80" step="0.5"/>
+    </div>
+    <label for="filingMS">Filing Status</label>
+    <select id="filingMS" onchange="calcMonthly()">
+      <option value="single">Single</option>
+      <option value="mfj">Married Filing Jointly</option>
+      <option value="mfs">Married Filing Separately</option>
+      <option value="hoh">Head of Household</option>
+    </select>
+    <label for="stateRateMS">State Tax Rate (approx., 0 if none)</label>
+    <div class="sfx"><input id="stateRateMS" oninput="calcMonthly()" type="number" value="5" step="0.1" min="0" max="13.3"/><span>%</span></div>
+  </div>
+  <div class="card">
+    <div class="ct">Your Monthly Pay</div>
+    <div class="res-main">
+      <div class="res-label">Net Monthly Pay</div>
+      <div class="res-val" id="netMonthlyMS">—</div>
+      <div class="res-sub" id="netMonthlySubMS">12 payments/year</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Gross Monthly</div><div class="bk-v" id="grossMonthlyMS" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Federal Tax</div><div class="bk-v" id="fedMonthlyMS" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">State Tax</div><div class="bk-v" id="stateMonthlyMS" style="color:var(--state)">—</div></div>
+      <div class="bk"><div class="bk-l">FICA</div><div class="bk-v" id="ficaMonthlyMS" style="color:var(--fica)">—</div></div>
+      <div class="bk"><div class="bk-l">Weekly Equivalent</div><div class="bk-v" id="weeklyMS" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Annual Net</div><div class="bk-v" id="annualNetMS" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator assumes a true monthly pay schedule (12 payments/year). If your employer actually pays semi-monthly (24 payments/year on fixed dates like the 1st and 15th), each check will be roughly half this monthly figure. This tool uses 2026 projected federal brackets and a simplified flat state-rate estimate.</div>
+<div class="content-block">
+
+<h2>What This Monthly Salary Calculator Does</h2>
+<p>This calculator converts your annual salary — or your hourly rate and typical weekly hours — into a clear monthly pay figure, both gross (before taxes) and net (take-home), using 2026 federal tax brackets, an estimated state tax rate, and standard FICA payroll taxes. It's designed for anyone who thinks in monthly terms for budgeting, whether that's because you're paid monthly, or because you simply want to know your "per month" number even though your actual paychecks arrive on a different schedule.</p>
+<p>This is especially useful when comparing a job offer, setting up a monthly budget spreadsheet, or applying for an apartment or loan that asks for your monthly income. It handles both salaried and hourly inputs, since hourly workers often need to convert an irregular pay schedule into a standardized monthly estimate for these exact purposes.</p>
+
+<h2>How It Works</h2>
+<p>If you enter an annual salary, the calculator simply divides your after-tax annual figure by 12 to get a true monthly amount. If you enter an hourly rate and weekly hours instead, it first annualizes that (hourly rate × weekly hours × 52 weeks) to get an annual equivalent, then applies the same tax logic and monthly division. Federal tax, state tax, and FICA are all calculated on the full annual figure first — since income tax brackets are inherently annual — then divided by 12 to produce an accurate monthly net figure, rather than being (incorrectly) calculated fresh each month, which would misrepresent your effective tax rate.</p>
+
+<h2>Formula &amp; Methodology</h2>
+<p><strong>Gross Monthly Pay = Annual Salary ÷ 12</strong></p>
+<p>Or, for hourly employees: <strong>Annual Equivalent = Hourly Rate × Weekly Hours × 52</strong></p>
+<p><strong>Net Monthly Pay = (Annual Salary − Annual Federal Tax − Annual State Tax − Annual FICA) ÷ 12</strong></p>
+<p>This calculator assumes a true monthly pay schedule — exactly 12 payments per year, once per month. This is distinct from semi-monthly pay (24 payments per year, twice a month), which is far more common among U.S. employers than true monthly pay. If you're actually paid semi-monthly, each of your checks will be approximately half of this calculator's monthly figure.</p>
+
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Confirm your actual pay schedule before budgeting</strong> — true monthly pay (12x/year) and semi-monthly pay (24x/year) are easy to confuse but produce very different per-check amounts, even though the annual total is identical.</li>
+<li><strong>Use your monthly net figure for loan and rental applications</strong> — many landlords and lenders ask for gross monthly income specifically (often requiring it to be 2.5–3x your monthly rent), so know both your gross and net monthly numbers.</li>
+<li><strong>Build a bill calendar around your monthly figure</strong> — since most recurring bills (rent, utilities, subscriptions) are monthly, having a clear monthly net income number is often more useful for budgeting than a biweekly or per-check figure.</li>
+<li><strong>Recalculate after any raise or bonus</strong> — a raise doesn't just add its face value to your monthly take-home; it may also push a portion of your income into a higher marginal bracket, slightly reducing the after-tax benefit.</li>
+</ul>
+
+<h2>Monthly Pay in the Context of Household Budgeting</h2>
+<p>Most recurring household expenses — rent or mortgage, utilities, streaming subscriptions, gym memberships, car payments — are billed on a monthly cycle, which is exactly why so many people prefer to think about their income in monthly terms even if they're technically paid biweekly or semi-monthly. Converting your true pay schedule into a standardized monthly figure lets you build a single, clean budget instead of trying to reconcile irregular paycheck timing against fixed monthly due dates.</p>
+<p>If you're paid biweekly or weekly rather than truly monthly, remember that your "monthly average" figure (annual income ÷ 12) is a planning tool, not your literal paycheck amount — your actual deposits will still arrive on your real pay schedule, just distributed differently than an even monthly split would suggest.</p>
+
+<h2>Gross vs. Net Monthly Income for Applications</h2>
+<p>When applying for an apartment, mortgage, or loan, you'll frequently be asked for your gross monthly income rather than net — lenders and landlords use gross income because it's a standardized, verifiable figure (usually confirmed via pay stubs or a W-2) that doesn't vary based on your personal deduction choices. However, your actual spending power for rent, bills, and savings is governed entirely by your net monthly income after taxes. Keep both figures handy: gross for applications, net for your actual budget.</p>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Confusing monthly pay with semi-monthly pay.</strong> True monthly pay means 12 checks per year. Semi-monthly means 24 checks per year (twice monthly on fixed dates). If your paystub shows payments on both the 1st and 15th, you're semi-monthly, not monthly.</li>
+<li><strong>Calculating tax on a single month's income instead of the annual total.</strong> Federal tax brackets are annual — calculating tax on just one month's pay and multiplying by 12 will produce an inaccurate result, especially for someone whose income crosses multiple brackets.</li>
+<li><strong>Forgetting irregular monthly expenses when budgeting off a "typical" month.</strong> Even with a stable monthly paycheck, expenses like insurance premiums, annual subscriptions, or seasonal costs can create month-to-month variability that a single "monthly income" figure doesn't capture.</li>
+<li><strong>Using gross monthly income for spending decisions.</strong> Rent affordability guidelines and other rules of thumb are often based on gross income, but your actual spending capacity is governed by net (after-tax) monthly income.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-q">How do I calculate my monthly salary from my annual salary?</div><div class="faq-a">Divide your annual salary by 12 for gross monthly pay. For net (take-home) monthly pay, first subtract your estimated annual federal tax, state tax, and FICA from your annual salary, then divide the result by 12.</div></div>
+<div class="faq-item"><div class="faq-q">Is monthly pay the same as semi-monthly pay?</div><div class="faq-a">No. Monthly pay means you receive one paycheck per month (12 per year). Semi-monthly pay means two paychecks per month on fixed dates, typically the 1st and 15th (24 per year). Semi-monthly is far more common among U.S. employers than true monthly pay.</div></div>
+<div class="faq-item"><div class="faq-q">How do I convert an hourly wage to a monthly salary?</div><div class="faq-a">Multiply your hourly rate by your typical weekly hours, then by 52 weeks to get an annual figure, then divide by 12 for a monthly gross estimate. This calculator does that conversion automatically when you select the hourly input option.</div></div>
+<div class="faq-item"><div class="faq-q">What monthly income do I need to afford a certain rent?</div><div class="faq-a">A common guideline is that rent shouldn't exceed 30% of your gross monthly income, though many landlords require gross monthly income to be at least 2.5–3 times the monthly rent amount. Check your specific market's typical requirements.</div></div>
+<div class="faq-item"><div class="faq-q">Why is my monthly net pay less than my gross monthly pay divided evenly?</div><div class="faq-a">Because federal tax, state tax, and FICA are subtracted from your gross salary before you receive it. The amount subtracted depends on your filing status, deductions, and applicable tax brackets.</div></div>
+<div class="faq-item"><div class="faq-q">Does this calculator account for bonuses?</div><div class="faq-a">No — this calculator assumes a consistent monthly salary. If you receive periodic bonuses, calculate them separately and add the after-tax amount to the specific month you expect to receive it, since bonuses are often withheld differently than regular pay.</div></div>
+</div>
+
+<h2>Related Calculators</h2>
+<p>If you're actually paid every two weeks, use the <a href="/biweekly-pay-calculator">Biweekly Pay Calculator</a> instead for an accurate per-check figure. For a detailed breakdown across all pay frequencies, try the <a href="/paycheck-calculator">Paycheck Calculator</a>. To see your full annual take-home picture, use the <a href="/take-home-pay-calculator">Take-Home Pay Calculator</a>. If you're hourly, check the <a href="/hourly-to-salary-calculator">Hourly to Salary Calculator</a> or <a href="/gross-pay-calculator">Gross Pay Calculator</a> first.</p>
+
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+const BRACKETS = {
+  single: [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:    [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+  mfs:    [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]],
+  hoh:    [[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]]
+};
+const STD_DED = {single:15000,mfj:30000,mfs:15000,hoh:22500};
+function calcFedTax(income, status){
+  const brackets = BRACKETS[status];
+  let tax = 0, prev = 0;
+  for (const [top, rate] of brackets){
+    if (income <= prev) break;
+    const ceiling = top === Infinity ? income : Math.min(income, top);
+    tax += (ceiling - prev) * rate;
+    prev = ceiling;
+  }
+  return tax;
+}
+function toggleInputMS(){
+  var t = document.getElementById('inputTypeMS').value;
+  document.getElementById('annualWrapMS').style.display = t==='annual' ? 'block' : 'none';
+  document.getElementById('hourlyWrapMS').style.display = t==='hourly' ? 'block' : 'none';
+}
+
+function calcMonthly(){
+  var type = document.getElementById('inputTypeMS').value;
+  var annual;
+  if (type === 'annual'){
+    annual = parseFloat(document.getElementById('annualMS').value)||0;
+  } else {
+    var rate = parseFloat(document.getElementById('hourlyMS').value)||0;
+    var hrsWeek = parseFloat(document.getElementById('hoursWeekMS').value)||0;
+    annual = rate * hrsWeek * 52;
+  }
+  var status = document.getElementById('filingMS').value;
+  var stateRatePct = parseFloat(document.getElementById('stateRateMS').value)/100||0;
+
+  var stdDed = STD_DED[status];
+  var fedTaxable = Math.max(0, annual - stdDed);
+  var annualFed = calcFedTax(fedTaxable, status);
+  var annualState = annual * stateRatePct;
+
+  var ssWageBase = 176100;
+  var annualSS = Math.min(annual, ssWageBase) * 0.062;
+  var annualMedicare = annual * 0.0145;
+  var annualFica = annualSS + annualMedicare;
+
+  var annualNet = annual - annualFed - annualState - annualFica;
+
+  document.getElementById('netMonthlyMS').textContent = fmt(annualNet/12);
+  document.getElementById('grossMonthlyMS').textContent = fmt(annual/12);
+  document.getElementById('fedMonthlyMS').textContent = fmt(annualFed/12);
+  document.getElementById('stateMonthlyMS').textContent = stateRatePct===0 ? '$0 (none)' : fmt(annualState/12);
+  document.getElementById('ficaMonthlyMS').textContent = fmt(annualFica/12);
+  document.getElementById('weeklyMS').textContent = fmt(annualNet/52);
+  document.getElementById('annualNetMS').textContent = fmt(annualNet);
+}
+calcMonthly();
+
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">2026-06-30</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

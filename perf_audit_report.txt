@@ -1,0 +1,57 @@
+USAFinCalc Performance Audit Report
+Pages audited: 125
+Issues fixed: 71
+Files modified: 36
+
+Fix breakdown:
+  Remove duplicate robots meta: 33 pages
+  Remove useless og-image preload: 1 pages
+  Fix GA script async attribute: 13 pages
+  Add preconnect for GA: 13 pages
+  Remove redundant font preload: 1 pages
+  Add defer to Chart.js: 3 pages
+  Add preconnect for cdnjs: 3 pages
+  Fix missing img dimensions (CLS): 0 pages
+  Add loading=lazy to images: 0 pages
+  Move blocking JS from head: 0 pages
+  Add font-display:swap to @font-face: 0 pages
+  Minify inline CSS: 4 pages
+  Add resource hints for CDNs: 0 pages
+
+Modified files:
+  about.html
+  amortization-calculator.html
+  blog.html
+  budget-planner.html
+  business-tax-calculator.html
+  capital-gains-tax-calculator.html
+  compound-interest-calculator.html
+  contact.html
+  cost-of-living-calculator.html
+  credit-score-simulator.html
+  crypto-tax-calculator.html
+  currency-converter.html
+  data-sources.html
+  debt-payoff-calculator.html
+  disclaimer.html
+  emergency-fund-calculator.html
+  home-affordability-calculator-usa.html
+  hourly-to-salary-calculator.html
+  hsa-calculator.html
+  income-tax-calculator.html
+  index.html
+  inflation-calculator.html
+  privacy-policy.html
+  privacy.html
+  property-tax-calculator.html
+  refinance-calculator.html
+  roth-ira-calculator.html
+  salary-calculator-usa.html
+  sales-tax-calculator.html
+  self-employment-tax-calculator.html
+  social-security-calculator.html
+  stock-return-calculator-usa.html
+  student-loan-calculator-usa.html
+  tax-calculator-usa.html
+  terms-of-service.html
+  terms.html

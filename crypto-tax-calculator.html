@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="crypto tax calculator USA, cryptocurrency tax 2026, bitcoin tax calculator" name="keywords"/>
+<title>Crypto Tax Calculator 2026 — Bitcoin, Ethereum &amp; All Coins | USAFinCalc</title>
+<meta content="Calculate your 2026 crypto capital gains tax. Supports Bitcoin, Ethereum, and all coins. Covers short-term vs long-term rates, FIFO/LIFO cost basis, NIIT, and state tax. IRS-accurate." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="https://usafincalc.com/crypto-tax-calculator" rel="canonical"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="Crypto Tax Calculator 2026 — Bitcoin, Ethereum &amp; All Coins" property="og:title"/>
+<meta content="IRS-accurate crypto capital gains calculator. Short-term vs long-term, FIFO/LIFO, NIIT, and all 50 state rates." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/crypto-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Crypto Tax Calculator 2026 — USAFinCalc" name="twitter:title"/>
+<meta content="IRS-accurate crypto capital gains calculator. Short-term vs long-term, FIFO/LIFO, NIIT, and all 50 state rates." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--cyan:#06b6d4;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+.fc-panel a,.fc-related-card{color:var(--blue);text-decoration:none}.fc-panel a:hover{text-decoration:underline}
+/* NAV */
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap}
+/* HERO */
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:700px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+/* CALC WRAP */
+.fc-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto 16px;padding:0 24px}
+@media(max-width:700px){.fc-calc-wrap{grid-template-columns:1fr}}
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--cyan));display:block;box-shadow:0 0 8px var(--dot-color,var(--cyan))}
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-label:first-child{margin-top:0}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace;pointer-events:none}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 28px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--cyan)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s;font-family:'Space Grotesk',sans-serif}
+.fc-select:focus{border-color:var(--cyan)}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#06b6d4,#0891b2);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif;letter-spacing:.02em}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(6,182,212,0.35)}
+/* TOGGLE */
+.fc-toggle{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:5px}
+.fc-toggle-btn{padding:9px;border:1px solid var(--border);border-radius:8px;background:var(--panel2);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;text-align:center;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-toggle-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(6,182,212,0.08)}
+/* RESULTS */
+.fc-result-hero{text-align:center;padding:20px 0 16px}
+.fc-result-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.fc-result-amount{font-size:42px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1}
+.fc-divider{height:1px;background:var(--border);margin:16px 0}
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:14px}
+.fc-detail-row:last-child{border-bottom:none}
+.fc-detail-key{color:var(--text2)}
+.fc-detail-val{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--text)}
+.fc-detail-val.green{color:var(--green)}
+.fc-detail-val.red{color:var(--red)}
+.fc-detail-val.cyan{color:var(--cyan)}
+.fc-detail-val.orange{color:var(--orange)}
+.fc-detail-val.purple{color:var(--purple)}
+/* MINI GRID */
+.fc-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.fc-mini-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;text-align:center}
+.fc-mini-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+.fc-mini-val{font-size:16px;font-weight:700;font-family:'JetBrains Mono',monospace}
+/* COINS ROW */
+.fc-coins{display:flex;gap:8px;flex-wrap:wrap;margin:0 auto 20px;padding:0 24px;max-width:940px}
+.fc-coin-btn{display:flex;align-items:center;gap:6px;background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;transition:.15s;font-family:'Space Grotesk',sans-serif}
+.fc-coin-btn:hover{border-color:var(--cyan);color:var(--cyan)}
+.fc-coin-btn.active{border-color:var(--cyan);color:var(--cyan);background:rgba(6,182,212,0.08)}
+.fc-coin-icon{font-size:16px}
+/* SAVINGS BOX */
+.fc-savings{background:rgba(34,211,165,0.06);border:1px solid rgba(34,211,165,0.2);border-radius:10px;padding:14px 16px;margin-top:14px}
+.fc-savings-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin-bottom:8px}
+/* WASH SALE BOX */
+.fc-info-box{background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--text2);line-height:1.65;margin-top:14px}
+.fc-info-box strong{color:var(--purple)}
+/* TRANSACTIONS TABLE */
+.fc-tx-wrap{max-width:940px;margin:0 auto 30px;padding:0 24px}
+.fc-tx-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:20px;overflow-x:auto}
+.fc-tx-hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.fc-tx-title{font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em}
+.fc-tx-add{background:rgba(6,182,212,0.1);color:var(--cyan);border:1px solid rgba(6,182,212,0.25);border-radius:6px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Space Grotesk',sans-serif;transition:.15s}
+.fc-tx-add:hover{background:rgba(6,182,212,0.18)}
+.fc-tx-table{width:100%;min-width:560px;border-collapse:collapse;font-size:13px}
+.fc-tx-table th{color:var(--text3);font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:0 10px 10px;text-align:left;font-weight:600;border-bottom:1px solid var(--border)}
+.fc-tx-table td{padding:8px 10px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--text2);vertical-align:middle}
+.fc-tx-table tr:last-child td{border-bottom:none}
+.fc-tx-input{background:var(--panel2);border:1px solid var(--border);border-radius:5px;padding:5px 8px;color:var(--text);font-size:13px;font-family:'JetBrains Mono',monospace;width:100%;outline:none}
+.fc-tx-input:focus{border-color:var(--cyan)}
+.fc-tx-del{background:none;border:none;color:var(--text3);cursor:pointer;font-size:16px;padding:2px 6px;transition:.15s}
+.fc-tx-del:hover{color:var(--red)}
+.fc-tx-gain-pos{color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:600}
+.fc-tx-gain-neg{color:var(--red);font-family:'JetBrains Mono',monospace;font-weight:600}
+/* FAQ */
+.fc-faq-wrap{max-width:740px;margin:0 auto 60px;padding:0 24px}
+.fc-faq-title{font-size:20px;font-weight:700;margin-bottom:20px}
+.fc-faq-item{border-bottom:1px solid var(--border)}
+.fc-faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;font-size:15px;font-weight:500;user-select:none}
+.fc-faq-q::after{content:'+';font-size:20px;color:var(--text3);transition:.2s;flex-shrink:0}
+.fc-faq-item.open .fc-faq-q::after{transform:rotate(45deg);color:var(--cyan)}
+.fc-faq-a{max-height:0;overflow:hidden;transition:.3s;font-size:14px;color:var(--text2);line-height:1.8}
+.fc-faq-item.open .fc-faq-a{max-height:300px;padding-bottom:16px}
+/* RELATED */
+.fc-related{max-width:940px;margin:0 auto 60px;padding:0 24px}
+.fc-related-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:14px}
+.fc-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.fc-related-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column;gap:4px}
+.fc-related-card:hover{border-color:rgba(59,158,255,0.3);transform:translateY(-2px);text-decoration:none}
+.fc-related-icon{font-size:20px;margin-bottom:4px}
+.fc-related-name{font-size:13px;font-weight:600;color:var(--text)}
+.fc-related-desc{font-size:11px;color:var(--text3)}
+/* FOOTER */
+footer{background:var(--panel);border-top:1px solid var(--border);padding:32px 24px}
+.fc-footer-inner{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.fc-footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.fc-footer-links a{color:var(--text3);font-size:13px;text-decoration:none;transition:.15s}
+.fc-footer-links a:hover{color:var(--text2)}
+.fc-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid var(--border)}
+.fc-footer-copy{font-size:12px;color:var(--text3)}
+/* PLACEHOLDER */
+#results-placeholder{color:var(--text3);font-size:14px;text-align:center;padding:40px 20px;line-height:1.7}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Crypto Tax Calculator 2026 — Bitcoin, Ethereum &amp; All Coins | USAFinCalc",
+  "url": "https://usafincalc.com/crypto-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Crypto Tax Calculator",
+      "item": "https://usafincalc.com/crypto-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Crypto Tax Calculator 2026 — Bitcoin, Ethereum &amp; All Coins | USAFinCalc",
+  "description": "Calculate your take-home pay in Crypto for 2026.",
+  "url": "https://usafincalc.com/crypto-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is cryptocurrency taxed in the US?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The IRS treats cryptocurrency as property (Notice 2014-21). Every sale, trade, or spend is a taxable event. Short-term gains (held ≤1 year) are taxed as ordinary income. Long-term gains (held >1 year) are taxed at 0%, 15%, or 20% depending on income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the crypto tax rate for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Short-term crypto gains are taxed at ordinary income rates (10%–37%). Long-term gains are taxed at 0%, 15%, or 20%. High earners may also owe the 3.8% Net Investment Income Tax (NIIT)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the wash sale rule for crypto?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2026, the wash sale rule (IRC §1091) does NOT apply to cryptocurrency. You can sell crypto at a loss and immediately buy it back without disallowing the loss. This is a key tax strategy called crypto tax-loss harvesting."
+      }
+    }
+  ],
+  "@context": "https://schema.org"
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero">
+<div class="fc-page-badge" style="background:rgba(6,182,212,0.1);color:#06b6d4;border-color:rgba(6,182,212,0.25)">Updated for IRS 2026 Rules · IRS Notice 2014-21</div>
+<h1>Crypto Tax <span style="color:#06b6d4">Calculator 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Calculate your capital gains tax on Bitcoin, Ethereum, and all cryptocurrencies. Short-term vs long-term rates, FIFO/LIFO cost basis, NIIT, and all 50 state rates. No signup required.</p>
+</div>
+<!-- QUICK COIN BUTTONS -->
+<div class="fc-coins" id="coinBtns">
+<button class="fc-coin-btn active" onclick="setCoin(this,'BTC','₿','Bitcoin')"><span class="fc-coin-icon">₿</span> Bitcoin</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'ETH','Ξ','Ethereum')"><span class="fc-coin-icon">Ξ</span> Ethereum</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'SOL','◎','Solana')"><span class="fc-coin-icon">◎</span> Solana</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'BNB','⬡','BNB')"><span class="fc-coin-icon">⬡</span> BNB</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'XRP','✦','XRP')"><span class="fc-coin-icon">✦</span> XRP</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'DOGE','Ð','Dogecoin')"><span class="fc-coin-icon">Ð</span> Dogecoin</button>
+<button class="fc-coin-btn" onclick="setCoin(this,'OTHER','◆','Other')"><span class="fc-coin-icon">◆</span> Other Coin</button>
+</div>
+<!-- MAIN CALC -->
+<div class="fc-calc-wrap">
+<!-- INPUT PANEL -->
+<div class="fc-panel">
+<div class="fc-panel-title" style="--dot-color:var(--cyan)">₿ Transaction Details</div>
+<label for="coinName" class="fc-label">Coin / Asset</label>
+<input class="fc-input no-pfx" id="coinName" oninput="autoCalc()" placeholder="Bitcoin (BTC)" type="text" value="Bitcoin (BTC)"/>
+<label for="costBasis" class="fc-label">Purchase Price (Cost Basis)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="costBasis" min="0" oninput="autoCalc()" placeholder="30000" step="any" type="number"/>
+</div>
+<label for="salePrice" class="fc-label">Sale Price (Proceeds)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="salePrice" min="0" oninput="autoCalc()" placeholder="65000" step="any" type="number"/>
+</div>
+<label for="qty" class="fc-label">Amount of Coins Sold</label>
+<input class="fc-input no-pfx" id="qty" min="0" oninput="autoCalc()" placeholder="0.5" step="any" type="number" value="1"/>
+<label for="filing" class="fc-label">Hold Period</label>
+<div class="fc-toggle">
+<button class="fc-toggle-btn" id="btnShort" onclick="setHold('short')">Short-Term<br/><span style="font-size:10px;opacity:.7">≤ 1 Year</span></button>
+<button class="fc-toggle-btn active" id="btnLong" onclick="setHold('long')">Long-Term<br/><span style="font-size:10px;opacity:.7">&gt; 1 Year</span></button>
+</div>
+<label class="fc-label">Filing Status</label>
+<select class="fc-select" id="filing" onchange="autoCalc()">
+<option value="single">Single</option>
+<option value="married">Married Filing Jointly</option>
+<option value="hoh">Head of Household</option>
+<option value="marriedSep">Married Filing Separately</option>
+</select>
+<label for="otherIncome" class="fc-label">Other Taxable Income This Year</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="otherIncome" min="0" oninput="autoCalc()" placeholder="75000" step="1000" type="number" value="75000"/>
+</div>
+<label for="stateSelect" class="fc-label">State</label>
+<select class="fc-select" id="stateSelect" onchange="autoCalc()">
+<option value="0">Select State…</option>
+<option data-name="Alaska (No State Tax)" value="0">🏔️ Alaska — No State Tax</option>
+<option data-name="Florida (No State Tax)" value="0">🌞 Florida — No State Tax</option>
+<option data-name="Nevada (No State Tax)" value="0">🎰 Nevada — No State Tax</option>
+<option data-name="South Dakota (No State Tax)" value="0">🦅 South Dakota — No State Tax</option>
+<option data-name="Tennessee (No State Tax)" value="0">🎸 Tennessee — No State Tax</option>
+<option data-name="Texas (No State Tax)" value="0">⭐ Texas — No State Tax</option>
+<option data-name="Washington (No State Tax)" value="0">🌲 Washington — No State Tax</option>
+<option data-name="Wyoming (No State Tax)" value="0">🤠 Wyoming — No State Tax</option>
+<option data-name="California" value="0.133">🌴 California — 13.3%</option>
+<option data-name="Colorado" value="0.0499">🏔️ Colorado — 4.4%</option>
+<option data-name="Connecticut" value="0.0699">🏙️ Connecticut — 6.99%</option>
+<option data-name="Georgia" value="0.055">🍑 Georgia — 5.5%</option>
+<option data-name="Illinois" value="0.0495">🌾 Illinois — 4.95%</option>
+<option data-name="Indiana" value="0.0305">🏁 Indiana — 3.05%</option>
+<option data-name="Maryland" value="0.06">⚓ Maryland — 5.75%</option>
+<option data-name="Massachusetts" value="0.05">🦞 Massachusetts — 5%</option>
+<option data-name="Michigan" value="0.0425">🚗 Michigan — 4.25%</option>
+<option data-name="Minnesota" value="0.0985">🌨️ Minnesota — 9.85%</option>
+<option data-name="Missouri" value="0.047">🏛️ Missouri — 4.7%</option>
+<option data-name="New Jersey" value="0.1075">🗺️ New Jersey — 10.75%</option>
+<option data-name="New York" value="0.109">🗽 New York — 10.9%</option>
+<option data-name="North Carolina" value="0.045">🌲 North Carolina — 4.5%</option>
+<option data-name="Oregon" value="0.099">🌲 Oregon — 9.9%</option>
+<option data-name="Pennsylvania" value="0.0307">🔔 Pennsylvania — 3.07%</option>
+<option data-name="Utah" value="0.0465">🏔️ Utah — 4.65%</option>
+<option data-name="Virginia" value="0.0575">🏛️ Virginia — 5.75%</option>
+<option data-name="Wisconsin" value="0.075">🧀 Wisconsin — 7.5%</option>
+</select>
+<label for="basisMethod" class="fc-label">Cost Basis Method</label>
+<select class="fc-select" id="basisMethod" onchange="autoCalc()">
+<option value="fifo">FIFO (First In, First Out) — IRS Default</option>
+<option value="lifo">LIFO (Last In, First Out)</option>
+<option value="hifo">HIFO (Highest Cost First) — Minimizes Tax</option>
+<option value="specific">Specific Identification</option>
+</select>
+<button class="fc-btn" onclick="autoCalc()">Calculate Crypto Tax →</button>
+</div>
+<!-- RESULTS PANEL -->
+<div class="fc-panel">
+<div class="fc-panel-title" style="--dot-color:var(--green)">Tax Breakdown</div>
+<div id="results">
+<div id="results-placeholder">
+        Enter your transaction details<br/>and click <strong style="color:var(--cyan)">Calculate</strong> to see your tax breakdown.
+        <div style="margin-top:24px;font-size:40px">₿</div>
+</div>
+</div>
+</div>
+</div>
+<!-- MULTI-TRANSACTION TABLE -->
+<div class="fc-tx-wrap">
+<div class="fc-tx-panel">
+<div class="fc-tx-hd">
+<div class="fc-tx-title">📋 Multi-Transaction Calculator</div>
+<button class="fc-tx-add" onclick="addRow()">+ Add Transaction</button>
+</div>
+<table class="fc-tx-table" id="txTable">
+<thead>
+<tr>
+<th scope="col">Coin</th>
+<th scope="col">Buy Price ($)</th>
+<th scope="col">Sell Price ($)</th>
+<th scope="col">Qty</th>
+<th scope="col">Hold Period</th>
+<th scope="col">Gain/Loss</th>
+<th scope="col"></th>
+</tr>
+</thead>
+<tbody id="txBody">
+<tr>
+<td><input class="fc-tx-input" oninput="calcRow(this)" value="BTC"/></td>
+<td><input class="fc-tx-input" oninput="calcRow(this)" type="number" value="30000"/></td>
+<td><input class="fc-tx-input" oninput="calcRow(this)" type="number" value="65000"/></td>
+<td><input class="fc-tx-input" oninput="calcRow(this)" step="any" type="number" value="1"/></td>
+<td><select class="fc-tx-input" onchange="calcRow(this)" style="padding:5px 6px"><option>Long</option><option>Short</option></select></td>
+<td class="fc-tx-gain-pos" id="row-gain-0">$35,000</td>
+<td><button class="fc-tx-del" onclick="delRow(this)">×</button></td>
+</tr>
+</tbody>
+</table>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);font-size:14px">
+<span style="color:var(--text2)">Total Net Gain / Loss:</span>
+<span id="txTotalGain" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;color:var(--green)">$35,000.00</span>
+</div>
+</div>
+</div>
+<!-- FAQ -->
+<div class="fc-faq-wrap">
+<div class="fc-faq-title">Crypto Tax FAQs 2026</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Is cryptocurrency taxed in the US?</div>
+<div class="fc-faq-a">Yes. The IRS treats cryptocurrency as <strong>property</strong> (Notice 2014-21), not currency. Every sale, trade, swap, or purchase using crypto is a taxable event. You must report gains and losses on Schedule D / Form 8949.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What are the 2026 crypto tax rates?</div>
+<div class="fc-faq-a"><strong>Short-term</strong> (held ≤ 1 year): taxed as ordinary income — 10% to 37% depending on your total income. <strong>Long-term</strong> (held &gt; 1 year): 0%, 15%, or 20%. High earners ($200K+ single / $250K+ MFJ) also owe 3.8% NIIT on top.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Does the wash sale rule apply to crypto?</div>
+<div class="fc-faq-a">As of 2026, the wash sale rule (IRC §1091) does <strong>NOT apply to cryptocurrency</strong>. You can sell crypto at a loss and immediately buy it back — your loss is still deductible. This makes crypto tax-loss harvesting more powerful than stocks. Note: Congress has proposed extending wash sale rules to crypto; check for 2026 legislation updates.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is FIFO vs HIFO for crypto?</div>
+<div class="fc-faq-a"><strong>FIFO</strong> (First In, First Out): IRS default. Your first purchased coins are treated as the first sold — often produces larger taxable gains in a bull market. <strong>HIFO</strong> (Highest In, First Out): Sells your highest-cost coins first, minimizing your gain. Legal if you maintain records. <strong>Specific ID</strong> gives you the most control but requires detailed records.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Is crypto-to-crypto trading taxable?</div>
+<div class="fc-faq-a">Yes. Trading BTC for ETH (or any coin for any other coin) is a taxable event — the IRS treats it as selling BTC for USD, then buying ETH. Your gain is calculated as: fair market value of ETH received minus cost basis of BTC sold. You must report this on Form 8949.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Are crypto losses deductible?</div>
+<div class="fc-faq-a">Yes. Crypto losses are fully deductible against capital gains. If your net losses exceed your gains, you can deduct up to $3,000 against ordinary income per year. Remaining losses carry forward to future tax years indefinitely. There's no limit on how much capital loss you can carry forward.</div>
+</div>
+</div>
+<!-- RELATED CALCULATORS -->
+<div class="fc-related">
+<div class="fc-related-title">Related Calculators</div>
+<div class="fc-related-grid">
+<a class="fc-related-card" href="/capital-gains-tax-calculator">
+<div class="fc-related-icon">📈</div>
+<div class="fc-related-name">Capital Gains Tax</div>
+<div class="fc-related-desc">Stocks &amp; real estate gains</div>
+</a>
+<a class="fc-related-card" href="/tax-calculator-usa">
+<div class="fc-related-icon">🧾</div>
+<div class="fc-related-name">Federal Tax Calculator</div>
+<div class="fc-related-desc">Total income tax estimate</div>
+</a>
+<a class="fc-related-card" href="/self-employment-tax-calculator">
+<div class="fc-related-icon">💼</div>
+<div class="fc-related-name">Self-Employment Tax</div>
+<div class="fc-related-desc">For freelancers &amp; traders</div>
+</a>
+<a class="fc-related-card" href="/roth-ira-calculator">
+<div class="fc-related-icon">🐷</div>
+<div class="fc-related-name">Roth IRA Calculator</div>
+<div class="fc-related-desc">Tax-free retirement growth</div>
+</a>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/crypto-tax-guide">Crypto Tax Guide 2026: How the IRS Taxes Bitcoin & Ethereum</a></li>
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="crypto-tax-guide">
+<h2>What This Crypto Tax Calculator Does</h2>
+<p>This calculator estimates the capital gains tax owed on cryptocurrency sales, trades, or exchanges based on your purchase price (cost basis), sale price, holding period, and income. It handles both short-term gains (held under 1 year, taxed as ordinary income) and long-term gains (held over 1 year, taxed at preferential rates), and addresses the unique tax events that crypto creates — including crypto-to-crypto trades.</p>
+<h2>The IRS Treats Crypto as Property</h2>
+<p>The IRS classifies cryptocurrency as property — not currency — for tax purposes. This means every transaction that disposes of crypto is a taxable event: selling for cash, trading one crypto for another, using crypto to buy goods or services, receiving crypto as payment for work, and earning crypto through staking or mining rewards.</p>
+<p>Each taxable event requires calculating: fair market value at time of transaction, your cost basis, gain or loss, and the holding period. For frequent traders with hundreds of transactions across multiple exchanges and wallets, this is genuinely complex to track without dedicated crypto tax software.</p>
+<h2>Crypto Tax Rates</h2>
+<table>
+<thead><tr><th scope="col">Holding Period</th><th scope="col">Tax Treatment</th><th scope="col">Effective Rates</th></tr></thead>
+<tbody>
+<tr><td>Under 1 year</td><td>Short-term capital gains</td><td>10%–37% (ordinary income rates)</td></tr>
+<tr><td>Over 1 year</td><td>Long-term capital gains</td><td>0%, 15%, or 20%</td></tr>
+<tr><td>Staking/mining rewards</td><td>Ordinary income at receipt</td><td>10%–37%</td></tr>
+<tr><td>Hard fork / airdrop</td><td>Ordinary income at receipt (generally)</td><td>10%–37%</td></tr>
+</tbody>
+</table>
+<h2>Crypto-to-Crypto Trades Are Taxable</h2>
+<p>Trading Bitcoin for Ethereum is a taxable event — you've disposed of Bitcoin (realizing a gain or loss) and acquired Ethereum (establishing a new cost basis). Many crypto traders incorrectly believe that only USD conversions trigger taxes. Every swap, trade, or exchange between cryptocurrencies creates a taxable event at the market value of the crypto received at the time of trade.</p>
+<h2>Cost Basis Methods</h2>
+<p>When you've purchased the same cryptocurrency multiple times at different prices, you must choose a cost basis accounting method: FIFO (First In, First Out) — oldest purchases sold first; LIFO (Last In, First Out) — newest purchases sold first; Specific Identification — identify which specific lot you're selling, often most tax-advantaged; HIFO (Highest In, First Out) — highest-cost lots sold first, minimizing gains.</p>
+<p>HIFO typically minimizes current tax liability. The method must be consistently applied and documented. The IRS's default is FIFO if no method is specified.</p>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Use crypto tax software</strong> (CoinTracker, TaxBit, Koinly) to import transaction history from exchanges and wallets — manual tracking across multiple platforms is error-prone and time-consuming.</li>
+<li><strong>Track cost basis from the beginning</strong> — retroactively reconstructing cost basis from years of transaction history is difficult and may require paying more tax than necessary if records are incomplete.</li>
+<li><strong>Consider holding periods before selling</strong> — crossing the 1-year threshold converts short-term gains to long-term gains, potentially cutting your tax rate substantially.</li>
+<li><strong>Report losses</strong> — crypto losses can offset other capital gains and up to $3,000 of ordinary income annually, with excess carried forward. Don't leave unclaimed losses on the table.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/capital-gains-tax-calculator">Capital Gains Tax Calculator</a></strong> — general investment capital gains.</li>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — full annual tax including crypto income.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Do I need to report crypto if I didn't sell?</h3>
+<p>Holding crypto without selling is not a taxable event. But receiving crypto (as payment, mining rewards, staking, airdrops, or hard forks) typically is taxable as ordinary income at fair market value when received, even without a cash sale.</p>
+<h3>What happens if I don't report crypto gains?</h3>
+<p>The IRS receives transaction data from major exchanges (Coinbase, Kraken, Gemini, and others file 1099s). Unreported crypto gains can trigger notices, penalties, and interest. The IRS has actively pursued crypto non-compliance through John Doe summonses and exchange subpoenas.</p>
+<h3>Can I use tax-loss harvesting with crypto?</h3>
+<p>Yes — and unlike stocks, crypto is not subject to wash-sale rules (as of current law). You can sell crypto at a loss and immediately repurchase it, realizing the tax loss while maintaining your position. This is a significant potential advantage over stock tax-loss harvesting, though future legislative changes could eliminate this loophole.</p>
+<h3>Is Bitcoin taxed differently than other cryptocurrencies?</h3>
+<p>No — the IRS applies the same property tax rules to all cryptocurrencies regardless of type. Bitcoin, Ethereum, altcoins, and stablecoins all fall under the same capital gains framework.</p>
+<h2>Key Takeaways</h2>
+<p>Crypto tax obligations are more complex than most traders realize — every trade, not just USD conversions, triggers a taxable event. Tracking cost basis consistently from the start, holding assets beyond one year where feasible, claiming all losses to offset gains, and using specialized crypto tax software makes compliance manageable. The IRS is increasingly data-rich on crypto transactions — accurate reporting protects you from penalties while proper tax planning (HIFO accounting, strategic loss harvesting, holding for long-term rates) minimizes what you legitimately owe.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script async="True" defer="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script>
+// ── STATE ──────────────────────────────────────────────
+let holdPeriod = 'long';
+
+// ── 2026 IRS BRACKETS ─────────────────────────────────
+const LT_BRACKETS = {
+  single:     [[48350,0],[533400,.15],[Infinity,.20]],
+  married:    [[96700,0],[600050,.15],[Infinity,.20]],
+  hoh:        [[64750,0],[566700,.15],[Infinity,.20]],
+  marriedSep: [[48350,0],[300025,.15],[Infinity,.20]]
+};
+const ORD_BRACKETS = {
+  single:     [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]],
+  married:    [[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]],
+  hoh:        [[17000,.10],[64850,.12],[103350,.22],[197300,.24],[250500,.32],[626350,.35],[Infinity,.37]],
+  marriedSep: [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[375800,.35],[Infinity,.37]]
+};
+const STD_DED = {single:15000,married:30000,hoh:22500,marriedSep:15000};
+const NIIT_THRESH = {single:200000,married:250000,hoh:200000,marriedSep:125000};
+
+function calcBrackets(income, brackets) {
+  let tax = 0, prev = 0;
+  for (const [cap, rate] of brackets) {
+    if (income <= prev) break;
+    tax += (Math.min(income, cap) - prev) * rate;
+    prev = cap;
+    if (income <= cap) break;
+  }
+  return tax;
+}
+
+function setHold(t) {
+  holdPeriod = t;
+  document.getElementById('btnShort').classList.toggle('active', t === 'short');
+  document.getElementById('btnLong').classList.toggle('active', t === 'long');
+  autoCalc();
+}
+
+function setCoin(btn, ticker, icon, name) {
+  document.querySelectorAll('.fc-coin-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('coinName').value = name + ' (' + ticker + ')';
+  autoCalc();
+}
+
+function fmt(n) { return '$' + Math.abs(n).toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2}); }
+function fmtP(n) { return (n * 100).toFixed(2) + '%'; }
+
+function autoCalc() {
+  const costBasis = parseFloat(document.getElementById('costBasis').value) || 0;
+  const salePrice = parseFloat(document.getElementById('salePrice').value) || 0;
+  const qty       = parseFloat(document.getElementById('qty').value) || 1;
+  const filing    = document.getElementById('filing').value;
+  const otherInc  = parseFloat(document.getElementById('otherIncome').value) || 0;
+  const stateRate = parseFloat(document.getElementById('stateSelect').value) || 0;
+
+  if (!costBasis || !salePrice) {
+    document.getElementById('results').innerHTML = `<div id="results-placeholder-2" style="color:var(--text3);font-size:14px;text-align:center;padding:40px 20px;line-height:1.7">Enter purchase price and sale price to see your tax breakdown.<div style="margin-top:24px;font-size:40px">₿</div></div>`;
+    return;
+  }
+
+  const totalCost     = costBasis * qty;
+  const totalProceeds = salePrice * qty;
+  const rawGain       = totalProceeds - totalCost;
+  const isLoss        = rawGain < 0;
+  const gain          = Math.abs(rawGain);
+
+  // Federal tax on gain
+  let fedTax = 0, rateUsed = 0;
+  if (!isLoss) {
+    if (holdPeriod === 'short') {
+      // Taxed at ordinary income rate on marginal gain
+      const withoutGain = calcBrackets(otherInc, ORD_BRACKETS[filing]);
+      const withGain    = calcBrackets(otherInc + rawGain, ORD_BRACKETS[filing]);
+      fedTax = withGain - withoutGain;
+      rateUsed = rawGain > 0 ? fedTax / rawGain : 0;
+    } else {
+      // Long-term
+      const taxableInc = Math.max(0, otherInc - STD_DED[filing]);
+      const brackets   = LT_BRACKETS[filing];
+      const withoutGain = calcBrackets(taxableInc, brackets);
+      const withGain    = calcBrackets(taxableInc + rawGain, brackets);
+      fedTax = withGain - withoutGain;
+      rateUsed = rawGain > 0 ? fedTax / rawGain : 0;
+    }
+  }
+
+  // NIIT (3.8%) — applies if MAGI > threshold
+  const niitThresh = NIIT_THRESH[filing];
+  let niit = 0;
+  if (!isLoss && otherInc > niitThresh) {
+    niit = rawGain * 0.038;
+  } else if (!isLoss && (otherInc + rawGain) > niitThresh) {
+    niit = ((otherInc + rawGain) - niitThresh) * 0.038;
+  }
+
+  // State tax
+  const stateTax = isLoss ? 0 : rawGain * stateRate;
+
+  const totalTax = fedTax + niit + stateTax;
+  const netProceeds = totalProceeds - totalTax;
+
+  // Long-term savings comparison (if short-term)
+  let ltFedTax = 0;
+  if (holdPeriod === 'short' && !isLoss) {
+    const taxableInc  = Math.max(0, otherInc - STD_DED[filing]);
+    const withoutGain = calcBrackets(taxableInc, LT_BRACKETS[filing]);
+    const withGain    = calcBrackets(taxableInc + rawGain, LT_BRACKETS[filing]);
+    ltFedTax = withGain - withoutGain + niit + stateTax;
+  }
+  const savings = holdPeriod === 'short' ? Math.max(0, totalTax - ltFedTax) : 0;
+
+  document.getElementById('results').innerHTML = `
+    <div class="fc-result-hero">
+      <div class="fc-result-label">${isLoss ? 'Deductible Loss' : 'Total Tax Owed'}</div>
+      <div class="fc-result-amount" style="color:${isLoss ? 'var(--green)' : 'var(--red)'}">${isLoss ? '-' : ''}${fmt(isLoss ? gain : totalTax)}</div>
+      <div style="font-size:12px;color:var(--text3);margin-top:6px">${holdPeriod==='long'?'Long-Term':'Short-Term'} · ${fmtP(rateUsed)} effective rate</div>
+    </div>
+    <div class="fc-divider"></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Total Cost Basis</span><span class="fc-detail-val">${fmt(totalCost)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Total Sale Proceeds</span><span class="fc-detail-val">${fmt(totalProceeds)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">${isLoss ? 'Capital Loss' : 'Capital Gain'}</span><span class="fc-detail-val ${isLoss?'green':'cyan'}">${isLoss?'-':''}${fmt(gain)}</span></div>
+    <div class="fc-divider"></div>
+    ${!isLoss ? `
+    <div class="fc-detail-row"><span class="fc-detail-key">Federal Capital Gains Tax</span><span class="fc-detail-val red">-${fmt(fedTax)}</span></div>
+    ${niit > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Net Investment Income Tax (3.8%)</span><span class="fc-detail-val red">-${fmt(niit)}</span></div>` : ''}
+    ${stateTax > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">State Tax (${fmtP(stateRate)})</span><span class="fc-detail-val orange">-${fmt(stateTax)}</span></div>` : ''}
+    <div class="fc-detail-row"><span class="fc-detail-key" style="font-weight:700;color:var(--text)">Net After-Tax Proceeds</span><span class="fc-detail-val green">${fmt(netProceeds)}</span></div>
+    ` : `
+    <div class="fc-savings">
+      <div class="fc-savings-title">💡 Loss Deduction Strategy</div>
+      <div style="font-size:13px;color:var(--text2);line-height:1.7">You can deduct this loss against capital gains. If your net losses exceed gains, deduct up to <strong style="color:var(--green)">$3,000</strong> from ordinary income this year. Excess carries forward indefinitely. Unlike stocks, <strong style="color:var(--purple)">no wash sale rule</strong> applies to crypto!</div>
+    </div>
+    `}
+    ${savings > 0 ? `
+    <div class="fc-info-box" style="background:rgba(34,211,165,0.06);border-color:rgba(34,211,165,0.2);margin-top:12px">
+      <strong style="color:var(--green)">💡 Hold ${holdPeriod==='short'?'longer':'more'} to save ${fmt(savings)}</strong><br>
+      Switching to long-term treatment would reduce your tax bill by approximately ${fmt(savings)}.
+    </div>` : ''}
+    <div class="fc-info-box" style="margin-top:12px">
+      <strong>🚫 No Wash Sale Rule for Crypto</strong> — Unlike stocks, you can sell crypto at a loss and immediately rebuy. Your loss is still fully deductible. This is a powerful tax strategy not available for stocks.
+    </div>
+    <div class="fc-mini-grid" style="margin-top:14px">
+      <div class="fc-mini-box"><div class="fc-mini-label">Fed Rate</div><div class="fc-mini-val" style="color:var(--cyan)">${fmtP(rateUsed)}</div></div>
+      <div class="fc-mini-box"><div class="fc-mini-label">${isLoss?'Loss':'Net Gain'}</div><div class="fc-mini-val" style="color:${isLoss?'var(--green)':'var(--purple)'}">${isLoss?'-':''}${fmt(gain)}</div></div>
+      <div class="fc-mini-box"><div class="fc-mini-label">Hold Type</div><div class="fc-mini-val" style="color:var(--text2);font-size:12px">${holdPeriod==='long'?'Long':'Short'}-Term</div></div>
+    </div>
+  `;
+}
+
+// ── MULTI-TX TABLE ─────────────────────────────────────
+let rowCount = 1;
+
+function calcRow(el) {
+  const row  = el.closest('tr');
+  const cols = row.querySelectorAll('input, select');
+  const buy  = parseFloat(cols[1].value) || 0;
+  const sell = parseFloat(cols[2].value) || 0;
+  const qty  = parseFloat(cols[3].value) || 0;
+  const gain = (sell - buy) * qty;
+  const td   = row.querySelector('[id^="row-gain"]');
+  if (td) {
+    td.textContent = (gain >= 0 ? '$' : '-$') + Math.abs(gain).toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2});
+    td.className   = gain >= 0 ? 'fc-tx-gain-pos' : 'fc-tx-gain-neg';
+  }
+  updateTxTotal();
+}
+
+function updateTxTotal() {
+  let total = 0;
+  document.querySelectorAll('[id^="row-gain"]').forEach(td => {
+    const v = parseFloat(td.textContent.replace(/[$,]/g,'')) * (td.textContent.includes('-$') ? -1 : 1);
+    if (!isNaN(v)) total += v;
+  });
+  const el = document.getElementById('txTotalGain');
+  el.textContent = (total >= 0 ? '$' : '-$') + Math.abs(total).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+  el.style.color = total >= 0 ? 'var(--green)' : 'var(--red)';
+}
+
+function addRow() {
+  const tbody = document.getElementById('txBody');
+  const tr = document.createElement('tr');
+  tr.innerHTML = `
+    <td><input class="fc-tx-input" value="ETH" oninput="calcRow(this)"></td>
+    <td><input class="fc-tx-input" type="number" value="2000" oninput="calcRow(this)"></td>
+    <td><input class="fc-tx-input" type="number" value="3500" oninput="calcRow(this)"></td>
+    <td><input class="fc-tx-input" type="number" value="5" step="any" oninput="calcRow(this)"></td>
+    <td><select class="fc-tx-input" style="padding:5px 6px" onchange="calcRow(this)"><option>Long</option><option>Short</option></select></td>
+    <td class="fc-tx-gain-pos" id="row-gain-${rowCount}">$7,500.00</td>
+    <td><button class="fc-tx-del" onclick="delRow(this)">×</button></td>`;
+  tbody.appendChild(tr);
+  rowCount++;
+  updateTxTotal();
+}
+
+function delRow(btn) {
+  const row = btn.closest('tr');
+  if (document.querySelectorAll('#txBody tr').length > 1) {
+    row.remove();
+    updateTxTotal();
+  }
+}
+
+// Auto-calc on load
+autoCalc();
+</script>
+<script defer="" src="js/fincalc-ui.js"></script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

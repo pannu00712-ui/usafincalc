@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep?</title>
+<meta content="Calculate how much tax is withheld from your bonus in 2026. Compare the flat 22% method vs aggregate method. See net bonus after federal, FICA, and state taxes." name="description"/>
+<meta content="bonus tax calculator, bonus calculator, how much tax on bonus, bonus withholding calculator 2026" name="keywords"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/bonus-tax-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep?" property="og:title"/>
+<meta content="Calculate how much tax is withheld from your bonus in 2026. Compare the flat 22% method vs aggregate method. See net bonus after federal, FICA, and state taxes." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/bonus-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep?" name="twitter:title"/>
+<meta content="Calculate how much tax is withheld from your bonus in 2026. Compare the flat 22% method vs aggregate method. See net bonus after federal, FICA, and state taxes." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#00e5a0;--accent2:#00b87a;
+  --danger:#ff6b6b;--info:#74b9ff;
+  --federal:#7c6ff7;--fica:#ffa94d;--state:#54a0ff;--net:#00e5a0;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:20px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+/* method toggle */
+.method-toggle{max-width:980px;margin:0 auto;padding:0 24px 4px;display:flex;gap:0}
+.mt-btn{flex:1;padding:12px;font-size:13px;font-weight:500;font-family:var(--font);cursor:pointer;border:1px solid var(--border2);background:var(--bg3);color:var(--muted);transition:all .2s}
+.mt-btn:first-child{border-radius:var(--rs) 0 0 var(--rs)}
+.mt-btn:last-child{border-radius:0 var(--rs) var(--rs) 0}
+.mt-btn.active{background:rgba(0,229,160,0.12);border-color:var(--accent);color:var(--accent)}
+.explain-box{max-width:980px;margin:0 auto;padding:0 24px 20px}
+.explain{background:var(--bg3);border-left:3px solid var(--accent);border-radius:0 var(--rs) var(--rs) 0;padding:14px 18px;font-size:13px;color:var(--muted);line-height:1.8}
+.explain strong{color:var(--text)}
+.main{max-width:980px;margin:0 auto;padding:0 24px 60px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:660px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ct{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:11px 14px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:16px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:16px}
+.pfx span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.pfx input{padding-left:28px;margin-bottom:0}
+.btn{width:100%;background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s}
+.btn:hover{background:#00c98c}
+.btn:active{transform:scale(.98)}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:280px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.placeholder-icon{font-size:36px;opacity:.4}
+.net-card{background:linear-gradient(135deg,rgba(0,229,160,0.12),rgba(0,184,122,0.06));border:1px solid rgba(0,229,160,0.25);border-radius:var(--r);padding:24px;text-align:center}
+.nl{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:42px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:14px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text);font-weight:500}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:0}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dv.g{color:var(--accent)}
+.dv.r{color:var(--danger)}
+.compare-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;grid-column:1/-1}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:500px){.compare-grid{grid-template-columns:1fr}}
+.citem{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;text-align:center}
+.citem-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-family:var(--mono);margin-bottom:8px}
+.citem-val{font-size:24px;font-weight:600;color:var(--accent);font-family:var(--mono)}
+.citem-sub{font-size:12px;color:var(--muted);margin-top:4px}
+.cs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.cs h2{font-size:22px;font-weight:600;margin-bottom:14px;letter-spacing:-.3px}
+.cs h3{font-size:17px;font-weight:500;margin:28px 0 10px;letter-spacing:-.2px}
+.cs p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px}
+.cs p strong{color:var(--text);font-weight:500}
+.abox{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px 18px;font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.9;margin:24px 0}
+.abox a{color:var(--info);text-decoration:none}
+.fqs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.fqs h2{font-size:22px;font-weight:600;margin-bottom:20px;letter-spacing:-.3px}
+.fqi{border-bottom:1px solid var(--border);padding:18px 0;cursor:pointer}
+.fqq{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:500;color:var(--text)}
+.fqa-arrow{color:var(--muted);font-size:18px;transition:transform .2s}
+.fqa{color:var(--muted);font-size:14px;line-height:1.8;margin-top:12px;display:none}
+.fqi.open .fqa{display:block}
+.fqi.open .fqa-arrow{transform:rotate(180deg)}
+.rels{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.rels h2{font-size:17px;font-weight:500;margin-bottom:16px;color:var(--muted)}
+.relg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.relc{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:14px 16px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:10px;transition:border-color .2s,background .2s}
+.relc:hover{border-color:var(--border2);background:var(--bg3)}
+footer{border-top:1px solid var(--border);padding:28px 24px;max-width:980px;margin:0 auto;font-size:12px;color:var(--muted);line-height:1.9}
+footer a{color:var(--muted);text-decoration:underline}
+.hidden{display:none!important}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bonus Tax Calculator 2026 — How Much of Your Bonus Do You Keep?",
+  "url": "https://usafincalc.com/bonus-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bonus Tax Calculator 2026",
+      "item": "https://usafincalc.com/bonus-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bonus Tax Calculator 2026",
+  "description": "Calculate how much tax is withheld from your bonus in 2026. Supports both the flat 22% percentage method and the aggregate method with your regular paycheck.",
+  "url": "https://usafincalc.com/bonus-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What percentage of my bonus is taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If your bonus is paid on a separate check, your employer will withhold a flat 22% for federal income tax (37% on amounts over $1 million). If your bonus is combined with your regular paycheck, it is taxed using the aggregate method at your normal withholding rate. Social Security (6.2%) and Medicare (1.45%) also apply on top of income tax withholding."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the percentage method and the aggregate method?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The percentage method applies a flat 22% federal rate to your bonus when it is issued on a separate check. The aggregate method adds your bonus to your regular wages and withholds tax at your normal effective rate — which can result in higher or lower withholding than the flat rate, depending on your income bracket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are bonuses subject to Social Security and Medicare taxes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Bonuses are subject to FICA taxes: Social Security at 6.2% (up to the $184,500 wage base for 2026) and Medicare at 1.45% on all amounts. If your total wages for the year have already exceeded $184,500, no additional Social Security tax applies to your bonus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will I get the excess bonus withholding back?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "If more is withheld than you actually owe in total for the year, you will receive the difference as a refund when you file your tax return. The 22% flat withholding on a bonus is just an estimate — your actual tax liability depends on your full-year income."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I reduce the tax withheld from my bonus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You cannot avoid tax on bonuses, but you can reduce what is withheld at the time. Contributing the bonus (pre-tax) to a 401(k) if your employer allows it reduces your taxable amount. Timing — receiving the bonus in a lower-income year — can also reduce the effective rate owed at filing, though withholding at payout is largely controlled by your employer's method."
+      }
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+<div class="badge">2026 IRS Rates · Both Withholding Methods</div>
+<h1>Bonus Tax <span>Calculator</span></h1>
+<p class="hero-sub">See exactly how much of your bonus you keep after federal, state, and FICA taxes. Choose the method your employer uses — or compare both.</p>
+</div>
+
+<div class="method-toggle">
+<button class="mt-btn active" id="btn-flat" onclick="setMethod('flat')">📋 Flat Rate Method (22%)<br/><span style="font-size:11px;opacity:.7">Bonus paid on a separate check</span></button>
+<button class="mt-btn" id="btn-agg" onclick="setMethod('aggregate')">📊 Aggregate Method<br/><span style="font-size:11px;opacity:.7">Bonus combined with regular paycheck</span></button>
+</div>
+
+<div class="explain-box">
+<div class="explain" id="explain-flat">
+<strong>Flat Rate (Percentage) Method:</strong> When your bonus is issued on its own check, the IRS requires employers to withhold a flat <strong>22% federal rate</strong> (or 37% on amounts over $1 million). This is the most common method. The 22% is just withholding — your actual tax liability depends on your full-year income.
+</div>
+<div class="explain hidden" id="explain-agg">
+<strong>Aggregate Method:</strong> When your bonus is added to your regular paycheck, the IRS requires employers to tax the combined amount as if it were your normal pay for that period. This annualizes the combined gross, calculates tax, then subtracts normal withholding. It can result in <em>higher or lower</em> withholding than the flat 22% depending on your bracket.
+</div>
+</div>
+
+<div class="main">
+<div class="card">
+<div class="ct" id="input-title">Flat Rate Method Inputs</div>
+
+<label for="bonus">Bonus Amount</label>
+<div class="pfx"><span>$</span><input id="bonus" type="number" value="10000" min="0"/></div>
+
+<label for="state">State</label>
+<select id="state">
+<option value="0">Alaska / FL / NV / NH / SD / TN / TX / WA / WY (0%)</option>
+<option value="2.0">Arizona · Indiana · North Dakota (~2–3%)</option>
+<option value="3.0">Colorado · Georgia · IL · KY · MI · NC · PA · UT (~3–5%)</option>
+<option value="4.0">Alabama · AR · IA · LA · MO · MT · NM · OK · SC · WV (~4%)</option>
+<option value="5.0">Delaware · HI · KS · ME · MD · NE · OH · VA · WI (~5%)</option>
+<option value="5.75">CT · MA · MN · NJ · NY · OR (~5.75%)</option>
+<option value="6.5">California (6.6% supplemental)</option>
+</select>
+
+<!-- Aggregate-only fields -->
+<div id="agg-fields" class="hidden">
+<label for="reg-gross">Regular Gross Pay This Period</label>
+<div class="pfx"><span>$</span><input id="reg-gross" type="number" value="3000" min="0"/></div>
+
+<label for="agg-freq">Pay Frequency</label>
+<select id="agg-freq">
+<option value="52">Weekly</option>
+<option value="26" selected>Biweekly</option>
+<option value="24">Semi-Monthly</option>
+<option value="12">Monthly</option>
+</select>
+
+<label for="agg-filing">Filing Status</label>
+<select id="agg-filing">
+<option value="single">Single / MFS</option>
+<option value="married">Married Filing Jointly</option>
+<option value="hoh">Head of Household</option>
+</select>
+
+<label for="normal-wh">Normal Withholding Already Applied This Period</label>
+<div class="pfx"><span>$</span><input id="normal-wh" type="number" value="350" min="0"/></div>
+</div>
+
+<label for="k401">401(k) / Pre-Tax Deduction from Bonus</label>
+<div class="pfx"><span>$</span><input id="k401" type="number" value="0" min="0"/></div>
+
+<button class="btn" onclick="calc()">Calculate Bonus Tax →</button>
+</div>
+
+<div id="result-col">
+<div class="placeholder" id="ph">
+<div class="placeholder-icon">🎁</div>
+<div>Enter your bonus amount<br/>and click Calculate</div>
+</div>
+
+<div id="rc" class="hidden" style="display:flex;flex-direction:column;gap:16px">
+<div class="net-card">
+<div class="nl">Net Bonus (Take-Home)</div>
+<div class="na" id="net-bonus"></div>
+<div class="nm">Total withheld: <span id="total-withheld"></span></div>
+<div class="nm" style="margin-top:4px">Effective withholding rate: <span id="eff-rate"></span></div>
+</div>
+
+<div class="dcard">
+<div class="dr"><div class="dk">Gross Bonus</div><div class="dv" id="d-gross"></div></div>
+<div class="dr"><div class="dk">Pre-Tax 401(k) Deduction</div><div class="dv r" id="d-401k"></div></div>
+<div class="dr"><div class="dk">Federal Income Tax Withheld</div><div class="dv r" id="d-fed"></div></div>
+<div class="dr"><div class="dk">Social Security (6.2%)</div><div class="dv r" id="d-ss"></div></div>
+<div class="dr"><div class="dk">Medicare (1.45%)</div><div class="dv r" id="d-med"></div></div>
+<div class="dr" id="d-st-row"><div class="dk">State Tax</div><div class="dv r" id="d-state"></div></div>
+<div class="dr"><div class="dk" style="color:var(--accent);font-weight:500">Net Bonus</div><div class="dv g" id="d-net"></div></div>
+</div>
+</div>
+</div>
+
+<!-- Compare both methods row -->
+<div class="compare-card hidden" id="compare-row">
+<div class="ct">Method Comparison — Same $<span id="cmp-bonus">0</span> Bonus</div>
+<div class="compare-grid">
+<div class="citem">
+<div class="citem-label">Flat 22% Method</div>
+<div class="citem-val" id="cmp-flat">—</div>
+<div class="citem-sub">Net take-home</div>
+</div>
+<div class="citem">
+<div class="citem-label">Aggregate Method</div>
+<div class="citem-val" id="cmp-agg">—</div>
+<div class="citem-sub">Net take-home (estimated)</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- EXPLAINER CONTENT -->
+<div class="cs">
+<h2>Which Method Will My Employer Use?</h2>
+<p>Your employer decides based on how the bonus is paid. <strong>Separate check = flat 22%.</strong> <strong>Same check as regular wages = aggregate method.</strong> You don't control which method is used — but you can estimate both below.</p>
+
+<h3>The 22% Flat Rate — Is It Always Higher?</h3>
+<p>Not necessarily. The 22% flat rate is higher than the effective federal rate for most people earning under ~$85,000 as a single filer. For those in the 24% or higher bracket, the flat 22% is actually <em>lower</em> than their marginal rate — meaning they may owe additional tax when they file. The 22% is withholding, not your final tax liability.</p>
+
+<h3>California Bonus Withholding (Special Case)</h3>
+<p>California uses a supplemental wage rate of <strong>6.6%</strong> (for 2026) on bonuses paid separately, rather than the graduated income tax. California also levies SDI (State Disability Insurance) at 1.1% on top of this — not included here since it varies. Use the California flat rate option above for a close estimate.</p>
+
+<div class="abox">Sources: IRS Publication 15 (Employer's Tax Guide, 2026) · IRS Rev. Proc. 2025-32 · California FTB supplemental wage withholding rate 2026 · SSA 2026 COLA Fact Sheet (wage base $184,500) · <a href="/data-sources">usafincalc.com/data-sources</a></div>
+</div>
+
+<!-- FAQ -->
+<div class="fqs">
+<h2>Frequently Asked Questions</h2>
+<div class="fqi" onclick="this.classList.toggle('open')">
+<div class="fqq"><span>What percentage of my bonus is taxed?</span><span class="fqa-arrow">›</span></div>
+<div class="fqa">For a separate bonus check: 22% federal + 6.2% SS + 1.45% Medicare + your state rate. On a $10,000 bonus in a no-state-tax state, that's approximately 29.65% total withheld, leaving roughly $7,035. For amounts over $1 million, the federal rate jumps to 37% on the excess.</div>
+</div>
+<div class="fqi" onclick="this.classList.toggle('open')">
+<div class="fqq"><span>Percentage method vs aggregate method — which is better?</span><span class="fqa-arrow">›</span></div>
+<div class="fqa">Neither is objectively better — they just result in different withholding amounts at payout. The aggregate method withholds more accurately to your marginal rate. The flat 22% is simpler. Both settle at your actual tax liability when you file. If you are over-withheld, you get a refund; if under-withheld, you pay the difference.</div>
+</div>
+<div class="fqi" onclick="this.classList.toggle('open')">
+<div class="fqq"><span>Does contributing to my 401(k) reduce bonus taxes?</span><span class="fqa-arrow">›</span></div>
+<div class="fqa">If your employer allows 401(k) contributions from bonus pay, pre-tax contributions reduce federal and state income tax withholding on the bonus. FICA (Social Security and Medicare) still applies to the full bonus amount. The deduction entered in this calculator reduces the taxable base for income tax only.</div>
+</div>
+<div class="fqi" onclick="this.classList.toggle('open')">
+<div class="fqq"><span>Is the 22% rate the same for everyone?</span><span class="fqa-arrow">›</span></div>
+<div class="fqa">Yes, the 22% flat supplemental rate applies uniformly for 2026, regardless of your income bracket — unless the bonus exceeds $1 million, in which case the excess is withheld at 37%. Your actual tax owed on the bonus depends on your total income for the year and is resolved at filing.</div>
+</div>
+</div>
+
+<div class="rels">
+<h2>Related Calculators</h2>
+<div class="relg">
+<a class="relc" href="/rsu-tax-calculator">📈 RSU Tax Calculator</a>
+<a class="relc" href="/paycheck-calculator">💵 Paycheck Calculator</a>
+<a class="relc" href="/salary-calculator-usa">📋 Salary Calculator</a>
+<a class="relc" href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a class="relc" href="/self-employment-tax-calculator">💼 Self-Employment Tax</a>
+<a class="relc" href="/401k-calculator-usa">🏦 401(k) Calculator</a>
+</div>
+</div>
+</section>
+<section class="content-block" id="bonus-tax-guide">
+
+<h2>What This Bonus Tax Calculator Does</h2>
+<p>This calculator estimates the federal and state tax withheld from your bonus payment and shows your net bonus take-home. Bonuses are taxed differently from regular wages in terms of withholding — but the same total annual income determines your actual tax liability at year-end. This calculator helps you understand the difference between withholding on your bonus and your actual bonus tax.</p>
+
+<h2>Bonus Withholding Methods</h2>
+<h3>Percentage Method (Flat Rate)</h3>
+<p>The IRS allows employers to withhold at a flat 22% federal rate on supplemental wages (bonuses, commissions, overtime) up to $1 million. Above $1 million in supplemental wages, the rate is 37%. This flat-rate method is simpler for payroll processing and is the most common approach for standard year-end bonuses.</p>
+<h3>Aggregate Method</h3>
+<p>Some employers add the bonus to your most recent paycheck total and withhold based on the combined amount as if that were your regular pay rate. This often results in higher withholding than the flat method if the combined amount pushes you into a higher bracket on the withholding table — even though your actual annual bracket may be lower.</p>
+<p>Important clarification: whichever method is used, the withholding is just an estimate. Your actual bonus tax liability is determined by your total annual income at year-end. If too much is withheld, you get a refund. If too little is withheld, you pay the balance.</p>
+
+<h2>Real-World Withholding Examples</h2>
+<h3>$10,000 Bonus — California</h3>
+<p>Federal withholding at 22%: $2,200. California state supplemental rate (10.23%): $1,023. Social Security (6.2%): $620. Medicare (1.45%): $145. Net bonus: approximately $6,012. The bonus "costs" nearly $4,000 in immediate withholding — but if your effective federal rate is 18%, you'll receive roughly $400 back when your return is filed.</p>
+<h3>$5,000 Bonus — Texas</h3>
+<p>No state income tax. Federal withholding at 22%: $1,100. FICA (7.65%): $382. Net bonus: approximately $3,518. Significantly higher take-home than a California resident receiving the same bonus.</p>
+
+<h2>When Bonus Withholding Leads to Over-Withholding</h2>
+<p>If your effective federal income tax rate is below 22% — common for single filers earning under $50,000 or married filers earning under $100,000 — the flat 22% federal withholding on your bonus will exceed your actual tax liability. The excess comes back as a larger refund. Nothing is permanently "lost" to the higher withholding rate.</p>
+
+<h2>Common Mistakes</h2>
+<h3>Confusing withholding rate with actual tax rate</h3>
+<p>The 22% federal withholding on a bonus is not a special "bonus tax rate." It's a withholding estimate. Your actual marginal rate on the bonus depends on where that income falls in your total annual income. Someone in the 12% bracket who receives a $5,000 bonus taxed at 22% withholding will receive most of that overage back as a refund.</p>
+<h3>Receiving a bonus before expected and not accounting for the impact on overall bracket</h3>
+<p>A large bonus might push total annual income into a higher bracket. This doesn't mean the entire income is taxed at the new rate — only the portion above the bracket threshold. But the effective impact on the incremental income in the higher bracket is real.</p>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Ask HR which withholding method they use</strong> — if they use the aggregate method and it will significantly over-withhold, you may be able to request the percentage method.</li>
+<li><strong>Don't spend your entire bonus immediately</strong> — especially in high-tax states, there may be a balance due at year-end depending on your full income picture.</li>
+<li><strong>Consider directing a portion to 401(k)</strong> — if your plan allows, contributing a portion of your bonus pre-tax reduces the taxable amount immediately, before withholding is applied.</li>
+</ul>
+
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/paycheck-calculator">Paycheck Calculator</a></strong> — regular paycheck withholding estimates.</li>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — full annual tax liability including bonus income.</li>
+<li><strong><a href="/salary-calculator-usa">Salary Calculator</a></strong> — understand your regular take-home context.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>Are bonuses taxed at a higher rate than regular income?</h3>
+<p>They're often withheld at a higher rate (22% flat vs. your regular withholding rate), but actual tax liability at year-end is calculated on total annual income. There's no special "bonus tax rate" — it's just income taxed at your marginal rate.</p>
+<h3>Can I avoid taxes on a bonus?</h3>
+<p>Not entirely, but you can reduce them. Contributing the bonus to a traditional 401(k), HSA, or flexible spending account before it's paid out (if allowed by your plan) reduces the taxable amount. You can't refuse withholding, but pre-tax contributions reduce the base the withholding applies to.</p>
+<h3>Do bonuses affect Social Security benefits?</h3>
+<p>Bonuses count as wages for Social Security purposes — they're subject to 6.2% Social Security tax (up to the annual wage base) and 1.45% Medicare. They count toward your Social Security earnings record, potentially increasing your future benefit.</p>
+<h3>What if I receive a bonus in December — does it affect my tax bracket for that year?</h3>
+<p>Yes. December bonuses are 2024 income reported on your 2024 W-2. If you're close to a bracket threshold, a December bonus can push you into the next bracket on the incremental amount. The amount of the bonus above the threshold is taxed at the higher marginal rate, not the entire bonus.</p>
+
+<h2>Key Takeaways</h2>
+<p>The shock of seeing 30%–40% withheld from a bonus is common and understandable, but the withholding is not the final tax. Over-withholding on bonuses is one of the most common reasons people receive federal refunds — the 22% flat rate frequently exceeds the effective tax rate for middle-income earners. The real focus should be on total annual income and total tax liability, not the withholding rate applied to any single payment.</p>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+let currentMethod = 'flat';
+
+const BRACKETS = {
+  single:  [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]],
+  married: [[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]],
+  hoh:     [[17000,.10],[64850,.12],[103350,.22],[197300,.24],[250500,.32],[626350,.35],[Infinity,.37]]
+};
+const STD = {single:16100, married:32200, hoh:23850};
+
+function fedTax(taxable, filing) {
+  let tax = 0, prev = 0;
+  for (const [lim, rate] of BRACKETS[filing]) {
+    if (taxable <= prev) break;
+    tax += (Math.min(taxable, lim) - prev) * rate;
+    prev = lim;
+  }
+  return tax;
+}
+
+function fmt(n) { return '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+function fmtD(n) { return '$' + Math.abs(n).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+
+function setMethod(m) {
+  currentMethod = m;
+  document.getElementById('btn-flat').classList.toggle('active', m === 'flat');
+  document.getElementById('btn-agg').classList.toggle('active', m === 'aggregate');
+  document.getElementById('explain-flat').classList.toggle('hidden', m !== 'flat');
+  document.getElementById('explain-agg').classList.toggle('hidden', m !== 'aggregate');
+  document.getElementById('agg-fields').classList.toggle('hidden', m !== 'aggregate');
+  document.getElementById('input-title').textContent = m === 'flat' ? 'Flat Rate Method Inputs' : 'Aggregate Method Inputs';
+  document.getElementById('ph').classList.remove('hidden');
+  document.getElementById('rc').classList.add('hidden');
+}
+
+function calc() {
+  const bonus = parseFloat(document.getElementById('bonus').value) || 0;
+  const stRate = parseFloat(document.getElementById('state').value) || 0;
+  const k401 = parseFloat(document.getElementById('k401').value) || 0;
+  if (!bonus || bonus <= 0) { alert('Please enter a valid bonus amount.'); return; }
+
+  const taxableBonus = Math.max(0, bonus - k401);
+  const ss = Math.min(bonus, 184500) * 0.062;
+  const medicare = bonus * 0.0145;
+  const state = taxableBonus * (stRate / 100);
+
+  let federal;
+
+  if (currentMethod === 'flat') {
+    // 22% flat; 37% on amount over $1M
+    if (bonus <= 1000000) {
+      federal = taxableBonus * 0.22;
+    } else {
+      federal = 1000000 * 0.22 + (taxableBonus - 1000000) * 0.37;
+    }
+  } else {
+    // Aggregate method
+    const regGross = parseFloat(document.getElementById('reg-gross').value) || 0;
+    const freq = parseInt(document.getElementById('agg-freq').value);
+    const filing = document.getElementById('agg-filing').value;
+    const normalWH = parseFloat(document.getElementById('normal-wh').value) || 0;
+
+    const annualReg = regGross * freq;
+    const annualBonus = bonus;
+    const annualCombined = annualReg + annualBonus;
+    const std = STD[filing];
+    const taxableCombined = Math.max(0, annualCombined - std);
+    const taxableRegular = Math.max(0, annualReg - std);
+
+    const taxOnCombined = fedTax(taxableCombined, filing);
+    const taxOnRegular = fedTax(taxableRegular, filing);
+
+    // Bonus withholding = difference, minus normal withholding already applied
+    const annualBonusFed = Math.max(0, taxOnCombined - taxOnRegular);
+    federal = Math.max(0, annualBonusFed - (normalWH * freq - (taxOnRegular)));
+    // Simpler: just the marginal on the bonus
+    federal = Math.max(0, taxOnCombined - taxOnRegular);
+  }
+
+  const total = federal + ss + medicare + state + k401;
+  const net = bonus - total + k401; // k401 reduces income, not bonus received in 401k
+
+  // Net is bonus minus taxes (k401 goes to 401k, not pocket)
+  const netCash = bonus - (federal + ss + medicare + state) - k401;
+  const effRate = (total / bonus * 100).toFixed(1);
+
+  document.getElementById('ph').classList.add('hidden');
+  const rc = document.getElementById('rc');
+  rc.classList.remove('hidden');
+
+  document.getElementById('net-bonus').textContent = fmtD(Math.max(0, netCash));
+  document.getElementById('total-withheld').textContent = fmtD(federal + ss + medicare + state);
+  document.getElementById('eff-rate').textContent = ((federal + ss + medicare + state) / bonus * 100).toFixed(1) + '%';
+
+  document.getElementById('d-gross').textContent = fmtD(bonus);
+  document.getElementById('d-401k').textContent = k401 > 0 ? '-' + fmtD(k401) : '$0';
+  document.getElementById('d-fed').textContent = '-' + fmtD(federal);
+  document.getElementById('d-ss').textContent = '-' + fmtD(ss);
+  document.getElementById('d-med').textContent = '-' + fmtD(medicare);
+  document.getElementById('d-state').textContent = stRate > 0 ? '-' + fmtD(state) : '$0';
+  document.getElementById('d-st-row').style.opacity = stRate > 0 ? '1' : '0.4';
+  document.getElementById('d-net').textContent = fmtD(Math.max(0, netCash));
+
+  // Calculate flat method for comparison
+  const flatFed = bonus <= 1000000 ? taxableBonus * 0.22 : 1000000 * 0.22 + (taxableBonus - 1e6) * 0.37;
+  const flatNet = bonus - flatFed - ss - medicare - state - k401;
+
+  document.getElementById('compare-row').classList.remove('hidden');
+  document.getElementById('cmp-bonus').textContent = Math.round(bonus).toLocaleString('en-US');
+  document.getElementById('cmp-flat').textContent = fmtD(Math.max(0, flatNet));
+
+  if (currentMethod === 'aggregate') {
+    document.getElementById('cmp-agg').textContent = fmtD(Math.max(0, netCash));
+  } else {
+    // Estimate aggregate net using a rough 24% marginal
+    const aggEst = bonus - bonus * 0.24 - ss - medicare - state - k401;
+    document.getElementById('cmp-agg').textContent = fmtD(Math.max(0, aggEst)) + '*';
+  }
+}
+
+document.querySelectorAll('.fqi').forEach(q => q.addEventListener('click', () => q.classList.toggle('open')));
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

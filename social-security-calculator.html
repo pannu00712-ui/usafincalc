@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="social security calculator 2026, social security benefit estimator, retirement income calculator" name="keywords"/>
+<title>Social Security Calculator 2026 — Estimate Your Monthly Benefit | USAFinCalc</title>
+<meta content="Estimate your 2026 Social Security retirement benefit based on your income history and retirement age. See the impact of claiming at 62, 67, or 70. SSA AIME/PIA formula used." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="https://usafincalc.com/social-security-calculator" rel="canonical"/>
+<link href="/manifest.json" rel="manifest"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Social Security Calculator 2026 — Estimate Your Monthly Benefit" property="og:title"/>
+<meta content="Estimate your Social Security retirement benefit using the official SSA AIME/PIA formula. See impact of retiring at 62, 67, or 70." property="og:description"/>
+<meta content="https://usafincalc.com/social-security-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<meta content="Social Security Calculator 2026 — Estimate Your Monthly Benefit" name="twitter:title"/>
+<meta content="Estimate your 2026 Social Security retirement benefit based on your income history and retirement age. See the impact of claiming at 62, 67, or 70. SS" name="twitter:description"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://www.googletagmanager.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--emerald:#10b981;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+.fc-panel a,.fc-related-card{color:var(--blue);text-decoration:none}.fc-panel a:hover{text-decoration:underline}
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(16,185,129,0.1);color:var(--emerald);border:1px solid rgba(16,185,129,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap}
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:700px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+.fc-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto 20px;padding:0 24px}
+@media(max-width:700px){.fc-calc-wrap{grid-template-columns:1fr}}
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--emerald));display:block;box-shadow:0 0 8px var(--dot-color,var(--emerald))}
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-label:first-child{margin-top:0}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace;pointer-events:none}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 28px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--emerald)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s;font-family:'Space Grotesk',sans-serif}
+.fc-select:focus{border-color:var(--emerald)}
+.fc-range-wrap{margin-top:6px}
+.fc-range{width:100%;accent-color:var(--emerald);cursor:pointer}
+.fc-range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:4px}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(16,185,129,0.35)}
+/* RESULTS */
+.fc-result-hero{text-align:center;padding:16px 0 14px}
+.fc-result-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:4px}
+.fc-result-amount{font-size:42px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1;color:var(--emerald)}
+.fc-result-sub{font-size:12px;color:var(--text3);margin-top:5px}
+.fc-divider{height:1px;background:var(--border);margin:14px 0}
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:14px}
+.fc-detail-row:last-child{border-bottom:none}
+.fc-detail-key{color:var(--text2)}
+.fc-detail-val{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600;color:var(--text)}
+/* CLAIM AGE CARDS */
+.fc-age-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.fc-age-card{border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;cursor:pointer;transition:.2s;background:var(--panel2)}
+.fc-age-card:hover{border-color:rgba(16,185,129,0.3)}
+.fc-age-card.best{border-color:var(--emerald);background:rgba(16,185,129,0.07)}
+.fc-age-num{font-size:22px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1;margin-bottom:4px}
+.fc-age-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+.fc-age-benefit{font-size:15px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.fc-age-pct{font-size:10px;margin-top:2px}
+/* BREAKEVEN */
+.fc-breakeven{background:rgba(251,191,36,0.06);border:1px solid rgba(251,191,36,0.2);border-radius:10px;padding:14px 16px;margin-top:14px;font-size:13px;color:var(--text2);line-height:1.65}
+.fc-breakeven strong{color:var(--yellow)}
+/* EARNING HISTORY */
+.fc-history-wrap{max-width:940px;margin:0 auto 24px;padding:0 24px}
+.fc-history-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:22px}
+.fc-history-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:14px;display:flex;align-items:center;gap:8px;justify-content:space-between}
+.fc-history-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}
+.fc-year-item{display:flex;flex-direction:column;gap:4px}
+.fc-year-label{font-size:10px;color:var(--text3);letter-spacing:.04em}
+.fc-year-input{background:var(--panel2);border:1px solid var(--border);border-radius:6px;padding:6px 10px;color:var(--text);font-size:13px;font-family:'JetBrains Mono',monospace;width:100%;outline:none;transition:border .15s}
+.fc-year-input:focus{border-color:var(--emerald)}
+/* BAR CHART */
+.fc-bar-wrap{max-width:940px;margin:0 auto 24px;padding:0 24px}
+.fc-bar-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.fc-bar-title{font-size:13px;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:20px}
+.fc-bar-chart{display:flex;align-items:flex-end;gap:6px;height:160px;border-bottom:1px solid var(--border);margin-bottom:10px;padding:0 4px}
+.fc-bar{background:linear-gradient(to top,var(--emerald),rgba(16,185,129,0.3));border-radius:4px 4px 0 0;flex:1;min-width:20px;position:relative;cursor:pointer;transition:.2s}
+.fc-bar:hover{opacity:.8}
+.fc-bar-tip{position:absolute;top:-28px;left:50%;transform:translateX(-50%);background:var(--panel2);border:1px solid var(--border);border-radius:5px;padding:2px 7px;font-size:10px;color:var(--text);font-family:'JetBrains Mono',monospace;white-space:nowrap;pointer-events:none;opacity:0;transition:.15s}
+.fc-bar:hover .fc-bar-tip{opacity:1}
+.fc-bar-labels{display:flex;gap:6px;padding:0 4px}
+.fc-bar-lbl{flex:1;text-align:center;font-size:9px;color:var(--text3);min-width:20px}
+/* MINI GRID */
+.fc-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+.fc-mini-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px;text-align:center}
+.fc-mini-label{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.fc-mini-val{font-size:15px;font-weight:700;font-family:'JetBrains Mono',monospace}
+/* FAQ */
+.fc-faq-wrap{max-width:740px;margin:0 auto 60px;padding:0 24px}
+.fc-faq-title{font-size:20px;font-weight:700;margin-bottom:20px}
+.fc-faq-item{border-bottom:1px solid var(--border)}
+.fc-faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;font-size:15px;font-weight:500;user-select:none}
+.fc-faq-q::after{content:'+';font-size:20px;color:var(--text3);transition:.2s;flex-shrink:0}
+.fc-faq-item.open .fc-faq-q::after{transform:rotate(45deg);color:var(--emerald)}
+.fc-faq-a{max-height:0;overflow:hidden;transition:.3s;font-size:14px;color:var(--text2);line-height:1.8}
+.fc-faq-item.open .fc-faq-a{max-height:360px;padding-bottom:16px}
+.fc-related{max-width:940px;margin:0 auto 60px;padding:0 24px}
+.fc-related-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:14px}
+.fc-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.fc-related-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column;gap:4px}
+.fc-related-card:hover{border-color:rgba(59,158,255,0.3);transform:translateY(-2px);text-decoration:none}
+.fc-related-icon{font-size:20px;margin-bottom:4px}
+.fc-related-name{font-size:13px;font-weight:600;color:var(--text)}
+.fc-related-desc{font-size:11px;color:var(--text3)}
+footer{background:var(--panel);border-top:1px solid var(--border);padding:32px 24px}
+.fc-footer-inner{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.fc-footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.fc-footer-links a{color:var(--text3);font-size:13px;text-decoration:none;transition:.15s}
+.fc-footer-links a:hover{color:var(--text2)}
+.fc-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid var(--border)}
+.fc-footer-copy{font-size:12px;color:var(--text3)}
+
+
+
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Social Security Calculator 2026 — Estimate Your Monthly Benefit | USAFinCalc",
+  "url": "https://usafincalc.com/social-security-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Social Security Calculator",
+      "item": "https://usafincalc.com/social-security-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Social Security Calculator 2026 — Estimate Your Monthly Benefit | USAFinCalc",
+  "description": "Estimate your 2026 Social Security retirement benefit based on your income history and retirement age. See the impact of claiming at 62, 67, or 70. SSA AIME/PIA formula used.",
+  "url": "https://usafincalc.com/social-security-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "When should I start claiming Social Security?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can claim as early as 62 (reduced benefit), at Full Retirement Age or FRA (67 for those born 1960+, full benefit), or as late as 70 (maximum benefit, 24% bonus vs FRA). Delaying past FRA increases your benefit by 8% per year."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Social Security benefit calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SSA uses your 35 highest earning years (adjusted for inflation) to calculate Average Indexed Monthly Earnings (AIME). Then applies a progressive formula to get your Primary Insurance Amount (PIA) — your full retirement benefit."
+      }
+    }
+  ],
+  "@context": "https://schema.org"
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero">
+<div class="fc-page-badge" style="background:rgba(16,185,129,0.1);color:#10b981;border-color:rgba(16,185,129,0.25)">SSA AIME/PIA Formula · 2026 Bend Points</div>
+<h1>Social Security <span style="color:#10b981">Calculator 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Estimate your monthly Social Security retirement benefit using the official SSA AIME/PIA formula. Compare your estimated benefit at 62, 67, and 70 — and see how many years it takes for delayed claiming to break even.</p>
+</div>
+<!-- MAIN CALC -->
+<div class="fc-calc-wrap">
+<!-- INPUT -->
+<div class="fc-panel">
+<div class="fc-panel-title" style="--dot-color:var(--emerald)">Your Information</div>
+<label for="currentAge" class="fc-label">Current Age</label>
+<input class="fc-input no-pfx" id="currentAge" max="69" min="18" oninput="autoCalc()" type="number" value="45"/>
+<label for="avgIncome" class="fc-label">Average Annual Income (Last 35 Years)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="avgIncome" max="500000" min="0" oninput="autoCalc()" step="1000" type="number" value="75000"/>
+</div>
+<div style="font-size:11px;color:var(--text3);margin-top:4px">SSA uses your 35 highest earning years, indexed for inflation. Enter your average.</div>
+<label for="workYears" class="fc-label">Years of Work History</label>
+<div class="fc-range-wrap">
+<input class="fc-range" id="workYears" max="35" min="1" oninput="updateRange();autoCalc()" type="range" value="25"/>
+<div class="fc-range-labels">
+<span>1 yr</span>
+<span id="workYearsVal" style="color:var(--emerald);font-weight:700">25 years</span>
+<span>35 yrs</span>
+</div>
+</div>
+<label for="retireAge" class="fc-label">Planned Retirement Age</label>
+<select class="fc-select" id="retireAge" onchange="autoCalc()">
+<option value="62">62 — Early (Reduced Benefit)</option>
+<option value="63">63</option>
+<option value="64">64</option>
+<option value="65">65</option>
+<option value="66">66</option>
+<option selected="" value="67">67 — Full Retirement Age (FRA)</option>
+<option value="68">68 — 8% Bonus vs FRA</option>
+<option value="69">69 — 16% Bonus vs FRA</option>
+<option value="70">70 — Maximum Benefit (24% Bonus)</option>
+</select>
+<label for="marital" class="fc-label">Marital Status</label>
+<select class="fc-select" id="marital" onchange="autoCalc()">
+<option value="single">Single</option>
+<option value="married">Married (also shows spousal benefit)</option>
+<option value="divorced">Divorced (10+ year marriage)</option>
+<option value="widowed">Widowed</option>
+</select>
+<label for="spouseBenefit" class="fc-label">Spouse's Estimated FRA Benefit (if married)</label>
+<div class="fc-input-wrap" id="spouseRow">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="spouseBenefit" min="0" oninput="autoCalc()" step="100" type="number" value="1800"/>
+</div>
+<button class="fc-btn" onclick="autoCalc()">Calculate My Benefit →</button>
+</div>
+<!-- RESULTS -->
+<div class="fc-panel" id="resultsPanel">
+<div class="fc-panel-title" style="--dot-color:var(--green)">Benefit Estimate</div>
+<div id="results">
+<div style="color:var(--text3);font-size:14px;text-align:center;padding:40px 20px;line-height:1.7">
+        Enter your information and click<br/><strong style="color:var(--emerald)">Calculate</strong> to see your estimate.
+        <div style="font-size:40px;margin-top:20px">🏦</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COMPARISON BAR CHART -->
+<div class="fc-bar-wrap">
+<div class="fc-bar-panel">
+<div class="fc-bar-title">📊 Benefit vs Claiming Age — Lifetime Comparison</div>
+<div class="fc-bar-chart" id="barChart">
+<div style="color:var(--text3);font-size:13px;align-self:center;margin:0 auto">Calculate above to see chart</div>
+</div>
+<div class="fc-bar-labels" id="barLabels"></div>
+</div>
+</div>
+<!-- EARNING HISTORY (optional advanced input) -->
+<div class="fc-history-wrap">
+<div class="fc-history-panel">
+<div class="fc-history-title">
+<span>📋 Optional: Enter Your Actual Earning History (Last 10 Years)</span>
+<span style="font-size:11px;font-weight:400;color:var(--text3)">Improves accuracy</span>
+</div>
+<div class="fc-history-grid" id="historyGrid">
+<!-- Populated by JS -->
+</div>
+<div style="margin-top:12px;font-size:12px;color:var(--text3)">Find your exact earnings at <a href="https://ssa.gov/myaccount" rel="noopener" style="color:var(--emerald)" target="_blank">ssa.gov/myaccount</a> → "Your Earnings Record"</div>
+</div>
+</div>
+<!-- FAQ -->
+<div class="fc-faq-wrap">
+<div class="fc-faq-title">Social Security FAQs 2026</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">How is Social Security benefit calculated?</div>
+<div class="fc-faq-a">SSA takes your 35 highest earning years (wage-indexed for inflation) to compute your Average Indexed Monthly Earnings (AIME). Then applies a progressive benefit formula to get your Primary Insurance Amount (PIA) — your full benefit at FRA. The 2026 bend points are $1,226 and $7,391. You get 90% of AIME up to $1,226, 32% of AIME between $1,226–$7,391, and 15% of AIME above $7,391.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is Full Retirement Age (FRA) in 2026?</div>
+<div class="fc-faq-a"><strong>FRA is 67</strong> for anyone born in 1960 or later (including everyone currently under 65). If you were born 1943–1954, your FRA is 66. Born 1955–1959, it's between 66 and 67. Claiming before FRA permanently reduces your benefit. Claiming after FRA permanently increases it by 8% per year (up to age 70).</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Should I claim Social Security at 62, 67, or 70?</div>
+<div class="fc-faq-a"><strong>Claim at 62</strong> if: you need the income now, have health issues, or have a short life expectancy. <strong>Claim at 67 (FRA)</strong> if: you want the standard benefit with no penalty or bonus — clean breakeven. <strong>Claim at 70</strong> if: you're healthy, don't need the money yet, and want to maximize lifetime income — especially valuable if you live past your mid-80s. The breakeven between 62 and 70 is typically around age 82–83.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is the spousal Social Security benefit?</div>
+<div class="fc-faq-a">A spouse is entitled to up to 50% of their partner's FRA benefit — whichever is higher (their own record or the spousal benefit). You must be at least 62 to claim spousal benefits, and your spouse must already be claiming. Divorced spouses who were married 10+ years can also claim spousal benefits independently.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Is Social Security taxable?</div>
+<div class="fc-faq-a">Up to 85% of your Social Security benefit may be taxable at the federal level if your combined income (AGI + nontaxable interest + ½ of SS) exceeds $25,000 (single) or $32,000 (married). Most states do NOT tax Social Security. Use our <a href="/tax-calculator-usa">Tax Calculator</a> to include SS in your total tax estimate.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is the maximum Social Security benefit in 2026?</div>
+<div class="fc-faq-a">The maximum benefit for someone retiring at FRA (67) in 2026 is approximately <strong>$3,822/month</strong>. For someone who delays to age 70, the maximum is approximately <strong>$4,873/month</strong>. The 2026 COLA adjustment was 2.5%.</div>
+</div>
+</div>
+<!-- RELATED -->
+<div class="fc-related">
+<div class="fc-related-title">Related Calculators</div>
+<div class="fc-related-grid">
+<a class="fc-related-card" href="/401k-calculator-usa">
+<div class="fc-related-icon">🏦</div>
+<div class="fc-related-name">401(k) Calculator</div>
+<div class="fc-related-desc">Project retirement savings</div>
+</a>
+<a class="fc-related-card" href="/roth-ira-calculator">
+<div class="fc-related-icon">🐷</div>
+<div class="fc-related-name">Roth IRA Calculator</div>
+<div class="fc-related-desc">Tax-free retirement growth</div>
+</a>
+<a class="fc-related-card" href="/salary-calculator-usa">
+<div class="fc-related-icon">💵</div>
+<div class="fc-related-name">Salary Calculator</div>
+<div class="fc-related-desc">See FICA taxes you're paying</div>
+</a>
+<a class="fc-related-card" href="/tax-calculator-usa">
+<div class="fc-related-icon">🧾</div>
+<div class="fc-related-name">Tax Calculator</div>
+<div class="fc-related-desc">Include SS in total tax estimate</div>
+</a>
+</div>
+</div>
+<!-- COMING SOON -->
+<div style="background:linear-gradient(180deg,var(--bg) 0%,rgba(12,17,32,0.8) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 24px;margin-bottom:0">
+<div style="max-width:980px;margin:0 auto">
+<div style="text-align:center;margin-bottom:36px">
+<h2 style="font-size:clamp(22px,4vw,32px);font-weight:700;margin-bottom:10px;color:var(--text)">You Might Also Like</h2>
+<p style="color:var(--text2);font-size:15px">More free calculators from USAFinCalc</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px">
+<a href="/credit-score-simulator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">💳</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Credit Score Simulator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">See how financial moves affect your score in real time</div>
+</a>
+<a href="/currency-converter" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">🌍</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Currency Converter</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">Live rates for 30+ world currencies</div>
+</a>
+<a href="/inflation-calculator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">📉</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Inflation Calculator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">Historical CPI-based purchasing power tool</div>
+</a>
+<a href="/rent-vs-buy-calculator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">🏡</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Rent vs Buy Calculator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">True cost comparison with break-even analysis</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="social-security-guide">
+<h2>What This Social Security Calculator Does</h2>
+<p>This calculator estimates your Social Security retirement benefit based on your earnings history and your planned claiming age. Enter your approximate annual earnings for your working years and compare the monthly benefit at age 62 (earliest), 67 (full retirement age for most workers), and 70 (maximum benefit age) to see the dollar difference over your expected lifetime.</p>
+<h2>Understanding Your Results</h2>
+<h3>Monthly Benefit at Each Age</h3>
+<p>Claiming at 62 reduces your benefit by up to 30% versus full retirement age. Claiming at 70 increases it by 24%–32% over full retirement age (depending on your birth year). The exact amounts depend on your earnings history — specifically, your highest 35 years of indexed earnings.</p>
+<h3>Break-Even Age</h3>
+<p>The age at which the cumulative total from a later claiming date overtakes the cumulative total from an earlier date. Waiting from 62 to 67 has a typical break-even around age 78–79. Waiting from 67 to 70 breaks even around 82–83. If you're in good health and have family longevity history, delaying often makes mathematical sense.</p>
+<h3>Lifetime Total</h3>
+<p>The estimated total benefits received from your claiming age to your expected death age. This changes significantly based on life expectancy assumptions — someone with health challenges may maximize lifetime benefits by claiming early.</p>
+<h2>How Social Security Benefits Are Calculated</h2>
+<p>The SSA calculates your Primary Insurance Amount (PIA) using your Average Indexed Monthly Earnings (AIME) from your highest 35 working years, adjusted for wage inflation. The PIA formula is progressive — it replaces a higher percentage of income for lower earners than for higher earners. For 2024, the formula replaces 90% of the first $1,174 of monthly earnings, 32% of earnings between $1,174–$7,078, and 15% above that.</p>
+<h2>Claiming Strategy Factors</h2>
+<table>
+<thead><tr><th scope="col">Factor</th><th scope="col">Suggests Claiming Early</th><th scope="col">Suggests Claiming Late</th></tr></thead>
+<tbody>
+<tr><td>Health status</td><td>Poor health, shortened life expectancy</td><td>Good health, family longevity</td></tr>
+<tr><td>Need for income</td><td>Must claim to meet expenses</td><td>Other income sources available</td></tr>
+<tr><td>Spouse considerations</td><td>Spouse has much higher benefit</td><td>Lower-earning spouse benefits from survivor benefit</td></tr>
+<tr><td>Investment returns</td><td>High investment returns available on early benefits</td><td>Risk-averse, want guaranteed income floor</td></tr>
+<tr><td>Employment</td><td>Retired early, need income</td><td>Still working — benefit reduced if under FRA</td></tr>
+</tbody>
+</table>
+<h2>Real-World Examples</h2>
+<h3>Single Worker Decision</h3>
+<p>Maria's full retirement age benefit is $2,200/month at 67. At 62, she'd receive $1,540/month (30% reduction). At 70, she'd receive $2,728/month (24% increase). If she lives to 85: claiming at 62 = $440,440 lifetime. Claiming at 67 = $475,200 lifetime. Claiming at 70 = $490,304 lifetime. For this example, the longer she lives, the more valuable the delay.</p>
+<h3>Married Couple Strategy</h3>
+<p>For married couples, the higher-earning spouse delaying to 70 is often optimal — when that spouse dies, the surviving spouse receives the higher benefit as their own. This survivor benefit consideration frequently outweighs break-even math focused only on the individual.</p>
+<h2>Working While Receiving Benefits</h2>
+<p>If you claim before full retirement age and continue working, your benefit is temporarily reduced if earnings exceed $22,320/year (2024 threshold) — $1 withheld for every $2 earned above the threshold. This withholding isn't permanently lost; your benefit is recalculated upward at full retirement age to credit the withheld months. After full retirement age, you can earn any amount with no benefit reduction.</p>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Get your Social Security statement</strong> from ssa.gov/myaccount — it shows your actual projected benefit, not an estimate, based on your real earnings record.</li>
+<li><strong>Check your earnings record for errors</strong> — mistakes in your SSA earnings record reduce your benefit permanently if uncorrected. Employers occasionally fail to properly report wages.</li>
+<li><strong>Factor in Social Security taxation</strong> — up to 85% of benefits may be taxable if your combined income exceeds $34,000 (single) or $44,000 (married). Roth IRA withdrawals don't count toward this threshold, making Roth accounts valuable in retirement tax planning.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/retirement-withdrawal-calculator">Retirement Withdrawal Calculator</a></strong> — model portfolio withdrawals alongside Social Security.</li>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — estimate taxes on Social Security plus portfolio income.</li>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — build the portfolio that complements Social Security.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>What is full retirement age?</h3>
+<p>For those born 1960 or later, full retirement age is 67. For those born 1954 or earlier, it was 65. There's a graduated scale for birth years 1955–1959. Full retirement age is the benchmark for benefit calculations — claiming before or after adjusts the benefit up or down from that baseline.</p>
+<h3>Can I change my mind after claiming?</h3>
+<p>Within 12 months of first claiming, you can withdraw your application and repay all benefits received, then refile later as if you never claimed. After 12 months, you can suspend your benefit (if you've reached full retirement age) to earn delayed retirement credits, but you can't fully undo the claiming decision.</p>
+<h3>How does Social Security affect low-income retirement planning?</h3>
+<p>Social Security's progressive benefit formula means it replaces a much higher percentage of income for lower earners — potentially 50%–70% of pre-retirement income versus 25%–40% for higher earners. For lower-income retirees, Social Security is often the dominant retirement income source, making the claiming age decision especially high-stakes.</p>
+<h3>Is Social Security going bankrupt?</h3>
+<p>Not in the traditional sense. The Social Security trust funds are projected to be depleted around 2033–2035 based on current forecasts, at which point incoming payroll taxes would cover about 75%–80% of scheduled benefits. Congress would face significant political pressure to adjust benefits or funding — most analysts consider a complete elimination implausible.</p>
+<h2>Key Takeaways</h2>
+<p>Social Security claiming is one of the largest financial decisions of retirement — the difference between a 62 and 70 benefit can exceed $1,000/month, compounding over a 20–30 year retirement into six-figure differences in lifetime income. Health, spousal considerations, other income, and risk tolerance all influence the optimal choice. Run the numbers for your specific situation, check your SSA earnings record for accuracy, and factor in how Social Security taxation interacts with your other retirement income sources before committing to a claiming date.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script async="True" defer="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<script>
+// ── SSA 2026 BEND POINTS ──────────────────────────────
+const BEND1 = 1226;  // 90% below this
+const BEND2 = 7391;  // 32% between BEND1 and BEND2; 15% above
+const MAX_SS_BENEFIT_FRA = 3822; // 2026 max at FRA
+
+function fmt(n)  { return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtD(n) { return '$' + n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+function calcPIA(avgAnnualIncome, workYears) {
+  // Scale income by work years (SSA uses 35 years; fewer = zeros padded)
+  const effectiveYears = Math.min(workYears, 35);
+  const scaledAnnual   = avgAnnualIncome * effectiveYears / 35;
+
+  // AIME = monthly average
+  const aime = scaledAnnual / 12;
+
+  // 2026 PIA formula
+  let pia = 0;
+  if (aime <= BEND1) {
+    pia = aime * 0.90;
+  } else if (aime <= BEND2) {
+    pia = BEND1 * 0.90 + (aime - BEND1) * 0.32;
+  } else {
+    pia = BEND1 * 0.90 + (BEND2 - BEND1) * 0.32 + (aime - BEND2) * 0.15;
+  }
+
+  // Cap at official max
+  return Math.min(pia, MAX_SS_BENEFIT_FRA);
+}
+
+function benefitAtAge(pia, claimAge, fra = 67) {
+  const diff = claimAge - fra;
+  let benefit;
+  if (diff < 0) {
+    // Reduced: 5/9% per month for first 36 months, 5/12% beyond
+    const months = Math.abs(diff) * 12;
+    const earlyMonths = Math.min(months, 36);
+    const extraMonths  = Math.max(0, months - 36);
+    const reduction    = (earlyMonths * 5/9 + extraMonths * 5/12) / 100;
+    benefit = pia * (1 - reduction);
+  } else {
+    // Delayed credits: 8% per year
+    benefit = pia * (1 + diff * 0.08);
+  }
+  return benefit;
+}
+
+function updateRange() {
+  const val = document.getElementById('workYears').value;
+  document.getElementById('workYearsVal').textContent = val + ' years';
+}
+
+function autoCalc() {
+  const currentAge = parseInt(document.getElementById('currentAge').value) || 45;
+  const avgIncome  = parseFloat(document.getElementById('avgIncome').value) || 0;
+  const workYears  = parseInt(document.getElementById('workYears').value) || 25;
+  const retireAge  = parseInt(document.getElementById('retireAge').value) || 67;
+  const marital    = document.getElementById('marital').value;
+  const spouseFRA  = parseFloat(document.getElementById('spouseBenefit').value) || 0;
+
+  // Show/hide spouse row
+  document.getElementById('spouseRow').style.display = (marital === 'married' || marital === 'divorced' || marital === 'widowed') ? 'block' : 'none';
+
+  const pia = calcPIA(avgIncome, workYears);
+  const benefit = benefitAtAge(pia, retireAge);
+  const annualBenefit = benefit * 12;
+
+  // Spousal / survivor benefit
+  let spousalBenefit = 0;
+  if ((marital === 'married' || marital === 'divorced') && spouseFRA > 0) {
+    spousalBenefit = Math.max(0, spouseFRA * 0.5 - benefit);
+  }
+  let survivorBenefit = 0;
+  if (marital === 'widowed' && spouseFRA > 0) {
+    survivorBenefit = Math.max(benefit, spouseFRA);
+  }
+
+  // Benefits at each age
+  const b62 = benefitAtAge(pia, 62);
+  const b67 = pia;
+  const b70 = benefitAtAge(pia, 70);
+  const bAt = benefit;
+
+  // Breakeven 62 vs 70
+  const breakevenMonths = b70 > b62 ? (b70 * retireAge * 12 - b62 * 62 * 12) / (b70 - b62) : 0;
+  const breakevenAge = 62 + Math.round(breakevenMonths / 12);
+
+  // Annual at each age
+  const a62 = b62 * 12, a70 = b70 * 12;
+
+  // Lifetime totals (assume life to 87)
+  const lt62 = Math.max(0, b62 * (87 - 62) * 12);
+  const lt67 = Math.max(0, b67 * (87 - 67) * 12);
+  const lt70 = Math.max(0, b70 * (87 - 70) * 12);
+
+  document.getElementById('results').innerHTML = `
+    <div class="fc-result-hero">
+      <div class="fc-result-label">Monthly Benefit at Age ${retireAge}</div>
+      <div class="fc-result-amount">${fmt(bAt)}<span style="font-size:18px">/mo</span></div>
+      <div class="fc-result-sub">${fmt(annualBenefit)}/year · PIA: ${fmt(pia)}/mo at FRA 67</div>
+    </div>
+    <div class="fc-divider"></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Your AIME (estimated)</span><span class="fc-detail-val">${fmt(calcAIME(avgIncome,workYears))}/mo</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Primary Insurance Amount (PIA)</span><span class="fc-detail-val" style="color:var(--emerald)">${fmt(pia)}/mo</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Benefit at Chosen Age (${retireAge})</span><span class="fc-detail-val" style="color:var(--emerald)">${fmt(bAt)}/mo</span></div>
+    ${spousalBenefit > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Additional Spousal Benefit</span><span class="fc-detail-val" style="color:var(--purple)">+${fmt(spousalBenefit)}/mo</span></div>` : ''}
+    ${survivorBenefit > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Survivor Benefit (estimated)</span><span class="fc-detail-val" style="color:var(--purple)">${fmt(survivorBenefit)}/mo</span></div>` : ''}
+    <div class="fc-divider"></div>
+    <div style="font-size:12px;color:var(--text3);margin-bottom:10px;text-transform:uppercase;letter-spacing:.06em">Claim Age Comparison</div>
+    <div class="fc-age-grid">
+      <div class="fc-age-card ${retireAge <= 62 ? 'best' : ''}">
+        <div class="fc-age-num" style="color:var(--red)">62</div>
+        <div class="fc-age-label">Early</div>
+        <div class="fc-age-benefit" style="color:var(--red)">${fmt(b62)}/mo</div>
+        <div class="fc-age-pct" style="color:var(--text3)">−${Math.round((1-b62/pia)*100)}% vs FRA</div>
+      </div>
+      <div class="fc-age-card ${retireAge === 67 ? 'best' : ''}">
+        <div class="fc-age-num" style="color:var(--yellow)">67</div>
+        <div class="fc-age-label">Full (FRA)</div>
+        <div class="fc-age-benefit" style="color:var(--yellow)">${fmt(pia)}/mo</div>
+        <div class="fc-age-pct" style="color:var(--text3)">Standard benefit</div>
+      </div>
+      <div class="fc-age-card ${retireAge >= 70 ? 'best' : ''}">
+        <div class="fc-age-num" style="color:var(--emerald)">70</div>
+        <div class="fc-age-label">Maximum</div>
+        <div class="fc-age-benefit" style="color:var(--emerald)">${fmt(b70)}/mo</div>
+        <div class="fc-age-pct" style="color:var(--emerald)">+24% vs FRA</div>
+      </div>
+    </div>
+    <div class="fc-breakeven">
+      <strong>⏱️ Breakeven Age (62 vs 70):</strong> If you live past age <strong>~${breakevenAge}</strong>, waiting until 70 pays more in total lifetime benefits. Average US life expectancy is ~79 (men) / ~82 (women) — so delaying often wins.
+    </div>
+    <div class="fc-mini-grid">
+      <div class="fc-mini-box"><div class="fc-mini-label">Annual</div><div class="fc-mini-val" style="color:var(--emerald)">${fmt(annualBenefit)}</div></div>
+      <div class="fc-mini-box"><div class="fc-mini-label">Lt Total*</div><div class="fc-mini-val" style="color:var(--blue)">${fmt(bAt*(87-retireAge)*12)}</div></div>
+      <div class="fc-mini-box"><div class="fc-mini-label">COLA</div><div class="fc-mini-val" style="color:var(--yellow)">2.5%</div></div>
+    </div>
+    <div style="font-size:10px;color:var(--text3);margin-top:8px">*Lifetime total to age 87 (illustrative). Actual benefits include annual COLA adjustments.</div>
+  `;
+
+  // Build bar chart
+  buildBarChart(pia);
+}
+
+function calcAIME(avgAnnualIncome, workYears) {
+  const effectiveYears = Math.min(workYears || 25, 35);
+  const wYears = parseInt(document.getElementById('workYears').value) || 25;
+  return (avgAnnualIncome * Math.min(wYears,35) / 35) / 12;
+}
+
+function buildBarChart(pia) {
+  const ages = [62,63,64,65,66,67,68,69,70];
+  const benefits = ages.map(a => benefitAtAge(pia, a));
+  const maxB = Math.max(...benefits);
+
+  const chartEl  = document.getElementById('barChart');
+  const labelsEl = document.getElementById('barLabels');
+
+  chartEl.innerHTML = benefits.map((b, i) => {
+    const h = Math.max(8, (b / maxB) * 140);
+    const isMax = i === benefits.length - 1;
+    return `<div class="fc-bar" style="height:${h}px;${isMax?'background:linear-gradient(to top,var(--emerald),rgba(16,185,129,0.4))':''}">
+      <div class="fc-bar-tip">${fmt(b)}/mo</div>
+    </div>`;
+  }).join('');
+
+  labelsEl.innerHTML = ages.map(a => `<div class="fc-bar-lbl">${a}</div>`).join('');
+}
+
+// Build history grid
+function buildHistoryGrid() {
+  const currentYear = new Date().getFullYear();
+  const grid = document.getElementById('historyGrid');
+  grid.innerHTML = '';
+  for (let i = 0; i < 10; i++) {
+    const year = currentYear - i;
+    const div = document.createElement('div');
+    div.className = 'fc-year-item';
+    div.innerHTML = `<div class="fc-year-label">${year}</div><input class="fc-year-input" type="number" placeholder="e.g. 80000" min="0" oninput="calcFromHistory()">`;
+    grid.appendChild(div);
+  }
+}
+
+function calcFromHistory() {
+  const inputs = document.querySelectorAll('.fc-year-input');
+  let total = 0, count = 0;
+  inputs.forEach(inp => {
+    const v = parseFloat(inp.value);
+    if (v > 0) { total += v; count++; }
+  });
+  if (count > 0) {
+    const avg = total / count;
+    document.getElementById('avgIncome').value = Math.round(avg);
+    autoCalc();
+  }
+}
+
+// Init
+buildHistoryGrid();
+updateRange();
+autoCalc();
+</script>
+<script defer="" src="js/fincalc-ui.js"></script>
+<script>
+
+function handleCSSubmit(e){
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('csSuccess').style.display='block';
+}
+
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

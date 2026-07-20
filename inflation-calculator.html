@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="inflation calculator USA, purchasing power calculator, CPI inflation calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Inflation Calculator 2026 — US CPI &amp; Purchasing Power | USAFinCalc</title>
+<meta content="Calculate the real value of money over time using US CPI data. See how inflation erodes purchasing power from 1913 to 2026. Free inflation calculator." name="description"/>
+<link href="https://usafincalc.com/inflation-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%230a0f1e'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%2310b981' font-family='monospace' font-weight='700'&gt;U&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--navy:#0a0f1e;--navy2:#0f1628;--navy3:#141d35;--navy4:#1a2540;--card:#111827;--card2:#162032;--emerald:#10b981;--emerald2:#059669;--emerald-dim:rgba(16,185,129,0.1);--emerald-glow:rgba(16,185,129,0.2);--blue:#3b82f6;--purple:#8b5cf6;--orange:#f97316;--red:#ef4444;--yellow:#f59e0b;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.4)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--navy);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.nav{display:flex;align-items:center;gap:12px;padding:0 28px;height:60px;border-bottom:1px solid var(--border);background:rgba(10,15,30,0.97);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:9px}
+.nav-logo-mark{width:30px;height:30px;background:linear-gradient(135deg,#10b981,#059669);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:15px;color:#fff}
+.nav-logo-name{font-size:15px;font-weight:800;color:var(--text)}
+.nav-logo-name em{color:var(--emerald);font-style:normal}
+.nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.nav-links a{color:var(--text2);padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--text);background:var(--navy3)}
+.nav-badge{background:rgba(239,68,68,0.1);color:var(--red);border:1px solid rgba(239,68,68,0.25);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700}
+@media(max-width:700px){.nav-links{display:none}}
+
+.page-hero{text-align:center;padding:52px 24px 36px;max-width:680px;margin:0 auto}
+.page-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(239,68,68,0.08);color:var(--red);border:1px solid rgba(239,68,68,0.2);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:22px}
+.page-hero h1{font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1.2px;margin-bottom:12px}
+.page-hero h1 span{background:linear-gradient(135deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-hero p{color:var(--text2);font-size:15px;line-height:1.75}
+.qa-box{max-width:980px;margin:0 auto 28px;padding:0 24px}
+.qa-inner{background:rgba(239,68,68,0.06);border:1px solid rgba(239,68,68,0.18);border-radius:10px;padding:13px 18px;font-size:13.5px;color:var(--text2)}
+.qa-inner strong{color:var(--red)}
+
+/* CALC WRAP */
+.calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:980px;margin:0 auto 40px;padding:0 24px}
+@media(max-width:680px){.calc-wrap{grid-template-columns:1fr}}
+.panel{background:var(--card);border:1px solid var(--border2);border-radius:18px;padding:26px;box-shadow:var(--shadow)}
+.panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--red));display:block;box-shadow:0 0 8px var(--dot-color,var(--red))}
+
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:var(--mono)}
+.fc-input{width:100%;background:var(--navy3);border:1px solid var(--border2);border-radius:9px;padding:11px 12px 11px 28px;color:var(--text);font-size:15px;font-family:var(--mono);outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--red)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-select{width:100%;background:var(--navy3);border:1px solid var(--border2);border-radius:9px;padding:11px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s}
+.fc-select:focus{border-color:var(--red)}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:10px;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--font);transition:all .2s}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(249,115,22,0.3)}
+
+.result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:200px;gap:12px;color:var(--text3);font-size:14px;text-align:center}
+.result-placeholder-icon{font-size:44px;opacity:.4}
+
+.result-hero{background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.22);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px}
+.result-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.result-amount{font-size:38px;font-weight:800;font-family:var(--mono);color:var(--red);letter-spacing:-1px;line-height:1.1}
+.result-sub{font-size:13px;color:var(--text2);margin-top:7px}
+
+.detail-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(30,45,69,0.4);font-size:13.5px}
+.detail-row:last-child{border:none}
+.detail-key{color:var(--text2)}.detail-val{font-family:var(--mono);font-weight:600;color:var(--text)}
+.detail-val.red{color:var(--red)}.detail-val.green{color:var(--emerald)}.detail-val.orange{color:var(--orange)}
+
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-top:14px}
+.mini-box{background:var(--navy3);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.mini-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px}
+.mini-val{font-size:16px;font-weight:700;font-family:var(--mono)}
+
+/* CHART */
+.chart-section{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.chart-panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
+.chart-title{font-size:14px;font-weight:700;margin-bottom:16px;color:var(--text)}
+.chart-bars{display:flex;flex-direction:column;gap:8px}
+.chart-bar-row{display:flex;align-items:center;gap:10px;font-size:12px}
+.chart-bar-year{color:var(--text3);width:36px;text-align:right;font-family:var(--mono);flex-shrink:0}
+.chart-bar-track{flex:1;background:var(--border);border-radius:3px;height:10px;overflow:hidden}
+.chart-bar-fill{height:100%;border-radius:3px;transition:width .8s ease}
+.chart-bar-val{color:var(--text2);font-family:var(--mono);font-size:11px;min-width:50px}
+
+/* INFO */
+.content{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.content h2{font-size:20px;font-weight:800;margin-bottom:16px;letter-spacing:-.3px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-bottom:24px}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+.info-card-icon{font-size:22px;margin-bottom:8px}
+.info-card-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.info-card-body{font-size:13px;color:var(--text2);line-height:1.65}
+
+/* CPI TABLE */
+.cpi-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;margin-bottom:24px}
+.cpi-table{width:100%;border-collapse:collapse;font-size:13px}
+.cpi-table th{background:var(--navy3);color:var(--text2);padding:10px 14px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+.cpi-table td{padding:9px 14px;border-bottom:1px solid rgba(30,45,69,0.3);color:var(--text2);font-family:var(--mono);font-size:12px}
+.cpi-table tr:last-child td{border:none}
+.cpi-table tr:hover td{background:var(--navy3)}
+
+.faq{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.faq h2{font-size:20px;font-weight:800;margin-bottom:16px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;background:var(--card);transition:.2s;border:none;width:100%;color:var(--text);font-family:var(--font);text-align:left}
+.faq-q:hover{background:var(--card2)}
+.faq-arrow{transition:transform .2s;color:var(--text3);font-size:18px}
+.faq-item.open .faq-arrow{transform:rotate(45deg);color:var(--red)}
+.faq-a{display:none;padding:14px 16px;font-size:13px;color:var(--text2);background:var(--card2);border-top:1px solid var(--border);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+.related{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.related h2{font-size:20px;font-weight:800;margin-bottom:16px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.rel-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text2);font-size:14px;font-weight:500;transition:.2s;display:block}
+.rel-card:hover{background:var(--card2);border-color:var(--red);color:var(--text)}
+
+.footer{border-top:1px solid var(--border);padding:32px 28px 24px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:12px;color:var(--text3);transition:.15s}
+.footer-links a:hover{color:var(--text2)}
+@keyframes fcFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fcFadeUp .4s ease both}
+
+
+
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="Inflation Calculator 2026 — US CPI &amp; Purchasing Power | USAFinCalc" property="og:title"/>
+<meta content="Calculate the real value of money over time using US CPI data. See how inflation erodes purchasing power from 1913 to 2026. Free inflation calculator." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/inflation-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Inflation Calculator 2026 — US CPI &amp; Purchasing Power" name="twitter:title"/>
+<meta content="Calculate the real value of money over time using US CPI data. See how inflation erodes purchasing power from 1913 to 2026. Free inflation calculator." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Inflation Calculator 2026 — US CPI &amp; Purchasing Power | USAFinCalc",
+  "url": "https://usafincalc.com/inflation-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Investing",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Inflation Calculator USA",
+      "item": "https://usafincalc.com/inflation-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Inflation Calculator USA 2026",
+  "description": "Inflation Calculator 2026 — US CPI &amp; Purchasing Power | USAFinCalc",
+  "url": "https://usafincalc.com/inflation-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="page-hero fade-up">
+<div class="page-badge">📉 BLS CPI Data · Updated 2026</div>
+<h1>Inflation Calculator <span>USA 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>See how much purchasing power money has lost over time. Calculate real vs nominal value using official US Bureau of Labor Statistics CPI data from 1913–2026.</p>
+</div>
+<div class="qa-box">
+<div class="qa-inner">
+<strong>Quick answer:</strong> $100 in 1990 has the same buying power as roughly <strong>$237</strong> in 2026 — meaning $100 today buys only what $42 bought in 1990. That's the hidden cost of inflation.
+  </div>
+</div>
+<div class="calc-wrap">
+
+<div class="panel fade-up">
+<div class="panel-title" style="--dot-color:#f97316">Inflation Details</div>
+<label for="origAmount" class="fc-label">Original Amount</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="origAmount" placeholder="100" type="number" value="100"/>
+</div>
+<label for="fromYear" class="fc-label">From Year</label>
+<select class="fc-select" id="fromYear"></select>
+<label for="toYear" class="fc-label">To Year</label>
+<select class="fc-select" id="toYear"></select>
+<label for="inflationType" class="fc-label">Inflation Category</label>
+<select class="fc-select" id="inflationType">
+<option value="all">All Items (General CPI)</option>
+<option value="food">Food &amp; Beverages</option>
+<option value="housing">Housing &amp; Rent</option>
+<option value="medical">Medical Care</option>
+<option value="education">Education</option>
+<option value="energy">Energy</option>
+<option value="apparel">Apparel &amp; Clothing</option>
+</select>
+<button class="fc-btn" onclick="calcInflation()">Calculate Purchasing Power →</button>
+</div>
+<div id="inflResult">
+<div class="panel">
+<div class="result-placeholder">
+<div class="result-placeholder-icon">📉</div>
+<div>Enter an amount and years to see the real value of money over time.</div>
+</div>
+</div>
+</div>
+</div>
+<!-- VISUAL CPI CHART -->
+<div class="chart-section">
+<div class="chart-panel fade-up">
+<div class="chart-title">📊 US Inflation Rate by Decade (Annual Average CPI %)</div>
+<div class="chart-bars" id="decade-chart"></div>
+<div style="font-size:11px;color:var(--text3);margin-top:12px">Source: US Bureau of Labor Statistics, CPI-U All Urban Consumers</div>
+</div>
+</div>
+<!-- INFO -->
+<div class="content">
+<h2>How Inflation Erodes Your Money</h2>
+<div class="info-grid">
+<div class="info-card">
+<div class="info-card-icon">🛒</div>
+<div class="info-card-title">Consumer Price Index (CPI)</div>
+<div class="info-card-body">CPI measures price changes for a basket of goods: housing, food, transportation, medical care, education, and more. Published monthly by the Bureau of Labor Statistics.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">🏦</div>
+<div class="info-card-title">The Fed's 2% Target</div>
+<div class="info-card-body">The Federal Reserve targets 2% annual inflation — low enough to avoid deflation, high enough to encourage spending. Post-COVID inflation peaked at 9.1% in June 2022, the highest since 1981.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">💸</div>
+<div class="info-card-title">Real vs Nominal Value</div>
+<div class="info-card-body">Nominal value is the face value (e.g., $1,000 salary in 1980). Real value accounts for inflation — that $1,000 had the same buying power as $3,800 today. Always compare in "real" dollars.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">🛡️</div>
+<div class="info-card-title">Beating Inflation</div>
+<div class="info-card-body">S&amp;P 500 historically returns ~10% nominally / 7% real. TIPS (Treasury Inflation-Protected Securities), I-bonds, real estate, and commodities are common inflation hedges.</div>
+</div>
+</div>
+<h2>Historical US Annual Inflation Rates</h2>
+<div class="cpi-table-wrap">
+<table class="cpi-table">
+<thead><tr><th>Year</th><th>CPI Rate</th><th>Notable Event</th><th>$100 Buying Power vs Previous Year</th></tr></thead>
+<tbody id="cpi-table-body"></tbody>
+</table>
+</div>
+</div>
+</section>
+<div class="faq">
+<h2>Inflation Calculator FAQ</h2>
+<div class="faq-item">
+<button class="faq-q">What is the current US inflation rate in 2026? <span class="faq-arrow">+</span></button>
+<div class="faq-a">As of early 2026, US CPI inflation is approximately 2.4–2.8% annually, continuing the cooling trend from the post-COVID peak of 9.1% in June 2022. The Federal Reserve targets 2% long-term. Use our calculator for historical comparisons using official BLS data.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">How is inflation calculated? <span class="faq-arrow">+</span></button>
+<div class="faq-a">Inflation = ((CPI_end - CPI_start) / CPI_start) × 100. For example, if CPI went from 250 to 300, inflation = (300-250)/250 × 100 = 20%. Our calculator uses official BLS CPI-U (All Urban Consumers) index data updated through the latest available release.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">What has $100 in 1990 become in 2026? <span class="faq-arrow">+</span></button>
+<div class="faq-a">$100 in 1990 is equivalent to approximately $236–240 in 2026 purchasing power. This means your $100 in 1990 would need to be $237 today to buy the same things — or conversely, $100 today only buys what $42 bought in 1990.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Which category has had the highest inflation? <span class="faq-arrow">+</span></button>
+<div class="faq-a">Medical care and education have far outpaced general CPI over the last 30 years. College tuition has increased ~1,200% since 1980 (vs ~300% general CPI). Medical costs have increased ~600%. Energy is the most volatile, ranging from deflation to 34% annual spikes.</div>
+</div>
+</div>
+</section>
+<section class="related-section"><div class="related">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/currency-converter">🌍 Currency Converter</a>
+<a class="related-card" href="/compound-interest-calculator">📈 Compound Interest</a>
+<a class="related-card" href="/salary-calculator-usa">💵 Salary Calculator</a>
+<a class="related-card" href="/roth-ira-calculator">🐷 Roth IRA Calculator</a>
+<a class="related-card" href="/rent-vs-buy-calculator">🏡 Rent vs Buy</a>
+</div>
+</div>
+<!-- COMING SOON -->
+<div style="background:linear-gradient(180deg,var(--bg) 0%,rgba(12,17,32,0.8) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 24px;margin-bottom:0">
+<div style="max-width:980px;margin:0 auto">
+<div style="text-align:center;margin-bottom:36px">
+<h2 style="font-size:clamp(22px,4vw,32px);font-weight:700;margin-bottom:10px;color:var(--text)">You Might Also Like</h2>
+<p style="color:var(--text2);font-size:15px">More free calculators from USAFinCalc</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px">
+<a href="/credit-score-simulator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">💳</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Credit Score Simulator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">See how financial moves affect your score in real time</div>
+</a>
+<a href="/currency-converter" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">🌍</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Currency Converter</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">Live rates for 30+ world currencies</div>
+</a>
+<a href="/rent-vs-buy-calculator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">🏡</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Rent vs Buy Calculator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">True cost comparison with break-even analysis</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="inflation-guide">
+<h2>What This Inflation Calculator Does</h2>
+<p>This calculator shows how the purchasing power of a dollar amount changes over time based on historical CPI data or a custom inflation rate. Enter an amount and a year range, and it shows what that purchasing power is worth in current dollars — or projects how current spending grows in nominal terms at different inflation rates over future years.</p>
+<h2>Understanding Purchasing Power</h2>
+<p>Inflation doesn't destroy money — it erodes what money can buy. $100 in 2004 had the same purchasing power as roughly $165 in 2024, based on CPI data. Put differently, saving $100 in a mattress for 20 years leaves you with $100 nominally but only $60 in real purchasing power. This is why keeping large amounts in non-interest-bearing accounts is a silent form of wealth loss.</p>
+<h2>How CPI Is Measured</h2>
+<p>The Consumer Price Index tracks price changes in a "basket" of goods and services that reflects typical household spending. This basket includes housing (the largest weight, ~33%), food, transportation, medical care, apparel, recreation, and other categories. The weights have shifted over time as spending patterns change. "Core CPI" excludes food and energy (volatile categories) and is used by the Federal Reserve as a smoother indicator of underlying inflation trends.</p>
+<h2>Inflation by Category</h2>
+<table>
+<thead><tr><th>Category</th><th>Avg Annual Inflation (20-Year Approximate)</th></tr></thead>
+<tbody>
+<tr><td>Medical care</td><td>~4–5%</td></tr>
+<tr><td>College tuition</td><td>~4–6%</td></tr>
+<tr><td>Housing (rent)</td><td>~3–4%</td></tr>
+<tr><td>General CPI</td><td>~2.5–3%</td></tr>
+<tr><td>Food</td><td>~2–3%</td></tr>
+<tr><td>Technology/electronics</td><td>Deflation (prices have fallen)</td></tr>
+</tbody>
+</table>
+<p>Retirement income planning needs category-specific inflation rates for major spending categories — medical care inflation at 4–5% annually vs. general CPI at 2–3% matters significantly over a 25-year retirement.</p>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Use real (inflation-adjusted) returns for investment projections</strong> — a 7% nominal return with 3% inflation is a 4% real return. Planning on 7% nominal without adjusting your spending needs for inflation overstates your future purchasing power.</li>
+<li><strong>Build inflation adjustments into long-term budgets</strong> — a fixed $3,000/month spending assumption in a retirement plan that starts in 20 years ignores that $3,000 today will require $5,400–$6,000 in nominal terms to maintain equivalent purchasing power.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/retirement-withdrawal-calculator">Retirement Withdrawal Calculator</a></strong> — inflation-adjusted sustainable withdrawal planning.</li>
+<li><strong><a href="/compound-interest-calculator">Compound Interest Calculator</a></strong> — compare nominal and real investment returns.</li>
+<li><strong><a href="/social-security-calculator">Social Security Calculator</a></strong> — Social Security benefits include annual COLA inflation adjustments.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Does Social Security adjust for inflation?</h3>
+<p>Yes — Social Security benefits receive an annual Cost of Living Adjustment (COLA) based on the CPI-W (Consumer Price Index for Urban Wage Earners). In 2024, the COLA was 3.2%. This automatic inflation protection is one of Social Security's most valuable features relative to private pensions that often lack it.</p>
+<h3>Is inflation the same everywhere in the US?</h3>
+<p>No — housing is highly location-specific, and it's the largest CPI component. San Francisco and New York have experienced much higher housing inflation than smaller metros. CPI represents a national average and may not reflect what inflation looks like for a household in a specific high-cost city.</p>
+<h3>What's a safe inflation assumption for retirement planning?</h3>
+<p>General inflation: 2.5%–3% annually is a reasonable long-run assumption. Healthcare-specific inflation: 4%–5%. For overall retirement planning, many financial planners use 3% as a conservative but not extreme assumption for total spending inflation.</p>
+<h2>Key Takeaways</h2>
+<p>Inflation is the unavoidable tax on idle money. Understanding its historical magnitude — and using realistic projections in financial plans — is what separates retirement plans that hold up from those that erode quietly over time. Your real financial goal is not accumulating a nominal dollar amount, but maintaining or growing purchasing power across a retirement that may span 25–35 years. Every major financial projection should be stress-tested against higher-than-expected inflation to understand what your plan's vulnerability looks like if the next 20 years don't match the last 20.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+// ── CPI DATA (BLS CPI-U, All Urban Consumers, 1982-84=100) ──
+var CPI = {
+  1913:9.9,1920:20.0,1925:17.5,1930:16.7,1935:13.7,1940:14.0,1945:18.0,1950:24.1,
+  1955:26.8,1960:29.6,1965:31.5,1970:38.8,1971:40.5,1972:41.8,1973:44.4,1974:49.3,
+  1975:53.8,1976:56.9,1977:60.6,1978:65.2,1979:72.6,1980:82.4,1981:90.9,1982:96.5,
+  1983:99.6,1984:103.9,1985:107.6,1986:109.6,1987:113.6,1988:118.3,1989:124.0,
+  1990:130.7,1991:136.2,1992:140.3,1993:144.5,1994:148.2,1995:152.4,1996:156.9,
+  1997:160.5,1998:163.0,1999:166.6,2000:172.2,2001:177.1,2002:179.9,2003:184.0,
+  2004:188.9,2005:195.3,2006:201.6,2007:207.3,2008:215.3,2009:214.5,2010:218.1,
+  2011:224.9,2012:229.6,2013:233.0,2014:236.7,2015:237.0,2016:240.0,2017:245.1,
+  2018:251.1,2019:255.7,2020:258.8,2021:270.9,2022:292.7,2023:304.7,2024:314.2,
+  2026:322.0,2026:330.0,
+};
+
+// Category multipliers (rough ratios vs general CPI)
+var CAT_MULTIPLIERS = {
+  all:1, food:1.08, housing:1.15, medical:1.6, education:1.8, energy:0.95, apparel:0.7
+};
+
+// Populate year selects
+function populateYears() {
+  var years = Object.keys(CPI).map(Number).sort((a,b)=>a-b);
+  var from = document.getElementById('fromYear');
+  var to   = document.getElementById('toYear');
+  years.forEach(function(y) {
+    from.innerHTML += '<option value="'+y+'">'+y+'</option>';
+    to.innerHTML   += '<option value="'+y+'">'+y+'</option>';
+  });
+  from.value = '1990';
+  to.value   = '2026';
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtP(n) { return n.toFixed(2) + '%'; }
+
+function calcInflation() {
+  var amount  = parseFloat(document.getElementById('origAmount').value) || 100;
+  var fromY   = parseInt(document.getElementById('fromYear').value);
+  var toY     = parseInt(document.getElementById('toYear').value);
+  var catType = document.getElementById('inflationType').value;
+  var catMult = CAT_MULTIPLIERS[catType] || 1;
+  var catName = document.getElementById('inflationType').options[document.getElementById('inflationType').selectedIndex].text;
+
+  var cpiFrom = CPI[fromY];
+  var cpiTo   = CPI[toY];
+  if (!cpiFrom || !cpiTo) return;
+
+  var inflRate = (cpiTo - cpiFrom) / cpiFrom;
+  var adjusted = amount * (cpiTo / cpiFrom) * catMult;
+  var totalInfl = (inflRate * catMult * 100);
+  var years    = Math.abs(toY - fromY);
+  var annualRate = (Math.pow(adjusted / amount, 1 / (years||1)) - 1) * 100;
+  var lost     = adjusted - amount;
+  var powerLost = (1 - amount/adjusted) * 100;
+
+  // Direction
+  var forward = toY >= fromY;
+  var mainLabel = forward
+    ? fmt(amount) + ' in ' + fromY + ' = ' + fmt(adjusted) + ' in ' + toY
+    : fmt(amount) + ' in ' + fromY + ' = ' + fmt(adjusted) + ' in ' + toY + ' (deflation-adjusted)';
+
+  document.getElementById('inflResult').innerHTML = `
+    <div class="panel fade-up">
+      <div class="panel-title" style="--dot-color:#f97316">Purchasing Power Results</div>
+      <div class="result-hero">
+        <div class="result-label">${catName}</div>
+        <div class="result-amount">${fmt(adjusted)}</div>
+        <div class="result-sub">${mainLabel}</div>
+      </div>
+      <div class="detail-row"><span class="detail-key">Original Amount (${fromY})</span><span class="detail-val">${fmt(amount)}</span></div>
+      <div class="detail-row"><span class="detail-key">Inflation-Adjusted (${toY})</span><span class="detail-val orange">${fmt(adjusted)}</span></div>
+      <div class="detail-row"><span class="detail-key">Total Inflation</span><span class="detail-val red">+${totalInfl.toFixed(1)}%</span></div>
+      <div class="detail-row"><span class="detail-key">Average Annual Rate</span><span class="detail-val red">${annualRate.toFixed(2)}%/yr</span></div>
+      <div class="detail-row"><span class="detail-key">Purchasing Power Lost</span><span class="detail-val red">${powerLost.toFixed(1)}%</span></div>
+      <div class="detail-row"><span class="detail-key">CPI (${fromY})</span><span class="detail-val">${cpiFrom}</span></div>
+      <div class="detail-row" style="border:none"><span class="detail-key">CPI (${toY})</span><span class="detail-val">${cpiTo}</span></div>
+      <div class="mini-grid">
+        <div class="mini-box"><div class="mini-label">Then</div><div class="mini-val" style="color:var(--blue)">${fmt(amount)}</div></div>
+        <div class="mini-box"><div class="mini-label">Now</div><div class="mini-val" style="color:var(--red)">${fmt(adjusted)}</div></div>
+        <div class="mini-box"><div class="mini-label">Lost</div><div class="mini-val" style="color:var(--orange)">${powerLost.toFixed(0)}%</div></div>
+      </div>
+    </div>`;
+}
+
+// ── DECADE CHART ──
+var DECADES = [
+  {label:'1920s',rate:'-3.1%',val:-3.1,note:'Deflation era'},
+  {label:'1930s',rate:'-2.0%',val:-2.0,note:'Great Depression'},
+  {label:'1940s',rate:'5.6%', val:5.6, note:'WWII spending'},
+  {label:'1950s',rate:'2.1%', val:2.1, note:'Post-war stability'},
+  {label:'1960s',rate:'2.5%', val:2.5, note:'Vietnam War'},
+  {label:'1970s',rate:'7.4%', val:7.4, note:'Oil embargo / stagflation'},
+  {label:'1980s',rate:'5.6%', val:5.6, note:'Fed rate hikes'},
+  {label:'1990s',rate:'3.0%', val:3.0, note:'Relative stability'},
+  {label:'2000s',rate:'2.6%', val:2.6, note:'Housing bubble'},
+  {label:'2010s',rate:'1.8%', val:1.8, note:'Low inflation era'},
+  {label:'2020s',rate:'5.2%', val:5.2, note:'COVID-19 + supply crisis'},
+];
+var maxVal = Math.max(...DECADES.map(d=>Math.abs(d.val)));
+var chartHtml = DECADES.map(function(d) {
+  var pct = (Math.abs(d.val)/maxVal*100).toFixed(0);
+  var color = d.val < 0 ? 'var(--emerald)' : d.val > 5 ? 'var(--red)' : d.val > 3 ? 'var(--orange)' : 'var(--blue)';
+  return `<div class="chart-bar-row">
+    <span class="chart-bar-year">${d.label}</span>
+    <div class="chart-bar-track"><div class="chart-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+    <span class="chart-bar-val" style="color:${color}">${d.rate}</span>
+    <span style="font-size:11px;color:var(--text3)">${d.note}</span>
+  </div>`;
+}).join('');
+document.getElementById('decade-chart').innerHTML = chartHtml;
+
+// ── CPI TABLE ──
+var TABLE_YEARS = [
+  {y:2024,r:2.9,note:'Continued cooling',bp:97.2},
+  {y:2023,r:3.4,note:'Further cooling',bp:96.8},
+  {y:2022,r:8.0,note:'40-year high; supply + demand shock',bp:93.0},
+  {y:2021,r:4.7,note:'Post-COVID reopening surge',bp:95.5},
+  {y:2020,r:1.2,note:'COVID-19 pandemic',bp:98.8},
+  {y:2019,r:2.3,note:'Pre-pandemic normal',bp:97.7},
+  {y:2018,r:2.4,note:'Stable growth',bp:97.7},
+  {y:2015,r:0.1,note:'Oil price collapse',bp:99.9},
+  {y:2010,r:1.6,note:'Post-financial crisis',bp:98.4},
+  {y:2008,r:3.8,note:'Financial crisis / oil spike',bp:96.3},
+  {y:2000,r:3.4,note:'Dot-com boom',bp:96.7},
+  {y:1990,r:5.4,note:'Gulf War era',bp:94.8},
+  {y:1980,r:13.5,note:'Peak stagflation',bp:87.8},
+];
+var tHtml = TABLE_YEARS.map(function(r) {
+  var color = r.r > 6 ? 'color:var(--red)' : r.r > 3 ? 'color:var(--orange)' : r.r < 1 ? 'color:var(--emerald)' : 'color:var(--blue)';
+  return `<tr><td>${r.y}</td><td style="${color};font-weight:700">${r.r}%</td><td style="color:var(--text2);font-family:var(--font)">${r.note}</td><td style="${color}">${r.bp}</td></tr>`;
+}).join('');
+document.getElementById('cpi-table-body').innerHTML = tHtml;
+
+// ── INIT ──
+populateYears();
+document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){q.parentElement.classList.toggle('open');});});
+</script>
+<script>
+
+function handleCSSubmit(e){
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('csSuccess').style.display='block';
+}
+
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

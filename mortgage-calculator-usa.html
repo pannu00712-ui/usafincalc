@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Mortgage Calculator USA 2026 — Monthly Payment, PMI &amp; Amortization</title>
+<meta content="Calculate your monthly mortgage payment in the USA for 2026. See principal, interest, PMI, taxes, insurance breakdown, extra payments and full amortization schedule. Free and accurate." name="description"/>
+<meta content="mortgage calculator usa, monthly mortgage payment calculator, pmi calculator, extra payment mortgage, biweekly mortgage, amortization schedule calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/mortgage-calculator-usa" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="Mortgage Calculator USA 2026 — Monthly Payment, PMI &amp; Amortization" property="og:title"/>
+<meta content="Calculate your monthly mortgage payment in the USA for 2026. Extra payments, biweekly, PMI, taxes, insurance and full amortization schedule. Free." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/mortgage-calculator-usa" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Mortgage Calculator USA 2026 — Monthly Payment, PMI &amp; Amortization" name="twitter:title"/>
+<meta content="Calculate your monthly mortgage payment in the USA for 2026. Extra payments, biweekly, PMI, taxes, insurance and full amortization schedule. Free." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--principal:#60a5fa;--interest:#f87171;--pmi:#f59e0b;--ins:#a78bfa;--extra:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:600px;line-height:1.8}
+.qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+.qa{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+.qa strong{color:var(--accent)}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:6px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+.toggle-btn{background:none;border:1px solid var(--border2);border-radius:var(--rs);color:var(--muted);font-size:12px;padding:6px 12px;cursor:pointer;font-family:var(--mono);transition:all .2s;margin-bottom:10px;width:100%}
+.toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
+.collapsible{display:none}
+.collapsible.open{display:block}
+.btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:6px;transition:background .2s,transform .1s}
+.btn:hover{background:#059669}
+.btn:active{transform:scale(.98)}
+/* Result cards */
+.net-card{background:linear-gradient(135deg,rgba(16,185,129,0.12),rgba(5,150,105,0.04));border:1px solid rgba(16,185,129,0.25);border-radius:var(--r);padding:20px;text-align:center}
+.nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+.na{font-size:38px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+.nm span{color:var(--text)}
+.pay-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+.pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+/* Breakdown bar */
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+.bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:7px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500}
+.divider{height:1px;background:var(--border);margin:7px 0}
+/* Comparison card (with/without extra) */
+.comp-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+.comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.comp-col{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px}
+.comp-title{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.comp-row{display:flex;justify-content:space-between;font-size:12px;padding:3px 0}
+.comp-row span:first-child{color:var(--muted)}
+.comp-row span:last-child{font-family:var(--mono);font-weight:500}
+.savings-badge{background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.3);border-radius:var(--rs);padding:8px 12px;text-align:center;margin-top:10px;font-size:13px;color:var(--extra)}
+/* Detail table */
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px}
+.dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500}
+/* PMI note */
+.pmi-note{background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.2);border-radius:var(--rs);padding:10px 14px;font-size:12px;color:var(--muted);margin-top:10px}
+.pmi-note strong{color:var(--pmi)}
+/* Amortization */
+.amort-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.amort-tabs{display:flex;gap:8px;margin-bottom:16px}
+.atab{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:6px 14px;font-size:12px;cursor:pointer;color:var(--muted);font-family:var(--mono);transition:all .2s}
+.atab.active{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:var(--accent)}
+.amort-head{display:grid;grid-template-columns:50px 1fr 1fr 1fr 1fr;gap:8px;font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;padding:8px 0;border-bottom:1px solid var(--border)}
+.amort-row{display:grid;grid-template-columns:50px 1fr 1fr 1fr 1fr;gap:8px;font-size:12px;padding:8px 0;border-bottom:1px solid var(--border);font-family:var(--mono)}
+.amort-row:last-child{border-bottom:none}
+@media(max-width:500px){.amort-head,.amort-row{grid-template-columns:36px 1fr 1fr 1fr;font-size:10px}.hide-sm{display:none}}
+/* FAQ */
+.faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+.faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+.faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-top:10px}
+/* Related */
+.related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+.related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;text-decoration:none;display:block;transition:all .2s}
+.rel-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+.rel-card .rd{font-size:11px;color:var(--muted)}
+.meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+.meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+.meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+.meth-box a{color:var(--accent);text-decoration:none}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+footer a:hover{color:var(--accent)}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Mortgage Calculator USA 2026 — Monthly Payment, PMI &amp; Amortization",
+  "url": "https://usafincalc.com/mortgage-calculator-usa",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mortgage Calculator USA",
+      "item": "https://usafincalc.com/mortgage-calculator-usa"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mortgage Calculator USA 2026",
+  "description": "Calculate your monthly mortgage payment with PMI, taxes, insurance, extra payments and full amortization schedule.",
+  "url": "https://usafincalc.com/mortgage-calculator-usa",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is PMI and when can I remove it?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PMI is required when your down payment is less than 20%. It costs 0.5–1.5% annually. Cancel when you reach 20% equity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the current 30-year mortgage rate in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of 2026, 30-year fixed rates are in the 6.5–7.5% range. Rates vary by credit score, lender, and down payment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I make extra mortgage payments?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Extra payments go directly to principal. On a $320,000 loan at 6.75%, an extra $200/month saves over $50,000 in interest and cuts 5+ years off the loan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is biweekly payment better than monthly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Biweekly payments result in one extra monthly payment per year (26 half-payments = 13 full payments). This can save years off your loan and thousands in interest."
+      }
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+<div class="badge">🏠 USA 2026 • PITI + Extra Payments</div>
+<h1>Mortgage Calculator <span>USA</span></h1>
+<div style="margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:13px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p class="hero-sub">Calculate your complete monthly payment — principal, interest, PMI, property tax, HOA, and insurance. Add extra payments, biweekly option, and full amortization schedule.</p>
+</div>
+
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your home price and loan details to see your monthly payment.</div></div>
+
+<div class="main">
+<!-- LEFT: Input Panel -->
+<div>
+<div class="card">
+<div class="ct">🏡 Loan Details</div>
+<label for="price">Home Price</label>
+<div class="pfx"><span>$</span><input id="price" type="number" min="0" value="400000" oninput="calculate()"/></div>
+<label for="down-amt">Down Payment</label>
+<div class="row2">
+<div class="pfx"><span>$</span><input id="down-amt" type="number" min="0" value="80000" oninput="syncDown('amt')"/></div>
+<div class="sfx"><input id="down-pct" type="number" min="0" max="100" step="0.5" value="20" oninput="syncDown('pct')"/><span>%</span></div>
+</div>
+<label for="rate">Interest Rate (Annual)</label>
+<div class="sfx"><input id="rate" type="number" min="0.1" max="20" step="0.05" value="6.75" oninput="calculate()"/><span>%</span></div>
+<label for="term">Loan Term</label>
+<select id="term" onchange="calculate()">
+<option value="30" selected>30 Years (Fixed)</option>
+<option value="20">20 Years (Fixed)</option>
+<option value="15">15 Years (Fixed)</option>
+<option value="10">10 Years (Fixed)</option>
+</select>
+
+<div class="sec-label">PITI — Monthly Costs</div>
+<div class="row2">
+<div>
+<label for="prop-tax">Property Tax /yr</label>
+<div class="pfx"><span>$</span><input id="prop-tax" type="number" min="0" value="4800" oninput="calculate()"/></div>
+</div>
+<div>
+<label for="insurance">Home Insurance /yr</label>
+<div class="pfx"><span>$</span><input id="insurance" type="number" min="0" value="1500" oninput="calculate()"/></div>
+</div>
+</div>
+<div class="row2">
+<div>
+<label for="pmi-rate">PMI Rate /yr</label>
+<div class="sfx"><input id="pmi-rate" type="number" min="0" max="3" step="0.05" value="0.85" oninput="calculate()"/><span>%</span></div>
+</div>
+<div>
+<label for="hoa">HOA /month</label>
+<div class="pfx"><span>$</span><input id="hoa" type="number" min="0" value="0" oninput="calculate()"/></div>
+</div>
+</div>
+
+<!-- Extra Payments -->
+<div class="sec-label">💰 Extra Payments (Optional)</div>
+<button class="toggle-btn" onclick="toggleExtra(this)">+ Add Extra Payments</button>
+<div class="collapsible" id="extra-panel">
+<label for="extra-mo">Extra Monthly Payment</label>
+<div class="pfx"><span>$</span><input id="extra-mo" type="number" min="0" value="0" oninput="calculate()"/></div>
+<label for="extra-yr">Extra Yearly Payment</label>
+<div class="pfx"><span>$</span><input id="extra-yr" type="number" min="0" value="0" oninput="calculate()"/></div>
+<label for="extra-once">One-Time Extra Payment</label>
+<div class="pfx"><span>$</span><input id="extra-once" type="number" min="0" value="0" oninput="calculate()"/></div>
+</div>
+
+<!-- Biweekly -->
+<div class="sec-label">📅 Payment Mode</div>
+<select id="pay-mode" onchange="calculate()">
+<option value="monthly">Monthly Payments</option>
+<option value="biweekly">Biweekly Payments (saves interest)</option>
+</select>
+
+<button class="btn" onclick="calculate()">Calculate Payment →</button>
+</div>
+</div>
+
+<!-- RIGHT: Results -->
+<div id="result-col">
+<div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your home details</div><div style="font-size:12px;font-family:var(--mono)">P+I • PMI • Tax • Insurance • Extra</div></div>
+</div>
+
+<!-- Detail Table -->
+<div class="wide" id="detail-col" style="display:none">
+<div class="dcard">
+<div class="bt">📋 Complete Payment Breakdown</div>
+<div id="detail-rows"></div>
+</div>
+</div>
+
+<!-- Comparison (only when extra payments entered) -->
+<div class="wide" id="comp-col" style="display:none"></div>
+
+<!-- Amortization -->
+<div class="wide" id="amort-section" style="display:none">
+<div class="amort-wrap">
+<div class="bt">📅 Amortization Schedule</div>
+<div class="amort-tabs">
+<div class="atab active" onclick="switchAmort('year',this)">Yearly</div>
+<div class="atab" onclick="switchAmort('month',this)">Monthly</div>
+</div>
+<div id="amort-year-view">
+<div class="amort-head"><div>Yr</div><div>Payment</div><div>Principal</div><div>Interest</div><div class="hide-sm">Balance</div></div>
+<div id="amort-year-rows"></div>
+</div>
+<div id="amort-month-view" style="display:none">
+<div class="amort-head"><div>Mo</div><div>Payment</div><div>Principal</div><div>Interest</div><div class="hide-sm">Balance</div></div>
+<div id="amort-month-rows" style="max-height:400px;overflow-y:auto"></div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is PMI and when can I remove it?</div><div class="faq-a">PMI (Private Mortgage Insurance) protects the lender — not you — if you stop making payments. It's required on conventional loans when your down payment is under 20%, and typically costs 0.3%–1.5% of the loan amount annually depending on your credit score and LTV ratio. On a $320,000 loan, that's $80–$400/month added to your payment. You can request cancellation once your balance drops to 80% of the original purchase price — either through regular payments or by requesting a new appraisal if your home has appreciated. Federal law (Homeowners Protection Act) requires automatic cancellation at 78% LTV based on the original amortization schedule. FHA loans work differently — MIP on loans originated after June 2013 with under 10% down never automatically cancels; you'd need to refinance into a conventional loan to remove it.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What are current 30-year mortgage rates in 2026?</div><div class="faq-a">As of mid-2026, 30-year fixed conventional rates are generally in the 6.5%–7.5% range for well-qualified borrowers (760+ credit, 20% down, single-family primary residence). Rates with less-than-ideal credit or lower down payments can run 0.5%–1.5% higher. 15-year fixed rates typically run 0.5%–0.75% below 30-year rates. FHA rates are often similar to conventional but come with mandatory MIP. The Freddie Mac Primary Mortgage Market Survey (updated weekly) is the most widely cited benchmark. Rates vary significantly by lender — getting quotes from 3 or more lenders on the same day is the most reliable way to know your real number.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Should I make extra mortgage payments?</div><div class="faq-a">Usually yes — but only after you've maxed any employer 401(k) match and maintained 3–6 months of emergency savings. Beyond that, extra principal payments deliver a guaranteed after-tax return equal to your mortgage rate. On a $320,000 loan at 6.75%, an extra $200/month saves approximately $56,400 in total interest and cuts 6 years off the loan. Use the Extra Payments section above to see your exact numbers. One important caveat: confirm with your servicer that extra payments are applied to principal and not held as a credit toward next month's payment.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is biweekly payment better than monthly?</div><div class="faq-a">Biweekly payments split your monthly payment in half and make 26 half-payments per year — equivalent to 13 full monthly payments instead of 12. That one extra payment per year goes entirely to principal. On a $300,000 loan at 6.75%, switching to biweekly payments shaves approximately 4 years and 3 months off a 30-year loan and saves roughly $47,000 in interest. The main practical benefit isn't just the math — it's automatic discipline. If you're paid every two weeks, biweekly payments align with your paycheck and remove the decision of whether to make an extra payment each month.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">15-year vs 30-year mortgage — which is better?</div><div class="faq-a">The 15-year wins on total cost; the 30-year wins on flexibility. On a $280,000 loan, a 15-year at 6.25% costs $2,427/month and $156,900 in total interest. A 30-year at 6.75% costs $1,816/month and $373,700 in total interest — $216,800 more in interest for the payment flexibility. The right answer depends on your income stability. If your income is steady and the 15-year payment is less than 28% of your gross monthly income, the interest savings are substantial. If your income is variable, a 30-year with voluntary extra payments gives you the same savings potential with a lower required payment in lean months — and no risk of default if you need to skip an extra payment.</div></div>
+<div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How much house can I afford?</div><div class="faq-a">Two rules used by lenders and financial planners: the 28% rule (total monthly housing cost — PITI — should not exceed 28% of gross monthly income) and the 36–43% rule (total monthly debt payments including housing should stay under 36%–43% of gross income). On a $90,000/year gross income ($7,500/month), 28% equals $2,100/month maximum PITI. At 6.75% interest with 10% down and 1.1% property tax, that $2,100/month PITI supports a home price of roughly $295,000–$315,000. The lender's pre-approval may go higher — approval is based on their risk criteria, not on what's comfortable for your actual budget and savings goals. Use our Home Affordability Calculator to work backward from your real take-home pay.</div></div>
+</div>
+</section>
+<section class="related-section"><div class="related">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/dti-calculator"><div class="rc-title">📊 DTI Calculator</div><div class="rc-desc">Check your debt-to-income ratio</div></a>
+<a class="related-card" href="/home-affordability-calculator-usa"><div class="rc-title">🏡 Home Affordability</div><div class="rc-desc">Can you afford that house?</div></a>
+<a class="related-card" href="/refinance-calculator"><div class="rc-title">🔄 Refinance Calculator</div><div class="rc-desc">Should you refinance?</div></a>
+<a class="related-card" href="/mortgage-on-300k-house"><div class="rc-title">🏠 $300K Mortgage</div><div class="rc-desc">Monthly payment on $300K</div></a>
+<a class="related-card" href="/property-tax-calculator"><div class="rc-title">🏛️ Property Tax</div><div class="rc-desc">Estimate your property tax</div></a>
+<a class="related-card" href="/salary-calculator-usa"><div class="rc-title">💵 Salary Calculator</div><div class="rc-desc">How much can you afford?</div></a>
+<a class="related-card" href="/auto-loan-calculator"><div class="rc-title">🚗 Auto Loan</div><div class="rc-desc">Car payment calculator</div></a>
+</div>
+</div>
+</section>
+<div class="meth">
+<div class="meth-box">
+<p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+<p>Mortgage calculation uses standard amortization formula: M = P[r(1+r)^n]/[(1+r)^n-1]. PMI applies when LTV > 80%. Default PMI rate 0.85% (industry average). Biweekly assumes 26 payments/year. Extra payments applied to principal monthly. Rate defaults from Freddie Mac PMMS. Source: <a href="https://freddiemac.com" target="_blank">Freddie Mac</a> · Updated June 2026</p>
+</div>
+</div>
+</section>
+<section class="content-block" id="mortgage-guide">
+
+
+<h2>What This Mortgage Calculator Does (and Who It's For)</h2>
+<p>This calculator takes the numbers that actually drive a home loan — purchase price, down payment, interest rate, loan term, PMI, property tax, homeowners insurance, and HOA dues — and turns them into a single, honest monthly payment. It also runs the full amortization schedule behind the scenes, so you can see exactly how much of every payment goes toward interest versus principal in year one versus year fifteen versus year thirty.</p>
+<p>It's built for three kinds of people. First, the buyer who's shopping for a house and needs to know what a $400,000 listing actually costs per month once taxes and insurance are added in — not just the bare principal-and-interest number a real estate listing might show. Second, the homeowner who's already got a mortgage and wants to model what happens if they throw an extra $150 at principal every month, or switch to biweekly payments. Third, anyone comparing two loan offers — say a 6.6% rate with no points versus a 6.1% rate with $4,000 in points — who needs to see the real dollar difference over the life of the loan rather than guessing.</p>
+<p>The reason this matters in practice: a mortgage is the single largest recurring expense most households carry, often for 15 to 30 years straight. A half-percent difference in rate, or an extra 5% down payment, can shift your monthly payment by hundreds of dollars and your total interest paid by tens of thousands. Getting these numbers right before you sign anything — not after — is what separates a comfortable budget from a stretched one.</p>
+
+<h2>Understanding Your Results</h2>
+<p>Once you run the numbers, the calculator hands back several figures. Here's what each one is actually telling you.</p>
+
+<h3>Total Monthly Payment</h3>
+<p>This is your full housing cost, often called PITI — Principal, Interest, Taxes, and Insurance — plus PMI and HOA if they apply. This is the number you should compare against your take-home pay, not the bare principal-and-interest figure. Lenders and financial planners generally want this to stay under 28% of your gross monthly income, though that's a guideline, not a law.</p>
+
+<h3>Principal & Interest (P&I)</h3>
+<p>This is the part that actually pays down the loan and compensates the bank for lending you the money. It's fixed for the life of a fixed-rate loan — it won't change in year 20 the way taxes and insurance might. Early in the loan, the bulk of this payment is interest. That flips over time as your balance shrinks.</p>
+
+<h3>PMI (Private Mortgage Insurance)</h3>
+<p>If your down payment is under 20%, you'll see a PMI line. This isn't insurance for you — it protects the lender if you default. It typically runs 0.5% to 1.5% of the loan amount per year, billed monthly. The calculator shows this as a separate line specifically so you can see it disappears once you cross 20% equity, which changes your real monthly cost going forward.</p>
+
+<h3>Total Interest Paid</h3>
+<p>This is the sober number: the total dollar amount you'll hand the lender in interest over the full loan term if you make only the scheduled payments. On a typical 30-year loan, this figure is often close to — or even higher than — the original loan amount itself. Seeing this number is usually what convinces people to consider extra payments or a shorter term.</p>
+
+<h3>Amortization Schedule</h3>
+<p>This is the payment-by-payment (or year-by-year) breakdown showing how your balance declines and how the interest/principal split shifts over time. If you're deciding whether to refinance in year 7, this table tells you exactly how much equity you've actually built versus how much you've paid in interest.</p>
+
+<h3>Interest Saved / Time Saved (with extra payments)</h3>
+<p>If you've entered extra payments or selected biweekly, the calculator shows the side-by-side comparison: what you'd pay with the standard schedule versus what you'd pay with the accelerated one. This is usually the most actionable number on the page — it tells you in plain dollars whether an extra payment strategy is worth adjusting your budget for.</p>
+<p><strong>What to do with these numbers:</strong> if your total monthly payment pushes past 30% of your take-home pay, that's a signal to look at a smaller loan amount, a larger down payment, or a different price range — not necessarily to assume the lender's pre-approval number is the right number for your life.</p>
+
+<h2>How a Mortgage Payment Is Actually Built</h2>
+<p>A mortgage payment isn't one number — it's several costs bundled together, and understanding each piece is what lets you negotiate, shop, and budget intelligently.</p>
+
+<h3>The Core Inputs</h3>
+<ul>
+<li><strong>Home price:</strong> the agreed purchase price, before any down payment is subtracted.</li>
+<li><strong>Down payment:</strong> the cash you put in upfront, usually expressed as a percentage (5%, 10%, 20%). The remainder becomes your loan amount.</li>
+<li><strong>Loan amount (principal):</strong> home price minus down payment. This is what you're actually borrowing and what interest accrues on.</li>
+<li><strong>Interest rate (APR vs. note rate):</strong> the note rate is what's used to calculate your monthly P&I. The APR includes certain fees and is meant for comparing loan offers, not for calculating your payment.</li>
+<li><strong>Loan term:</strong> typically 15, 20, or 30 years. This determines how the loan is amortized — longer terms mean lower monthly payments but significantly more total interest.</li>
+<li><strong>Property tax:</strong> set by your county or municipality, usually 0.5%–2.5% of assessed value annually, collected monthly through an escrow account.</li>
+<li><strong>Homeowners insurance:</strong> required by virtually all lenders, protects the structure against fire, storm, and similar damage.</li>
+<li><strong>PMI:</strong> required below 20% down on a conventional loan; FHA loans have their own version called MIP that behaves differently (it often doesn't go away without refinancing).</li>
+<li><strong>HOA dues:</strong> only applicable in communities with a homeowners association — covers shared amenities and common-area maintenance, and is not tax-deductible.</li>
+</ul>
+
+<h3>The Amortization Formula in Plain Terms</h3>
+<p>Behind every fixed-rate mortgage calculation is the standard amortization formula, which solves for a level payment that fully pays off the loan by the final scheduled payment. What matters practically is the curve it produces: in the early years, your payment is mostly interest because the balance is largest. As the balance shrinks, more of each fixed payment shifts toward principal. On a 30-year loan at a 6.5%–7% rate, it's common for the loan to be 40-50% paid down only after 20 of the 30 years — equity builds slowly at first and accelerates later.</p>
+
+<h3>Escrow Accounts</h3>
+<p>Most lenders collect property tax and insurance monthly and hold it in an escrow account, then pay the county and insurer on your behalf once a year. This is why your "mortgage payment" is higher than your raw loan payment, and why it can shift year to year even if your rate is fixed — a property tax reassessment or an insurance premium increase changes the escrow portion, not the loan portion.</p>
+
+<h2>Upfront Costs Beyond the Down Payment</h2>
+<p>The down payment gets all the attention, but it's not the only cash you need at closing. First-time buyers are regularly surprised by the additional costs that come due on settlement day — costs that don't appear in any mortgage calculator because they're one-time, not monthly.</p>
+
+<h3>Closing costs: 2–5% of the loan amount</h3>
+<p>On a $320,000 loan, closing costs typically run $6,400–$16,000. They include lender origination fees, title insurance (owner's and lender's), appraisal ($400–$800), home inspection ($300–$600), attorney fees where required by state, recording fees, and prepaid items — specifically, your first year of homeowners insurance paid upfront, and 2–3 months of property taxes deposited into escrow reserve. Some costs are negotiable; some aren't. You can ask the seller to contribute toward closing costs (a "seller concession"), though sellers in competitive markets often won't.</p>
+
+<h3>Pre-paids and escrow setup</h3>
+<p>At closing you'll typically prepay: homeowners insurance for the first 12 months (~$1,500–$2,500 for a median-priced home), 3–6 months of property taxes into escrow reserve, and prepaid interest from your closing date to the end of the month. These aren't fees — you're paying costs you'll owe anyway — but they hit your bank account at closing and must be budgeted alongside the down payment and closing costs.</p>
+
+<h3>Due diligence and inspection costs</h3>
+<p>A standard home inspection runs $300–$600. If the inspector flags concerns, you may also want specialist inspections: roof ($150–$300), HVAC ($75–$150), foundation ($200–$500), mold ($300–$600), or pest ($100–$300). These are paid before closing — non-refundable even if the deal falls through. Budget $500–$1,500 for due diligence costs beyond the standard inspection.</p>
+
+<h3>The total cash number most buyers underestimate</h3>
+<p>For a $350,000 home with 10% down ($35,000), total cash needed in the first 60 days typically runs $53,000–$62,000: $35,000 down payment + $10,000–$14,000 closing costs + $3,000–$5,000 pre-paids + $2,000–$5,000 for moving, immediate repairs, and first-month utilities. Lenders verify the down payment and closing costs — the rest is on you to plan.</p>
+
+<h2>What Actually Moves Your Numbers</h2>
+<p>On a $320,000 loan at 6.75% over 30 years, small changes create enormous differences. Here's exactly what each lever does — in real dollars, not vague descriptions.</p>
+
+<table>
+<thead><tr><th scope="col">Variable</th><th scope="col">Monthly Payment Change</th><th scope="col">Lifetime Interest Change</th><th scope="col">Notes</th></tr></thead>
+<tbody>
+<tr><td>Rate +0.5% (6.75% → 7.25%)</td><td>+$107/month</td><td>+$38,520 more</td><td>Biggest single lever — shop at least 3 lenders</td></tr>
+<tr><td>Rate −0.5% (6.75% → 6.25%)</td><td>−$103/month</td><td>−$37,080 saved</td><td>Worth refinancing if you'll stay 4+ more years</td></tr>
+<tr><td>Down 5% → 20% ($16K → $64K)</td><td>−$207/month + PMI gone</td><td>−$74,520 saved</td><td>PMI alone saves ~$226/month on this loan size</td></tr>
+<tr><td>Loan term 30yr → 15yr</td><td>+$598/month higher</td><td>−$193,000 saved</td><td>Only makes sense if the payment fits comfortably</td></tr>
+<tr><td>Extra $200/month to principal</td><td>No change to required payment</td><td>−$56,400 saved, 6 yrs shorter</td><td>Best flexibility — skip any month you need to</td></tr>
+<tr><td>Credit score 620 → 760+</td><td>−$95 to −$180/month</td><td>−$34,000 to −$64,000</td><td>Worth delaying purchase 6–12 months to fix score</td></tr>
+<tr><td>Property tax reassessment +15%</td><td>+$55–$110/month escrow</td><td>No effect on loan</td><td>Common after renovations or neighborhood appreciation</td></tr>
+<tr><td>HOA added ($350/month)</td><td>+$350/month out-of-pocket</td><td>None (not part of loan)</td><td>Not escrowed — paid directly, non-deductible</td></tr>
+</tbody>
+</table>
+
+<p><strong>The number most people miss:</strong> On a $320,000 loan, the difference between a 620 credit score and a 760+ score can cost you up to $64,000 over 30 years — more than most people put down as a down payment. Always run your numbers with your actual credit score, not the advertised rate.</p>
+
+<h3>Interest Rate</h3>
+<p>This is the single biggest lever. Rate is driven by the broader bond market, but your personal rate within that market is shaped by credit score, down payment size, loan type, and even the specific lender. Rates are priced in tiers — 760+, 740–759, 720–739, 700–719, and so on — and each tier drop typically adds 0.125%–0.375% to your rate. Going from 699 to 720 before applying can save $16,920 over the life of a $300,000 loan.</p>
+
+<h3>Loan Term</h3>
+<p>A 15-year loan trades a meaningfully higher monthly payment for a dramatically lower total interest cost, because the bank earns interest for half as long. A 30-year loan keeps payments manageable but means you'll likely pay close to — sometimes more than — the original loan amount in interest alone if you never pay extra. On a $280,000 loan, the 30-year term costs roughly $216,800 more in interest than the 15-year — the price of that payment flexibility.</p>
+
+<h3>Down Payment Size</h3>
+<p>Beyond the obvious effect of borrowing less, crossing the 20% threshold eliminates PMI entirely on a conventional loan. That's not a minor line item — PMI of 0.85% on a $320,000 loan is $226/month, money that builds zero equity. Over the roughly 7–9 years it takes to reach 20% equity on a low-down-payment loan, that's $18,000–$24,000 paid purely for the privilege of borrowing more.</p>
+
+<h3>When the Math Changes After You Close</h3>
+
+<p>Most mortgage calculators show you a 30-year projection and stop there. Real life rarely follows that timeline. Here are four situations that change your numbers — and what to actually do about each.</p>
+
+<h4>You sell in year 5 instead of year 30</h4>
+<p>On a $320,000 loan at 6.75%, by the end of year 5 you've made 60 payments totaling $128,616. Of that, only $15,840 went to principal — the remaining $112,776 was pure interest. Your balance is still $304,160. If you also paid closing costs of $9,600 when you bought (3% of a $320K loan), you need your home to have appreciated at least $25,440 just to break even after selling commissions. This is why checking the amortization table at your actual expected exit year matters far more than the 30-year total.</p>
+
+<h4>Rates drop 1% after you close</h4>
+<p>A 1% rate drop on a $320,000 balance saves roughly $200/month — $2,400/year. But refinancing typically costs $6,000–$10,000 in closing costs, meaning your breakeven is 2.5–4 years away. If you're in year 3 of a 30-year loan, refinancing almost certainly makes sense. If you're in year 22, probably not — you've already paid most of the interest, and a new 30-year loan restarts that curve from scratch. Run the amortization table at your current balance before calling a lender.</p>
+
+<h4>Property tax reassessment after a renovation</h4>
+<p>Adding a finished basement, in-law suite, or major addition can trigger a reassessment that increases your property tax 15–30%. On a home assessed at $350,000, a 20% reassessment adds $700/year to your escrow — about $58/month more. This won't change your loan payment, but it will change your escrow payment at the next annual analysis, often with just 30 days' notice. Budget for it before you pull the permit.</p>
+
+<h4>FHA → conventional refinance once you hit 20% equity</h4>
+<p>FHA loans originated after June 2013 with less than 10% down carry MIP (Mortgage Insurance Premium) for the life of the loan — it never automatically cancels the way conventional PMI does. On a $280,000 FHA loan, MIP at 0.55% annually costs about $128/month. Once you have 20% equity (via payments, appreciation, or both), refinancing to a conventional loan eliminates MIP entirely. At $128/month saved, the breakeven on $7,000 in refinance costs is about 55 months — under 5 years. Worth running the math when your equity hits 18%.</p>
+
+<h2>Real-World Examples</h2>
+
+<h3>Example 1: First-Time Buyer, Low Down Payment</h3>
+<p>A $350,000 home, 5% down ($17,500), 30-year fixed at 6.75%. Loan amount: $332,500. P&I comes to roughly $2,156/month. Add PMI at 0.85% (~$235/month), property tax at 1.1% annually (~$321/month), and insurance (~$120/month), and the real monthly payment lands closer to $2,832 — about 31% higher than the bare P&I figure most listings advertise.</p>
+
+<h3>Example 2: Same Buyer, 20% Down Instead</h3>
+<p>Same $350,000 home, but with $70,000 down. Loan amount drops to $280,000, P&I falls to about $1,816/month, and PMI disappears entirely. Total monthly cost (with the same tax and insurance): roughly $2,257. That's $575 less per month than Example 1 — and over $200,000 less in lifetime interest, simply from a larger down payment and no PMI.</p>
+
+<h3>Example 3: Adding $200/Month Extra to Example 2's Loan</h3>
+<p>On that same $280,000 loan at 6.75% over 30 years, adding $200/month toward principal starting in month one cuts the payoff time from 30 years to roughly 23 years and 7 months, and reduces total interest paid by approximately $58,000. The required payment doesn't change — this is purely optional, but the savings are real and compounding.</p>
+
+<h3>Example 4: 15-Year vs. 30-Year on the Same Loan</h3>
+<p>$280,000 loan at 6.4% (15-year rates are often slightly lower than 30-year rates). Over 30 years: payment ≈ $1,752/month, total interest ≈ $350,700. Over 15 years: payment ≈ $2,425/month, total interest ≈ $156,500. The 15-year payment is $673/month higher, but it saves roughly $194,000 in interest — a tradeoff that only makes sense if the higher payment is genuinely comfortable, not a stretch.</p>
+
+<h2>Common Mistakes — and What They Actually Cost</h2>
+
+<h3>Comparing the bare P&I number across listings</h3>
+<p>A $450,000 home in a low-tax suburb at 0.7% annual property tax costs $263/month in taxes. The same-priced home in a higher-tax county at 2.1% costs $788/month — a $525/month difference that never shows up in the listing price or the P&I calculation. Two homes at identical prices can have real monthly costs $600–$800 apart once taxes, insurance, and HOA are included. Always run the full PITI number for each specific property before comparing. The calculator above makes this easy — just swap in the actual tax rate for each address.</p>
+
+<h3>Ignoring PMI removal timing — and leaving money on the table</h3>
+<p>PMI on a $320,000 loan at 0.85% costs $226/month. Federal law (the Homeowners Protection Act) requires lenders to automatically cancel PMI when your balance reaches 78% of the original purchase price based on scheduled payments — but you can request cancellation at 80% LTV, which arrives earlier. The difference between waiting for automatic cancellation versus requesting it at 80% LTV is typically 2–4 months — $452–$904 you simply don't have to pay. Beyond that: if your home has appreciated significantly, you can request a new appraisal to prove 80% LTV based on current value, not purchase price. Many homeowners in markets with strong appreciation are still paying PMI they're no longer required to.</p>
+
+<h3>Assuming the rate quoted online is the rate you'll get</h3>
+<p>Advertised mortgage rates typically assume a 740–760+ credit score, 20% down, and a single-family primary residence. Buying with a 680 credit score and 10% down on a condo adds risk layers that each carry a rate premium. In practice, rate adjustments can stack: 0.25% for credit score, 0.125% for LTV, 0.75% for condo — putting your real rate 1.125% above the headline number. On a $300,000 loan over 30 years, that gap costs an additional $71,000 in interest. Get a real pre-approval quote from at least three lenders, not a rate estimate.</p>
+
+<h3>Treating extra payments and a shorter term as interchangeable</h3>
+<p>A 15-year loan on $320,000 at 6.25% requires $2,748/month — legally required every single month for 15 years, with no flexibility. A 30-year loan at 6.75% requires $2,075/month, and you can voluntarily add $673/month extra to match the 15-year payoff pace. Same outcome — but the 30-year option lets you drop back to $2,075 in any tight month without risking default. The contractual rigidity of a 15-year is a real risk if your income is variable, seasonal, or commission-based. Extra payments on a 30-year give you the same interest savings with a permanent exit ramp.</p>
+
+<h3>Forgetting that taxes and insurance aren't fixed</h3>
+<p>Your P&I is locked for the life of a fixed-rate loan. Your escrow is not. Property taxes typically increase 2–5% annually in most US counties. Homeowners insurance has been rising 8–12% per year nationally since 2020, driven by catastrophe losses and reinsurance costs. On a first-year escrow of $600/month for taxes and insurance, a 5% annual increase means you'll be paying $977/month by year 10 — $377 more than your first-year budget assumed. Plan for escrow to grow, not stay flat, especially if you're in a high-appreciation or high-risk (coastal, wildfire, flood) market.</p>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Use your actual likely rate, not the advertised one.</strong> Pull your credit report before talking to any lender. Rates are priced in tiers: 760+, 740–759, 720–739, 700–719, 680–699 — each tier typically adds 0.125%–0.375% to your rate. If you're within 20–30 points of the next tier up, it may be worth delaying 3–6 months to improve your score. Moving from 699 to 720 on a $300,000 loan saves roughly $16,920 over 30 years.</li>
+<li><strong>Model your actual hold period, not the full loan term.</strong> The median US homeowner moves or refinances within 7–10 years. If that's your plan, the 30-year total interest figure is largely irrelevant. Run the amortization schedule to your expected exit year and compare your projected equity against your purchase closing costs (2–5% of price) plus selling costs (6–8%). That's your real financial picture.</li>
+<li><strong>Start with $100/month extra before committing to more.</strong> On a $300,000 loan at 6.75%, an extra $100/month saves $28,500 in interest and cuts 3 years and 2 months off the loan. An extra $300/month saves $69,800 and cuts 8 years and 4 months. The first $100 of extra payment does more work per dollar than the 500th — because interest compounds on a declining balance. Start with an amount you can sustain every month for years, not an ambitious number you'll stop in month 6.</li>
+<li><strong>Request PMI cancellation — don't wait for automatic removal.</strong> Lenders must cancel PMI at 78% LTV automatically, but you can request cancellation at 80% LTV, which arrives earlier. If your home has appreciated, request a new appraisal to prove 80% LTV based on current market value, not your purchase price. In markets with strong appreciation, many homeowners are paying PMI they're no longer legally required to pay — simply because they never asked.</li>
+<li><strong>Separate "approved" from "optimal" when it comes to loan size.</strong> Lenders approve based on gross income using DTI ratios that can reach 43–50% of gross monthly income. But gross income includes taxes you haven't paid yet. A borrower approved at 43% gross DTI may be paying 55–60% of their actual take-home toward housing and debt — a genuinely stretched budget. The lender's approval ceiling is not your planning ceiling.</li>
+<li><strong>Budget 10–15% above your first-year escrow for long-term planning.</strong> Escrow payments are recalculated annually. Property taxes rise with assessments; homeowners insurance has been climbing 8–12%/year nationally. Building a 10–15% buffer above your first-year escrow cost into your monthly budget means you won't be surprised when the escrow analysis letter arrives in year 2 or 3 with a higher number.</li>
+</ul>
+
+<h2>Related Calculators You May Need</h2>
+<p>This mortgage calculator answers "what will this loan cost me," but a few adjacent questions usually come up alongside it:</p>
+<ul>
+<li><strong>Home Affordability Calculator</strong> — useful before you start shopping, to work backward from your income and debts to a realistic price range.</li>
+<li><strong>Refinance Calculator</strong> — for homeowners wondering whether a rate drop or cash-out refinance makes sense given their remaining balance and closing costs.</li>
+<li><strong>Property Tax Calculator</strong> — helpful if you're comparing homes across different counties or states with very different tax rates.</li>
+<li><strong>Auto Loan Calculator</strong> — relevant when you're trying to see how a new car payment interacts with a debt-to-income ratio alongside a mortgage application.</li>
+<li><strong>Closing Costs Calculator</strong> — for budgeting the upfront cash needed beyond the down payment itself.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>Does a bigger down payment always lower my interest rate?</h3>
+<p>Not directly, but it often helps indirectly. Lenders price risk in tiers, and crossing certain loan-to-value thresholds (like 80% or 90%) can unlock slightly better pricing. The bigger guaranteed effect of a larger down payment is a smaller loan amount and no PMI, not necessarily a lower rate itself.</p>
+
+<h3>Why is my actual monthly payment higher than the P&I number I calculated by hand?</h3>
+<p>You're likely only calculating principal and interest. The full payment most lenders quote includes escrowed property tax, homeowners insurance, and PMI if applicable — these can add several hundred dollars on top of the loan payment itself.</p>
+
+<h3>If I refinance, does my amortization schedule reset?</h3>
+<p>Yes. A refinance is a brand-new loan, so you restart the amortization clock at the new balance, rate, and term. This is why refinancing late in a loan's life (say, year 25 of a 30-year term) back into another 30-year loan can actually increase your total lifetime interest, even at a lower rate, unless you choose a shorter term to match your remaining timeline.</p>
+
+<h3>Is it better to pay points to lower my rate, or take the higher rate and invest the difference?</h3>
+<p>It depends on how long you'll keep the loan. Points have a breakeven period — usually 3-6 years — before the rate savings outweigh the upfront cost. If you expect to sell or refinance before that breakeven point, paying points typically isn't worth it.</p>
+
+<h3>Can my property tax escrow payment go down as well as up?</h3>
+<p>Yes, though it's less common. If your local assessment drops or you successfully appeal an over-assessment, your escrow portion can decrease at your next annual analysis.</p>
+
+<h3>Does making extra payments shorten my loan term automatically, or do I need to tell the lender?</h3>
+<p>Most lenders apply extra payments to principal by default, which shortens your effective payoff timeline, but your required monthly payment and official term stay the same on paper unless you formally request a loan recast or refinance. Always confirm with your servicer that extra payments are being applied to principal and not held as a credit toward next month's payment.</p>
+
+<h3>Is biweekly payment the same as paying extra each month?</h3>
+<p>The end result is similar — both add the equivalent of one extra monthly payment per year — but biweekly splits it into smaller, more frequent payments (26 half-payments = 13 full payments), which some people find easier to budget against a biweekly paycheck.</p>
+
+<h3>Why did my lender's PMI cost end up higher than the calculator's default estimate?</h3>
+<p>PMI rates vary by credit score, loan-to-value ratio, and insurer — the calculator uses an industry-average estimate. Buyers with lower credit scores or higher LTV ratios (closer to 95-97%) are typically quoted PMI rates at the higher end of the 0.5%-1.5% range.</p>
+
+<h3>Does this calculator account for FHA, VA, or USDA loan-specific costs?</h3>
+<p>The core amortization math applies to any fixed-rate loan, but government-backed loans have their own insurance structures — FHA's MIP, VA's funding fee, USDA's guarantee fee — that behave differently from conventional PMI and aren't automatically modeled the same way. Treat the PMI field as an approximation if you're using a government-backed loan type.</p>
+
+<h3>If rates drop after I lock in, can I get the lower rate?</h3>
+<p>Generally no, once locked, unless your lender specifically offers a "float-down" option, which usually comes with its own fee or conditions. This is worth asking about explicitly during the loan application process if you're locking in during a period of rate volatility.</p>
+
+<h3>How much does my credit score actually matter for the rate I'm quoted?</h3>
+<p>Quite a lot. The spread between a borrower with a 620 score and one with a 780+ score can be a full percentage point or more on a conventional loan, which on a $300,000 loan can mean a difference of $150-200+ per month.</p>
+
+<h3>Should I count HOA dues the same way as property tax when budgeting?</h3>
+<p>For budgeting purposes, yes — both are recurring required costs on top of the loan. The key difference is that HOA dues aren't typically escrowed by your lender (you usually pay the HOA directly) and aren't tax-deductible the way property tax can be.</p>
+
+<h2>Key Takeaways</h2>
+<ul>
+<li><strong>Your real monthly cost is 20–40% higher than P&I alone.</strong> A $300,000 loan at 6.75% has a P&I of $1,945/month. Add property tax at 1.1%, homeowners insurance, and PMI on a 5%-down loan and your actual payment is closer to $2,600–$2,700. Always use the full PITI number when budgeting.</li>
+<li><strong>PMI costs $80–$400/month and disappears at 20% equity — if you ask.</strong> On a $320,000 loan, PMI at 0.85% is $226/month — money that builds zero equity. You can request cancellation when you hit 80% LTV; don't wait for automatic removal at 78%, and check whether home appreciation has already pushed you there.</li>
+<li><strong>A half-point rate difference on a $300K loan costs $34,000 over 30 years.</strong> Shopping just 3 lenders on the same day is the highest-return 2 hours in the home-buying process. Your credit score is the single biggest rate lever under your control — worth improving before you apply.</li>
+<li><strong>Extra payments on a 30-year loan beat a 15-year for flexibility.</strong> $300/month extra on a 30-year saves nearly as much interest as switching to a 15-year, but you keep the option to stop in any tight month without risking default. The 15-year's lower rate saves more — but only if the higher required payment is genuinely comfortable.</li>
+<li><strong>Closing costs are 2–5% of the loan and aren't in this calculator.</strong> On a $320,000 loan, budget $6,400–$16,000 in upfront closing costs on top of your down payment. These must be paid at settlement and affect your break-even timeline on any rate or points decision.</li>
+<li><strong>The 30-year interest total assumes you never pay extra and never refinance.</strong> Very few borrowers do neither. The number that actually matters is your interest cost over your expected hold period — typically 7–10 years — not year 30.</li>
+<li><strong>If you're within 30 credit score points of the next tier, delay and improve.</strong> Moving from 699 to 720 can save 0.25–0.375% on your rate. On a $300,000 loan, that's up to $25,000 over the loan term — often achievable in 3–6 months of targeted credit improvement.</li>
+</ul>
+
+</section>
+
+
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/mortgage-interest-deduction">Mortgage Interest Deduction 2026: Is It Worth Itemizing?</a></li>
+<li><a href="/first-time-homebuyer-tax-credits">First-Time Homebuyer Tax Credits & Deductions in 2026</a></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function syncDown(type){
+  const price=+document.getElementById('price').value||0;
+  if(type==='amt'){
+    const amt=+document.getElementById('down-amt').value||0;
+    document.getElementById('down-pct').value=price>0?(amt/price*100).toFixed(1):0;
+  } else {
+    const pct=+document.getElementById('down-pct').value||0;
+    document.getElementById('down-amt').value=Math.round(price*pct/100);
+  }
+  calculate();
+}
+
+function toggleExtra(btn){
+  const panel=document.getElementById('extra-panel');
+  panel.classList.toggle('open');
+  btn.textContent=panel.classList.contains('open')?'− Hide Extra Payments':'+ Add Extra Payments';
+}
+
+function switchAmort(mode,el){
+  document.querySelectorAll('.atab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('amort-year-view').style.display=mode==='year'?'block':'none';
+  document.getElementById('amort-month-view').style.display=mode==='month'?'block':'none';
+}
+
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function fmtD(n){return '$'+n.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});}
+function fmtK(n){return n>=1000000?'$'+(n/1000000).toFixed(2)+'M':n>=1000?'$'+Math.round(n/1000)+'K':fmt(n);}
+
+function calculate(){
+  const price=+document.getElementById('price').value||0;
+  const downAmt=+document.getElementById('down-amt').value||0;
+  const annualRate=+document.getElementById('rate').value||0;
+  const years=+document.getElementById('term').value;
+  const propTaxAnnual=+document.getElementById('prop-tax').value||0;
+  const insuranceAnnual=+document.getElementById('insurance').value||0;
+  const pmiRatePct=+document.getElementById('pmi-rate').value||0.85;
+  const hoa=+document.getElementById('hoa').value||0;
+  const extraMo=+document.getElementById('extra-mo').value||0;
+  const extraYr=+document.getElementById('extra-yr').value||0;
+  const extraOnce=+document.getElementById('extra-once').value||0;
+  const isBiweekly=document.getElementById('pay-mode').value==='biweekly';
+
+  const loanAmt=Math.max(0,price-downAmt);
+  const ltv=price>0?loanAmt/price:0;
+  const r=annualRate/12/100;
+  const n=years*12;
+  const pi=r>0?loanAmt*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1):loanAmt/n;
+  const pmiMo=ltv>0.80?loanAmt*pmiRatePct/100/12:0;
+  const propTaxMo=propTaxAnnual/12;
+  const insMo=insuranceAnnual/12;
+  const totalMo=pi+pmiMo+propTaxMo+insMo+hoa;
+  const downPct=price>0?(downAmt/price*100).toFixed(1):0;
+
+  // Calculate WITH extra payments (actual payoff simulation)
+  function simLoan(extraMonthly, extraAnnual, extraOneTime){
+    let bal=loanAmt, totalInt=0, months=0;
+    const maxMo=n+1;
+    for(let m=1;m<=maxMo;m++){
+      if(bal<=0) break;
+      const intPart=bal*r;
+      let prinPart=pi-intPart;
+      totalInt+=intPart;
+      // extra payments
+      let extra=extraMonthly;
+      if(m===1) extra+=extraOneTime;
+      if(m%12===0) extra+=extraAnnual;
+      prinPart+=extra;
+      bal-=prinPart;
+      months=m;
+      if(bal<=0) break;
+    }
+    return {totalInt:Math.max(0,totalInt), months, totalPaid:months*(pi)+totalInt};
+  }
+
+  const baseResult=simLoan(0,0,0);
+  const extraResult=simLoan(extraMo,extraYr,extraOnce);
+  const hasExtra=(extraMo>0||extraYr>0||extraOnce>0);
+
+  // Biweekly: 26 payments/yr = extra ~1 payment/yr
+  const biweeklyExtra=isBiweekly?pi/12:0;
+  const biweeklyResult=simLoan(biweeklyExtra,0,0);
+  const activeMo=isBiweekly?biweeklyExtra+extraMo:extraMo;
+  const activeResult=simLoan(activeMo,extraYr,extraOnce);
+
+  const payoffMonths=activeResult.months;
+  const payoffYrs=Math.floor(payoffMonths/12);
+  const payoffMos=payoffMonths%12;
+  const totalInterest=activeResult.totalInt;
+  const baseTotalInterest=baseResult.totalInt;
+  const interestSaved=baseTotalInterest-totalInterest;
+  const monthsSaved=n-payoffMonths;
+
+  // Biweekly label
+  const biweeklyPay=pi/2;
+
+  document.getElementById('qa-box').innerHTML=
+    `Monthly PITI: <strong>${fmt(totalMo)}</strong> &nbsp;|&nbsp; Loan: <strong>${fmtK(loanAmt)}</strong> @ <strong>${annualRate}%</strong> for <strong>${years} yrs</strong>`+
+    (hasExtra||isBiweekly?` &nbsp;|&nbsp; Payoff: <strong>${payoffYrs}y ${payoffMos}m</strong> · Saves: <strong>${fmt(interestSaved)}</strong>`:'');
+
+  document.getElementById('result-col').innerHTML=`
+    <div class="net-card">
+      <div class="nl">${isBiweekly?'Biweekly Payment':'Total Monthly Payment'}</div>
+      <div class="na">${isBiweekly?fmt(biweeklyPay):fmt(totalMo)}</div>
+      <div class="nm">${isBiweekly?`Monthly equiv: <span>${fmt(totalMo)}</span>`:`P+I: <span>${fmt(pi)}</span> &nbsp;+&nbsp; Extras: <span>${fmt(totalMo-pi)}</span>`}</div>
+    </div>
+    <div class="pay-grid">
+      <div class="pay-box"><div class="pay-l">Loan Amount</div><div class="pay-v" style="color:var(--principal)">${fmtK(loanAmt)}</div></div>
+      <div class="pay-box"><div class="pay-l">Down (${downPct}%)</div><div class="pay-v" style="color:var(--accent)">${fmtK(downAmt)}</div></div>
+      <div class="pay-box"><div class="pay-l">Total Interest</div><div class="pay-v" style="color:var(--interest)">${fmtK(Math.round(totalInterest))}</div></div>
+      <div class="pay-box"><div class="pay-l">Payoff</div><div class="pay-v">${payoffYrs}y ${payoffMos}m</div></div>
+    </div>
+    <div class="bcard">
+      <div class="bt">Monthly Breakdown</div>
+      <div class="sbar">
+        <div class="seg" style="width:${(pi/totalMo*100).toFixed(1)}%;background:var(--principal)"></div>
+        ${pmiMo>0?`<div class="seg" style="width:${(pmiMo/totalMo*100).toFixed(1)}%;background:var(--pmi)"></div>`:''}
+        <div class="seg" style="width:${(propTaxMo/totalMo*100).toFixed(1)}%;background:var(--ins)"></div>
+        <div class="seg" style="width:${(insMo/totalMo*100).toFixed(1)}%;background:#6b7280"></div>
+        <div class="seg" style="flex:1;background:#374151"></div>
+      </div>
+      <div class="brows">
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--principal)"></div><div class="blbl">Principal + Interest</div></div><div class="ba" style="color:var(--principal)">${fmt(pi)}</div></div>
+        ${pmiMo>0?`<div class="br"><div class="bl"><div class="dot" style="background:var(--pmi)"></div><div class="blbl">PMI (${pmiRatePct}%/yr)</div></div><div class="ba" style="color:var(--pmi)">${fmt(pmiMo)}</div></div>`:''}
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--ins)"></div><div class="blbl">Property Tax</div></div><div class="ba">${fmt(propTaxMo)}</div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#6b7280"></div><div class="blbl">Home Insurance</div></div><div class="ba">${fmt(insMo)}</div></div>
+        ${hoa>0?`<div class="br"><div class="bl"><div class="dot" style="background:#4b5563"></div><div class="blbl">HOA</div></div><div class="ba">${fmt(hoa)}</div></div>`:''}
+        ${extraMo>0?`<div class="br"><div class="bl"><div class="dot" style="background:var(--extra)"></div><div class="blbl">Extra Payment</div></div><div class="ba" style="color:var(--extra)">+${fmt(extraMo)}</div></div>`:''}
+        <div class="divider"></div>
+        <div class="br"><div class="bl"><div class="blbl"><strong>Total Monthly</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">${fmt(totalMo+(extraMo||0))}</div></div>
+      </div>
+    </div>
+    ${pmiMo>0?`<div class="pmi-note"><strong>PMI Note:</strong> ${fmt(pmiMo)}/mo until you reach 20% equity. Currently ${(ltv*100).toFixed(1)}% LTV.</div>`:''}
+  `;
+
+  // Detail table
+  document.getElementById('detail-col').style.display='block';
+  document.getElementById('detail-rows').innerHTML=`
+    <div class="dr"><span class="dk">Home Price</span><span class="dv">${fmt(price)}</span></div>
+    <div class="dr"><span class="dk">Down Payment (${downPct}%)</span><span class="dv">${fmt(downAmt)}</span></div>
+    <div class="dr"><span class="dk">Loan Amount</span><span class="dv">${fmt(loanAmt)}</span></div>
+    <div class="dr"><span class="dk">Interest Rate</span><span class="dv">${annualRate}% fixed</span></div>
+    <div class="dr"><span class="dk">Loan Term</span><span class="dv">${years} years (${n} payments)</span></div>
+    <div class="dr"><span class="dk">Monthly P+I</span><span class="dv">${fmt(pi)}</span></div>
+    ${isBiweekly?`<div class="dr"><span class="dk">Biweekly Payment</span><span class="dv" style="color:var(--extra)">${fmt(biweeklyPay)}</span></div>`:''}
+    <div class="dr"><span class="dk">Total Interest (with extras)</span><span class="dv" style="color:var(--interest)">${fmt(totalInterest)}</span></div>
+    <div class="dr"><span class="dk">Total of All Payments</span><span class="dv">${fmt(loanAmt+totalInterest)}</span></div>
+    <div class="dr"><span class="dk">Actual Payoff</span><span class="dv" style="color:var(--accent)">${payoffYrs} yrs ${payoffMos} mos</span></div>
+    ${hasExtra||isBiweekly?`<div class="dr"><span class="dk">Interest Saved</span><span class="dv" style="color:var(--extra)">+${fmt(interestSaved)}</span></div>
+    <div class="dr"><span class="dk">Time Saved</span><span class="dv" style="color:var(--extra)">${Math.floor(monthsSaved/12)} yrs ${monthsSaved%12} mos</span></div>`:''}
+  `;
+
+  // Comparison card
+  if(hasExtra||isBiweekly){
+    document.getElementById('comp-col').style.display='block';
+    document.getElementById('comp-col').innerHTML=`
+      <div class="comp-card">
+        <div class="bt">📊 With vs Without Extra Payments</div>
+        <div class="comp-grid">
+          <div class="comp-col">
+            <div class="comp-title">Without Extras</div>
+            <div class="comp-row"><span>Total Interest</span><span style="color:var(--interest)">${fmt(baseTotalInterest)}</span></div>
+            <div class="comp-row"><span>Payoff</span><span>${years} yrs 0 mos</span></div>
+            <div class="comp-row"><span>Monthly</span><span>${fmt(totalMo)}</span></div>
+          </div>
+          <div class="comp-col">
+            <div class="comp-title">With Extras</div>
+            <div class="comp-row"><span>Total Interest</span><span style="color:var(--extra)">${fmt(totalInterest)}</span></div>
+            <div class="comp-row"><span>Payoff</span><span style="color:var(--extra)">${payoffYrs} yrs ${payoffMos} mos</span></div>
+            <div class="comp-row"><span>Monthly</span><span>${fmt(totalMo+extraMo)}</span></div>
+          </div>
+        </div>
+        <div class="savings-badge">💰 You save ${fmt(interestSaved)} in interest and pay off ${Math.floor(monthsSaved/12)} yrs ${monthsSaved%12} mos early</div>
+      </div>`;
+  } else {
+    document.getElementById('comp-col').style.display='none';
+  }
+
+  // Amortization
+  document.getElementById('amort-section').style.display='block';
+
+  // Yearly
+  let bal=loanAmt, yearRows='', monthRows='', moCount=0;
+  for(let y=1;y<=years;y++){
+    let yPay=0,yPrin=0,yInt=0;
+    for(let m=0;m<12;m++){
+      moCount++;
+      if(bal<=0) break;
+      const intP=bal*r;
+      let prinP=pi-intP;
+      let extra=extraMo;
+      if(moCount===1) extra+=extraOnce;
+      if(moCount%12===0) extra+=extraYr;
+      if(isBiweekly) extra+=biweeklyExtra;
+      prinP+=extra;
+      yPay+=pi+extra; yInt+=intP; yPrin+=prinP;
+      bal=Math.max(0,bal-prinP);
+      monthRows+=`<div class="amort-row"><div>${moCount}</div><div>${fmt(pi+(extra||0))}</div><div style="color:var(--principal)">${fmt(prinP)}</div><div style="color:var(--interest)">${fmt(intP)}</div><div class="hide-sm">${fmt(Math.max(0,bal))}</div></div>`;
+      if(bal<=0) break;
+    }
+    yearRows+=`<div class="amort-row"><div>${y}</div><div>${fmt(yPay)}</div><div style="color:var(--principal)">${fmt(yPrin)}</div><div style="color:var(--interest)">${fmt(yInt)}</div><div class="hide-sm">${fmt(Math.max(0,bal))}</div></div>`;
+    if(bal<=0) break;
+  }
+  document.getElementById('amort-year-rows').innerHTML=yearRows;
+  document.getElementById('amort-month-rows').innerHTML=monthRows;
+}
+
+calculate();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="stock return calculator, investment return calculator, S&amp;P 500 return calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/stock-return-calculator-usa" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%230d0f14'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Stock Return Calculator USA 2026 — S&amp;P 500 Historical Returns" property="og:title"/>
+<meta content="Calculate stock investment returns with historical S&amp;P 500 data. See how investments grew over time. Plus projected future returns calculator. Free." property="og:description"/>
+<meta content="https://usafincalc.com/stock-return-calculator-usa" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Stock Return Calculator USA 2026 — S&amp;P 500 Historical Returns" name="twitter:title"/>
+<meta content="Calculate stock investment returns with historical S&amp;P 500 data. See how investments grew over time. Plus projected future returns calculator. Free." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc financial tools" name="twitter:image:alt"/>
+<title>Stock Return Calculator USA 2026 — S&amp;P 500 Historical &amp; Projected Returns | FinCalc</title>
+<meta content="Calculate stock investment returns with historical S&amp;P 500 data. See how $10k invested in 2000, 2010, or 2015 grew. Plus projected future returns calculator." name="description"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--red:#ff6b6b;--yellow:#fbbf24;--blue:#74b9ff;--purple:#a29bfe;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent);letter-spacing:-0.3px;text-decoration:none}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:560px){.nav-links{display:none}}
+.page{max-width:820px;margin:0 auto;padding:48px 24px 80px}
+h1{font-size:clamp(26px,4vw,40px);font-weight:700;letter-spacing:-1px;line-height:1.15;margin-bottom:12px}
+h1 .hl{color:var(--accent)}
+.page-meta{font-size:13px;color:var(--muted);margin-bottom:36px;display:flex;gap:16px;flex-wrap:wrap}
+.tab-row{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.tab{background:var(--card);border:1px solid var(--border);color:var(--muted);padding:8px 18px;border-radius:var(--rs);font-size:13px;cursor:pointer;transition:all .2s}
+.tab.active{background:var(--accent);color:#0d0f14;border-color:var(--accent);font-weight:600}
+.calc-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:24px;display:none}
+.calc-card.active{display:block}
+.calc-title{font-size:16px;font-weight:600;margin-bottom:20px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}}
+.field label{font-size:12px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:6px}
+.field input,.field select{width:100%;background:var(--bg3);border:1px solid var(--border2);color:var(--text);font-family:var(--font);font-size:14px;padding:10px 14px;border-radius:var(--rs);outline:none;transition:border-color .2s}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field select option{background:var(--bg3)}
+.calc-btn{width:100%;margin-top:20px;background:var(--accent);color:#0d0f14;font-family:var(--font);font-size:15px;font-weight:600;padding:14px;border:none;border-radius:var(--rs);cursor:pointer;transition:opacity .2s}
+.calc-btn:hover{opacity:.9}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
+@media(max-width:560px){.results-grid{grid-template-columns:1fr 1fr}}
+.res-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:16px;text-align:center}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:20px;font-weight:700;font-family:var(--mono)}
+.res-val.green{color:var(--accent)}
+.res-val.yellow{color:var(--yellow)}
+.res-val.blue{color:var(--blue)}
+.hist-table{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:20px 0}
+.ht-head{display:grid;grid-template-columns:100px 1fr 1fr 1fr 1fr;padding:12px 20px;background:var(--bg3);font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;gap:8px}
+.ht-row{display:grid;grid-template-columns:100px 1fr 1fr 1fr 1fr;padding:14px 20px;border-bottom:1px solid var(--border);font-size:13px;gap:8px;align-items:center}
+.ht-row:last-child{border-bottom:none}
+.ht-row .yr{font-family:var(--mono);color:var(--muted);font-size:12px}
+.ht-row .val{font-family:var(--mono)}
+@media(max-width:600px){.ht-head,.ht-row{grid-template-columns:80px 1fr 1fr 1fr;font-size:11px}.ht-head :nth-child(5),.ht-row :nth-child(5){display:none}}
+.info-section{margin-bottom:40px}
+.info-section h2{font-size:20px;font-weight:600;margin-bottom:14px}
+p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:14px}
+p strong{color:var(--text)}
+.callout{border-left:3px solid var(--yellow);background:rgba(251,191,36,0.05);border-radius:0 var(--rs) var(--rs) 0;padding:14px 20px;margin:20px 0;font-size:14px;color:var(--muted);line-height:1.7}
+.callout strong{color:var(--yellow)}
+.callout-green{border-left-color:var(--accent);background:rgba(0,229,160,0.05)}
+.callout-green strong{color:var(--accent)}
+.meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:40px}
+.meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:0}
+.meth-box a{color:var(--accent);text-decoration:none}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px}
+.rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 18px;text-decoration:none;transition:border-color .2s}
+.rel-card:hover{border-color:var(--accent)}
+.rel-card .rt{font-size:14px;font-weight:500;color:var(--text);margin-bottom:4px}
+.rel-card .rd{font-size:12px;color:var(--muted)}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 12px}
+footer a:hover{color:var(--accent)}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<link href="/manifest.json" rel="manifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Stock Return Calculator USA 2026 — S&amp;P 500 Historical &amp; Projected Returns | FinCalc",
+  "url": "https://usafincalc.com/stock-return-calculator-usa",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Stock Return Calculator USA 2026 — S&P 500 Historical Returns",
+      "item": "https://usafincalc.com/stock-return-calculator-usa"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Stock Return Calculator USA 2026 — S&P 500 Historical Returns",
+  "description": "Calculate stock investment returns with historical S&P 500 data. See how investments grew over time. Plus projected future returns calculator. Free.",
+  "url": "https://usafincalc.com/stock-return-calculator-usa",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="page">
+<h1>Stock Return Calculator <span class="hl">USA</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<div class="page-meta"><span>📅 2026</span><span>📊 S&amp;P 500 Historical Data</span><span>🇺🇸 US Markets</span></div>
+<div class="tab-row">
+<div class="tab active" onclick="switchTab('projected')">📈 Projected Returns</div>
+<div class="tab" onclick="switchTab('historical')">🕰️ Historical S&amp;P 500</div>
+</div>
+<div class="calc-card active" id="tab-projected">
+
+<div class="calc-title">📈 Calculate Projected Stock Returns</div>
+<div class="form-grid">
+<div class="field"><label for="p-invest">Initial Investment ($)</label><input id="p-invest" min="100" type="number" value="10000"/></div>
+<div class="field"><label for="p-monthly">Monthly Contribution ($)</label><input id="p-monthly" min="0" type="number" value="500"/></div>
+<div class="field"><label for="p-rate">Annual Return Rate (%)</label><select id="p-rate">
+<option value="7">7% — Conservative (inflation-adj S&amp;P)</option>
+<option selected="" value="10">10% — Historical S&amp;P 500 avg</option>
+<option value="12">12% — Optimistic growth</option>
+<option value="15">15% — Aggressive (small-cap)</option>
+<option value="custom">Custom rate</option>
+</select></div>
+<div class="field" id="custom-field" style="display:none"><label for="p-custom">Custom Rate (%)</label><input id="p-custom" max="50" min="1" step="0.1" type="number" value="10"/></div>
+<div class="field"><label for="p-years">Time Horizon (Years)</label><input id="p-years" max="50" min="1" type="number" value="20"/></div>
+<div class="field"><label for="p-div">Dividend Reinvestment</label><select id="p-div"><option selected="" value="yes">Yes — DRIP enabled</option><option value="no">No — dividends taken as cash</option></select></div>
+</div>
+<button class="calc-btn" onclick="calcProjected()">Calculate Returns →</button>
+</div>
+<div class="calc-card" id="tab-historical">
+<div class="calc-title">🕰️ If You Had Invested $10,000 in S&amp;P 500...</div>
+<div class="hist-table">
+<div class="ht-head"><span>Invested In</span><span>Amount</span><span>Value Today</span><span>Total Return</span><span>CAGR</span></div>
+<div class="ht-row"><span class="yr">Jan 2000</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$55,420</span><span class="val" style="color:var(--yellow)">+454%</span><span class="val">+6.7%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2005</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$49,300</span><span class="val" style="color:var(--yellow)">+393%</span><span class="val">+8.2%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2010</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$62,800</span><span class="val" style="color:var(--yellow)">+528%</span><span class="val">+12.4%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2015</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$27,100</span><span class="val" style="color:var(--yellow)">+171%</span><span class="val">+10.5%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2018</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$18,900</span><span class="val" style="color:var(--yellow)">+89%</span><span class="val">+9.7%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2020</span><span class="val">$10,000</span><span class="val" style="color:var(--accent)">$16,800</span><span class="val" style="color:var(--yellow)">+68%</span><span class="val">+11.2%/yr</span></div>
+<div class="ht-row"><span class="yr">Jan 2022</span><span class="val">$10,000</span><span class="val" style="color:var(--yellow)">$10,600</span><span class="val" style="color:var(--muted)">+6%</span><span class="val">+2%/yr</span></div>
+</div>
+<p style="font-size:12px;color:var(--muted);margin-top:8px">* Based on S&amp;P 500 total return index including dividends. Values approximate as of Jan 2026.</p>
+</div>
+<div id="proj-results" style="display:none;margin-top:0">
+<div class="results-grid">
+<div class="res-box"><div class="res-label">Final Value</div><div class="res-val green" id="pr-final">—</div></div>
+<div class="res-box"><div class="res-label">Total Invested</div><div class="res-val blue" id="pr-invested">—</div></div>
+<div class="res-box"><div class="res-label">Total Gain</div><div class="res-val yellow" id="pr-gain">—</div></div>
+</div>
+<div class="hist-table">
+<div class="ht-head"><span>Year</span><span>Invested Total</span><span>Year Gain</span><span>Portfolio</span><span>Return %</span></div>
+<tbody id="proj-body"></tbody>
+</div>
+</div>
+<div class="info-section" style="margin-top:40px">
+<h2>📊 S&amp;P 500 — Long-Term Reality</h2>
+<p>The S&amp;P 500 has returned an average of <strong>~10% annually</strong> since 1957 (nominal), or about 7% after inflation. But the path is rarely smooth — it dropped 50% in 2000–2002, 57% in 2008–2009, and 34% in early 2020. Every time, it recovered to new highs.</p>
+<div class="callout callout-green">
+<strong>Time in market beats timing the market:</strong> Missing just the 10 best trading days in any decade can cut your returns in half. The evidence strongly favors consistent investing over trying to pick entry points.
+    </div>
+<div class="callout">
+<strong>Dollar-Cost Averaging (DCA):</strong> Investing a fixed amount monthly removes the pressure of timing. You buy more shares when prices are low, fewer when high — your average cost improves automatically over time.
+    </div>
+</div>
+<div class="meth-box">
+<p>📊 <strong>Data Sources:</strong> Historical S&amp;P 500 returns from Macrotrends.net and Federal Reserve FRED database. Total return index includes dividend reinvestment. Past performance does not guarantee future results. Projected returns are hypothetical — actual market returns will vary significantly. Not investment advice. Consult a licensed financial advisor before making investment decisions.</p>
+</div>
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px">🔗 Related Tools</h2>
+<div class="related-grid">
+<a class="related-card" href="/401k-calculator-usa"><div class="rc-title">🏖️ Retirement Calculator USA</div><div class="rc-desc">401k, IRA, savings goals planner</div></a>
+<a class="related-card" href="/compound-interest-calculator"><div class="rc-title">📈 Compound Interest Calculator</div><div class="rc-desc">See any investment grow over time</div></a>
+<a class="related-card" href="/compound-interest-calculator"><div class="rc-title">⚖️ Index Fund vs FD India</div><div class="rc-desc">Which investment wins long-term?</div></a>
+</div>
+</div>
+</section>
+<section style="margin:40px 0 0">
+<h2 style="font-size:18px;font-weight:700;margin-bottom:14px;max-width:980px;margin-left:auto;margin-right:auto;padding:0 24px;box-sizing:border-box">Related Calculators</h2>
+<section class="related-section"><div class="related"><a href="/compound-interest-calculator">Compound Interest Calculator</a>
+<a href="/inflation-calculator">Inflation Calculator USA</a>
+<a href="/fire-calculator">FIRE Calculator — Financial Independence</a>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function switchTab(t){
+  document.querySelectorAll('.tab').forEach((el,i)=>el.classList.toggle('active',i===(t==='projected'?0:1)));
+  document.getElementById('tab-projected').classList.toggle('active',t==='projected');
+  document.getElementById('tab-historical').classList.toggle('active',t==='historical');
+  document.getElementById('proj-results').style.display='none';
+}
+document.getElementById('p-rate').addEventListener('change',function(){
+  document.getElementById('custom-field').style.display=this.value==='custom'?'block':'none';
+});
+function fmt(n){if(n>=1000000)return '$'+(n/1000000).toFixed(2)+'M';if(n>=1000)return '$'+(n/1000).toFixed(1)+'K';return '$'+Math.round(n).toLocaleString();}
+function calcProjected(){
+  const P=+document.getElementById('p-invest').value||0;
+  const monthly=+document.getElementById('p-monthly').value||0;
+  const rateEl=document.getElementById('p-rate').value;
+  const r=(rateEl==='custom'?+document.getElementById('p-custom').value:+rateEl)/100;
+  const years=+document.getElementById('p-years').value;
+  let portfolio=P, totalInvested=P, rows='';
+  for(let y=1;y<=years;y++){
+    const opening=portfolio;
+    portfolio=portfolio*(1+r)+monthly*12*(1+r/2);
+    totalInvested+=monthly*12;
+    const gain=portfolio-opening-monthly*12;
+    const retPct=((portfolio/totalInvested-1)*100).toFixed(1);
+    rows+=`<div class="ht-row"><span class="yr">${y}</span><span class="val">${fmt(totalInvested)}</span><span class="val" style="color:var(--accent)">${fmt(gain)}</span><span class="val" style="color:var(--yellow)">${fmt(portfolio)}</span><span class="val">${retPct}%</span></div>`;
+  }
+  document.getElementById('pr-final').textContent=fmt(portfolio);
+  document.getElementById('pr-invested').textContent=fmt(totalInvested);
+  document.getElementById('pr-gain').textContent=fmt(portfolio-totalInvested);
+  document.getElementById('proj-body').innerHTML=rows;
+  document.getElementById('proj-results').style.display='block';
+  document.getElementById('proj-results').scrollIntoView({behavior:'smooth',block:'start'});
+}
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

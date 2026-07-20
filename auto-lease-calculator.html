@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Compare leasing vs buying a car. See monthly lease payments, total lease cost, and whether buying makes more financial sense." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/auto-lease-calculator"/>
+<title>Auto Lease Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Auto Lease Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/auto-lease-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Auto Lease Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/auto-lease-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Auto Lease Calculator — Coming Soon | USAFinCalc",
+  "description": "Auto Lease Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/auto-lease-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>Auto <span>Lease</span> Calculator</h1>
+  <p class="sub">Compare leasing vs buying a car. See monthly lease payments, total lease cost, and whether buying makes more financial sense. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/auto-loan-calculator">Auto Loan Calculator</a></li><li><a href="/car-payment-calculator">Car Payment Calculator</a></li><li><a href="/personal-loan-calculator">Personal Loan Calculator</a></li><li><a href="/debt-payoff-calculator">Debt Payoff Calculator</a></li><li><a href="/budget-planner">Budget Planner</a></li><li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="auto-lease-guide">
+<h2>What This Auto Lease Calculator Does</h2>
+<p>This calculator computes your estimated monthly lease payment for a vehicle, breaking down the key components: depreciation fee, finance fee, and taxes. Unlike buying, where you finance the full vehicle price, leasing means financing only the vehicle's depreciation during the lease term — plus interest (the money factor) and fees. Understanding the math behind a lease quote helps you negotiate more effectively and recognize when dealer numbers are inflated.</p>
+<h2>How It Works</h2>
+<p>A lease payment has three components:</p>
+<p><strong>Depreciation Fee = (Capitalized Cost − Residual Value) ÷ Lease Term (months)</strong></p>
+<p><strong>Finance Fee = (Capitalized Cost + Residual Value) × Money Factor</strong></p>
+<p><strong>Monthly Payment = Depreciation Fee + Finance Fee + Taxes</strong></p>
+<p>The capitalized cost is the negotiated vehicle price minus down payment or cap cost reductions. The residual value is what the manufacturer says the car will be worth at lease end (as a percentage of MSRP). The money factor is the interest rate in disguise — multiply by 2,400 to convert to approximate APR.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Money Factor</h3>
+<p>Money factor (or lease rate) is the financing cost expressed as a tiny decimal, typically 0.00100–0.00300. A money factor of 0.00200 equals approximately 4.8% APR. Dealers sometimes mark up the money factor above the manufacturer's base rate — ask for the "buy rate" and compare to published rates on sites like Edmunds.</p>
+<h3>Residual Value</h3>
+<p>Set by the manufacturer's financial arm and non-negotiable. Higher residuals mean lower monthly payments because you're financing less depreciation. Vehicles with high residuals — often luxury brands or EVs with incentives — are typically the best lease candidates.</p>
+<h3>Mileage Allowance</h3>
+<p>Leases typically allow 10,000, 12,000, or 15,000 miles per year. Exceeding this costs $0.15–$0.30 per mile at lease end. If you drive more than average, negotiate higher mileage at signing where extra miles are cheaper than paying overage fees at return.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Negotiate the vehicle price first, then discuss leasing</strong> — the cap cost is negotiable just like a purchase price. Focus on cap cost, not monthly payment.</li>
+<li><strong>Check manufacturer incentives</strong> — automakers frequently subsidize leases with inflated residuals or lowered money factors on specific models.</li>
+<li><strong>Avoid leasing if you drive heavily</strong> — if you drive 18,000+ miles annually, excess mileage fees almost always make leasing more expensive than buying.</li>
+<li><strong>Don't put money down on a lease</strong> — a down payment reduces monthly payments but provides no financial benefit; if the car is totaled, you lose that money.</li>
+<li><strong>Read the disposition fee</strong> — most leases charge $300–$500 when you return the car and don't lease or buy another from the same brand.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">Is it better to lease or buy a car?</h3><p class="faq-a">Leasing is better if you prefer lower monthly payments, want a new car every 2–3 years, drive fewer than 15,000 miles per year, and use the vehicle for business (lease payments may be deductible). Buying is better if you drive heavily, plan to keep the car long-term, or want to build equity. Over a 10-year period, owning consistently outperforms leasing in total cost.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can I negotiate a lease deal?</h3><p class="faq-a">Yes — the capitalized cost, acquisition fee, and dealer-added accessories are negotiable. Residual value and base money factor set by the manufacturer are not. Get competing quotes from multiple dealers on the same trim and use them as leverage. Never reveal you want to lease until you've agreed on the vehicle price.</p></div>
+<div class="faq-item"><h3 class="faq-q">What happens if I want to exit my lease early?</h3><p class="faq-a">Early termination is expensive — you typically owe all remaining payments plus a termination fee minus current market value. Alternatives include transferring the lease to another person via Swapalease.com, buying out the lease if the residual is below market, or rolling the balance into a new lease with the same manufacturer.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is gap coverage included in leases?</h3><p class="faq-a">Most manufacturer leases include gap protection (covering the difference between the car's value and what you owe if totaled), but verify this before signing. Third-party leases arranged through a dealership financing company may not include gap coverage automatically.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>Compare your lease against financing with the <a href="/auto-loan-calculator">Auto Loan Calculator</a> to see total cost over the same term. The <a href="/apr-calculator">APR Calculator</a> helps convert the money factor to an equivalent interest rate. If the vehicle is a business asset, the <a href="/roi-calculator">ROI Calculator</a> can help you model Section 179 depreciation deductions.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

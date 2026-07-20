@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bond Yield Calculator (2026) – Current Yield, YTM, YTC</title>
+    <meta name="description" content="Calculate bond yields including current yield, yield to maturity (YTM), and yield to call (YTC). Essential tool for fixed income investors." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="bond calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/bond-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Bond Yield Calculator (2026) – Current Yield, YTM, YTC" property="og:title"/>
+<meta content="Calculate bond yields including current yield, yield to maturity (YTM), and yield to call (YTC). Essential tool for fixed income investors." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/bond-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Bond Yield Calculator (2026) – Current Yield, YTM, YTC" name="twitter:title"/>
+<meta content="Calculate bond yields including current yield, yield to maturity (YTM), and yield to call (YTC). Essential tool for fixed income investors." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>B</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .yield-comparison {
+            font-family: var(--mono);
+            font-size: 13px;
+        }
+        .yield-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .yield-row:last-child {
+            border-bottom: none;
+            font-weight: 700;
+        }
+        .yield-row .label {
+            color: var(--muted);
+        }
+        .yield-row .value {
+            color: var(--text);
+        }
+        .yield-row.highlight .value {
+            color: var(--accent);
+            font-size: 18px;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Bond Yield Calculator (2026) – Current Yield, YTM, YTC",
+  "url": "https://usafincalc.com/bond-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Bond Yield Calculator (2026) – Current Yield, YTM, YTC",
+      "item": "https://usafincalc.com/bond-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bond Yield Calculator (2026) – Current Yield, YTM, YTC",
+  "description": "Calculate bond yields including current yield, yield to maturity (YTM), and yield to call (YTC). Essential tool for fixed income investors.",
+  "url": "https://usafincalc.com/bond-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between current yield and yield to maturity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Current yield only considers the annual coupon payment relative to the bond's current price. Yield to maturity (YTM) includes both coupon payments and the capital gain or loss if the bond is held to maturity. YTM is the more comprehensive measure of a bond's total return."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Yield to Call (YTC)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yield to Call is the annualized return if a callable bond is redeemed by the issuer at the earliest call date. Callable bonds typically have a call price (often 102-105% of par) and a call date. YTC may be lower than YTM if the bond is called before maturity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Yield to Worst (YTW)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yield to Worst is the lower of YTM and YTC. It represents the worst-case scenario for the bondholder. For callable bonds, YTW is often the most conservative yield measure to use for analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does a bond's price change with interest rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bond prices and interest rates move in opposite directions. When interest rates rise, bond prices fall (yields rise). When interest rates fall, bond prices rise (yields fall). The sensitivity of a bond's price to interest rate changes is measured by duration."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a discount bond vs. a premium bond?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A discount bond trades below its face value (par). This happens when the bond's coupon rate is lower than current market interest rates. A premium bond trades above par when its coupon rate is higher than current market rates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are bonds taxed?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interest from corporate bonds is taxed at both federal and state levels as ordinary income. Treasury bond interest is exempt from state and local taxes but subject to federal tax. Municipal bond interest is generally exempt from federal tax and may be exempt from state taxes if you live in the issuing state."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">B</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 fixed income</div>
+        <h1>Bond Yield <span>Calculator</span></h1>
+        <p class="hero-sub">Calculate current yield, yield to maturity (YTM), and yield to call (YTC) for bonds. Essential tool for fixed income investors analyzing bond investments.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Bond Details</div>
+
+                    <div class="field">
+                        <label for="faceValue">Face Value (Par Value)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="faceValue" value="1000" min="0" step="100" oninput="calculateBond()" /></div>
+                        <div class="hint">The bond's par value (typically $1,000).</div>
+                    </div>
+                    <div class="field">
+                        <label for="couponRate">Coupon Rate</label>
+                        <div class="pct-suffix"><input type="number" id="couponRate" value="5" min="0" max="20" step="0.125" oninput="calculateBond()" /><span>%</span></div>
+                        <div class="hint">Annual interest rate paid by the bond.</div>
+                    </div>
+                    <div class="field">
+                        <label for="marketPrice">Current Market Price</label>
+                        <div class="pfx"><span>$</span><input type="number" id="marketPrice" value="950" min="0" step="0.5" oninput="calculateBond()" /></div>
+                        <div class="hint">Current trading price of the bond.</div>
+                    </div>
+                    <div class="field">
+                        <label for="yearsToMaturity">Years to Maturity</label>
+                        <input type="number" id="yearsToMaturity" value="10" min="0" max="50" step="0.5" oninput="calculateBond()" />
+                    </div>
+                    <div class="field">
+                        <label for="callPrice">Call Price (if callable)</label>
+                        <div class="pfx"><span>$</span><input type="number" id="callPrice" value="1020" min="0" step="5" oninput="calculateBond()" /></div>
+                        <div class="hint">Price at which the bond can be called (e.g., 102% of par).</div>
+                    </div>
+                    <div class="field">
+                        <label for="yearsToCall">Years to Call</label>
+                        <input type="number" id="yearsToCall" value="5" min="0" max="30" step="0.5" oninput="calculateBond()" />
+                        <div class="hint">Years until the bond can be called.</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetBond()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadBondPreset('treasury')">Treasury Bond</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadBondPreset('corporate')">Corporate Bond</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadBondPreset('muni')">Municipal Bond</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadBondPreset('highyield')">High Yield Bond</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common bond scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Bond Yields</div>
+                    <div class="res-main">
+                        <div class="res-label">Yield to Maturity (YTM)</div>
+                        <div class="res-val" id="ytmResult">6.12%</div>
+                        <div class="res-sub" id="ytmSub">annualized return if held to maturity</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Current Yield</div><div class="bk-v" id="currentYield">5.26%</div></div>
+                        <div class="bk"><div class="bk-l">Yield to Call</div><div class="bk-v" id="ytcResult">5.82%</div></div>
+                        <div class="bk"><div class="bk-l">Coupon Payment</div><div class="bk-v" id="couponPayment">$50.00</div></div>
+                        <div class="bk"><div class="bk-l">Annual Income</div><div class="bk-v" id="annualIncome">$50.00</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Yield Comparison</div>
+                    <div id="yieldComparison" class="yield-comparison">
+                        <div class="yield-row"><span class="label">Current Yield</span><span class="value" id="ycCurrentYield">5.26%</span></div>
+                        <div class="yield-row"><span class="label">Yield to Maturity (YTM)</span><span class="value" id="ycYTM">6.12%</span></div>
+                        <div class="yield-row"><span class="label">Yield to Call (YTC)</span><span class="value" id="ycYTC">5.82%</span></div>
+                        <div class="yield-row highlight"><span class="label">Best Yield</span><span class="value" id="ycBest">YTM: 6.12%</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Bond Analysis</div>
+                    <div style="font-family:var(--mono);font-size:13px;color:var(--muted);">
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                            <span>Bond Type</span>
+                            <span style="color:var(--text);" id="bondType">Discount Bond</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                            <span>Price vs. Par</span>
+                            <span style="color:var(--text);" id="priceVsPar">-5.00%</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid var(--border);">
+                            <span>Coupon vs. Market</span>
+                            <span style="color:var(--text);" id="couponVsMarket">5.00% vs 6.12%</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;padding:6px 0;">
+                            <span>Yield Spread (YTM - Coupon)</span>
+                            <span style="color:var(--text);" id="yieldSpread">+1.12%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Yield Comparison Chart</div>
+                    <div id="bondChart"></div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-info" id="statusBadge">📊 Analysis</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">This bond is trading at a discount to par.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides estimates based on simplified formulas. Actual bond yields may vary due to day count conventions, compounding frequency, and other factors. Consult a financial advisor for accurate analysis.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>Understanding Bond Yields</h2>
+        <p>Bonds are fixed-income investments that pay regular interest (coupon) payments and return the principal at maturity. Understanding bond yields is essential for evaluating bond investments and comparing them to other fixed-income opportunities. This Bond Yield Calculator helps you calculate and compare three key yield measures: Current Yield, Yield to Maturity (YTM), and Yield to Call (YTC).</p>
+        <p>Bond yields are influenced by several factors, including interest rates, credit quality, time to maturity, and the bond's price relative to its face value. As interest rates rise, bond prices fall, and yields rise—and vice versa. This inverse relationship is fundamental to fixed-income investing.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> A bond purchased at a discount (below par) has a YTM higher than its current yield. A bond purchased at a premium (above par) has a YTM lower than its current yield. The YTM is the most complete measure of a bond's return.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator computes three key bond yields using standard financial formulas:</p>
+        <ol>
+            <li><strong>Current Yield:</strong> Annual Coupon Payment ÷ Current Market Price. This is a simple measure of the bond's income return.</li>
+            <li><strong>Yield to Maturity (YTM):</strong> The total return an investor earns if the bond is held until maturity, including both interest payments and capital gains or losses.</li>
+            <li><strong>Yield to Call (YTC):</strong> The total return if the bond is called (redeemed early) by the issuer at the call price and call date.</li>
+        </ol>
+        <p>YTM and YTC are calculated using the bond pricing formula, which equates the present value of all future cash flows to the current market price.</p>
+
+        <h2>Current Yield Explained</h2>
+        <p>Current yield is the simplest bond yield measure. It's calculated by dividing the annual coupon payment by the current market price. For example, a bond with a $50 annual coupon trading at $950 has a current yield of 5.26% ($50 ÷ $950).</p>
+        <p><strong>What current yield tells you:</strong></p>
+        <ul>
+            <li>The income return on your investment at the current price</li>
+            <li>How much cash income you'll receive relative to what you paid</li>
+        </ul>
+        <p><strong>What current yield doesn't tell you:</strong></p>
+        <ul>
+            <li>Capital gains or losses if held to maturity</li>
+            <li>The total return of the investment</li>
+            <li>The effect of reinvesting coupon payments</li>
+        </ul>
+
+        <h2>Yield to Maturity (YTM)</h2>
+        <p>Yield to Maturity is the most comprehensive bond yield measure. It represents the total annualized return an investor earns if:</p>
+        <ul>
+            <li>The bond is held until maturity</li>
+            <li>All coupon payments are reinvested at the same rate</li>
+            <li>The investor receives the full face value at maturity</li>
+        </ul>
+        <p>YTM is the single most important metric for comparing bonds with different prices, coupons, and maturities. It allows investors to evaluate bonds on a level playing field.</p>
+        <p><strong>YTM factors:</strong></p>
+        <ul>
+            <li>Purchase price (market price)</li>
+            <li>Face value (par value)</li>
+            <li>Coupon rate and payment frequency</li>
+            <li>Time to maturity</li>
+        </ul>
+
+        <h2>Yield to Call (YTC)</h2>
+        <p>Yield to Call is relevant for callable bonds—bonds that the issuer can redeem before maturity. Issuers typically call bonds when interest rates have fallen, allowing them to refinance at a lower rate.</p>
+        <p>YTC represents the annualized return if:</p>
+        <ul>
+            <li>The bond is called at the earliest call date</li>
+            <li>The investor receives the call price (usually slightly above par)</li>
+            <li>All coupon payments are reinvested at the same rate</li>
+        </ul>
+        <p>For callable bonds, the <strong>Yield to Worst (YTW)</strong> is the lower of YTM and YTC—the worst-case scenario for the investor. This calculator shows both YTM and YTC so you can compare.</p>
+
+        <h2>Bond Price-Yield Relationship</h2>
+        <p>Understanding the relationship between bond prices and yields is essential:</p>
+        <table>
+            <thead>
+                <tr><th>Bond Type</th><th>Price vs. Par</th><th>Current Yield vs. Coupon</th><th>YTM vs. Current Yield</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Premium Bond</td><td>Price &gt; Par</td><td>Current Yield &lt; Coupon</td><td>YTM &lt; Current Yield</td></tr>
+                <tr><td>Par Bond</td><td>Price = Par</td><td>Current Yield = Coupon</td><td>YTM = Current Yield</td></tr>
+                <tr><td>Discount Bond</td><td>Price &lt; Par</td><td>Current Yield &gt; Coupon</td><td>YTM &gt; Current Yield</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Bond Yield Examples</h2>
+        <p>Here's how yields compare for different bond scenarios:</p>
+        <table>
+            <thead>
+                <tr><th>Scenario</th><th>Coupon Rate</th><th>Market Price</th><th>Current Yield</th><th>YTM</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Premium Bond</td><td>6%</td><td>$1,100</td><td>5.45%</td><td>4.85%</td></tr>
+                <tr><td>Par Bond</td><td>5%</td><td>$1,000</td><td>5.00%</td><td>5.00%</td></tr>
+                <tr><td>Discount Bond</td><td>4%</td><td>$920</td><td>4.35%</td><td>5.15%</td></tr>
+                <tr><td>High Yield Bond</td><td>8%</td><td>$850</td><td>9.41%</td><td>10.82%</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Types of Bonds</h2>
+        <div class="two-col">
+            <div>
+                <h3>Treasury Bonds</h3>
+                <ul>
+                    <li>Issued by U.S. government</li>
+                    <li>Lowest risk (risk-free rate)</li>
+                    <li>Lower yields than corporate bonds</li>
+                    <li>Interest exempt from state/local taxes</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Corporate Bonds</h3>
+                <ul>
+                    <li>Issued by companies</li>
+                    <li>Higher risk = higher yield</li>
+                    <li>Investment grade (BBB+) vs. High Yield</li>
+                    <li>Taxable at all levels</li>
+                </ul>
+            </div>
+        </div>
+        <div class="two-col">
+            <div>
+                <h3>Municipal Bonds</h3>
+                <ul>
+                    <li>Issued by state/local governments</li>
+                    <li>Tax-exempt at federal level</li>
+                    <li>May be exempt from state/local taxes</li>
+                    <li>Lower yields but tax-equivalent yield higher</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Zero-Coupon Bonds</h3>
+                <ul>
+                    <li>No periodic coupon payments</li>
+                    <li>Sold at deep discount</li>
+                    <li>Full face value paid at maturity</li>
+                    <li>Imputed interest taxed annually</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Common Bond Investing Mistakes</h2>
+        <ul>
+            <li><strong>Confusing current yield with total return:</strong> Current yield doesn't account for capital gains or losses.</li>
+            <li><strong>Ignoring credit risk:</strong> Higher yields often mean higher default risk.</li>
+            <li><strong>Forgetting about call risk:</strong> Callable bonds can be redeemed early, reducing returns.</li>
+            <li><strong>Not considering taxes:</strong> Tax-equivalent yield is crucial for comparing taxable vs. tax-exempt bonds.</li>
+            <li><strong>Overlooking reinvestment risk:</strong> Future coupon payments may be reinvested at lower rates.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between current yield and yield to maturity?</div>
+            <div class="faq-a">Current yield only considers the annual coupon payment relative to the bond's current price. Yield to maturity (YTM) includes both coupon payments and the capital gain or loss if the bond is held to maturity. YTM is the more comprehensive measure of a bond's total return.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is Yield to Call (YTC)?</div>
+            <div class="faq-a">Yield to Call is the annualized return if a callable bond is redeemed by the issuer at the earliest call date. Callable bonds typically have a call price (often 102-105% of par) and a call date. YTC may be lower than YTM if the bond is called before maturity.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is Yield to Worst (YTW)?</div>
+            <div class="faq-a">Yield to Worst is the lower of YTM and YTC. It represents the worst-case scenario for the bondholder. For callable bonds, YTW is often the most conservative yield measure to use for analysis.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How does a bond's price change with interest rates?</div>
+            <div class="faq-a">Bond prices and interest rates move in opposite directions. When interest rates rise, bond prices fall (yields rise). When interest rates fall, bond prices rise (yields fall). The sensitivity of a bond's price to interest rate changes is measured by duration.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a discount bond vs. a premium bond?</div>
+            <div class="faq-a">A discount bond trades below its face value (par). This happens when the bond's coupon rate is lower than current market interest rates. A premium bond trades above par when its coupon rate is higher than current market rates.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How are bonds taxed?</div>
+            <div class="faq-a">Interest from corporate bonds is taxed at both federal and state levels as ordinary income. Treasury bond interest is exempt from state and local taxes but subject to federal tax. Municipal bond interest is generally exempt from federal tax and may be exempt from state taxes if you live in the issuing state.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Compound Interest Calculator</a></li>
+            <li><a href="#">Investment Calculator</a></li>
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Tax Calculator</a></li>
+            <li><a href="#">ROI Calculator</a></li>
+            <li><a href="#">Stock Profit Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const faceValue = $('faceValue');
+        const couponRate = $('couponRate');
+        const marketPrice = $('marketPrice');
+        const yearsToMaturity = $('yearsToMaturity');
+        const callPrice = $('callPrice');
+        const yearsToCall = $('yearsToCall');
+
+        const ytmResult = $('ytmResult');
+        const ytmSub = $('ytmSub');
+        const currentYield = $('currentYield');
+        const ytcResult = $('ytcResult');
+        const couponPayment = $('couponPayment');
+        const annualIncome = $('annualIncome');
+
+        const ycCurrentYield = $('ycCurrentYield');
+        const ycYTM = $('ycYTM');
+        const ycYTC = $('ycYTC');
+        const ycBest = $('ycBest');
+
+        const bondType = $('bondType');
+        const priceVsPar = $('priceVsPar');
+        const couponVsMarket = $('couponVsMarket');
+        const yieldSpread = $('yieldSpread');
+        const bondChart = $('bondChart');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function pct(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toFixed(2) + '%';
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- bond yield calculation -----
+        function calculateBond() {
+            const face = getVal(faceValue);
+            const coupon = getVal(couponRate) / 100;
+            const price = getVal(marketPrice);
+            const years = getVal(yearsToMaturity);
+            const callPriceVal = getVal(callPrice);
+            const yearsCall = getVal(yearsToCall);
+
+            const annualCoupon = face * coupon;
+
+            // Current Yield
+            const curYield = price > 0 ? annualCoupon / price : 0;
+
+            // Yield to Maturity (approximation using bond pricing formula)
+            let ytm = 0;
+            if (price > 0 && years > 0 && face > 0) {
+                // Use Newton's method to solve for YTM
+                let guess = coupon;
+                if (price < face) guess = coupon + 0.01;
+                else if (price > face) guess = coupon - 0.01;
+                guess = Math.max(0.001, guess);
+
+                for (let iter = 0; iter < 100; iter++) {
+                    let pv = 0;
+                    let dpv = 0;
+                    for (let t = 1; t <= years; t++) {
+                        pv += annualCoupon / Math.pow(1 + guess, t);
+                        dpv += -t * annualCoupon / Math.pow(1 + guess, t + 1);
+                    }
+                    pv += face / Math.pow(1 + guess, years);
+                    dpv += -years * face / Math.pow(1 + guess, years + 1);
+
+                    const diff = pv - price;
+                    if (Math.abs(diff) < 0.0001) break;
+                    guess = guess - diff / dpv;
+                    if (guess < 0) guess = 0.001;
+                }
+                ytm = guess;
+            }
+
+            // Yield to Call
+            let ytc = 0;
+            if (price > 0 && yearsCall > 0 && callPriceVal > 0) {
+                let guess = coupon;
+                if (price < callPriceVal) guess = coupon + 0.01;
+                else if (price > callPriceVal) guess = coupon - 0.01;
+                guess = Math.max(0.001, guess);
+
+                for (let iter = 0; iter < 100; iter++) {
+                    let pv = 0;
+                    let dpv = 0;
+                    for (let t = 1; t <= yearsCall; t++) {
+                        pv += annualCoupon / Math.pow(1 + guess, t);
+                        dpv += -t * annualCoupon / Math.pow(1 + guess, t + 1);
+                    }
+                    pv += callPriceVal / Math.pow(1 + guess, yearsCall);
+                    dpv += -yearsCall * callPriceVal / Math.pow(1 + guess, yearsCall + 1);
+
+                    const diff = pv - price;
+                    if (Math.abs(diff) < 0.0001) break;
+                    guess = guess - diff / dpv;
+                    if (guess < 0) guess = 0.001;
+                }
+                ytc = guess;
+            }
+
+            // Update results
+            ytmResult.textContent = pct(ytm);
+            ytmResult.style.color = ytm > coupon ? 'var(--accent)' : (ytm < coupon ? 'var(--fed)' : 'var(--text)');
+            ytmSub.textContent = `annualized return if held to maturity (${years} years)`;
+
+            currentYield.textContent = pct(curYield);
+            currentYield.className = 'bk-v ' + (curYield >= coupon ? 'positive' : 'negative');
+
+            ytcResult.textContent = yearsCall > 0 && callPriceVal > 0 ? pct(ytc) : 'N/A';
+            ytcResult.className = 'bk-v ' + (ytc > coupon ? 'positive' : (ytc < coupon && ytc > 0 ? 'negative' : ''));
+
+            couponPayment.textContent = fmt(annualCoupon);
+            annualIncome.textContent = fmt(annualCoupon);
+
+            // Yield comparison
+            ycCurrentYield.textContent = pct(curYield);
+            ycYTM.textContent = pct(ytm);
+            ycYTC.textContent = yearsCall > 0 && callPriceVal > 0 ? pct(ytc) : 'N/A';
+
+            let bestYield = 'N/A';
+            let bestValue = 0;
+            if (ytm > bestValue) { bestValue = ytm;
+                bestYield = 'YTM: ' + pct(ytm); }
+            if (ytc > bestValue && ytc > 0) { bestValue = ytc;
+                bestYield = 'YTC: ' + pct(ytc); }
+            if (curYield > bestValue) { bestValue = curYield;
+                bestYield = 'Current: ' + pct(curYield); }
+            ycBest.textContent = bestYield;
+
+            // Bond analysis
+            const priceDiff = face > 0 ? ((price - face) / face) * 100 : 0;
+            if (priceDiff > 0.5) {
+                bondType.textContent = 'Premium Bond';
+                bondType.style.color = 'var(--fed)';
+            } else if (priceDiff < -0.5) {
+                bondType.textContent = 'Discount Bond';
+                bondType.style.color = 'var(--accent)';
+            } else {
+                bondType.textContent = 'Par Bond';
+                bondType.style.color = 'var(--text)';
+            }
+
+            priceVsPar.textContent = (priceDiff >= 0 ? '+' : '') + priceDiff.toFixed(2) + '%';
+            priceVsPar.style.color = priceDiff >= 0 ? 'var(--fed)' : 'var(--accent)';
+
+            couponVsMarket.textContent = pct(coupon) + ' vs ' + pct(ytm);
+
+            const spread = (ytm - coupon) * 100;
+            yieldSpread.textContent = (spread >= 0 ? '+' : '') + spread.toFixed(2) + '%';
+            yieldSpread.style.color = spread >= 0 ? 'var(--accent)' : 'var(--fed)';
+
+            // Status
+            if (priceDiff < -0.5) {
+                statusBadge.textContent = '📉 Discount Bond';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `This bond is trading at a discount. YTM (${pct(ytm)}) exceeds coupon rate (${pct(coupon)}).`;
+            } else if (priceDiff > 0.5) {
+                statusBadge.textContent = '📈 Premium Bond';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = `This bond is trading at a premium. YTM (${pct(ytm)}) is below coupon rate (${pct(coupon)}).`;
+            } else {
+                statusBadge.textContent = '📊 Par Bond';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `This bond is trading at par. YTM equals the coupon rate.`;
+            }
+
+            // Chart
+            const maxVal = Math.max(curYield, ytm, ytc, 0.01);
+            const curPct = (curYield / maxVal) * 100;
+            const ytmPct = (ytm / maxVal) * 100;
+            const ytcPct = ytc > 0 ? (ytc / maxVal) * 100 : 0;
+
+            bondChart.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Current Yield</span><span>${pct(curYield)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${curPct}%;background:var(--state);"></div></div>
+                </div>
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Yield to Maturity (YTM)</span><span>${pct(ytm)}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${ytmPct}%;background:var(--accent);"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Yield to Call (YTC)</span><span>${ytc > 0 ? pct(ytc) : 'N/A'}</span></div>
+                    <div class="bar-track"><div class="bar-fill" style="width:${ytcPct}%;background:var(--local);"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">YTM is the most comprehensive measure of bond returns.</div>
+            `;
+        }
+
+        // ----- presets -----
+        function loadBondPreset(key) {
+            switch (key) {
+                case 'treasury':
+                    faceValue.value = '1000';
+                    couponRate.value = '4.5';
+                    marketPrice.value = '980';
+                    yearsToMaturity.value = '10';
+                    callPrice.value = '1000';
+                    yearsToCall.value = '5';
+                    break;
+                case 'corporate':
+                    faceValue.value = '1000';
+                    couponRate.value = '5.5';
+                    marketPrice.value = '1020';
+                    yearsToMaturity.value = '7';
+                    callPrice.value = '1040';
+                    yearsToCall.value = '3';
+                    break;
+                case 'muni':
+                    faceValue.value = '5000';
+                    couponRate.value = '3.5';
+                    marketPrice.value = '4950';
+                    yearsToMaturity.value = '15';
+                    callPrice.value = '5000';
+                    yearsToCall.value = '8';
+                    break;
+                case 'highyield':
+                    faceValue.value = '1000';
+                    couponRate.value = '8.0';
+                    marketPrice.value = '880';
+                    yearsToMaturity.value = '5';
+                    callPrice.value = '1020';
+                    yearsToCall.value = '3';
+                    break;
+                default:
+                    return;
+            }
+            calculateBond();
+        }
+        window.loadBondPreset = loadBondPreset;
+
+        // ----- reset -----
+        function resetBond() {
+            faceValue.value = '1000';
+            couponRate.value = '5';
+            marketPrice.value = '950';
+            yearsToMaturity.value = '10';
+            callPrice.value = '1020';
+            yearsToCall.value = '5';
+            calculateBond();
+        }
+        window.resetBond = resetBond;
+
+        // ----- event listeners -----
+        const inputs = [faceValue, couponRate, marketPrice, yearsToMaturity, callPrice, yearsToCall];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculateBond);
+            el.addEventListener('change', calculateBond);
+        });
+
+        // ----- init -----
+        calculateBond();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

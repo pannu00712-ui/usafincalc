@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="Free credit card payoff calculator 2026. See how long it takes to pay off your credit card balance, total interest cost, and the fastest payoff strategy." name="description"/>
+<meta content="credit card calculator, credit card payoff calculator, credit card interest calculator, pay off credit card 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="Credit Card Payoff Calculator 2026 — Interest & Payoff Timeline" property="og:title"/>
+<meta content="See exactly how long it takes to pay off your credit card and how much interest you'll pay. Compare minimum payments vs. fixed payments." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/credit-card-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@usafincalc" name="twitter:site"/>
+<meta content="Credit Card Payoff Calculator 2026 — Interest & Payoff Timeline" name="twitter:title"/>
+<meta content="How long to pay off your credit card? See total interest, payoff date, and savings from paying more than the minimum." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link rel="canonical" href="https://usafincalc.com/credit-card-calculator"/>
+<title>Credit Card Payoff Calculator 2026 — Interest & Timeline | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#00e5a0;--accent2:#00b87a;
+  --danger:#ff6b6b;--info:#74b9ff;--warn:#ffa94d;
+  --principal:#7c6ff7;--interest:#ff6b6b;--net:#00e5a0;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent);letter-spacing:-0.3px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:20px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(26px,5vw,40px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:12px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 20px}
+.qa{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:var(--r);padding:14px 18px;font-size:14px;color:var(--muted)}
+.qa strong{color:var(--accent)}
+.main{max-width:980px;margin:0 auto;padding:0 24px 32px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:660px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:24px}
+.ct{font-size:12px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:11px 14px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:16px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:16px}
+.pfx span{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.pfx input{padding-left:28px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:16px}
+.sfx span{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:15px;pointer-events:none}
+.sfx input{padding-right:30px;margin-bottom:0}
+/* mode toggle */
+.mode-tabs{display:flex;gap:8px;margin-bottom:20px}
+.mtab{flex:1;padding:9px;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);font-size:12px;font-family:var(--mono);color:var(--muted);cursor:pointer;text-align:center;transition:all .2s}
+.mtab.active{background:rgba(0,229,160,0.12);border-color:rgba(0,229,160,0.4);color:var(--accent)}
+.mode-section{display:none}
+.mode-section.show{display:block}
+.btn{width:100%;background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:-.2px}
+.btn:hover{background:#00c98c}
+.btn:active{transform:scale(.98)}
+/* results */
+.net-card{background:linear-gradient(135deg,rgba(0,229,160,0.12),rgba(0,184,122,0.06));border:1px solid rgba(0,229,160,0.25);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:16px}
+.nl{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:40px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:13px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text);font-weight:500}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:12px}
+.bt{font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;background:var(--bg3)}
+.seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:9px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px}
+.dr{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px}
+.dr:last-child{border-bottom:none}
+.dk{color:var(--muted)}
+.dv{font-family:var(--mono);font-weight:500;color:var(--text)}
+.dv.g{color:var(--accent)}
+.dv.r{color:var(--danger)}
+.dv.w{color:var(--warn)}
+/* savings banner */
+.save-card{background:rgba(0,229,160,0.06);border:1px solid rgba(0,229,160,0.2);border-radius:var(--rs);padding:14px 16px;font-size:13px;color:var(--muted);margin-top:12px}
+.save-card strong{color:var(--accent)}
+/* warning */
+.warn-card{background:rgba(255,169,77,0.08);border:1px solid rgba(255,169,77,0.25);border-radius:var(--rs);padding:14px 16px;font-size:13px;color:var(--muted);margin-top:12px;display:none}
+.warn-card.show{display:block}
+.warn-card strong{color:var(--warn)}
+/* schedule table */
+.amort-wrap{max-width:980px;margin:0 auto;padding:0 24px 32px}
+.amort-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.amort-head h2{font-size:18px;font-weight:600;letter-spacing:-.3px}
+.amort-toggle{font-size:12px;color:var(--accent);cursor:pointer;font-family:var(--mono);background:none;border:1px solid rgba(0,229,160,0.25);padding:5px 12px;border-radius:20px}
+.amort-toggle:hover{background:rgba(0,229,160,0.08)}
+.amort-table-wrap{overflow-x:auto;display:none}
+.amort-table-wrap.show{display:block}
+.amort-table{width:100%;border-collapse:collapse;font-size:13px}
+.amort-table th{text-align:right;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:11px;letter-spacing:.5px}
+.amort-table th:first-child{text-align:left}
+.amort-table td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--muted);text-align:right;font-family:var(--mono)}
+.amort-table td:first-child{color:var(--text);text-align:left;font-weight:500}
+.amort-table tr:last-child td{border-bottom:none}
+.amort-table .p-cell{color:var(--principal)}
+.amort-table .i-cell{color:var(--danger)}
+/* content */
+.cs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.cs h2{font-size:22px;font-weight:600;margin-bottom:14px;letter-spacing:-.3px}
+.cs h3{font-size:17px;font-weight:500;margin:28px 0 10px;letter-spacing:-.2px}
+.cs p{color:var(--muted);font-size:15px;line-height:1.8;margin-bottom:14px}
+.cs p strong{color:var(--text);font-weight:500}
+.cs a{color:var(--accent);text-decoration:none}
+.cs a:hover{text-decoration:underline}
+.cs ul,.cs ol{color:var(--muted);font-size:15px;line-height:1.8;margin:0 0 16px 20px}
+.cs li{margin-bottom:6px}
+.ttbl{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0 24px}
+.ttbl th{text-align:left;padding:10px 14px;background:var(--bg3);color:var(--muted);font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.5px}
+.ttbl td{padding:10px 14px;border-bottom:1px solid var(--border);color:var(--muted)}
+.ttbl td:last-child{font-family:var(--mono);color:var(--text);text-align:right}
+.ttbl th:last-child{text-align:right}
+.ttbl tr:last-child td{border-bottom:none}
+.abox{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px 18px;font-size:12px;color:var(--muted);font-family:var(--mono);line-height:1.9;margin:24px 0}
+.abox a{color:var(--info);text-decoration:none}
+.fqs{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.fqs h2{font-size:22px;font-weight:600;margin-bottom:20px;letter-spacing:-.3px}
+.fqi{border-bottom:1px solid var(--border);padding:18px 0;cursor:pointer}
+.fqq{display:flex;justify-content:space-between;align-items:center;font-size:15px;font-weight:500;color:var(--text)}
+.fqa-arrow{color:var(--muted);font-size:18px;transition:transform .2s}
+.fqa{color:var(--muted);font-size:14px;line-height:1.8;margin-top:12px;display:none}
+.fqi.open .fqa{display:block}
+.fqi.open .fqa-arrow{transform:rotate(180deg)}
+.rels{max-width:980px;margin:0 auto;padding:0 24px 48px}
+.rels h2{font-size:17px;font-weight:500;margin-bottom:16px;color:var(--muted)}
+.relg{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.relc{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:14px 16px;text-decoration:none;color:var(--text);font-size:13px;display:flex;align-items:center;gap:10px;transition:border-color .2s,background .2s}
+.relc:hover{border-color:var(--border2);background:var(--bg3)}
+footer{border-top:1px solid var(--border);padding:28px 24px;max-width:980px;margin:0 auto;font-size:12px;color:var(--muted);line-height:1.9}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Credit Card Payoff Calculator 2026 — Interest & Timeline | USAFinCalc",
+  "url": "https://usafincalc.com/credit-card-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Credit Card Payoff Calculator 2026 — Interest & Timeline | USAFinCalc",
+      "item": "https://usafincalc.com/credit-card-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Credit Card Payoff Calculator",
+  "description": "Calculate how long it takes to pay off your credit card balance and how much interest you will pay.",
+  "url": "https://usafincalc.com/credit-card-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">💳 Credit Card Calculator · 2026</div>
+  <h1>Credit Card <span>Payoff</span> Calculator</h1>
+  <p class="hero-sub">Enter your balance, APR, and payment amount to see exactly how long it takes to pay off your card and how much interest you'll pay in total.</p>
+</div>
+
+<div class="qa-wrap">
+  <div class="qa" id="qa-bar">Enter your balance above to see your payoff timeline instantly.</div>
+</div>
+
+<div class="main">
+  <!-- INPUT -->
+  <div class="card">
+    <div class="ct">Card Details</div>
+
+    <div class="mode-tabs">
+      <div class="mtab active" id="tab-payment" onclick="switchMode('payment')">Fixed Payment</div>
+      <div class="mtab" id="tab-date" onclick="switchMode('date')">Target Payoff Date</div>
+    </div>
+
+    <label for="balance">Current Balance</label>
+    <div class="pfx"><span>$</span><input type="number" id="balance" value="5000" min="1" step="100"/></div>
+
+    <label for="apr">Annual Interest Rate (APR)</label>
+    <div class="sfx"><span>%</span><input type="number" id="apr" value="22.99" min="0.01" step="0.01"/></div>
+
+    <!-- Fixed payment mode -->
+    <div class="mode-section show" id="mode-payment">
+      <label for="monthly-payment">Monthly Payment</label>
+      <div class="pfx"><span>$</span><input type="number" id="monthly-payment" value="200" min="1" step="10"/></div>
+    </div>
+
+    <!-- Target date mode -->
+    <div class="mode-section" id="mode-date">
+      <label for="target-months">Target Payoff (months from now)</label>
+      <input type="number" id="target-months" value="24" min="1" step="1" style="margin-bottom:16px"/>
+    </div>
+
+    <div class="warn-card" id="min-warn">
+      <strong>⚠ Warning:</strong> Your payment is below or near the minimum — you may never pay off this balance.
+    </div>
+
+    <button class="btn" onclick="calculate()">Calculate Payoff →</button>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results-col">
+    <div class="net-card">
+      <div class="nl">Payoff Timeline</div>
+      <div class="na" id="res-months">—</div>
+      <div class="nm" id="res-months-sub">months to pay off</div>
+    </div>
+
+    <div class="bcard">
+      <div class="bt">Cost Breakdown</div>
+      <div class="sbar">
+        <div class="seg" id="bar-principal" style="background:var(--principal);width:60%"></div>
+        <div class="seg" id="bar-interest" style="background:var(--danger);width:40%"></div>
+      </div>
+      <div class="brows">
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--principal)"></div><span class="blbl">Principal</span></div><span class="ba" id="res-principal">—</span></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--danger)"></div><span class="blbl">Total Interest</span></div><span class="ba" id="res-interest" style="color:var(--danger)">—</span></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:var(--text)"></div><span class="blbl">Total Paid</span></div><span class="ba" id="res-total">—</span></div>
+      </div>
+    </div>
+
+    <div class="dcard">
+      <div class="dr"><span class="dk">Monthly Payment</span><span class="dv g" id="res-payment">—</span></div>
+      <div class="dr"><span class="dk">Interest Rate (APR)</span><span class="dv" id="res-apr">—</span></div>
+      <div class="dr"><span class="dk">Payoff Date</span><span class="dv w" id="res-date">—</span></div>
+      <div class="dr"><span class="dk">Interest as % of Balance</span><span class="dv r" id="res-pct">—</span></div>
+    </div>
+
+    <div class="save-card" id="save-msg" style="display:none"></div>
+  </div>
+</div>
+
+<!-- SCHEDULE TABLE -->
+<div class="amort-wrap">
+  <div class="amort-head">
+    <h2>Monthly Payment Schedule</h2>
+    <button class="amort-toggle" id="sched-btn" onclick="toggleSchedule()">Show Schedule</button>
+  </div>
+  <div class="amort-table-wrap" id="sched-wrap">
+    <table class="amort-table">
+      <thead>
+        <tr>
+          <th scope="col">Month</th>
+          <th scope="col">Payment</th>
+          <th scope="col">Principal</th>
+          <th scope="col">Interest</th>
+          <th scope="col">Balance</th>
+        </tr>
+      </thead>
+      <tbody id="sched-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- EDUCATIONAL CONTENT -->
+<div class="cs">
+  <h2>Understanding Your Credit Card Payoff</h2>
+  <p>Credit cards carry some of the highest interest rates of any consumer debt — the average APR in 2025 sits above 21%, and many store cards and subprime cards charge 28–30%. The combination of high rates and minimum payment structures designed to extend repayment makes credit card debt uniquely expensive if not managed actively.</p>
+  <p>This calculator gives you a clear picture: how long payoff actually takes, how much you'll pay in total interest, and what happens to those numbers when you change the monthly payment amount. The math is often more motivating than any advice article.</p>
+
+  <h3>How Credit Card Interest Is Calculated</h3>
+  <p>Credit card interest accrues daily. Your APR is divided by 365 to get a daily periodic rate, which is applied to your average daily balance throughout the billing cycle. The result is added to your balance at the end of each cycle.</p>
+  <p>For a $5,000 balance at 22.99% APR: the daily rate is about 0.063%. Over 30 days, that's roughly $94 in interest added to the balance before you've made a single payment. This is why even a $150 payment barely moves the needle early on.</p>
+
+  <h3>Why Minimum Payments Are a Trap</h3>
+  <p>Credit card issuers typically set minimums at 1–2% of the balance or $25, whichever is greater. On a $5,000 balance at 22.99%, the minimum might be around $100–125. After paying that, the interest charge of ~$96 leaves only $4–29 actually reducing the principal. At that rate, paying off $5,000 takes over 20 years and costs more in interest than the original balance.</p>
+
+  <h3>The Power of Paying More</h3>
+  <table class="ttbl">
+    <thead><tr><th scope="col">Monthly Payment</th><th scope="col">Months to Payoff</th><th scope="col">Total Interest</th><th scope="col">Total Paid</th></tr></thead>
+    <tbody>
+      <tr><td>$125 (minimum)</td><td>272 months (22+ yrs)</td><td>$5,840</td><td>$10,840</td></tr>
+      <tr><td>$150</td><td>62 months</td><td>$4,295</td><td>$9,295 (on $5k balance at 22.99%)</td></tr>
+      <tr><td>$200</td><td>32 months</td><td>$1,354</td><td>$6,354</td></tr>
+      <tr><td>$300</td><td>19 months</td><td>$790</td><td>$5,790</td></tr>
+      <tr><td>$500</td><td>11 months</td><td>$461</td><td>$5,461</td></tr>
+    </tbody>
+  </table>
+  <p>Doubling the payment from $150 to $300 cuts the payoff time by over two-thirds and saves roughly $3,500 in interest on a $5,000 balance. This is the most direct way to see why paying more than the minimum is critical.</p>
+
+  <h3>Strategies for Paying Off Credit Card Debt</h3>
+  <p><strong>Avalanche method:</strong> Pay minimums on all cards, then direct every extra dollar toward the card with the highest APR. Mathematically optimal — minimizes total interest paid.</p>
+  <p><strong>Snowball method:</strong> Pay minimums on all cards, then attack the smallest balance first regardless of rate. Psychologically effective — early wins maintain momentum.</p>
+  <p><strong>Balance transfer:</strong> Move high-APR balances to a card with a 0% introductory period (typically 12–21 months). Eliminates interest during the promo period but usually charges a 3–5% transfer fee upfront. Works best when you can pay off the balance before the promo expires.</p>
+  <p><strong>Personal loan consolidation:</strong> Replace multiple high-rate card balances with a single personal loan at a lower fixed rate. Converts revolving debt into installment debt, which can also help your credit utilization ratio.</p>
+
+  <h3>Credit Card APR — What Affects It</h3>
+  <ul>
+    <li><strong>Credit score:</strong> The single biggest factor. A score above 750 typically gets the best rates; below 650, expect rates at the high end of the range.</li>
+    <li><strong>Card type:</strong> Rewards cards charge higher APRs because rewards cost the issuer money. A plain no-frills card from a credit union often carries a lower rate than a cashback or travel card.</li>
+    <li><strong>Federal funds rate:</strong> Most card APRs are variable and tied to the Prime Rate, which moves with Fed policy. When the Fed raises rates, your credit card APR typically rises within one to two billing cycles.</li>
+    <li><strong>Promotional rate:</strong> Many cards offer 0% intro APR on purchases or balance transfers for a set period. After the promo ends, the rate jumps to the standard variable APR.</li>
+  </ul>
+
+  <h3>Common Mistakes</h3>
+  <p><strong>Only paying the minimum.</strong> This is designed to maximize interest revenue for the issuer. Even a modest increase — from $125 to $200 on a $5,000 balance — can save thousands in interest and years of payments.</p>
+  <p><strong>Continuing to use the card while paying it down.</strong> New purchases add to the balance and at high APRs, can cancel out extra payments entirely. Freeze the card or cut it up if spending discipline is an issue.</p>
+  <p><strong>Ignoring balance transfer fees.</strong> A 3% transfer fee on $6,000 is $180 upfront. That's fine if you're moving from 24% to 0% and can pay it off in 18 months — but run the math first, including what happens if you don't pay it off before the promo ends.</p>
+  <p><strong>Missing a payment during a 0% promo period.</strong> Many issuers terminate the 0% rate immediately upon a missed payment, reverting to the standard APR — often 24–29%.</p>
+
+  <h3>Tips and Best Practices</h3>
+  <ul>
+    <li>Set up autopay for at least the minimum to protect your credit score, then manually pay extra when possible.</li>
+    <li>Call your issuer and ask for a rate reduction — it works more often than people expect, especially for long-standing customers with good payment history.</li>
+    <li>Use any windfalls (tax refund, bonus, inheritance) to make lump-sum payments — the interest savings compound immediately.</li>
+    <li>If you have multiple cards, use this calculator on each one to figure out the true cost order and prioritize accordingly.</li>
+    <li>Once a card is paid off, consider keeping it open (it helps your credit utilization ratio) but store it out of reach.</li>
+  </ul>
+
+  <div class="abox">
+    Methodology: This calculator uses the standard credit card amortization formula. Interest is calculated as (APR / 12) × remaining balance each month. The schedule reflects fixed monthly payments with the final payment adjusted to the exact remaining balance. Results are estimates — your actual payoff may vary based on issuer-specific billing cycle timing, fees, or rate changes.
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="fqs">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>What is a good credit card APR?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">The average credit card APR in 2025 is around 21–22%. Anything below 18% is generally considered good; below 14% is excellent and usually requires a strong credit score (720+). Many credit unions offer cards in the 10–15% range for members with good credit. Rates above 25% are high and worth prioritizing for payoff or balance transfer.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>How is the minimum payment calculated?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Issuers typically set minimums as the greater of: a flat dollar amount (often $25–35) or a percentage of the outstanding balance (usually 1–2%). Some issuers add interest and fees to the minimum to ensure the balance doesn't grow. Check your card agreement — the specific formula is disclosed there.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>Does paying more than the minimum help my credit score?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Yes, indirectly. Higher payments reduce your balance faster, which lowers your credit utilization ratio — the percentage of available credit you're using. Utilization above 30% typically hurts your score; below 10% is ideal. Paying down a $5,000 balance on a $6,000 limit card (83% utilization) to $1,500 (25% utilization) can produce a significant score improvement.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>Is a balance transfer worth the fee?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Usually yes, if you can pay off the transferred balance before the promotional period ends and you won't continue adding to the balance. Compare: the transfer fee (typically 3–5% of the balance) vs. the interest you'd pay at your current APR over the promo period. If the interest savings exceed the fee, it's worth it. Make sure you understand what happens to remaining balances after the promo expires.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>Can I negotiate a lower interest rate?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Yes. Call the number on the back of your card and ask to speak with someone about your interest rate. Mention your payment history and loyalty as a customer. Studies suggest roughly 70% of cardholders who ask for a rate reduction receive one. The reduction may be temporary (6–12 months) or permanent. It's a five-minute call worth making.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>What happens if I only make minimum payments?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">At high APRs, minimum payments are designed to keep you in debt for a very long time. On a $5,000 balance at 22.99%, minimum payments can extend payoff to 20+ years and cost more in interest than the original balance. Your credit score won't suffer — you're technically current — but the financial cost is substantial. This calculator shows the exact numbers for your situation.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>Should I pay off my credit card or invest the extra money?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">At 20%+ APR, paying off credit card debt is almost always the better financial move. No investment reliably returns 20%+ annually. The only possible exception: if your employer offers a 401(k) match, contribute enough to capture the full match (a 50–100% guaranteed return) before aggressively paying down the card. After that, the high-rate card comes first.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>How does a cash advance affect interest?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Cash advances are almost always worse than regular purchases: they typically carry a higher APR (often 25–30%), there's no grace period so interest starts immediately from day one, and there's an upfront fee (usually 3–5% of the advance amount). Avoid cash advances from credit cards except in genuine emergencies.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>What is the grace period on a credit card?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">The grace period is the time between the end of your billing cycle and your payment due date — typically 21–25 days. If you pay your full statement balance during the grace period, no interest is charged on purchases. If you carry a balance, the grace period disappears and interest accrues on new purchases immediately from the transaction date.</div>
+  </div>
+
+  <div class="fqi">
+    <div class="fqq" onclick="this.parentElement.classList.toggle('open')">
+      <span>Does closing a paid-off credit card help or hurt?</span><span class="fqa-arrow">▾</span>
+    </div>
+    <div class="fqa">Closing a card generally hurts your credit score, at least short-term. It reduces your total available credit (increasing utilization if you carry balances on other cards) and can shorten your average account age. Unless the card has an annual fee you don't want to pay, keeping it open with a zero balance is usually better for your credit profile.</div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="rels">
+  <h2>Related Calculators</h2>
+  <div class="relg">
+    <a class="relc" href="/debt-payoff-calculator">💰 Debt Payoff Calculator</a>
+    <a class="relc" href="/personal-loan-calculator">🏦 Personal Loan Calculator</a>
+    <a class="relc" href="/budget-planner">📊 Budget Planner</a>
+    <a class="relc" href="/credit-score-calculator">📈 Credit Score Calculator</a>
+    <a class="relc" href="/debt-consolidation-calculator">🔄 Debt Consolidation</a>
+  </div>
+</div>
+
+<div style="max-width:980px;margin:0 auto 24px;padding:0 24px">
+<a href="/discount-calculator" style="display:inline-block;padding:10px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:14px;font-weight:500;margin:4px">🏷️ Discount Calculator</a>
+</div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+var mode = 'payment';
+var scheduleData = [];
+
+function switchMode(m) {
+  mode = m;
+  document.getElementById('tab-payment').classList.toggle('active', m === 'payment');
+  document.getElementById('tab-date').classList.toggle('active', m === 'date');
+  document.getElementById('mode-payment').classList.toggle('show', m === 'payment');
+  document.getElementById('mode-date').classList.toggle('show', m === 'date');
+}
+
+function fmt(n) {
+  return '$' + n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function calculate() {
+  var balance = parseFloat(document.getElementById('balance').value) || 0;
+  var apr = parseFloat(document.getElementById('apr').value) || 0;
+  var monthlyRate = apr / 100 / 12;
+
+  if (balance <= 0 || apr <= 0) return;
+
+  var payment, months;
+
+  if (mode === 'payment') {
+    payment = parseFloat(document.getElementById('monthly-payment').value) || 0;
+    var minPay = Math.max(25, balance * 0.02);
+    var warnEl = document.getElementById('min-warn');
+    if (payment <= monthlyRate * balance) {
+      warnEl.classList.add('show');
+      document.getElementById('res-months').textContent = '∞';
+      document.getElementById('qa-bar').innerHTML = '<strong>Warning:</strong> Your payment doesn\'t cover the monthly interest — the balance will never decrease.';
+      return;
+    } else {
+      warnEl.classList.remove('show');
+    }
+    // Calculate months
+    months = Math.ceil(Math.log(payment / (payment - monthlyRate * balance)) / Math.log(1 + monthlyRate));
+  } else {
+    months = parseInt(document.getElementById('target-months').value) || 0;
+    if (months <= 0) return;
+    // Calculate required payment
+    if (monthlyRate === 0) {
+      payment = balance / months;
+    } else {
+      payment = (balance * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+    }
+    document.getElementById('monthly-payment').value = payment.toFixed(2);
+  }
+
+  // Build schedule
+  scheduleData = [];
+  var bal = balance;
+  var totalInterest = 0;
+  for (var i = 1; i <= months && bal > 0; i++) {
+    var intCharge = bal * monthlyRate;
+    var actualPay = Math.min(payment, bal + intCharge);
+    var principal = actualPay - intCharge;
+    bal = Math.max(0, bal - principal);
+    totalInterest += intCharge;
+    scheduleData.push({month: i, payment: actualPay, principal: principal, interest: intCharge, balance: bal});
+  }
+
+  var totalPaid = balance + totalInterest;
+  var pct = (totalInterest / balance * 100).toFixed(1);
+
+  // Payoff date
+  var now = new Date();
+  var payoffDate = new Date(now.getFullYear(), now.getMonth() + months, 1);
+  var dateStr = payoffDate.toLocaleDateString('en-US', {month:'short', year:'numeric'});
+
+  // Update UI
+  var yrs = Math.floor(months / 12);
+  var mos = months % 12;
+  var timeStr = months < 12 ? months + ' months' : (yrs + 'y ' + (mos > 0 ? mos + 'm' : ''));
+  document.getElementById('res-months').textContent = timeStr;
+  document.getElementById('res-months-sub').textContent = 'to become debt-free';
+  document.getElementById('res-principal').textContent = fmt(balance);
+  document.getElementById('res-interest').textContent = fmt(totalInterest);
+  document.getElementById('res-total').textContent = fmt(totalPaid);
+  document.getElementById('res-payment').textContent = fmt(payment);
+  document.getElementById('res-apr').textContent = apr.toFixed(2) + '%';
+  document.getElementById('res-date').textContent = dateStr;
+  document.getElementById('res-pct').textContent = pct + '%';
+
+  var pPct = (balance / totalPaid * 100).toFixed(1);
+  var iPct = (totalInterest / totalPaid * 100).toFixed(1);
+  document.getElementById('bar-principal').style.width = pPct + '%';
+  document.getElementById('bar-interest').style.width = iPct + '%';
+
+  // Save message — show savings vs minimum payment
+  var minPayment = Math.max(25, balance * 0.02);
+  if (payment > minPayment + 5 && monthlyRate > 0) {
+    var minMonths = Math.ceil(Math.log(minPayment / (minPayment - monthlyRate * balance)) / Math.log(1 + monthlyRate));
+    var minInterest = 0, minBal = balance;
+    for (var j = 0; j < minMonths && minBal > 0; j++) {
+      var mi = minBal * monthlyRate;
+      var mp = Math.min(minPayment, minBal + mi);
+      minBal = Math.max(0, minBal - (mp - mi));
+      minInterest += mi;
+    }
+    var savedInterest = minInterest - totalInterest;
+    var savedMonths = minMonths - months;
+    if (savedInterest > 0 && savedMonths > 0) {
+      var saveEl = document.getElementById('save-msg');
+      saveEl.style.display = 'block';
+      saveEl.innerHTML = 'Vs. minimum payments: you save <strong>' + fmt(savedInterest) + ' in interest</strong> and pay off <strong>' + savedMonths + ' months sooner</strong>.';
+    }
+  }
+
+  // Update QA bar
+  document.getElementById('qa-bar').innerHTML = 'At ' + fmt(payment) + '/month, your <strong>' + fmt(balance) + '</strong> balance at <strong>' + apr + '% APR</strong> will be paid off in <strong>' + timeStr + '</strong> — total interest: <strong style="color:var(--danger)">' + fmt(totalInterest) + '</strong>.';
+
+  // Rebuild schedule table
+  buildSchedule();
+}
+
+function buildSchedule() {
+  var tbody = document.getElementById('sched-body');
+  tbody.innerHTML = '';
+  scheduleData.forEach(function(r) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = '<td>' + r.month + '</td><td>' + fmt(r.payment) + '</td><td class="p-cell">' + fmt(r.principal) + '</td><td class="i-cell">' + fmt(r.interest) + '</td><td>' + (r.balance < 0.005 ? '$0.00' : fmt(r.balance)) + '</td>';
+    tbody.appendChild(tr);
+  });
+}
+
+function toggleSchedule() {
+  var wrap = document.getElementById('sched-wrap');
+  var btn = document.getElementById('sched-btn');
+  var showing = wrap.classList.toggle('show');
+  btn.textContent = showing ? 'Hide Schedule' : 'Show Schedule';
+}
+
+// Auto-calculate on load
+calculate();
+
+// Live recalculate on input change
+['balance','apr','monthly-payment','target-months'].forEach(function(id) {
+  var el = document.getElementById(id);
+  if (el) el.addEventListener('input', calculate);
+});
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

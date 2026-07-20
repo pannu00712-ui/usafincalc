@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Value Calculator (2026) – Compound Growth Projection</title>
+    <meta name="description" content="Calculate the future value of an investment with compound interest, monthly contributions, and inflation adjustment. Plan your financial goals." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="future value calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/future-value-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Future Value Calculator (2026) – Compound Growth Projection" property="og:title"/>
+<meta content="Calculate the future value of an investment with compound interest, monthly contributions, and inflation adjustment. Plan your financial goals." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/future-value-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Future Value Calculator (2026) – Compound Growth Projection" name="twitter:title"/>
+<meta content="Calculate the future value of an investment with compound interest, monthly contributions, and inflation adjustment. Plan your financial goals." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-fill.principal {
+            background: var(--local);
+        }
+        .bar-fill.interest {
+            background: var(--accent);
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .timeline {
+            max-height: 200px;
+            overflow-y: auto;
+            font-family: var(--mono);
+            font-size: 12px;
+        }
+        .timeline::-webkit-scrollbar {
+            width: 6px;
+        }
+        .timeline::-webkit-scrollbar-track {
+            background: var(--bg3);
+            border-radius: 3px;
+        }
+        .timeline::-webkit-scrollbar-thumb {
+            background: var(--border2);
+            border-radius: 3px;
+        }
+        .timeline-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .timeline-row:last-child {
+            border-bottom: none;
+        }
+        .timeline-row .year {
+            color: var(--muted);
+        }
+        .timeline-row .value {
+            color: var(--text);
+        }
+        .timeline-row .highlight-value {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .timeline-row .nominal {
+            color: var(--muted);
+            font-size: 11px;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Future Value Calculator (2026) – Compound Growth Projection",
+  "url": "https://usafincalc.com/future-value-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Future Value Calculator (2026) – Compound Growth Projection",
+      "item": "https://usafincalc.com/future-value-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Future Value Calculator (2026) – Compound Growth Projection",
+  "description": "Calculate the future value of an investment with compound interest, monthly contributions, and inflation adjustment. Plan your financial goals.",
+  "url": "https://usafincalc.com/future-value-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the future value of an investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Future value is the amount of money an investment will grow to at a future date, assuming a specific rate of return and regular contributions. It includes the initial investment, all contributions, and all interest earned through compound growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good rate of return for future value calculations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A conservative assumption is 6-7% for a balanced portfolio of stocks and bonds. The historical average for the S&P 500 is about 10% (including dividends), but actual returns vary significantly by decade. For planning purposes, use 7-8% and adjust based on your risk tolerance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does compounding frequency affect future value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More frequent compounding (daily vs. monthly vs. yearly) results in slightly higher future values because interest is calculated and added more often. The difference is relatively small but can add up over long periods."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between nominal and real future value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nominal value is the actual dollar amount at a future date. Real value adjusts for inflation to show the purchasing power in today's dollars. Real value is more useful for planning because it reflects what you can actually buy with your savings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much do I need to save each month to reach my goal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the goal check feature in this calculator. Enter your target goal, and adjust the monthly contribution until the goal progress reaches 100%. This shows you the monthly savings needed to achieve your goal at your current rate of return."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the Rule of 72 and how does it relate to future value?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rule of 72 estimates how long it takes for your money to double at a given rate. Divide 72 by the rate of return to get the approximate doubling time. For example, at 8% return, money doubles every 9 years (72 ÷ 8 = 9). This shows why higher returns accelerate wealth building."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">F</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 investment growth</div>
+        <h1>Future Value <span>Calculator</span></h1>
+        <p class="hero-sub">Calculate the future value of your investments with compound interest, regular contributions, and inflation adjustment. Plan for retirement, college, or any financial goal.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Investment Details</div>
+
+                    <div class="field">
+                        <label for="fvInitial">Initial Investment</label>
+                        <div class="pfx"><span>$</span><input type="number" id="fvInitial" value="10000" min="0" step="500" oninput="calculateFV()" /></div>
+                        <div class="hint">Starting balance or lump sum.</div>
+                    </div>
+                    <div class="field">
+                        <label for="fvMonthly">Monthly Contribution</label>
+                        <div class="pfx"><span>$</span><input type="number" id="fvMonthly" value="500" min="0" step="50" oninput="calculateFV()" /></div>
+                        <div class="hint">Regular amount added each month.</div>
+                    </div>
+                    <div class="field">
+                        <label for="fvRate">Annual Return Rate</label>
+                        <div class="pct-suffix"><input type="number" id="fvRate" value="8" min="0" max="30" step="0.1" oninput="calculateFV()" /><span>%</span></div>
+                        <div class="hint">Expected average annual return.</div>
+                    </div>
+                    <div class="field">
+                        <label for="fvYears">Time Horizon (Years)</label>
+                        <input type="number" id="fvYears" value="20" min="1" max="80" step="1" oninput="calculateFV()" />
+                    </div>
+                    <div class="field">
+                        <label for="fvCompound">Compound Frequency</label>
+                        <select id="fvCompound" onchange="calculateFV()">
+                            <option value="365">Daily</option>
+                            <option value="12" selected>Monthly</option>
+                            <option value="4">Quarterly</option>
+                            <option value="2">Semi-Annually</option>
+                            <option value="1">Yearly</option>
+                        </select>
+                        <div class="hint">How often interest is compounded.</div>
+                    </div>
+                    <div class="field">
+                        <label for="fvInflation">Inflation Rate</label>
+                        <div class="pct-suffix"><input type="number" id="fvInflation" value="3" min="0" max="10" step="0.1" oninput="calculateFV()" /><span>%</span></div>
+                        <div class="hint">Average inflation to show real (inflation-adjusted) value.</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetFV()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('retirement')">Retirement</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('college')">College Savings</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('house')">House Down Payment</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="loadFVPreset('wealth')">Wealth Building</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Load common financial goal scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Future Value</div>
+                    <div class="res-main">
+                        <div class="res-label">Projected Future Value</div>
+                        <div class="res-val" id="fvResult">$0</div>
+                        <div class="res-sub" id="fvSub">in today's dollars</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Total Contributions</div><div class="bk-v" id="fvTotalContrib">$0</div></div>
+                        <div class="bk"><div class="bk-l">Total Interest Earned</div><div class="bk-v positive" id="fvTotalInterest">$0</div></div>
+                        <div class="bk"><div class="bk-l">Real Value (Inflation Adj.)</div><div class="bk-v" id="fvRealValue">$0</div></div>
+                        <div class="bk"><div class="bk-l">Growth %</div><div class="bk-v" id="fvGrowthPct">0%</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Goal Check</div>
+                    <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+                        <span style="font-size:13px;color:var(--muted);font-family:var(--mono);">Goal Progress</span>
+                        <span style="font-size:20px;font-weight:700;font-family:var(--mono);color:var(--accent);" id="goalProgress">100%</span>
+                    </div>
+                    <div class="bar-track" style="height:12px;">
+                        <div class="bar-fill" id="goalBar" style="width:100%;background:var(--accent);"></div>
+                    </div>
+                    <div style="margin-top:8px;">
+                        <span class="status-badge status-good" id="statusBadge">✅ On Track</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">You're meeting your goal.</span>
+                    </div>
+                    <div class="field" style="margin-top:10px;">
+                        <label for="fvGoal">Financial Goal</label>
+                        <div class="pfx"><span>$</span><input type="number" id="fvGoal" value="100000" min="0" step="5000" oninput="calculateFV()" /></div>
+                        <div class="hint">Your target savings goal.</div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Balance Over Time</div>
+                    <div id="fvTimeline" class="timeline">
+                        <div class="timeline-row"><span class="year">Year 0</span><span class="value">$10,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 5</span><span class="value">$46,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 10</span><span class="value">$110,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 15</span><span class="value">$225,000</span></div>
+                        <div class="timeline-row"><span class="year">Year 20</span><span class="highlight-value">$1,234,567</span></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Contributions vs. Interest</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Where Your Money Comes From</div>
+                        <div id="fvChart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ This calculator provides projections based on assumptions. Actual returns vary, and past performance doesn't guarantee future results. Inflation, taxes, and fees will affect your real returns.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>Understanding Future Value</h2>
+        <p>Future Value (FV) is the value of an investment at a specific date in the future, assuming a certain rate of return and regular contributions. It's the most important concept in personal finance because it shows you what your money can become through the power of compound growth.</p>
+        <p>This Future Value Calculator helps you project your savings growth, plan for major financial goals, and understand the impact of your investment decisions. Whether you're saving for retirement, a child's education, or a down payment on a home, understanding future value is essential for effective financial planning.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> If you invest $10,000 today and add $500/month at 8% annual return for 20 years, you'll have over $375,000. Of that, $130,000 is from your contributions and $245,000 is from compound growth—showing why starting early matters.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator uses the future value of a series formula with compound interest:</p>
+        <p><strong>FV = P × (1 + r/n)<sup>nt</sup> + PMT × [((1 + r/n)<sup>nt</sup> - 1) / (r/n)]</strong></p>
+        <p>Where:</p>
+        <ul>
+            <li><strong>P</strong> = Initial investment</li>
+            <li><strong>r</strong> = Annual rate of return (decimal)</li>
+            <li><strong>n</strong> = Number of compounding periods per year</li>
+            <li><strong>t</strong> = Time in years</li>
+            <li><strong>PMT</strong> = Monthly contribution</li>
+        </ul>
+        <p>The calculator also adjusts for inflation to show your balance in today's purchasing power, which is more meaningful than nominal dollars.</p>
+
+        <h2>The Power of Compound Interest</h2>
+        <p>Compound interest is the interest earned on both your principal and previously earned interest. This creates exponential growth over time. Here's the difference it makes:</p>
+        <table>
+            <thead>
+                <tr><th>Time</th><th>Simple Interest</th><th>Compound Interest (8%)</th><th>Difference</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10 Years</td><td>$18,000</td><td>$21,589</td><td>+20%</td></tr>
+                <tr><td>20 Years</td><td>$26,000</td><td>$46,610</td><td>+79%</td></tr>
+                <tr><td>30 Years</td><td>$34,000</td><td>$100,627</td><td>+196%</td></tr>
+                <tr><td>40 Years</td><td>$42,000</td><td>$217,245</td><td>+417%</td></tr>
+            </tbody>
+        </table>
+        <p>This table shows a $10,000 investment with no additional contributions. The difference between simple and compound interest grows dramatically over time.</p>
+
+        <h2>Monthly Contributions: Your Secret Weapon</h2>
+        <p>Regular monthly contributions are one of the most effective wealth-building strategies. Here's how $500/month grows at 8% over different time periods:</p>
+        <table>
+            <thead>
+                <tr><th>Time</th><th>Total Contributions</th><th>Future Value</th><th>Growth</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10 Years</td><td>$60,000</td><td>$91,400</td><td>+52%</td></tr>
+                <tr><td>20 Years</td><td>$120,000</td><td>$285,000</td><td>+138%</td></tr>
+                <tr><td>30 Years</td><td>$180,000</td><td>$745,000</td><td>+314%</td></tr>
+                <tr><td>40 Years</td><td>$240,000</td><td>$1,876,000</td><td>+682%</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Inflation: The Silent Eroder</h2>
+        <p>Inflation reduces the purchasing power of your money over time. This calculator adjusts for inflation so you can see your <strong>real return</strong>—the growth after accounting for rising prices.</p>
+        <p>At 3% inflation, a 8% nominal return becomes about 5% real return. Over 30 years, $1 million in nominal dollars is worth only about $412,000 in today's purchasing power. That's why it's crucial to invest for growth, not just save cash.</p>
+
+        <h2>Investment Strategies for Maximum Growth</h2>
+        <div class="two-col">
+            <div>
+                <h3>Start Early</h3>
+                <p>The most important factor in compound growth is time. A 25-year-old investing $500/month until age 65 at 8% will have about $1.6 million. A 35-year-old investing $1,000/month until age 65 will have about $1.3 million. Starting earlier allows lower contributions to achieve the same result.</p>
+            </div>
+            <div>
+                <h3>Increase Contributions Over Time</h3>
+                <p>As your income grows, increase your contributions. Even a 1% annual increase in your contribution rate can add hundreds of thousands to your final balance over a career.</p>
+            </div>
+        </div>
+        <div class="two-col">
+            <div>
+                <h3>Stay Invested During Market Downturns</h3>
+                <p>Market volatility is normal. Selling during downturns locks in losses. Staying invested allows you to benefit from recoveries and continued compound growth.</p>
+            </div>
+            <div>
+                <h3>Diversify Your Investments</h3>
+                <p>A diversified portfolio of stocks, bonds, and other assets historically provides the best risk-adjusted returns. Index funds and ETFs are cost-effective ways to achieve diversification.</p>
+            </div>
+        </div>
+
+        <h2>Common Future Value Mistakes</h2>
+        <ul>
+            <li><strong>Starting too late:</strong> The biggest mistake is delaying investing. Even small amounts early beat large amounts later.</li>
+            <li><strong>Withdrawing early:</strong> Early withdrawals not only lose potential growth but may also incur penalties and taxes.</li>
+            <li><strong>Chasing high returns:</strong> High returns often come with high risk. Focus on sustainable, risk-adjusted returns.</li>
+            <li><strong>Ignoring fees:</strong> High expense ratios and management fees can significantly eat into returns over decades.</li>
+            <li><strong>Not adjusting for inflation:</strong> A million dollars sounds like a lot, but in 30 years at 3% inflation, it's worth only $412,000 in today's dollars.</li>
+        </ul>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the future value of an investment?</div>
+            <div class="faq-a">Future value is the amount of money an investment will grow to at a future date, assuming a specific rate of return and regular contributions. It includes the initial investment, all contributions, and all interest earned through compound growth.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is a good rate of return for future value calculations?</div>
+            <div class="faq-a">A conservative assumption is 6-7% for a balanced portfolio of stocks and bonds. The historical average for the S&P 500 is about 10% (including dividends), but actual returns vary significantly by decade. For planning purposes, use 7-8% and adjust based on your risk tolerance.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How does compounding frequency affect future value?</div>
+            <div class="faq-a">More frequent compounding (daily vs. monthly vs. yearly) results in slightly higher future values because interest is calculated and added more often. The difference is relatively small but can add up over long periods.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between nominal and real future value?</div>
+            <div class="faq-a">Nominal value is the actual dollar amount at a future date. Real value adjusts for inflation to show the purchasing power in today's dollars. Real value is more useful for planning because it reflects what you can actually buy with your savings.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How much do I need to save each month to reach my goal?</div>
+            <div class="faq-a">Use the goal check feature in this calculator. Enter your target goal, and adjust the monthly contribution until the goal progress reaches 100%. This shows you the monthly savings needed to achieve your goal at your current rate of return.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the Rule of 72 and how does it relate to future value?</div>
+            <div class="faq-a">The Rule of 72 estimates how long it takes for your money to double at a given rate. Divide 72 by the rate of return to get the approximate doubling time. For example, at 8% return, money doubles every 9 years (72 ÷ 8 = 9). This shows why higher returns accelerate wealth building.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Compound Interest Calculator</a></li>
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Investment Calculator</a></li>
+            <li><a href="#">Rule of 72 Calculator</a></li>
+            <li><a href="#">Inflation Calculator</a></li>
+            <li><a href="#">Savings Goal Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const fvInitial = $('fvInitial');
+        const fvMonthly = $('fvMonthly');
+        const fvRate = $('fvRate');
+        const fvYears = $('fvYears');
+        const fvCompound = $('fvCompound');
+        const fvInflation = $('fvInflation');
+        const fvGoal = $('fvGoal');
+
+        const fvResult = $('fvResult');
+        const fvSub = $('fvSub');
+        const fvTotalContrib = $('fvTotalContrib');
+        const fvTotalInterest = $('fvTotalInterest');
+        const fvRealValue = $('fvRealValue');
+        const fvGrowthPct = $('fvGrowthPct');
+        const fvTimeline = $('fvTimeline');
+        const fvChart = $('fvChart');
+        const goalProgress = $('goalProgress');
+        const goalBar = $('goalBar');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- main calculation -----
+        function calculateFV() {
+            const initial = getVal(fvInitial);
+            const monthly = getVal(fvMonthly);
+            const rate = getVal(fvRate) / 100;
+            const years = getVal(fvYears);
+            const compoundPerYear = parseInt(fvCompound.value) || 12;
+            const inflation = getVal(fvInflation) / 100;
+            const goal = getVal(fvGoal);
+
+            const periods = years * compoundPerYear;
+            const periodRate = rate / compoundPerYear;
+            const monthlyPerPeriod = monthly * (12 / compoundPerYear);
+
+            let fv = 0;
+            if (periods > 0 && periodRate > 0) {
+                fv = initial * Math.pow(1 + periodRate, periods) +
+                    monthlyPerPeriod * ((Math.pow(1 + periodRate, periods) - 1) / periodRate);
+            } else if (periods > 0) {
+                fv = initial + monthly * 12 * years;
+            } else {
+                fv = initial;
+            }
+
+            const totalContrib = initial + monthly * 12 * years;
+            const totalInterest = fv - totalContrib;
+            const realValue = fv / Math.pow(1 + inflation, years);
+            const growthPct = totalContrib > 0 ? (totalInterest / totalContrib) * 100 : 0;
+
+            // Update results
+            fvResult.textContent = fmt(realValue);
+            fvSub.textContent = `in today's dollars (nominal: ${fmt(fv)})`;
+
+            fvTotalContrib.textContent = fmt(totalContrib);
+            fvTotalInterest.textContent = fmt(totalInterest);
+            fvTotalInterest.className = 'bk-v ' + (totalInterest >= 0 ? 'positive' : 'negative');
+            fvRealValue.textContent = fmt(realValue);
+            fvRealValue.className = 'bk-v ' + (realValue >= totalContrib ? 'positive' : 'negative');
+            fvGrowthPct.textContent = (growthPct >= 0 ? '+' : '') + growthPct.toFixed(1) + '%';
+            fvGrowthPct.className = 'bk-v ' + (growthPct >= 0 ? 'positive' : 'negative');
+
+            // Goal progress
+            const progress = goal > 0 ? Math.min(100, (realValue / goal) * 100) : 0;
+            goalProgress.textContent = progress.toFixed(0) + '%';
+            goalBar.style.width = progress + '%';
+            goalBar.style.background = progress >= 100 ? 'var(--accent)' : (progress >= 70 ? 'var(--state)' : 'var(--fed)');
+
+            if (progress >= 100) {
+                statusBadge.textContent = '✅ Goal Met!';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `You've reached your goal of ${fmt(goal)}!`;
+            } else if (progress >= 70) {
+                statusBadge.textContent = '📊 On Track';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `You're ${progress.toFixed(0)}% toward your goal. Keep going!`;
+            } else if (progress >= 40) {
+                statusBadge.textContent = '⏳ Making Progress';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = `You're ${progress.toFixed(0)}% toward your goal. Consider increasing contributions.`;
+            } else {
+                statusBadge.textContent = '📈 Getting Started';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `You're ${progress.toFixed(0)}% toward your goal. Start early and stay consistent.`;
+            }
+
+            // Timeline
+            const steps = Math.min(10, Math.max(3, Math.floor(years / 5)));
+            const stepSize = Math.ceil(years / steps);
+            let timelineHtml = '';
+            for (let i = 0; i <= steps; i++) {
+                const y = Math.min(i * stepSize, years);
+                const p = y * compoundPerYear;
+                let bal = 0;
+                if (p > 0 && periodRate > 0) {
+                    bal = initial * Math.pow(1 + periodRate, p) +
+                        monthlyPerPeriod * ((Math.pow(1 + periodRate, p) - 1) / periodRate);
+                } else if (p > 0) {
+                    bal = initial + monthly * 12 * y;
+                } else {
+                    bal = initial;
+                }
+                const realBal = bal / Math.pow(1 + inflation, y);
+                const isLast = y === years;
+                const isHighlight = isLast;
+                timelineHtml += `<div class="timeline-row" style="${!isLast ? 'border-bottom:1px solid var(--border);' : ''}">
+                    <span class="year">Year ${y}</span>
+                    <span class="${isHighlight ? 'highlight-value' : 'value'}">${fmt(realBal)}</span>
+                    ${isLast ? `<span class="nominal">(${fmt(bal)} nominal)</span>` : ''}
+                </div>`;
+            }
+            fvTimeline.innerHTML = timelineHtml;
+
+            // Chart
+            const maxVal = Math.max(fv, totalContrib, 1);
+            const contribPct = (totalContrib / maxVal) * 100;
+            const interestPct = (totalInterest / maxVal) * 100;
+
+            fvChart.innerHTML = `
+                <div style="margin-bottom:6px;">
+                    <div class="bar-label"><span>Your Contributions</span><span>${fmt(totalContrib)}</span></div>
+                    <div class="bar-track"><div class="bar-fill principal" style="width:${contribPct}%;"></div></div>
+                </div>
+                <div>
+                    <div class="bar-label"><span>Interest &amp; Growth</span><span>${fmt(totalInterest)}</span></div>
+                    <div class="bar-track"><div class="bar-fill interest" style="width:${interestPct}%;"></div></div>
+                </div>
+                <div class="hint" style="margin-top:6px;">Interest accounts for ${(totalInterest / fv * 100 || 0).toFixed(1)}% of your final balance.</div>
+            `;
+        }
+
+        // ----- presets -----
+        function loadFVPreset(key) {
+            switch (key) {
+                case 'retirement':
+                    fvInitial.value = '25000';
+                    fvMonthly.value = '1000';
+                    fvRate.value = '8';
+                    fvYears.value = '30';
+                    fvCompound.value = '12';
+                    fvInflation.value = '3';
+                    fvGoal.value = '1000000';
+                    break;
+                case 'college':
+                    fvInitial.value = '5000';
+                    fvMonthly.value = '300';
+                    fvRate.value = '6';
+                    fvYears.value = '18';
+                    fvCompound.value = '12';
+                    fvInflation.value = '3';
+                    fvGoal.value = '150000';
+                    break;
+                case 'house':
+                    fvInitial.value = '10000';
+                    fvMonthly.value = '500';
+                    fvRate.value = '7';
+                    fvYears.value = '5';
+                    fvCompound.value = '12';
+                    fvInflation.value = '3';
+                    fvGoal.value = '50000';
+                    break;
+                case 'wealth':
+                    fvInitial.value = '100000';
+                    fvMonthly.value = '2000';
+                    fvRate.value = '10';
+                    fvYears.value = '20';
+                    fvCompound.value = '12';
+                    fvInflation.value = '3';
+                    fvGoal.value = '2000000';
+                    break;
+                default:
+                    return;
+            }
+            calculateFV();
+        }
+        window.loadFVPreset = loadFVPreset;
+
+        // ----- reset -----
+        function resetFV() {
+            fvInitial.value = '10000';
+            fvMonthly.value = '500';
+            fvRate.value = '8';
+            fvYears.value = '20';
+            fvCompound.value = '12';
+            fvInflation.value = '3';
+            fvGoal.value = '100000';
+            calculateFV();
+        }
+        window.resetFV = resetFV;
+
+        // ----- event listeners -----
+        const inputs = [fvInitial, fvMonthly, fvRate, fvYears, fvCompound, fvInflation, fvGoal];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculateFV);
+            el.addEventListener('change', calculateFV);
+        });
+
+        // ----- init -----
+        calculateFV();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

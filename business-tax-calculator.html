@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="business tax calculator USA, small business tax estimator, corporate tax calculator" name="keywords"/>
+<title>Business Tax Calculator 2026 — Self-Employment, LLC &amp; S-Corp Tax | USAFinCalc</title>
+<meta content="Calculate your 2026 self-employment tax, LLC pass-through tax, S-Corp tax savings, QBI deduction, and quarterly estimated payments. For freelancers, sole proprietors, and small business owners." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="https://usafincalc.com/business-tax-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--cyan:#06b6d4;--amber:#f59e0b;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+.fc-panel a{color:var(--blue);text-decoration:none}.fc-panel a:hover{text-decoration:underline}
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(245,158,11,0.1);color:var(--amber);border:1px solid rgba(245,158,11,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;white-space:nowrap}
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:700px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+/* ENTITY TABS */
+.fc-entity-tabs{display:flex;gap:8px;max-width:940px;margin:0 auto 16px;padding:0 24px;flex-wrap:wrap}
+.fc-entity-tab{padding:8px 18px;border:1px solid var(--border);border-radius:20px;background:var(--panel);font-size:13px;font-weight:600;color:var(--text2);cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-entity-tab:hover{border-color:var(--amber);color:var(--amber)}
+.fc-entity-tab.active{border-color:var(--amber);color:var(--amber);background:rgba(245,158,11,0.08)}
+.fc-entity-desc{max-width:940px;margin:0 auto 16px;padding:0 24px}
+.fc-entity-badge{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--text2)}
+.fc-entity-badge strong{color:var(--amber)}
+/* LAYOUT */
+.fc-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:940px;margin:0 auto 20px;padding:0 24px}
+@media(max-width:700px){.fc-calc-wrap{grid-template-columns:1fr}}
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--amber));display:block;box-shadow:0 0 8px var(--dot-color,var(--amber))}
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-label:first-child{margin-top:0}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace;pointer-events:none}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 28px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--amber)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;font-family:'Space Grotesk',sans-serif}
+.fc-select:focus{border-color:var(--amber)}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#d97706);color:#050810;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(245,158,11,0.4)}
+.fc-divider{height:1px;background:var(--border);margin:16px 0}
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:14px}
+.fc-detail-row:last-child{border-bottom:none}
+.fc-detail-row.total-row{border-top:1px solid var(--border);margin-top:4px;padding-top:12px}
+.fc-detail-key{color:var(--text2)}
+.fc-detail-val{font-family:'JetBrains Mono',monospace;font-size:15px;font-weight:600}
+/* RESULT HERO */
+.fc-result-hero{text-align:center;padding:18px 0 14px}
+.fc-result-label{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.fc-result-amount{font-size:44px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1}
+/* QUARTERLY BOX */
+.fc-quarterly{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.fc-q-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.fc-q-label{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);margin-bottom:4px}
+.fc-q-date{font-size:11px;color:var(--text3);margin-bottom:4px}
+.fc-q-val{font-size:17px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--amber)}
+/* SAVINGS BOX */
+.fc-savings-box{background:rgba(34,211,165,0.06);border:1px solid rgba(34,211,165,0.2);border-radius:10px;padding:14px 16px;margin-top:14px}
+.fc-savings-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--green);margin-bottom:8px}
+/* INFO BOX */
+.fc-info-box{background:rgba(167,139,250,0.06);border:1px solid rgba(167,139,250,0.2);border-radius:10px;padding:14px 16px;font-size:13px;color:var(--text2);line-height:1.65;margin-top:14px}
+.fc-info-box strong{color:var(--purple)}
+/* DEDUCTIONS TABLE */
+.fc-deductions-wrap{max-width:940px;margin:0 auto 20px;padding:0 24px}
+.fc-deduct-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.fc-deduct-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;align-items:flex-start;gap:12px}
+.fc-deduct-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.fc-deduct-name{font-size:13px;font-weight:600;color:var(--text)}
+.fc-deduct-desc{font-size:11px;color:var(--text3);margin-top:2px}
+/* FAQ */
+.fc-faq-wrap{max-width:740px;margin:0 auto 60px;padding:0 24px}
+.fc-faq-title{font-size:20px;font-weight:700;margin-bottom:20px}
+.fc-faq-item{border-bottom:1px solid var(--border)}
+.fc-faq-q{display:flex;justify-content:space-between;align-items:center;padding:16px 0;cursor:pointer;font-size:15px;font-weight:500;user-select:none}
+.fc-faq-q::after{content:'+';font-size:20px;color:var(--text3);transition:.2s}
+.fc-faq-item.open .fc-faq-q::after{transform:rotate(45deg);color:var(--amber)}
+.fc-faq-a{max-height:0;overflow:hidden;transition:.3s;font-size:14px;color:var(--text2);line-height:1.8}
+.fc-faq-item.open .fc-faq-a{max-height:300px;padding-bottom:16px}
+.fc-related{max-width:940px;margin:0 auto 60px;padding:0 24px}
+.fc-related-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:14px}
+.fc-related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.fc-related-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column;gap:4px}
+.fc-related-card:hover{border-color:rgba(59,158,255,0.3);transform:translateY(-2px);text-decoration:none}
+.fc-related-icon{font-size:20px;margin-bottom:4px}
+.fc-related-name{font-size:13px;font-weight:600;color:var(--text)}
+.fc-related-desc{font-size:11px;color:var(--text3)}
+footer{background:var(--panel);border-top:1px solid var(--border);padding:32px 24px}
+.fc-footer-inner{max-width:940px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.fc-footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.fc-footer-links a{color:var(--text3);font-size:13px;text-decoration:none}
+.fc-footer-links a:hover{color:var(--text2)}
+.fc-footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;padding-top:16px;border-top:1px solid var(--border)}
+.fc-footer-copy{font-size:12px;color:var(--text3)}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="Business Tax Calculator 2026 — Self-Employment, LLC &amp; S-Corp Tax | USAFinCalc" property="og:title"/>
+<meta content="Calculate your 2026 self-employment tax, LLC pass-through tax, S-Corp tax savings, QBI deduction, and quarterly estimated payments. For freelancers, sole proprietors, and small business owners." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/business-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Business Tax Calculator 2026 — Self-Employment, LLC &amp; S-Corp Tax" name="twitter:title"/>
+<meta content="Calculate your 2026 self-employment tax, LLC pass-through tax, S-Corp tax savings, QBI deduction, and quarterly estimated payments. For freelancers, s" name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Business Tax Calculator 2026 — Self-Employment, LLC &amp; S-Corp Tax | USAFinCalc",
+  "url": "https://usafincalc.com/business-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tax Calculators",
+      "item": "https://usafincalc.com/tax-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Business Tax Calculator",
+      "item": "https://usafincalc.com/business-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "Business Tax Calculator 2026 — Self-Employment, LLC &amp; S-Corp Tax | USAFinCalc",
+  "url": "https://usafincalc.com/business-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero">
+<div class="fc-page-badge" style="background:rgba(245,158,11,0.1);color:#f59e0b;border-color:rgba(245,158,11,0.25)">Self-Employment · LLC · S-Corp · Sole Proprietor</div>
+<h1>Business Tax <span style="color:#f59e0b">Calculator 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Calculate self-employment tax, QBI deduction, quarterly estimated payments, and see if an S-Corp election could save you thousands. For freelancers, consultants, and small business owners.</p>
+</div>
+<!-- ENTITY TYPE TABS -->
+<div class="fc-entity-tabs">
+<button class="fc-entity-tab active" id="tab-sole" onclick="setEntity('sole')">👤 Sole Proprietor / Freelancer</button>
+<button class="fc-entity-tab" id="tab-llc" onclick="setEntity('llc')">🏢 Single-Member LLC</button>
+<button class="fc-entity-tab" id="tab-scorp" onclick="setEntity('scorp')">📈 S-Corporation</button>
+<button class="fc-entity-tab" id="tab-partner" onclick="setEntity('partner')">🤝 Partnership / Multi-Member LLC</button>
+</div>
+<div class="fc-entity-desc">
+<div class="fc-entity-badge" id="entityDesc">
+<strong>Sole Proprietor / Freelancer:</strong> Report income on Schedule C. Pay self-employment tax (15.3%) on net profit + ordinary income tax. QBI deduction of 20% may apply. No corporate structure needed.
+  </div>
+</div>
+<!-- MAIN CALC -->
+<div class="fc-calc-wrap">
+<!-- INPUT -->
+<div class="fc-panel">
+<div class="fc-panel-title">💼 Business Income &amp; Expenses</div>
+<label for="revenue" class="fc-label">Gross Business Revenue</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="revenue" min="0" oninput="calc()" type="number" value="120000"/>
+</div>
+<label for="expenses" class="fc-label">Total Business Expenses</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="expenses" min="0" oninput="calc()" type="number" value="25000"/>
+</div>
+<div id="scorp-salary-wrap" style="display:none">
+<label for="scorp-salary" class="fc-label">S-Corp Reasonable Salary</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="scorp-salary" min="0" oninput="calc()" type="number" value="60000"/>
+</div>
+<div style="font-size:11px;color:var(--text3);margin-top:4px">Must be "reasonable compensation" for your work. Payroll taxes apply only to salary, not to distributions.</div>
+</div>
+<label for="filing" class="fc-label">Filing Status</label>
+<select class="fc-select" id="filing" onchange="calc()">
+<option value="single">Single</option>
+<option selected="" value="married">Married Filing Jointly</option>
+<option value="hoh">Head of Household</option>
+</select>
+<label for="otherIncome" class="fc-label">Other Household W-2 Income</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="otherIncome" min="0" oninput="calc()" type="number" value="0"/>
+</div>
+<label for="homeOffice" class="fc-label">Home Office Deduction</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="homeOffice" min="0" oninput="calc()" placeholder="0 — optional" type="number" value="0"/>
+</div>
+<label for="retirement" class="fc-label">Retirement Contributions (SEP-IRA, Solo 401k)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="retirement" min="0" oninput="calc()" placeholder="0 — optional" type="number" value="0"/>
+</div>
+<label for="healthIns" class="fc-label">Health Insurance Premiums (self-employed)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="healthIns" min="0" oninput="calc()" placeholder="0 — optional" type="number" value="0"/>
+</div>
+<label for="stateRate" class="fc-label">State Tax Rate</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">%</span>
+<input class="fc-input" id="stateRate" max="15" min="0" oninput="calc()" step="0.1" style="padding-left:32px" type="number" value="5"/>
+</div>
+<button class="fc-btn" onclick="calc()">Calculate Business Tax →</button>
+</div>
+<!-- RESULTS -->
+<div class="fc-panel">
+<div class="fc-panel-title" style="--dot-color:var(--green)">Tax Breakdown</div>
+<div class="fc-result-hero">
+<div class="fc-result-label">Total Tax Owed</div>
+<div class="fc-result-amount" id="totalTax" style="color:var(--red)">—</div>
+<div id="effectiveRateLabel" style="font-size:12px;color:var(--text3);margin-top:6px">—</div>
+</div>
+<div class="fc-divider"></div>
+<div id="taxBreakdown"></div>
+<div class="fc-divider"></div>
+<div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:12px">📅 Quarterly Estimated Payments</div>
+<div class="fc-quarterly" id="quarterly"></div>
+<div id="scorpSavingsBox" style="display:none"></div>
+<div id="infoBox"></div>
+</div>
+</div>
+<!-- COMMON DEDUCTIONS -->
+<div class="fc-deductions-wrap">
+<div style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);margin-bottom:12px;display:flex;align-items:center;gap:8px"><span style="width:6px;height:6px;border-radius:50%;background:var(--amber);display:inline-block"></span>Top Self-Employment Deductions (Don't Miss These)</div>
+<div class="fc-deduct-grid">
+<div class="fc-deduct-card"><div class="fc-deduct-icon">🏠</div><div><div class="fc-deduct-name">Home Office</div><div class="fc-deduct-desc">$5/sq ft simplified method or actual expenses. Dedicated workspace required.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">🚗</div><div><div class="fc-deduct-name">Vehicle / Mileage</div><div class="fc-deduct-desc">2026 IRS rate: 70¢/mile for business. Or deduct actual vehicle expenses.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">💻</div><div><div class="fc-deduct-name">Equipment &amp; Software</div><div class="fc-deduct-desc">100% deductible via Section 179 in the year purchased.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">🏥</div><div><div class="fc-deduct-name">Health Insurance</div><div class="fc-deduct-desc">Self-employed health insurance premiums 100% deductible above-the-line.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">📱</div><div><div class="fc-deduct-name">Phone &amp; Internet</div><div class="fc-deduct-desc">Business-use percentage of your phone and internet bills.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">📚</div><div><div class="fc-deduct-name">Education &amp; Training</div><div class="fc-deduct-desc">Courses, books, and conferences directly related to your business.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">🤝</div><div><div class="fc-deduct-name">Professional Services</div><div class="fc-deduct-desc">Accountant, attorney, and consultant fees for your business.</div></div></div>
+<div class="fc-deduct-card"><div class="fc-deduct-icon">💰</div><div><div class="fc-deduct-name">SEP-IRA / Solo 401(k)</div><div class="fc-deduct-desc">Contribute up to 25% of net self-employment income, max $70,000 in 2026.</div></div></div>
+</div>
+</div>
+<!-- FAQ -->
+<div class="fc-faq-wrap">
+<div class="fc-faq-title">Business Tax FAQs 2026</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is the self-employment tax rate for 2026?</div>
+<div class="fc-faq-a">Self-employment (SE) tax is <strong>15.3%</strong> on net self-employment income up to $184,500 (Social Security wage base) and <strong>2.9%</strong> on anything above. It consists of 12.4% Social Security + 2.9% Medicare. You can deduct 50% of SE tax paid on your income tax return. High earners (over $200K single / $250K MFJ) also owe 0.9% Additional Medicare Tax.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">What is the QBI deduction and do I qualify?</div>
+<div class="fc-faq-a">The <strong>Qualified Business Income (QBI) deduction</strong> (Section 199A) allows eligible self-employed taxpayers to deduct up to <strong>20% of qualified business income</strong> from taxable income. Most sole proprietors, LLCs, S-Corps, and partnerships qualify — <em>except</em> certain "specified service trades" (law, accounting, consulting, health, financial services) once income exceeds phase-out thresholds ($197,300 single / $394,600 MFJ in 2026).</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">When are quarterly estimated taxes due in 2026?</div>
+<div class="fc-faq-a">Q1: <strong>April 15, 2026</strong> | Q2: <strong>June 16, 2026</strong> | Q3: <strong>September 15, 2026</strong> | Q4: <strong>January 15, 2026</strong>. You must pay at least 90% of the current year's tax or 100% of last year's tax (110% if AGI &gt; $150K) to avoid underpayment penalties.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Should I form an S-Corp to save on self-employment tax?</div>
+<div class="fc-faq-a">S-Corps can save thousands by splitting income between a "reasonable salary" (subject to payroll taxes) and "distributions" (no SE tax). It's typically worthwhile once your net profit exceeds <strong>$50,000–$80,000/year</strong>. Costs include: S-Corp state fees ($300–$2,000+/year), payroll administration, and additional accounting. Run the numbers with this calculator before deciding.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q" onclick="this.parentElement.classList.toggle('open')">Does an LLC protect me from self-employment tax?</div>
+<div class="fc-faq-a">No — by default, a single-member LLC is a "disregarded entity" taxed exactly like a sole proprietorship. You still pay full SE tax on all net profit. To reduce SE tax, the LLC must elect S-Corp tax treatment (requires filing IRS Form 2553) or pay owners as W-2 employees with a corporate entity structure.</div>
+</div>
+</div>
+<!-- RELATED -->
+<div class="fc-related">
+<div class="fc-related-title">Related Calculators</div>
+<div class="fc-related-grid">
+<a class="fc-related-card" href="/tax-calculator-usa"><div class="fc-related-icon">🧾</div><div class="fc-related-name">Federal Tax Calculator</div><div class="fc-related-desc">Total income tax estimate</div></a>
+<a class="fc-related-card" href="/hsa-calculator"><div class="fc-related-icon">🏥</div><div class="fc-related-name">HSA Calculator</div><div class="fc-related-desc">Triple tax advantage savings</div></a>
+<a class="fc-related-card" href="/budget-planner"><div class="fc-related-icon">📊</div><div class="fc-related-name">Budget Planner</div><div class="fc-related-desc">Plan your business cashflow</div></a>
+<a class="fc-related-card" href="/crypto-tax-calculator"><div class="fc-related-icon">₿</div><div class="fc-related-name">Crypto Tax Calculator</div><div class="fc-related-desc">Capital gains on crypto</div></a>
+</div>
+</div>
+</section>
+<section class="related-section" style="max-width:980px;margin:0 auto;padding:0 24px 24px;">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="business-tax-guide" style="max-width:980px;margin:0 auto;padding:0 24px 60px;">
+<h2>What This Business Tax Calculator Does</h2>
+<p>This calculator estimates the federal income tax liability for small business owners, including the Qualified Business Income (QBI) deduction (Section 199A), which allows eligible pass-through businesses to deduct up to 20% of qualified business income. It handles sole proprietors, single-member LLCs, partnerships, S-Corps, and other pass-through entities where business income flows to the owner's personal return.</p>
+<h2>How Small Business Income Is Taxed</h2>
+<p>Most small businesses in the US are pass-through entities: sole proprietorships (Schedule C), partnerships, S-Corporations, and LLCs taxed as any of these. Business income passes through to the owner's personal tax return and is taxed at individual rates. This is different from C-Corporations, which pay a flat 21% federal corporate tax rate on profits before any distribution.</p>
+<h2>The QBI Deduction (Section 199A)</h2>
+<p>Pass-through business owners can deduct up to 20% of qualified business income (QBI), potentially reducing the effective tax rate significantly. For a business owner in the 24% bracket with $100,000 in QBI, the deduction reduces taxable income by $20,000, saving $4,800 in income tax (24% × $20,000).</p>
+<p>The deduction has income limitations and phase-outs, and certain "specified service trades or businesses" (SSTB) — law, finance, health, consulting, and similar fields — face additional restrictions at higher income levels. For 2024, the deduction phase-out for SSTBs begins at $182,050 (single) and $364,200 (married).</p>
+<h2>S-Corp Tax Strategy</h2>
+<p>A common strategy for higher-earning self-employed individuals: elect S-Corp status, pay yourself a "reasonable" salary (subject to full payroll taxes), and take additional business income as a distribution (not subject to self-employment tax). The strategy saves on SE tax but adds complexity: payroll setup, quarterly payroll deposits, W-2 filing, corporate return (Form 1120-S), and potentially state fees. The math usually pencils out above $60,000–$80,000 in net business income.</p>
+<h2>Key Deductible Business Expenses</h2>
+<ul>
+<li>Home office (actual expense or $5/sq ft simplified, max $1,500)</li>
+<li>Vehicle: business mileage at $0.67/mile (2024) or actual expense method</li>
+<li>Equipment and technology (may qualify for immediate expensing under Section 179)</li>
+<li>Professional development, continuing education, subscriptions</li>
+<li>Health insurance premiums (deducted as an adjustment to income)</li>
+<li>Retirement contributions (Solo 401k, SEP-IRA)</li>
+<li>Business insurance, software, advertising, professional fees</li>
+</ul>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Open a Solo 401(k) if self-employed with no employees</strong> — you can contribute as both employee ($23,000) and employer (up to 25% of net SE income), with a combined limit of $69,000 in 2024.</li>
+<li><strong>Maintain meticulous records</strong> — business deductions require documentation. Use dedicated business accounts and credit cards; keep all receipts.</li>
+<li><strong>Consider quarterly estimated payments</strong> — business income has no withholding. Underpayment penalties apply if you don't pay at least 90% of current year liability or 100%/110% of prior year liability.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/self-employment-tax-calculator">Self-Employment Tax Calculator</a></strong> — SE tax component of business income.</li>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — full federal income tax including business income.</li>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — model Solo 401(k) contributions.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Do I need a separate EIN for my business?</h3>
+<p>Sole proprietors with no employees can use their SSN. Anyone with employees, or any business organized as an LLC/S-Corp/C-Corp, needs an EIN (Employer Identification Number). Getting an EIN from the IRS is free and takes minutes at irs.gov.</p>
+<h3>Can I deduct startup costs?</h3>
+<p>Yes — up to $5,000 in startup costs in the first year, with the remainder amortized over 15 years. Organizational costs (LLC filing fees, attorney fees) are treated separately with the same $5,000/$remainder structure.</p>
+<h3>When should a small business consider incorporating?</h3>
+<p>LLC formation makes sense relatively early for liability protection. S-Corp election for tax purposes makes sense when net income is consistently above $60,000–$80,000 and the SE tax savings exceed the cost of S-Corp administration. C-Corp status is rarely optimal for small businesses due to double taxation on distributions.</p>
+<h2>Key Takeaways</h2>
+<p>Small business taxation involves both the complexity of pass-through structures and the opportunity to reduce taxable income significantly through legitimate deductions and retirement contributions. The QBI deduction alone can reduce a pass-through owner's effective tax rate by 4–5 percentage points — a benefit that requires no additional spending, just proper structuring. Combined with pre-tax retirement contributions and systematic expense tracking, the tax position of a well-run small business can be substantially better than an equivalent W-2 employee, despite the added administrative burden.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+let entityType = 'sole';
+
+const ENTITY_DESC = {
+  sole:    '<strong>Sole Proprietor / Freelancer:</strong> Report income on Schedule C. Pay self-employment tax (15.3%) on net profit + ordinary income tax. QBI deduction of 20% may apply.',
+  llc:     '<strong>Single-Member LLC:</strong> Disregarded entity — taxed identically to a sole proprietor by default. Provides legal liability protection but <em>no</em> SE tax reduction without S-Corp election.',
+  scorp:   '<strong>S-Corporation:</strong> Pay yourself a reasonable salary (W-2) + take remaining profit as distributions. Only the salary is subject to payroll taxes — distributions are not. Requires IRS Form 2553.',
+  partner: '<strong>Partnership / Multi-Member LLC:</strong> Pass-through taxation. Each partner pays SE tax on their share of business income. File Form 1065; each partner receives a K-1.',
+};
+
+const STD_DED = { single:15000, married:30000, hoh:22500 };
+const SS_WAGE_BASE = 176100;
+// 2026 ordinary income brackets (single)
+const BRACKETS_SINGLE = [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]];
+const BRACKETS_MARRIED = [[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]];
+const BRACKETS_HOH = [[17000,.10],[64850,.12],[103350,.22],[197300,.24],[250500,.32],[626350,.35],[Infinity,.37]];
+const QBI_PHASEOUT = { single:197300, married:394600, hoh:197300 };
+
+function fmt(n){ return '$'+Math.round(Math.abs(n)).toLocaleString('en-US'); }
+function fmtP(n){ return (n*100).toFixed(1)+'%'; }
+
+function setEntity(v){
+  entityType=v;
+  ['sole','llc','scorp','partner'].forEach(k=>{
+    document.getElementById(`tab-${k}`).classList.toggle('active',k===v);
+  });
+  document.getElementById('entityDesc').innerHTML = ENTITY_DESC[v];
+  document.getElementById('scorp-salary-wrap').style.display = v==='scorp' ? 'block' : 'none';
+  calc();
+}
+
+function calcIncomeTax(taxableIncome, filing){
+  const brackets = filing==='married' ? BRACKETS_MARRIED : filing==='hoh' ? BRACKETS_HOH : BRACKETS_SINGLE;
+  let tax=0, prev=0;
+  for(const [cap,rate] of brackets){
+    if(taxableIncome<=prev) break;
+    tax += (Math.min(taxableIncome,cap)-prev)*rate;
+    prev=cap;
+  }
+  return Math.max(0,tax);
+}
+
+function calc(){
+  const revenue   = parseFloat(document.getElementById('revenue').value)||0;
+  const bizExp    = parseFloat(document.getElementById('expenses').value)||0;
+  const filing    = document.getElementById('filing').value;
+  const otherInc  = parseFloat(document.getElementById('otherIncome').value)||0;
+  const homeOff   = parseFloat(document.getElementById('homeOffice').value)||0;
+  const retirement= parseFloat(document.getElementById('retirement').value)||0;
+  const healthIns = parseFloat(document.getElementById('healthIns').value)||0;
+  const stateRate = parseFloat(document.getElementById('stateRate').value)||0;
+  const scorpSal  = entityType==='scorp' ? (parseFloat(document.getElementById('scorp-salary').value)||0) : 0;
+
+  // Net profit
+  const netProfit = Math.max(0, revenue - bizExp - homeOff);
+
+  // Self-employment tax
+  let seTax = 0, seBase = 0;
+  if(entityType !== 'scorp'){
+    seBase = netProfit * 0.9235; // 92.35% of net profit
+    const ssSe = Math.min(seBase, SS_WAGE_BASE) * 0.124;
+    const medSe = seBase * 0.029;
+    const addMed = seBase > 200000 ? (seBase - 200000) * 0.009 : 0;
+    seTax = ssSe + medSe + addMed;
+  } else {
+    // S-Corp: payroll taxes only on salary
+    const ssSal = Math.min(scorpSal, SS_WAGE_BASE) * 0.153;
+    seTax = ssSal; // employer + employee share
+  }
+
+  const seDeduct = seTax / 2; // deductible half of SE tax
+
+  // QBI deduction
+  const qbiBase = entityType==='scorp' ? Math.max(0, netProfit - scorpSal) : netProfit;
+  const qbiPhase = QBI_PHASEOUT[filing];
+  const totalInc = netProfit + otherInc;
+  let qbiPct = 1;
+  if(totalInc > qbiPhase + 50000) qbiPct=0;
+  else if(totalInc > qbiPhase) qbiPct = 1-(totalInc-qbiPhase)/50000;
+  const qbiDeduction = Math.min(qbiBase * 0.20 * qbiPct, (netProfit + otherInc) * 0.20);
+
+  // Total deductions
+  const stdDed = STD_DED[filing] || STD_DED.single;
+  const aboveLine = seDeduct + healthIns + retirement;
+  const agi = netProfit + otherInc - aboveLine + (entityType==='scorp' ? scorpSal : 0);
+  const taxableIncome = Math.max(0, agi - stdDed - qbiDeduction);
+
+  // Income tax
+  const fedTax = calcIncomeTax(taxableIncome, filing);
+  const stateTax = (netProfit + otherInc) * (stateRate/100);
+  const totalTax = fedTax + seTax + stateTax;
+  const netAfterTax = netProfit - totalTax;
+  const effectiveRate = netProfit > 0 ? totalTax/netProfit : 0;
+
+  // Display
+  document.getElementById('totalTax').textContent = fmt(totalTax);
+  document.getElementById('effectiveRateLabel').textContent = `${fmtP(effectiveRate)} effective rate · ${fmt(netAfterTax)} net after tax`;
+
+  document.getElementById('taxBreakdown').innerHTML = `
+    <div class="fc-detail-row"><span class="fc-detail-key">Gross Revenue</span><span class="fc-detail-val">${fmt(revenue)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Business Expenses</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(bizExp+homeOff)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Net Profit (Schedule C)</span><span class="fc-detail-val" style="color:var(--cyan)">${fmt(netProfit)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">SE Tax Deduction (50%)</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(seDeduct)}</span></div>
+    ${healthIns>0?`<div class="fc-detail-row"><span class="fc-detail-key">Health Insurance Deduction</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(healthIns)}</span></div>`:''}
+    ${retirement>0?`<div class="fc-detail-row"><span class="fc-detail-key">Retirement Contribution</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(retirement)}</span></div>`:''}
+    ${qbiDeduction>0?`<div class="fc-detail-row"><span class="fc-detail-key">QBI Deduction (20%)</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(qbiDeduction)}</span></div>`:''}
+    <div class="fc-detail-row"><span class="fc-detail-key">Standard Deduction</span><span class="fc-detail-val" style="color:var(--green)">-${fmt(stdDed)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Taxable Income</span><span class="fc-detail-val" style="color:var(--text)">${fmt(taxableIncome)}</span></div>
+    <div class="fc-divider"></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Federal Income Tax</span><span class="fc-detail-val" style="color:var(--red)">-${fmt(fedTax)}</span></div>
+    <div class="fc-detail-row"><span class="fc-detail-key">Self-Employment Tax (${entityType==='scorp'?'Payroll':'SE'})</span><span class="fc-detail-val" style="color:var(--red)">-${fmt(seTax)}</span></div>
+    ${stateTax>0?`<div class="fc-detail-row"><span class="fc-detail-key">State Tax (${stateRate}%)</span><span class="fc-detail-val" style="color:var(--orange)">-${fmt(stateTax)}</span></div>`:''}
+    <div class="fc-detail-row total-row"><span class="fc-detail-key" style="font-weight:700;color:var(--text)">Net After All Taxes</span><span class="fc-detail-val" style="color:var(--green);font-size:18px">${fmt(netAfterTax)}</span></div>`;
+
+  // Quarterly
+  const qPayment = totalTax / 4;
+  document.getElementById('quarterly').innerHTML = [
+    ['Q1','Apr 15, 2026'],['Q2','Jun 16, 2026'],['Q3','Sep 15, 2026'],['Q4','Jan 15, 2026']
+  ].map(([q,d])=>`
+    <div class="fc-q-box">
+      <div class="fc-q-label">${q} Estimated</div>
+      <div class="fc-q-date">${d}</div>
+      <div class="fc-q-val">${fmt(qPayment)}</div>
+    </div>`).join('');
+
+  // S-Corp savings comparison
+  if(entityType !== 'scorp' && netProfit >= 40000){
+    const recSal = Math.min(netProfit * 0.5, 80000);
+    const scorpPayroll = Math.min(recSal, SS_WAGE_BASE) * 0.153;
+    const scorpDist = netProfit - recSal;
+    const scorpTotal = scorpPayroll + calcIncomeTax(Math.max(0, netProfit - seDeduct - stdDed - qbiDeduction), filing) + stateTax;
+    const saving = totalTax - scorpTotal;
+    if(saving > 2000){
+      document.getElementById('scorpSavingsBox').style.display='block';
+      document.getElementById('scorpSavingsBox').innerHTML=`
+        <div class="fc-savings-box" style="margin-top:14px">
+          <div class="fc-savings-title">💡 S-Corp Election Could Save You Money</div>
+          <div style="font-size:13px;color:var(--text2);line-height:1.7">Based on your income of <strong style="color:var(--green)">${fmt(netProfit)}</strong>, switching to S-Corp taxation with a ~${fmt(recSal)} salary could save approximately <strong style="color:var(--green)">${fmt(saving)}/year</strong> in SE tax. Factor in ~${fmt(2500)}/yr in accounting and state fees before deciding.</div>
+        </div>`;
+    } else {
+      document.getElementById('scorpSavingsBox').style.display='none';
+    }
+  } else {
+    document.getElementById('scorpSavingsBox').style.display='none';
+  }
+
+  // Info box
+  const maxSep = Math.min(netProfit * 0.25, 70000);
+  document.getElementById('infoBox').innerHTML=`
+    <div class="fc-info-box">
+      <strong>📌 Key Numbers for ${new Date().getFullYear()}</strong><br>
+      SE Tax: 15.3% on first ${fmt(SS_WAGE_BASE)} · Max SEP-IRA: ${fmt(maxSep)} · Max Solo 401(k): $70,000 · QBI Rate: 20% · Quarterly penalty threshold: 90% of tax owed
+    </div>`;
+}
+
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

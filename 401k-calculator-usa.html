@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>401(k) Calculator 2026 — Retirement Growth & Contribution Estimator</title>
+<meta content="Project your 401(k) balance at retirement for 2026. See employer match impact, contribution growth, and monthly retirement income estimates. Free and accurate." name="description"/>
+<meta content="401k calculator 2026, 401k growth calculator, retirement savings calculator, employer match calculator, 401k contribution limit 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/401k-calculator-usa" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="401(k) Calculator 2026 — Retirement Growth & Contribution Estimator" property="og:title"/>
+<meta content="Project your 401(k) balance at retirement for 2026. See employer match impact, contribution growth, and monthly retirement income estimates." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/401k-calculator-usa" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="401(k) Calculator 2026 — Retirement Growth & Contribution Estimator" name="twitter:title"/>
+<meta content="Project your 401(k) balance at retirement for 2026. See employer match impact, contribution growth, and monthly retirement income estimates." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--principal:#60a5fa;--interest:#f87171;--pmi:#f59e0b;--ins:#a78bfa;--extra:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.nav-links{display:flex;gap:20px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:600px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number]{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.content-block{max-width:780px;margin:20px auto 0;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:600;margin:36px 0 14px;color:var(--text)}
+.content-block h3{font-size:17px;font-weight:600;margin:22px 0 10px;color:var(--text)}
+.content-block p{color:var(--muted);font-size:15px;margin-bottom:14px;line-height:1.75}
+.content-block ul,.content-block ol{color:var(--muted);font-size:15px;margin:0 0 14px 20px;line-height:1.75}
+.content-block li{margin-bottom:8px}
+.content-block table{width:100%;border-collapse:collapse;margin:14px 0 24px;font-size:14px}
+.content-block th{text-align:left;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:10px 12px;border-bottom:1px solid var(--border);font-family:var(--mono)}
+.content-block td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:13px}
+.content-block a{color:var(--accent);text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "401(k) Calculator 2026 — Retirement Growth & Contribution Estimator",
+  "url": "https://usafincalc.com/401k-calculator-usa",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "401k Calculator",
+      "item": "https://usafincalc.com/401k-calculator-usa"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "401(k) Calculator 2026",
+  "description": "Project your 401(k) balance at retirement with employer match, contribution growth, and monthly retirement income estimates.",
+  "url": "https://usafincalc.com/401k-calculator-usa",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the 401(k) contribution limit for 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For 2026, the employee 401(k) contribution limit is $24,500. Workers 50 and older can add an $8,000 catch-up contribution, bringing the total to $32,500. Source: IRS IR-2025-111."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What rate of return should I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A diversified stock-heavy portfolio has historically averaged around 7% annually after inflation. Most planners suggest 6-7% for long-horizon projections and 4-5% for more conservative allocations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does employer match count toward my contribution limit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The $24,500 limit applies only to your own employee contributions. Employer match is separate and does not count toward this limit, though a combined employee-plus-employer limit of $72,000 applies."
+      }
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 IRS contribution limits</div>
+  <h1>401(k) <span>Calculator</span></h1>
+  <p class="hero-sub">Project your 401(k) balance at retirement based on your current balance, contribution rate, employer match, and expected return. Updated with 2026 IRS contribution limits.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">Your Details</div>
+    <label for="age">Current Age</label>
+    <input id="age" oninput="calc401k()" type="number" value="30"/>
+    <label for="retireAge">Retirement Age</label>
+    <input id="retireAge" oninput="calc401k()" type="number" value="65"/>
+    <label for="salary">Annual Salary</label>
+    <div class="pfx"><span>$</span><input id="salary" oninput="calc401k()" type="number" value="70000"/></div>
+    <label for="balance">Current 401(k) Balance</label>
+    <div class="pfx"><span>$</span><input id="balance" oninput="calc401k()" type="number" value="15000"/></div>
+    <label for="contribPct">Your Contribution (% of salary)</label>
+    <div class="sfx"><input id="contribPct" oninput="calc401k()" type="number" value="8"/><span>%</span></div>
+    <label for="matchPct">Employer Match (% of salary, up to cap)</label>
+    <div class="sfx"><input id="matchPct" oninput="calc401k()" type="number" value="4"/><span>%</span></div>
+    <label for="returnPct">Expected Annual Return</label>
+    <div class="sfx"><input id="returnPct" oninput="calc401k()" type="number" value="7"/><span>%</span></div>
+  </div>
+  <div class="card">
+    <div class="ct">Projected Results</div>
+    <div class="res-main">
+      <div class="res-label">Projected Balance at Retirement</div>
+      <div class="res-val" id="finalBalance">—</div>
+      <div class="res-sub" id="monthlyIncomeSub">calculating…</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Your Contributions</div><div class="bk-v" id="yourContribTotal" style="color:var(--principal)">—</div></div>
+      <div class="bk"><div class="bk-l">Employer Match Total</div><div class="bk-v" id="matchTotal" style="color:var(--accent)">—</div></div>
+      <div class="bk"><div class="bk-l">Investment Growth</div><div class="bk-v" id="growthTotal" style="color:var(--extra)">—</div></div>
+      <div class="bk"><div class="bk-l">Years to Retirement</div><div class="bk-v" id="yearsToGo" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Annual Limit Applied</div><div class="bk-v" id="limitNote" style="color:var(--pmi);font-size:12px">—</div></div>
+      <div class="bk"><div class="bk-l">Est. Monthly Retirement Income</div><div class="bk-v" id="monthlyIncome" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator gives an estimate based on constant contribution rates and a steady average return — actual markets fluctuate year to year. It is for informational purposes only and is not financial advice. The 2026 employee contribution limit ($24,500, or $32,500 for age 50+) is applied automatically to your contribution amount.</div>
+
+<div class="content-block">
+<section class="content-block" id="401k-guide">
+
+
+<h2>What This 401(k) Calculator Does — and Who Should Use It</h2>
+<p>This calculator projects how much your 401(k) balance will grow over time based on your current balance, contribution rate, employer match, expected investment return, and years until retirement. It also shows what that future balance could translate to as monthly retirement income, and how changes to your contribution rate today affect your long-term outcome.</p>
+<p>It's most useful for three groups: employees who just enrolled in a workplace retirement plan and want to see what consistent contributions actually add up to; mid-career workers wondering whether they're on track or need to increase their savings rate; and anyone trying to model the specific impact of a raise, a higher contribution percentage, or a new employer match on their projected retirement balance.</p>
+<p>The numbers can be genuinely motivating. The mechanics of compound growth mean that small changes made early — contributing 8% instead of 6%, or starting at 30 instead of 35 — produce dramatically different outcomes by retirement age. Seeing those differences in actual dollar figures is often what moves people from intention to action.</p>
+
+<h2>Understanding Your Results</h2>
+
+<h3>Projected Balance at Retirement</h3>
+<p>This is the estimated total value of your 401(k) at your target retirement age, assuming consistent contributions and steady investment returns. It's the number most people focus on — and it should be read alongside the monthly income estimate, since a large balance number in isolation doesn't tell you how long it will last or what lifestyle it supports.</p>
+
+<h3>Employer Match Contribution</h3>
+<p>This shows how much your employer contributes to your balance over the projection period. Most people underestimate this number. A 4% match on a $70,000 salary is $2,800/year — free money that compounds alongside your own contributions. Not capturing the full match by contributing at least enough to trigger it is one of the most expensive financial mistakes an employee can make.</p>
+
+<h3>Estimated Monthly Retirement Income</h3>
+<p>Your projected balance converted to monthly income, typically using a sustainable withdrawal rate (commonly 4% per year). This is the number to compare against your expected retirement expenses. If it falls short, the calculator helps you see what contribution increase would close the gap.</p>
+
+<h3>Total Contributions vs. Growth</h3>
+<p>Shows how much of your final balance came from your own contributions versus investment returns. In early years, contributions dominate. Over long periods — 25+ years — growth typically exceeds total contributions substantially, illustrating why time in the market matters so much.</p>
+
+<h2>How 401(k) Plans Actually Work</h2>
+<p>A 401(k) is an employer-sponsored retirement savings account that lets you contribute a portion of your paycheck before income taxes are calculated — reducing your taxable income today while the money grows tax-deferred until withdrawal in retirement.</p>
+
+<h3>Contribution Types</h3>
+<ul>
+<li><strong>Traditional (pre-tax):</strong> contributions reduce your taxable income now; withdrawals in retirement are taxed as ordinary income. Benefits people who expect to be in a lower tax bracket in retirement.</li>
+<li><strong>Roth 401(k):</strong> contributions are made with after-tax dollars; qualified withdrawals in retirement are completely tax-free. Better for people who expect to be in a higher bracket later, or who want tax diversification.</li>
+<li><strong>Employer match:</strong> typically structured as a percentage of your contribution up to a cap — e.g., "100% match on the first 4% of salary." Employer match is always pre-tax, even in a Roth 401(k).</li>
+</ul>
+
+<h3>Contribution Limits (2024–2025)</h3>
+<p>The IRS sets annual limits on how much you can contribute. For 2026, the employee contribution limit is $24,500. Workers aged 50 and older can add a catch-up contribution of $8,000, bringing the total to $32,500. These limits apply to your own contributions — employer match doesn't count toward them.</p>
+
+<h3>Vesting Schedules</h3>
+<p>Your own contributions are always 100% yours immediately. Employer contributions often come with a vesting schedule — meaning you must stay employed for a certain period before the employer's contributions are fully yours. Cliff vesting might mean 0% for two years then 100% at year three. Graded vesting might grant 20% per year over five years. This is worth knowing before you change jobs.</p>
+
+<h3>Investment Options</h3>
+<p>401(k) plans typically offer a menu of mutual funds, index funds, and sometimes a stable value or money market option. Target-date funds (e.g., "2050 Fund") automatically adjust their asset allocation from aggressive to conservative as the target date approaches — a reasonable default for most participants who don't want to manage allocation actively.</p>
+
+<h2>Factors That Most Affect Your Outcome</h2>
+
+<table>
+<thead><tr><th scope="col">Factor</th><th scope="col">Impact on Final Balance</th><th scope="col">What You Control</th></tr></thead>
+<tbody>
+<tr><td>Years until retirement</td><td>Enormous — time is the biggest factor</td><td>Partially (start earlier)</td></tr>
+<tr><td>Contribution rate</td><td>Very large</td><td>Yes — increase anytime</td></tr>
+<tr><td>Employer match captured</td><td>Significant</td><td>Yes — contribute at least to full match</td></tr>
+<tr><td>Investment return rate</td><td>Large over long periods</td><td>Partially (via fund selection)</td></tr>
+<tr><td>Expense ratios / fees</td><td>Meaningful over 20–30 years</td><td>Yes — choose low-cost funds</td></tr>
+<tr><td>Inflation</td><td>Erodes purchasing power</td><td>No — plan around it</td></tr>
+</tbody>
+</table>
+
+<h3>The Time Factor</h3>
+<p>A 25-year-old who contributes $6,000/year for 10 years then stops will often end up with more at 65 than a 35-year-old who contributes $6,000/year for 30 years straight — assuming the same rate of return. This is the power of compounding time. Starting early beats starting aggressively later.</p>
+
+<h3>Fund Expenses</h3>
+<p>An expense ratio of 1% per year versus 0.10% seems trivial, but over 30 years on a growing balance, it can consume 15–25% of your final wealth. Choosing index funds with low expense ratios is one of the highest-impact, lowest-effort decisions available to 401(k) participants.</p>
+
+<h2>Real-World Examples</h2>
+
+<h3>Example 1: The Value of Capturing the Full Match</h3>
+<p>David earns $65,000 and currently contributes 3% to his 401(k). His employer matches 100% of contributions up to 5%. By only contributing 3%, David captures only a 3% match — leaving a 2% match uncaptured. Increasing his contribution to 5% adds $1,300/year in employer money. Over 25 years at 7% return, that uncaptured match would have grown to roughly $88,000. The cost to David: about $54 less per paycheck (after tax savings on the additional 2% contribution).</p>
+
+<h3>Example 2: Starting 5 Years Earlier</h3>
+<p>Maria and Tom both earn $70,000. Maria starts contributing 8% ($5,600/year) at age 25. Tom waits until 30 to start the same contribution. Both retire at 65 at an assumed 7% annual return. Maria's projected balance: ~$1,580,000. Tom's projected balance: ~$1,110,000. The five-year head start produces roughly $470,000 more — without Maria contributing a dollar more per year.</p>
+
+<h3>Example 3: Increasing Contribution After a Raise</h3>
+<p>Sarah gets a 5% raise ($3,500/year). She directs 3% of the raise ($1,050/year extra) into her 401(k) and keeps the remaining 2% as take-home. Because pre-tax contributions reduce her taxable income, the net paycheck reduction is less than $1,050. Over 20 years at 7%, that additional $1,050/year grows to approximately $53,000 in additional retirement savings.</p>
+
+<h3>Example 4: The Roth vs. Traditional Decision</h3>
+<p>Alex is 28 and in the 22% federal tax bracket. She expects to be in the 24–28% bracket in retirement (higher income and fewer deductions). Contributing to a Roth 401(k) now — paying 22% tax on contributions today — means withdrawals will be tax-free at retirement even if her bracket is higher. Had she chosen traditional, she'd defer 22% now but pay 26% later on a larger balance. The Roth election saves meaningful tax dollars given her trajectory.</p>
+
+<h2>Common Mistakes to Avoid</h2>
+
+<h3>Not contributing enough to capture the full employer match</h3>
+<p>This is leaving part of your compensation on the table. Employer match is the highest guaranteed return available — typically 50–100% instantly on those dollars. No investment can reliably beat it.</p>
+
+<h3>Cashing out when changing jobs</h3>
+<p>When you leave an employer, you can roll your 401(k) into an IRA or your new employer's plan without taxes or penalties. Many people instead take the cash — triggering income tax plus a 10% early withdrawal penalty, losing 25–35% of the balance immediately, plus forfeiting all future compounding on those dollars.</p>
+
+<h3>Choosing funds by recent performance</h3>
+<p>Last year's best-performing fund in a 401(k) menu is often not next year's. Chasing performance tends to lead to buying high and implicitly selling low. A diversified, low-cost target-date or index fund approach beats most active fund picking over long periods.</p>
+
+<h3>Setting a contribution rate and never revisiting it</h3>
+<p>Many people set 3% when they enroll and never adjust. Contribution rates should increase as your income grows. A good rule: every time you get a raise, direct a portion of it toward your 401(k) before lifestyle inflation absorbs it.</p>
+
+<h3>Ignoring the Roth option</h3>
+<p>Many plans now offer Roth 401(k) contributions, which are underused relative to their value, especially for younger workers in lower current tax brackets. Understanding the tradeoff takes ten minutes and can affect thousands of dollars in retirement taxes.</p>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Contribute at least enough to capture your full employer match</strong> before putting money anywhere else — the guaranteed return is unbeatable.</li>
+<li><strong>Increase your contribution rate by 1% each year,</strong> or each time you receive a raise. Automate the increase so it happens without requiring willpower.</li>
+<li><strong>Choose low-cost index funds or a target-date fund</strong> unless you have a specific reason to do otherwise. Expense ratios compound the same way returns do — just in the wrong direction.</li>
+<li><strong>Don't look at your balance during market downturns</strong> unless you're within 5–10 years of retirement. Volatility is normal and selling in a downturn locks in losses.</li>
+<li><strong>Roll over, don't cash out,</strong> when changing jobs. A 60-day rollover window exists — use it to move the balance to an IRA or new employer plan.</li>
+<li><strong>If you're over 50, use catch-up contributions.</strong> The extra $8,000/year allowed for those 50+ can add meaningfully to a retirement balance in the final working years.</li>
+</ul>
+
+<h2>Related Calculators You May Need</h2>
+<p>Once you've modeled your 401(k) growth, these adjacent calculations often come next:</p>
+<ul>
+<li><strong><a href="/roth-ira-calculator">Roth IRA Calculator</a></strong> — to see whether contributing to a Roth IRA in addition to (or instead of) a traditional 401(k) fits your tax situation.</li>
+<li><strong><a href="/retirement-withdrawal-calculator">Retirement Withdrawal Calculator</a></strong> — to figure out how long your projected balance will actually last based on your planned spending.</li>
+<li><strong><a href="/compound-interest-calculator">Compound Interest Calculator</a></strong> — useful for modeling specific investment scenarios or comparing savings vehicles outside a retirement account.</li>
+<li><strong><a href="/fire-calculator">FIRE Calculator</a></strong> — if you're considering retiring significantly earlier than 65 and need to understand the savings rate required.</li>
+<li><strong><a href="/salary-calculator-usa">Salary Calculator</a></strong> — to see how your take-home pay changes at different 401(k) contribution rates, since pre-tax contributions reduce taxable income.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What's a reasonable rate of return to use in the calculator?</h3>
+<p>Historically, a diversified stock-heavy portfolio has averaged around 7% annually after inflation, or about 10% nominal. For a balanced portfolio (60% stocks, 40% bonds), 5–6% is a more conservative estimate. Most financial planners suggest using 6–7% for long-horizon projections and 4–5% for shorter timelines or more conservative asset allocations.</p>
+
+<h3>How does a 401(k) affect my taxes this year?</h3>
+<p>Traditional 401(k) contributions reduce your adjusted gross income dollar for dollar. If you earn $85,000 and contribute $10,000, you're taxed as if you earned $75,000. This can also affect eligibility for certain deductions and credits that phase out at income thresholds.</p>
+
+<h3>Can I have a 401(k) and an IRA at the same time?</h3>
+<p>Yes. Contributing to a 401(k) doesn't prevent you from also contributing to a traditional or Roth IRA, subject to income limits for deductibility. Maxing out both in the same year is a solid retirement strategy if your cash flow allows it.</p>
+
+<h3>What happens to my 401(k) if my employer goes bankrupt?</h3>
+<p>401(k) assets are held in trust, separate from your employer's general assets — creditors cannot claim them if the company goes under. Your balance is yours. The risk is that company stock within the 401(k) can lose value if the stock collapses, which is why holding excessive company stock concentration in a retirement plan is risky.</p>
+
+<h3>Can I withdraw money from my 401(k) before retirement?</h3>
+<p>Yes, but with consequences. Withdrawals before age 59½ are subject to ordinary income tax plus a 10% penalty on top. There are exceptions — hardship withdrawals, certain disability situations, and 72(t) distributions — but they all come with complexity and most involve permanently removing money that would otherwise compound for decades.</p>
+
+<h3>What is a 401(k) loan, and is it ever a good idea?</h3>
+<p>Many plans allow you to borrow against your balance — typically up to 50% or $50,000. The loan must be repaid with interest (often to yourself). Risks include: if you leave your job, the loan may become due immediately; if you can't repay it, it's treated as a withdrawal and taxed accordingly. 401(k) loans are sometimes a last resort worth considering, but they're rarely a first choice.</p>
+
+<h3>What's the difference between a 401(k) and a 403(b)?</h3>
+<p>A 403(b) is the equivalent plan for employees of public schools, nonprofits, and certain healthcare organizations. The contribution limits and general tax treatment are nearly identical to a 401(k). The main difference is the investment options available, which historically skewed toward annuity products but increasingly include mutual funds and index funds.</p>
+
+<h3>Should I prioritize paying off debt or contributing to my 401(k)?</h3>
+<p>A common framework: first contribute enough to capture your full employer match (guaranteed return), then pay off high-interest debt (credit cards, personal loans above 7–8%), then return to maxing retirement contributions. Low-rate debt (student loans under 5%, mortgages) can coexist with ongoing retirement savings — the math usually favors investing over early payoff at those rates.</p>
+
+<h3>How often should I rebalance my 401(k)?</h3>
+<p>Annual rebalancing is sufficient for most investors. Some plans offer automatic rebalancing — set it and it resets your allocation to targets periodically. More frequent rebalancing in a 401(k) has no tax consequence (unlike a taxable brokerage), but research suggests it rarely improves returns meaningfully over annual rebalancing.</p>
+
+<h2>Key Takeaways</h2>
+<p>A 401(k) is one of the most powerful wealth-building tools available to working Americans — primarily because of tax deferral, employer matching, and the long compounding runway most workers have. The biggest variables within your control are how much you contribute, how early you start, and whether you capture your full employer match. Investment selection matters, but keeping costs low and staying consistently invested through market cycles matters more than picking the right fund.</p>
+<p>Use this calculator not just to see where you'll end up, but to see what changing one variable — your contribution rate, your start date, your return assumption — does to the outcome. The difference between 6% and 10% contributions, or between starting at 28 versus 33, is often measured in hundreds of thousands of dollars. Seeing those numbers in concrete terms is usually the most effective motivation available.</p>
+
+</section>
+
+</div>
+
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/529-plan-vs-roth-ira-for-college">529 Plan vs Roth IRA for College 2026: Which Is Better?</a></li>
+<li><a href="/401k-vs-roth-401k">401(k) vs Roth 401(k): Which to Choose in 2026?</a></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+
+function calc401k(){
+  var age = parseFloat(document.getElementById('age').value)||30;
+  var retireAge = parseFloat(document.getElementById('retireAge').value)||65;
+  var salary = parseFloat(document.getElementById('salary').value)||0;
+  var balance = parseFloat(document.getElementById('balance').value)||0;
+  var contribPct = parseFloat(document.getElementById('contribPct').value)/100||0;
+  var matchPct = parseFloat(document.getElementById('matchPct').value)/100||0;
+  var returnPct = parseFloat(document.getElementById('returnPct').value)/100||0;
+  var years = Math.max(0, retireAge - age);
+
+  var IRS_LIMIT_2026 = age >= 50 ? 32500 : 24500;
+
+  var yourContribTotal = 0, matchTotal = 0, bal = balance;
+  for (var y = 0; y < years; y++){
+    var yourContribYear = Math.min(salary*contribPct, IRS_LIMIT_2026);
+    var matchYear = Math.min(salary*matchPct, salary*contribPct);
+    yourContribTotal += yourContribYear;
+    matchTotal += matchYear;
+    bal = bal*(1+returnPct) + yourContribYear + matchYear;
+  }
+  var growthTotal = bal - balance - yourContribTotal - matchTotal;
+  var monthlyIncome = bal * 0.04 / 12;
+
+  document.getElementById('finalBalance').textContent = fmt(bal);
+  document.getElementById('monthlyIncomeSub').textContent = 'over ' + years + ' years of growth';
+  document.getElementById('yourContribTotal').textContent = fmt(yourContribTotal);
+  document.getElementById('matchTotal').textContent = fmt(matchTotal);
+  document.getElementById('growthTotal').textContent = fmt(Math.max(0,growthTotal));
+  document.getElementById('yearsToGo').textContent = years;
+  document.getElementById('limitNote').textContent = fmt(IRS_LIMIT_2026) + '/yr (2026 ' + (age>=50?'50+':'under 50') + ' limit)';
+  document.getElementById('monthlyIncome').textContent = fmt(monthlyIncome);
+}
+calc401k();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

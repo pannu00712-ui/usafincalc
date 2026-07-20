@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Earned Income Tax Credit Calculator 2026 — Estimate Your EITC</title>
+<meta content="Calculate your Earned Income Tax Credit (EITC) based on earned income, filing status, and number of qualifying children. See your estimated refundable credit instantly." name="description"/>
+<meta content="earned income tax credit calculator, EITC calculator, EIC calculator, earned income credit 2026, refundable tax credit calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/earned-income-tax-credit-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Earned Income Tax Credit Calculator 2026 — Estimate Your EITC" property="og:title"/>
+<meta content="Calculate your Earned Income Tax Credit based on earned income, filing status, and qualifying children." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/earned-income-tax-credit-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Earned Income Tax Credit Calculator 2026 — Estimate Your EITC" name="twitter:title"/>
+<meta content="Calculate your Earned Income Tax Credit based on earned income, filing status, and qualifying children." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--fica:#a78bfa;--pretax:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:640px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Earned Income Tax Credit Calculator 2026 — Estimate Your EITC",
+  "url": "https://usafincalc.com/earned-income-tax-credit-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Earned Income Tax Credit Calculator",
+      "item": "https://usafincalc.com/earned-income-tax-credit-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Earned Income Tax Credit Calculator 2026",
+  "description": "Calculate the Earned Income Tax Credit (EITC) based on earned income, filing status, and qualifying children.",
+  "url": "https://usafincalc.com/earned-income-tax-credit-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Who qualifies for the Earned Income Tax Credit?", "acceptedAnswer": {"@type": "Answer", "text": "You generally need earned income within specific limits, investment income below the annual cap, a valid Social Security number, and U.S. residency for more than half the year."}},
+    {"@type": "Question", "name": "Is the EITC refundable?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the EITC is fully refundable, meaning you can receive it as part of your refund even if you owe no federal income tax."}},
+    {"@type": "Question", "name": "How does the number of children affect my EITC amount?", "acceptedAnswer": {"@type": "Answer", "text": "More qualifying children generally means a higher phase-in rate, higher maximum credit, and higher income level before phase-out begins."}},
+    {"@type": "Question", "name": "Can I get the EITC if I'm self-employed?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, net self-employment earnings count as earned income for EITC purposes, just like W-2 wages."}},
+    {"@type": "Question", "name": "What disqualifies me from the EITC?", "acceptedAnswer": {"@type": "Answer", "text": "Common disqualifiers include investment income above the annual limit, filing as Married Filing Separately, or income above the threshold for your family size."}}
+  ]
+}
+</script>
+<meta name="date" content="2026-06-30">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2024/2025 EITC parameters</div>
+  <h1>Earned Income Tax Credit <span>Calculator</span></h1>
+  <p class="hero-sub">Estimate your refundable Earned Income Tax Credit based on your earned income, filing status, and number of qualifying children.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">Your Income &amp; Family Details</div>
+    <label for="earnedIncomeEITC">Earned Income (wages, self-employment)</label>
+    <div class="pfx"><span>$</span><input id="earnedIncomeEITC" oninput="calcEITC()" type="number" value="28000" min="0" step="500"/></div>
+    <label for="agiEITC">Adjusted Gross Income (AGI, if different)</label>
+    <div class="pfx"><span>$</span><input id="agiEITC" oninput="calcEITC()" type="number" value="28000" min="0" step="500"/></div>
+    <label for="filingEITC">Filing Status</label>
+    <select id="filingEITC" onchange="calcEITC()">
+      <option value="single">Single / Head of Household</option>
+      <option value="mfj">Married Filing Jointly</option>
+    </select>
+    <label for="childrenEITC">Number of Qualifying Children</label>
+    <select id="childrenEITC" onchange="calcEITC()">
+      <option value="0">0 children</option>
+      <option selected value="1">1 child</option>
+      <option value="2">2 children</option>
+      <option value="3">3 or more children</option>
+    </select>
+    <label for="investIncomeEITC">Investment Income This Year</label>
+    <div class="pfx"><span>$</span><input id="investIncomeEITC" oninput="calcEITC()" type="number" value="0" min="0" step="100"/></div>
+  </div>
+  <div class="card">
+    <div class="ct">Your Earned Income Tax Credit</div>
+    <div class="res-main">
+      <div class="res-label">Estimated EITC</div>
+      <div class="res-val" id="totalEITC">—</div>
+      <div class="res-sub" id="totalSubEITC">calculating…</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Max Credit for Your Family Size</div><div class="bk-v" id="maxEITC" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Phase-In / Phase-Out Zone</div><div class="bk-v" id="zoneEITC" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">Investment Income Limit</div><div class="bk-v" id="investLimitEITC" style="color:var(--fica)">—</div></div>
+      <div class="bk"><div class="bk-l">Eligibility Status</div><div class="bk-v" id="eligEITC" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator uses approximate 2024/2025 EITC parameters (phase-in rates, maximum credits, and phase-out thresholds by number of children) projected for planning purposes. The EITC is refundable and one of the most complex credits in the tax code — always verify your exact eligibility and amount using the IRS EITC Assistant at IRS.gov or a qualified tax preparer before filing.</div>
+<div class="content-block">
+
+<h2>What This Earned Income Tax Credit Calculator Does</h2>
+<p>The Earned Income Tax Credit (EITC) is a refundable federal tax credit designed to support low- and moderate-income working individuals and families — meaning it can reduce your tax bill to zero and pay you the remainder as part of your refund, even if you owe no tax at all. This calculator estimates your EITC based on your earned income, AGI, filing status, and number of qualifying children, correctly modeling the credit's three-phase structure: it phases in as your income rises from zero, plateaus at a maximum amount, then phases out again as income continues to rise.</p>
+<p>This tool is especially valuable for workers who aren't sure whether they qualify — many eligible taxpayers, particularly those without children, don't realize they're entitled to this credit and leave it unclaimed. It's also useful for understanding how an additional dollar of income affects your credit differently depending on whether you're in the phase-in, plateau, or phase-out zone.</p>
+
+<h2>How It Works</h2>
+<p>The EITC has three distinct zones based on your earned income level. In the phase-in zone, your credit grows as a fixed percentage of each additional dollar you earn — this rate and the maximum earned income it applies to vary based on your number of qualifying children (more children means a higher phase-in rate and a larger maximum credit). Once you reach the "earned income amount" threshold, your credit plateaus at its maximum value across a range of incomes. Beyond a certain income level, the credit begins phasing out at a fixed rate for every additional dollar of income (using the higher of your earned income or AGI), until it reaches zero.</p>
+<p>There's also a strict investment income limit — if your investment income (interest, dividends, capital gains, rental income) exceeds a specific threshold, you're disqualified from the EITC entirely regardless of your earned income level, which is why this calculator checks that limit separately.</p>
+
+<h2>Formula &amp; Methodology</h2>
+<p><strong>Phase-In Credit = MIN(Earned Income × Phase-In Rate, Maximum Credit)</strong></p>
+<p><strong>Phase-Out Reduction = MAX(0, Higher of Earned Income or AGI − Phase-Out Start) × Phase-Out Rate</strong></p>
+<p><strong>Final Credit = MAX(0, Phase-In Credit − Phase-Out Reduction)</strong>, or $0 if investment income exceeds the annual limit (approximately $11,600 for 2024/2025 projections).</p>
+<p>Approximate 2024/2025 parameters used: 0 children — 7.65% phase-in rate, $632 max credit; 1 child — 34% phase-in rate, $4,213 max credit; 2 children — 40% phase-in rate, $6,960 max credit; 3+ children — 45% phase-in rate, $7,830 max credit. Phase-out thresholds and rates are higher for Married Filing Jointly than for Single/Head of Household, reflecting the combined-income nature of joint filing.</p>
+
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Don't assume you're ineligible just because you have no children</strong> — workers without qualifying children can still receive a smaller EITC if their income and age meet the requirements, a benefit frequently overlooked.</li>
+<li><strong>Watch your investment income carefully</strong> — even a small amount of interest, dividends, or capital gains above the annual limit disqualifies you from the entire credit, regardless of how low your earned income is.</li>
+<li><strong>Use the IRS EITC Assistant for your official eligibility check</strong> — this calculator estimates the credit, but the EITC has additional eligibility rules (valid Social Security number, U.S. residency requirements, not filing as Married Filing Separately in most cases) that a full eligibility tool captures precisely.</li>
+<li><strong>Understand that more income isn't always better in the phase-out zone</strong> — if you're in the phase-out range, additional earned income reduces your credit at the same time it's taxed, effectively creating a higher combined marginal rate than the income tax bracket alone suggests.</li>
+<li><strong>File even if you don't owe tax</strong> — because the EITC is refundable, you must file a tax return to claim it, even if your income is below the filing threshold and you'd otherwise have no obligation to file.</li>
+</ul>
+
+<h2>The Three Zones of the EITC Explained</h2>
+<p>Understanding which zone your income falls into is the key to understanding your EITC. In the phase-in zone (lowest incomes), every additional dollar you earn increases your credit — the credit is literally a percentage bonus on top of your earnings, which is why the EITC is often described as an incentive to work rather than a simple income floor. Once your earned income crosses the "earned income amount" threshold specific to your number of children, you enter the plateau zone, where your credit stays at its maximum regardless of small income changes — earning a bit more or less within this range doesn't change your credit. Beyond the phase-out start threshold, you enter the phase-out zone, where the credit shrinks steadily as income rises, using whichever is higher: your earned income or your total AGI (this detail matters if you have significant non-earned income like unemployment benefits pushing your AGI above your earned income).</p>
+
+<h2>Why the EITC Matters for Working Families</h2>
+<p>The EITC is one of the most extensively studied anti-poverty programs in the federal tax code, and research consistently shows it increases workforce participation, particularly among single parents, while also improving child health and educational outcomes in recipient families — effects attributed partly to the credit's structure as an earnings-linked incentive rather than a flat benefit. Despite its scale and effectiveness, the IRS estimates a meaningful share of eligible taxpayers — particularly workers without qualifying children and first-time claimants unfamiliar with the credit — fail to claim it each year, leaving billions of dollars in unclaimed credits nationally.</p>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Confusing earned income with total income.</strong> The EITC is based specifically on earned income (wages, salaries, self-employment income) — unemployment benefits, Social Security, pensions, and most investment income don't count as earned income for this credit's phase-in calculation, though some do count toward the disqualifying investment income limit.</li>
+<li><strong>Missing the credit due to Married Filing Separately status.</strong> In most cases, taxpayers who file as Married Filing Separately cannot claim the EITC at all — this is a hard eligibility rule with only narrow exceptions for certain separated spouses.</li>
+<li><strong>Overlooking self-employment income eligibility.</strong> Self-employed individuals are eligible for the EITC based on their net self-employment earnings, but many assume the credit only applies to traditional W-2 wage earners.</li>
+<li><strong>Not understanding the phase-out's effective tax rate impact.</strong> In the phase-out zone, losing EITC on top of paying regular income tax on additional earnings can create a combined effective marginal rate well above your nominal tax bracket — worth understanding before assuming extra work hours are always net-positive.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-q">Who qualifies for the Earned Income Tax Credit?</div><div class="faq-a">You generally need earned income within specific limits based on your filing status and number of qualifying children, investment income below the annual cap, a valid Social Security number, and U.S. residency for more than half the year. Workers without children must also meet minimum and maximum age requirements.</div></div>
+<div class="faq-item"><div class="faq-q">Is the EITC refundable?</div><div class="faq-a">Yes — the EITC is fully refundable, meaning you can receive the credit as part of your refund even if you owe no federal income tax at all. This is what makes it one of the most impactful anti-poverty tax provisions in the federal tax code.</div></div>
+<div class="faq-item"><div class="faq-q">How does the number of children affect my EITC amount?</div><div class="faq-a">More qualifying children generally means a higher phase-in rate, a higher maximum credit, and a higher income level before phase-out begins. The difference between 0 and 3+ qualifying children can mean a maximum credit difference of several thousand dollars.</div></div>
+<div class="faq-item"><div class="faq-q">Can I get the EITC if I'm self-employed?</div><div class="faq-a">Yes — net self-employment earnings count as earned income for EITC purposes, just like W-2 wages. You'll need to report your self-employment income and expenses accurately, typically via Schedule C, to determine your qualifying earned income.</div></div>
+<div class="faq-item"><div class="faq-q">What disqualifies me from the EITC?</div><div class="faq-a">Common disqualifiers include investment income above the annual limit, filing as Married Filing Separately (in most cases), not having a valid Social Security number, being a nonresident alien for part of the year, or having earned income or AGI above the maximum threshold for your family size.</div></div>
+</div>
+
+<h2>Related Calculators</h2>
+<p>Parents should also check the <a href="/child-tax-credit-calculator">Child Tax Credit Calculator</a>, which can be claimed alongside the EITC. For your overall federal tax liability and how this credit fits in, use the <a href="/federal-income-tax-calculator">Federal Income Tax Calculator</a>. To see your complete refund or amount owed picture, try the <a href="/tax-refund-calculator">Tax Refund Calculator</a>. Self-employed workers should also review the <a href="/self-employment-tax-calculator">Self-Employment Tax Calculator</a> to understand their full tax picture alongside this credit.</p>
+
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+
+var EITC_PARAMS = {
+  0: {rate:0.0765, maxCredit:632, earnedAmt:8260, phaseoutRateNorm:0.0765, phaseoutStartSingle:10330, phaseoutStartMFJ:17250},
+  1: {rate:0.34, maxCredit:4213, earnedAmt:12390, phaseoutRateNorm:0.1598, phaseoutStartSingle:22720, phaseoutStartMFJ:29640},
+  2: {rate:0.40, maxCredit:6960, earnedAmt:17400, phaseoutRateNorm:0.2106, phaseoutStartSingle:22720, phaseoutStartMFJ:29640},
+  3: {rate:0.45, maxCredit:7830, earnedAmt:17400, phaseoutRateNorm:0.2106, phaseoutStartSingle:22720, phaseoutStartMFJ:29640}
+};
+var EITC_INVEST_LIMIT = 11600;
+
+function calcEITC(){
+  var earned = parseFloat(document.getElementById('earnedIncomeEITC').value)||0;
+  var agi = parseFloat(document.getElementById('agiEITC').value)||0;
+  if (agi < earned) agi = earned;
+  var filing = document.getElementById('filingEITC').value;
+  var children = parseInt(document.getElementById('childrenEITC').value)||0;
+  var investIncome = parseFloat(document.getElementById('investIncomeEITC').value)||0;
+
+  var p = EITC_PARAMS[children];
+  var phaseoutStart = filing === 'mfj' ? p.phaseoutStartMFJ : p.phaseoutStartSingle;
+
+  var creditFromEarned = Math.min(earned * p.rate, p.maxCredit);
+  var incomeForPhaseout = Math.max(earned, agi);
+  var excessOverPhaseout = Math.max(0, incomeForPhaseout - phaseoutStart);
+  var phaseoutReduction = excessOverPhaseout * p.phaseoutRateNorm;
+
+  var credit = Math.max(0, Math.min(creditFromEarned, p.maxCredit) - phaseoutReduction);
+
+  var investDisqualified = investIncome > EITC_INVEST_LIMIT;
+  if (investDisqualified) credit = 0;
+
+  var zone = 'Phase-in';
+  if (earned >= p.earnedAmt && incomeForPhaseout <= phaseoutStart) zone = 'Maximum credit plateau';
+  if (incomeForPhaseout > phaseoutStart) zone = 'Phase-out';
+  if (credit === 0 && incomeForPhaseout > phaseoutStart) zone = 'Fully phased out';
+
+  document.getElementById('totalEITC').textContent = investDisqualified ? '$0' : fmt(credit);
+  document.getElementById('totalSubEITC').textContent = investDisqualified ? 'disqualified: investment income too high' : (children + (children===1?' child':' children'));
+  document.getElementById('maxEITC').textContent = fmt(p.maxCredit);
+  document.getElementById('zoneEITC').textContent = zone;
+  document.getElementById('investLimitEITC').textContent = fmt(EITC_INVEST_LIMIT) + ' limit';
+  document.getElementById('eligEITC').textContent = (credit > 0 && !investDisqualified) ? 'Likely Eligible' : 'Not Eligible';
+}
+calcEITC();
+
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">2026-06-30</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

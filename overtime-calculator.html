@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta content="USAFinCalc Editorial Team" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Overtime Pay Calculator — Find Your Time-and-a-Half Earnings</title>
+<meta content="Free overtime pay calculator. Enter your hourly rate and overtime hours to see your time-and-a-half pay and total weekly earnings instantly." name="description"/>
+<meta content="overtime calculator, overtime pay calculator, time and a half calculator, overtime pay rate, how much is overtime pay" name="keywords"/>
+<link href="https://usafincalc.com/overtime-calculator" rel="canonical"/>
+<meta content="Overtime Pay Calculator — Find Your Time-and-a-Half Earnings" property="og:title"/>
+<meta content="Enter your hourly rate and overtime hours to see your time-and-a-half pay and total weekly earnings." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/overtime-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Overtime Pay Calculator — Find Your Time-and-a-Half Earnings" name="twitter:title"/>
+<meta content="Enter your hourly rate and overtime hours to see your time-and-a-half pay and total weekly earnings." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;
+  --font:'Segoe UI',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#10b981;font-family:var(--mono);text-decoration:none}
+.hero{padding:48px 24px 24px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.22);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:18px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:10px 13px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:14px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:.3px}
+.btn:hover{background:#059669}
+.btn:active{transform:scale(.98)}
+.net-card{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22);border-radius:var(--r);padding:22px;text-align:center;margin-bottom:14px}
+.nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:40px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text)}
+.cards4{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:14px}
+.mc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px;text-align:center}
+.ml{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.mv{font-family:var(--mono);font-size:14px;font-weight:600}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.brows{display:flex;flex-direction:column;gap:8px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500}
+.divider{height:1px;background:var(--border);margin:8px 0}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:280px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.faq{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.faq h2{font-size:20px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:320px;padding-top:10px}
+.intro{max-width:980px;margin:0 auto;padding:0 24px 8px}
+.intro p{color:var(--muted);font-size:14px;line-height:1.85;margin-bottom:14px;max-width:760px}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:13px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+footer a:hover{color:var(--accent)}
+.a11y-skip{position:absolute;left:-9999px;top:auto}
+.a11y-skip:focus{left:16px;top:16px;background:var(--accent);color:#000;padding:8px 16px;border-radius:6px;font-weight:600;z-index:9999}
+
+input:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {"@type": "ImageObject", "url": "https://usafincalc.com/logo.png", "width": 200, "height": 60},
+  "contactPoint": {"@type": "ContactPoint", "contactType": "customer support", "email": "hello@usafincalc.com", "availableLanguage": "English"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "potentialAction": {"@type": "SearchAction", "target": {"@type": "EntryPoint", "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"}, "query-input": "required name=search_term_string"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Overtime Pay Calculator",
+  "url": "https://usafincalc.com/overtime-calculator",
+  "isPartOf": {"@type": "WebSite", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "description": "Free overtime pay calculator. Enter your hourly rate and overtime hours to see your time-and-a-half pay and total weekly earnings instantly."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://usafincalc.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Income Calculators", "item": "https://usafincalc.com/salary-calculator-usa"},
+    {"@type": "ListItem", "position": 3, "name": "Overtime Pay Calculator", "item": "https://usafincalc.com/overtime-calculator"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Overtime Pay Calculator",
+  "description": "Free overtime pay calculator. Enter your hourly rate and overtime hours to see your time-and-a-half pay and total weekly earnings instantly.",
+  "url": "https://usafincalc.com/overtime-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+  "publisher": {"@type": "Organization", "name": "USAFinCalc", "url": "https://usafincalc.com/"},
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "How is overtime pay calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Under federal law, overtime pay is 1.5 times your regular hourly rate for any hours worked beyond 40 in a single workweek. For example, a $20/hour employee earns $30/hour for overtime hours."}},
+    {"@type": "Question", "name": "Is overtime based on daily or weekly hours?", "acceptedAnswer": {"@type": "Answer", "text": "Federal law (the Fair Labor Standards Act) calculates overtime based on a 40-hour workweek, not a daily threshold. Some states, such as California, have additional daily overtime rules that can require overtime pay after 8 hours in a single day, regardless of weekly total."}},
+    {"@type": "Question", "name": "Does everyone qualify for overtime pay?", "acceptedAnswer": {"@type": "Answer", "text": "No. Overtime rules generally apply to non-exempt hourly employees. Many salaried employees in executive, administrative, or professional roles above a certain salary threshold are classified as exempt and do not receive overtime pay."}},
+    {"@type": "Question", "name": "What is double-time pay?", "acceptedAnswer": {"@type": "Answer", "text": "Double-time (2x your regular rate) is not required by federal law but is sometimes required by state law (such as California after 12 hours in a day) or offered voluntarily by employers for holidays or extreme overtime hours."}}
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge">Time-and-a-Half • Weekly Pay</div>
+<h1>Overtime Pay <span>Calculator</span></h1>
+<p class="hero-sub">Enter your hourly rate and overtime hours to see exactly what you should be paid for the week.</p>
+</div>
+<div class="intro">
+<p>Federal law requires 1.5x your regular hourly rate for any hours worked beyond 40 in a workweek. This calculator breaks down your regular pay, overtime pay, and total weekly earnings so you can check your paycheck — or estimate next week's pay before it happens.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">⏱️ Hours &amp; Rate</div>
+<label for="rate">Regular hourly rate</label>
+<div class="pfx"><span>$</span><input id="rate" min="0" oninput="calc()" step="0.5" type="number" value="20"/></div>
+<label for="regular-hours">Regular hours worked this week</label>
+<input id="regular-hours" max="40" min="0" oninput="calc()" step="1" type="number" value="40"/>
+<label for="ot-hours">Overtime hours (beyond 40)</label>
+<input id="ot-hours" min="0" oninput="calc()" step="1" type="number" value="8"/>
+<label for="ot-multiplier">Overtime multiplier</label>
+<select id="ot-multiplier" onchange="calc()">
+<option value="1.5">1.5x (standard time-and-a-half)</option>
+<option value="2">2x (double-time)</option>
+</select>
+<button class="btn" onclick="calc()">Calculate Overtime Pay →</button>
+</div>
+<div id="result-col">
+<div class="placeholder">
+<div style="font-size:36px;opacity:.35">⏱️</div>
+<div>Enter your rate and hours</div>
+<div style="font-size:12px;font-family:var(--mono);color:var(--muted)">Regular pay • Overtime pay • Total</div>
+</div>
+</div>
+</div>
+</main>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is overtime pay calculated?</div>
+<div class="faq-a">Under federal law, overtime pay is 1.5 times your regular hourly rate for any hours worked beyond 40 in a single workweek. For example, a $20/hour employee earns $30/hour for overtime hours.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is overtime based on daily or weekly hours?</div>
+<div class="faq-a">Federal law (the Fair Labor Standards Act) calculates overtime based on a 40-hour workweek, not a daily threshold. Some states, such as California, have additional daily overtime rules that can require overtime pay after 8 hours in a single day, regardless of weekly total.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does everyone qualify for overtime pay?</div>
+<div class="faq-a">No. Overtime rules generally apply to non-exempt hourly employees. Many salaried employees in executive, administrative, or professional roles above a certain salary threshold are classified as exempt and do not receive overtime pay.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is double-time pay?</div>
+<div class="faq-a">Double-time (2x your regular rate) is not required by federal law but is sometimes required by state law (such as California after 12 hours in a day) or offered voluntarily by employers for holidays or extreme overtime hours.</div>
+</div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/hourly-to-salary-calculator">Hourly to Salary</a></li><li><a href="/paycheck-calculator">Paycheck Calculator</a></li><li><a href="/salary-calculator-usa">Salary Calculator</a></li><li><a href="/tip-calculator">Tip Calculator</a></li>
+</ul>
+</section>
+<section class="content-block" id="overtime-guide">
+<h2>What This Overtime Pay Calculator Does</h2>
+<p>This calculator computes your overtime pay, total weekly earnings, and effective hourly rate when you work beyond your standard hours. It handles federal overtime rules under the Fair Labor Standards Act (FLSA), time-and-a-half calculations, double-time provisions common in some states and industries, and the after-tax take-home estimate for overtime hours.</p>
+<h2>How It Works</h2>
+<p><strong>Overtime Rate = Regular Hourly Rate × 1.5</strong></p>
+<p><strong>Overtime Pay = Overtime Hours × Overtime Rate</strong></p>
+<p><strong>Total Weekly Pay = (Regular Hours × Regular Rate) + Overtime Pay</strong></p>
+<p>For salaried non-exempt employees, the regular rate is calculated by dividing total compensation for the week by total hours worked (including overtime hours), then multiplying overtime hours by 0.5× that rate — since the salary already covers straight-time for all hours.</p>
+<h2>Key Concepts Explained</h2>
+<h3>FLSA Overtime Eligibility</h3>
+<p>The FLSA requires overtime (1.5× rate) for hours worked beyond 40 in a workweek for non-exempt employees. As of 2024, salaried workers earning below $684/week ($35,568/year) are generally non-exempt and eligible for overtime regardless of job title. Workers classified as "executive, administrative, professional" (EAP) exemptions must earn above the threshold AND primarily perform exempt duties.</p>
+<h3>Daily vs. Weekly Overtime</h3>
+<p>Federal law calculates overtime on a weekly basis (40+ hours in a workweek). However, California requires overtime for hours over 8 in a day and double time for hours over 12. Alaska and Nevada also have daily overtime provisions. Check your state's rules, which may be more protective than federal minimums.</p>
+<h3>Tax Withholding on Overtime</h3>
+<p>Overtime pay is taxed at the same rates as regular wages — there is no separate "overtime tax rate." However, because overtime increases your total paycheck, your employer may withhold at a higher effective rate. Both withholding methods result in the same annual tax liability; only the timing differs.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Track your hours carefully</strong> — non-exempt employees should maintain their own records. Your legal right to overtime pay cannot be waived by you or your employer.</li>
+<li><strong>Report all overtime on your time card</strong> — working "off the clock" at employer pressure is an FLSA violation. Report all hours worked.</li>
+<li><strong>Understand your exemption classification</strong> — being called a "manager" or paid a salary does not automatically make you exempt. If you believe you've been misclassified, consult your state's Department of Labor or an employment attorney.</li>
+<li><strong>Model after-tax take-home before committing to heavy OT</strong> — 20 hours of overtime at 1.5× may net only 12–14 straight-time hours worth of take-home pay after taxes.</li>
+<li><strong>Understand comp time rules</strong> — private sector employers generally cannot legally substitute comp time for overtime cash pay under the FLSA. Public sector employers may offer comp time.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">Does overtime kick in after 8 hours a day or 40 hours a week?</h3><p class="faq-a">Under federal law (FLSA), overtime is based on 40 hours per workweek — not per day. California requires overtime for hours over 8 in a single day, and double time for hours over 12. Always check your state's overtime rules, which may be more protective than federal minimums.</p></div>
+<div class="faq-item"><h3 class="faq-q">Is overtime taxed at a higher rate?</h3><p class="faq-a">No — overtime wages are taxed at the same marginal rates as regular wages. However, because they increase total compensation, they may be taxed at a higher marginal rate if they push your income into the next bracket. Your total annual tax liability is the same regardless of how wages are spread throughout the year.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can my employer make me work overtime?</h3><p class="faq-a">Yes — in most US at-will employment states, employers can require overtime and can terminate employees who refuse (absent a union contract or employment agreement). Mandatory overtime is legal in most states, with exceptions for regulated industries like trucking (hours-of-service rules) and medical resident programs.</p></div>
+<div class="faq-item"><h3 class="faq-q">What is double time and when does it apply?</h3><p class="faq-a">Double time means 2× your regular rate. California requires double time for hours over 12 in a day and for hours beyond 8 on the seventh consecutive day of work. Some collective bargaining agreements include double time for holidays or specific shifts. Federal law does not require double time for any scenario.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>For your complete take-home pay picture, use the <a href="/paycheck-calculator">Paycheck Calculator</a>. The <a href="/salary-calculator-usa">Salary Calculator</a> converts annual salary to hourly equivalent. For annual income from hourly work, see the <a href="/hourly-to-salary-calculator">Hourly to Salary Calculator</a>.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n) { return '$' + n.toFixed(2); }
+
+function calc() {
+  const rate = +document.getElementById('rate').value || 0;
+  const regHours = Math.min(40, Math.max(0, +document.getElementById('regular-hours').value || 0));
+  const otHours = Math.max(0, +document.getElementById('ot-hours').value || 0);
+  const multiplier = +document.getElementById('ot-multiplier').value || 1.5;
+
+  const otRate = rate * multiplier;
+  const regPay = rate * regHours;
+  const otPay = otRate * otHours;
+  const total = regPay + otPay;
+
+  document.getElementById('result-col').innerHTML = `
+    <div class="net-card">
+      <div class="nl">Total pay this week</div>
+      <div class="na">${fmt(total)}</div>
+      <div class="nm">${regHours + otHours} hours worked total</div>
+    </div>
+    <div class="cards4">
+      <div class="mc"><div class="ml">Overtime rate</div><div class="mv" style="color:#f59e0b">${fmt(otRate)}/hr</div></div>
+      <div class="mc"><div class="ml">Overtime pay</div><div class="mv" style="color:#10b981">${fmt(otPay)}</div></div>
+    </div>
+    <div class="bcard">
+      <div class="bt">🧾 Pay breakdown</div>
+      <div class="brows">
+        <div class="br"><div class="blbl">Regular pay (${regHours} hrs × ${fmt(rate)})</div><div class="ba">${fmt(regPay)}</div></div>
+        <div class="br"><div class="blbl">Overtime pay (${otHours} hrs × ${fmt(otRate)})</div><div class="ba" style="color:#f59e0b">${fmt(otPay)}</div></div>
+        <div class="divider"></div>
+        <div class="br"><div class="blbl" style="color:var(--text);font-weight:600">Total weekly pay</div><div class="ba" style="color:#10b981;font-size:14px;font-weight:600">${fmt(total)}</div></div>
+      </div>
+    </div>`;
+}
+
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

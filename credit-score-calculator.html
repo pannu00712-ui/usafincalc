@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="credit score calculator, credit score estimator, how to improve credit score" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Credit Score Calculator 2026 — Estimate &amp; Improve Your FICO Score</title>
+<meta content="Estimate your FICO credit score and see how to improve it. Learn what factors affect your score and get personalized tips. Free credit score calculator 2026." name="description"/>
+<link href="https://usafincalc.com/credit-score-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23050810'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--green:#00e676;--red:#ff4d6d;--yellow:#ffd740;--r:14px;--rs:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:rgba(4,6,15,0.97);border-bottom:1px solid var(--border);padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-size:18px;font-weight:800;color:var(--text);text-decoration:none;}.logo span{color:var(--cyan);}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,212,255,0.06);color:var(--cyan);border:1px solid rgba(0,212,255,0.18);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:12px;}
+h1 span{background:linear-gradient(120deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{color:var(--text2);font-size:16px;max-width:580px;line-height:1.8;}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.main{grid-template-columns:1fr;}}
+.wide{grid-column:1/-1;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.ct{font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;}
+label{display:block;font-size:13px;color:var(--text2);margin-bottom:5px;}
+select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .2s;margin-bottom:14px;}
+select:focus{border-color:var(--cyan);}
+.btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.3);}
+.score-box{border-radius:var(--r);padding:28px;text-align:center;margin-bottom:14px;}
+.score-label{font-size:12px;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.score-val{font-size:72px;font-weight:800;font-family:'JetBrains Mono',monospace;line-height:1;}
+.score-range{font-size:14px;font-weight:700;margin-top:8px;}
+.score-bar{height:14px;background:linear-gradient(90deg,#ff4d6d 0%,#ff9800 30%,#ffd740 50%,#7ed957 70%,#00e676 100%);border-radius:8px;position:relative;margin:16px 0 8px;}
+.score-pointer{position:absolute;top:-6px;width:4px;height:26px;background:#fff;border-radius:2px;transition:left .5s ease;}
+.score-labels{display:flex;justify-content:space-between;font-size:10px;color:var(--text3);font-family:'JetBrains Mono',monospace;}
+.factor-grid{display:grid;grid-template-columns:1fr;gap:10px;}
+.factor{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;display:flex;align-items:center;gap:12px;}
+.factor-bar-wrap{flex:1;height:6px;background:var(--bg);border-radius:4px;}
+.factor-bar{height:100%;border-radius:4px;transition:width .5s ease;}
+.factor-label{font-size:12px;color:var(--text2);width:130px;flex-shrink:0;}
+.factor-pct{font-size:12px;color:var(--text3);width:30px;text-align:right;flex-shrink:0;}
+.tips{display:grid;grid-template-columns:1fr;gap:8px;}
+.tip{background:var(--bg3);border-left:3px solid var(--cyan);border-radius:0 var(--rs) var(--rs) 0;padding:12px 14px;font-size:13px;color:var(--text2);}
+.tip strong{color:var(--text);}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:13px;}
+footer a{color:var(--text2);text-decoration:none;margin:0 8px;}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="Credit Score Calculator 2026 — Estimate &amp; Improve Your FICO Score" property="og:title"/>
+<meta content="Estimate your FICO credit score and see how to improve it. Learn what factors affect your score and get personalized tips. Free credit score calculator 2026." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/credit-score-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Credit Score Calculator 2026 — Estimate &amp; Improve Your FICO Score" name="twitter:title"/>
+<meta content="Estimate your FICO credit score and see how to improve it. Learn what factors affect your score and get personalized tips. Free credit score calculato" name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Credit Score Calculator 2026 — Estimate &amp; Improve Your FICO Score",
+  "url": "https://usafincalc.com/credit-score-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Credit",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Credit Score Calculator",
+      "item": "https://usafincalc.com/credit-score-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "Credit Score Calculator 2026 — Estimate &amp; Improve Your FICO Score",
+  "url": "https://usafincalc.com/credit-score-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge"><span class="dot"></span>💳 FICO Score Estimator</div>
+<h1>Credit Score <span>Calculator</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p class="hero-sub">Estimate your FICO credit score based on the 5 key factors. Enter your payment history, utilization, account age, and credit mix to get a score estimate and specific improvement suggestions.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">Your Credit Profile</div>
+<label for="payment">Payment History (35% of score)</label>
+<select id="payment">
+<option value="35">Always on time — Perfect (35 pts)</option>
+<option value="28">Mostly on time — 1-2 late (28 pts)</option>
+<option value="18">Sometimes late — 30-60 days (18 pts)</option>
+<option value="8">Often late — 90+ days (8 pts)</option>
+<option value="0">Collections / Bankruptcy (0 pts)</option>
+</select>
+<label for="utilization">Credit Utilization (30% of score)</label>
+<select id="utilization">
+<option value="30">Under 10% — Excellent (30 pts)</option>
+<option value="26">10-30% — Good (26 pts)</option>
+<option value="18">30-50% — Fair (18 pts)</option>
+<option value="8">50-75% — Poor (8 pts)</option>
+<option value="0">Over 75% — Very Poor (0 pts)</option>
+</select>
+<label for="history">Length of Credit History (15%)</label>
+<select id="history">
+<option value="15">7+ years — Excellent (15 pts)</option>
+<option value="12">4-7 years — Good (12 pts)</option>
+<option value="8">2-4 years — Fair (8 pts)</option>
+<option value="4">1-2 years — Limited (4 pts)</option>
+<option value="1">Under 1 year — New (1 pt)</option>
+</select>
+<label for="mix">Credit Mix (10% of score)</label>
+<select id="mix">
+<option value="10">Cards + Loans + Mortgage (10 pts)</option>
+<option value="7">Cards + Loans (7 pts)</option>
+<option value="4">Cards only (4 pts)</option>
+<option value="1">Only 1 type (1 pt)</option>
+</select>
+<label for="new_credit">New Credit / Hard Inquiries (10%)</label>
+<select id="new_credit">
+<option value="10">No new inquiries (10 pts)</option>
+<option value="8">1-2 in past year (8 pts)</option>
+<option value="5">3-5 in past year (5 pts)</option>
+<option value="2">6+ in past year (2 pts)</option>
+</select>
+<button class="btn" onclick="calc()">Estimate My Credit Score →</button>
+</div>
+<div class="card">
+<div class="ct">Your Estimated FICO Score</div>
+<div class="score-box" id="score-box" style="background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(59,158,255,0.04));border:1px solid rgba(0,212,255,0.2);">
+<div class="score-label" id="score-label" style="color:var(--text2);">Estimated Score</div>
+<div class="score-val" id="score" style="color:var(--cyan);">742</div>
+<div class="score-range" id="score-range" style="color:var(--cyan);">Good Credit</div>
+</div>
+<div class="score-bar">
+<div class="score-pointer" id="pointer" style="left:51%"></div>
+</div>
+<div class="score-labels">
+<span>300</span><span>580</span><span>670</span><span>740</span><span>800</span><span>850</span>
+</div>
+<div style="margin-top:16px;">
+<div class="ct" style="margin-bottom:10px;">Score Factors</div>
+<div class="factor-grid">
+<div class="factor">
+<div class="factor-label">Payment History</div>
+<div class="factor-bar-wrap"><div class="factor-bar" id="bar-pay" style="width:100%;background:var(--green);"></div></div>
+<div class="factor-pct">35%</div>
+</div>
+<div class="factor">
+<div class="factor-label">Credit Utilization</div>
+<div class="factor-bar-wrap"><div class="factor-bar" id="bar-util" style="width:87%;background:var(--cyan);"></div></div>
+<div class="factor-pct">30%</div>
+</div>
+<div class="factor">
+<div class="factor-label">Credit History</div>
+<div class="factor-bar-wrap"><div class="factor-bar" id="bar-hist" style="width:80%;background:var(--blue);"></div></div>
+<div class="factor-pct">15%</div>
+</div>
+<div class="factor">
+<div class="factor-label">Credit Mix</div>
+<div class="factor-bar-wrap"><div class="factor-bar" id="bar-mix" style="width:70%;background:#b39dff;"></div></div>
+<div class="factor-pct">10%</div>
+</div>
+<div class="factor">
+<div class="factor-label">New Credit</div>
+<div class="factor-bar-wrap"><div class="factor-bar" id="bar-new" style="width:100%;background:var(--yellow);"></div></div>
+<div class="factor-pct">10%</div>
+</div>
+</div>
+</div>
+</div>
+<div class="card wide">
+<div class="ct">💡 How to Improve Your Score</div>
+<div class="tips" id="tips">
+<div class="tip"><strong>Pay on time, every time.</strong> Set up autopay for at least the minimum payment. Even one missed payment can drop your score 50-100 points.</div>
+<div class="tip"><strong>Keep utilization below 30%.</strong> If your credit limit is $10,000, keep your balance under $3,000. Below 10% is ideal for top scores.</div>
+<div class="tip"><strong>Don't close old accounts.</strong> Length of credit history matters. Keep old cards open even if you don't use them.</div>
+</div>
+</div>
+</div>
+</section>
+<section style="margin:40px 0 0">
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:14px;max-width:980px;margin-left:auto;margin-right:auto;padding:0 24px;box-sizing:border-box">Related Calculators</h2>
+<section class="related-section"><div class="related"><a href="/credit-score-simulator">Credit Score Simulator</a>
+<a href="/debt-payoff-calculator">Debt Payoff Calculator</a>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="credit-score-guide">
+<h2>What This Credit Score Calculator Does</h2>
+<p>This calculator estimates how specific financial actions will affect your credit score — paying off a card, applying for a new account, missing a payment, or reducing your credit utilization. It also shows which of the five FICO score factors are most affecting your score based on your inputs, so you can prioritize the actions with the most impact.</p>
+
+<h2>How Credit Scores Are Calculated</h2>
+<p>FICO scores (the most widely used model) are calculated from five factors, each with a different weight:</p>
+<table>
+<thead><tr><th scope="col">Factor</th><th scope="col">Weight</th><th scope="col">What It Measures</th></tr></thead>
+<tbody>
+<tr><td>Payment history</td><td>35%</td><td>On-time payments, missed payments, collections</td></tr>
+<tr><td>Amounts owed (utilization)</td><td>30%</td><td>Credit card balances relative to limits</td></tr>
+<tr><td>Length of credit history</td><td>15%</td><td>Age of oldest account, newest account, average age</td></tr>
+<tr><td>New credit</td><td>10%</td><td>Recent applications and hard inquiries</td></tr>
+<tr><td>Credit mix</td><td>10%</td><td>Variety of account types (cards, loans, mortgage)</td></tr>
+</tbody>
+</table>
+
+<h2>The Fastest Ways to Improve Your Score</h2>
+<h3>Reduce Credit Utilization</h3>
+<p>Credit utilization — your credit card balances divided by total credit limits — is the most actionable short-term lever. FICO scoring favors utilization below 30%; below 10% is optimal for maximum score improvement. Paying down a card from 75% utilization to 20% can improve a score by 30–50 points, often within one billing cycle when the new balance reports to the bureaus.</p>
+<h3>Correct Credit Report Errors</h3>
+<p>Errors on credit reports are more common than most people realize — incorrect account information, payments incorrectly reported late, accounts that aren't yours (from identity theft or mixed files). Under the FCRA, you can dispute errors with the credit bureaus, and verified errors must be corrected. A removed collection or corrected late payment can produce significant score improvement immediately.</p>
+<h3>Become an Authorized User</h3>
+<p>Being added as an authorized user on a family member's well-managed credit card adds that account's history to your credit file — including the account age and payment history. This works best when the primary cardholder has a long account history and low utilization. You don't need to use the card or even have access to it.</p>
+
+<h2>What Doesn't Help (Common Myths)</h2>
+<p>Carrying a small balance on credit cards does not improve your score — this myth persists but paying your balance in full each month is better for both your score and your finances. Checking your own credit score (a "soft pull") does not lower your score — only hard pulls from lenders do, and those typically affect scores by 5 points or less for 12 months.</p>
+
+<h2>Credit Score Ranges and Their Impact</h2>
+<table>
+<thead><tr><th scope="col">Score Range</th><th scope="col">Category</th><th scope="col">Mortgage Rate Impact (Approx.)</th></tr></thead>
+<tbody>
+<tr><td>760+</td><td>Exceptional</td><td>Best available rates</td></tr>
+<tr><td>720–759</td><td>Very Good</td><td>Near-best rates (0.1–0.3% higher)</td></tr>
+<tr><td>680–719</td><td>Good</td><td>Competitive rates (0.3–0.5% higher)</td></tr>
+<tr><td>640–679</td><td>Fair</td><td>Higher rates (0.5–1.0% higher)</td></tr>
+<tr><td>580–639</td><td>Poor</td><td>Significantly higher rates; some lenders decline</td></tr>
+<tr><td>Below 580</td><td>Very Poor</td><td>Limited conventional options; FHA may be available</td></tr>
+</tbody>
+</table>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Automate minimum payments on all accounts</strong> — a single missed payment can drop a score 50–100 points and stays on your credit report for 7 years.</li>
+<li><strong>Don't close old accounts</strong> — closing accounts reduces available credit (raises utilization) and can shorten average account age. Leave paid-off accounts open with a small recurring charge.</li>
+<li><strong>Check your credit reports at AnnualCreditReport.com</strong> — free weekly reports from all three bureaus. Review for errors at least annually.</li>
+</ul>
+
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/mortgage-calculator-usa">Mortgage Calculator</a></strong> — see how your score affects mortgage payment.</li>
+<li><strong><a href="/credit-score-simulator">Credit Score Simulator</a></strong> — model future score changes.</li>
+<li><strong><a href="/debt-payoff-calculator">Debt Payoff Calculator</a></strong> — reducing balances improves score.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>How long does a late payment affect my score?</h3>
+<p>A late payment (30+ days past due) stays on your credit report for 7 years. Its impact diminishes over time — a single late payment from 4 years ago has much less scoring impact than one from 3 months ago — but it's still technically visible to lenders for 7 years.</p>
+<h3>How fast can I improve my credit score?</h3>
+<p>Utilization improvements can show within 30–60 days as new balances report. Correcting a major error (removed collections or late payments) can improve scores 50–100 points relatively quickly. Building the length-of-history component takes years. Most people with fair credit can reach good credit in 12–24 months with disciplined management.</p>
+<h3>Does income affect credit score?</h3>
+<p>No — income is not part of credit score calculations. A high earner who misses payments has a worse credit score than a modest earner with a perfect payment history. Income matters for loan qualification (debt-to-income ratio) but not credit score.</p>
+<h3>Which credit bureau should I focus on?</h3>
+<p>You don't control which bureau a lender pulls. For major loans (mortgage, auto), lenders often pull from all three and use the middle score. Monitor all three (Equifax, Experian, TransUnion) since errors on one don't automatically appear on the others.</p>
+
+<h2>Key Takeaways</h2>
+<p>Credit scores determine the interest rates you pay on mortgages, auto loans, and personal loans — over a lifetime, a 100-point credit score difference can translate to tens of thousands of dollars in extra interest paid. Payment history is the most important factor and the most durable (late payments linger 7 years). Utilization is the most responsive factor — a large payoff can produce significant score improvement within 60 days. Monitoring for errors and maintaining old accounts are housekeeping tasks that protect the score you've already built.</p>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function calc(){
+  var pay=parseInt(document.getElementById('payment').value)||0;
+  var util=parseInt(document.getElementById('utilization').value)||0;
+  var hist=parseInt(document.getElementById('history').value)||0;
+  var mix=parseInt(document.getElementById('mix').value)||0;
+  var nc=parseInt(document.getElementById('new_credit').value)||0;
+  var total=pay+util+hist+mix+nc;
+  // Scale 0-100 points to 300-850
+  var score=Math.round(300+(total/100)*550);
+  var color,label,boxBg,boxBorder;
+  if(score>=800){color='#00e676';label='Exceptional';boxBg='rgba(0,230,118,0.08)';boxBorder='rgba(0,230,118,0.25)';}
+  else if(score>=740){color='#00d4ff';label='Very Good';boxBg='rgba(0,212,255,0.08)';boxBorder='rgba(0,212,255,0.25)';}
+  else if(score>=670){color='#3b9eff';label='Good';boxBg='rgba(59,158,255,0.08)';boxBorder='rgba(59,158,255,0.25)';}
+  else if(score>=580){color='#ffd740';label='Fair';boxBg='rgba(255,215,64,0.08)';boxBorder='rgba(255,215,64,0.25)';}
+  else{color='#ff4d6d';label='Poor';boxBg='rgba(255,77,109,0.08)';boxBorder='rgba(255,77,109,0.25)';}
+  var box=document.getElementById('score-box');
+  box.style.background=boxBg;
+  box.style.borderColor=boxBorder;
+  document.getElementById('score').textContent=score;
+  document.getElementById('score').style.color=color;
+  document.getElementById('score-range').textContent=label+' Credit';
+  document.getElementById('score-range').style.color=color;
+  // Move pointer
+  var pct=((score-300)/550)*100;
+  document.getElementById('pointer').style.left=pct+'%';
+  // Update bars
+  document.getElementById('bar-pay').style.width=(pay/35*100)+'%';
+  document.getElementById('bar-util').style.width=(util/30*100)+'%';
+  document.getElementById('bar-hist').style.width=(hist/15*100)+'%';
+  document.getElementById('bar-mix').style.width=(mix/10*100)+'%';
+  document.getElementById('bar-new').style.width=(nc/10*100)+'%';
+}
+calc();
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

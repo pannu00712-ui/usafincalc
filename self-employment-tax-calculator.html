@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="self employment tax calculator, 1099 tax calculator, freelance tax calculator 2026" name="keywords"/>
+<title>Self-Employment Tax Calculator 2026 — 1099 &amp; Freelancer Tax Estimator</title>
+<meta content="Calculate your 2026 self-employment tax (SE tax), quarterly estimated payments, deductions, and net income as a freelancer or 1099 contractor." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(251,146,60,0.1);color:var(--orange);border:1px solid rgba(251,146,60,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;margin-left:auto}
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:700px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+.fc-qa{max-width:980px;margin:0 auto 24px;padding:0 24px}
+.fc-qa-inner{border-radius:10px;padding:14px 18px;font-size:14px;color:var(--text2)}
+.fc-calc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:980px;margin:0 auto 40px;padding:0 24px}
+@media(max-width:680px){.fc-calc-wrap{grid-template-columns:1fr}}
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--orange));display:block;box-shadow:0 0 8px var(--dot-color,var(--orange))}
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-label-hint{font-size:11px;color:var(--text3);font-weight:400;margin-left:6px;text-transform:none;letter-spacing:0}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace}
+.fc-sfx{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 26px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--orange)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-input.with-sfx{padding-right:36px;padding-left:12px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s}
+.fc-select:focus{border-color:var(--orange)}
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#fb923c,#ea580c);color:#fff;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(251,146,60,0.35)}
+.fc-section-divider{border:none;border-top:1px solid var(--border);margin:16px 0}
+/* results */
+.fc-result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:48px 24px;gap:12px;color:var(--text3);font-size:14px;min-height:200px}
+.fc-result-placeholder-icon{font-size:40px;opacity:.5}
+.fc-result-hero{border-radius:10px;padding:20px;text-align:center;margin-bottom:16px}
+.fc-result-label{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.fc-result-amount{font-size:36px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1.1}
+.fc-result-sub{font-size:13px;color:var(--text2);margin-top:8px}
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(30,45,69,0.5);font-size:14px}
+.fc-detail-row:last-child{border:none}
+.fc-detail-key{color:var(--text2);flex:1}
+.fc-detail-val{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--text);text-align:right}
+.fc-detail-val.green{color:var(--green)}.fc-detail-val.blue{color:var(--blue)}.fc-detail-val.orange{color:var(--orange)}.fc-detail-val.red{color:var(--red)}.fc-detail-val.yellow{color:var(--yellow)}
+.fc-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin-top:14px}
+.fc-mini-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.fc-mini-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.fc-mini-val{font-size:15px;font-weight:700;font-family:'JetBrains Mono',monospace}
+/* quarterly schedule */
+.fc-quarterly{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:14px}
+.fc-quarterly-title{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px}
+.fc-q-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(30,45,69,0.4);font-size:13px}
+.fc-q-row:last-child{border:none}
+.fc-q-period{color:var(--text2)}
+.fc-q-due{color:var(--text3);font-size:12px}
+.fc-q-amt{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--orange)}
+/* donut chart */
+.fc-donut-wrap{display:flex;align-items:center;gap:20px;margin-top:14px;flex-wrap:wrap}
+.fc-donut-legend{display:flex;flex-direction:column;gap:8px;flex:1;min-width:140px}
+.fc-legend-item{display:flex;align-items:center;gap:8px;font-size:13px}
+.fc-legend-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+/* content */
+.fc-content{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-content h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-table{width:100%;border-collapse:collapse;font-size:13px}
+.fc-table th{background:var(--panel2);color:var(--text2);text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+.fc-table td{padding:9px 12px;border-bottom:1px solid rgba(30,45,69,0.4);color:var(--text2)}
+.fc-table tr:hover td{background:var(--panel2);color:var(--text)}
+.fc-note{font-size:12px;color:var(--text3);margin-top:10px;padding:10px;background:var(--panel);border-radius:8px;border-left:3px solid var(--border)}
+.fc-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-bottom:32px}
+.fc-info-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
+.fc-info-card-icon{font-size:22px;margin-bottom:8px}
+.fc-info-card-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.fc-info-card-body{font-size:13px;color:var(--text2);line-height:1.6}
+.fc-faq{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-faq h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.fc-faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;background:var(--panel);transition:.2s}
+.fc-faq-q:hover{background:var(--panel2)}
+.fc-faq-arrow{transition:transform .2s;color:var(--text3)}
+.fc-faq-item.open .fc-faq-arrow{transform:rotate(180deg)}
+.fc-faq-a{display:none;padding:14px 16px;font-size:13px;color:var(--text2);background:var(--panel2);border-top:1px solid var(--border);line-height:1.7}
+.fc-faq-item.open .fc-faq-a{display:block}
+.fc-related{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-related h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.fc-rel-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:.2s;display:block}
+.fc-rel-card:hover{background:var(--panel2);border-color:var(--orange);color:var(--text)}
+.fc-footer{border-top:1px solid var(--border);margin-top:40px;padding:32px 24px 20px}
+.fc-footer-inner{display:flex;gap:40px;max-width:980px;margin:0 auto 20px;flex-wrap:wrap}
+.fc-footer-brand{flex:1;min-width:200px}
+.fc-footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.fc-footer-desc{font-size:13px;color:var(--text3);line-height:1.6}
+.fc-footer-links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:flex-start;padding-top:4px}
+.fc-footer-link{color:var(--text3);text-decoration:none;font-size:13px;transition:.2s}
+.fc-footer-link:hover{color:var(--text)}
+.fc-footer-bottom{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);flex-wrap:wrap;gap:8px}
+@keyframes fcFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fc-animate{animation:fcFadeUp .4s ease both}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="Self-Employment Tax Calculator 2026 — 1099 &amp; Freelancer Tax Estimator" property="og:title"/>
+<meta content="Calculate your 2026 self-employment tax (SE tax), quarterly estimated payments, deductions, and net income as a freelancer or 1099 contractor." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/self-employment-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Self-Employment Tax Calculator 2026 — 1099 &amp; Freelancer Tax Estimator" name="twitter:title"/>
+<meta content="Calculate your 2026 self-employment tax (SE tax), quarterly estimated payments, deductions, and net income as a freelancer or 1099 contractor." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/><link href="https://usafincalc.com/self-employment-tax-calculator" rel="canonical"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Self-Employment Tax Calculator 2026 — 1099 &amp; Freelancer Tax Estimator",
+  "url": "https://usafincalc.com/self-employment-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tax Calculators",
+      "item": "https://usafincalc.com/tax-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Self Employment Tax Calculator",
+      "item": "https://usafincalc.com/self-employment-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "Self-Employment Tax Calculator 2026 — 1099 &amp; Freelancer Tax Estimator",
+  "url": "https://usafincalc.com/self-employment-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero fc-animate">
+<div class="fc-page-badge" style="background:rgba(251,146,60,0.1);color:#fb923c;border-color:rgba(251,146,60,0.25)">For Freelancers, 1099 &amp; Gig Workers</div>
+<h1>Self-Employment Tax <span style="color:#fb923c">Calculator 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Calculate your SE tax (Social Security + Medicare), federal income tax, quarterly estimated payments, and take-home income as a freelancer or 1099 contractor.</p>
+</div>
+<div class="fc-qa">
+<div class="fc-qa-inner" style="background:rgba(251,146,60,0.06);border:1px solid rgba(251,146,60,0.2)">
+<strong style="color:#fb923c">Quick answer:</strong> Earning $80,000 as a freelancer (single, no W-2)? Your self-employment tax is roughly <strong>$11,304</strong> and federal income tax around <strong>$9,527</strong> — total tax burden <strong>~$20,831</strong>. Quarterly payment: ~<strong>$5,208</strong>.
+  </div>
+</div>
+<div class="fc-calc-wrap">
+<div class="fc-panel fc-animate">
+<div class="fc-panel-title" style="--dot-color:#fb923c">Income &amp; Deductions</div>
+<label for="seIncome" class="fc-label">Gross Self-Employment Income
+      <span class="fc-label-hint">(Total 1099 / freelance revenue)</span>
+</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="seIncome" placeholder="80000" type="number"/>
+</div>
+<label for="expenses" class="fc-label">Business Expenses
+      <span class="fc-label-hint">(software, equipment, home office…)</span>
+</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="expenses" placeholder="0" type="number" value="0"/>
+</div>
+<label for="healthPremium" class="fc-label">Self-Employed Health Insurance Premium
+      <span class="fc-label-hint">(deductible above-the-line)</span>
+</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="healthPremium" placeholder="0" type="number" value="0"/>
+</div>
+<label for="sepIra" class="fc-label">SEP-IRA / Solo 401(k) Contribution
+      <span class="fc-label-hint">(up to 25% of net SE income)</span>
+</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="sepIra" placeholder="0" type="number" value="0"/>
+</div>
+<hr class="fc-section-divider"/>
+<label for="w2Income" class="fc-label">W-2 Income (if any other job)</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="w2Income" placeholder="0" type="number" value="0"/>
+</div>
+<label for="filingStatus" class="fc-label">Filing Status</label>
+<select class="fc-select" id="filingStatus">
+<option value="single">Single</option>
+<option value="married">Married Filing Jointly</option>
+<option value="marriedSep">Married Filing Separately</option>
+<option value="hoh">Head of Household</option>
+</select>
+<label for="dedType" class="fc-label">Deduction Type</label>
+<select class="fc-select" id="dedType">
+<option value="standard">Standard Deduction</option>
+<option value="itemized">Itemized Deduction</option>
+</select>
+<div id="itemizedWrap" style="display:none;margin-top:10px">
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="itemized" placeholder="20000" type="number"/>
+</div>
+</div>
+<button class="fc-btn" onclick="calcSE()">Calculate My Tax →</button>
+</div>
+<div id="seResult">
+<div class="fc-result-placeholder">
+<div class="fc-result-placeholder-icon">🧑‍💼</div>
+<div>Enter your freelance income to see your full tax breakdown.</div>
+</div>
+</div>
+</div>
+<!-- Info cards -->
+<div class="fc-content">
+<h2>How Self-Employment Tax Works</h2>
+<div class="fc-info-grid">
+<div class="fc-info-card">
+<div class="fc-info-card-icon">🧾</div>
+<div class="fc-info-card-title">SE Tax = 15.3%</div>
+<div class="fc-info-card-body">Self-employed workers pay both the employer and employee share of FICA: <strong>12.4%</strong> Social Security (on first $184,500) + <strong>2.9%</strong> Medicare. On net earnings above $200K, an extra 0.9% Medicare surtax applies.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">💡</div>
+<div class="fc-info-card-title">Half SE Tax is Deductible</div>
+<div class="fc-info-card-body">The IRS lets you deduct <strong>50% of your SE tax</strong> from gross income before calculating income tax. This partially offsets the double taxation that freelancers face compared to W-2 employees.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">📅</div>
+<div class="fc-info-card-title">Quarterly Payments Required</div>
+<div class="fc-info-card-body">If you expect to owe $1,000+ in taxes, the IRS requires <strong>quarterly estimated payments</strong> (Form 1040-ES). Missing payments triggers underpayment penalties — typically 7–8% annually.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">📉</div>
+<div class="fc-info-card-title">Key Deductions to Use</div>
+<div class="fc-info-card-body">Freelancers can deduct: home office, business equipment, software subscriptions, professional development, health insurance premiums, SEP-IRA contributions (up to 25% of net income), and 50% of SE tax.</div>
+</div>
+</div>
+<h2>2026 Self-Employment Tax Quick Reference</h2>
+<table class="fc-table">
+<thead><tr><th scope="col">Component</th><th scope="col">Rate</th><th scope="col">Income Cap / Threshold</th></tr></thead>
+<tbody>
+<tr><td>Social Security (SE)</td><td style="color:var(--orange);font-family:'JetBrains Mono',monospace">12.4%</td><td>First $184,500 of net SE income</td></tr>
+<tr><td>Medicare (SE)</td><td style="color:var(--orange);font-family:'JetBrains Mono',monospace">2.9%</td><td>No cap</td></tr>
+<tr><td>Additional Medicare Surtax</td><td style="color:var(--red);font-family:'JetBrains Mono',monospace">0.9%</td><td>Net SE income over $200,000 (single) / $250,000 (MFJ)</td></tr>
+<tr><td>Total SE Tax (base)</td><td style="color:var(--yellow);font-weight:700;font-family:'JetBrains Mono',monospace">15.3%</td><td>Applied to 92.35% of net earnings</td></tr>
+<tr><td>SE Tax Deduction</td><td style="color:var(--green);font-family:'JetBrains Mono',monospace">50%</td><td>Deducted from gross income (above-the-line)</td></tr>
+<tr><td>SEP-IRA Max Contribution</td><td style="color:var(--blue);font-family:'JetBrains Mono',monospace">25%</td><td>Up to $70,000 of net SE income (2026)</td></tr>
+</tbody>
+</table>
+<div class="fc-note">SE tax applies to 92.35% of net self-employment earnings (i.e., after subtracting the employer-equivalent portion). Source: IRS Schedule SE, Publication 334.</div>
+</div>
+<div class="fc-faq">
+<h2>Frequently Asked Questions</h2>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Why do freelancers pay more tax than W-2 employees? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">W-2 employees split FICA taxes with their employer — each pays 7.65%. Self-employed workers pay <strong>both halves (15.3%)</strong> since they are their own employer. However, you can deduct 50% of SE tax from your income, and business expenses help offset the burden.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">When are 2026 quarterly estimated tax payments due? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">
+      2026 due dates:<br/>
+      • <strong>Q1</strong> (Jan–Mar income): April 15, 2026<br/>
+      • <strong>Q2</strong> (Apr–May income): June 16, 2026<br/>
+      • <strong>Q3</strong> (Jun–Aug income): September 15, 2026<br/>
+      • <strong>Q4</strong> (Sep–Dec income): January 15, 2026<br/>
+      Pay via IRS Direct Pay or EFTPS.
+    </div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What is a SEP-IRA and how much can I contribute in 2026? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">A SEP-IRA (Simplified Employee Pension) lets self-employed workers contribute up to <strong>25% of net SE income</strong>, maxing at <strong>$70,000</strong> in 2026. Contributions are fully tax-deductible, reducing both your AGI and income tax. It's one of the highest-limit retirement accounts available to self-employed workers.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Can I deduct my home office as a freelancer? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">Yes — if you use part of your home <strong>regularly and exclusively</strong> for business. You can use the simplified method ($5/sq ft, max 300 sq ft = $1,500 deduction) or the regular method (actual expenses × business-use percentage). W-2 employees cannot take this deduction under current law.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Do I need to file quarterly if I also have a W-2 job? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">Maybe not — if your W-2 withholding is large enough to cover the taxes owed on your freelance income, you may not need to make separate estimated payments. If your expected SE tax is under $1,000 after withholding, no quarterly payments are required.</div>
+</div>
+</div>
+<div class="fc-related">
+<h2>Related Calculators</h2>
+<div class="fc-rel-grid">
+<a class="fc-rel-card" href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a class="fc-rel-card" href="/salary-calculator-usa">💵 Salary + State Tax</a>
+<a class="fc-rel-card" href="/roth-ira-calculator">📈 Roth IRA Calculator</a>
+<a class="fc-rel-card" href="/capital-gains-tax-calculator">📊 Capital Gains Tax</a>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/self-employment-tax-deductions">15 Self-Employment Tax Deductions You Might Be Missing</a></li>
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="self-employment-guide">
+<h2>What This Self-Employment Tax Calculator Does</h2>
+<p>This calculator estimates the self-employment (SE) tax owed by freelancers, independent contractors, sole proprietors, and single-member LLC owners. Enter your net self-employment income (revenue minus business expenses) and it computes SE tax, the deductible portion of SE tax, estimated federal income tax, and your total estimated tax liability — the figure you need for quarterly estimated payments.</p>
+<h2>Understanding Self-Employment Tax</h2>
+<p>When you're an employee, your employer pays half your Social Security and Medicare taxes (7.65%) and withholds the other half from your paycheck. Self-employed individuals pay both halves — 15.3% total on net self-employment income, often called SE tax. This is in addition to regular income tax, which is why the effective tax rate for self-employed people frequently surprises those coming from traditional employment.</p>
+<p>SE tax applies to the first 92.35% of net self-employment income (the IRS allows a 7.65% reduction to reflect that employees don't pay SE tax on the employer's half of FICA). So if you net $80,000 from freelancing, SE tax applies to $73,880.</p>
+<h2>Key Deductions That Reduce Your Tax Bill</h2>
+<h3>Deduction for Half of SE Tax</h3>
+<p>You can deduct 50% of SE tax paid as an adjustment to gross income on Schedule 1. If you owe $11,304 in SE tax, you can deduct $5,652 — reducing your taxable income before federal income tax is calculated. This deduction exists to treat self-employed individuals similarly to employees, who receive the employer's FICA contribution without it being counted as their income.</p>
+<h3>Business Expenses</h3>
+<p>Ordinary and necessary business expenses reduce your net self-employment income, which reduces both SE tax and income tax. Examples: home office (actual expenses or $5/sq ft simplified method), vehicle mileage (67 cents/mile in 2024), equipment, software, professional development, health insurance premiums (deductible separately as an adjustment to income), and retirement contributions.</p>
+<h3>Self-Employed Health Insurance Deduction</h3>
+<p>If you pay your own health insurance premiums, those are deductible as an adjustment to gross income (not a business expense) — potentially saving both income tax and SE tax on those amounts.</p>
+<h3>SEP-IRA or Solo 401(k) Contributions</h3>
+<p>Self-employed retirement accounts allow contributions up to $66,000/year (2024, Solo 401k) or 25% of net self-employment income (SEP-IRA). These contributions reduce taxable income dollar-for-dollar — a powerful way to lower both income tax and, in some structures, SE tax.</p>
+<h2>Quarterly Estimated Tax Payments</h2>
+<p>Without employer withholding, self-employed individuals must pay estimated taxes four times per year: April 15, June 15, September 15, and January 15 of the following year. The safe harbor rule protects against underpayment penalties: pay either 100% of last year's tax liability (110% if AGI exceeded $150,000) or 90% of the current year's liability, whichever is less.</p>
+<h2>Real-World Examples</h2>
+<h3>Freelancer Earning $75,000 Net</h3>
+<p>SE tax: $75,000 × 0.9235 × 0.153 = $10,614. SE tax deduction: $5,307. Taxable income after SE deduction (single, standard deduction): approximately $55,693. Federal income tax: approximately $8,400. Total federal tax burden: $19,014, or about 25.4% of net income. Add state income tax depending on location.</p>
+<h3>Impact of a SEP-IRA Contribution</h3>
+<p>Same freelancer contributes $13,000 to a SEP-IRA. Taxable income drops from ~$55,693 to ~$42,693. Federal income tax drops from ~$8,400 to ~$5,900 — a $2,500 tax savings from $13,000 contributed (roughly 19% tax savings). The remaining $10,500 builds tax-deferred retirement wealth.</p>
+<h2>Common Mistakes</h2>
+<h3>Not setting aside taxes throughout the year</h3>
+<p>A common first-year freelancer mistake. Receiving a $10,000 client payment and spending most of it — then facing a surprise tax bill in April. Best practice: set aside 25%–30% of each payment for taxes as received, in a separate account.</p>
+<h3>Forgetting SE tax in addition to income tax</h3>
+<p>Thinking "I'm in the 22% bracket so I owe 22%" ignores the additional 15.3% SE tax on top of income tax. Effective federal tax rates for self-employed individuals in the $60,000–$100,000 range commonly run 28%–35% of net income all-in.</p>
+<h3>Missing deductible business expenses</h3>
+<p>Every dollar of legitimate business expense reduces both income tax and SE tax. Keeping poor records means over-paying significantly. Use accounting software from day one, and save every receipt for business purchases.</p>
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Open a business checking account</strong> — keeping business and personal finances separate simplifies bookkeeping and expense tracking dramatically.</li>
+<li><strong>Pay quarterly estimates on time</strong> — the underpayment penalty is modest but avoidable. Set calendar reminders for all four due dates.</li>
+<li><strong>Track mileage from the beginning of the year</strong> — vehicle deductions require contemporaneous records; reconstructing mileage logs retroactively is both difficult and risky under audit.</li>
+<li><strong>Open a Solo 401(k) or SEP-IRA</strong> — every dollar contributed reduces taxable income and builds retirement wealth simultaneously.</li>
+</ul>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — model your federal income tax burden separately.</li>
+<li><strong><a href="/paycheck-calculator">Paycheck Calculator</a></strong> — compare self-employment tax burden to equivalent employment.</li>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — model Solo 401(k) contribution benefits.</li>
+<li><strong><a href="/budget-planner">Budget Planner</a></strong> — manage variable self-employment income.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Do I owe SE tax on all my self-employment income?</h3>
+<p>SE tax applies to net self-employment income (revenue minus business expenses) above $400/year. Below $400, no SE tax is due (though income may still be subject to regular income tax).</p>
+<h3>Is SE tax the same as income tax?</h3>
+<p>No — they're separate taxes calculated separately. SE tax funds Social Security and Medicare. Income tax funds general federal operations. You pay both on self-employment income, which is why the combined rate can be surprisingly high.</p>
+<h3>Can I deduct my home office?</h3>
+<p>Yes, if you use a dedicated space regularly and exclusively for business. The simplified method allows $5/sq ft (max 300 sq ft, or $1,500). The actual expense method may yield more if home costs are high.</p>
+<h3>Does forming an S-Corp reduce self-employment tax?</h3>
+<p>Potentially, yes. S-Corp owners pay SE tax only on their salary (which should be "reasonable compensation"), not on S-Corp distributions. At higher income levels ($80,000+), this structure can reduce SE tax meaningfully. But S-Corp administration has real costs (payroll, accounting, state fees) — the math needs to pencil out.</p>
+<h3>What records should I keep for self-employment taxes?</h3>
+<p>Keep all invoices, receipts for business expenses, bank and credit card statements, mileage logs, home office measurements (and utility bills if using actual expense method), and any business contracts. Retain records for at least 3 years (7 years is safer if income is significant or complex).</p>
+<h2>Key Takeaways</h2>
+<p>Self-employment taxes are higher than most new freelancers expect — the 15.3% SE tax layer on top of income tax creates an effective federal tax rate that can surprise even financially savvy people accustomed to W-2 employment. The deductions available to self-employed individuals (business expenses, SE tax deduction, health insurance, retirement contributions) can meaningfully reduce this burden, but they require proactive tracking and planning. Setting aside tax money from each payment and making quarterly estimated payments prevents the April 15th shock that derails many new freelancers in their first year.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+document.getElementById('dedType').addEventListener('change', function(){
+  document.getElementById('itemizedWrap').style.display = this.value === 'itemized' ? '' : 'none';
+});
+
+const ORD_BRACKETS = {
+  single:     [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]],
+  married:    [[23850,.10],[96950,.12],[206700,.22],[394600,.24],[501050,.32],[751600,.35],[Infinity,.37]],
+  marriedSep: [[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[375800,.35],[Infinity,.37]],
+  hoh:        [[17000,.10],[64850,.12],[103350,.22],[197300,.24],[250500,.32],[626350,.35],[Infinity,.37]]
+};
+const STD = {single:15000,married:30000,marriedSep:15000,hoh:22500};
+const SS_WAGE_BASE = 176100;
+const ADDITIONAL_MEDICARE_THRESH = {single:200000,married:250000,marriedSep:125000,hoh:200000};
+
+function calcOrdTax(taxable, filing) {
+  let tax = 0, prev = 0;
+  for (const [top, rate] of ORD_BRACKETS[filing]) {
+    if (taxable <= prev) break;
+    const chunk = Math.min(taxable, top === Infinity ? taxable : top) - prev;
+    tax += chunk * rate;
+    prev = Math.min(taxable, top === Infinity ? taxable : top);
+    if (top === Infinity || prev >= taxable) break;
+  }
+  return tax;
+}
+
+function fmt(n) { return '$' + Math.round(Math.abs(n)).toLocaleString('en-US'); }
+function fmtP(n) { return n.toFixed(1) + '%'; }
+
+function calcSE() {
+  const grossSE   = parseFloat(document.getElementById('seIncome').value) || 0;
+  const expenses  = parseFloat(document.getElementById('expenses').value) || 0;
+  const health    = parseFloat(document.getElementById('healthPremium').value) || 0;
+  const sepIra    = parseFloat(document.getElementById('sepIra').value) || 0;
+  const w2        = parseFloat(document.getElementById('w2Income').value) || 0;
+  const filing    = document.getElementById('filingStatus').value;
+  const dedType   = document.getElementById('dedType').value;
+  const itemized  = parseFloat(document.getElementById('itemized').value) || 0;
+
+  // Net SE income
+  const netSE = Math.max(0, grossSE - expenses);
+
+  // SE tax base = 92.35% of net SE
+  const seTaxBase = netSE * 0.9235;
+
+  // Social Security portion (12.4% up to wage base)
+  const ssTaxable = Math.min(seTaxBase, SS_WAGE_BASE);
+  const ssTax = ssTaxable * 0.124;
+
+  // Medicare portion (2.9% on all)
+  const medTax = seTaxBase * 0.029;
+
+  // Additional Medicare surtax (0.9%)
+  const addlMedicareThresh = ADDITIONAL_MEDICARE_THRESH[filing];
+  const totalNetIncome = netSE + w2;
+  const addlMedicare = totalNetIncome > addlMedicareThresh
+    ? (totalNetIncome - addlMedicareThresh) * 0.009
+    : 0;
+
+  const seTax = ssTax + medTax + addlMedicare;
+
+  // SE deduction = 50% of SE tax (above-the-line)
+  const seDeduction = (ssTax + medTax) * 0.5; // addl medicare not deductible
+
+  // SEP-IRA cap: 25% of net SE after SE deduction
+  const sepMax = Math.min(70000, (netSE - seDeduction) * 0.25);
+  const sepActual = Math.min(sepIra, sepMax);
+
+  // AGI
+  const agi = Math.max(0, netSE + w2 - seDeduction - health - sepActual);
+
+  // Standard or itemized
+  const std = STD[filing];
+  const ded = dedType === 'standard' ? std : Math.max(itemized, std);
+  const taxable = Math.max(0, agi - ded);
+
+  // Federal income tax
+  const fedIncomeTax = calcOrdTax(taxable, filing);
+
+  // Total tax
+  const totalTax = seTax + fedIncomeTax;
+  const takeHome = netSE + w2 - totalTax;
+  const effectiveRate = (netSE + w2) > 0 ? totalTax / (netSE + w2) * 100 : 0;
+
+  // Quarterly payment
+  const quarterly = totalTax / 4;
+
+  // Donut data (approximate visual slices)
+  const sePct = (seTax / totalTax * 100).toFixed(0);
+  const fedPct = (fedIncomeTax / totalTax * 100).toFixed(0);
+
+  // Build result
+  document.getElementById('seResult').innerHTML = `
+    <div class="fc-panel fc-animate">
+      <div class="fc-panel-title" style="--dot-color:#fb923c">Your Tax Breakdown</div>
+      <div class="fc-result-hero" style="background:rgba(251,146,60,0.08);border:1px solid rgba(251,146,60,0.25)">
+        <div class="fc-result-label">Total Tax Owed</div>
+        <div class="fc-result-amount" style="color:#fb923c">${fmt(totalTax)}</div>
+        <div class="fc-result-sub">Effective Rate: <strong style="color:#fb923c">${fmtP(effectiveRate)}</strong> · Take-Home: <strong style="color:#22d3a5">${fmt(takeHome)}</strong></div>
+      </div>
+
+      <div class="fc-detail-row"><span class="fc-detail-key">Gross SE Income</span><span class="fc-detail-val">${fmt(grossSE)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Business Expenses</span><span class="fc-detail-val orange">− ${fmt(expenses)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Net SE Income</span><span class="fc-detail-val">${fmt(netSE)}</span></div>
+      ${w2 > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">W-2 Income</span><span class="fc-detail-val">${fmt(w2)}</span></div>` : ''}
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+        <div class="fc-detail-row"><span class="fc-detail-key">Social Security Tax (12.4%)</span><span class="fc-detail-val red">${fmt(ssTax)}</span></div>
+        <div class="fc-detail-row"><span class="fc-detail-key">Medicare Tax (2.9%)</span><span class="fc-detail-val red">${fmt(medTax)}</span></div>
+        ${addlMedicare > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Additional Medicare (0.9%)</span><span class="fc-detail-val red">${fmt(addlMedicare)}</span></div>` : ''}
+        <div class="fc-detail-row"><span class="fc-detail-key"><strong>Self-Employment Tax Total</strong></span><span class="fc-detail-val red"><strong>${fmt(seTax)}</strong></span></div>
+      </div>
+
+      <div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--border)">
+        <div class="fc-detail-row"><span class="fc-detail-key">SE Tax Deduction (50%)</span><span class="fc-detail-val green">− ${fmt(seDeduction)}</span></div>
+        ${health > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Health Insurance Deduction</span><span class="fc-detail-val green">− ${fmt(health)}</span></div>` : ''}
+        ${sepActual > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">SEP-IRA Contribution${sepActual < sepIra ? ' (capped)' : ''}</span><span class="fc-detail-val green">− ${fmt(sepActual)}</span></div>` : ''}
+        <div class="fc-detail-row"><span class="fc-detail-key">Adjusted Gross Income (AGI)</span><span class="fc-detail-val">${fmt(agi)}</span></div>
+        <div class="fc-detail-row"><span class="fc-detail-key">${dedType === 'standard' ? 'Standard' : 'Itemized'} Deduction</span><span class="fc-detail-val green">− ${fmt(ded)}</span></div>
+        <div class="fc-detail-row"><span class="fc-detail-key">Taxable Income</span><span class="fc-detail-val">${fmt(taxable)}</span></div>
+        <div class="fc-detail-row"><span class="fc-detail-key"><strong>Federal Income Tax</strong></span><span class="fc-detail-val red"><strong>${fmt(fedIncomeTax)}</strong></span></div>
+      </div>
+
+      <div class="fc-quarterly">
+        <div class="fc-quarterly-title">📅 2026 Quarterly Estimated Payments</div>
+        <div class="fc-q-row">
+          <div><div class="fc-q-period">Q1 — Jan 1 – Mar 31</div><div class="fc-q-due">Due April 15, 2026</div></div>
+          <div class="fc-q-amt">${fmt(quarterly)}</div>
+        </div>
+        <div class="fc-q-row">
+          <div><div class="fc-q-period">Q2 — Apr 1 – May 31</div><div class="fc-q-due">Due June 16, 2026</div></div>
+          <div class="fc-q-amt">${fmt(quarterly)}</div>
+        </div>
+        <div class="fc-q-row">
+          <div><div class="fc-q-period">Q3 — Jun 1 – Aug 31</div><div class="fc-q-due">Due September 15, 2026</div></div>
+          <div class="fc-q-amt">${fmt(quarterly)}</div>
+        </div>
+        <div class="fc-q-row">
+          <div><div class="fc-q-period">Q4 — Sep 1 – Dec 31</div><div class="fc-q-due">Due January 15, 2026</div></div>
+          <div class="fc-q-amt">${fmt(quarterly)}</div>
+        </div>
+      </div>
+
+      <div class="fc-mini-grid">
+        <div class="fc-mini-box"><div class="fc-mini-label">SE Tax</div><div class="fc-mini-val" style="color:var(--red)">${fmt(seTax)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Income Tax</div><div class="fc-mini-val" style="color:var(--orange)">${fmt(fedIncomeTax)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Take-Home</div><div class="fc-mini-val" style="color:var(--green)">${fmt(takeHome)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Per Quarter</div><div class="fc-mini-val" style="color:var(--yellow)">${fmt(quarterly)}</div></div>
+      </div>
+      ${sepActual < sepIra ? `<div style="background:rgba(251,146,60,0.1);border:1px solid rgba(251,146,60,0.3);border-radius:8px;padding:10px 14px;font-size:13px;color:var(--orange);margin-top:12px">⚠️ SEP-IRA contribution capped at ${fmt(sepMax)} (25% of net income after deductions)</div>` : ''}
+    </div>`;
+}
+
+document.querySelectorAll('.fc-faq-q').forEach(q => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+});
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

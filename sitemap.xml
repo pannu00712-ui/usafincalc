@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Sitemap index: references the category sitemaps below.
+       URLs live in exactly one place now (previously duplicated in both
+       this file and the category files - fixed 2026-07-07). -->
+
+  <sitemap>
+    <loc>https://usafincalc.com/sitemap-pages.xml</loc>
+    <lastmod>2026-06-27</lastmod>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://usafincalc.com/sitemap-calculators.xml</loc>
+    <lastmod>2026-07-02</lastmod>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://usafincalc.com/sitemap-states.xml</loc>
+    <lastmod>2026-06-27</lastmod>
+  </sitemap>
+
+  <sitemap>
+    <loc>https://usafincalc.com/sitemap-blog.xml</loc>
+    <lastmod>2026-07-12</lastmod>
+  </sitemap>
+
+</sitemapindex>

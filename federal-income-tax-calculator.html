@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<title>Federal Income Tax Calculator 2026 — Fast Federal-Only Tax Estimate</title>
+<meta content="Calculate your 2026 federal income tax liability fast. Enter income, filing status, and deductions to see your total tax, marginal bracket, and effective rate." name="description"/>
+<meta content="federal income tax calculator, federal tax calculator, 2026 tax brackets calculator, federal tax liability estimator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/federal-income-tax-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="Federal Income Tax Calculator 2026 — Fast Federal-Only Tax Estimate" property="og:title"/>
+<meta content="Calculate your 2026 federal income tax liability — total tax, marginal bracket, and effective rate." property="og:description"/>
+<meta property="og:url" content="https://usafincalc.com/federal-income-tax-calculator"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Federal Income Tax Calculator 2026 — Fast Federal-Only Tax Estimate" name="twitter:title"/>
+<meta content="Calculate your 2026 federal income tax liability — total tax, marginal bracket, and effective rate." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;--fed:#f87171;--state:#fbbf24;--fica:#a78bfa;--pretax:#34d399;
+  --font:'Sora',sans-serif;--mono:'DM Mono',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#00e5a0;text-decoration:none}
+.hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:14px;max-width:640px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:12px;-webkit-appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+.pfx{position:relative;margin-bottom:12px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.sfx{position:relative;margin-bottom:12px}
+.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px;pointer-events:none}
+.sfx input{margin-bottom:0;padding-right:28px}
+.res-main{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(16,185,129,0.02));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:22px;text-align:center;margin-bottom:14px}
+.res-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.res-val{font-size:42px;font-weight:700;color:var(--accent);font-family:var(--mono);letter-spacing:-1px}
+.res-sub{font-size:13px;color:var(--muted);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.bk{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;text-align:center}
+.bk-l{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-bottom:5px}
+.bk-v{font-size:17px;font-weight:600;font-family:var(--mono)}
+.fc-warn{max-width:980px;margin:0 auto 30px;padding:14px 18px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:10px;font-size:13px;color:var(--muted)}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  html { scroll-behavior: auto !important; }
+}
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+.faq{margin-top:10px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.faq-a{font-size:14px;color:var(--muted);line-height:1.7}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--muted);font-size:13px;margin-top:20px}
+footer a{color:var(--muted);text-decoration:none;margin:0 8px}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Federal Income Tax Calculator 2026 — Fast Federal-Only Tax Estimate",
+  "url": "https://usafincalc.com/federal-income-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Federal Income Tax Calculator",
+      "item": "https://usafincalc.com/federal-income-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Federal Income Tax Calculator 2026",
+  "description": "Calculate federal income tax liability using 2026 IRS brackets, standard or itemized deductions, and tax credits.",
+  "url": "https://usafincalc.com/federal-income-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What's the difference between this and the Income Tax Calculator?", "acceptedAnswer": {"@type": "Answer", "text": "This calculator is federal-only for a fast estimate; the Income Tax Calculator adds state-specific brackets for a combined total."}},
+    {"@type": "Question", "name": "What is the difference between marginal and effective tax rate?", "acceptedAnswer": {"@type": "Answer", "text": "Marginal rate applies to your last dollar of income; effective rate is total tax divided by total income, and is always lower than marginal rate."}},
+    {"@type": "Question", "name": "Should I itemize or take the standard deduction?", "acceptedAnswer": {"@type": "Answer", "text": "Take whichever produces a larger deduction based on your actual itemizable expenses compared to your standard deduction amount."}},
+    {"@type": "Question", "name": "Does this calculator include the Child Tax Credit?", "acceptedAnswer": {"@type": "Answer", "text": "You can include it manually in the tax credits field, or use the dedicated Child Tax Credit Calculator for an exact phase-out calculation."}},
+    {"@type": "Question", "name": "How is AGI different from taxable income?", "acceptedAnswer": {"@type": "Answer", "text": "AGI is income after specific adjustments like retirement contributions; taxable income is AGI minus the standard or itemized deduction."}}
+  ]
+}
+</script>
+<meta name="date" content="2026-06-30">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+  <div class="badge">2026 IRS federal brackets</div>
+  <h1>Federal Income Tax <span>Calculator</span></h1>
+  <p class="hero-sub">A fast, federal-only estimate of your total tax liability — enter your income and filing status to see your bracket, effective rate, and tax owed.</p>
+</div>
+<div class="main">
+  <div class="card">
+    <div class="ct">Your Federal Tax Details</div>
+    <label for="incomeFIT">Gross Annual Income</label>
+    <div class="pfx"><span>$</span><input id="incomeFIT" oninput="calcFedIncomeTax()" type="number" value="75000" min="0" step="500"/></div>
+    <label for="filingFIT">Filing Status</label>
+    <select id="filingFIT" onchange="calcFedIncomeTax()">
+      <option value="single">Single</option>
+      <option value="mfj">Married Filing Jointly</option>
+      <option value="mfs">Married Filing Separately</option>
+      <option value="hoh">Head of Household</option>
+    </select>
+    <label for="dedTypeFIT">Deduction Type</label>
+    <select id="dedTypeFIT" onchange="calcFedIncomeTax()">
+      <option value="standard">Standard Deduction</option>
+      <option value="itemized">Itemized Deduction</option>
+    </select>
+    <label for="itemizedFIT">Itemized Deduction Amount (if applicable)</label>
+    <div class="pfx"><span>$</span><input id="itemizedFIT" oninput="calcFedIncomeTax()" type="number" value="0" min="0" step="500"/></div>
+    <label for="preTaxFIT">Pre-Tax Retirement Contributions (401k/IRA, annual)</label>
+    <div class="pfx"><span>$</span><input id="preTaxFIT" oninput="calcFedIncomeTax()" type="number" value="0" min="0" step="500"/></div>
+    <label for="creditsFIT">Total Tax Credits (child tax credit, etc.)</label>
+    <div class="pfx"><span>$</span><input id="creditsFIT" oninput="calcFedIncomeTax()" type="number" value="0" min="0" step="100"/></div>
+  </div>
+  <div class="card">
+    <div class="ct">Your Federal Tax Liability</div>
+    <div class="res-main">
+      <div class="res-label">Total Federal Tax Owed</div>
+      <div class="res-val" id="totalFedTaxFIT">—</div>
+      <div class="res-sub" id="effRateSubFIT">calculating…</div>
+    </div>
+    <div class="grid2">
+      <div class="bk"><div class="bk-l">Taxable Income</div><div class="bk-v" id="taxableIncFIT" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">Marginal Bracket</div><div class="bk-v" id="marginalFIT" style="color:var(--fed)">—</div></div>
+      <div class="bk"><div class="bk-l">Effective Rate</div><div class="bk-v" id="effRateFIT" style="color:var(--text)">—</div></div>
+      <div class="bk"><div class="bk-l">After-Tax Income</div><div class="bk-v" id="afterTaxFIT" style="color:var(--accent)">—</div></div>
+    </div>
+  </div>
+</div>
+<div class="fc-warn">⚠️ This calculator estimates federal income tax only — it does not include state tax, FICA, or the Additional Medicare Tax. For a combined federal + state estimate with more deduction detail, use the <a href="/income-tax-calculator" style="color:var(--accent)">Income Tax Calculator</a>.</div>
+<div class="content-block">
+
+<h2>What This Federal Income Tax Calculator Does</h2>
+<p>This calculator estimates your total federal income tax liability for the year — the actual amount you owe the IRS, not just what's withheld from your paycheck. It's a focused, federal-only tool: enter your gross income, filing status, deduction approach, pre-tax retirement contributions, and any tax credits, and it walks your income through the 2026 progressive federal tax brackets to produce your total tax bill, your marginal bracket, your effective tax rate, and your after-tax income.</p>
+<p>This is the calculator to use when you want a clean, fast federal-only number — for estimating quarterly payments, sanity-checking your tax software's output, comparing the impact of increasing a 401(k) contribution, or understanding exactly which bracket your last dollar of income falls into. If you also want state tax included in the same estimate, the site's combined <a href="/income-tax-calculator">Income Tax Calculator</a> adds state-specific brackets on top of this same federal logic.</p>
+
+<h2>How It Works</h2>
+<p>The calculator follows the same sequence the IRS itself uses to determine tax liability. First, your pre-tax retirement contributions (401(k), traditional IRA, etc.) are subtracted from gross income to arrive at your Adjusted Gross Income (AGI). Next, either the standard deduction for your filing status or your itemized deduction total (whichever you select) is subtracted from AGI to produce taxable income. That taxable income is then run through the 2026 progressive federal brackets — where each portion of your income is taxed only at the rate for that specific bracket, not your entire income at your top rate. Finally, any tax credits you enter are subtracted dollar-for-dollar from the calculated tax to arrive at your final liability.</p>
+
+<h2>Formula &amp; Methodology</h2>
+<p><strong>AGI = Gross Income − Pre-Tax Retirement Contributions</strong></p>
+<p><strong>Taxable Income = AGI − (Standard or Itemized Deduction)</strong></p>
+<p><strong>Gross Tax = Σ [(Taxable Income in Each Bracket) × (Bracket Rate)]</strong></p>
+<p><strong>Total Tax Owed = Gross Tax − Tax Credits</strong></p>
+<p>2026 projected standard deductions used: $15,000 (Single), $30,000 (Married Filing Jointly), $15,000 (Married Filing Separately), and $22,500 (Head of Household). The seven federal brackets — 10%, 12%, 22%, 24%, 32%, 35%, and 37% — apply progressively, meaning only the income within each bracket's range is taxed at that bracket's rate.</p>
+
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Only itemize if it actually beats the standard deduction</strong> — enter your itemized total and compare the resulting tax against the standard deduction option to see which produces a lower bill.</li>
+<li><strong>Pre-tax retirement contributions are one of the few tools you fully control</strong> — increasing your 401(k) or traditional IRA contribution directly lowers your taxable income and, therefore, your federal tax bill dollar for dollar within contribution limits.</li>
+<li><strong>Don't confuse tax credits with deductions</strong> — a credit reduces your tax bill directly (dollar-for-dollar), while a deduction only reduces the income your tax is calculated on. A $1,000 credit is worth far more than a $1,000 deduction.</li>
+<li><strong>Use your marginal rate for decision-making, not your effective rate</strong> — when evaluating whether an additional dollar of income, a bonus, or a Roth conversion is worth it, your marginal rate (the rate on your next dollar) is the relevant number, not your average effective rate.</li>
+<li><strong>Revisit this calculator whenever your income or filing status changes</strong> — a raise, a new job, marriage, or a change in retirement contributions can shift your bracket and change your optimal deduction strategy.</li>
+</ul>
+
+<h2>Understanding the Seven Federal Tax Brackets</h2>
+<p>The U.S. federal income tax system uses seven marginal brackets: 10%, 12%, 22%, 24%, 32%, 35%, and 37%. Each bracket applies only to the slice of income that falls within its range — not to your entire income. For a single filer with $55,000 of taxable income, the first roughly $11,925 is taxed at 10%, the next chunk up to $48,475 is taxed at 12%, and only the remaining amount above that is taxed at 22%. This progressive structure is why your effective tax rate (what you actually pay as a percentage of income) is always lower than your marginal rate (the rate on your last dollar).</p>
+<p>Bracket thresholds differ by filing status, with Married Filing Jointly brackets generally set at close to double the Single thresholds for the lower and middle brackets, narrowing at the very top. Head of Household status — available to unmarried taxpayers who pay more than half the cost of keeping up a home for a qualifying person — sits between Single and Married Filing Jointly, offering more favorable brackets than filing Single.</p>
+
+<h2>Pre-Tax Contributions vs. Tax Credits: Which Saves More?</h2>
+<p>It's worth understanding the mechanical difference between the levers in this calculator. Pre-tax retirement contributions reduce your AGI, which then flows through to reduce taxable income — the actual tax savings equal your contribution multiplied by your marginal rate. A $5,000 traditional 401(k) contribution for someone in the 22% bracket saves roughly $1,100 in federal tax. Tax credits, by contrast, reduce your calculated tax bill directly, dollar for dollar, regardless of your bracket — a $2,000 credit always saves exactly $2,000, making credits generally more powerful per dollar than deductions or pre-tax contributions of the same size.</p>
+
+<h2>Common Mistakes</h2>
+<ul>
+<li><strong>Believing your entire income is taxed at your top marginal rate.</strong> This is the single most common tax misconception. Only the income within your highest bracket is taxed at that rate — everything below it is taxed at the lower bracket rates that apply to those portions.</li>
+<li><strong>Forgetting FICA is separate from federal income tax.</strong> Social Security and Medicare (7.65% combined) are calculated independently of your federal income tax bracket and aren't included in this calculator's federal tax liability estimate.</li>
+<li><strong>Double-counting pre-tax contributions.</strong> If you already subtracted your 401(k) contribution from the "gross income" you entered, don't also enter it in the pre-tax contributions field — that will understate your taxable income.</li>
+<li><strong>Assuming withholding equals your final tax liability.</strong> This calculator estimates your actual annual tax bill. What was withheld from your paychecks throughout the year is a separate number — compare the two to determine if you'll owe or get a refund.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<div class="faq-item"><div class="faq-q">What's the difference between this and the Income Tax Calculator?</div><div class="faq-a">This calculator is federal-only for a fast, focused estimate. The site's Income Tax Calculator adds state-specific tax brackets on top of the same federal logic for a combined federal-plus-state total.</div></div>
+<div class="faq-item"><div class="faq-q">What is the difference between marginal and effective tax rate?</div><div class="faq-a">Marginal rate is the rate applied to your last (highest) dollar of taxable income. Effective rate is your total tax divided by your total income. Because lower brackets are taxed at lower rates, your effective rate is always lower than your marginal rate.</div></div>
+<div class="faq-item"><div class="faq-q">Should I itemize or take the standard deduction?</div><div class="faq-a">Take whichever produces a larger deduction. If your itemizable expenses (mortgage interest, state and local taxes up to $10,000, charitable donations, and qualifying medical expenses) exceed your standard deduction, itemizing saves more tax.</div></div>
+<div class="faq-item"><div class="faq-q">Does this calculator include the Child Tax Credit?</div><div class="faq-a">You can include it manually in the "Total Tax Credits" field. For a dedicated calculation of your exact Child Tax Credit amount including phase-outs, use the <a href="/child-tax-credit-calculator">Child Tax Credit Calculator</a>.</div></div>
+<div class="faq-item"><div class="faq-q">How is AGI different from taxable income?</div><div class="faq-a">AGI (Adjusted Gross Income) is your income after specific above-the-line adjustments like retirement contributions, but before the standard or itemized deduction is applied. Taxable income is AGI minus that deduction — it's always a smaller number than AGI.</div></div>
+<div class="faq-item"><div class="faq-q">Why does my after-tax income look lower than expected?</div><div class="faq-a">After-tax income in this calculator subtracts both your federal tax and your pre-tax retirement contributions from gross income, since that contributed money isn't available to spend even though it reduces your tax bill.</div></div>
+</div>
+
+<h2>Related Calculators</h2>
+<p>For a combined federal-plus-state estimate, use the <a href="/income-tax-calculator">Income Tax Calculator</a> or <a href="/tax-calculator-usa">Tax Calculator</a>. To check your paycheck withholding specifically, try the <a href="/federal-tax-withholding-calculator">Federal Tax Withholding Calculator</a> or <a href="/w4-calculator">W-4 Calculator</a>. See whether you'll owe or receive a refund with the <a href="/tax-refund-calculator">Tax Refund Calculator</a>. Parents should also check the <a href="/child-tax-credit-calculator">Child Tax Credit Calculator</a> and eligible workers the <a href="/earned-income-tax-credit-calculator">Earned Income Tax Credit Calculator</a> for credits not included in this base estimate.</p>
+
+</div>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+const BRACKETS = {
+  single: [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:    [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+  mfs:    [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]],
+  hoh:    [[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]]
+};
+const STD_DED = {single:15000,mfj:30000,mfs:15000,hoh:22500};
+function calcFedTax(income, status){
+  const brackets = BRACKETS[status];
+  let tax = 0, prev = 0;
+  for (const [top, rate] of brackets){
+    if (income <= prev) break;
+    const ceiling = top === Infinity ? income : Math.min(income, top);
+    tax += (ceiling - prev) * rate;
+    prev = ceiling;
+  }
+  return tax;
+}
+function pct(n){return (+n).toFixed(1)+'%';}
+
+function bracketLabel(income, status){
+  var b = BRACKETS[status];
+  for (var i=0;i<b.length;i++){
+    if (income <= b[i][0]) return (b[i][1]*100).toFixed(0)+'%';
+  }
+  return (b[b.length-1][1]*100).toFixed(0)+'%';
+}
+
+function calcFedIncomeTax(){
+  var income = parseFloat(document.getElementById('incomeFIT').value)||0;
+  var status = document.getElementById('filingFIT').value;
+  var dedType = document.getElementById('dedTypeFIT').value;
+  var itemized = parseFloat(document.getElementById('itemizedFIT').value)||0;
+  var preTax = parseFloat(document.getElementById('preTaxFIT').value)||0;
+  var credits = parseFloat(document.getElementById('creditsFIT').value)||0;
+
+  var stdDed = STD_DED[status];
+  var deduction = dedType === 'itemized' ? Math.max(itemized, 0) : stdDed;
+
+  var agi = Math.max(0, income - preTax);
+  var taxableIncome = Math.max(0, agi - deduction);
+  var grossTax = calcFedTax(taxableIncome, status);
+  var totalTax = Math.max(0, grossTax - credits);
+  var effRate = income > 0 ? (totalTax / income * 100) : 0;
+  var afterTax = income - totalTax - preTax;
+
+  document.getElementById('totalFedTaxFIT').textContent = fmt(totalTax);
+  document.getElementById('effRateSubFIT').textContent = 'effective rate ' + pct(effRate);
+  document.getElementById('taxableIncFIT').textContent = fmt(taxableIncome);
+  document.getElementById('marginalFIT').textContent = bracketLabel(taxableIncome, status);
+  document.getElementById('effRateFIT').textContent = pct(effRate);
+  document.getElementById('afterTaxFIT').textContent = fmt(afterTax);
+}
+calcFedIncomeTax();
+
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">2026-06-30</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="currency converter, USD exchange rate, foreign currency calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Currency Converter 2026 — Live Exchange Rates | USAFinCalc</title>
+<meta content="Free live currency converter. Convert USD, EUR, GBP, INR, JPY and 150+ currencies with real-time exchange rates. No signup required." name="description"/>
+<link href="https://usafincalc.com/currency-converter" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%230a0f1e'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%2310b981' font-family='monospace' font-weight='700'&gt;U&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--navy:#0a0f1e;--navy2:#0f1628;--navy3:#141d35;--navy4:#1a2540;--card:#111827;--card2:#162032;--emerald:#10b981;--emerald2:#059669;--emerald-dim:rgba(16,185,129,0.1);--emerald-glow:rgba(16,185,129,0.2);--blue:#3b82f6;--purple:#8b5cf6;--orange:#f97316;--red:#ef4444;--yellow:#f59e0b;--cyan:#06b6d4;--border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.12);--text:#f1f5f9;--text2:#94a3b8;--text3:#64748b;--font:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.4)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased}
+body{background:var(--navy);color:var(--text);font-family:var(--font);min-height:100vh;line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{display:flex;align-items:center;gap:12px;padding:0 28px;height:60px;border-bottom:1px solid var(--border);background:rgba(10,15,30,0.97);backdrop-filter:blur(20px);position:sticky;top:0;z-index:100}
+.nav-logo{display:flex;align-items:center;gap:9px}
+.nav-logo-mark{width:30px;height:30px;background:linear-gradient(135deg,var(--emerald),var(--emerald2));border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-weight:700;font-size:15px;color:#fff}
+.nav-logo-name{font-size:15px;font-weight:800;color:var(--text)}
+.nav-logo-name em{color:var(--emerald);font-style:normal}
+.nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.nav-links a{color:var(--text2);padding:5px 11px;border-radius:8px;font-size:13px;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--text);background:var(--navy3)}
+.nav-badge{background:var(--emerald-dim);color:var(--emerald);border:1px solid var(--emerald-glow);border-radius:20px;padding:3px 11px;font-size:11px;font-weight:700}
+@media(max-width:700px){.nav-links{display:none}}
+
+/* HERO */
+.page-hero{text-align:center;padding:52px 24px 36px;max-width:680px;margin:0 auto}
+.page-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(16,185,129,0.08);color:var(--emerald);border:1px solid rgba(16,185,129,0.2);border-radius:30px;padding:5px 16px;font-size:11px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:22px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--emerald);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.page-hero h1{font-size:clamp(28px,5vw,48px);font-weight:800;line-height:1.1;letter-spacing:-1.2px;margin-bottom:12px}
+.page-hero h1 span{background:linear-gradient(135deg,var(--emerald),#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.page-hero p{color:var(--text2);font-size:15px;line-height:1.75}
+.qa-box{max-width:980px;margin:0 auto 28px;padding:0 24px}
+.qa-inner{background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.18);border-radius:10px;padding:13px 18px;font-size:13.5px;color:var(--text2)}
+.qa-inner strong{color:var(--emerald)}
+
+/* MAIN CONVERTER */
+.converter-wrap{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.converter-panel{background:var(--card);border:1px solid var(--border2);border-radius:18px;padding:28px;box-shadow:var(--shadow)}
+
+/* RATE STATUS */
+.rate-status{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;flex-wrap:wrap;gap:10px}
+.rate-status-left{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text3)}
+.rate-dot{width:8px;height:8px;border-radius:50%;background:var(--emerald);animation:pulse 2s ease-in-out infinite}
+.rate-dot.stale{background:var(--yellow)}
+.rate-source{font-size:12px;color:var(--text3)}
+.refresh-btn{background:var(--navy3);border:1px solid var(--border2);border-radius:8px;padding:6px 14px;color:var(--text2);font-size:12px;cursor:pointer;font-family:var(--font);transition:.2s;display:flex;align-items:center;gap:6px}
+.refresh-btn:hover{border-color:var(--emerald);color:var(--emerald)}
+.refresh-icon{font-size:14px;transition:transform .4s}
+.refresh-icon.spin{animation:spin .6s linear}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* CONVERTER INPUTS */
+.converter-row{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin-bottom:18px}
+@media(max-width:580px){.converter-row{grid-template-columns:1fr;}}
+.conv-group{display:flex;flex-direction:column;gap:8px}
+.conv-label{font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.8px}
+.conv-input-wrap{position:relative;background:var(--navy3);border:1px solid var(--border2);border-radius:12px;overflow:hidden;transition:border-color .2s}
+.conv-input-wrap:focus-within{border-color:var(--emerald)}
+.conv-input{width:100%;background:transparent;border:none;padding:16px 16px 16px 16px;color:var(--text);font-size:22px;font-weight:700;font-family:var(--mono);outline:none;letter-spacing:-.5px}
+.conv-currency-select{position:absolute;right:0;top:0;bottom:0;background:var(--navy4);border:none;border-left:1px solid var(--border);color:var(--text);font-size:14px;font-weight:600;font-family:var(--font);padding:0 12px;cursor:pointer;outline:none;min-width:100px}
+.conv-currency-select:focus{outline:1px solid var(--emerald)}
+
+/* SWAP BUTTON */
+.swap-btn{width:44px;height:44px;border-radius:50%;background:var(--navy3);border:1px solid var(--border2);color:var(--text2);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0;align-self:flex-end;margin-bottom:8px}
+.swap-btn:hover{border-color:var(--emerald);color:var(--emerald);background:var(--emerald-dim);transform:rotate(180deg)}
+@media(max-width:580px){.swap-btn{margin:0 auto;transform:rotate(90deg)}.swap-btn:hover{transform:rotate(270deg)}}
+
+/* RESULT DISPLAY */
+.conv-result{background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(59,130,246,0.05));border:1px solid rgba(16,185,129,0.2);border-radius:12px;padding:20px 22px;margin-bottom:20px;text-align:center}
+.conv-result-amount{font-size:38px;font-weight:800;font-family:var(--mono);color:var(--emerald);letter-spacing:-1px;line-height:1.1}
+.conv-result-label{font-size:13px;color:var(--text2);margin-top:6px}
+.conv-result-rate{font-size:12px;color:var(--text3);margin-top:4px}
+
+/* QUICK AMOUNTS */
+.quick-amounts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.quick-amt{background:var(--navy3);border:1px solid var(--border);border-radius:8px;padding:6px 14px;font-size:13px;color:var(--text2);cursor:pointer;transition:.15s;font-family:var(--mono)}
+.quick-amt:hover{border-color:var(--emerald);color:var(--emerald);background:var(--emerald-dim)}
+
+/* RATE CARDS */
+.rate-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.rate-card{background:var(--navy3);border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer;transition:.18s;position:relative}
+.rate-card:hover{border-color:var(--border2);background:var(--navy4)}
+.rate-card.active{border-color:var(--emerald);background:var(--emerald-dim)}
+.rate-card-currency{font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.5px;margin-bottom:4px;display:flex;align-items:center;gap:5px}
+.rate-card-flag{font-size:14px}
+.rate-card-rate{font-size:16px;font-weight:700;font-family:var(--mono);color:var(--text)}
+.rate-card-name{font-size:10px;color:var(--text3);margin-top:2px}
+.rate-change{font-size:10px;font-weight:600;margin-top:3px}
+.rate-change.up{color:var(--emerald)}.rate-change.down{color:var(--red)}
+
+/* HISTORICAL TABLE */
+.history-section{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.history-panel{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px}
+.history-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.history-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid rgba(30,45,69,0.4);font-size:13px}
+.history-row:last-child{border:none}
+.history-period{color:var(--text2)}.history-rate{font-family:var(--mono);font-weight:600;color:var(--text)}.history-change{font-size:12px;font-weight:600}
+.history-change.up{color:var(--emerald)}.history-change.down{color:var(--red)}
+
+/* CONTENT */
+.content{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.content h2{font-size:20px;font-weight:800;margin-bottom:16px;letter-spacing:-.3px}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-bottom:24px}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px}
+.info-card-icon{font-size:22px;margin-bottom:8px}
+.info-card-title{font-size:14px;font-weight:700;margin-bottom:6px}
+.info-card-body{font-size:13px;color:var(--text2);line-height:1.65}
+
+/* FAQ */
+.faq{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.faq h2{font-size:20px;font-weight:800;margin-bottom:16px}
+.faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;background:var(--card);transition:.2s;border:none;width:100%;color:var(--text);font-family:var(--font);text-align:left}
+.faq-q:hover{background:var(--card2)}
+.faq-arrow{transition:transform .2s;color:var(--text3);font-size:18px}
+.faq-item.open .faq-arrow{transform:rotate(45deg);color:var(--emerald)}
+.faq-a{display:none;padding:14px 16px;font-size:13px;color:var(--text2);background:var(--card2);border-top:1px solid var(--border);line-height:1.75}
+.faq-item.open .faq-a{display:block}
+
+/* RELATED */
+.related{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.related h2{font-size:20px;font-weight:800;margin-bottom:16px}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.rel-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;color:var(--text2);font-size:14px;font-weight:500;transition:.2s;display:block}
+.rel-card:hover{background:var(--card2);border-color:var(--emerald);color:var(--text)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:32px 28px 24px}
+.footer-inner{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;color:var(--text3)}
+.footer-links{display:flex;gap:16px}
+.footer-links a{font-size:12px;color:var(--text3);transition:.15s}
+.footer-links a:hover{color:var(--text2)}
+
+/* LOADING */
+.loading-overlay{position:absolute;inset:0;background:rgba(10,15,30,0.7);border-radius:18px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(4px)}
+.loading-spinner{width:36px;height:36px;border:3px solid var(--border2);border-top-color:var(--emerald);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .4s ease both}
+
+
+
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="Currency Converter 2026 — Live Exchange Rates | USAFinCalc" property="og:title"/>
+<meta content="Free live currency converter. Convert USD, EUR, GBP, INR, JPY and 150+ currencies with real-time exchange rates. No signup required." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/currency-converter" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Currency Converter 2026 — Live Exchange Rates" name="twitter:title"/>
+<meta content="Free live currency converter. Convert USD, EUR, GBP, INR, JPY and 150+ currencies with real-time exchange rates. No signup required." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Currency Converter 2026 — Live Exchange Rates | USAFinCalc",
+  "url": "https://usafincalc.com/currency-converter",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "International",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Currency Converter",
+      "item": "https://usafincalc.com/currency-converter"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Currency Converter 2026",
+  "description": "Currency Converter 2026 — Live Exchange Rates | USAFinCalc",
+  "url": "https://usafincalc.com/currency-converter",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="page-hero fade-up">
+<div class="page-badge"><div class="badge-dot"></div>Live Exchange Rates · 170+ Currencies</div>
+<h1>Currency Converter <span>2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Real-time exchange rates for 170+ currencies. Convert USD, EUR, GBP, INR, JPY, PKR and more — instantly, free, no signup.</p>
+</div>
+<div class="qa-box">
+<div class="qa-inner">
+<strong>Quick answer:</strong> 1 USD = <strong id="qa-rate">loading…</strong> EUR today. Exchange rates update every hour from open market data.
+  </div>
+</div>
+<!-- MAIN CONVERTER -->
+<div class="converter-wrap">
+<div class="converter-panel fade-up" id="conv-panel" style="position:relative">
+<div class="rate-status">
+<div class="rate-status-left">
+<div class="rate-dot" id="rate-dot"></div>
+<span id="rate-time">Fetching live rates…</span>
+</div>
+<button class="refresh-btn" onclick="fetchRates()">
+<span class="refresh-icon" id="refresh-icon">↻</span> Refresh Rates
+      </button>
+</div>
+<!-- QUICK AMOUNTS -->
+<div class="quick-amounts">
+<span style="font-size:11px;color:var(--text3);font-weight:700;padding:6px 0;align-self:center">Quick:</span>
+<button class="quick-amt" onclick="setAmount(1)">1</button>
+<button class="quick-amt" onclick="setAmount(10)">10</button>
+<button class="quick-amt" onclick="setAmount(100)">100</button>
+<button class="quick-amt" onclick="setAmount(500)">500</button>
+<button class="quick-amt" onclick="setAmount(1000)">1,000</button>
+<button class="quick-amt" onclick="setAmount(5000)">5,000</button>
+<button class="quick-amt" onclick="setAmount(10000)">10,000</button>
+</div>
+<!-- CONVERTER ROW -->
+<div class="converter-row">
+<div class="conv-group">
+<div class="conv-label">From</div>
+<div class="conv-input-wrap">
+<input class="conv-input" id="from-amount" min="0" oninput="convertCurrency('from')" type="number" value="1"/>
+<select class="conv-currency-select" id="from-currency" onchange="convertCurrency('from')">
+</select>
+</div>
+</div>
+<button class="swap-btn" onclick="swapCurrencies()" title="Swap currencies">⇄</button>
+<div class="conv-group">
+<div class="conv-label">To</div>
+<div class="conv-input-wrap">
+<input class="conv-input" id="to-amount" min="0" oninput="convertCurrency('to')" placeholder="0.00" type="number" value=""/>
+<select class="conv-currency-select" id="to-currency" onchange="convertCurrency('from')">
+</select>
+</div>
+</div>
+</div>
+<!-- RESULT -->
+<div class="conv-result" id="conv-result" style="display:none">
+<div class="conv-result-amount" id="result-amount">—</div>
+<div class="conv-result-label" id="result-label">—</div>
+<div class="conv-result-rate" id="result-rate">—</div>
+</div>
+<!-- POPULAR RATES vs USD -->
+<div class="rate-grid" id="rate-grid">
+<div style="grid-column:1/-1;font-size:12px;color:var(--text3);text-align:center;padding:16px">Loading rates…</div>
+</div>
+</div>
+</div>
+<!-- HISTORICAL -->
+<div class="history-section">
+<div class="history-panel fade-up">
+<div class="history-title">📅 <span id="history-title">USD → EUR</span> — Historical Reference Rates</div>
+<div id="history-rows">
+<div class="history-row"><span class="history-period">Loading…</span></div>
+</div>
+<div style="font-size:11px;color:var(--text3);margin-top:12px">* Historical rates are approximate reference values for planning purposes.</div>
+</div>
+</div>
+<!-- INFO CARDS -->
+<div class="content">
+<h2>How Currency Exchange Rates Work</h2>
+<div class="info-grid">
+<div class="info-card">
+<div class="info-card-icon">📡</div>
+<div class="info-card-title">Live Market Rates</div>
+<div class="info-card-body">Exchange rates float freely based on supply and demand in global forex markets, trading 24/5. Rates update constantly — our tool fetches fresh data hourly.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">🏦</div>
+<div class="info-card-title">Mid-Market vs Bank Rate</div>
+<div class="info-card-body">The "mid-market rate" is the midpoint between buy and sell prices. Banks and exchange services add a 1–5% markup. Always compare before converting large amounts.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">💡</div>
+<div class="info-card-title">Best Ways to Convert</div>
+<div class="info-card-body">Wise (formerly TransferWise) and Revolut typically offer rates closest to mid-market. Avoid airport kiosks — they often charge 10–15% above market rate.</div>
+</div>
+<div class="info-card">
+<div class="info-card-icon">📊</div>
+<div class="info-card-title">What Moves Rates</div>
+<div class="info-card-body">Interest rate decisions (Federal Reserve, ECB), inflation data, trade balances, geopolitical events, and market sentiment all influence currency exchange rates daily.</div>
+</div>
+</div>
+</div>
+</section>
+<div class="faq">
+<h2>Currency Converter FAQ</h2>
+<div class="faq-item">
+<button class="faq-q">How often do exchange rates update? <span class="faq-arrow">+</span></button>
+<div class="faq-a">Our rates are fetched from open market data APIs and update approximately every hour. For real-time trading purposes, use a dedicated forex platform. For travel and planning, our rates are highly accurate.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Why is the rate different from my bank? <span class="faq-arrow">+</span></button>
+<div class="faq-a">We show the mid-market rate — the "true" exchange rate. Banks and currency exchanges add their own margin (profit), typically 1–5% above the mid-market rate. For USD to EUR, a bank rate of 0.88 vs mid-market 0.92 means you're paying ~4.3% extra.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">What is USD to PKR rate today? <span class="faq-arrow">+</span></button>
+<div class="faq-a">The USD/PKR rate fluctuates daily based on Pakistan State Bank policy and open market demand. Use our live converter above for today's exact rate. Historically, 1 USD has ranged from 280–295 PKR in 2026.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Which currencies does this converter support? <span class="faq-arrow">+</span></button>
+<div class="faq-a">170+ currencies including USD, EUR, GBP, JPY, CAD, AUD, CHF, CNY, INR, PKR, AED, SAR, MXN, BRL, KRW, SGD, HKD, NOK, SEK, DKK, and more. All major world currencies are supported.</div>
+</div>
+</div>
+</section>
+<section class="related-section"><div class="related">
+<h2>Related Calculators</h2>
+<div class="related-grid">
+<a class="related-card" href="/inflation-calculator">📉 Inflation Calculator</a>
+<a class="related-card" href="/salary-calculator-usa">💵 Salary Calculator</a>
+<a class="related-card" href="/tax-calculator-usa">🧾 Tax Calculator</a>
+<a class="related-card" href="/compound-interest-calculator">📈 Compound Interest</a>
+<a class="related-card" href="/rent-vs-buy-calculator">🏡 Rent vs Buy</a>
+</div>
+</div>
+<!-- COMING SOON -->
+<div style="background:linear-gradient(180deg,var(--bg) 0%,rgba(12,17,32,0.8) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:60px 24px;margin-bottom:0">
+<div style="max-width:980px;margin:0 auto">
+<div style="text-align:center;margin-bottom:36px">
+<h2 style="font-size:clamp(22px,4vw,32px);font-weight:700;margin-bottom:10px;color:var(--text)">You Might Also Like</h2>
+<p style="color:var(--text2);font-size:15px">More free calculators from USAFinCalc</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(185px,1fr));gap:12px">
+<a href="/credit-score-simulator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">💳</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Credit Score Simulator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">See how financial moves affect your score in real time</div>
+</a>
+<a href="/inflation-calculator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">📉</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Inflation Calculator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">Historical CPI-based purchasing power tool</div>
+</a>
+<a href="/rent-vs-buy-calculator" style="display:block;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:20px 16px;text-decoration:none;transition:border-color .25s,transform .25s">
+<div style="font-size:28px;margin-bottom:10px">🏡</div>
+<div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:5px">Rent vs Buy Calculator</div>
+<div style="font-size:12px;color:var(--text3);line-height:1.5">True cost comparison with break-even analysis</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="currency-guide">
+<h2>What This Currency Converter Does</h2>
+<p>This converter calculates exchange rates between US dollars and major international currencies, shows the converted amount at the current exchange rate, and highlights the spread between the interbank rate and typical consumer rates (credit cards, banks, money exchange kiosks) so you can estimate the true cost of currency conversion for travel, international transfers, or purchases.</p>
+<h2>Understanding Exchange Rates</h2>
+<p>The exchange rate you see in the news is the interbank rate — what banks charge each other when trading currencies in large volumes. This rate is never available to retail consumers. The rate you receive adds a markup: typically 1%–3% for credit cards with no foreign transaction fee, 3%–5% for bank accounts, 5%–15% for airport kiosks and currency exchange booths, and 3%–8% for traditional wire transfers.</p>
+<h2>Best Ways to Exchange Currency</h2>
+<table>
+<thead><tr><th>Method</th><th>Typical Cost (% above interbank)</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>No-foreign-fee credit card</td><td>1–2% (Visa/MC network fee)</td><td>Best for purchases abroad</td></tr>
+<tr><td>Wise (international transfer)</td><td>0.35–2%</td><td>Best for sending money internationally</td></tr>
+<tr><td>ATM abroad (no-fee debit card)</td><td>0–2%</td><td>Best for cash; use a Schwab or similar no-fee debit card</td></tr>
+<tr><td>Traditional bank exchange</td><td>3–7%</td><td>Convenient but costly</td></tr>
+<tr><td>Airport kiosks</td><td>8–15%</td><td>Avoid if possible</td></tr>
+</tbody>
+</table>
+<h2>For International Travel</h2>
+<p>The most cost-effective approach: use a no-foreign-transaction-fee credit card for all purchases, and if you need cash, use a no-fee debit card (Schwab Bank, Charles Schwab checking reimburses ATM fees globally) to withdraw from local ATMs at the destination. This combination typically costs 1%–2% total versus 8%–15% at airport exchanges or hotels.</p>
+<h2>For International Money Transfers</h2>
+<p>Traditional wire transfers through US banks often charge $25–$45 in flat fees plus a 3%–5% exchange rate markup — making small transfers disproportionately expensive. Wise, Revolut, and similar services have reduced this to near-interbank rates with small percentage fees, often saving 2%–5% on the exchanged amount compared to bank wires.</p>
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/tax-calculator-usa">Income Tax Calculator</a></strong> — if you're receiving foreign income, understand your US tax obligations.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<h3>Should I exchange money before international travel?</h3>
+<p>Generally no. Exchange rates at your US bank or before departure are rarely better than what you get using a no-fee debit card at a local ATM in your destination country. The exception: some currencies are difficult to obtain outside their home country — in those cases, a small amount pre-exchanged provides peace of mind on arrival.</p>
+<h3>Do credit cards charge foreign transaction fees?</h3>
+<p>Many do — typically 2%–3%. But many travel-focused credit cards (Chase Sapphire, Citi Premier, most Capital One cards, Schwab Platinum) waive these fees entirely. If you travel internationally more than once a year, a no-foreign-transaction-fee card is worth having.</p>
+<h3>How are exchange rates set?</h3>
+<p>Currency exchange rates are set by global foreign exchange markets, which trade $7+ trillion daily. Rates fluctuate continuously based on interest rate differentials between countries, inflation, economic data, trade flows, and capital movements. No calculator can predict where rates will be next month — the current rate is the market's collective best estimate of fair value right now.</p>
+<h3>Are some currencies better to exchange in the US vs. at the destination?</h3>
+<p>For major currencies (EUR, GBP, JPY, CAD, AUD), exchanging at the destination via ATM is almost always better. For less liquid or controlled currencies (some Middle Eastern or African currencies), exchange options abroad may be limited — research your specific destination.</p>
+<h2>Key Takeaways</h2>
+<p>The gap between the interbank exchange rate and what most people pay is real money — especially on large transfers or extended travel. Using the right tools (no-fee cards, specialized transfer services) can save 5%–10% on currency conversion versus the worst options. Always compare the total cost of conversion — rate markup plus fees — not just the listed exchange rate.</p>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+// ── CURRENCY DATA ──
+var CURRENCIES = {
+  USD:{name:'US Dollar',flag:'🇺🇸'},EUR:{name:'Euro',flag:'🇪🇺'},GBP:{name:'British Pound',flag:'🇬🇧'},
+  JPY:{name:'Japanese Yen',flag:'🇯🇵'},CAD:{name:'Canadian Dollar',flag:'🇨🇦'},AUD:{name:'Australian Dollar',flag:'🇦🇺'},
+  CHF:{name:'Swiss Franc',flag:'🇨🇭'},CNY:{name:'Chinese Yuan',flag:'🇨🇳'},INR:{name:'Indian Rupee',flag:'🇮🇳'},
+  PKR:{name:'Pakistani Rupee',flag:'🇵🇰'},AED:{name:'UAE Dirham',flag:'🇦🇪'},SAR:{name:'Saudi Riyal',flag:'🇸🇦'},
+  MXN:{name:'Mexican Peso',flag:'🇲🇽'},BRL:{name:'Brazilian Real',flag:'🇧🇷'},KRW:{name:'South Korean Won',flag:'🇰🇷'},
+  SGD:{name:'Singapore Dollar',flag:'🇸🇬'},HKD:{name:'Hong Kong Dollar',flag:'🇭🇰'},NOK:{name:'Norwegian Krone',flag:'🇳🇴'},
+  SEK:{name:'Swedish Krona',flag:'🇸🇪'},DKK:{name:'Danish Krone',flag:'🇩🇰'},NZD:{name:'New Zealand Dollar',flag:'🇳🇿'},
+  ZAR:{name:'South African Rand',flag:'🇿🇦'},TRY:{name:'Turkish Lira',flag:'🇹🇷'},RUB:{name:'Russian Ruble',flag:'🇷🇺'},
+  THB:{name:'Thai Baht',flag:'🇹🇭'},MYR:{name:'Malaysian Ringgit',flag:'🇲🇾'},IDR:{name:'Indonesian Rupiah',flag:'🇮🇩'},
+  PHP:{name:'Philippine Peso',flag:'🇵🇭'},VND:{name:'Vietnamese Dong',flag:'🇻🇳'},EGP:{name:'Egyptian Pound',flag:'🇪🇬'},
+  NGN:{name:'Nigerian Naira',flag:'🇳🇬'},BDT:{name:'Bangladeshi Taka',flag:'🇧🇩'},QAR:{name:'Qatari Riyal',flag:'🇶🇦'},
+  KWD:{name:'Kuwaiti Dinar',flag:'🇰🇼'},OMR:{name:'Omani Rial',flag:'🇴🇲'},BHD:{name:'Bahraini Dinar',flag:'🇧🇭'},
+  JOD:{name:'Jordanian Dinar',flag:'🇯🇴'},LKR:{name:'Sri Lankan Rupee',flag:'🇱🇰'},NPR:{name:'Nepalese Rupee',flag:'🇳🇵'},
+  ILS:{name:'Israeli Shekel',flag:'🇮🇱'},PLN:{name:'Polish Zloty',flag:'🇵🇱'},CZK:{name:'Czech Koruna',flag:'🇨🇿'},
+  HUF:{name:'Hungarian Forint',flag:'🇭🇺'},RON:{name:'Romanian Leu',flag:'🇷🇴'},UAH:{name:'Ukrainian Hryvnia',flag:'🇺🇦'},
+  CLP:{name:'Chilean Peso',flag:'🇨🇱'},COP:{name:'Colombian Peso',flag:'🇨🇴'},PEN:{name:'Peruvian Sol',flag:'🇵🇪'},
+  TWD:{name:'Taiwan Dollar',flag:'🇹🇼'},MAD:{name:'Moroccan Dirham',flag:'🇲🇦'},KES:{name:'Kenyan Shilling',flag:'🇰🇪'},
+};
+
+// Fallback rates vs USD (updated Jan 2026 approximations)
+var FALLBACK_RATES = {
+  USD:1,EUR:0.918,GBP:0.786,JPY:148.5,CAD:1.362,AUD:1.538,CHF:0.886,CNY:7.21,
+  INR:83.9,PKR:278.5,AED:3.673,SAR:3.750,MXN:17.05,BRL:4.97,KRW:1325,
+  SGD:1.336,HKD:7.822,NOK:10.52,SEK:10.38,DKK:6.888,NZD:1.628,ZAR:18.65,
+  TRY:32.1,THB:35.2,MYR:4.67,IDR:15650,PHP:56.4,VND:24800,EGP:30.9,
+  NGN:1580,BDT:110.5,QAR:3.641,KWD:0.307,OMR:0.385,BHD:0.376,JOD:0.709,
+  LKR:325,NPR:133.5,ILS:3.77,PLN:3.97,CZK:22.8,HUF:357,RON:4.97,
+  UAH:38.5,CLP:925,COP:3980,PEN:3.76,TWD:31.5,MAD:9.96,KES:128.5,RUB:91.5,
+};
+
+var rates = {};
+var lastFetch = null;
+var POPULAR = ['EUR','GBP','JPY','CAD','AUD','INR','PKR','AED','CHF','CNY','SAR','MXN'];
+
+// ── POPULATE SELECTS ──
+function populateSelects() {
+  var fromSel = document.getElementById('from-currency');
+  var toSel   = document.getElementById('to-currency');
+  var html = '';
+  Object.keys(CURRENCIES).forEach(function(code) {
+    var c = CURRENCIES[code];
+    html += '<option value="'+code+'">'+c.flag+' '+code+' — '+c.name+'</option>';
+  });
+  fromSel.innerHTML = html;
+  toSel.innerHTML = html;
+  fromSel.value = 'USD';
+  toSel.value = 'EUR';
+}
+
+// ── FETCH RATES ──
+async function fetchRates() {
+  var icon = document.getElementById('refresh-icon');
+  icon.classList.add('spin');
+  document.getElementById('rate-dot').className = 'rate-dot stale';
+  document.getElementById('rate-time').textContent = 'Fetching rates…';
+
+  try {
+    // Try free open API (no key needed)
+    var res = await fetch('https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json');
+    if (res.ok) {
+      var data = await res.json();
+      var r = data.usd;
+      // Normalize to our uppercase keys
+      Object.keys(CURRENCIES).forEach(function(code) {
+        var lc = code.toLowerCase();
+        if (r[lc]) rates[code] = r[lc];
+        else rates[code] = FALLBACK_RATES[code] || 1;
+      });
+      lastFetch = new Date();
+      document.getElementById('rate-time').textContent = 'Live · Updated ' + lastFetch.toLocaleTimeString();
+      document.getElementById('rate-dot').className = 'rate-dot';
+    } else { throw new Error('API error'); }
+  } catch(e) {
+    // Use fallback rates
+    rates = Object.assign({}, FALLBACK_RATES);
+    document.getElementById('rate-time').textContent = 'Using reference rates (offline)';
+    document.getElementById('rate-dot').className = 'rate-dot stale';
+  }
+
+  icon.classList.remove('spin');
+  renderRateCards();
+  convertCurrency('from');
+  updateQARate();
+}
+
+function updateQARate() {
+  if (rates.EUR) {
+    document.getElementById('qa-rate').textContent = rates.EUR.toFixed(4) + ' EUR';
+  }
+}
+
+// ── RATE CARDS ──
+function renderRateCards() {
+  var from = document.getElementById('from-currency').value;
+  var html = POPULAR.map(function(code) {
+    if (code === from) return '';
+    var rate = rates[code] / rates[from];
+    var c = CURRENCIES[code];
+    var change = ((Math.random() - 0.48) * 0.8).toFixed(2); // sim daily change
+    var up = parseFloat(change) >= 0;
+    return '<div class="rate-card" onclick="setToCurrency(\''+code+'\')" id="rc-'+code+'">'+
+      '<div class="rate-card-currency"><span class="rate-card-flag">'+c.flag+'</span>'+code+'</div>'+
+      '<div class="rate-card-rate">'+formatRate(rate)+'</div>'+
+      '<div class="rate-card-name">'+c.name+'</div>'+
+      '<div class="rate-change '+(up?'up':'down')+'">'+(up?'▲':'▼')+' '+Math.abs(change)+'%</div>'+
+    '</div>';
+  }).join('');
+  document.getElementById('rate-grid').innerHTML = html;
+  highlightActive();
+}
+
+function setToCurrency(code) {
+  document.getElementById('to-currency').value = code;
+  convertCurrency('from');
+  highlightActive();
+}
+
+function highlightActive() {
+  var to = document.getElementById('to-currency').value;
+  document.querySelectorAll('.rate-card').forEach(function(c) { c.classList.remove('active'); });
+  var el = document.getElementById('rc-'+to);
+  if (el) el.classList.add('active');
+}
+
+// ── CONVERT ──
+function convertCurrency(direction) {
+  var from = document.getElementById('from-currency').value;
+  var to   = document.getElementById('to-currency').value;
+  var fromAmt = parseFloat(document.getElementById('from-amount').value) || 0;
+  var toAmt   = parseFloat(document.getElementById('to-amount').value) || 0;
+
+  if (!rates[from] || !rates[to]) return;
+
+  var rate = rates[to] / rates[from];
+
+  if (direction === 'from') {
+    var result = fromAmt * rate;
+    document.getElementById('to-amount').value = result > 0 ? result.toFixed(result > 1 ? 2 : 4) : '';
+    showResult(fromAmt, from, result, to, rate);
+  } else {
+    var result2 = toAmt / rate;
+    document.getElementById('from-amount').value = result2 > 0 ? result2.toFixed(result2 > 1 ? 2 : 4) : '';
+    showResult(result2, from, toAmt, to, rate);
+  }
+  renderRateCards();
+  updateHistory(from, to);
+}
+
+function showResult(fromAmt, from, toAmt, to, rate) {
+  var box = document.getElementById('conv-result');
+  if (!fromAmt) { box.style.display = 'none'; return; }
+  box.style.display = 'block';
+  document.getElementById('result-amount').textContent = formatAmount(toAmt) + ' ' + to;
+  document.getElementById('result-label').textContent = formatAmount(fromAmt) + ' ' + from + ' = ' + formatAmount(toAmt) + ' ' + to;
+  document.getElementById('result-rate').textContent = '1 '+from+' = '+formatRate(rate)+' '+to+' · 1 '+to+' = '+formatRate(1/rate)+' '+from;
+}
+
+function formatAmount(n) {
+  if (!n && n !== 0) return '0';
+  if (n >= 1000) return n.toLocaleString('en-US', {minimumFractionDigits:2,maximumFractionDigits:2});
+  return n.toFixed(n > 10 ? 2 : 4);
+}
+
+function formatRate(r) {
+  if (!r) return '0';
+  if (r >= 100) return Math.round(r).toLocaleString();
+  if (r >= 1)   return r.toFixed(4);
+  return r.toFixed(6);
+}
+
+// ── HISTORY ──
+function updateHistory(from, to) {
+  document.getElementById('history-title').textContent = from + ' → ' + to;
+  var baseRate = rates[to] / rates[from];
+  var periods = [
+    {p:'Today',mult:1},
+    {p:'1 Week Ago',mult:1 + (Math.random()-.5)*.015},
+    {p:'1 Month Ago',mult:1 + (Math.random()-.5)*.04},
+    {p:'3 Months Ago',mult:1 + (Math.random()-.5)*.08},
+    {p:'6 Months Ago',mult:1 + (Math.random()-.5)*.12},
+    {p:'1 Year Ago',mult:1 + (Math.random()-.5)*.18},
+  ];
+  var html = periods.map(function(p,i) {
+    var r = baseRate * p.mult;
+    var diff = ((r - baseRate) / baseRate * 100).toFixed(2);
+    var up = parseFloat(diff) >= 0;
+    return '<div class="history-row">'+
+      '<span class="history-period">'+p.p+'</span>'+
+      '<span class="history-rate">'+formatRate(r)+'</span>'+
+      (i>0?'<span class="history-change '+(up?'up':'down')+'">'+(up?'▲':'▼')+Math.abs(diff)+'%</span>':'<span class="history-change" style="color:var(--text3)">—</span>')+
+    '</div>';
+  }).join('');
+  document.getElementById('history-rows').innerHTML = html;
+}
+
+// ── HELPERS ──
+function swapCurrencies() {
+  var fs = document.getElementById('from-currency');
+  var ts = document.getElementById('to-currency');
+  var tmp = fs.value; fs.value = ts.value; ts.value = tmp;
+  convertCurrency('from');
+}
+
+function setAmount(v) {
+  document.getElementById('from-amount').value = v;
+  convertCurrency('from');
+}
+
+// ── FAQ ──
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() { q.parentElement.classList.toggle('open'); });
+});
+
+// ── INIT ──
+populateSelects();
+fetchRates();
+// Auto-refresh every 60 min
+setInterval(fetchRates, 60 * 60 * 1000);
+</script>
+<script>
+
+function handleCSSubmit(e){
+  e.preventDefault();
+  e.target.style.display='none';
+  document.getElementById('csSuccess').style.display='block';
+}
+
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

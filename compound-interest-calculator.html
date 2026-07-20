@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="compound interest calculator, savings growth calculator, investment return calculator, compound growth" name="keywords"/>
+<title>Compound Interest Calculator 2026 — Daily, Monthly &amp; Yearly Compounding</title>
+<meta content="Calculate compound interest with daily, monthly, or yearly compounding. See how your money grows with contributions, inflation-adjusted returns, and the Rule of 72. Free 2026 calculator." name="description"/>
+<meta content="USAFinCalc" name="author"/><meta content="#050810" name="theme-color"/>
+<link href="https://usafincalc.com/compound-interest-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="website" property="og:type"/>
+<meta content="Compound Interest Calculator 2026 — USAFinCalc" property="og:title"/>
+<meta content="See how compound interest grows your money over time. Daily, monthly, yearly compounding with contributions and inflation adjustment." property="og:description"/>
+<meta content="https://usafincalc.com/compound-interest-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="en_US" property="og:locale"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#050810;--panel:#0c1120;--panel2:#111827;--border:#1e2d45;--text:#e8edf5;--text2:#8899bb;--text3:#4a6080;--blue:#3b9eff;--green:#22d3a5;--red:#f87171;--orange:#fb923c;--yellow:#fbbf24;--purple:#a78bfa;--teal:#2dd4bf;--pink:#f472b6;--radius:14px;--shadow:0 4px 30px rgba(0,0,0,0.5)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Space Grotesk',sans-serif;min-height:100vh;line-height:1.6}
+
+/* NAV */
+.fc-nav{display:flex;align-items:center;gap:16px;padding:0 24px;height:60px;border-bottom:1px solid var(--border);background:rgba(5,8,16,0.95);backdrop-filter:blur(12px);position:sticky;top:0;z-index:100}
+.fc-logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex-shrink:0}
+.fc-logo-icon{width:30px;height:30px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:16px;color:#050810}
+.fc-logo-text{font-size:16px;font-weight:700;color:var(--text)}.fc-logo-text span{color:var(--blue)}
+.fc-nav-links{display:flex;gap:4px;list-style:none;margin-left:auto}
+.fc-nav-links a{color:var(--text2);text-decoration:none;font-size:13px;padding:5px 10px;border-radius:6px;transition:.2s}
+.fc-nav-links a:hover{color:var(--text);background:var(--panel2)}
+.fc-badge-live{background:rgba(34,211,165,0.1);color:var(--green);border:1px solid rgba(34,211,165,0.25);border-radius:20px;padding:3px 10px;font-size:11px;font-weight:600;margin-left:auto}
+
+/* HERO */
+.fc-page-hero{text-align:center;padding:48px 24px 32px;max-width:720px;margin:0 auto}
+.fc-page-badge{display:inline-block;border:1px solid;border-radius:20px;padding:4px 14px;font-size:12px;font-weight:600;margin-bottom:16px}
+.fc-page-hero h1{font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.2;margin-bottom:12px}
+.fc-page-hero p{color:var(--text2);font-size:15px;line-height:1.7}
+
+/* QA */
+.fc-qa{max-width:980px;margin:0 auto 28px;padding:0 24px}
+.fc-qa-inner{border-radius:10px;padding:14px 18px;font-size:14px;color:var(--text2)}
+
+/* LAYOUT */
+.fc-calc-wrap{display:grid;grid-template-columns:420px 1fr;gap:20px;max-width:980px;margin:0 auto 40px;padding:0 24px}
+@media(max-width:800px){.fc-calc-wrap{grid-template-columns:1fr}}
+
+/* PANEL */
+.fc-panel{background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
+.fc-panel-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text3);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.fc-panel-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--dot-color,var(--green));display:block;box-shadow:0 0 8px var(--dot-color,var(--green))}
+
+/* FORM */
+.fc-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.05em}
+.fc-label-hint{font-size:11px;color:var(--text3);font-weight:400;margin-left:6px;text-transform:none;letter-spacing:0}
+.fc-input-wrap{position:relative}
+.fc-pfx{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;font-family:'JetBrains Mono',monospace}
+.fc-sfx{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:13px}
+.fc-input{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px 10px 26px;color:var(--text);font-size:15px;font-family:'JetBrains Mono',monospace;outline:none;transition:border .2s}
+.fc-input:focus{border-color:var(--green)}
+.fc-input.no-pfx{padding-left:12px}
+.fc-input.with-sfx{padding-right:40px;padding-left:12px}
+.fc-select{width:100%;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--text);font-size:14px;outline:none;cursor:pointer;transition:border .2s}
+.fc-select:focus{border-color:var(--green)}
+
+/* SLIDER */
+.fc-slider-wrap{margin-top:6px}
+.fc-slider{width:100%;-webkit-appearance:none;appearance:none;height:4px;border-radius:2px;background:var(--border);outline:none;cursor:pointer}
+.fc-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--green);cursor:pointer;box-shadow:0 0 8px rgba(34,211,165,0.5)}
+.fc-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--green);cursor:pointer;border:none}
+.fc-slider-row{display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-top:4px}
+
+/* TWO COL ROW */
+.fc-row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* BUTTON */
+.fc-btn{width:100%;margin-top:20px;padding:13px;border:none;border-radius:9px;background:linear-gradient(135deg,#22d3a5,#0d9488);color:#050810;font-size:15px;font-weight:700;cursor:pointer;transition:.2s;font-family:'Space Grotesk',sans-serif}
+.fc-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,211,165,0.35)}
+
+/* RESULT PLACEHOLDER */
+.fc-result-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);padding:60px 24px;gap:12px;color:var(--text3);font-size:14px;text-align:center;min-height:400px}
+.fc-result-placeholder-icon{font-size:52px;opacity:.4}
+
+/* RESULTS */
+.fc-result-hero{border-radius:12px;padding:22px;text-align:center;margin-bottom:16px}
+.fc-result-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);margin-bottom:6px}
+.fc-result-amount{font-size:42px;font-weight:700;font-family:'JetBrains Mono',monospace;line-height:1.1}
+.fc-result-sub{font-size:13px;color:var(--text2);margin-top:8px}
+
+.fc-detail-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid rgba(30,45,69,0.5);font-size:14px}
+.fc-detail-row:last-child{border:none}
+.fc-detail-key{color:var(--text2)}.fc-detail-val{font-family:'JetBrains Mono',monospace;font-weight:600;color:var(--text)}
+.fc-detail-val.green{color:var(--green)}.fc-detail-val.blue{color:var(--blue)}.fc-detail-val.red{color:var(--red)}.fc-detail-val.orange{color:var(--orange)}.fc-detail-val.yellow{color:var(--yellow)}.fc-detail-val.purple{color:var(--purple)}.fc-detail-val.pink{color:var(--pink)}
+
+/* MINI GRID */
+.fc-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:10px;margin-top:14px}
+.fc-mini-box{background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.fc-mini-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.fc-mini-val{font-size:15px;font-weight:700;font-family:'JetBrains Mono',monospace}
+
+/* CHART */
+.fc-chart-wrap{background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:16px;margin-top:14px}
+.fc-chart-title{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;display:flex;justify-content:space-between;align-items:center}
+.fc-chart-legend{display:flex;gap:12px}
+.fc-chart-legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3)}
+.fc-chart-legend-dot{width:8px;height:8px;border-radius:2px}
+canvas#growthChart{width:100%!important;border-radius:6px}
+
+/* RULE72 */
+.fc-rule72{background:linear-gradient(135deg,rgba(34,211,165,0.08),rgba(59,158,255,0.05));border:1px solid rgba(34,211,165,0.2);border-radius:10px;padding:16px;margin-top:14px;display:flex;align-items:center;gap:14px}
+.fc-rule72-icon{font-size:28px;flex-shrink:0}
+.fc-rule72-val{font-size:22px;font-weight:700;font-family:'JetBrains Mono',monospace;color:var(--green)}
+.fc-rule72-label{font-size:12px;color:var(--text2);margin-top:2px}
+
+/* YEAR TABLE */
+.fc-year-wrap{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-year-wrap h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-year-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:10px}
+.fc-year-table{width:100%;border-collapse:collapse;font-size:13px}
+.fc-year-table th{background:var(--panel2);color:var(--text2);padding:10px 14px;text-align:right;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border);white-space:nowrap}
+.fc-year-table th:first-child{text-align:left}
+.fc-year-table td{padding:9px 14px;border-bottom:1px solid rgba(30,45,69,0.3);font-family:'JetBrains Mono',monospace;font-size:12px;text-align:right;color:var(--text2)}
+.fc-year-table td:first-child{text-align:left;font-family:'Space Grotesk',sans-serif;color:var(--text3);font-size:13px}
+.fc-year-table tr:last-child td{border:none;font-weight:700;color:var(--text)}
+.fc-year-table tr:hover td{background:var(--panel2)}
+.fc-milestone{background:rgba(34,211,165,0.06)!important}
+.fc-milestone td{color:var(--green)!important;font-weight:600!important}
+
+/* CONTENT */
+.fc-content{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-content h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-formula-box{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-size:15px;text-align:center;color:var(--green);letter-spacing:.02em}
+.fc-formula-box small{display:block;font-family:'Space Grotesk',sans-serif;font-size:12px;color:var(--text3);margin-top:8px;letter-spacing:0}
+.fc-info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin-bottom:24px}
+.fc-info-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
+.fc-info-card-icon{font-size:22px;margin-bottom:8px}
+.fc-info-card-title{font-size:14px;font-weight:700;margin-bottom:5px}
+.fc-info-card-body{font-size:13px;color:var(--text2);line-height:1.6}
+.fc-table{width:100%;border-collapse:collapse;font-size:13px}
+.fc-table th{background:var(--panel2);color:var(--text2);text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;border-bottom:1px solid var(--border)}
+.fc-table td{padding:9px 12px;border-bottom:1px solid rgba(30,45,69,0.4);color:var(--text2)}
+.fc-table tr:hover td{background:var(--panel2);color:var(--text)}
+.fc-note{font-size:12px;color:var(--text3);margin-top:10px;padding:10px;background:var(--panel);border-radius:8px;border-left:3px solid var(--border)}
+
+/* FAQ */
+.fc-faq{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-faq h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-faq-item{border:1px solid var(--border);border-radius:10px;margin-bottom:8px;overflow:hidden}
+.fc-faq-q{padding:14px 16px;font-size:14px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;background:var(--panel);transition:.2s}
+.fc-faq-q:hover{background:var(--panel2)}
+.fc-faq-arrow{transition:transform .2s;color:var(--text3)}
+.fc-faq-item.open .fc-faq-arrow{transform:rotate(180deg)}
+.fc-faq-a{display:none;padding:14px 16px;font-size:13px;color:var(--text2);background:var(--panel2);border-top:1px solid var(--border);line-height:1.7}
+.fc-faq-item.open .fc-faq-a{display:block}
+
+/* RELATED */
+.fc-related{max-width:980px;margin:0 auto 40px;padding:0 24px}
+.fc-related h2{font-size:20px;font-weight:700;margin-bottom:16px}
+.fc-rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.fc-rel-card{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-decoration:none;color:var(--text2);font-size:14px;font-weight:500;transition:.2s;display:block}
+.fc-rel-card:hover{background:var(--panel2);border-color:var(--green);color:var(--text)}
+
+/* FOOTER */
+.fc-footer{border-top:1px solid var(--border);margin-top:40px;padding:32px 24px 20px}
+.fc-footer-inner{display:flex;gap:40px;max-width:980px;margin:0 auto 20px;flex-wrap:wrap}
+.fc-footer-brand{flex:1;min-width:200px}
+.fc-footer-logo{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.fc-footer-desc{font-size:13px;color:var(--text3);line-height:1.6}
+.fc-footer-links{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:flex-start;padding-top:4px}
+.fc-footer-link{color:var(--text3);text-decoration:none;font-size:13px;transition:.2s}
+.fc-footer-link:hover{color:var(--text)}
+.fc-footer-bottom{max-width:980px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--border);font-size:12px;color:var(--text3);flex-wrap:wrap;gap:8px}
+
+@keyframes fcFadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fc-animate{animation:fcFadeUp .4s ease both}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-skip{position:absolute;left:-9999px;top:auto;z-index:9999;background:#00d4ff;color:#000;padding:8px 16px;border-radius:6px;font-weight:600;text-decoration:none;font-size:14px;}.a11y-skip:focus{left:16px;top:16px;}
+.a11y-chart-data{margin-top:12px;}.a11y-chart-data summary{font-size:12px;color:var(--muted,#7e859f);cursor:pointer;padding:4px 0;}.a11y-chart-data table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px;}.a11y-chart-data th,.a11y-chart-data td{padding:6px 10px;border:1px solid var(--border);text-align:left;}.a11y-chart-data th{background:var(--bg3);color:var(--muted);}.a11y-chart-data td{color:var(--text);}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<meta content="Compound Interest Calculator 2026 — Daily, Monthly &amp; Yearly Compounding" name="twitter:title"/>
+<meta content="Calculate compound interest with daily, monthly, or yearly compounding. See how your money grows with contributions, inflation-adjusted returns, and t" name="twitter:description"/><link href="/manifest.json" rel="manifest"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Compound Interest Calculator 2026 — Daily, Monthly &amp; Yearly Compounding",
+  "url": "https://usafincalc.com/compound-interest-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Investing",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Compound Interest Calculator",
+      "item": "https://usafincalc.com/compound-interest-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Compound Interest Calculator 2026",
+  "description": "Compound Interest Calculator 2026 — Daily, Monthly &amp; Yearly Compounding",
+  "url": "https://usafincalc.com/compound-interest-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is compound interest and why does it matter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compound interest means you earn interest on your previously earned interest — not just your original principal. Over long periods, this creates exponential growth. $10,000 at 7% compounded annually for 40 years grows to ~$150,000 — 15x your original investment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between simple and compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is calculated only on the original principal. Compound interest is calculated on principal plus accumulated interest. For a $10,000 investment at 5% over 20 years: simple interest yields $20,000; compound interest yields $26,533 — 33% more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should interest compound for maximum growth?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "More frequent compounding means slightly more growth. Daily compounding yields marginally more than monthly, which yields more than annual. However, the difference between monthly and daily compounding is small (fractions of a percent) — the interest rate and time period matter far more."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What return rate should I assume for long-term investing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most financial planners use 6%–7% as a conservative long-term real return for diversified equity portfolios, based on historical S&P 500 data adjusted for inflation. Nominal (before inflation) historical returns average closer to 10%. For conservative planning, use 6%; for moderate, 7%; for optimistic, 8–10%."
+      }
+    }
+  ]
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="fc-page-hero fc-animate">
+<div class="fc-page-badge" style="background:rgba(34,211,165,0.1);color:#22d3a5;border-color:rgba(34,211,165,0.25)">The Power of Compounding</div>
+<h1>Compound Interest <span style="color:#22d3a5">Calculator 2026</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p>Enter a starting balance, monthly contribution, and interest rate. The calculator shows year-by-year growth with daily, monthly, or annual compounding — and includes an inflation-adjusted view of what that balance is actually worth.</p>
+</div>
+<div class="fc-qa">
+<div class="fc-qa-inner" style="background:rgba(34,211,165,0.06);border:1px solid rgba(34,211,165,0.2)">
+<strong style="color:#22d3a5">Quick answer:</strong> $10,000 invested at 7% for 30 years = <strong>$76,123</strong> — with no extra contributions. Add just $200/month and it becomes <strong>$283,382</strong>. That's the power of compounding.
+  </div>
+</div>
+<div class="fc-calc-wrap">
+<!-- INPUT PANEL -->
+<div class="fc-panel fc-animate">
+<div class="fc-panel-title" style="--dot-color:#22d3a5">Investment Details</div>
+<label for="principal" class="fc-label">Initial Principal</label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="principal" placeholder="10000" type="number" value="10000"/>
+</div>
+<label for="monthly" class="fc-label">Monthly Contribution <span class="fc-label-hint">(optional)</span></label>
+<div class="fc-input-wrap">
+<span class="fc-pfx">$</span>
+<input class="fc-input" id="monthly" placeholder="200" type="number" value="200"/>
+</div>
+<label for="rateSlider" class="fc-label">Annual Interest Rate</label>
+<div class="fc-slider-wrap">
+<input class="fc-slider" id="rateSlider" max="20" min="0.5" oninput="syncRate(this.value)" step="0.1" type="range" value="7"/>
+<div class="fc-slider-row"><span>0.5%</span><span id="rateDisplay" style="color:var(--green);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px">7.0%</span><span>20%</span></div>
+</div>
+<div class="fc-row2" style="margin-top:14px">
+<div>
+<label for="years" class="fc-label">Time Period</label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx with-sfx" id="years" max="50" min="1" placeholder="30" type="number" value="30"/>
+<span class="fc-sfx">yrs</span>
+</div>
+</div>
+<div>
+<label for="frequency" class="fc-label">Compound Frequency</label>
+<select class="fc-select" id="frequency">
+<option value="365">Daily</option>
+<option selected="" value="12">Monthly</option>
+<option value="4">Quarterly</option>
+<option value="2">Semi-Annual</option>
+<option value="1">Annually</option>
+</select>
+</div>
+</div>
+<div class="fc-row2" style="margin-top:4px">
+<div>
+<label for="inflation" class="fc-label">Inflation Rate <span class="fc-label-hint">(optional)</span></label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx with-sfx" id="inflation" placeholder="3.0" step="0.1" type="number" value="3.0"/>
+<span class="fc-sfx">%</span>
+</div>
+</div>
+<div>
+<label for="taxRate" class="fc-label">Tax Rate on Gains <span class="fc-label-hint">(optional)</span></label>
+<div class="fc-input-wrap">
+<input class="fc-input no-pfx with-sfx" id="taxRate" placeholder="0" step="1" type="number" value="0"/>
+<span class="fc-sfx">%</span>
+</div>
+</div>
+</div>
+<label for="contribTiming" class="fc-label" style="margin-top:14px">Contribution Timing</label>
+<select class="fc-select" id="contribTiming">
+<option selected="" value="end">End of Month (Ordinary Annuity)</option>
+<option value="start">Start of Month (Annuity Due)</option>
+</select>
+<button class="fc-btn" onclick="calcCompound()">Calculate Growth →</button>
+</div>
+<!-- RESULTS -->
+<div id="ciResult">
+<div class="fc-result-placeholder">
+<div class="fc-result-placeholder-icon">📈</div>
+<div>Enter your investment details to see compound growth.</div>
+</div>
+</div>
+</div>
+<!-- YEAR BY YEAR TABLE -->
+<div class="fc-year-wrap" id="yearSection" style="display:none">
+<h2>Year-by-Year Growth</h2>
+<div class="fc-year-table-wrap">
+<table class="fc-year-table">
+<thead>
+<tr>
+<th scope="col">Year</th>
+<th scope="col">Balance</th>
+<th scope="col">Total Contributed</th>
+<th scope="col">Interest Earned</th>
+<th scope="col">Inflation-Adj. Value</th>
+</tr>
+</thead>
+<tbody id="yearBody"></tbody>
+</table>
+</div>
+</div>
+<!-- CONTENT -->
+<div class="fc-content">
+<h2>How Compound Interest Works</h2>
+<div class="fc-formula-box">
+    A = P(1 + r/n)^(nt)
+    <small>A = Final Amount · P = Principal · r = Annual Rate · n = Compounds/Year · t = Years</small>
+</div>
+<div class="fc-info-grid">
+<div class="fc-info-card">
+<div class="fc-info-card-icon">🔁</div>
+<div class="fc-info-card-title">Compounding = Interest on Interest</div>
+<div class="fc-info-card-body">Simple interest only earns on your principal. Compound interest earns on your principal <em>plus</em> all previously earned interest — creating exponential, not linear, growth.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">📅</div>
+<div class="fc-info-card-title">Frequency Matters</div>
+<div class="fc-info-card-body">Daily compounding earns slightly more than monthly, which earns more than annual. On $100K at 7% for 10 years: daily = $100,179 more than annual compounding.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">⏰</div>
+<div class="fc-info-card-title">Time is the X-Factor</div>
+<div class="fc-info-card-body">Starting at 25 vs 35 with the same contributions can mean <strong>2× the final balance</strong>. The first 10 years have the highest compounding impact — every year of delay costs you dearly.</div>
+</div>
+<div class="fc-info-card">
+<div class="fc-info-card-icon">🎯</div>
+<div class="fc-info-card-title">Rule of 72</div>
+<div class="fc-info-card-body">Divide 72 by your annual rate to estimate doubling time. At 7%: 72 ÷ 7 = <strong>~10.3 years</strong> to double. At 10%: 7.2 years. At 4%: 18 years. Simple and powerful.</div>
+</div>
+</div>
+<h2>Compound Interest vs Simple Interest</h2>
+<table class="fc-table">
+<thead><tr><th scope="col">Scenario</th><th scope="col">Simple Interest</th><th scope="col">Compound (Monthly)</th><th scope="col">Difference</th></tr></thead>
+<tbody>
+<tr><td>$10,000 @ 7% for 10 years</td><td>$17,000</td><td style="color:var(--green)">$20,097</td><td style="color:var(--green)">+$3,097</td></tr>
+<tr><td>$10,000 @ 7% for 20 years</td><td>$24,000</td><td style="color:var(--green)">$40,388</td><td style="color:var(--green)">+$16,388</td></tr>
+<tr><td>$10,000 @ 7% for 30 years</td><td>$31,000</td><td style="color:var(--green)">$81,165</td><td style="color:var(--green)">+$50,165</td></tr>
+<tr><td>$10,000 @ 10% for 30 years</td><td>$40,000</td><td style="color:var(--green)">$198,374</td><td style="color:var(--green)">+$158,374</td></tr>
+</tbody>
+</table>
+<div class="fc-note">Assumes no additional contributions. Monthly compounding used for compound column. Numbers rounded to nearest dollar.</div>
+</div>
+<div class="fc-faq">
+<h2>Frequently Asked Questions</h2>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What is the difference between APY and APR? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a"><strong>APR (Annual Percentage Rate)</strong> is the stated interest rate without compounding. <strong>APY (Annual Percentage Yield)</strong> accounts for compounding — it's the actual return you earn in a year. A savings account with 5% APR compounded daily has an APY of about 5.13%. Always compare APY when shopping for savings accounts or CDs.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What is a realistic interest rate to use? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">It depends on where you're investing: <strong>HYSA/CDs (2026):</strong> 4–5%. <strong>Bonds:</strong> 3–5%. <strong>S&amp;P 500 (historical avg):</strong> 7% after inflation, 10% nominal. <strong>Real estate:</strong> 5–8%. For long-term retirement projections, most financial planners use <strong>6–8%</strong> as a conservative to moderate estimate.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">How does inflation affect compound interest? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">Inflation erodes your purchasing power over time. If you earn 7% but inflation is 3%, your <strong>real return is about 4%</strong>. A million dollars in 30 years buys far less than a million today. The inflation-adjusted value in this calculator shows you what your final balance is worth in today's dollars.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">Where can I actually earn compound interest? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">Common compound interest vehicles: <strong>High-Yield Savings Accounts</strong> (4–5% in 2026), <strong>CDs</strong> (4–5.5%), <strong>Money Market Accounts</strong> (3–5%), <strong>Treasury bonds</strong>, <strong>401(k) and Roth IRA</strong> invested in index funds (7–10% historically), and <strong>dividend reinvestment</strong> in stocks (DRIP). The key is to reinvest all earnings — that's what creates compounding.</div>
+</div>
+<div class="fc-faq-item">
+<div class="fc-faq-q">What is the Rule of 72? <span class="fc-faq-arrow">⌄</span></div>
+<div class="fc-faq-a">The Rule of 72 is a quick mental math trick: divide <strong>72 by your annual interest rate</strong> to estimate how many years it takes to double your money. At 6% → 12 years. At 8% → 9 years. At 12% → 6 years. It works because ln(2) ≈ 0.693, and 72 is a convenient approximation that divides evenly by many common rates.</div>
+</div>
+</div>
+<div class="fc-related">
+<h2>Related Calculators</h2>
+<div class="fc-rel-grid">
+<a class="fc-rel-card" href="/roth-ira-calculator">📈 Roth IRA Calculator</a>
+<a class="fc-rel-card" href="/401k-calculator-usa">🏦 401k Calculator</a>
+<a class="fc-rel-card" href="/stock-return-calculator-usa">📊 Stock Return Calculator</a>
+<a class="fc-rel-card" href="/tax-calculator-usa">🧾 Federal Tax Calculator</a>
+<a class="fc-rel-card" href="/debt-payoff-calculator">💳 Debt Payoff Calculator</a>
+<a class="fc-rel-card" href="/salary-calculator-usa">💵 Salary Calculator</a>
+</div>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><script defer="True" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+let chartInstance = null;
+
+function syncRate(v) {
+  document.getElementById('rateDisplay').textContent = parseFloat(v).toFixed(1) + '%';
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function fmtP(n) { return n.toFixed(2) + '%'; }
+
+function calcCompound() {
+  const P      = parseFloat(document.getElementById('principal').value) || 0;
+  const pmt    = parseFloat(document.getElementById('monthly').value) || 0;
+  const r      = parseFloat(document.getElementById('rateSlider').value) / 100;
+  const years  = parseInt(document.getElementById('years').value) || 30;
+  const n      = parseInt(document.getElementById('frequency').value);
+  const inf    = parseFloat(document.getElementById('inflation').value) / 100 || 0;
+  const taxR   = parseFloat(document.getElementById('taxRate').value) / 100 || 0;
+  const timing = document.getElementById('contribTiming').value;
+
+  if (P < 0 || r <= 0 || years <= 0) { alert('Please enter valid values.'); return; }
+
+  // Year-by-year simulation
+  const yearData = [];
+  let balance = P;
+  let totalContrib = P;
+
+  for (let y = 1; y <= years; y++) {
+    // Monthly compounding within year
+    for (let m = 1; m <= 12; m++) {
+      if (timing === 'start') balance += pmt;
+      // Compound for each period within the year
+      // We do monthly steps regardless of compound frequency for accuracy
+      const periodsPerMonth = n / 12;
+      balance *= Math.pow(1 + r / n, n / 12);
+      if (timing === 'end') balance += pmt;
+      totalContrib += pmt;
+    }
+    const inflAdj = balance / Math.pow(1 + inf, y);
+    const interestEarned = balance - totalContrib;
+    const afterTax = taxR > 0 ? balance - (interestEarned * taxR) : balance;
+    yearData.push({
+      year: y,
+      balance,
+      totalContrib,
+      interest: interestEarned,
+      inflAdj,
+      afterTax,
+    });
+  }
+
+  const final = yearData[yearData.length - 1];
+  const totalInterest = final.interest;
+  const inflAdjFinal = final.inflAdj;
+  const rule72 = r > 0 ? (72 / (r * 100)).toFixed(1) : '∞';
+  const multiplier = P > 0 ? final.balance / P : 0;
+
+  // Without contributions (pure compounding)
+  const pureCompound = P * Math.pow(1 + r / n, n * years);
+  const contribBoost = final.balance - pureCompound;
+
+  document.getElementById('ciResult').innerHTML = `
+    <div class="fc-panel fc-animate">
+      <div class="fc-panel-title" style="--dot-color:#22d3a5">Growth Results</div>
+
+      <div class="fc-result-hero" style="background:rgba(34,211,165,0.08);border:1px solid rgba(34,211,165,0.25)">
+        <div class="fc-result-label">Final Balance after ${years} Years</div>
+        <div class="fc-result-amount" style="color:#22d3a5">${fmt(final.balance)}</div>
+        <div class="fc-result-sub">${fmtP(r * 100)} annual rate · ${document.getElementById('frequency').options[document.getElementById('frequency').selectedIndex].text} compounding</div>
+      </div>
+
+      <div class="fc-detail-row"><span class="fc-detail-key">Initial Principal</span><span class="fc-detail-val blue">${fmt(P)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Total Contributions</span><span class="fc-detail-val blue">${fmt(final.totalContrib)}</span></div>
+      <div class="fc-detail-row"><span class="fc-detail-key">Total Interest Earned</span><span class="fc-detail-val green">${fmt(totalInterest)}</span></div>
+      ${contribBoost > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Boost from Monthly Contributions</span><span class="fc-detail-val green">+${fmt(contribBoost)}</span></div>` : ''}
+      ${inf > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">Inflation-Adjusted Value</span><span class="fc-detail-val orange">${fmt(inflAdjFinal)}</span></div>` : ''}
+      ${taxR > 0 ? `<div class="fc-detail-row"><span class="fc-detail-key">After-Tax Value</span><span class="fc-detail-val yellow">${fmt(final.afterTax)}</span></div>` : ''}
+      <div class="fc-detail-row" style="border:none"><span class="fc-detail-key">Money Multiplier</span><span class="fc-detail-val green">${multiplier.toFixed(1)}×</span></div>
+
+      <div class="fc-rule72">
+        <div class="fc-rule72-icon">⚡</div>
+        <div>
+          <div class="fc-rule72-val">${rule72} years</div>
+          <div class="fc-rule72-label">Rule of 72 — time to double at ${fmtP(r * 100)}</div>
+        </div>
+      </div>
+
+      <div class="fc-chart-wrap">
+        <div class="fc-chart-title">
+          <span>Balance Growth Over Time</span>
+          <div class="fc-chart-legend">
+            <div class="fc-chart-legend-item"><div class="fc-chart-legend-dot" style="background:#22d3a5"></div>Total Balance</div>
+            <div class="fc-chart-legend-item"><div class="fc-chart-legend-dot" style="background:#3b9eff"></div>Contributions</div>
+            <div class="fc-chart-legend-item"><div class="fc-chart-legend-dot" style="background:rgba(34,211,165,0.2)"></div>Interest</div>
+          </div>
+        </div>
+        <canvas aria-label="Line chart showing compound interest growth over time" id="growthChart" height="180" role="img"></canvas>
+<details class="a11y-chart-data">
+<summary>View growth data as table</summary>
+<table id="growthChartTable">
+<caption>Compound interest growth by year (updates with calculator)</caption>
+<thead><tr><th scope="col">Year</th><th scope="col">Balance</th><th scope="col">Contributions</th><th scope="col">Interest Earned</th></tr></thead>
+<tbody id="growthChartTableBody">
+<tr><td colspan="4" style="text-align:center;color:var(--muted)">Enter values above to see data</td></tr>
+</tbody>
+</table>
+</details>
+      </div>
+
+      <div class="fc-mini-grid">
+        <div class="fc-mini-box"><div class="fc-mini-label">Final Balance</div><div class="fc-mini-val" style="color:var(--green)">${fmt(final.balance)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Interest Earned</div><div class="fc-mini-val" style="color:var(--blue)">${fmt(totalInterest)}</div></div>
+        <div class="fc-mini-box"><div class="fc-mini-label">Doubles in</div><div class="fc-mini-val" style="color:var(--yellow)">${rule72} yrs</div></div>
+        ${inf > 0 ? `<div class="fc-mini-box"><div class="fc-mini-label">Real Value</div><div class="fc-mini-val" style="color:var(--orange)">${fmt(inflAdjFinal)}</div></div>` : ''}
+      </div>
+    </div>`;
+
+  // Build chart
+  buildChart(yearData);
+
+  // Build year table
+  buildYearTable(yearData, inf);
+  document.getElementById('yearSection').style.display = 'block';
+}
+
+function buildChart(data) {
+  const ctx = document.getElementById('growthChart');
+  if (!ctx) return;
+
+  // Sample every N years to keep chart clean
+  const step = data.length > 20 ? Math.ceil(data.length / 20) : 1;
+  const filtered = data.filter((_, i) => i % step === 0 || i === data.length - 1);
+
+  const labels   = filtered.map(d => `Yr ${d.year}`);
+  const balances = filtered.map(d => Math.round(d.balance));
+  const contribs = filtered.map(d => Math.round(d.totalContrib));
+  const interest = filtered.map(d => Math.round(Math.max(0, d.interest)));
+
+  if (chartInstance) { chartInstance.destroy(); chartInstance = null; }
+
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Contributions',
+          data: contribs,
+          backgroundColor: 'rgba(59,158,255,0.7)',
+          borderRadius: 3,
+          stack: 'a',
+        },
+        {
+          label: 'Interest Earned',
+          data: interest,
+          backgroundColor: 'rgba(34,211,165,0.55)',
+          borderRadius: 3,
+          stack: 'a',
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => ` ${ctx.dataset.label}: $${ctx.raw.toLocaleString()}`,
+            afterBody: (items) => {
+              const total = items.reduce((s, i) => s + i.raw, 0);
+              return [`Total: $${total.toLocaleString()}`];
+            }
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(30,45,69,0.6)' }, ticks: { color: '#4a6080', font: { size: 10 } }, stacked: true },
+        y: {
+          grid: { color: 'rgba(30,45,69,0.6)' },
+          ticks: {
+            color: '#4a6080', font: { size: 10 },
+            callback: v => '$' + (v >= 1000000 ? (v/1000000).toFixed(1)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v)
+          },
+          stacked: true
+        }
+      }
+    }
+  });
+}
+
+function buildYearTable(data, inf) {
+  // Milestones: 2×, 5×, 10× principal
+  const P = parseFloat(document.getElementById('principal').value) || 0;
+  const milestones = new Set();
+  data.forEach((d, i) => {
+    if (P > 0) {
+      if (d.balance >= P * 2 && (i === 0 || data[i-1].balance < P * 2)) milestones.add(d.year);
+      if (d.balance >= P * 5 && (i === 0 || data[i-1].balance < P * 5)) milestones.add(d.year);
+      if (d.balance >= P * 10 && (i === 0 || data[i-1].balance < P * 10)) milestones.add(d.year);
+    }
+  });
+
+  document.getElementById('yearBody').innerHTML = data.map(d => {
+    const isMilestone = milestones.has(d.year);
+    return `<tr class="${isMilestone ? 'fc-milestone' : ''}">
+      <td>Year ${d.year}${isMilestone ? ' ⭐' : ''}</td>
+      <td style="color:var(--green)">${fmt(d.balance)}</td>
+      <td style="color:var(--blue)">${fmt(d.totalContrib)}</td>
+      <td style="color:var(--teal)">${fmt(d.interest)}</td>
+      <td style="color:${inf > 0 ? 'var(--orange)' : 'var(--text3)'}">${inf > 0 ? fmt(d.inflAdj) : '—'}</td>
+    </tr>`;
+  }).join('');
+}
+
+// FAQ
+document.querySelectorAll('.fc-faq-q').forEach(q => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('open'));
+});
+
+// Init rate display
+syncRate(document.getElementById('rateSlider').value);
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+
+<script>
+(function(){
+  var _orig = window.buildChart;
+  // Patch buildChart to also populate accessible table
+  document.addEventListener('DOMContentLoaded', function(){
+    var origBuild = window.buildChart;
+    if(typeof origBuild === 'function'){
+      window.buildChart = function(data){
+        origBuild(data);
+        updateGrowthTable(data);
+      };
+    }
+  });
+  function updateGrowthTable(data){
+    var tbody = document.getElementById('growthChartTableBody');
+    if(!tbody || !data || !data.length) return;
+    function fmt(v){ return '$'+Math.round(v).toLocaleString(); }
+    // Show every 5 years + last year
+    var rows = data.filter(function(d,i){ return d.year%5===0 || i===data.length-1; });
+    tbody.innerHTML = rows.map(function(d){
+      return '<tr><td>Year '+d.year+'</td><td>'+fmt(d.balance)+'</td><td>'+fmt(d.totalContrib)+'</td><td>'+fmt(d.interestEarned)+'</td></tr>';
+    }).join('');
+  }
+})();
+</script>
+<script defer src="/js/search.js"></script>
+</body></html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, follow" name="robots"/>
+<meta content="Analyze a rental property investment. Calculate cap rate, cash-on-cash return, NOI, and break-even rent." name="description"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link rel="canonical" href="https://usafincalc.com/rental-property-calculator"/>
+<title>Rental Property ROI Calculator — Coming Soon | USAFinCalc</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);--text:#f0f2f8;--muted:#7e859f;--accent:#00e5a0;--font:'Sora',sans-serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:var(--accent)}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:13px;transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 24px;max-width:680px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,229,160,0.1);color:var(--accent);border:1px solid rgba(0,229,160,0.2);border-radius:20px;padding:4px 14px;font-size:12px;font-weight:500;margin-bottom:24px;font-family:var(--mono)}
+h1{font-size:clamp(28px,5vw,44px);font-weight:600;letter-spacing:-.5px;margin-bottom:16px;line-height:1.2}
+h1 span{color:var(--accent)}
+.sub{color:var(--muted);font-size:16px;line-height:1.8;margin-bottom:40px;max-width:520px}
+.notify-wrap{display:flex;gap:10px;width:100%;max-width:420px;margin-bottom:48px}
+.notify-wrap input{flex:1;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:11px 16px;font-family:var(--font);outline:none}
+.notify-wrap input:focus{border-color:var(--accent)}
+.notify-wrap input::placeholder{color:var(--muted)}
+.nbtn{background:var(--accent);color:#0a0f14;border:none;border-radius:var(--rs);padding:11px 20px;font-size:14px;font-weight:600;font-family:var(--font);cursor:pointer;white-space:nowrap}
+.nbtn:hover{background:#00c98c}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.lnk{background:var(--card);border:1px solid var(--border);border-radius:var(--rs);padding:10px 16px;text-decoration:none;color:var(--muted);font-size:13px;transition:border-color .2s,color .2s}
+.lnk:hover{border-color:var(--border2);color:var(--text)}
+footer{border-top:1px solid var(--border);padding:20px 24px;text-align:center;font-size:12px;color:var(--muted)}
+footer a{color:var(--muted);text-decoration:underline}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Rental Property ROI Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/rental-property-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mortgage Calculators",
+      "item": "https://usafincalc.com/mortgage-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rental Property ROI Calculator — Coming Soon | USAFinCalc",
+      "item": "https://usafincalc.com/rental-property-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Rental Property ROI Calculator — Coming Soon | USAFinCalc",
+  "description": "Rental Property ROI Calculator — Coming Soon | USAFinCalc",
+  "url": "https://usafincalc.com/rental-property-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+
+<div class="hero">
+  <div class="badge">🚧 Coming Soon</div>
+  <h1>Rental <span>Property</span> Calculator</h1>
+  <p class="sub">Analyze a rental property investment. Calculate cap rate, cash-on-cash return, NOI, and break-even rent. We're building this calculator now — check back soon.</p>
+  <div class="notify-wrap">
+    <input type="email" placeholder="your@email.com" id="email-input"/>
+    <button class="nbtn" onclick="notify()">Notify Me</button>
+  </div>
+  <div class="links">
+    <a class="lnk" href="/mortgage-calculator-usa">🏠 Mortgage</a>
+    <a class="lnk" href="/personal-loan-calculator">🏦 Personal Loan</a>
+    <a class="lnk" href="/debt-payoff-calculator">💰 Debt Payoff</a>
+    <a class="lnk" href="/credit-card-calculator">💳 Credit Card</a>
+    <a class="lnk" href="/">All Calculators →</a>
+  </div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li><li><a href="/property-tax-calculator">Property Tax Calculator</a></li><li><a href="/home-affordability-calculator-usa">Home Affordability</a></li><li><a href="/refinance-calculator">Refinance Calculator</a></li><li><a href="/roi-calculator">ROI Calculator</a></li><li><a href="/closing-costs-calculator">Closing Costs Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="rental-property-guide">
+<h2>What This Rental Property Calculator Does</h2>
+<p>This calculator analyzes the financial performance of a rental property investment, computing key metrics that real estate investors use to evaluate deals: net operating income (NOI), cap rate, cash-on-cash return, gross rent multiplier (GRM), and projected cash flow after mortgage payments. Whether you're evaluating a single-family home, duplex, or small multifamily property, these metrics tell you whether a deal makes financial sense before you commit.</p>
+<h2>How It Works</h2>
+<p><strong>NOI = Gross Rental Income − Vacancy Loss − Operating Expenses</strong></p>
+<p><strong>Cap Rate = NOI / Property Value × 100</strong></p>
+<p><strong>Cash-on-Cash Return = Annual Pre-Tax Cash Flow / Total Cash Invested × 100</strong></p>
+<p>Operating expenses typically include property taxes, insurance, maintenance (estimate 1% of property value annually), property management (8–12% of rent), HOA fees, and reserves for capital expenditures. The mortgage payment is not included in NOI or cap rate calculations — these are financing-independent metrics.</p>
+<h2>Key Concepts Explained</h2>
+<h3>Cap Rate</h3>
+<p>The cap rate measures a property's return assuming you paid cash with no mortgage. A 6% cap rate means you earn 6% of the property's value as net operating income annually. In most US markets, residential rental properties trade at 4–8% cap rates. Higher cap rates generally mean higher risk markets or lower-quality properties; lower cap rates reflect more stable, high-demand markets.</p>
+<h3>Cash-on-Cash Return</h3>
+<p>Cash-on-cash measures the annual cash income generated on your actual cash invested (down payment + closing costs + immediate repairs). A 8% cash-on-cash return means your $50,000 invested generates $4,000/year in cash flow. This metric accounts for financing and is the more relevant number for leveraged investors.</p>
+<h3>The 1% Rule</h3>
+<p>A quick screening metric: monthly rent should equal at least 1% of purchase price. A $200,000 property should rent for at least $2,000/month. Properties that don't meet this threshold often struggle to cash flow after expenses. This is a rough filter, not a substitute for full analysis — markets with high appreciation potential often have lower rent ratios.</p>
+<h3>Vacancy Rate</h3>
+<p>No property is 100% occupied year-round. Plan for 5–10% vacancy (3.6–4.8 weeks per year) in most markets, more in softer markets or higher turnover properties. Using 100% occupancy in your projections is the most common mistake new investors make.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Use actual, not optimistic, expense estimates</strong> — maintenance, capex reserves, and vacancy are consistently underestimated by new investors. Use 40–50% of gross rent as a rule of thumb for total operating expenses in a well-run property.</li>
+<li><strong>Analyze the deal at current market rents, not projected rents</strong> — buy based on what the property generates today, not what you hope to achieve in 2 years.</li>
+<li><strong>Factor in property management even if you self-manage</strong> — your time has value. If the deal only works if you manage it yourself at zero cost, it may not be a viable investment.</li>
+<li><strong>Research local rent control laws</strong> — many cities have rent stabilization or control ordinances that limit rent increases and affect eviction procedures.</li>
+<li><strong>Stress-test at higher rates and vacancies</strong> — run the calculator assuming 10% vacancy and interest rates 2% higher than today. If the deal still pencils, it has a margin of safety.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What is a good cap rate for a rental property?</h3><p class="faq-a">It depends on location and risk tolerance. In primary markets (NYC, San Francisco, Boston), cap rates of 3–5% are common for high-quality properties with appreciation upside. In secondary and tertiary markets, 6–9% cap rates are typical. Anything above 10% warrants scrutiny — it likely reflects higher risk, deferred maintenance, or a challenged market.</p></div>
+<div class="faq-item"><h3 class="faq-q">How much cash flow should a rental property generate?</h3><p class="faq-a">There's no universal target, but many investors look for at least $200–$300/month per door in positive cash flow after all expenses and mortgage. This provides a buffer for unexpected repairs and vacancies. Properties in high-appreciation markets sometimes break even or run slightly negative on cash flow while still generating strong total returns through equity growth.</p></div>
+<div class="faq-item"><h3 class="faq-q">What expenses do rental property owners deduct for taxes?</h3><p class="faq-a">Rental property expenses deductible against rental income include: mortgage interest, property taxes, insurance, maintenance and repairs, property management fees, depreciation (27.5 years for residential), utilities paid by landlord, advertising, legal and accounting fees, and travel related to property management. Depreciation is particularly valuable — it's a non-cash deduction that often makes cash-flowing properties show a paper loss for tax purposes.</p></div>
+<div class="faq-item"><h3 class="faq-q">Should I buy rental property in an LLC?</h3><p class="faq-a">An LLC can provide liability protection separating your personal assets from the property. However, getting a mortgage in an LLC is harder and often more expensive (commercial loan terms vs. residential rates). Many investors start with properties in their personal name with umbrella insurance coverage, then transfer to an LLC later (though this can trigger a due-on-sale clause). Consult a real estate attorney and CPA for your specific situation.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>The <a href="/mortgage-calculator-usa">Mortgage Calculator</a> helps determine your PITI on an investment property loan. The <a href="/roi-calculator">ROI Calculator</a> provides a broader return analysis framework. The <a href="/capital-gains-tax-calculator">Capital Gains Tax Calculator</a> models your tax liability when selling the property, including depreciation recapture.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
+<script>
+function notify() {
+  var e = document.getElementById('email-input').value.trim();
+  if (!e || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)) { alert('Please enter a valid email.'); return; }
+  var btn = document.querySelector('.nbtn');
+  btn.textContent = '✓ Noted!';
+  btn.style.background = '#00b87a';
+  btn.disabled = true;
+}
+</script>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

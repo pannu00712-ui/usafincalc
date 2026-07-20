@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="USAFinCalc, free financial calculator USA, tax calculator 2026" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Methodology — How USAFinCalc Builds Its Calculators</title>
+<meta content="How USAFinCalc sources data, builds formulas, and maintains accuracy. IRS brackets, BLS data, and calculator assumptions explained." name="description"/>
+<link href="https://usafincalc.com/methodology" rel="canonical"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23050810'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--r:14px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
+nav{background:rgba(4,6,15,0.97);border-bottom:1px solid var(--border);padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-size:18px;font-weight:800;color:var(--text);text-decoration:none;}.logo span{color:var(--cyan);}
+.wrap{max-width:720px;margin:0 auto;padding:56px 24px 80px;}
+.page-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px;}
+h1{font-size:clamp(28px,4vw,40px);font-weight:700;line-height:1.1;letter-spacing:-.3px;margin-bottom:16px;}
+.page-sub{font-size:16px;color:var(--text2);line-height:1.7;margin-bottom:8px;}
+.meta{font-size:12px;color:var(--text3);margin-bottom:48px;font-family:'JetBrains Mono',monospace;}
+h2{font-size:18px;font-weight:700;color:var(--text);margin:40px 0 12px;}
+h3{font-size:15px;font-weight:600;color:var(--text);margin:24px 0 8px;}
+p{color:var(--text2);font-size:15px;margin-bottom:16px;}
+ul{color:var(--text2);font-size:15px;padding-left:20px;margin-bottom:16px;}
+ul li{margin-bottom:6px;}
+.source-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;}
+.source-name{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;}
+.source-desc{font-size:13px;color:var(--text2);}
+.source-link{font-size:12px;color:var(--cyan);text-decoration:none;font-family:'JetBrains Mono',monospace;}
+.source-link:hover{text-decoration:underline;}
+.assumption-box{background:var(--bg3);border-left:3px solid var(--cyan);border-radius:0 8px 8px 0;padding:14px 18px;margin:12px 0;font-size:14px;color:var(--text2);}
+.assumption-box strong{color:var(--text);}
+.divider{height:1px;background:var(--border);margin:40px 0;}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:13px;}
+footer a{color:var(--text2);text-decoration:none;margin:0 10px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="Methodology — How USAFinCalc Builds Its Calculators" property="og:title"/>
+<meta content="How USAFinCalc sources data, builds formulas, and maintains accuracy. IRS brackets, BLS data, and calculator assumptions explained." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/methodology" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Methodology — How USAFinCalc Builds Its Calculators" name="twitter:title"/>
+<meta content="How USAFinCalc sources data, builds formulas, and maintains accuracy. IRS brackets, BLS data, and calculator assumptions explained." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Methodology — How USAFinCalc Builds Its Calculators",
+  "url": "https://usafincalc.com/methodology",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Methodology — How USAFinCalc Builds Its Calculators",
+      "item": "https://usafincalc.com/methodology"
+    }
+  ]
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="wrap">
+<div class="page-label">Transparency</div>
+<h1>How our calculators work</h1>
+<p class="page-sub">We want you to understand exactly where our numbers come from and what assumptions we make. This page explains our data sources, formulas, and limitations.</p>
+<div class="meta">Last reviewed May 2026 · USAFinCalc Editorial Team</div>
+<h2>Data sources</h2>
+<p>Every number in our calculators comes from a public government source. We don't estimate figures or use third-party data when the official source is available.</p>
+<div class="source-card">
+<div class="source-name">Internal Revenue Service (IRS)</div>
+<div class="source-desc">Federal income tax brackets, standard deductions, FICA rates, 401k limits, and IRA contribution limits. Updated annually via Revenue Procedures.</div>
+<a class="source-link" href="https://www.irs.gov/newsroom/irs-provides-tax-inflation-adjustments-for-tax-year-2026" rel="noopener" target="_blank">irs.gov — Rev. Proc. 2025-28 →</a>
+</div>
+<div class="source-card">
+<div class="source-name">Bureau of Labor Statistics (BLS)</div>
+<div class="source-desc">Consumer Price Index data for the inflation calculator. Historical CPI data from 1913 to present.</div>
+<a class="source-link" href="https://www.bls.gov/cpi/" rel="noopener" target="_blank">bls.gov/cpi →</a>
+</div>
+<div class="source-card">
+<div class="source-name">Social Security Administration (SSA)</div>
+<div class="source-desc">AIME/PIA formula, bend points, and full retirement age tables for the Social Security calculator.</div>
+<a class="source-link" href="https://www.ssa.gov/oact/cola/piaformula.html" rel="noopener" target="_blank">ssa.gov/oact →</a>
+</div>
+<div class="source-card">
+<div class="source-name">State revenue departments</div>
+<div class="source-desc">State income tax rates and brackets sourced from each state's department of revenue. Updated when states publish new rates.</div>
+</div>
+<div class="divider"></div>
+<h2>Calculator assumptions</h2>
+<p>Every calculator simplifies reality to some degree — that's what makes them fast and useful. Here's what each one assumes, so you know where the results might diverge from your actual situation.</p>
+<h3>Salary &amp; Tax Calculator</h3>
+<div class="assumption-box"><strong>Standard deduction only.</strong> We apply the standard deduction. If you itemize, your actual tax will differ.</div>
+<div class="assumption-box"><strong>W-2 income only.</strong> Results assume all income is from wages. Self-employment, investment income, and rental income are not included.</div>
+<div class="assumption-box"><strong>No credits applied.</strong> Child tax credit, EITC, education credits, and other credits are not factored in. Your actual tax liability will likely be lower.</div>
+<h3>Mortgage Calculator</h3>
+<div class="assumption-box"><strong>Fixed-rate mortgage.</strong> All calculations assume a fixed interest rate for the full loan term.</div>
+<div class="assumption-box"><strong>No PMI.</strong> Private mortgage insurance is not included. PMI typically applies when down payment is under 20%.</div>
+<div class="assumption-box"><strong>Principal and interest only.</strong> Property tax and insurance (escrow) are calculated separately.</div>
+<h3>Retirement Calculators (401k, Roth IRA)</h3>
+<div class="assumption-box"><strong>Constant return rate.</strong> Investment returns are assumed constant. Real returns vary year to year.</div>
+<div class="assumption-box"><strong>No sequence-of-returns risk.</strong> Results show average growth, not worst-case retirement scenarios.</div>
+<div class="assumption-box"><strong>No RMDs.</strong> Required minimum distributions are not modeled.</div>
+<div class="divider"></div>
+<h2>Update schedule</h2>
+<p>IRS tax brackets and retirement contribution limits get updated each fall when new figures are released — usually October or November for the following year. We update our calculators as soon as those numbers are published. State tax rates are reviewed every January. Each calculator page shows its last update date, so you always know how fresh the data is.</p>
+<h2>Limitations</h2>
+<p>These calculators are planning tools, not tax filing software. Results are estimates — useful for understanding your situation and making better decisions, but not a substitute for a licensed CPA, financial planner, or tax professional who knows your full picture.</p>
+<p>If you have self-employment income, rental properties, significant investment income, or recently went through a major life event (marriage, divorce, inheritance), the simplified assumptions in our calculators may not capture your situation accurately. A professional is worth it for complex cases.</p>
+<div class="divider"></div>
+<p style="font-size:13px;color:var(--text3);">Questions about our methodology? <a href="/contact" style="color:var(--cyan);text-decoration:none;">Contact us →</a></p>
+</div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

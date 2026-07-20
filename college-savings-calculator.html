@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="college savings calculator, 529 plan calculator, education savings estimator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>College Savings Calculator 2026 — 529 Plan Calculator USA</title>
+<meta content="Calculate how much to save for college. See 529 plan projections, monthly savings needed, and total college cost estimates. Free college savings calculator 2026." name="description"/>
+<link href="https://usafincalc.com/college-savings-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23050810'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--green:#00e676;--purple:#b39dff;--r:14px;--rs:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:rgba(4,6,15,0.97);border-bottom:1px solid var(--border);padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-size:18px;font-weight:800;color:var(--text);text-decoration:none;}.logo span{color:var(--cyan);}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(179,157,255,0.06);color:var(--purple);border:1px solid rgba(179,157,255,0.2);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:12px;}
+h1 span{background:linear-gradient(120deg,var(--purple),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{color:var(--text2);font-size:16px;max-width:580px;line-height:1.8;}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.main{grid-template-columns:1fr;}}
+.wide{grid-column:1/-1;}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.ct{font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;}
+label{display:block;font-size:13px;color:var(--text2);margin-bottom:5px;}
+input,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .2s;margin-bottom:14px;}
+input:focus,select:focus{border-color:var(--cyan);}
+.pfx{position:relative;margin-bottom:14px;}.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);pointer-events:none;}.pfx input{padding-left:28px;margin-bottom:0;}
+.sfx{position:relative;margin-bottom:14px;}.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:13px;pointer-events:none;}.sfx input{margin-bottom:0;}
+.btn{width:100%;background:linear-gradient(135deg,var(--purple),var(--cyan));color:#000;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(179,157,255,0.3);}
+.res-main{background:linear-gradient(135deg,rgba(179,157,255,0.08),rgba(0,212,255,0.04));border:1px solid rgba(179,157,255,0.2);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:12px;}
+.res-main-label{font-size:12px;color:var(--text2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.res-main-val{font-size:48px;font-weight:800;color:var(--purple);font-family:'JetBrains Mono',monospace;letter-spacing:-2px;}
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.rb{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;text-align:center;}
+.rl{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;text-transform:uppercase;margin-bottom:6px;}
+.rv{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:13px;}
+footer a{color:var(--text2);text-decoration:none;margin:0 8px;}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="College Savings Calculator 2026 — 529 Plan Calculator USA" property="og:title"/>
+<meta content="Calculate how much to save for college. See 529 plan projections, monthly savings needed, and total college cost estimates. Free college savings calculator 2026." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/college-savings-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="College Savings Calculator 2026 — 529 Plan Calculator USA" name="twitter:title"/>
+<meta content="Calculate how much to save for college. See 529 plan projections, monthly savings needed, and total college cost estimates. Free college savings calcu" name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "College Savings Calculator 2026 — 529 Plan Calculator USA",
+  "url": "https://usafincalc.com/college-savings-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Education",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "College Savings Calculator",
+      "item": "https://usafincalc.com/college-savings-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "College Savings Calculator 2026 — 529 Plan Calculator USA",
+  "url": "https://usafincalc.com/college-savings-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge"><span class="dot"></span>🎓 529 Plan Calculator</div>
+<h1>College Savings <span>Calculator</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p class="hero-sub">Calculate how much to save for your child's college education. See 529 plan projections and monthly savings needed to cover tuition costs.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">College Savings Details</div>
+<label for="child_age">Child's Current Age</label>
+<input id="child_age" type="number" value="5"/>
+<label for="start_age">College Start Age</label>
+<input id="start_age" type="number" value="18"/>
+<label for="school_type">School Type</label>
+<select id="school_type" onchange="setTuition()">
+<option value="35000">Public In-State (~$35,000/yr)</option>
+<option value="55000">Public Out-of-State (~$55,000/yr)</option>
+<option selected="" value="75000">Private University (~$75,000/yr)</option>
+<option value="custom">Custom Amount</option>
+</select>
+<label for="tuition">Annual Tuition Cost</label>
+<div class="pfx"><span>$</span><input id="tuition" type="number" value="75000"/></div>
+<label for="curr_sav">Current Savings</label>
+<div class="pfx"><span>$</span><input id="curr_sav" type="number" value="10000"/></div>
+<label for="ret">Expected Return (%)</label>
+<div class="sfx"><span>%</span><input id="ret" step="0.1" type="number" value="7"/></div>
+<label for="inf">College Inflation Rate (%)</label>
+<div class="sfx"><span>%</span><input id="inf" step="0.1" type="number" value="5"/></div>
+<button class="btn" onclick="calc()">Calculate College Savings →</button>
+</div>
+<div class="card">
+<div class="ct">College Savings Plan</div>
+<div class="res-main">
+<div class="res-main-label">Monthly Savings Needed</div>
+<div class="res-main-val" id="monthly">$1,240</div>
+</div>
+<div class="rg">
+<div class="rb"><div class="rl">Years to Save</div><div class="rv" id="years" style="color:var(--cyan);">13 yrs</div></div>
+<div class="rb"><div class="rl">Total Cost (4 yrs)</div><div class="rv" id="total_cost" style="color:#ffd740;">$362K</div></div>
+<div class="rb"><div class="rl">529 Projected</div><div class="rv" id="proj" style="color:var(--green);">$325K</div></div>
+<div class="rb"><div class="rl">Funding Gap</div><div class="rv" id="gap" style="color:var(--purple);">$37K</div></div>
+</div>
+<div style="margin-top:12px;padding:14px;background:var(--bg3);border-radius:var(--rs);font-size:13px;color:var(--text2);">
+      💡 <strong style="color:var(--text);">529 Tip:</strong> Contributions grow tax-free when used for qualified education expenses.
+    </div>
+</div>
+</div>
+</section>
+<section style="margin:40px 0 0">
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:14px;max-width:980px;margin-left:auto;margin-right:auto;padding:0 24px;box-sizing:border-box">Related Calculators</h2>
+<section class="related-section"><div class="related"><a href="/compound-interest-calculator">Compound Interest Calculator</a>
+<a href="/stock-return-calculator-usa">Stock Return Calculator USA</a>
+<a href="/inflation-calculator">Inflation Calculator USA</a>
+<a href="/fire-calculator">FIRE Calculator — Financial Independence</a>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="college-savings-guide">
+<h2>What This College Savings Calculator Does</h2>
+<p>This calculator estimates the future cost of college tuition based on current costs and education inflation, then shows how much you need to save monthly (or annually) starting today to reach that target by your child's expected enrollment age. It models 529 plan growth and shows the tax benefit of contributions in states that offer them.</p>
+
+<h2>The Challenge: Education Inflation</h2>
+<p>College costs have historically risen at 3%–5% annually — faster than general inflation. A public university costing $30,000/year today might cost $55,000–$65,000/year in 18 years. Private universities currently averaging $60,000+/year might approach $100,000–$120,000/year. These projections underscore why starting early — even with small amounts — is so critical.</p>
+
+<h2>The 529 Plan Advantage</h2>
+<p>529 plans are state-sponsored education savings accounts with significant tax advantages. Contributions grow tax-free, and withdrawals for qualified education expenses (tuition, fees, room and board, books, computers) are also tax-free. Over 30+ states additionally offer a state income tax deduction or credit for 529 contributions — effectively providing an immediate return on top of tax-free growth.</p>
+<p>As of 2024, unused 529 funds can be rolled to a Roth IRA (up to $35,000 lifetime, subject to contribution limits and 15-year holding requirement) — removing the previous concern about overfunding a 529 for a child who doesn't attend college.</p>
+
+<h2>Monthly Savings by Start Age</h2>
+<table>
+<thead><tr><th scope="col">Child's Current Age</th><th scope="col">Monthly Savings Needed*</th></tr></thead>
+<tbody>
+<tr><td>Newborn (0)</td><td>~$290/month</td></tr>
+<tr><td>3 years</td><td>~$375/month</td></tr>
+<tr><td>5 years</td><td>~$460/month</td></tr>
+<tr><td>8 years</td><td>~$650/month</td></tr>
+<tr><td>10 years</td><td>~$830/month</td></tr>
+</tbody>
+</table>
+<p>*Approximate figures for funding 4 years at a public university at current costs, adjusted for 4% education inflation, with 6% annual investment return. Private university costs require significantly higher savings.</p>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Open a 529 at birth or as soon as possible</strong> — even $25–$50/month invested from birth grows into meaningful savings by 18 due to compound growth.</li>
+<li><strong>Max state tax deductions first</strong> — many states limit the deduction to contributions made to your home state's 529 plan. Check your state's rules before opening an out-of-state plan for investment options.</li>
+<li><strong>Use target-date age-based investment options</strong> — most 529 plans offer age-based portfolios that automatically shift from stocks to more conservative allocations as enrollment approaches.</li>
+<li><strong>Don't over-save at the expense of retirement</strong> — retirement savings should take priority; student loans exist for college, while no loan covers retirement income shortfalls.</li>
+</ul>
+
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/compound-interest-calculator">Compound Interest Calculator</a></strong> — model 529 plan growth.</li>
+<li><strong><a href="/student-loan-calculator-usa">Student Loan Calculator</a></strong> — estimate the cost of borrowing what savings don't cover.</li>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — prioritize retirement savings alongside college savings.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What if my child doesn't go to college?</h3>
+<p>529 funds can be used for trade schools, community colleges, vocational programs, and apprenticeships — not just 4-year universities. The beneficiary can also be changed to another family member. And as of 2024, up to $35,000 can be rolled into a Roth IRA for the original beneficiary after 15 years.</p>
+<h3>Does a 529 affect financial aid?</h3>
+<p>Parental 529 assets are assessed at up to 5.64% in the FAFSA formula — much less than student-owned assets (20%). The impact on financial aid is relatively modest compared to the tax benefits, especially for families unlikely to qualify for significant need-based aid.</p>
+<h3>Can grandparents contribute to a 529?</h3>
+<p>Yes — and as of the 2024 FAFSA simplification, grandparent-owned 529 distributions no longer count as student income in the financial aid formula (previously a significant disadvantage). Grandparents can also superfund a 529 with up to 5 years of gift tax exclusions in a lump sum ($90,000 single/$180,000 couple per beneficiary in 2024).</p>
+
+<h2>Key Takeaways</h2>
+<p>Starting college savings early dramatically reduces the monthly contribution required to reach your target — the math strongly rewards action at birth versus waiting until elementary school. The 529 plan's tax advantages make it the default vehicle for this goal. And keeping the savings goal in proportion to retirement savings is crucial — an underfunded retirement is a more serious problem than needing to supplement college savings with loans or other income sources when the time comes.</p>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function fmtK(n){return n>=1000000?'$'+(n/1000000).toFixed(1)+'M':n>=1000?'$'+(n/1000).toFixed(0)+'K':fmt(n);}
+function setTuition(){
+  var v=document.getElementById('school_type').value;
+  if(v!=='custom')document.getElementById('tuition').value=v;
+}
+function calc(){
+  var ca=parseInt(document.getElementById('child_age').value)||5;
+  var sa=parseInt(document.getElementById('start_age').value)||18;
+  var t=parseFloat(document.getElementById('tuition').value)||75000;
+  var cs=parseFloat(document.getElementById('curr_sav').value)||0;
+  var ret=parseFloat(document.getElementById('ret').value)/100||0.07;
+  var inf=parseFloat(document.getElementById('inf').value)/100||0.05;
+  var yrs=Math.max(0,sa-ca);
+  var futureTuition=t*Math.pow(1+inf,yrs);
+  var totalCost=futureTuition*4;
+  var proj529=cs*Math.pow(1+ret,yrs);
+  var needed=totalCost-proj529;
+  var monthly=needed>0?needed/((Math.pow(1+ret/12,yrs*12)-1)/(ret/12)):0;
+  var gap=Math.max(0,totalCost-proj529-monthly*yrs*12);
+  document.getElementById('monthly').textContent=fmt(monthly);
+  document.getElementById('years').textContent=yrs+' yrs';
+  document.getElementById('total_cost').textContent=fmtK(totalCost);
+  document.getElementById('proj').textContent=fmtK(proj529+monthly*yrs*12);
+  document.getElementById('gap').textContent=gap>0?fmtK(gap):'Fully Funded! ✅';
+}
+calc();
+</script>
+
+<div style="max-width:980px;margin:0 auto;padding:0 24px 48px;">
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">How the College Savings Calculator Works</h2>
+    <p style="font-size:15px;color:var(--text2,#7a8aaa);line-height:1.75;">Enter your child's current age, expected college start age, estimated annual college cost, current savings balance, expected annual contribution, and investment return rate. The calculator projects your savings at the time college starts and shows the gap (if any) between projected savings and projected college costs.</p>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Formula</h2>
+    <div style="background:var(--bg2,rgba(255,255,255,0.03));border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:18px 22px;">
+      <p style="font-size:14px;color:var(--cyan,#00d4ff);line-height:1.9;font-family:'JetBrains Mono',monospace;">Projected Savings at College = Current Balance × (1 + Return)^Years + Annual Contribution × [((1 + Return)^Years − 1) ÷ Return]<br><br>Projected College Cost = Annual Cost × (1 + Tuition Inflation)^Years × 4<br><br>Funding Gap = Projected Cost − Projected Savings</p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Example</h2>
+    <div style="background:var(--bg2,rgba(255,255,255,0.03));border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:18px 22px;">
+      <p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.75;">Your child is 5, and you plan for college at 18 — that is 13 years away. Current 529 balance: $5,000. You contribute $200 per month ($2,400 per year). Assumed return: 7%. Projected savings at 18: roughly $54,000. With current average 4-year college costs around $130,000 at public in-state schools (after tuition inflation), the gap would be approximately $76,000, to be covered by financial aid, loans, or income at the time.</p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Frequently Asked Questions</h2>
+    <div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">What is a 529 plan?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">A 529 is a tax-advantaged savings account specifically for education expenses. Contributions are made with after-tax dollars, but earnings grow tax-free and withdrawals for qualified education expenses (tuition, books, room and board) are not taxed federally. Many states also offer a tax deduction on contributions.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">How much should I save for college?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">The commonly cited target is saving one-third of expected college costs before the child starts, covering another third with income during college, and using loans for the final third. However, this depends on your income, whether your child plans to attend a public or private school, and whether they may qualify for financial aid.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">Does 529 savings hurt financial aid eligibility?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">Parent-owned 529 plans are counted as a parental asset in the FAFSA calculation and reduce aid eligibility by a maximum of 5.64% of the account value per year. This is relatively favorable compared to student-owned assets, which are assessed at up to 20%.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">Can a 529 be used for any school?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">Yes — 529 funds can be used at any accredited college, university, trade school, or vocational program in the US, and many outside the US. They can also be used for K-12 tuition (up to $10,000 per year) and student loan repayments (up to $10,000 lifetime).</p>
+</div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Common Mistakes to Avoid</h2>
+    <div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Starting too late</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">Compound growth is time-sensitive. Starting at a child's birth versus age 10 can mean a difference of $50,000 or more at college age, even with identical monthly contributions.</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Investing too conservatively as years pass</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">A common 529 mistake is keeping all funds in a money market account out of fear. Age-based portfolios automatically shift from aggressive to conservative as college approaches — this is a reasonable default strategy.</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Saving more than you need</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">If funds remain in a 529 after the beneficiary finishes school, withdrawals for non-education expenses incur income tax plus a 10% penalty on earnings. You can change the beneficiary to another family member or roll over up to $35,000 into a Roth IRA (subject to annual limits, as per the SECURE 2.0 Act).</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Ignoring room and board</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">Tuition is only part of the cost. Room, board, books, and fees add 30–50% to the total cost at most schools. Include these in your annual cost estimate.</p>
+</div>
+  </section>
+
+</div>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>

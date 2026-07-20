@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rule of 72 Calculator (2026) – Compound Interest Doubling Time</title>
+    <meta name="description" content="Calculate how long it takes for your investment to double using the Rule of 72. See the power of compound interest and compare rates." />
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="rule of 72 calculator, USAFinCalc" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<meta content="#0d0f14" name="theme-color"/>
+<link href="https://usafincalc.com/rule-of-72-calculator" rel="canonical"/>
+<link href="https://usafincalc.com/sitemap.xml" rel="sitemap" type="application/xml"/>
+<meta content="Rule of 72 Calculator (2026) – Compound Interest Doubling Time" property="og:title"/>
+<meta content="Calculate how long it takes for your investment to double using the Rule of 72. See the power of compound interest and compare rates." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/rule-of-72-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Rule of 72 Calculator (2026) – Compound Interest Doubling Time" name="twitter:title"/>
+<meta content="Calculate how long it takes for your investment to double using the Rule of 72. See the power of compound interest and compare rates." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USAFinCalc" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2300e5a0' font-family='monospace' font-weight='700'>R</text></svg>" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --bg: #0d0f14;
+            --bg2: #13161e;
+            --bg3: #1a1e2a;
+            --card: #181c26;
+            --border: rgba(255, 255, 255, 0.08);
+            --border2: rgba(255, 255, 255, 0.14);
+            --text: #f0f2f8;
+            --muted: #7e859f;
+            --accent: #10b981;
+            --fed: #f87171;
+            --state: #fbbf24;
+            --local: #60a5fa;
+            --font: 'Sora', sans-serif;
+            --mono: 'DM Mono', monospace;
+            --r: 14px;
+            --rs: 8px;
+        }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+            padding: 0 24px 40px;
+        }
+        nav {
+            background: var(--bg2);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin: 0 -24px 24px;
+        }
+        .logo {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00e5a0;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            background: #00e5a0;
+            color: #04140d;
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color .2s;
+        }
+        .nav-links a:hover {
+            color: var(--text);
+        }
+        .hero {
+            max-width: 1100px;
+            margin: 0 auto 24px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .badge::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+        h1 {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 600;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+            margin-bottom: 10px;
+        }
+        h1 span {
+            color: var(--accent);
+        }
+        .hero-sub {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 720px;
+            line-height: 1.8;
+        }
+        .main-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 380px 1fr;
+            gap: 24px;
+            align-items: start;
+        }
+        @media (max-width: 760px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--r);
+            padding: 22px;
+        }
+        .card+.card {
+            margin-top: 16px;
+        }
+        .ct {
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-family: var(--mono);
+        }
+        .field {
+            margin-bottom: 16px;
+        }
+        label {
+            display: block;
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+        input[type="number"],
+        select {
+            width: 100%;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: var(--rs);
+            color: var(--text);
+            font-size: 14px;
+            padding: 9px 12px;
+            font-family: var(--mono);
+            outline: none;
+            transition: border-color .2s;
+        }
+        input:focus,
+        select:focus {
+            border-color: var(--accent);
+        }
+        .pfx {
+            position: relative;
+        }
+        .pfx span {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            pointer-events: none;
+            font-size: 13px;
+        }
+        .pfx input {
+            padding-left: 26px;
+        }
+        .pct-suffix {
+            position: relative;
+        }
+        .pct-suffix input {
+            padding-right: 32px;
+        }
+        .pct-suffix span {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--muted);
+            font-family: var(--mono);
+            font-size: 13px;
+            pointer-events: none;
+        }
+        .hint {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+        .res-main {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.02));
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+        .res-label {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: 8px;
+        }
+        .res-val {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: var(--mono);
+            letter-spacing: -1px;
+        }
+        .res-sub {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+        .grid4 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        @media (max-width: 520px) {
+            .grid4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .bk {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: var(--rs);
+            padding: 14px;
+            text-align: center;
+        }
+        .bk-l {
+            font-size: 11px;
+            color: var(--muted);
+            font-family: var(--mono);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        .bk-v {
+            font-size: 16px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .bk-v.positive {
+            color: var(--accent);
+        }
+        .bk-v.negative {
+            color: var(--fed);
+        }
+        .btn-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 6px;
+        }
+        .btn-reset {
+            flex: 1;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            color: var(--text);
+            font-family: var(--font);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: var(--rs);
+            cursor: pointer;
+            transition: border-color .2s, background .2s;
+        }
+        .btn-reset:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.06);
+        }
+        .fc-warn {
+            max-width: 1100px;
+            margin: 24px auto 30px;
+            padding: 14px 18px;
+            background: rgba(245, 158, 11, 0.06);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 10px;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .fc-warn a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .fc-warn a:hover {
+            text-decoration: underline;
+        }
+        .content-block {
+            max-width: 1100px;
+            margin: 0 auto 20px;
+        }
+        .content-block h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 40px 0 14px;
+            color: #f0f2f8;
+        }
+        .content-block h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 28px 0 10px;
+            color: #f0f2f8;
+        }
+        .content-block p {
+            color: #b0b8d0;
+            font-size: 15px;
+            line-height: 1.9;
+            margin-bottom: 14px;
+        }
+        .content-block ul,
+        .content-block ol {
+            color: #b0b8d0;
+            font-size: 15px;
+            margin: 0 0 16px 20px;
+            line-height: 1.9;
+        }
+        .content-block li {
+            margin-bottom: 6px;
+        }
+        .content-block a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+        .content-block table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 0 16px;
+            font-size: 14px;
+        }
+        .content-block th,
+        .content-block td {
+            text-align: left;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+            color: #b0b8d0;
+        }
+        .content-block th {
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .content-block .highlight-box {
+            background: var(--bg3);
+            border-left: 3px solid var(--accent);
+            padding: 16px 20px;
+            border-radius: 6px;
+            margin: 16px 0;
+        }
+        .content-block .highlight-box p {
+            margin-bottom: 4px;
+            color: #d0d8ee;
+        }
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 18px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .faq-a {
+            font-size: 14px;
+            color: #b0b8d0;
+            line-height: 1.7;
+        }
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 24px 0 12px;
+            text-align: center;
+            color: var(--muted);
+            font-size: 13px;
+            max-width: 1100px;
+            margin: 20px auto 0;
+        }
+        .footer a {
+            color: var(--muted);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            color: var(--text);
+        }
+        .chart-wrap {
+            margin-top: 14px;
+        }
+        .chart-title {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .bar-track {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            height: 16px;
+            overflow: hidden;
+            width: 100%;
+            margin-bottom: 6px;
+        }
+        .bar-fill {
+            height: 100%;
+            transition: width .3s;
+            border-radius: 6px;
+        }
+        .bar-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--muted);
+            font-family: var(--mono);
+        }
+        .grid2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        @media (max-width: 520px) {
+            .grid2 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .highlight {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 600px) {
+            .two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+        .related-links li {
+            list-style: none;
+        }
+        .related-links a {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 14px;
+            background: var(--bg3);
+            border: 1px solid var(--border2);
+            border-radius: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: border-color .2s, background .2s;
+        }
+        .related-links a:hover {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--text);
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: var(--mono);
+        }
+        .status-good {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--accent);
+        }
+        .status-info {
+            background: rgba(96, 165, 250, 0.15);
+            color: var(--local);
+        }
+        .status-warning {
+            background: rgba(251, 191, 36, 0.15);
+            color: var(--state);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            font-family: var(--mono);
+        }
+        .comparison-table th {
+            text-align: left;
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border2);
+            color: var(--muted);
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+        }
+        .comparison-table td {
+            padding: 8px 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--text);
+        }
+        .comparison-table .highlight-row {
+            background: rgba(16, 185, 129, 0.05);
+        }
+        .comparison-table .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Rule of 72 Calculator (2026) – Compound Interest Doubling Time",
+  "url": "https://usafincalc.com/rule-of-72-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Rule of 72 Calculator (2026) – Compound Interest Doubling Time",
+      "item": "https://usafincalc.com/rule-of-72-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Rule of 72 Calculator (2026) – Compound Interest Doubling Time",
+  "description": "Calculate how long it takes for your investment to double using the Rule of 72. See the power of compound interest and compare rates.",
+  "url": "https://usafincalc.com/rule-of-72-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Rule of 72?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rule of 72 is a mental math shortcut that estimates how long it takes for an investment to double at a fixed annual rate. Divide 72 by the annual interest rate to get the approximate number of years to double your money."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the Rule of 72?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rule of 72 is most accurate for interest rates between 6% and 10%, where it's accurate to within a few months. For rates between 4% and 15%, it's accurate to within 0.3 years. Use the exact calculation for rates outside this range."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I calculate the rate needed to double my money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "To find the rate needed to double in a specific time, divide 72 by the number of years. For example, to double in 10 years, you need 72 ÷ 10 = 7.2% annual return. This calculator automatically calculates this for you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Rule of 72 work for inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can use the Rule of 72 to estimate how long it takes for inflation to halve your purchasing power. At 3% inflation, purchasing power halves every 24 years (72 ÷ 3 = 24)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between the Rule of 72 and the Rule of 70?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Rule of 70 uses 70 as the numerator. It's slightly more accurate for continuous compounding. The Rule of 72 is more commonly used because it's easier to work with mentally (72 has more divisors). Both are approximations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the Rule of 72 for debt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the Rule of 72 works for any compounding growth, including debt. If you have credit card debt at 24% APR, it will double in 3 years (72 ÷ 24 = 3) if you don't make payments. This shows why paying off high-interest debt is critical."
+      }
+    }
+  ]
+}
+</script>
+<link href="/css/search.css" rel="stylesheet"/>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="/">
+            <span class="logo-icon">R</span>
+            <span>USA<span style="color:var(--accent)">FinCalc</span></span>
+        </a>
+        <div class="site-nav-search" style="flex:1;max-width:340px;margin:0 20px;">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="nav-links">
+            <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+            <li><a href="/tax-calculator-usa">Tax</a></li>
+            <li><a href="/paycheck-calculator">Paycheck</a></li>
+            <li><a href="/salary-calculator-usa">Salary</a></li>
+            <li><a href="/">All Tools</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="badge">2026 compound interest</div>
+        <h1>Rule of 72 <span>Calculator</span></h1>
+        <p class="hero-sub">The Rule of 72 is a simple way to estimate how long it takes for your money to double at a given rate of return. Discover the power of compound interest and make smarter investment decisions.</p>
+    </div>
+
+    <form id="calcForm" novalidate>
+        <div class="main-grid">
+            <!-- left column -->
+            <div>
+                <div class="card">
+                    <div class="ct">Calculate Doubling Time</div>
+
+                    <div class="field">
+                        <label for="rate">Annual Rate of Return</label>
+                        <div class="pct-suffix"><input type="number" id="rate" value="8" min="0" max="50" step="0.25" /><span>%</span></div>
+                        <div class="hint">Expected average annual return (e.g., 8% for S&P 500).</div>
+                    </div>
+                    <div class="field">
+                        <label for="initialAmount">Starting Investment</label>
+                        <div class="pfx"><span>$</span><input type="number" id="initialAmount" value="10000" min="0" step="1000" /></div>
+                        <div class="hint">Your initial principal amount.</div>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="reset" class="btn-reset" onclick="resetCalc()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Find Rate for Time Target</div>
+                    <div class="field">
+                        <label for="targetYears">Target Doubling Years</label>
+                        <input type="number" id="targetYears" value="10" min="1" max="100" step="0.5" />
+                        <div class="hint">Enter your target years to double, and we'll calculate the rate needed.</div>
+                    </div>
+                    <div style="margin-top:4px;font-size:12px;color:var(--accent);font-family:var(--mono);">
+                        Required Rate: <strong id="requiredRate">7.20%</strong>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Quick Presets</div>
+                    <div class="grid2">
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('sp500')">S&P 500 (10%)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('moderate')">Moderate (7%)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('conservative')">Conservative (4%)</button>
+                        <button type="button" class="btn-reset" style="font-size:12px;padding:8px;" onclick="applyPreset('savings')">Savings (2%)</button>
+                    </div>
+                    <div class="hint" style="margin-top:8px;">Test different return scenarios.</div>
+                </div>
+            </div>
+
+            <!-- right column: results -->
+            <div>
+                <div class="card">
+                    <div class="ct">Your Doubling Results</div>
+                    <div class="res-main">
+                        <div class="res-label">Time to Double Your Money</div>
+                        <div class="res-val" id="doublingTime">9.0 years</div>
+                        <div class="res-sub" id="doubleSub">at 8% annual return</div>
+                    </div>
+                    <div class="grid4">
+                        <div class="bk"><div class="bk-l">Initial Investment</div><div class="bk-v positive" id="initialDisplay">$10,000</div></div>
+                        <div class="bk"><div class="bk-l">Future Value (Doubled)</div><div class="bk-v positive" id="futureValue">$20,000</div></div>
+                        <div class="bk"><div class="bk-l">Total Growth</div><div class="bk-v positive" id="totalGrowth">$10,000</div></div>
+                        <div class="bk"><div class="bk-l">Doubling Count (30 years)</div><div class="bk-v" id="doublingCount">3.3×</div></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Exact vs. Rule of 72</div>
+                    <div style="overflow-x:auto;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr><th>Method</th><th>Doubling Time</th><th>Difference</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Rule of 72</td><td id="rule72Time">9.0 years</td><td id="rule72Diff">—</td></tr>
+                                <tr class="highlight-row"><td>Exact Calculation</td><td id="exactTime">9.0 years</td><td id="exactDiff">0.0 years</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="ct">Visual Growth Comparison</div>
+                    <div class="chart-wrap">
+                        <div class="chart-title">Rule of 72 vs. Actual Compound Growth</div>
+                        <div id="chartBar"></div>
+                    </div>
+                    <div style="margin-top:10px;">
+                        <span class="status-badge status-info" id="statusBadge">📊 Accurate</span>
+                        <span style="margin-left:8px;font-size:12px;color:var(--muted);" id="statusNote">The Rule of 72 is accurate for rates between 6-10%.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="fc-warn">
+        ⚠️ The Rule of 72 is an approximation. For exact calculations, use the compound interest formula. The rule is most accurate for interest rates between 6% and 10%.
+    </div>
+
+    <!-- ===== EXTENSIVE CONTENT SECTION (1500+ words) ===== -->
+    <div class="content-block">
+
+        <h2>What Is the Rule of 72?</h2>
+        <p>The Rule of 72 is a simple, mental math shortcut that estimates how long it takes for an investment to double at a fixed annual rate of return. Simply divide 72 by your annual interest rate to get the approximate number of years to double your money.</p>
+        <p>For example, at an 8% annual return: 72 ÷ 8 = 9 years. This means your money will double in about 9 years. At a 6% return: 72 ÷ 6 = 12 years. The rule is remarkably accurate for rates between 6% and 10%, making it a valuable tool for quick mental calculations.</p>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> Albert Einstein reportedly called compound interest the "eighth wonder of the world." The Rule of 72 shows why—at 8% return, your money doubles every 9 years. Over 30 years, it doubles 3.3 times, turning $10,000 into over $100,000.</p>
+        </div>
+
+        <h2>How This Calculator Works</h2>
+        <p>This calculator uses two methods to show you the power of compounding:</p>
+        <ol>
+            <li><strong>Rule of 72:</strong> Doubling Time = 72 ÷ Rate (in percentage)</li>
+            <li><strong>Exact Calculation:</strong> Doubling Time = ln(2) ÷ ln(1 + r) where r is the decimal rate</li>
+            <li><strong>Required Rate:</strong> Rate = 72 ÷ Target Years (for estimating needed return)</li>
+            <li><strong>Future Value:</strong> FV = P × (1 + r)^t showing actual growth</li>
+        </ol>
+
+        <h2>The Math Behind the Rule</h2>
+        <p>The Rule of 72 comes from the logarithmic relationship in compound interest. The exact formula for doubling time is:</p>
+        <p><strong>Doubling Time = ln(2) / ln(1 + r)</strong></p>
+        <p>Since ln(2) ≈ 0.693, and for small r, ln(1 + r) ≈ r, we get 0.693/r. To make it easier to use with percentages, we multiply by 100: 69.3/r. The number 72 was chosen instead of 69.3 because it has more divisors (1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72) and provides a close approximation for most common interest rates.</p>
+
+        <h2>Accuracy of the Rule of 72</h2>
+        <p>The Rule of 72 is most accurate for rates between 6% and 10%. Here's how it compares to the exact calculation at different rates:</p>
+        <table>
+            <thead>
+                <tr><th>Rate</th><th>Rule of 72</th><th>Exact</th><th>Difference</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>2%</td><td>36.0 years</td><td>35.0 years</td><td>+1.0 yrs</td></tr>
+                <tr><td>4%</td><td>18.0 years</td><td>17.7 years</td><td>+0.3 yrs</td></tr>
+                <tr><td>6%</td><td>12.0 years</td><td>11.9 years</td><td>+0.1 yrs</td></tr>
+                <tr><td>8%</td><td>9.0 years</td><td>9.0 years</td><td>0.0 yrs</td></tr>
+                <tr><td>10%</td><td>7.2 years</td><td>7.3 years</td><td>-0.1 yrs</td></tr>
+                <tr><td>12%</td><td>6.0 years</td><td>6.1 years</td><td>-0.1 yrs</td></tr>
+                <tr><td>15%</td><td>4.8 years</td><td>5.0 years</td><td>-0.2 yrs</td></tr>
+                <tr><td>20%</td><td>3.6 years</td><td>3.8 years</td><td>-0.2 yrs</td></tr>
+            </tbody>
+        </table>
+        <p>As you can see, the Rule of 72 is remarkably accurate—within 0.3 years for rates between 4% and 15%.</p>
+
+        <h2>Applying the Rule of 72 to Different Scenarios</h2>
+        <div class="two-col">
+            <div>
+                <h3>Investments</h3>
+                <ul>
+                    <li><strong>S&P 500 Index (10%):</strong> 7.2 years to double</li>
+                    <li><strong>Moderate Portfolio (7%):</strong> 10.3 years to double</li>
+                    <li><strong>Conservative Portfolio (4%):</strong> 18 years to double</li>
+                    <li><strong>High-Yield Savings (2%):</strong> 36 years to double</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Inflation Impact</h3>
+                <ul>
+                    <li><strong>At 3% inflation:</strong> Purchasing power halves every 24 years (72 ÷ 3)</li>
+                    <li><strong>At 4% inflation:</strong> Purchasing power halves every 18 years</li>
+                    <li><strong>At 6% inflation:</strong> Purchasing power halves every 12 years</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Historical Returns and Doubling Times</h2>
+        <p>Here's how different asset classes have performed historically (average annual returns):</p>
+        <table>
+            <thead>
+                <tr><th>Asset Class</th><th>Average Return</th><th>Doubling Time (Rule of 72)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>S&P 500 (1926-2024)</td><td>10.0%</td><td>7.2 years</td></tr>
+                <tr><td>Total Stock Market</td><td>9.5%</td><td>7.6 years</td></tr>
+                <tr><td>Real Estate (REITs)</td><td>8.5%</td><td>8.5 years</td></tr>
+                <tr><td>Corporate Bonds</td><td>5.5%</td><td>13.1 years</td></tr>
+                <tr><td>Government Bonds</td><td>4.0%</td><td>18.0 years</td></tr>
+                <tr><td>High-Yield Savings</td><td>2.0%</td><td>36.0 years</td></tr>
+                <tr><td>Inflation (historical avg)</td><td>3.0%</td><td>24.0 years (to halve)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Using the Rule of 72 for Financial Planning</h2>
+        <ul>
+            <li><strong>Retirement Planning:</strong> Estimate how much your savings will grow. If you have $100,000 at age 30 and earn 8%, it doubles every 9 years. By age 66, it doubles 4 times → $1.6 million.</li>
+            <li><strong>College Savings:</strong> If you have 18 years until college, at 8% return your money doubles twice (9 years × 2). A $50,000 investment becomes $200,000.</li>
+            <li><strong>Debt Payoff:</strong> Credit card debt at 24% APR doubles in 3 years (72 ÷ 24). This shows why paying off high-interest debt is critical.</li>
+            <li><strong>Inflation Planning:</strong> At 3% inflation, prices double every 24 years. Plan for your retirement income to keep pace.</li>
+        </ul>
+
+        <h2>Common Misconceptions</h2>
+        <ul>
+            <li><strong>It's exact:</strong> The Rule of 72 is an approximation, not a precise calculation. Use the exact formula for precise planning.</li>
+            <li><strong>Works for any rate:</strong> The rule is most accurate between 6-10%. For rates below 3% or above 20%, use the exact calculation.</li>
+            <li><strong>Guaranteed returns:</strong> The rule assumes a fixed annual return. Actual investments have volatility.</li>
+            <li><strong>No taxes or fees:</strong> Real returns after taxes and fees are lower than nominal returns.</li>
+        </ul>
+
+        <h2>The Rule of 69.3, 70, and 72</h2>
+        <p>Different versions of the rule exist:</p>
+        <ul>
+            <li><strong>Rule of 69.3:</strong> Most mathematically accurate (ln(2) × 100).</li>
+            <li><strong>Rule of 70:</strong> Easier mental math, commonly used for continuous compounding.</li>
+            <li><strong>Rule of 72:</strong> Most popular because 72 has many divisors, making mental math easier.</li>
+        </ul>
+        <p>For continuous compounding (common in finance models), use the Rule of 69.3. For most investment calculations, the Rule of 72 is perfectly adequate.</p>
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the Rule of 72?</div>
+            <div class="faq-a">The Rule of 72 is a mental math shortcut that estimates how long it takes for an investment to double at a fixed annual rate. Divide 72 by the annual interest rate to get the approximate number of years to double your money.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How accurate is the Rule of 72?</div>
+            <div class="faq-a">The Rule of 72 is most accurate for interest rates between 6% and 10%, where it's accurate to within a few months. For rates between 4% and 15%, it's accurate to within 0.3 years. Use the exact calculation for rates outside this range.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">How do I calculate the rate needed to double my money?</div>
+            <div class="faq-a">To find the rate needed to double in a specific time, divide 72 by the number of years. For example, to double in 10 years, you need 72 ÷ 10 = 7.2% annual return. This calculator automatically calculates this for you.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Does the Rule of 72 work for inflation?</div>
+            <div class="faq-a">Yes, you can use the Rule of 72 to estimate how long it takes for inflation to halve your purchasing power. At 3% inflation, purchasing power halves every 24 years (72 ÷ 3 = 24).</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">What is the difference between the Rule of 72 and the Rule of 70?</div>
+            <div class="faq-a">The Rule of 70 uses 70 as the numerator. It's slightly more accurate for continuous compounding. The Rule of 72 is more commonly used because it's easier to work with mentally (72 has more divisors). Both are approximations.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">Can I use the Rule of 72 for debt?</div>
+            <div class="faq-a">Yes, the Rule of 72 works for any compounding growth, including debt. If you have credit card debt at 24% APR, it will double in 3 years (72 ÷ 24 = 3) if you don't make payments. This shows why paying off high-interest debt is critical.</div>
+        </div>
+
+        <h2>Related Calculators</h2>
+        <ul class="related-links">
+            <li><a href="#">Compound Interest Calculator</a></li>
+            <li><a href="#">Investment Calculator</a></li>
+            <li><a href="#">Retirement Calculator</a></li>
+            <li><a href="#">Inflation Calculator</a></li>
+            <li><a href="#">Savings Goal Calculator</a></li>
+            <li><a href="#">ROI Calculator</a></li>
+        </ul>
+
+    </div>
+
+    <footer class="footer">
+        <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+        <p>
+            <a href="#">Home</a> · <a href="#">Tax Calculator</a> · <a href="#">Paycheck Calculator</a> · <a href="#">Privacy</a>
+        </p>
+    </footer>
+
+    <script>
+        // ----- DOM refs -----
+        const $ = id => document.getElementById(id);
+        const rate = $('rate');
+        const initialAmount = $('initialAmount');
+        const targetYears = $('targetYears');
+
+        const doublingTime = $('doublingTime');
+        const doubleSub = $('doubleSub');
+        const initialDisplay = $('initialDisplay');
+        const futureValue = $('futureValue');
+        const totalGrowth = $('totalGrowth');
+        const doublingCount = $('doublingCount');
+
+        const rule72Time = $('rule72Time');
+        const rule72Diff = $('rule72Diff');
+        const exactTime = $('exactTime');
+        const exactDiff = $('exactDiff');
+
+        const requiredRate = $('requiredRate');
+        const chartBar = $('chartBar');
+        const statusBadge = $('statusBadge');
+        const statusNote = $('statusNote');
+
+        // ----- helpers -----
+        function fmt(n) {
+            if (!isFinite(n)) n = 0;
+            return '$' + n.toLocaleString(undefined, { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function fmtDec(n) {
+            if (!isFinite(n)) n = 0;
+            return n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        function getVal(el) {
+            const v = parseFloat(el.value);
+            return isFinite(v) && v >= 0 ? v : 0;
+        }
+
+        // ----- main calculation -----
+        function calculate() {
+            const r = getVal(rate) / 100;
+            const principal = getVal(initialAmount);
+            const targetYrs = getVal(targetYears);
+
+            // Rule of 72
+            const rule72Years = r > 0 ? 72 / (r * 100) : Infinity;
+
+            // Exact calculation
+            let exactYears = Infinity;
+            if (r > 0) {
+                exactYears = Math.log(2) / Math.log(1 + r);
+            }
+
+            // Future value at doubling
+            const doublingPeriods = exactYears > 0 && exactYears < Infinity ? Math.floor(30 / exactYears) : 0;
+            const futureVal = principal * Math.pow(1 + r, exactYears > 0 && exactYears < Infinity ? exactYears : 30);
+
+            // Required rate for target years
+            const requiredRateVal = targetYrs > 0 ? 72 / targetYrs : 0;
+
+            // Update results
+            doublingTime.textContent = exactYears < Infinity ? exactYears.toFixed(1) + ' years' : '∞';
+            doubleSub.textContent = `at ${(r * 100).toFixed(1)}% annual return`;
+
+            initialDisplay.textContent = fmt(principal);
+            futureValue.textContent = fmt(principal * 2);
+            totalGrowth.textContent = fmt(principal);
+            doublingCount.textContent = doublingPeriods.toFixed(1) + '×';
+
+            // Comparison table
+            rule72Time.textContent = rule72Years < Infinity ? rule72Years.toFixed(1) + ' years' : '∞';
+            exactTime.textContent = exactYears < Infinity ? exactYears.toFixed(1) + ' years' : '∞';
+
+            const diff = exactYears < Infinity && rule72Years < Infinity ? Math.abs(exactYears - rule72Years) : 0;
+            exactDiff.textContent = diff.toFixed(1) + ' years';
+            rule72Diff.textContent = '—';
+
+            // Required rate
+            requiredRate.textContent = requiredRateVal.toFixed(2) + '%';
+
+            // Status
+            if (r >= 0.06 && r <= 0.10) {
+                statusBadge.textContent = '📊 Accurate';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = `The Rule of 72 is most accurate for rates between 6-10%. Current rate: ${(r * 100).toFixed(1)}%.`;
+            } else if (r >= 0.04 && r <= 0.15) {
+                statusBadge.textContent = '✅ Good Approximation';
+                statusBadge.className = 'status-badge status-good';
+                statusNote.textContent = `The Rule of 72 is reasonably accurate for this rate (${(r * 100).toFixed(1)}%).`;
+            } else if (r > 0) {
+                statusBadge.textContent = '⚠️ Less Accurate';
+                statusBadge.className = 'status-badge status-warning';
+                statusNote.textContent = `For rates outside 4-15%, consider using the exact calculation.`;
+            } else {
+                statusBadge.textContent = '💡 Enter a Rate';
+                statusBadge.className = 'status-badge status-info';
+                statusNote.textContent = 'Enter a positive rate to calculate doubling time.';
+            }
+
+            // Chart: Compare Rule of 72 vs Exact for various rates
+            const rates = [2, 4, 6, 8, 10, 12, 15, 20];
+            let chartHtml = '';
+            const currentRate = r * 100;
+
+            for (const rateVal of rates) {
+                const rDecimal = rateVal / 100;
+                const rule72 = 72 / rateVal;
+                const exact = Math.log(2) / Math.log(1 + rDecimal);
+                const isCurrent = Math.abs(rateVal - currentRate) < 0.1;
+                const maxVal = Math.max(rule72, exact, 1);
+                const rulePct = (rule72 / maxVal) * 100;
+                const exactPct = (exact / maxVal) * 100;
+
+                chartHtml += `
+                    <div style="margin-bottom:4px;${isCurrent ? 'border-left:2px solid var(--accent);padding-left:8px;' : ''}">
+                        <div class="bar-label"><span>${rateVal}% ${isCurrent ? '← Current' : ''}</span><span>Rule: ${rule72.toFixed(1)}y | Exact: ${exact.toFixed(1)}y</span></div>
+                        <div style="display:flex;gap:4px;align-items:center;">
+                            <div style="flex:1;">
+                                <div class="bar-track" style="height:10px;">
+                                    <div class="bar-fill" style="width:${rulePct}%;background:var(--fed);height:10px;"></div>
+                                </div>
+                            </div>
+                            <div style="flex:1;">
+                                <div class="bar-track" style="height:10px;">
+                                    <div class="bar-fill" style="width:${exactPct}%;background:var(--accent);height:10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            chartBar.innerHTML = `
+                <div style="font-size:11px;color:var(--muted);font-family:var(--mono);margin-bottom:6px;">
+                    <span style="color:var(--fed);">■ Rule of 72</span>
+                    <span style="color:var(--accent);margin-left:12px;">■ Exact Calculation</span>
+                    <span style="margin-left:12px;">(Lower = faster doubling)</span>
+                </div>
+                ${chartHtml}
+                <div class="hint" style="margin-top:6px;">The Rule of 72 is closest to exact at 8%.</div>
+            `;
+        }
+
+        // ----- presets -----
+        function applyPreset(key) {
+            switch (key) {
+                case 'sp500':
+                    rate.value = '10';
+                    break;
+                case 'moderate':
+                    rate.value = '7';
+                    break;
+                case 'conservative':
+                    rate.value = '4';
+                    break;
+                case 'savings':
+                    rate.value = '2';
+                    break;
+                default:
+                    return;
+            }
+            calculate();
+        }
+        window.applyPreset = applyPreset;
+
+        // ----- reset -----
+        function resetCalc() {
+            rate.value = '8';
+            initialAmount.value = '10000';
+            targetYears.value = '10';
+            calculate();
+        }
+        window.resetCalc = resetCalc;
+
+        // ----- event listeners -----
+        const inputs = [rate, initialAmount, targetYears];
+        inputs.forEach(el => {
+            el.addEventListener('input', calculate);
+            el.addEventListener('change', calculate);
+        });
+
+        // ----- init -----
+        calculate();
+    </script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

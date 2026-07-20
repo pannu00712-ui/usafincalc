@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- EEAT Trust Signals -->
+<meta content="USAFinCalc Editorial Team" name="author"/>
+<meta content="index, follow" name="robots"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Income Tax Calculator USA 2026</title>
+<meta content="Calculate your USA federal and state income tax for 2026. See take-home pay, effective tax rate, bracket breakdown and FICA." name="description"/>
+<link href="https://usafincalc.com/income-tax-calculator" rel="canonical"/>
+<meta content="Income Tax Calculator USA 2026" property="og:title"/>
+<meta content="Calculate your USA federal and state income tax for 2026. See take-home pay, effective tax rate, bracket breakdown and FICA." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/income-tax-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Income Tax Calculator USA 2026" name="twitter:title"/>
+<meta content="Calculate your USA federal and state income tax for 2026. See take-home pay, effective tax rate, bracket breakdown and FICA." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --text:#f0f2f8;--muted:#7e859f;
+  --accent:#10b981;
+  --font:'Segoe UI',system-ui,sans-serif;--mono:'DM Mono','Courier New',monospace;
+  --r:14px;--rs:8px;
+}
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#10b981;font-family:var(--mono)}
+.hero{padding:48px 24px 24px;max-width:980px;margin:0 auto}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,0.1);color:var(--accent);border:1px solid rgba(16,185,129,0.22);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:18px;font-family:var(--mono)}
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+h1 span{color:var(--accent)}
+.hero-sub{color:var(--muted);font-size:15px;max-width:560px;line-height:1.8}
+.main{max-width:980px;margin:0 auto;padding:0 24px 48px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:640px){.main{grid-template-columns:1fr}}
+.wide{grid-column:1/-1}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:5px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px}
+input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:10px 13px;font-family:var(--mono);outline:none;transition:border-color .2s;margin-bottom:14px;-webkit-appearance:none;appearance:none}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.pfx{position:relative;margin-bottom:14px}
+.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);pointer-events:none;font-size:13px}
+.pfx input{padding-left:26px;margin-bottom:0}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{width:100%;background:var(--accent);color:#fff;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:600;font-family:var(--font);cursor:pointer;margin-top:4px;transition:background .2s,transform .1s;letter-spacing:.3px}
+.btn:hover{background:#059669}
+.btn:active{transform:scale(.98)}
+.net-card{background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.22);border-radius:var(--r);padding:22px;text-align:center;margin-bottom:14px}
+.nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.na{font-size:40px;font-weight:600;color:var(--accent);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+.nm{font-size:12px;color:var(--muted);margin-top:6px;font-family:var(--mono)}
+.nm span{color:var(--text)}
+.cards4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+@media(max-width:480px){.cards4{grid-template-columns:repeat(2,1fr)}}
+.mc{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:12px;text-align:center}
+.ml{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.mv{font-family:var(--mono);font-size:14px;font-weight:600}
+.bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:16px;background:var(--bg3)}
+.seg{height:100%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.brows{display:flex;flex-direction:column;gap:8px}
+.br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+.bl{display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.blbl{color:var(--muted)}
+.ba{font-family:var(--mono);font-weight:500}
+.divider{height:1px;background:var(--border);margin:8px 0}
+.bracket-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.bhead{display:grid;grid-template-columns:60px 1fr 1fr 1fr;gap:8px;font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.brow{display:grid;grid-template-columns:60px 1fr 1fr 1fr;gap:8px;font-size:12px;font-family:var(--mono);padding:8px 0;border-bottom:1px solid var(--border)}
+.brow:last-child{border-bottom:none}
+.brow.active{color:#10b981}
+.chart-wrap{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-bottom:14px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:12px;font-size:11px;color:var(--muted);font-family:var(--mono)}
+.legend span{display:flex;align-items:center;gap:4px}
+.legend-sq{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:280px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+.faq{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.faq h2{font-size:20px;font-weight:600;margin-bottom:20px}
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-q::after{content:"+";color:var(--accent);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+.faq-item.open .faq-a{max-height:300px;padding-top:10px}
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:28px 24px;text-align:center;font-size:13px;color:var(--muted)}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+.a11y-chart-data{margin-top:12px;}.a11y-chart-data summary{font-size:12px;color:var(--muted,#7e859f);cursor:pointer;padding:4px 0;}.a11y-chart-data summary:hover{color:var(--accent,#10b981);}.a11y-chart-data table{width:100%;border-collapse:collapse;font-size:12px;margin-top:8px;}.a11y-chart-data th,.a11y-chart-data td{padding:6px 10px;border:1px solid var(--border);text-align:left;}.a11y-chart-data th{background:var(--bg3);color:var(--muted,#7e859f);}.a11y-chart-data td{color:var(--text);}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Income Tax Calculator USA 2026",
+  "url": "https://usafincalc.com/income-tax-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "description": "Calculate your USA federal and state income tax for 2026. See take-home pay, effective tax rate, bracket breakdown and FICA."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Tax Calculators",
+      "item": "https://usafincalc.com/tax-calculator-usa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Income Tax Calculator USA 2026",
+      "item": "https://usafincalc.com/income-tax-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Income Tax Calculator USA 2026",
+  "description": "Calculate your USA federal and state income tax for 2026. See take-home pay, effective tax rate, bracket breakdown and FICA.",
+  "url": "https://usafincalc.com/income-tax-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "All",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+<meta content="2026-06-28" name="date"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge">USA 2026 • Federal + State + FICA</div>
+<h1>Income Tax <span>Calculator</span></h1>
+<p class="hero-sub">Calculate your complete USA tax burden — federal income tax, state tax, Social Security, and Medicare. Instant 2026 results.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">💵 Your Income Details</div>
+<label for="income">Annual gross income</label>
+<div class="pfx"><span>$</span><input id="income" min="0" oninput="calc()" step="1000" type="number" value="80000"/></div>
+<label for="status">Filing status</label>
+<select id="status" onchange="calc()">
+<option value="single">Single</option>
+<option value="mfj">Married filing jointly</option>
+<option value="mfs">Married filing separately</option>
+<option value="hoh">Head of household</option>
+</select>
+<label for="state">State</label>
+<select id="state" onchange="calc()">
+<option value="0">No state income tax (TX, FL, WA…)</option>
+<option value="CA">California — progressive up to 13.3%</option>
+<option value="NY">New York — progressive up to 10.9%</option>
+<option value="NJ">New Jersey — progressive up to 10.75%</option>
+<option value="IL">Illinois — 4.95% flat</option>
+<option value="GA">Georgia — 5.49% flat</option>
+<option value="MA">Massachusetts — 5% flat</option>
+<option value="CO">Colorado — 4.4% flat</option>
+<option value="NC">North Carolina — 4.5% flat</option>
+<option value="PA">Pennsylvania — 3.07% flat</option>
+<option value="AZ">Arizona — 2.5% flat</option>
+<option value="VA">Virginia — progressive up to 5.75%</option>
+<option value="OH">Ohio — progressive up to 3.99%</option>
+<option value="TX">Texas — 0%</option>
+<option value="FL">Florida — 0%</option>
+<option value="WA">Washington — 0%</option>
+</select>
+<label for="deduct">Additional deductions (itemized extras)</label>
+<div class="pfx"><span>$</span><input id="deduct" min="0" oninput="calc()" step="500" type="number" value="0"/></div>
+<label for="pretax">Pre-tax contributions (401k, HSA…)</label>
+<div class="pfx"><span>$</span><input id="pretax" min="0" oninput="calc()" step="500" type="number" value="0"/></div>
+<button class="btn" onclick="calc()">Calculate Tax →</button>
+</div>
+<div id="result-col">
+<div class="placeholder">
+<div style="font-size:36px;opacity:.35">📈</div>
+<div>Enter your income details</div>
+<div style="font-size:12px;font-family:var(--mono);color:var(--muted)">Federal • State • FICA • Take-home</div>
+</div>
+</div>
+<div class="wide" id="bracket-section" style="display:none">
+<div class="bracket-wrap">
+<div class="bt">📌 Federal tax brackets applied (2026)</div>
+<div class="bhead"><div>Rate</div><div>Bracket range</div><div>Your taxable income in bracket</div><div>Tax owed</div></div>
+<div id="bracket-rows"></div>
+</div>
+</div>
+<div class="wide" id="chart-section" style="display:none">
+<div class="chart-wrap">
+<div class="bt">📊 Income breakdown</div>
+<div class="legend">
+<span><span class="legend-sq" style="background:#10b981"></span>Take-home</span>
+<span><span class="legend-sq" style="background:#f87171"></span>Federal tax</span>
+<span><span class="legend-sq" style="background:#f59e0b"></span>State tax</span>
+<span><span class="legend-sq" style="background:#a78bfa"></span>FICA (SS+Medicare)</span>
+<span><span class="legend-sq" style="background:#60a5fa"></span>Pre-tax contributions</span>
+</div>
+<div style="position:relative;width:100%;height:240px">
+<canvas aria-label="Bar chart showing income breakdown including take-home pay, federal tax, state tax, and FICA" id="txChart" role="img">Income breakdown chart.</canvas>
+<details class="a11y-chart-data">
+<summary>View income breakdown as table</summary>
+<table id="txChartTable">
+<caption>Income tax breakdown (updates with calculator)</caption>
+<thead><tr><th scope="col">Category</th><th scope="col">Amount</th></tr></thead>
+<tbody id="txChartTableBody">
+<tr><td>Gross Income</td><td id="tc-gross">—</td></tr>
+<tr><td>Take-Home Pay</td><td id="tc-takehome">—</td></tr>
+<tr><td>Federal Tax</td><td id="tc-fed">—</td></tr>
+<tr><td>State Tax</td><td id="tc-state">—</td></tr>
+<tr><td>FICA (SS + Medicare)</td><td id="tc-fica">—</td></tr>
+</tbody>
+</table>
+</details>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="faq">
+<h2>Frequently Asked Questions</h2>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How are federal tax brackets calculated?</div>
+<div class="faq-a">The US uses a progressive tax system — you only pay each rate on the income within that bracket. For example, if you earn $80,000 as a single filer in 2026, you pay 10% on the first $12,400, 12% on income from $12,401–$50,400, and 22% on income from $50,401–$80,000. Your overall effective rate will be much lower than your top marginal rate.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is FICA and can I avoid it?</div>
+<div class="faq-a">FICA stands for Federal Insurance Contributions Act — it covers Social Security (6.2% on wages up to $184,500 in 2026) and Medicare (1.45% on all wages, plus an extra 0.9% above $200,000). Self-employed individuals pay both the employee and employer share (15.3% total). You generally cannot avoid FICA unless you are a student worker or certain religious group members.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Should I take the standard deduction or itemize?</div>
+<div class="faq-a">For 2026, the standard deduction is $15,000 for single filers, $30,000 for married filing jointly, and $22,500 for head of household. Only itemize if your deductible expenses (mortgage interest, state taxes up to $10,000, charitable donations, etc.) exceed your standard deduction. Most filers benefit from the standard deduction.</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do pre-tax contributions reduce my taxes?</div>
+<div class="faq-a">Contributions to 401(k), Traditional IRA, HSA, and FSA accounts reduce your federal taxable income dollar-for-dollar. For example, contributing $10,000 to a 401(k) at a 22% marginal rate saves $2,200 in federal taxes. Pre-tax contributions do not reduce FICA taxes (Social Security and Medicare).</div>
+</div>
+<div class="faq-item">
+<div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which states have no income tax in 2026?</div>
+<div class="faq-a">As of 2026, these states have no state income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, and Wyoming. Note that Washington has a capital gains tax on high earners. Living in a no-tax state can save thousands annually depending on your income level.</div>
+</div>
+</div>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">Related Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/tax-refund-calculator">Tax Refund Calculator</a></li><li><a href="/tax-bracket-calculator">Tax Bracket Calculator</a></li><li><a href="/w4-calculator">W-4 Withholding Calculator</a></li><li><a href="/">Federal Tax Calculator</a></li><li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li><li><a href="/self-employment-tax-calculator">Self-Employment Tax</a></li><li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li><li><a href="/paycheck-calculator">Paycheck Calculator</a></li><li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+</ul>
+</section>
+<section style="max-width:900px;margin:32px auto;padding:0 24px">
+<h2 style="font-size:18px;font-weight:600;margin-bottom:16px;color:var(--text,#f0f2f8)">State Tax Calculators</h2>
+<ul style="list-style:none;display:flex;flex-wrap:wrap;gap:10px;padding:0">
+<li><a href="/alabama-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Alabama Tax Calculator</a></li><li><a href="/arizona-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Arizona Tax Calculator</a></li><li><a href="/california-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">California Tax Calculator</a></li><li><a href="/colorado-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Colorado Tax Calculator</a></li><li><a href="/connecticut-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Connecticut Tax Calculator</a></li><li><a href="/florida-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Florida Tax Calculator</a></li><li><a href="/georgia-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Georgia Tax Calculator</a></li><li><a href="/illinois-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Illinois Tax Calculator</a></li><li><a href="/indiana-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Indiana Tax Calculator</a></li><li><a href="/iowa-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Iowa Tax Calculator</a></li><li><a href="/kentucky-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Kentucky Tax Calculator</a></li><li><a href="/maryland-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Maryland Tax Calculator</a></li><li><a href="/massachusetts-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Massachusetts Tax Calculator</a></li><li><a href="/michigan-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Michigan Tax Calculator</a></li><li><a href="/minnesota-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Minnesota Tax Calculator</a></li><li><a href="/missouri-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Missouri Tax Calculator</a></li><li><a href="/nevada-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Nevada Tax Calculator</a></li><li><a href="/new-jersey-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">New Jersey Tax Calculator</a></li><li><a href="/new-york-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">New York Tax Calculator</a></li><li><a href="/north-carolina-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">North Carolina Tax Calculator</a></li><li><a href="/ohio-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Ohio Tax Calculator</a></li><li><a href="/oregon-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Oregon Tax Calculator</a></li><li><a href="/pennsylvania-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Pennsylvania Tax Calculator</a></li><li><a href="/south-carolina-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">South Carolina Tax Calculator</a></li><li><a href="/tennessee-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Tennessee Tax Calculator</a></li><li><a href="/texas-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Texas Tax Calculator</a></li><li><a href="/utah-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Utah Tax Calculator</a></li><li><a href="/virginia-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Virginia Tax Calculator</a></li><li><a href="/washington-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Washington Tax Calculator</a></li><li><a href="/wisconsin-tax-calculator" style="display:inline-block;padding:8px 14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:13px;font-weight:500">Wisconsin Tax Calculator</a></li>
+</ul>
+</section>
+</main>
+<section class="content-block" id="income-tax-guide">
+<h2>What This Income Tax Calculator Does</h2>
+<p>This federal income tax calculator computes your 2024–2026 tax liability based on filing status, taxable income, deductions, and applicable credits. It shows your effective tax rate (percentage of total income paid in taxes) alongside your marginal rate (rate on your next dollar of income) — two very different numbers that are commonly confused. The calculator applies current IRS tax brackets, standard deduction amounts, and common adjustments to produce an accurate tax estimate.</p>
+<h2>How It Works</h2>
+<p><strong>Taxable Income = Gross Income − Above-the-Line Deductions − Standard/Itemized Deductions</strong></p>
+<p><strong>Tax = Σ [Rate × Income in Each Bracket]</strong></p>
+<p>For 2024, the standard deduction is $14,600 (single), $29,200 (married filing jointly), or $21,900 (head of household). After computing gross tax, the calculator subtracts any tax credits — which reduce tax dollar-for-dollar, unlike deductions which reduce taxable income at your marginal rate.</p>
+<h2>Key Concepts Explained</h2>
+<h3>2024 Federal Tax Brackets</h3>
+<p>Seven federal income tax rates apply: 10%, 12%, 22%, 24%, 32%, 35%, and 37%. These are marginal rates — each applies only to income within that bracket, not all income. A single filer with $80,000 taxable income pays 10% on the first $11,600, 12% on $11,601–$47,150, and 22% on $47,151–$80,000. Marginal rate is 22%, but effective rate is approximately 15%.</p>
+<h3>Tax Credits vs. Tax Deductions</h3>
+<p>A deduction reduces taxable income — a $1,000 deduction saves $220 in the 22% bracket. A credit reduces tax liability dollar-for-dollar — a $1,000 credit saves $1,000 regardless of bracket. Refundable credits can exceed your liability and result in a refund; non-refundable credits can only reduce liability to zero.</p>
+<h3>AGI vs. Taxable Income</h3>
+<p>Adjusted Gross Income (AGI) is gross income minus "above-the-line" deductions (IRA contributions, student loan interest, HSA contributions, self-employment tax deduction). Taxable income is AGI minus the standard or itemized deduction. AGI also determines eligibility for many credits and deductions that phase out at income thresholds.</p>
+<h2>Tips &amp; Best Practices</h2>
+<ul>
+<li><strong>Maximize pre-tax retirement contributions</strong> — 401(k) contributions (up to $23,000 in 2024, $30,500 if 50+) reduce AGI dollar-for-dollar, potentially dropping you into a lower bracket.</li>
+<li><strong>Harvest capital losses to offset gains</strong> — up to $3,000 in excess capital losses can offset ordinary income annually; additional losses carry forward indefinitely.</li>
+<li><strong>Bunch deductions in alternating years</strong> — if itemized deductions are close to the standard deduction, bunching 2 years' worth of charitable contributions in one year can push you over the threshold.</li>
+<li><strong>Check withholding mid-year</strong> — use the IRS Tax Withholding Estimator to verify you're withholding enough. Underpaying by more than $1,000 can trigger penalties.</li>
+<li><strong>Understand qualified dividend and LTCG rates</strong> — qualified dividends and long-term capital gains are taxed at 0%, 15%, or 20%, substantially below ordinary income rates.</li>
+</ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What is the difference between effective and marginal tax rate?</h3><p class="faq-a">Your marginal tax rate is the rate on your last dollar of income. Your effective rate is total tax divided by total income. Because lower brackets are taxed at lower rates, effective rate is always lower than marginal rate. A person with $100,000 taxable income (single) has a 22% marginal rate but approximately 15% effective federal rate.</p></div>
+<div class="faq-item"><h3 class="faq-q">Should I take the standard deduction or itemize?</h3><p class="faq-a">Itemize only if your qualifying expenses (mortgage interest, state/local taxes up to $10,000, charitable contributions, medical expenses above 7.5% of AGI) exceed your standard deduction. After the TCJA doubled the standard deduction in 2018, only about 10–12% of taxpayers itemize — down from about 30% before.</p></div>
+<div class="faq-item"><h3 class="faq-q">When is my federal income tax return due?</h3><p class="faq-a">The standard deadline is April 15. An automatic 6-month extension to October 15 is available by filing Form 4868 — but this extends the filing deadline, not the payment deadline. Taxes owed are still due April 15; interest and penalties apply on unpaid balances after that date regardless of extension status.</p></div>
+<div class="faq-item"><h3 class="faq-q">How does filing status affect my taxes?</h3><p class="faq-a">Filing status determines your brackets, standard deduction, and credit eligibility. Married Filing Jointly typically provides the lowest tax for two-income households. Head of Household provides a higher standard deduction for single parents. Married Filing Separately is rarely advantageous and disqualifies you from many credits.</p></div>
+</div>
+<h2>Related Calculators</h2>
+<p>For paycheck-level withholding, use the <a href="/paycheck-calculator">Paycheck Calculator</a>. The <a href="/tax-refund-calculator">Tax Refund Calculator</a> estimates whether you'll owe or receive a refund. Self-employed individuals should also run the <a href="/self-employment-tax-calculator">Self-Employment Tax Calculator</a>. The <a href="/capital-gains-tax-calculator">Capital Gains Tax Calculator</a> handles investment income separately.</p>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<link crossorigin="anonymous" href="https://cdnjs.cloudflare.com" rel="preconnect"/><link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/><script defer="True" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const BRACKETS = {
+  single: [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[626350,0.35],[Infinity,0.37]],
+  mfj:    [[23850,0.10],[96950,0.12],[206700,0.22],[394600,0.24],[501050,0.32],[751600,0.35],[Infinity,0.37]],
+  mfs:    [[11925,0.10],[48475,0.12],[103350,0.22],[197300,0.24],[250525,0.32],[375800,0.35],[Infinity,0.37]],
+  hoh:    [[17000,0.10],[64850,0.12],[103350,0.22],[197300,0.24],[250500,0.32],[626350,0.35],[Infinity,0.37]]
+};
+const STD_DED = {single:15000,mfj:30000,mfs:15000,hoh:22500};
+
+const STATE_BRACKETS = {
+  CA:[[10756,0.01],[25499,0.02],[40245,0.04],[54990,0.06],[68350,0.08],[349137,0.093],[418961,0.103],[698274,0.113],[Infinity,0.123]],
+  NY:[[17150,0.04],[23600,0.045],[27900,0.0525],[161550,0.0585],[323200,0.0625],[2155350,0.0685],[5000000,0.0965],[25000000,0.103],[Infinity,0.109]],
+  NJ:[[20000,0.014],[35000,0.0175],[40000,0.035],[75000,0.05525],[500000,0.0637],[1000000,0.0897],[Infinity,0.1075]],
+  IL:[[Infinity,0.0495]],
+  GA:[[Infinity,0.0549]],
+  MA:[[Infinity,0.05]],
+  CO:[[Infinity,0.044]],
+  NC:[[Infinity,0.045]],
+  PA:[[Infinity,0.0307]],
+  AZ:[[Infinity,0.025]],
+  VA:[[3000,0.02],[5000,0.03],[17000,0.05],[Infinity,0.0575]],
+  OH:[[26050,0],[100000,0.0275],[Infinity,0.0399]]
+};
+
+function calcBrackets(income, brackets) {
+  let tax = 0, prev = 0, details = [];
+  for (const [top, rate] of brackets) {
+    if (income <= prev) break;
+    const ceiling = top === Infinity ? income : Math.min(income, top);
+    const chunk = ceiling - prev;
+    const t = chunk * rate;
+    tax += t;
+    if (chunk > 0) details.push({rate, from: prev, to: ceiling, chunk, tax: t});
+    prev = ceiling;
+  }
+  return {tax, details};
+}
+
+function fmt(n) { return '$' + Math.round(n).toLocaleString('en-US'); }
+function pct(n) { return (+n).toFixed(1) + '%'; }
+
+let txChart = null;
+
+function calc() {
+  const gross    = +document.getElementById('income').value  || 0;
+  const status   = document.getElementById('status').value;
+  const state    = document.getElementById('state').value;
+  const extraDed = +document.getElementById('deduct').value  || 0;
+  const preTax   = +document.getElementById('pretax').value  || 0;
+
+  const stdDed     = STD_DED[status];
+  const totalDed   = stdDed + extraDed;
+  const fedTaxable = Math.max(0, gross - preTax - totalDed);
+
+  const {tax: fedTax, details} = calcBrackets(fedTaxable, BRACKETS[status]);
+
+  const stateBrackets = STATE_BRACKETS[state];
+  const stateTax = stateBrackets ? calcBrackets(Math.max(0, gross - preTax), stateBrackets).tax : 0;
+
+  const ssCap  = 176100;
+  const ssTax  = Math.min(gross, ssCap) * 0.062;
+  const mediBase = gross > 200000 ? 200000 * 0.0145 + (gross - 200000) * 0.0235 : gross * 0.0145;
+  const fica   = ssTax + mediBase;
+
+  const totalTax = fedTax + stateTax + fica;
+  const takehome = gross - totalTax - preTax;
+  const effRate  = gross > 0 ? (totalTax / gross * 100) : 0;
+  const margRate = details.length > 0 ? details[details.length-1].rate * 100 : 0;
+
+  const thPct   = gross > 0 ? (takehome / gross * 100).toFixed(1) : 0;
+  const fPct    = gross > 0 ? (fedTax   / gross * 100).toFixed(1) : 0;
+  const sPct    = gross > 0 ? (stateTax / gross * 100).toFixed(1) : 0;
+  const ficaPct = gross > 0 ? (fica     / gross * 100).toFixed(1) : 0;
+  const ptPct   = gross > 0 ? (preTax   / gross * 100).toFixed(1) : 0;
+
+  document.getElementById('result-col').innerHTML = `
+    <div class="net-card">
+      <div class="nl">Estimated annual take-home</div>
+      <div class="na">${fmt(takehome)}</div>
+      <div class="nm">Monthly: <span>${fmt(takehome/12)}</span> &nbsp;&bull;&nbsp; Weekly: <span>${fmt(takehome/52)}</span></div>
+    </div>
+    <div class="cards4">
+      <div class="mc"><div class="ml">Federal tax</div><div class="mv" style="color:#f87171">${fmt(fedTax)}</div></div>
+      <div class="mc"><div class="ml">State tax</div><div class="mv" style="color:#f59e0b">${fmt(stateTax)}</div></div>
+      <div class="mc"><div class="ml">FICA</div><div class="mv" style="color:#a78bfa">${fmt(fica)}</div></div>
+      <div class="mc"><div class="ml">Effective rate</div><div class="mv" style="color:#10b981">${pct(effRate)}</div></div>
+    </div>
+    <div class="bcard">
+      <div class="bt">&#128184; Complete tax breakdown</div>
+      <div class="sbar">
+        <div class="seg" style="width:${thPct}%;background:#10b981"></div>
+        <div class="seg" style="width:${fPct}%;background:#f87171"></div>
+        <div class="seg" style="width:${sPct}%;background:#f59e0b"></div>
+        <div class="seg" style="width:${ficaPct}%;background:#a78bfa"></div>
+        ${preTax > 0 ? `<div class="seg" style="width:${ptPct}%;background:#60a5fa"></div>` : ''}
+      </div>
+      <div class="brows">
+        <div class="br"><div class="bl"><div class="dot" style="background:#10b981"></div><div class="blbl">Take-home pay</div></div><div class="ba" style="color:#10b981">${fmt(takehome)} <span style="color:var(--muted);font-size:11px">(${pct(+thPct)})</span></div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#f87171"></div><div class="blbl">Federal income tax</div></div><div class="ba" style="color:#f87171">${fmt(fedTax)} <span style="color:var(--muted);font-size:11px">(${pct(+fPct)})</span></div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#f59e0b"></div><div class="blbl">State income tax</div></div><div class="ba" style="color:#f59e0b">${fmt(stateTax)} <span style="color:var(--muted);font-size:11px">(${pct(+sPct)})</span></div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#a78bfa"></div><div class="blbl">Social Security (6.2%)</div></div><div class="ba" style="color:#a78bfa">${fmt(ssTax)}</div></div>
+        <div class="br"><div class="bl"><div class="dot" style="background:#7c6fcd"></div><div class="blbl">Medicare (1.45%+)</div></div><div class="ba" style="color:#a78bfa">${fmt(mediBase)}</div></div>
+        ${preTax > 0 ? `<div class="br"><div class="bl"><div class="dot" style="background:#60a5fa"></div><div class="blbl">Pre-tax contributions</div></div><div class="ba" style="color:#60a5fa">${fmt(preTax)} <span style="color:var(--muted);font-size:11px">(${pct(+ptPct)})</span></div></div>` : ''}
+        <div class="divider"></div>
+        <div class="br"><div class="bl"><div class="blbl" style="color:var(--text)">Total taxes</div></div><div class="ba" style="color:var(--text);font-size:14px">${fmt(totalTax)} <span style="color:var(--muted);font-size:11px">(${pct(effRate)})</span></div></div>
+        <div class="br" style="margin-top:2px"><div class="bl"><div class="blbl" style="font-size:11px">Marginal (top) rate</div></div><div class="ba" style="color:var(--muted);font-size:11px">${pct(margRate)} federal</div></div>
+        <div class="br"><div class="bl"><div class="blbl" style="font-size:11px">Standard deduction used</div></div><div class="ba" style="color:var(--muted);font-size:11px">${fmt(totalDed)}</div></div>
+        <div class="br"><div class="bl"><div class="blbl" style="font-size:11px">Federal taxable income</div></div><div class="ba" style="color:var(--muted);font-size:11px">${fmt(fedTaxable)}</div></div>
+      </div>
+    </div>`;
+
+  let bhtml = '';
+  for (const d of details) {
+    bhtml += `<div class="brow active">
+      <div>${(d.rate*100).toFixed(0)}%</div>
+      <div>${fmt(d.from)} – ${d.to >= gross ? fmt(d.to) : fmt(d.to)}</div>
+      <div>${fmt(d.chunk)}</div>
+      <div>${fmt(d.tax)}</div>
+    </div>`;
+  }
+  document.getElementById('bracket-rows').innerHTML = bhtml;
+  document.getElementById('bracket-section').style.display = 'block';
+  document.getElementById('chart-section').style.display = 'block';
+
+  if (txChart) txChart.destroy();
+  const chartData = [gross, takehome, fedTax, stateTax, fica];
+  if (preTax > 0) chartData.push(preTax);
+  const chartLabels = ['Gross income','Take-home','Federal tax','State tax','FICA'];
+  const chartColors = ['#378ADD','#10b981','#f87171','#f59e0b','#a78bfa'];
+  if (preTax > 0) { chartLabels.push('Pre-tax'); chartColors.push('#60a5fa'); }
+
+  txChart = new Chart(document.getElementById('txChart'), {
+    type: 'bar',
+    data: {
+      labels: chartLabels,
+      datasets: [{
+        data: chartData,
+        backgroundColor: chartColors,
+        borderRadius: 6,
+        borderSkipped: false
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {display: false},
+        tooltip: {callbacks: {label: ctx => fmt(ctx.raw)}}
+      },
+      scales: {
+        x: {ticks: {color:'#7e859f',font:{size:11}}, grid: {display:false}},
+        y: {ticks: {callback: v => v >= 1000000 ? '$'+(v/1000000).toFixed(1)+'M' : '$'+Math.round(v/1000)+'K', color:'#7e859f', font:{size:11}}, grid: {color:'rgba(255,255,255,0.05)'}}
+      }
+    }
+  });
+}
+
+calc();
+</script>
+<span aria-label="Last updated" class="last-updated" style="display:none;">June 28, 2026</span>
+
+<script>
+// Update accessible chart table when tax data changes
+(function(){
+  var _origCalc = window.calc;
+  function updateTaxTable(gross, takehome, fedTax, stateTax, fica){
+    function fmt(v){ return '$' + Math.round(v).toLocaleString(); }
+    var ids = {gross:'tc-gross',takehome:'tc-takehome',fed:'tc-fed',state:'tc-state',fica:'tc-fica'};
+    var vals = {gross:gross,takehome:takehome,fed:fedTax,state:stateTax,fica:fica};
+    for(var k in vals){
+      var el = document.getElementById(ids[k]);
+      if(el) el.textContent = fmt(vals[k]);
+    }
+  }
+  // Patch: observe chart data after calc() runs via MutationObserver on result elements
+  var observer = new MutationObserver(function(){
+    var g = parseFloat((document.getElementById('r-gross')||{}).textContent||'0'.replace(/[^0-9.]/g,''))||0;
+    var th = parseFloat((document.getElementById('r-takehome')||{}).textContent||'0'.replace(/[^0-9.]/g,''))||0;
+    var ft = parseFloat((document.getElementById('r-fed')||{}).textContent||'0'.replace(/[^0-9.]/g,''))||0;
+    var st = parseFloat((document.getElementById('r-state')||{}).textContent||'0'.replace(/[^0-9.]/g,''))||0;
+    var fi = parseFloat((document.getElementById('r-fica')||{}).textContent||'0'.replace(/[^0-9.]/g,''))||0;
+    if(g) updateTaxTable(g,th,ft,st,fi);
+  });
+  var target = document.getElementById('r-takehome');
+  if(target) observer.observe(target, {childList:true,characterData:true,subtree:true});
+})();
+</script>
+<script defer src="/js/search.js"></script>
+</body>
+</html>

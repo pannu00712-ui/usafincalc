@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="impact-site-verification" value="b9c92cbb-b6a2-4ef9-8898-c576bc83b33b"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="retirement withdrawal calculator, 4% rule calculator, RMD calculator" name="keywords"/>
+<meta content="USAFinCalc" name="author"/>
+<title>Retirement Withdrawal Calculator 2026 — How Long Will Savings Last?</title>
+<meta content="Calculate how long your retirement savings will last. Find safe withdrawal rate and monthly income. Free retirement withdrawal calculator 2026." name="description"/>
+<link href="https://usafincalc.com/retirement-withdrawal-calculator" rel="canonical"/>
+<link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23050810'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'>F</text></svg>" rel="icon" type="image/svg+xml"/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<style>
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--green:#00e676;--r:14px;--rs:8px;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;}
+nav{background:rgba(4,6,15,0.97);border-bottom:1px solid var(--border);padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.logo{font-size:18px;font-weight:800;color:var(--text);text-decoration:none;}.logo span{color:var(--cyan);}
+.hero{padding:48px 24px 28px;max-width:980px;margin:0 auto;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,212,255,0.06);color:var(--cyan);border:1px solid rgba(0,212,255,0.18);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:12px;}
+h1 span{background:linear-gradient(120deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{color:var(--text2);font-size:16px;max-width:580px;line-height:1.8;}
+.main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+@media(max-width:680px){.main{grid-template-columns:1fr;}}
+.card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px;}
+.ct{font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;font-family:'JetBrains Mono',monospace;}
+label{display:block;font-size:13px;color:var(--text2);margin-bottom:5px;}
+input{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:'JetBrains Mono',monospace;outline:none;transition:border-color .2s;margin-bottom:14px;}
+input:focus{border-color:var(--cyan);}
+.pfx{position:relative;margin-bottom:14px;}.pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--text2);pointer-events:none;}.pfx input{padding-left:28px;margin-bottom:0;}
+.sfx{position:relative;margin-bottom:14px;}.sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-size:13px;pointer-events:none;}.sfx input{margin-bottom:0;}
+.btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:700;cursor:pointer;transition:all .2s;}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.3);}
+.res-main{background:linear-gradient(135deg,rgba(0,212,255,0.08),rgba(59,158,255,0.04));border:1px solid rgba(0,212,255,0.2);border-radius:var(--r);padding:24px;text-align:center;margin-bottom:12px;}
+.res-main-label{font-size:12px;color:var(--text2);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.res-main-val{font-size:48px;font-weight:800;color:var(--cyan);font-family:'JetBrains Mono',monospace;letter-spacing:-2px;}
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.rb{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;text-align:center;}
+.rl{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;text-transform:uppercase;margin-bottom:6px;}
+.rv{font-size:18px;font-weight:700;font-family:'JetBrains Mono',monospace;}
+footer{border-top:1px solid var(--border);padding:24px;text-align:center;color:var(--text3);font-size:13px;}
+footer a{color:var(--text2);text-decoration:none;margin:0 8px;}
+
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+/* WCAG 2.2 AA: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  /* Disable pulsing dot */
+  .fc-dot { animation: none !important; }
+  /* Disable card hover lifts */
+  .fc-card:hover { transform: none !important; }
+  .fc-btn-p:hover, .fc-btn-g:hover { transform: none !important; }
+  .fc-blog-c:hover { transform: none !important; }
+  /* Disable fadeUp animation */
+  .fca { animation: none !important; opacity: 1 !important; transform: none !important; }
+  /* Disable smooth scroll globally */
+  html { scroll-behavior: auto !important; }
+}
+
+/* === CONTENT BLOCK SCOPED STYLES === */
+.content-block{max-width:980px;margin:0 auto;padding:0 24px 60px}
+.content-block h2{font-size:22px;font-weight:700;margin:36px 0 12px;color:#f0f2f8}
+.content-block h3{font-size:17px;font-weight:600;margin:24px 0 8px;color:#f0f2f8}
+.content-block p{color:#7e859f;font-size:15px;line-height:1.8;margin-bottom:14px}
+.content-block ul,.content-block ol{color:#7e859f;font-size:15px;margin:0 0 16px 20px;line-height:1.8}
+.content-block li{margin-bottom:6px}
+.content-block a{color:#10b981!important;text-decoration:none}
+.content-block a:hover{text-decoration:underline}
+/* === RELATED SECTION SCOPED STYLES === */
+.related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+.related-section h2{font-size:18px;font-weight:700;color:#f0f2f8;margin-bottom:14px}
+.related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.related-links li{list-style:none}
+.related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1a1e2a;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#10b981!important;text-decoration:none!important;font-size:13px;font-weight:500;transition:border-color .2s,background .2s}
+.related-links a:hover{border-color:#10b981;background:rgba(16,185,129,0.08);color:#f0f2f8!important}
+
+</style>
+<meta content="#0f172a" name="theme-color"/>
+<meta content="Retirement Withdrawal Calculator 2026 — How Long Will Savings Last?" property="og:title"/>
+<meta content="Calculate how long your retirement savings will last. Find safe withdrawal rate and monthly income. Free retirement withdrawal calculator 2026." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://usafincalc.com/retirement-withdrawal-calculator" property="og:url"/>
+<meta content="https://usafincalc.com/og-image.png" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Retirement Withdrawal Calculator 2026 — How Long Will Savings Last?" name="twitter:title"/>
+<meta content="Calculate how long your retirement savings will last. Find safe withdrawal rate and monthly income. Free retirement withdrawal calculator 2026." name="twitter:description"/>
+<meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
+<meta content="USA FinCalc" property="og:site_name"/><meta content="en_US" property="og:locale"/><meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="USAFinCalc — Free Financial Calculators" property="og:image:alt"/>
+<meta content="USAFinCalc — Free Financial Calculators" name="twitter:image:alt"/>
+<link href="/manifest.json" rel="manifest"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://usafincalc.com/logo.png",
+    "width": 200,
+    "height": 60
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@usafincalc.com",
+    "availableLanguage": "English"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "USAFinCalc",
+  "url": "https://usafincalc.com/",
+  "description": "Free financial calculators for salary, tax, mortgage and retirement planning.",
+  "inLanguage": "en-US",
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://usafincalc.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Retirement Withdrawal Calculator 2026 — How Long Will Savings Last?",
+  "url": "https://usafincalc.com/retirement-withdrawal-calculator",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Retirement",
+      "item": "https://usafincalc.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Retirement Withdrawal Calculator",
+      "item": "https://usafincalc.com/retirement-withdrawal-calculator"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "USA FinCalc",
+  "description": "Retirement Withdrawal Calculator 2026 — How Long Will Savings Last?",
+  "url": "https://usafincalc.com/retirement-withdrawal-calculator",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "USAFinCalc",
+    "url": "https://usafincalc.com/"
+  },
+  "isAccessibleForFree": true
+}
+</script>
+  <meta name="date" content="2026-06-28">
+<link rel="stylesheet" href="/css/design-system.css"/><link href="/css/privacy-disclosure.css" rel="stylesheet"/><link href="/css/search.css" rel="stylesheet"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+</head>
+<body>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="site-nav" aria-label="Main navigation">
+  <a class="site-logo" href="/">
+    <div class="site-logo-icon" aria-hidden="true">F</div>
+    <span class="site-logo-text">USA<span>FinCalc</span></span>
+  </a>
+  <div class="site-nav-search">
+<span aria-hidden="true" class="fc-si">⌕</span>
+<input aria-label="Search calculators" autocomplete="off" id="fc-search" placeholder="Search calculators…" type="search"/>
+<span aria-hidden="true" class="fc-kbd">Ctrl K</span>
+</div>
+<ul class="site-nav-links">
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+<main id="main-content">
+<div class="hero">
+<div class="badge"><span class="dot"></span>Retirement Planning 2026</div>
+<h1>Retirement <span>Withdrawal Calculator</span></h1>
+<div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div>
+<div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
+<div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
+</div>
+</div>
+<p class="hero-sub">Find out how long your retirement savings will last and what monthly income you can safely withdraw using the 4% rule.</p>
+</div>
+<div class="main">
+<div class="card">
+<div class="ct">Your Retirement Details</div>
+<label for="savings">Total Retirement Savings</label>
+<div class="pfx"><span>$</span><input id="savings" type="number" value="1000000"/></div>
+<label for="monthly">Monthly Withdrawal</label>
+<div class="pfx"><span>$</span><input id="monthly" type="number" value="4000"/></div>
+<label for="ret">Expected Annual Return (%)</label>
+<div class="sfx"><span>%</span><input id="ret" step="0.1" type="number" value="6"/></div>
+<label for="inf">Inflation Rate (%)</label>
+<div class="sfx"><span>%</span><input id="inf" step="0.1" type="number" value="3"/></div>
+<button class="btn" onclick="calc()">Calculate →</button>
+</div>
+<div class="card">
+<div class="ct">Withdrawal Analysis</div>
+<div class="res-main">
+<div class="res-main-label">Savings Will Last</div>
+<div class="res-main-val" id="years">28 Years</div>
+</div>
+<div class="rg">
+<div class="rb"><div class="rl">Safe Monthly (4% Rule)</div><div class="rv" id="safe" style="color:var(--green);">$3,333</div></div>
+<div class="rb"><div class="rl">Annual Withdrawal</div><div class="rv" id="annual" style="color:var(--cyan);">$48,000</div></div>
+<div class="rb"><div class="rl">Withdrawal Rate</div><div class="rv" id="rate" style="color:#ffd740);">4.8%</div></div>
+<div class="rb"><div class="rl">Total Withdrawn</div><div class="rv" id="total" style="color:var(--text2);">$1.34M</div></div>
+</div>
+</div>
+</div>
+</section>
+<section style="margin:40px 0 0">
+
+<h2 style="font-size:18px;font-weight:700;margin-bottom:14px;max-width:980px;margin-left:auto;margin-right:auto;padding:0 24px;box-sizing:border-box">Related Calculators</h2>
+<section class="related-section"><div class="related"><a href="/401k-calculator-usa">401(k) Calculator USA 2026</a>
+<a href="/roth-ira-calculator">Roth IRA Calculator 2026</a>
+<a href="/fire-calculator">FIRE Calculator — Financial Independence</a>
+<a href="/social-security-calculator">Social Security Calculator 2026</a>
+</div>
+</section>
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <ul class="related-links">
+<li><a href="/retirement-savings-by-age">How Much Should You Save for Retirement by Age?</a></li>
+<li><a href="/best-budgeting-tips">Best Budgeting Tips for 2026</a></li>
+<li><a href="/how-to-improve-credit-score">How to Improve Your Credit Score</a></li>
+  </ul>
+</section>
+<section class="content-block" id="retirement-withdrawal-guide">
+<h2>What This Retirement Withdrawal Calculator Does</h2>
+<p>This calculator helps you determine a sustainable withdrawal rate from your retirement portfolio — how much you can take out each year without running out of money before the end of your expected retirement. Enter your portfolio balance, expected return, inflation rate, and desired retirement length, and it shows your annual sustainable withdrawal, monthly income, and the projected portfolio balance over time.</p>
+<p>It's primarily used by people approaching retirement (within 5–10 years) who need to translate a savings balance into income, and by those already retired who want to verify their current withdrawal pace is sustainable.</p>
+
+<h2>Understanding Your Results</h2>
+<h3>Safe Withdrawal Rate</h3>
+<p>Expressed as a percentage of your starting portfolio (typically 3.5%–4.5%), this is the annual withdrawal amount that historically survives a 30-year retirement without portfolio depletion across most market scenarios. The specific percentage depends on your asset allocation, time horizon, and flexibility to adjust spending.</p>
+<h3>Annual/Monthly Income</h3>
+<p>The dollar equivalent of your withdrawal rate applied to your current balance. If you have $800,000 and use a 4% withdrawal rate, that's $32,000/year or $2,667/month from the portfolio — which then combines with Social Security, pension, or other income sources.</p>
+<h3>Portfolio Balance Over Time</h3>
+<p>The projection graph shows how the portfolio depletes (or grows) year by year given your assumptions. Markets don't produce smooth returns, but the projection gives a baseline to compare against your actual performance annually.</p>
+
+<h2>The 4% Rule: Background and Limitations</h2>
+<p>The 4% guideline emerged from research (the "Trinity Study") showing that a portfolio of 50%–75% stocks and the remainder bonds could sustain a 4% initial withdrawal rate, adjusted annually for inflation, over 30 years in most historical scenarios. It assumes reinvestment of returns and regular rebalancing.</p>
+<p>Current limitations: the research used historical US market data from a period of generally higher real returns than some analysts project going forward. With today's bond yields and higher valuations, some researchers suggest 3.5% or even 3.3% as a more conservative starting point for 30+ year retirements.</p>
+<p>The rule also assumes withdrawal rigidity — maintaining spending even in severe market downturns. A "dynamic withdrawal" strategy (reducing spending 10%–15% in bad market years) allows a higher initial withdrawal rate while maintaining safety.</p>
+
+<h2>Sequence of Returns Risk</h2>
+<p>Two retirees with identical 30-year average returns can end with radically different outcomes if the bad returns occur at different times. Poor returns in the first 5–10 years of retirement (when the portfolio is largest and withdrawals begin) are far more damaging than poor returns in the final years. A 30% portfolio drop in year 2 of retirement, combined with ongoing withdrawals, leaves less capital to recover from — mathematically worse than the same drop in year 25.</p>
+<p>Mitigation strategies include: keeping 1–2 years of expenses in cash or short-term bonds (a "bucket strategy"), reducing equity allocation as retirement approaches, and maintaining flexibility to reduce withdrawals in severe down years.</p>
+
+<h2>Real-World Examples</h2>
+<h3>$600,000 Portfolio at Different Withdrawal Rates</h3>
+<p>At 3%: $18,000/year ($1,500/month). Highly conservative; portfolio likely to grow significantly in favorable markets. At 4%: $24,000/year ($2,000/month). Balanced; historically sustainable across most 30-year periods. At 5%: $30,000/year ($2,500/month). Aggressive; portfolio depletion likely in longer retirements or poor market conditions.</p>
+<h3>Social Security Integration</h3>
+<p>A retiree with $700,000 in savings and $2,200/month in Social Security needs the portfolio to cover the gap between Social Security and total spending. If spending is $4,500/month, the portfolio needs to supply $2,300/month ($27,600/year) — a 3.9% withdrawal rate on $700,000. That's within historically safe bounds.</p>
+
+<h2>Common Mistakes</h2>
+<h3>Not accounting for healthcare costs</h3>
+<p>Healthcare spending tends to increase significantly in the later years of retirement. A withdrawal rate that looks sustainable at 65 may prove insufficient at 80 if out-of-pocket healthcare costs rise materially. Build in a healthcare inflation buffer — medical inflation historically runs 1%–2% above general inflation.</p>
+<h3>Treating the 4% rule as a guarantee</h3>
+<p>It's a guideline derived from historical data, not a guarantee. 30-year Treasury yields, equity valuations, and your specific asset allocation all affect the actual safe withdrawal rate for your situation.</p>
+
+<h2>Tips and Best Practices</h2>
+<ul>
+<li><strong>Delay Social Security if possible</strong> — waiting from 62 to 70 can increase your monthly benefit by 76%, significantly reducing the burden on your investment portfolio.</li>
+<li><strong>Maintain flexibility in early retirement</strong> — the first decade matters most for sequence of returns risk. Flexibility to reduce spending in down years significantly improves long-run outcomes.</li>
+<li><strong>Review annually</strong> — if your portfolio has grown significantly above projections, you may be able to increase spending; if it's running below projections, early adjustment is far easier than crisis adjustment.</li>
+</ul>
+
+<h2>Related Calculators</h2>
+<ul>
+<li><strong><a href="/401k-calculator-usa">401(k) Calculator</a></strong> — build the portfolio you'll be withdrawing from.</li>
+<li><strong><a href="/social-security-calculator">Social Security Calculator</a></strong> — optimize your claiming strategy.</li>
+<li><strong><a href="/roth-ira-calculator">Roth IRA Calculator</a></strong> — tax-free withdrawals in retirement.</li>
+<li><strong><a href="/fire-calculator">FIRE Calculator</a></strong> — early retirement withdrawal scenarios.</li>
+</ul>
+
+<h2>Frequently Asked Questions</h2>
+<h3>What's the safest retirement withdrawal rate?</h3>
+<p>For a 30-year retirement, 3.5%–4% is the commonly cited range. For retirements expected to last 35–40 years (early retirees), 3%–3.5% is more conservative. For a 20-year retirement, 4.5%–5% has been historically viable.</p>
+<h3>Does the withdrawal rate apply to each account separately?</h3>
+<p>No — apply it to your total investable portfolio. Then optimize which account type you withdraw from each year for tax efficiency (taxable accounts, traditional IRAs, Roth IRAs) based on your annual income and bracket situation.</p>
+<h3>How does inflation affect withdrawal sustainability?</h3>
+<p>The 4% rule assumes inflation-adjusted withdrawals — you increase spending each year with inflation. In a high-inflation environment (5%+), the real value of portfolio withdrawals is maintained, but the portfolio must generate higher nominal returns to compensate, which isn't guaranteed.</p>
+<h3>When should I reduce my withdrawal rate?</h3>
+<p>If your portfolio has declined more than 15%–20% from peak during the first decade of retirement and you have a 30+ year time horizon, reducing spending by 10%–15% temporarily can significantly improve long-run survival probability.</p>
+<h3>What if I run out of money in retirement?</h3>
+<p>Portfolio depletion doesn't mean destitution — Social Security (if not yet claimed at maximum), part-time work, downsizing housing, Medicaid, and family support are all potential backstops. But planning to rely on these creates an unnecessarily stressful retirement. Building a margin of safety into your withdrawal rate is the far better approach.</p>
+
+<h2>Key Takeaways</h2>
+<p>Retirement income planning is a balance between spending enough to enjoy your years and preserving enough to cover a potentially 30+ year retirement. The withdrawal rate you choose at retirement sets the trajectory for the entire retirement period — getting it right in the first decade, when sequence of returns risk is highest, matters more than any other variable. Use this calculator to find a starting rate that leaves a margin of safety, then build in a review system to adjust as your actual returns and spending evolve.</p>
+</section>
+
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+<script>
+function fmt(n){return '$'+Math.round(n).toLocaleString('en-US');}
+function calc(){
+  var s=parseFloat(document.getElementById('savings').value)||0;
+  var m=parseFloat(document.getElementById('monthly').value)||0;
+  var r=parseFloat(document.getElementById('ret').value)/100/12;
+  var inf=parseFloat(document.getElementById('inf').value)/100/12;
+  var real_r=r-inf;
+  var bal=s;var mo=0;
+  while(bal>0&&mo<1200){bal=bal*(1+real_r)-m;mo++;}
+  var yrs=mo>=1200?'Forever!':Math.floor(mo/12)+' Years';
+  var safe=s*0.04/12;
+  var ann=m*12;
+  var rate=s>0?ann/s*100:0;
+  document.getElementById('years').textContent=yrs;
+  document.getElementById('safe').textContent=fmt(safe);
+  document.getElementById('annual').textContent=fmt(ann);
+  document.getElementById('rate').textContent=rate.toFixed(1)+'%';
+  document.getElementById('total').textContent=fmt(mo<1200?m*mo:s*2);
+}
+calc();
+</script>
+
+<div style="max-width:980px;margin:0 auto;padding:0 24px 48px;">
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">How the Retirement Withdrawal Calculator Works</h2>
+    <p style="font-size:15px;color:var(--text2,#7a8aaa);line-height:1.75;">Enter your total retirement portfolio balance, planned annual withdrawal amount, expected annual investment return, and inflation rate. The calculator projects year-by-year how long your savings will last, accounting for both investment growth and the real purchasing power erosion from inflation.</p>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Formula</h2>
+    <div style="background:var(--bg2,rgba(255,255,255,0.03));border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:18px 22px;">
+      <p style="font-size:14px;color:var(--cyan,#00d4ff);line-height:1.9;font-family:'JetBrains Mono',monospace;">Annual Withdrawal (inflation-adjusted) = Initial Withdrawal × (1 + Inflation Rate)^Year<br><br>Portfolio Balance at End of Year = Beginning Balance × (1 + Return Rate) − Withdrawal<br><br>Portfolio depletes when balance reaches $0. The year this happens is your fund lifespan.</p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Example</h2>
+    <div style="background:var(--bg2,rgba(255,255,255,0.03));border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:18px 22px;">
+      <p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.75;">You retire with $800,000, plan to withdraw $40,000 in year one (5% withdrawal rate), expect 6% annual returns, and assume 2.5% inflation. In year one, your portfolio grows by $48,000 and you withdraw $40,000, leaving $808,000. By year 25, inflation-adjusted withdrawals exceed portfolio growth and the balance begins falling. The portfolio lasts approximately 32 years under these assumptions.</p>
+    </div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Frequently Asked Questions</h2>
+    <div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">What is a safe withdrawal rate?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">The most cited research suggests 4% per year (adjusted for inflation) has historically lasted 30 years in most market scenarios. This is called the 4% rule. For longer retirements — say, 40+ years if you retire early — many planners use 3% to 3.5% to reduce the risk of running out of money.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">What happens if my portfolio drops early in retirement?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">This is called sequence-of-returns risk. A major market decline in your first 5 years of retirement can permanently impair your portfolio even if markets recover later, because you are selling shares at low prices to fund withdrawals. Keeping 1–2 years of expenses in cash reduces this risk.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">Should my withdrawal rate change over time?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">Many retirees use a dynamic strategy — withdrawing less in bad market years and a bit more in good years. This tends to extend portfolio longevity compared to a fixed withdrawal. The guardrail method sets upper and lower limits on withdrawals based on portfolio performance.</p>
+</div><div style="border:1px solid var(--border,rgba(255,255,255,0.07));border-radius:10px;padding:16px 20px;margin-bottom:12px;">
+<h3 style="font-size:15px;font-weight:600;color:var(--text,#dde4f0);margin-bottom:8px;">Does this calculator account for Social Security?</h3>
+<p style="font-size:14px;color:var(--text2,#7a8aaa);line-height:1.7;">No. If you receive Social Security, your required portfolio withdrawal is reduced by that amount. For example, if you need $50,000 per year and Social Security covers $20,000, you only need to withdraw $30,000 from your portfolio — significantly extending its lifespan.</p>
+</div>
+  </section>
+
+  <section style="margin-bottom:40px;">
+    <h2 style="font-size:20px;font-weight:700;color:var(--text,#dde4f0);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border,rgba(255,255,255,0.07));">Common Mistakes to Avoid</h2>
+    <div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Underestimating healthcare costs</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">Healthcare spending typically increases in your 70s and 80s. Many retirees spend $6,000–$12,000 per year on out-of-pocket medical expenses. If your withdrawal estimate does not include a realistic healthcare buffer, your actual spending will outpace your projection.</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Ignoring required minimum distributions (RMDs)</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">Starting at age 73 (as of 2026 IRS rules), you must withdraw a minimum amount from traditional IRAs and 401(k)s each year, whether you want to or not. These forced withdrawals increase your taxable income and can push you into higher tax brackets.</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Using a single average return rate</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">Markets do not return an average every year — they have volatile swings. A 6% average return modeled as a smooth line understates real risk. The sequence of those returns matters as much as the average.</p>
+</div><div style="border-left:3px solid var(--red,#f87171);padding:12px 16px;margin-bottom:12px;background:rgba(248,113,113,0.04);border-radius:0 8px 8px 0;">
+<h3 style="font-size:14px;font-weight:600;color:var(--red,#f87171);margin-bottom:6px;">✗ Not adjusting the plan annually</h3>
+<p style="font-size:13px;color:var(--text2,#7a8aaa);line-height:1.6;">A retirement withdrawal plan made at 65 may not match reality at 75. Review and adjust at least once a year based on actual portfolio performance, spending changes, and updated life expectancy.</p>
+</div>
+  </section>
+
+</div>
+<span class="last-updated" style="display:none;" aria-label="Last updated">June 28, 2026</span>
+<script defer src="/js/search.js"></script>
+</body></html>
