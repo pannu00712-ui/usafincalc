@@ -30,10 +30,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 
 <style>
-:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--green:#00e676;--yellow:#ffd740;--orange:#ff7043;--r:14px;}
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.12);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#10e0a0;--blue:#2dd4bf;--green:#00e676;--yellow:#ffd740;--orange:#ff7043;--r:14px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7;}
-::selection{background:rgba(0,212,255,0.15);color:var(--text);}
+::selection{background:rgba(16,224,160,0.15);color:var(--text);}
 
 /* HERO */
 .pricing-hero{text-align:center;padding:80px 24px 60px;max-width:800px;margin:0 auto;}
@@ -46,8 +46,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 
 /* BIG FREE CARD */
 .free-card-wrap{max-width:600px;margin:0 auto 80px;padding:0 24px;}
-.free-card{background:linear-gradient(135deg,rgba(0,212,255,0.06),rgba(59,158,255,0.03));border:1px solid rgba(0,212,255,0.2);border-radius:24px;padding:48px 40px;text-align:center;position:relative;overflow:hidden;}
-.free-card::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(0,212,255,0.06) 0%,transparent 70%);pointer-events:none;}
+.free-card{background:linear-gradient(135deg,rgba(16,224,160,0.06),rgba(45,212,191,0.03));border:1px solid rgba(16,224,160,0.2);border-radius:24px;padding:48px 40px;text-align:center;position:relative;overflow:hidden;}
+.free-card::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(16,224,160,0.06) 0%,transparent 70%);pointer-events:none;}
 .free-badge{font-size:13px;font-weight:700;color:var(--cyan);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;}
 .free-price{font-size:96px;font-weight:800;line-height:1;font-family:'JetBrains Mono',monospace;background:linear-gradient(135deg,var(--cyan),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
 .free-forever{font-size:16px;color:var(--text2);margin-bottom:32px;letter-spacing:.5px;}
@@ -55,7 +55,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .free-features li{display:flex;align-items:center;gap:12px;font-size:15px;color:var(--text2);margin-bottom:12px;}
 .free-features li::before{content:'✓';display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(0,230,118,0.1);color:var(--green);font-weight:800;font-size:12px;flex-shrink:0;}
 .cta-main{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;border:none;border-radius:12px;padding:16px 36px;font-size:16px;font-weight:800;text-decoration:none;transition:all .2s;cursor:pointer;}
-.cta-main:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,212,255,0.3);}
+.cta-main:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(16,224,160,0.3);}
 .no-cc{display:block;font-size:12px;color:var(--text3);margin-top:14px;letter-spacing:.3px;}
 
 /* WHY FREE */
@@ -87,7 +87,7 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 .calcs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
 @media(max-width:540px){.calcs-grid{grid-template-columns:1fr;}}
 .calc-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:12px;text-decoration:none;transition:border-color .15s;}
-.calc-item:hover{border-color:rgba(0,212,255,0.25);}
+.calc-item:hover{border-color:rgba(16,224,160,0.25);}
 .calc-icon{font-size:20px;}
 .calc-name{font-size:14px;font-weight:600;color:var(--text);}
 .calc-tag{font-size:11px;color:var(--green);font-weight:700;margin-left:auto;}
@@ -209,8 +209,8 @@ body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-
 <a class="skip-link" href="#main" style="position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to main content</a>
 
 <!-- TOPBAR -->
-<div class="fc-topbar" role="banner" style="background:#050d1a;border-bottom:1px solid rgba(0,212,255,0.1);text-align:center;padding:10px 16px;font-size:13px;color:var(--text2,#7a8aaa);">
-  <strong style="color:#00d4ff;">🆕 2026 IRS tax brackets now live</strong> — All calculators updated Jan 2026
+<div class="fc-topbar" role="banner" style="background:#050d1a;border-bottom:1px solid rgba(16,224,160,0.1);text-align:center;padding:10px 16px;font-size:13px;color:var(--text2,#7a8aaa);">
+  <strong style="color:#10e0a0;">🆕 2026 IRS tax brackets now live</strong> — All calculators updated Jan 2026
 </div>
 
 <!-- NAV -->

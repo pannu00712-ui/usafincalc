@@ -64,7 +64,7 @@
   outline:none;
   transition:border-color .2s;
 }
-.site-nav-search input:focus{border-color:var(--cyan,var(--accent,#3b9eff));}
+.site-nav-search input:focus{border-color:var(--cyan,var(--accent,#2dd4bf));}
 .site-nav-search input::placeholder{color:var(--text3,#6b7fa3);}
 .site-nav-search .fc-kbd{
   position:absolute;

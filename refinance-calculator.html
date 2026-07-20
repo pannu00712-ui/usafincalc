@@ -11,10 +11,10 @@
 <title>Mortgage Refinance Calculator 2026 — Should You Refinance?</title>
 <meta content="Calculate if refinancing your mortgage makes sense. See monthly savings, break-even point and lifetime savings. Free USA refinance calculator 2026." name="description"/>
 <link href="https://usafincalc.com/refinance-calculator" rel="canonical"/>
-<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%232dd4bf' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
 <style>
-:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#00d4ff;--blue:#3b9eff;--green:#00e676;--red:#ff4d6d;--r:14px;--rs:8px;}
+:root{--bg:#04060f;--bg2:#080c18;--bg3:#0d1220;--border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.1);--text:#dde4f0;--text2:#7a8aaa;--text3:#6b7fa3;--cyan:#10e0a0;--blue:#2dd4bf;--green:#00e676;--red:#ff4d6d;--r:14px;--rs:8px;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6;}
 nav{background:rgba(4,6,15,0.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:0 24px;height:62px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
@@ -23,7 +23,7 @@ nav{background:rgba(4,6,15,0.97);backdrop-filter:blur(24px);border-bottom:1px so
 .nav-links a{color:var(--text2);text-decoration:none;font-size:13.5px;font-weight:500;transition:color .2s;}
 .nav-links a:hover{color:var(--text);}
 .hero{padding:48px 24px 28px;max-width:980px;margin:0 auto;}
-.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,212,255,0.06);color:var(--cyan);border:1px solid rgba(0,212,255,0.18);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;}
+.badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,224,160,0.06);color:var(--cyan);border:1px solid rgba(16,224,160,0.18);border-radius:20px;padding:5px 16px;font-size:11.5px;font-weight:700;letter-spacing:.7px;text-transform:uppercase;margin-bottom:20px;}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 h1{font-size:clamp(28px,5vw,46px);font-weight:800;line-height:1.1;letter-spacing:-.5px;margin-bottom:12px;}
@@ -44,13 +44,13 @@ input:focus{border-color:var(--cyan);}
 .sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:13px;pointer-events:none;}
 .sfx input{margin-bottom:0;}
 .btn{width:100%;background:linear-gradient(135deg,var(--cyan),var(--blue));color:#000;border:none;border-radius:var(--rs);padding:13px;font-size:15px;font-weight:700;cursor:pointer;margin-top:4px;transition:all .2s;}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,255,0.3);}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,224,160,0.3);}
 .sec-label{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:1px;margin:4px 0 10px;padding-top:10px;border-top:1px solid var(--border);}
 .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 .res-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:16px;text-align:center;}
 .res-label{font-size:11px;color:var(--text3);font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;}
 .res-val{font-size:20px;font-weight:700;font-family:'JetBrains Mono',monospace;}
-.verdict{background:linear-gradient(135deg,rgba(0,230,118,0.08),rgba(0,212,255,0.04));border:1px solid rgba(0,230,118,0.2);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:12px;}
+.verdict{background:linear-gradient(135deg,rgba(0,230,118,0.08),rgba(16,224,160,0.04));border:1px solid rgba(0,230,118,0.2);border-radius:var(--r);padding:20px;text-align:center;margin-bottom:12px;}
 .verdict-icon{font-size:36px;margin-bottom:8px;}
 .verdict-title{font-size:18px;font-weight:700;margin-bottom:4px;}
 .verdict-sub{font-size:13px;color:var(--text2);}
@@ -247,7 +247,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 <div class="badge"><span class="dot"></span>2026 Updated</div>
 <h1>Mortgage <span>Refinance Calculator</span></h1>
 <div style="margin:32px 0;padding:16px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;display:flex;align-items:center;gap:14px">
-<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#00d4ff,#3b9eff);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
+<div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#10e0a0,#2dd4bf);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;flex-shrink:0">A</div>
 <div>
 <div style="font-weight:600;font-size:14px">Written by the <strong>USAFinCalc Team</strong></div>
 <div style="font-size:12px;color:#7a8aaa"><a href="/editorial-policy" style="color:#7a8aaa;text-decoration:none">Editorial Policy</a> · <a href="/methodology" style="color:#7a8aaa;text-decoration:none">Methodology</a></div>
@@ -350,7 +350,7 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:2px solid 
 <p>A refinance is a financial transaction with upfront costs and a payback period — treat it like any investment with a required return. The break-even timeline is the core decision variable: know it before you apply. Extend that break-even analysis to total interest saved or paid, not just monthly payment, to avoid the trap of lower monthly payments that cost more over the life of the loan. And shop multiple lenders — the rate and fee competition on refinances is significant and worth the time.</p>
 </section>
 <div style="max-width:980px;margin:0 auto 24px;padding:0 24px">
-<a href="/heloc-calculator" style="display:inline-block;padding:10px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#00d4ff);text-decoration:none;font-size:14px;font-weight:500;margin:4px">🏡 HELOC Calculator</a>
+<a href="/heloc-calculator" style="display:inline-block;padding:10px 18px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:var(--accent,#10e0a0);text-decoration:none;font-size:14px;font-weight:500;margin:4px">🏡 HELOC Calculator</a>
 </div>
 </main>
 <footer class="site-footer" role="contentinfo">
@@ -409,19 +409,19 @@ function calc(){
   document.getElementById('lifetime').textContent=(lifetime>=0?'+':'')+fmt(lifetime);
   var verd=document.getElementById('verdict');
   if(mSave>0&&be<60){
-    verd.style.background='linear-gradient(135deg,rgba(0,230,118,0.08),rgba(0,212,255,0.04))';
+    verd.style.background='linear-gradient(135deg,rgba(0,230,118,0.08),rgba(16,224,160,0.04))';
     verd.style.borderColor='rgba(0,230,118,0.2)';
     document.getElementById('verdict-icon').textContent='✅';
     document.getElementById('verdict-title').textContent='Refinancing Makes Sense!';
     document.getElementById('verdict-sub').textContent='Break-even in '+be+' months';
   } else if(mSave>0){
-    verd.style.background='linear-gradient(135deg,rgba(255,215,64,0.08),rgba(0,212,255,0.04))';
+    verd.style.background='linear-gradient(135deg,rgba(255,215,64,0.08),rgba(16,224,160,0.04))';
     verd.style.borderColor='rgba(255,215,64,0.2)';
     document.getElementById('verdict-icon').textContent='⚠️';
     document.getElementById('verdict-title').textContent='Consider Carefully';
     document.getElementById('verdict-sub').textContent='Break-even takes '+be+' months';
   } else {
-    verd.style.background='linear-gradient(135deg,rgba(255,77,109,0.08),rgba(0,212,255,0.04))';
+    verd.style.background='linear-gradient(135deg,rgba(255,77,109,0.08),rgba(16,224,160,0.04))';
     verd.style.borderColor='rgba(255,77,109,0.2)';
     document.getElementById('verdict-icon').textContent='❌';
     document.getElementById('verdict-title').textContent='Not Recommended';
