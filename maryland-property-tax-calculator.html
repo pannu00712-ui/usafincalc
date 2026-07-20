@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+    <title>Maryland Property Tax Calculator 2026 | MD Property Tax Estimator</title>
+    <meta content="Calculate your Maryland property tax for 2026. Free estimator shows annual property tax based on assessed value, county rates (0.5%–2.5%+), and homestead exemption." name="description"/>
+    <meta content="maryland property tax calculator, md property tax, maryland property tax rate, homestead exemption maryland, property tax estimator maryland" name="keywords"/>
+    <meta content="USAFinCalc" name="author"/>
+    <meta content="#0F2A4A" name="theme-color"/>
+    <link href="https://usafincalc.com/maryland-property-tax-calculator" rel="canonical"/>
+    <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23f87171' font-family='monospace' font-weight='700'>MD</text></svg>" rel="icon" type="image/svg+xml"/>
+    <meta content="Maryland Property Tax Calculator 2026 | MD Property Tax Estimator" property="og:title"/>
+    <meta content="Calculate your Maryland property tax for 2026. Free estimator shows annual property tax based on assessed value, county rates (0.5%–2.5%+), and homestead exemption." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://usafincalc.com/maryland-property-tax-calculator" property="og:url"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="Maryland Property Tax Calculator 2026" name="twitter:title"/>
+    <meta content="Calculate your Maryland property tax with our free 2026 estimator. See annual taxes by county with homestead exemption." name="twitter:description"/>
+    <meta content="USAFinCalc" property="og:site_name"/>
+    <meta content="en_US" property="og:locale"/>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Maryland Property Tax Calculator 2026",
+      "description": "Calculate your Maryland property tax liability based on assessed value, county tax rate, and homestead exemption. Free, no sign-up.",
+      "url": "https://usafincalc.com/maryland-property-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isAccessibleForFree": true
+    }
+    </script>
+    <style>
+        /* Same styles as previous calculators */
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+          --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+          --text:#FAF9F6; --muted:#B8C4D6;
+          --accent:#C99A3B; --federal:#5C87B8; --state:#B5495A; --takehome:#E8C878;
+          --font:'Sora',sans-serif; --mono:'DM Mono',monospace;
+          --r:14px; --rs:8px;
+        }
+        body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        a{color:var(--accent);text-decoration:none}
+        .logo{font-size:16px;font-weight:600;color:#E8C878}
+        nav.site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .nav-links{display:flex;gap:20px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:13px}
+        .nav-links a:hover{color:var(--text)}
+        .hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+        .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(248,113,113,0.1);color:var(--state);border:1px solid rgba(248,113,113,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+        .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--state)}
+        h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+        h1 span{color:var(--state)}
+        .hero-sub{color:var(--muted);font-size:14px;max-width:700px;line-height:1.8}
+        .hero-author{display:flex;align-items:center;gap:14px;margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+        .hero-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#B5495A,#8B3A47);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+        .hero-author-text{font-weight:600;font-size:13px}
+        .qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+        .qa{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+        .qa strong{color:var(--state)}
+        .main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+        @media(max-width:760px){.main{grid-template-columns:1fr}}
+        .wide{grid-column:1/-1}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+        label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+        input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;margin-bottom:12px}
+        input:focus,select:focus{border-color:var(--state)}
+        .pfx{position:relative;margin-bottom:12px}
+        .pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px}
+        .pfx input{padding-left:26px;margin-bottom:0}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .btn{width:100%;background:var(--state);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px;transition:background .2s}
+        .btn:hover{background:#8B3A47}
+        .net-card{background:linear-gradient(135deg,rgba(248,113,113,0.12),rgba(220,38,38,0.04));border:1px solid rgba(248,113,113,0.25);border-radius:var(--r);padding:20px;text-align:center}
+        .nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+        .na{font-size:38px;font-weight:600;color:var(--state);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+        .nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+        .nm span{color:var(--text)}
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+        @media(max-width:500px){.pay-grid{grid-template-columns:1fr 1fr}}
+        .pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+        .pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+        .pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+        .bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+        .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+        .brows{display:flex;flex-direction:column;gap:7px}
+        .br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+        .bl{display:flex;align-items:center;gap:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .blbl{color:var(--muted)}
+        .ba{font-family:var(--mono);font-weight:500}
+        .divider{height:1px;background:var(--border);margin:7px 0}
+        .dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+        .dr:last-child{border-bottom:none}
+        .dk{color:var(--muted)}
+        .dv{font-family:var(--mono);font-weight:500}
+        .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+        .state-data-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:12px}
+        .state-data-card h2{font-size:18px;font-weight:600;color:var(--text);margin-bottom:12px}
+        .state-data-card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+        .state-data-card ul{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 8px 20px}
+        .state-data-card .source{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+        .faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+        .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+        .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+        .faq-q::after{content:"+";color:var(--state);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+        .faq-item.open .faq-a{max-height:400px;padding-top:10px}
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+        .meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+        .meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+        footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+        footer a:hover{color:var(--accent)}
+        .md-tax-badge{display:inline-block;background:rgba(248,113,113,0.15);border:1px solid rgba(248,113,113,0.3);border-radius:20px;padding:2px 14px;font-size:12px;color:var(--state);font-family:var(--mono);margin-left:8px}
+        .quick-table{width:100%;border-collapse:collapse;font-size:13px}
+        .quick-table th,.quick-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+        .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+        @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+        input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<nav class="site-nav">
+    <span class="logo">USA<span style="color:#C99A3B">FinCalc</span></span>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+        <li><a href="/tax-calculator-usa">Tax</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/salary-calculator-usa">Salary</a></li>
+        <li><a href="/#states-h">States</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/">All Tools</a></li>
+    </ul>
+</nav>
+<main>
+<div class="hero">
+    <div class="badge">🏠 Maryland Property Tax 2026 • Estimator</div>
+    <h1>Maryland Property <span>Tax Calculator</span></h1>
+    <div class="hero-author">
+        <div class="hero-avatar">MD</div>
+        <div>
+            <div class="hero-author-text">Written by the <strong>USAFinCalc Team</strong></div>
+            <div style="font-size:12px;color:#B8C4D6"><a href="/editorial-policy">Editorial Policy</a> · <a href="/methodology">Methodology</a></div>
+        </div>
+    </div>
+    <p class="hero-sub"><strong>Estimate your Maryland property tax</strong> for the 2026 tax year. Enter your home's assessed value and county to see your annual property tax bill, including <strong>county rates (0.5%–2.5%+)</strong>, <strong>homestead exemption (10% cap)</strong>, and <strong>homeowners tax credit</strong>.<span class="md-tax-badge">Updated 2026</span></p>
+</div>
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your property value below to calculate your Maryland property tax.</div></div>
+<div class="main">
+    <div>
+        <div class="card">
+            <div class="ct">🏡 Property Details</div>
+            <label for="property-value">Assessed Property Value</label>
+            <div class="pfx"><span>$</span><input id="property-value" type="number" min="0" value="350000" oninput="calculateTax()"/></div>
+            <div class="row2">
+                <div>
+                    <label for="county">County</label>
+                    <select id="county" onchange="calculateTax()">
+                        <option value="montgomery">Montgomery</option>
+                        <option value="prince-georges">Prince George's</option>
+                        <option value="baltimore-county">Baltimore County</option>
+                        <option value="baltimore-city">Baltimore City</option>
+                        <option value="anne-arundel">Anne Arundel</option>
+                        <option value="howard">Howard</option>
+                        <option value="harford">Harford</option>
+                        <option value="carroll">Carroll</option>
+                        <option value="frederick">Frederick</option>
+                        <option value="washington-md">Washington</option>
+                        <option value="allegany">Allegany</option>
+                        <option value="garrett">Garrett</option>
+                        <option value="caroline">Caroline</option>
+                        <option value="kent-md">Kent</option>
+                        <option value="queen-annes">Queen Anne's</option>
+                        <option value="talbot">Talbot</option>
+                        <option value="dorchester">Dorchester</option>
+                        <option value="somerset-md">Somerset</option>
+                        <option value="wicomico">Wicomico</option>
+                        <option value="worcester">Worcester</option>
+                        <option value="st-marys">St. Mary's</option>
+                        <option value="charles">Charles</option>
+                        <option value="calvert">Calvert</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prop-type">Property Type</label>
+                    <select id="prop-type" onchange="calculateTax()">
+                        <option value="primary">Primary Residence</option>
+                        <option value="secondary">Secondary/Vacation</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment/Rental</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row2">
+                <div>
+                    <label for="homestead-exemption">Homestead Exemption (10% cap)</label>
+                    <select id="homestead-exemption" onchange="calculateTax()">
+                        <option value="yes">Yes (Primary Residence)</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="homeowner-credit">Homeowner's Tax Credit</label>
+                    <div class="pfx"><span>$</span><input id="homeowner-credit" type="number" min="0" value="0" oninput="calculateTax()"/></div>
+                </div>
+            </div>
+            <div class="sec-label">📍 Maryland — <span style="color:var(--state)">0.5%–2.5%+ Effective Rate</span></div>
+            <div style="background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.15);border-radius:var(--rs);padding:8px 14px;font-size:11px;color:var(--muted);margin-bottom:12px">
+                <strong style="color:var(--state)">📊 Homestead Exemption: 10% assessment cap</strong> · Homeowner's Tax Credit available · 100% assessment ratio · County + state property taxes
+            </div>
+            <button class="btn" onclick="calculateTax()">Calculate Property Tax →</button>
+        </div>
+    </div>
+    <div id="result-col">
+        <div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your property details</div><div style="font-size:12px;font-family:var(--mono)">See your annual property tax</div></div>
+    </div>
+    <div class="wide" id="detail-col" style="display:none">
+        <div class="dcard">
+            <div class="bt">📋 Property Tax Breakdown — Maryland</div>
+            <div id="detail-rows"></div>
+        </div>
+    </div>
+</div>
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>Maryland Property Tax Estimator — Quick Look</h2>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Estimated annual property tax for common home values.</p>
+        <div style="overflow-x:auto">
+            <table class="quick-table">
+                <thead><tr><th>Assessed Value</th><th>County</th><th>Tax Rate</th><th>Annual Tax</th><th>Monthly</th></tr></thead>
+                <tbody>
+                    <tr><td>$300,000</td><td>Montgomery (1.1%)</td><td>1.10%</td><td>$3,300</td><td>$275</td></tr>
+                    <tr><td>$350,000</td><td>Montgomery (1.1%)</td><td>1.10%</td><td>$3,850</td><td>$321</td></tr>
+                    <tr><td>$350,000</td><td>Baltimore County (1.2%)</td><td>1.20%</td><td>$4,200</td><td>$350</td></tr>
+                    <tr><td>$350,000</td><td>Prince George's (1.3%)</td><td>1.30%</td><td>$4,550</td><td>$379</td></tr>
+                    <tr><td>$500,000</td><td>Montgomery (1.1%)</td><td>1.10%</td><td>$5,500</td><td>$458</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="source">* Estimates for primary residence. Actual tax varies by city and special districts.</p>
+    </div>
+</div>
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>Maryland Property Tax Information 2026</h2>
+        <p><strong>Average Effective Rate:</strong> <span style="color:var(--state)">0.90%–1.50%</span> <span class="md-tax-badge">State + County + Municipal</span></p>
+        <p><strong>Assessment Ratio:</strong> Residential property assessed at <strong>100%</strong> of market value.</p>
+        <p><strong>Key Programs:</strong></p>
+        <ul>
+            <li><strong>Homestead Exemption:</strong> Limits annual assessment increases to 10% for primary residences</li>
+            <li><strong>Homeowner's Tax Credit:</strong> Income-based credit for eligible homeowners</li>
+            <li><strong>Senior Tax Credit:</strong> Credit for homeowners 65+ with income under certain limits</li>
+            <li><strong>Disabled Veterans Exemption:</strong> Exemption for 100% disabled veterans</li>
+        </ul>
+        <p><strong>Tax Composition:</strong> State ~25%, County ~35%, Municipal ~20%, School ~20%</p>
+        <p class="source"><strong>Source:</strong> Maryland Department of Assessments and Taxation — <a href="https://dat.maryland.gov/" target="_blank">dat.maryland.gov</a> · Updated July 2026</p>
+    </div>
+</div>
+<div class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Maryland property tax rate?</div><div class="faq-a">Maryland's average effective rate is approximately <strong>0.90%–1.50%</strong>. The state has both state (0.112%) and county taxes combined. Montgomery and Howard counties have some of the highest rates.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Homestead Exemption in Maryland?</div><div class="faq-a">The <strong>Homestead Exemption</strong> limits annual assessment increases to <strong>10%</strong> for owner-occupied primary residences. This protects homeowners from sudden tax spikes due to rising property values.</div></div>
+</div>
+<section style="max-width:980px;margin:0 auto;padding:0 24px 50px">
+    <h2 style="font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px">Related Calculators</h2>
+    <div class="rel-grid">
+        <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare across states</div></a>
+        <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly payment</div></a>
+    </div>
+</section>
+<div class="meth">
+    <div class="meth-box">
+        <p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+        <p>Maryland property tax calculations use county-specific rates from the MD Department of Assessments and Taxation. 100% assessment ratio applies. Homestead exemption (10% cap) and homeowner's tax credit included. Source: <a href="https://dat.maryland.gov/" target="_blank">MD DAT</a> · Updated July 2026</p>
+    </div>
+</div>
+</main>
+<footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
+        <a href="/">Home</a>
+        <a href="/tax-calculator-usa">Tax Calculator</a>
+        <a href="/salary-calculator-usa">Salary Calculator</a>
+        <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+        <a href="/paycheck-calculator">Paycheck Calculator</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+    </div>
+    <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice.</p>
+</footer>
+<script>
+const mdRates = {
+    montgomery: 0.011, 'prince-georges': 0.013, 'baltimore-county': 0.012,
+    'baltimore-city': 0.012, 'anne-arundel': 0.011, howard: 0.010,
+    harford: 0.011, carroll: 0.010, frederick: 0.010, 'washington-md': 0.010,
+    allegany: 0.011, garrett: 0.010, caroline: 0.011, 'kent-md': 0.010,
+    'queen-annes': 0.011, talbot: 0.010, dorchester: 0.011,
+    'somerset-md': 0.010, wicomico: 0.011, worcester: 0.010,
+    'st-marys': 0.010, charles: 0.010, calvert: 0.010
+};
+function calculateTax(){
+    const value=+document.getElementById('property-value').value||0;
+    const county=document.getElementById('county').value;
+    const propType=document.getElementById('prop-type').value;
+    const homestead=document.getElementById('homestead-exemption').value;
+    let credit=+document.getElementById('homeowner-credit').value||0;
+    const rate=mdRates[county]||0.011;
+    const countyName=county.replace('-',' ').toUpperCase();
+    let baseTax=value*rate;
+    let capSavings=0;
+    if(homestead==='yes' && propType==='primary'){
+        capSavings=baseTax*0.10;
+    }
+    let totalTax=baseTax-capSavings-credit;
+    totalTax=Math.max(0,totalTax);
+    const effRate=value>0?(totalTax/value)*100:0;
+    document.getElementById('qa-box').innerHTML=`Maryland property tax: <strong>$${Math.round(totalTax).toLocaleString()}</strong> per year · Effective rate: <strong>${effRate.toFixed(2)}%</strong>`;
+    document.getElementById('result-col').innerHTML=`
+        <div class="net-card"><div class="nl">Annual Property Tax</div><div class="na">$${Math.round(totalTax).toLocaleString()}</div>
+        <div class="nm">Effective rate: <span>${effRate.toFixed(2)}%</span> · Monthly: <span>$${Math.round(totalTax/12).toLocaleString()}</span></div></div>
+        <div class="pay-grid"><div class="pay-box"><div class="pay-l">Base Tax</div><div class="pay-v" style="color:var(--federal)">$${Math.round(baseTax).toLocaleString()}</div></div>
+        <div class="pay-box"><div class="pay-l">Homestead Savings</div><div class="pay-v" style="color:var(--state)">$${Math.round(capSavings).toLocaleString()}</div></div>
+        <div class="pay-box"><div class="pay-l">Tax Credit</div><div class="pay-v" style="color:var(--takehome)">$${Math.round(credit).toLocaleString()}</div></div></div>
+        <div class="bcard"><div class="bt">Maryland Property Tax Breakdown</div>
+        <div class="sbar"><div class="seg" style="width:${Math.min(100,(totalTax/(value+1)*100)).toFixed(1)}%;background:var(--federal)"></div>
+        <div class="seg" style="width:${Math.max(0,100-(totalTax/(value+1)*100)).toFixed(1)}%;background:var(--takehome)"></div></div>
+        <div class="brows"><div class="br"><div class="bl"><div class="dot" style="background:var(--federal)"></div><div class="blbl">Total Property Tax</div></div><div class="ba" style="color:var(--state)">$${Math.round(totalTax).toLocaleString()}</div></div>
+        <div class="divider"></div><div class="br"><div class="bl"><div class="blbl"><strong>Total Annual Tax</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">$${Math.round(totalTax).toLocaleString()}</div></div></div></div>
+        <div style="margin-top:10px;background:rgba(248,113,113,0.04);border:1px solid rgba(248,113,113,0.1);border-radius:var(--rs);padding:8px 14px;font-size:10px;color:var(--muted)">
+        📊 <strong style="color:var(--text)">Quick Facts:</strong> Homestead: 10% cap · Homeowner's tax credit available · 100% assessment ratio</div>`;
+    document.getElementById('detail-col').style.display='block';
+    document.getElementById('detail-rows').innerHTML=`
+        <div class="dr"><span class="dk">Market Value</span><span class="dv">$${value.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Assessment Ratio</span><span class="dv">100%</span></div>
+        <div class="dr"><span class="dk">Tax Rate</span><span class="dv" style="color:var(--state)">${(rate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Base Tax</span><span class="dv" style="color:var(--federal)">$${Math.round(baseTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Homestead Savings</span><span class="dv" style="color:var(--state)">$${Math.round(capSavings).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Tax Credit Applied</span><span class="dv" style="color:var(--takehome)">$${Math.round(credit).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk"><strong>Total Annual Property Tax</strong></span><span class="dv" style="color:var(--accent);font-size:16px">$${Math.round(totalTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Monthly Payment</span><span class="dv">$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Tax Rate</span><span class="dv">${effRate.toFixed(2)}%</span></div>`;
+}
+calculateTax();
+</script>
+</body>
+</html>

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+    <title>Illinois Property Tax Calculator 2026 | IL Property Tax Estimator</title>
+    <meta content="Calculate your Illinois property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rates (0.5%–2.5%+), and homeowner exemption." name="description"/>
+    <meta content="illinois property tax calculator, il property tax, illinois property tax rate, homeowner exemption illinois, property tax estimator, illinois property tax 2026" name="keywords"/>
+    <meta content="USAFinCalc" name="author"/>
+    <meta content="#0F2A4A" name="theme-color"/>
+    <link href="https://usafincalc.com/illinois-property-tax-calculator" rel="canonical"/>
+    <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2360a5fa' font-family='monospace' font-weight='700'>IL</text></svg>" rel="icon" type="image/svg+xml"/>
+    <meta content="Illinois Property Tax Calculator 2026 | IL Property Tax Estimator" property="og:title"/>
+    <meta content="Calculate your Illinois property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rates (0.5%–2.5%+), and homeowner exemption." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://usafincalc.com/illinois-property-tax-calculator" property="og:url"/>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Illinois Property Tax Calculator 2026",
+      "description": "Calculate your Illinois property tax liability based on assessed value, county tax rate, and homeowner exemption. Free, no sign-up.",
+      "url": "https://usafincalc.com/illinois-property-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isAccessibleForFree": true
+    }
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+          --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+          --text:#FAF9F6; --muted:#B8C4D6;
+          --accent:#C99A3B; --federal:#5C87B8; --state:#5C87B8; --fica:#C97A3B; --takehome:#E8C878;
+          --font:'Sora',sans-serif; --mono:'DM Mono',monospace;
+          --r:14px; --rs:8px;
+        }
+        body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav.site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-size:16px;font-weight:600;color:#E8C878}
+        .nav-links{display:flex;gap:20px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:13px}
+        .nav-links a:hover{color:var(--text)}
+
+        .hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+        .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,0.1);color:var(--state);border:1px solid rgba(96,165,250,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+        .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--state)}
+        h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+        h1 span{color:var(--state)}
+        .hero-sub{color:var(--muted);font-size:14px;max-width:700px;line-height:1.8}
+        .hero-author{display:flex;align-items:center;gap:14px;margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+        .hero-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5C87B8,#C99A3B);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+        .hero-author-text{font-weight:600;font-size:13px}
+        .hero-author-text a{color:#B8C4D6;text-decoration:none}
+        .hero-author-text a:hover{color:var(--text)}
+
+        .qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+        .qa{background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+        .qa strong{color:var(--state)}
+
+        .main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+        @media(max-width:760px){.main{grid-template-columns:1fr}}
+        .wide{grid-column:1/-1}
+
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+        label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+        input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;margin-bottom:12px}
+        input:focus,select:focus{border-color:var(--state)}
+        .pfx{position:relative;margin-bottom:12px}
+        .pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px}
+        .pfx input{padding-left:26px;margin-bottom:0}
+        .sfx{position:relative;margin-bottom:12px}
+        .sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px}
+        .sfx input{padding-right:28px;margin-bottom:0}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:6px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+        .btn{width:100%;background:var(--state);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px;transition:background .2s}
+        .btn:hover{background:#C99A3B}
+
+        .net-card{background:linear-gradient(135deg,rgba(96,165,250,0.12),rgba(59,130,246,0.04));border:1px solid rgba(96,165,250,0.25);border-radius:var(--r);padding:20px;text-align:center}
+        .nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+        .na{font-size:38px;font-weight:600;color:var(--state);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+        .nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+        .nm span{color:var(--text)}
+
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+        @media(max-width:500px){.pay-grid{grid-template-columns:1fr 1fr}}
+        .pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+        .pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+        .pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+
+        .bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+        .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+        .brows{display:flex;flex-direction:column;gap:7px}
+        .br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+        .bl{display:flex;align-items:center;gap:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .blbl{color:var(--muted)}
+        .ba{font-family:var(--mono);font-weight:500}
+        .divider{height:1px;background:var(--border);margin:7px 0}
+
+        .dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+        .dr:last-child{border-bottom:none}
+        .dk{color:var(--muted)}
+        .dv{font-family:var(--mono);font-weight:500}
+
+        .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+
+        .state-data-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:12px}
+        .state-data-card h2{font-size:18px;font-weight:600;color:var(--text);margin-bottom:12px}
+        .state-data-card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+        .state-data-card ul{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 8px 20px}
+        .state-data-card .source{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+
+        .faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+        .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+        .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+        .faq-q::after{content:"+";color:var(--state);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+        .faq-item.open .faq-a{max-height:400px;padding-top:10px}
+
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+
+        .related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+        .related-section h2{font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px}
+        .related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+        .related-links li{list-style:none}
+        .related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1F4670;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#C99A3B!important;text-decoration:none!important;font-size:13px;font-weight:500}
+
+        .meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+        .meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+        footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+        footer a:hover{color:var(--accent)}
+
+        .il-tax-badge{display:inline-block;background:rgba(96,165,250,0.15);border:1px solid rgba(96,165,250,0.3);border-radius:20px;padding:2px 14px;font-size:12px;color:var(--state);font-family:var(--mono);margin-left:8px}
+        .quick-table{width:100%;border-collapse:collapse;font-size:13px}
+        .quick-table th,.quick-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+        .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+
+        @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+        input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <span class="logo">USA<span style="color:#C99A3B">FinCalc</span></span>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+        <li><a href="/tax-calculator-usa">Tax</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/salary-calculator-usa">Salary</a></li>
+        <li><a href="/#states-h">States</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/">All Tools</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="badge">🏠 Illinois Property Tax 2026 • Estimator</div>
+    <h1>Illinois Property <span>Tax Calculator</span></h1>
+    <div class="hero-author">
+        <div class="hero-avatar">IL</div>
+        <div>
+            <div class="hero-author-text">Written by the <strong>USAFinCalc Team</strong></div>
+            <div style="font-size:12px;color:#B8C4D6"><a href="/editorial-policy">Editorial Policy</a> · <a href="/methodology">Methodology</a></div>
+        </div>
+    </div>
+    <p class="hero-sub"><strong>Estimate your Illinois property tax</strong> for the 2026 tax year. Enter your home's assessed value and county to see your annual property tax bill, including the <strong>average tax rate (1.0%–2.5%+)</strong>, <strong>Homeowner Exemption ($6,000)</strong>, and <strong>Senior Freeze</strong>.<span class="il-tax-badge">Updated 2026</span></p>
+</div>
+
+<!-- QA -->
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your property value below to calculate your Illinois property tax.</div></div>
+
+<!-- MAIN -->
+<div class="main">
+    <div>
+        <div class="card">
+            <div class="ct">🏡 Property Details</div>
+            <label for="property-value">Assessed Property Value <span style="color:var(--muted);font-weight:400;">(market value)</span></label>
+            <div class="pfx"><span>$</span><input id="property-value" type="number" min="0" value="300000" oninput="calculateTax()"/></div>
+
+            <div class="row2">
+                <div>
+                    <label for="county">County</label>
+                    <select id="county" onchange="calculateTax()">
+                        <option value="cook" selected>Cook (Chicago)</option>
+                        <option value="dupage">DuPage</option>
+                        <option value="lake-il">Lake</option>
+                        <option value="will">Will</option>
+                        <option value="kane">Kane</option>
+                        <option value="mchenry">McHenry</option>
+                        <option value="winnebago">Winnebago</option>
+                        <option value="rock-island">Rock Island</option>
+                        <option value="sangamon">Sangamon</option>
+                        <option value="peoria">Peoria</option>
+                        <option value="mclean">McLean</option>
+                        <option value="champaign">Champaign</option>
+                        <option value="st-clair">St. Clair</option>
+                        <option value="madison-il">Madison</option>
+                        <option value="tazewell">Tazewell</option>
+                        <option value="dekalb">DeKalb</option>
+                        <option value="kendall">Kendall</option>
+                        <option value="grundy">Grundy</option>
+                        <option value="lasalle">LaSalle</option>
+                        <option value="whiteside">Whiteside</option>
+                        <option value="coles">Coles</option>
+                        <option value="jackson-il">Jackson</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prop-type">Property Type</label>
+                    <select id="prop-type" onchange="calculateTax()">
+                        <option value="primary">Primary Residence</option>
+                        <option value="secondary">Secondary/Vacation</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment/Rental</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label for="homeowner-exemption">Homeowner Exemption <span style="color:var(--muted);font-weight:400;">(primary residence)</span></label>
+                    <div class="pfx"><span>$</span><input id="homeowner-exemption" type="number" min="0" value="6000" oninput="calculateTax()"/></div>
+                </div>
+                <div>
+                    <label for="additional-exemptions">Additional Exemptions <span style="color:var(--muted);font-weight:400;">(senior, veteran, etc.)</span></label>
+                    <div class="pfx"><span>$</span><input id="additional-exemptions" type="number" min="0" value="0" oninput="calculateTax()"/></div>
+                </div>
+            </div>
+
+            <div class="sec-label">📍 Illinois — <span style="color:var(--state)">1.0%–2.5%+ Effective Rate</span></div>
+            <div style="background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.15);border-radius:var(--rs);padding:8px 14px;font-size:11px;color:var(--muted);margin-bottom:12px">
+                <strong style="color:var(--state)">📊 Homeowner Exemption: $6,000</strong> · Senior Freeze: 65+ with income &lt; $65,000 · Veterans exemption · 1/3 assessment ratio in some counties
+            </div>
+            <button class="btn" onclick="calculateTax()">Calculate Property Tax →</button>
+        </div>
+    </div>
+
+    <div id="result-col">
+        <div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your property details</div><div style="font-size:12px;font-family:var(--mono)">See your annual property tax</div></div>
+    </div>
+
+    <div class="wide" id="detail-col" style="display:none">
+        <div class="dcard">
+            <div class="bt">📋 Property Tax Breakdown — Illinois</div>
+            <div id="detail-rows"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Reference Table -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>Illinois Property Tax Estimator — Quick Look</h2>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Estimated annual property tax for common home values (primary residence, with $6,000 homeowner exemption).</p>
+        <div style="overflow-x:auto">
+            <table class="quick-table">
+                <thead>
+                    <tr><th>Assessed Value</th><th>County</th><th>Tax Rate</th><th>Annual Tax</th><th>Monthly</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$200,000</td><td>Cook (1.8%)</td><td>1.80%</td><td>$3,492</td><td>$291</td></tr>
+                    <tr><td>$300,000</td><td>Cook (1.8%)</td><td>1.80%</td><td>$5,292</td><td>$441</td></tr>
+                    <tr><td><strong>$300,000</strong></td><td><strong>DuPage (2.0%)</strong></td><td><strong>2.00%</strong></td><td><strong>$5,880</strong></td><td><strong>$490</strong></td></tr>
+                    <tr><td>$400,000</td><td>Cook (1.8%)</td><td>1.80%</td><td>$7,092</td><td>$591</td></tr>
+                    <tr><td>$400,000</td><td>Lake (2.2%)</td><td>2.20%</td><td>$8,668</td><td>$722</td></tr>
+                    <tr><td>$500,000</td><td>Cook (1.8%)</td><td>1.80%</td><td>$8,892</td><td>$741</td></tr>
+                    <tr><td>$500,000</td><td>Will (2.0%)</td><td>2.00%</td><td>$9,880</td><td>$823</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="source" style="margin-top:10px;font-size:11px">* Estimates for primary residence with $6,000 homeowner exemption. Actual tax varies by municipality and school district.</p>
+    </div>
+</div>
+
+<!-- State Data Block -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>Illinois Property Tax Information 2026</h2>
+        <p><strong>Average Effective Rate:</strong> <span style="color:var(--state)">2.08%</span> (2nd highest in the United States) <span class="il-tax-badge">#2 in the Nation</span></p>
+        <p><strong>Homeowner Exemption:</strong> <strong>$6,000</strong> reduction in Equalized Assessed Value (EAV) for owner-occupied primary residences. Saves approximately $300–$500 per year.</p>
+        <p><strong>Senior Freeze (Property Tax Assessment Freeze):</strong> Freezes the assessed value of property for homeowners <strong>65 years or older</strong> with household income under <strong>$65,000</strong>. Assessed value stays at the base year level.</p>
+        <p><strong>Key Exemptions:</strong></p>
+        <ul>
+            <li><strong>Senior Citizens Exemption:</strong> Additional $5,000 reduction for seniors 65+ (in addition to homeowner exemption)</li>
+            <li><strong>Veterans Exemption:</strong> $5,000 reduction for honorably discharged veterans</li>
+            <li><strong>Disabled Veterans Exemption:</strong> Up to $250,000 reduction for permanently disabled veterans</li>
+            <li><strong>Homestead Improvement Exemption:</strong> 100% exemption for new construction/improvements for 4 years</li>
+        </ul>
+        <p><strong>Assessment Ratio:</strong> Most counties assess at <strong>33.3%</strong> of market value (1/3 assessment). Some counties use 100% assessment.</p>
+        <p><strong>Tax Composition:</strong> School districts ~60%, Municipal ~20%, County ~10%, Special districts ~10%</p>
+        <p class="source"><strong>Source:</strong> Illinois Department of Revenue — <a href="https://tax.illinois.gov/" style="color:var(--accent);" target="_blank">tax.illinois.gov</a> · Updated July 2026</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2>Frequently Asked Questions — Illinois Property Tax</h2>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Illinois property tax rate for 2026?</div><div class="faq-a">Illinois has the <strong>2nd highest property taxes in the United States</strong> with an average effective rate of <strong>2.08%</strong>. County rates range from <strong>1.0% in southern Illinois</strong> to over <strong>2.5% in Cook, Lake, and DuPage</strong> counties. Rates include municipal, school, county, and special district taxes.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Homeowner Exemption in Illinois?</div><div class="faq-a">The <strong>Homeowner Exemption</strong> reduces the Equalized Assessed Value (EAV) of your primary residence by <strong>$6,000</strong>. This can save homeowners <strong>$300–$500</strong> per year depending on the local tax rate. You must apply with your county assessor.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is Illinois property tax calculated?</div><div class="faq-a">Property tax is calculated as: <br><strong>Tax = (Assessed Value × Assessment Ratio - Exemptions) × Tax Rate</strong> <br>Example: $300,000 home in Cook County (1/3 assessment, 1.8% rate, $6,000 exemption): (($300,000 × 0.333) - $6,000) × 0.018 = <strong>$5,292</strong> annual tax.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Senior Freeze program in Illinois?</div><div class="faq-a">The <strong>Senior Freeze (Property Tax Assessment Freeze)</strong> program freezes the assessed value of your home for homeowners <strong>65 years or older</strong> with a total household income under <strong>$65,000</strong>. This prevents your property tax from increasing due to rising property values.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which Illinois county has the highest property taxes?</div><div class="faq-a"><strong>Cook, Lake, DuPage, and Kane</strong> counties typically have the highest effective tax rates, often exceeding <strong>2.0%–2.5%</strong>. <strong>Southern Illinois counties like Jackson, Coles, and Whiteside</strong> have lower rates around 1.0%–1.5%.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the veterans property tax exemption in Illinois?</div><div class="faq-a">Illinois offers a <strong>$5,000 reduction</strong> in Equalized Assessed Value for honorably discharged veterans. <strong>Disabled veterans</strong> may qualify for an exemption of up to <strong>$250,000</strong> depending on the severity of their disability.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the assessment ratio in Illinois?</div><div class="faq-a">Most Illinois counties use a <strong>33.3% (1/3) assessment ratio</strong>, meaning properties are assessed at one-third of their market value. However, some counties like Cook use a <strong>10% assessment ratio</strong> for residential properties. The Equalized Assessed Value (EAV) is the assessed value multiplied by the state equalization factor.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">When are Illinois property taxes due?</div><div class="faq-a">Property taxes are typically due in <strong>two installments</strong>: the first installment is due in <strong>June</strong> (usually 55% of the prior year's bill) and the second installment is due in <strong>September</strong>. Some counties offer quarterly payment options.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I deduct Illinois property taxes on my federal return?</div><div class="faq-a">Yes. Illinois property tax is deductible on your federal income tax return if you itemize. However, the <strong>SALT (State And Local Tax) deduction is capped at $10,000</strong> ($5,000 for married filing separately) for the 2026 tax year.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why are property taxes so high in Illinois?</div><div class="faq-a">Illinois property taxes are high due to several factors: <strong>high pension obligations</strong> (school districts and municipalities), <strong>high school funding costs</strong> (school taxes account for ~60% of the bill), <strong>home rule municipalities</strong>, and <strong>limited state aid</strong> to local governments.</div></div>
+</div>
+
+<!-- Related Calculators -->
+<section class="related-section">
+    <div class="related">
+        <h2>Related Calculators & Tools</h2>
+        <div class="rel-grid">
+            <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
+            <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
+            <a class="rel-card" href="/illinois-income-tax-calculator"><div class="rt">💰 Illinois Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/illinois-paycheck-calculator"><div class="rt">📄 Illinois Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare Illinois to your city</div></a>
+        </div>
+    </div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-section">
+    <h2>Related Articles</h2>
+    <ul class="related-links">
+        <li><a href="/blog/illinois-property-tax-guide-2026">Illinois Property Tax Guide 2026: What Homeowners Need to Know</a></li>
+        <li><a href="/blog/homeowner-exemption-illinois-2026">Illinois Homeowner Exemption 2026: How to Save on Property Taxes</a></li>
+        <li><a href="/blog/illinois-vs-indiana-property-tax">Illinois vs. Indiana Property Tax: Which State Is More Expensive?</a></li>
+    </ul>
+</section>
+
+<!-- Methodology -->
+<div class="meth">
+    <div class="meth-box">
+        <p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+        <p>Illinois property tax calculations use county-specific effective tax rates from the Illinois Department of Revenue and county assessor offices. The average rate of 2.08% is the 2nd highest in the nation. Homeowner exemption of $6,000 is applied for primary residences. Assessment ratio of 33.3% is used for most counties. Source: <a href="https://tax.illinois.gov/" target="_blank">IL Department of Revenue</a> · Updated July 2026</p>
+    </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
+        <a href="/">Home</a>
+        <a href="/tax-calculator-usa">Tax Calculator</a>
+        <a href="/salary-calculator-usa">Salary Calculator</a>
+        <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+        <a href="/paycheck-calculator">Paycheck Calculator</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0">
+        <span style="background:rgba(96,165,250,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--state)">✅ Calculators: 0 Data Stored</span>
+        <span style="background:rgba(245,158,11,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--fica)">⚠️ Ads & Affiliate Links: Third-Party Cookies</span>
+    </div>
+    <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// County-specific effective tax rates (combined municipal + school + county + special)
+// Based on Illinois Department of Revenue data
+const countyRates = {
+    'cook': 0.018,
+    'dupage': 0.020,
+    'lake-il': 0.022,
+    'will': 0.020,
+    'kane': 0.019,
+    'mchenry': 0.019,
+    'winnebago': 0.021,
+    'rock-island': 0.018,
+    'sangamon': 0.019,
+    'peoria': 0.020,
+    'mclean': 0.018,
+    'champaign': 0.017,
+    'st-clair': 0.016,
+    'madison-il': 0.017,
+    'tazewell': 0.018,
+    'dekalb': 0.019,
+    'kendall': 0.019,
+    'grundy': 0.017,
+    'lasalle': 0.016,
+    'whiteside': 0.015,
+    'coles': 0.016,
+    'jackson-il': 0.015
+};
+
+function calculateTax(){
+    const value = +document.getElementById('property-value').value || 0;
+    const county = document.getElementById('county').value;
+    const propType = document.getElementById('prop-type').value;
+    let homeownerExemption = +document.getElementById('homeowner-exemption').value || 0;
+    let additionalExemptions = +document.getElementById('additional-exemptions').value || 0;
+
+    const rate = countyRates[county] || 0.019;
+    const countyName = county.replace('-',' ').toUpperCase();
+
+    // Assessment ratio: 33.3% (1/3) for most Illinois counties
+    // Some counties use different ratios, but we'll use the standard 1/3
+    const assessmentRatio = 0.333;
+    const assessedValue = value * assessmentRatio;
+
+    // Apply exemptions (homeowner + additional)
+    const totalExemptions = (propType === 'primary' ? homeownerExemption : 0) + additionalExemptions;
+    const equalizedAssessedValue = Math.max(0, assessedValue - totalExemptions);
+
+    // Calculate tax
+    const totalTax = equalizedAssessedValue * rate;
+
+    // Effective rate on market value
+    const effectiveRateDisplay = value > 0 ? (totalTax / value) * 100 : 0;
+
+    // Update QA
+    document.getElementById('qa-box').innerHTML =
+        `Illinois property tax: <strong>$${Math.round(totalTax).toLocaleString()}</strong> per year · Effective rate: <strong>${effectiveRateDisplay.toFixed(2)}%</strong> · ${countyName} County`;
+
+    // Result card
+    document.getElementById('result-col').innerHTML = `
+        <div class="net-card">
+            <div class="nl">Annual Property Tax</div>
+            <div class="na">$${Math.round(totalTax).toLocaleString()}</div>
+            <div class="nm">Effective rate: <span>${effectiveRateDisplay.toFixed(2)}%</span> · Monthly: <span>$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        </div>
+        <div class="pay-grid">
+            <div class="pay-box"><div class="pay-l">Assessed Value</div><div class="pay-v" style="color:var(--federal)">$${Math.round(assessedValue).toLocaleString()}</div></div>
+            <div class="pay-box"><div class="pay-l">Tax Rate</div><div class="pay-v" style="color:var(--state)">${(rate*100).toFixed(2)}%</div></div>
+            <div class="pay-box"><div class="pay-l">Exemptions</div><div class="pay-v" style="color:var(--takehome)">$${totalExemptions.toLocaleString()}</div></div>
+        </div>
+        <div class="bcard">
+            <div class="bt">Illinois Property Tax Breakdown</div>
+            <div class="sbar">
+                <div class="seg" style="width:${Math.min(100, (totalTax/(value+1)*100)).toFixed(1)}%;background:var(--federal)"></div>
+                <div class="seg" style="width:${Math.max(0, 100 - (totalTax/(value+1)*100)).toFixed(1)}%;background:var(--takehome)"></div>
+            </div>
+            <div class="brows">
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--federal)"></div><div class="blbl">Equalized Assessed Value</div></div><div class="ba">$${Math.round(equalizedAssessedValue).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--state)"></div><div class="blbl">Tax Rate (${(rate*100).toFixed(2)}%)</div></div><div class="ba" style="color:var(--state)">${(rate*100).toFixed(2)}%</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--takehome)"></div><div class="blbl">Homeowner Exemption</div></div><div class="ba" style="color:var(--takehome)">$${(propType === 'primary' ? homeownerExemption : 0).toLocaleString()}</div></div>
+                <div class="divider"></div>
+                <div class="br"><div class="bl"><div class="blbl"><strong>Total Annual Tax</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">$${Math.round(totalTax).toLocaleString()}</div></div>
+            </div>
+        </div>
+        <div style="margin-top:10px;background:rgba(96,165,250,0.04);border:1px solid rgba(96,165,250,0.1);border-radius:var(--rs);padding:8px 14px;font-size:10px;color:var(--muted)">
+            📊 <strong style="color:var(--text)">Quick Facts:</strong> #2 highest property tax in US · Avg rate: 2.08% · Homeowner exemption: $6,000 · Senior freeze available
+        </div>
+    `;
+
+    // Detail rows
+    document.getElementById('detail-col').style.display='block';
+    document.getElementById('detail-rows').innerHTML = `
+        <div class="dr"><span class="dk">Market Value</span><span class="dv">$${value.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Assessment Ratio</span><span class="dv">${(assessmentRatio*100).toFixed(1)}% (1/3)</span></div>
+        <div class="dr"><span class="dk">Assessed Value</span><span class="dv" style="color:var(--federal)">$${Math.round(assessedValue).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Homeowner Exemption</span><span class="dv" style="color:var(--state)">$${(propType === 'primary' ? homeownerExemption : 0).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Additional Exemptions</span><span class="dv" style="color:var(--state)">$${additionalExemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Total Exemptions</span><span class="dv" style="color:var(--state)">$${totalExemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Equalized Assessed Value (EAV)</span><span class="dv">$${Math.round(equalizedAssessedValue).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Tax Rate (${countyName} County)</span><span class="dv" style="color:var(--state)">${(rate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk"><strong>Total Annual Property Tax</strong></span><span class="dv" style="color:var(--accent);font-size:16px">$${Math.round(totalTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Monthly Payment</span><span class="dv">$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Tax Rate (on market value)</span><span class="dv">${effectiveRateDisplay.toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">County</span><span class="dv">${countyName}</span></div>
+        <div class="dr"><span class="dk">Property Type</span><span class="dv">${propType.charAt(0).toUpperCase()+propType.slice(1)}</span></div>
+    `;
+}
+
+calculateTax();
+</script>
+</body>
+</html>

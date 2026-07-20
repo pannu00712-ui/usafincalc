@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Derivative &amp; Integral Calculator — Free Online Calculus Tool</title>
+<link rel="canonical" href="https://usafincalc.com/derivative-integral-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate derivatives and integrals of any function numerically. Step-by-step results with graphs. Free online calculus calculator."/>
+<meta name="keywords" content="derivative calculator, integral calculator, calculus calculator, numerical derivative, numerical integration, math tool"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--orange:#B5652E;--red:#B5495A;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:900px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:var(--mono);outline:none;margin-bottom:12px}
+input:focus,select:focus{border-color:var(--accent)}
+input[type="text"]{font-family:var(--font)}
+select option{background:var(--bg3)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px 24px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.btn-gold{background:var(--gold);color:#FFFFFF}
+.btn-gold:hover{background:#A5691E}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px}
+.result-box .result{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent);word-break:break-all}
+.result-box .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.result-box .detail{font-size:14px;color:var(--muted);margin-top:4px}
+.graph-container{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px;min-height:200px;position:relative;overflow:hidden}
+.graph-container canvas{width:100%;height:200px;display:block}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 16px;cursor:pointer;font-size:13px;color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(201,154,59,0.12);border-color:var(--accent);color:var(--accent)}
+.tab:hover{background:rgba(15,42,74,0.05)}
+.history{max-height:200px;overflow-y:auto;font-size:13px;font-family:var(--mono);color:var(--muted)}
+.history-item{padding:6px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between}
+.history-item .h-val{color:var(--text)}
+.function-display{background:var(--bg2);border-radius:var(--rs);padding:12px 16px;font-family:var(--mono);font-size:14px;color:var(--text);margin-bottom:12px;border-left:3px solid var(--accent)}
+.function-display .fn{color:var(--gold)}
+@media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Derivative &amp; Integral Calculator</h1>
+<p class="sub">Numerical calculus for any function. Enter expressions like <code>sin(x)</code>, <code>x^2</code>, <code>exp(x)</code>, or <code>log(x)</code>.</p>
+
+<div class="card">
+<div class="tabs">
+<span class="tab active" data-mode="derivative" onclick="switchMode('derivative')">Derivative</span>
+<span class="tab" data-mode="integral" onclick="switchMode('integral')">Integral</span>
+<span class="tab" data-mode="both" onclick="switchMode('both')">Both</span>
+</div>
+
+<label for="function-input">f(x) =</label>
+<input id="function-input" type="text" value="sin(x)" placeholder="e.g., sin(x), x^2, exp(x), log(x)" oninput="calculate()"/>
+
+<div id="derivative-params">
+<div class="grid-3">
+<div><label for="x-val">x =</label><input id="x-val" type="number" value="1" step="any" oninput="calculate()"/></div>
+<div><label for="h-val">h (step size)</label><input id="h-val" type="number" value="0.001" step="any" min="0.000001" oninput="calculate()"/></div>
+<div><label for="order">Order</label>
+<select id="order" onchange="calculate()">
+<option value="1">1st Derivative</option>
+<option value="2">2nd Derivative</option>
+<option value="3">3rd Derivative</option>
+</select>
+</div>
+</div>
+</div>
+
+<div id="integral-params" style="display:none">
+<div class="grid-2">
+<div><label for="a-val">Lower limit (a)</label><input id="a-val" type="number" value="0" step="any" oninput="calculate()"/></div>
+<div><label for="b-val">Upper limit (b)</label><input id="b-val" type="number" value="3.14159" step="any" oninput="calculate()"/></div>
+</div>
+<div><label for="n-steps">Steps (accuracy)</label>
+<select id="n-steps" onchange="calculate()">
+<option value="100">100 (fast)</option>
+<option value="500" selected>500 (balanced)</option>
+<option value="1000">1000 (accurate)</option>
+<option value="5000">5000 (high precision)</option>
+</select>
+</div>
+</div>
+
+<button class="btn" onclick="calculate()">Calculate →</button>
+</div>
+
+<div class="card" id="result-card">
+<div class="function-display" id="function-display">f(x) = <span class="fn">sin(x)</span></div>
+
+<div id="derivative-result">
+<div class="result-box">
+<div class="label">Derivative at x = 1</div>
+<div class="result" id="derivative-value">0.5403</div>
+<div class="detail" id="derivative-detail">f'(1) ≈ 0.5403 using central difference with h = 0.001</div>
+</div>
+</div>
+
+<div id="integral-result" style="display:none">
+<div class="result-box">
+<div class="label">Definite Integral</div>
+<div class="result" id="integral-value">2.0000</div>
+<div class="detail" id="integral-detail">∫₀^π sin(x) dx ≈ 2.0000 using Simpson's rule (500 steps)</div>
+</div>
+</div>
+
+<div class="graph-container">
+<canvas id="graph" height="200"></canvas>
+</div>
+</div>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:8px;color:var(--muted)">📜 History</h3>
+<div class="history" id="history">
+<div class="history-item"><span>No calculations yet</span></div>
+</div>
+<button class="btn btn-gold" style="margin-top:8px" onclick="clearHistory()">Clear History</button>
+</div>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:8px;color:var(--muted)">📖 Supported Functions</h3>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:6px;font-size:13px;color:var(--muted)">
+<span><code>sin(x)</code></span><span><code>cos(x)</code></span><span><code>tan(x)</code></span>
+<span><code>exp(x)</code></span><span><code>log(x)</code></span><span><code>sqrt(x)</code></span>
+<span><code>x^n</code></span><span><code>abs(x)</code></span><span><code>asin(x)</code></span>
+<span><code>acos(x)</code></span><span><code>atan(x)</code></span><span><code>sinh(x)</code></span>
+</div>
+<div style="font-size:12px;color:var(--muted);margin-top:8px">Use <code>^</code> for exponent, <code>*</code> for multiplication</div>
+</div>
+</div>
+
+<script>
+let currentMode = 'derivative';
+let historyData = [];
+
+function switchMode(mode) {
+  currentMode = mode;
+  document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active', el.dataset.mode === mode));
+  document.getElementById('derivative-params').style.display = (mode === 'derivative' || mode === 'both') ? 'block' : 'none';
+  document.getElementById('integral-params').style.display = (mode === 'integral' || mode === 'both') ? 'block' : 'none';
+  document.getElementById('derivative-result').style.display = (mode === 'derivative' || mode === 'both') ? 'block' : 'none';
+  document.getElementById('integral-result').style.display = (mode === 'integral' || mode === 'both') ? 'block' : 'none';
+  calculate();
+}
+
+function parseFunction(expr) {
+  // Replace ^ with ** for JavaScript
+  let e = expr.replace(/\^/g, '**');
+  // Handle common functions
+  e = e.replace(/sin\(/g, 'Math.sin(');
+  e = e.replace(/cos\(/g, 'Math.cos(');
+  e = e.replace(/tan\(/g, 'Math.tan(');
+  e = e.replace(/exp\(/g, 'Math.exp(');
+  e = e.replace(/log\(/g, 'Math.log(');
+  e = e.replace(/sqrt\(/g, 'Math.sqrt(');
+  e = e.replace(/abs\(/g, 'Math.abs(');
+  e = e.replace(/asin\(/g, 'Math.asin(');
+  e = e.replace(/acos\(/g, 'Math.acos(');
+  e = e.replace(/atan\(/g, 'Math.atan(');
+  e = e.replace(/sinh\(/g, 'Math.sinh(');
+  e = e.replace(/cosh\(/g, 'Math.cosh(');
+  e = e.replace(/tanh\(/g, 'Math.tanh(');
+  return e;
+}
+
+function evaluateFunction(expr, x) {
+  try {
+    const fn = new Function('x', 'return ' + parseFunction(expr) + ';');
+    const result = fn(x);
+    if (typeof result === 'number' && !isNaN(result) && isFinite(result)) return result;
+    return NaN;
+  } catch(e) { return NaN; }
+}
+
+function numericalDerivative(expr, x, h, order) {
+  if (order === 1) {
+    // Central difference: f'(x) ≈ (f(x+h) - f(x-h)) / (2h)
+    const f1 = evaluateFunction(expr, x + h);
+    const f2 = evaluateFunction(expr, x - h);
+    if (isNaN(f1) || isNaN(f2)) return NaN;
+    return (f1 - f2) / (2 * h);
+  } else if (order === 2) {
+    // Central difference for second derivative
+    const f1 = evaluateFunction(expr, x + h);
+    const f2 = evaluateFunction(expr, x);
+    const f3 = evaluateFunction(expr, x - h);
+    if (isNaN(f1) || isNaN(f2) || isNaN(f3)) return NaN;
+    return (f1 - 2*f2 + f3) / (h * h);
+  } else if (order === 3) {
+    // Central difference for third derivative
+    const f1 = evaluateFunction(expr, x + 2*h);
+    const f2 = evaluateFunction(expr, x + h);
+    const f3 = evaluateFunction(expr, x - h);
+    const f4 = evaluateFunction(expr, x - 2*h);
+    if (isNaN(f1) || isNaN(f2) || isNaN(f3) || isNaN(f4)) return NaN;
+    return (f1 - 2*f2 + 2*f3 - f4) / (2 * h * h * h);
+  }
+  return NaN;
+}
+
+function simpsonIntegral(expr, a, b, n) {
+  if (n % 2 !== 0) n++;
+  const h = (b - a) / n;
+  let sum = evaluateFunction(expr, a) + evaluateFunction(expr, b);
+  for (let i = 1; i < n; i++) {
+    const x = a + i * h;
+    const val = evaluateFunction(expr, x);
+    if (isNaN(val)) return NaN;
+    sum += (i % 2 === 0) ? 2 * val : 4 * val;
+  }
+  return (h / 3) * sum;
+}
+
+function calculate() {
+  const expr = document.getElementById('function-input').value.trim() || 'x';
+  const xVal = parseFloat(document.getElementById('x-val').value) || 0;
+  const hVal = parseFloat(document.getElementById('h-val').value) || 0.001;
+  const order = parseInt(document.getElementById('order').value) || 1;
+  const a = parseFloat(document.getElementById('a-val').value) || 0;
+  const b = parseFloat(document.getElementById('b-val').value) || 1;
+  const n = parseInt(document.getElementById('n-steps').value) || 500;
+
+  // Update function display
+  document.getElementById('function-display').innerHTML = 'f(x) = <span class="fn">' + expr + '</span>';
+
+  let derivResult = NaN, integralResult = NaN;
+  let derivDetail = '', integralDetail = '';
+
+  // Derivative
+  if (currentMode === 'derivative' || currentMode === 'both') {
+    derivResult = numericalDerivative(expr, xVal, hVal, order);
+    const orderNames = ['', '1st', '2nd', '3rd'];
+    if (!isNaN(derivResult) && isFinite(derivResult)) {
+      document.getElementById('derivative-value').textContent = derivResult.toFixed(8);
+      derivDetail = `f'${order > 1 ? '('+order+')' : ''}(${xVal}) ≈ ${derivResult.toFixed(8)} using central difference with h = ${hVal}`;
+    } else {
+      document.getElementById('derivative-value').textContent = 'Error';
+      derivDetail = 'Unable to compute derivative. Check your function syntax.';
+    }
+    document.getElementById('derivative-detail').textContent = derivDetail;
+  }
+
+  // Integral
+  if (currentMode === 'integral' || currentMode === 'both') {
+    if (a < b) {
+      integralResult = simpsonIntegral(expr, a, b, n);
+      if (!isNaN(integralResult) && isFinite(integralResult)) {
+        document.getElementById('integral-value').textContent = integralResult.toFixed(8);
+        integralDetail = `∫${a.toFixed(4)}^${b.toFixed(4)} ${expr} dx ≈ ${integralResult.toFixed(8)} using Simpson's rule (${n} steps)`;
+      } else {
+        document.getElementById('integral-value').textContent = 'Error';
+        integralDetail = 'Unable to compute integral. Check your function or limits.';
+      }
+    } else {
+      document.getElementById('integral-value').textContent = 'Invalid limits';
+      integralDetail = 'Lower limit must be less than upper limit.';
+    }
+    document.getElementById('integral-detail').textContent = integralDetail;
+  }
+
+  // Draw graph
+  drawGraph(expr, xVal, a, b);
+
+  // Add to history
+  if (!isNaN(derivResult) || !isNaN(integralResult)) {
+    const entry = {
+      expr: expr,
+      deriv: derivResult,
+      integral: integralResult,
+      x: xVal,
+      a: a,
+      b: b,
+      time: new Date().toLocaleTimeString()
+    };
+    historyData.unshift(entry);
+    if (historyData.length > 20) historyData.pop();
+    updateHistory();
+  }
+}
+
+function drawGraph(expr, xVal, a, b) {
+  const canvas = document.getElementById('graph');
+  const ctx = canvas.getContext('2d');
+  const rect = canvas.parentElement.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  const w = Math.max(200, rect.width - 32);
+  const h = 200;
+  canvas.width = w * dpr;
+  canvas.height = h * dpr;
+  canvas.style.width = w + 'px';
+  canvas.style.height = h + 'px';
+  ctx.scale(dpr, dpr);
+
+  const pad = 20;
+  const graphW = w - 2 * pad;
+  const graphH = h - 2 * pad;
+
+  // Determine x range
+  let xMin, xMax;
+  if (currentMode === 'integral' || currentMode === 'both') {
+    xMin = a - 0.5 * (b - a);
+    xMax = b + 0.5 * (b - a);
+    if (xMax - xMin < 2) { xMin = a - 1; xMax = b + 1; }
+  } else {
+    xMin = xVal - 4;
+    xMax = xVal + 4;
+  }
+  if (xMin >= xMax) { xMin = xVal - 1; xMax = xVal + 1; }
+
+  // Sample function
+  const points = 200;
+  const yValues = [];
+  let yMin = Infinity, yMax = -Infinity;
+  for (let i = 0; i <= points; i++) {
+    const x = xMin + (xMax - xMin) * (i / points);
+    const y = evaluateFunction(expr, x);
+    yValues.push({x, y});
+    if (isFinite(y)) {
+      if (y < yMin) yMin = y;
+      if (y > yMax) yMax = y;
+    }
+  }
+  if (!isFinite(yMin) || !isFinite(yMax) || yMax - yMin < 0.001) {
+    yMin = -1;
+    yMax = 1;
+  }
+  const yRange = yMax - yMin;
+  const yPad = Math.max(0.1, yRange * 0.1);
+  yMin -= yPad;
+  yMax += yPad;
+
+  // Clear
+  ctx.clearRect(0, 0, w, h);
+  ctx.fillStyle = '#F2EFE8';
+  ctx.fillRect(0, 0, w, h);
+
+  // Grid
+  ctx.strokeStyle = 'rgba(15,42,74,0.05)';
+  ctx.lineWidth = 0.5;
+  for (let i = 0; i <= 10; i++) {
+    const x = xMin + (xMax - xMin) * (i / 10);
+    const px = pad + (x - xMin) / (xMax - xMin) * graphW;
+    ctx.beginPath();
+    ctx.moveTo(px, pad);
+    ctx.lineTo(px, pad + graphH);
+    ctx.stroke();
+    const y = yMin + (yMax - yMin) * (i / 10);
+    const py = pad + graphH - (y - yMin) / (yMax - yMin) * graphH;
+    ctx.beginPath();
+    ctx.moveTo(pad, py);
+    ctx.lineTo(pad + graphW, py);
+    ctx.stroke();
+  }
+
+  // Axes
+  ctx.strokeStyle = 'rgba(15,42,74,0.25)';
+  ctx.lineWidth = 1;
+  const zeroX = pad + (0 - xMin) / (xMax - xMin) * graphW;
+  if (zeroX >= pad && zeroX <= pad + graphW) {
+    ctx.beginPath();
+    ctx.moveTo(zeroX, pad);
+    ctx.lineTo(zeroX, pad + graphH);
+    ctx.stroke();
+  }
+  const zeroY = pad + graphH - (0 - yMin) / (yMax - yMin) * graphH;
+  if (zeroY >= pad && zeroY <= pad + graphH) {
+    ctx.beginPath();
+    ctx.moveTo(pad, zeroY);
+    ctx.lineTo(pad + graphW, zeroY);
+    ctx.stroke();
+  }
+
+  // Function curve
+  ctx.strokeStyle = '#C99A3B';
+  ctx.lineWidth = 2.5;
+  ctx.beginPath();
+  let first = true;
+  for (let i = 0; i < yValues.length; i++) {
+    const y = yValues[i].y;
+    if (!isFinite(y)) { first = true; continue; }
+    const px = pad + (yValues[i].x - xMin) / (xMax - xMin) * graphW;
+    const py = pad + graphH - (y - yMin) / (yMax - yMin) * graphH;
+    if (first) { ctx.moveTo(px, py); first = false; }
+    else ctx.lineTo(px, py);
+  }
+  ctx.stroke();
+
+  // Mark x point
+  if (currentMode === 'derivative' || currentMode === 'both') {
+    const px = pad + (xVal - xMin) / (xMax - xMin) * graphW;
+    if (px >= pad && px <= pad + graphW) {
+      const yVal = evaluateFunction(expr, xVal);
+      if (isFinite(yVal)) {
+        const py = pad + graphH - (yVal - yMin) / (yMax - yMin) * graphH;
+        ctx.fillStyle = '#C97A3B';
+        ctx.beginPath();
+        ctx.arc(px, py, 6, 0, 2 * Math.PI);
+        ctx.fill();
+        ctx.fillStyle = 'rgba(251,191,36,0.15)';
+        ctx.beginPath();
+        ctx.arc(px, py, 12, 0, 2 * Math.PI);
+        ctx.fill();
+      }
+    }
+  }
+
+  // Shade integral area
+  if (currentMode === 'integral' || currentMode === 'both') {
+    const aPx = pad + (a - xMin) / (xMax - xMin) * graphW;
+    const bPx = pad + (b - xMin) / (xMax - xMin) * graphW;
+    if (aPx >= pad && bPx <= pad + graphW) {
+      ctx.fillStyle = 'rgba(0,212,255,0.15)';
+      ctx.beginPath();
+      ctx.moveTo(aPx, pad + graphH);
+      for (let i = 0; i < yValues.length; i++) {
+        const x = yValues[i].x;
+        if (x < a || x > b) continue;
+        const px = pad + (x - xMin) / (xMax - xMin) * graphW;
+        const y = evaluateFunction(expr, x);
+        if (!isFinite(y)) continue;
+        const py = pad + graphH - (y - yMin) / (yMax - yMin) * graphH;
+        ctx.lineTo(px, py);
+      }
+      ctx.lineTo(bPx, pad + graphH);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+
+  // Labels
+  ctx.fillStyle = 'rgba(15,42,74,0.4)';
+  ctx.font = '10px sans-serif';
+  ctx.textAlign = 'left';
+  ctx.fillText('x', pad + graphW - 16, pad + graphH - 4);
+  ctx.textAlign = 'right';
+  ctx.fillText('y', pad + 12, pad + 14);
+}
+
+function updateHistory() {
+  const el = document.getElementById('history');
+  if (historyData.length === 0) {
+    el.innerHTML = '<div class="history-item"><span>No calculations yet</span></div>';
+    return;
+  }
+  el.innerHTML = historyData.map(item => {
+    let parts = [];
+    if (item.deriv && isFinite(item.deriv)) parts.push(`f'(${item.x}) = ${item.deriv.toFixed(4)}`);
+    if (item.integral && isFinite(item.integral)) parts.push(`∫ = ${item.integral.toFixed(4)}`);
+    return `<div class="history-item"><span>${item.expr}</span><span class="h-val">${parts.join(' | ')}</span></div>`;
+  }).join('');
+}
+
+function clearHistory() {
+  historyData = [];
+  updateHistory();
+}
+
+// Handle resize
+window.addEventListener('resize', () => { if (document.getElementById('function-input').value) calculate(); });
+
+// Keyboard shortcut: Enter to calculate
+document.getElementById('function-input').addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') calculate();
+});
+
+// Initial calculation
+calculate();
+</script>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

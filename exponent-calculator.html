@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Exponent Calculator — Free Online Tool</title>
+<link rel="canonical" href="https://usafincalc.com/exponent-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.container{max-width:600px;width:100%}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:18px;padding:10px;font-family:var(--font);text-align:center;outline:none}
+input:focus{border-color:var(--accent)}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%;margin-top:8px}
+.btn:hover{background:#B8862F}
+.result{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px;font-size:24px;font-weight:600;text-align:center;color:var(--green)}
+.result .small{font-size:14px;font-weight:400;color:var(--muted)}
+@media(max-width:450px){.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Exponent Calculator</h1>
+<p class="sub">Calculate powers, square roots, cube roots, and nth roots.</p>
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:12px">Power (xⁿ)</h3>
+<div class="grid-2">
+<div><label>Base (x)</label><input id="base" type="number" value="2" oninput="calcPow()"/></div>
+<div><label>Exponent (n)</label><input id="exp" type="number" value="3" oninput="calcPow()"/></div>
+</div>
+<div class="result" id="pow-result">2³ = 8</div>
+</div>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:12px">Nth Root (ⁿ√x)</h3>
+<div class="grid-2">
+<div><label>Number (x)</label><input id="root-num" type="number" value="27" oninput="calcRoot()"/></div>
+<div><label>Root (n)</label><input id="root-n" type="number" value="3" oninput="calcRoot()"/></div>
+</div>
+<div class="result" id="root-result">³√27 = 3</div>
+</div>
+</div>
+<script>
+function calcPow(){
+const b=+document.getElementById('base').value||0,n=+document.getElementById('exp').value||0;
+const r=Math.pow(b,n);
+document.getElementById('pow-result').innerHTML=b+'<sup>'+n+'</sup> = '+ (Number.isInteger(r)?r:r.toFixed(6));
+}
+function calcRoot(){
+const x=+document.getElementById('root-num').value||0,n=+document.getElementById('root-n').value||1;
+if(n===0){document.getElementById('root-result').textContent='Error: Root cannot be zero';return;}
+const r=Math.pow(x,1/n);
+const label=n===2?'√':(n===3?'³√':n+'√');
+document.getElementById('root-result').innerHTML=label+x+' = '+ (Number.isInteger(r)?r:r.toFixed(6));
+}
+calcPow();calcRoot();
+</script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PEMDAS Calculator — Order of Operations Solver</title>
+<link rel="canonical" href="https://usafincalc.com/pemdas-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Solve expressions using the correct order of operations (PEMDAS). Step-by-step breakdown with explanations."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--orange:#B5652E;--red:#B5495A;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:750px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:16px;padding:10px 14px;font-family:var(--mono);outline:none;margin-bottom:8px}
+input:focus{border-color:var(--accent)}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px}
+.result-box .result{font-family:var(--mono);font-size:28px;font-weight:700;color:var(--accent);word-break:break-all}
+.result-box .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.steps-box{background:var(--bg2);border-radius:var(--rs);padding:16px;margin-top:12px;max-height:350px;overflow-y:auto;font-family:var(--mono);font-size:13px;line-height:1.8;color:var(--text)}
+.steps-box .step{color:var(--muted);padding:4px 0;border-bottom:1px solid rgba(15,42,74,0.06)}
+.steps-box .step .highlight{color:var(--gold)}
+.steps-box .step .result-num{color:var(--accent);font-weight:600}
+.steps-box .step .op{color:var(--orange)}
+.pemdas-info{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;margin-bottom:12px}
+.pemdas-info .pi-item{background:var(--bg3);border-radius:var(--rs);padding:6px 4px;text-align:center;font-size:11px;color:var(--muted)}
+.pemdas-info .pi-item .pi-letter{font-weight:700;color:var(--accent);font-size:14px;display:block}
+.quick-examples{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.quick-examples .qe-btn{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:4px 12px;font-size:12px;color:var(--muted);cursor:pointer;transition:all .2s}
+.quick-examples .qe-btn:hover{background:var(--bg2);color:var(--text)}
+@media(max-width:600px){.pemdas-info{grid-template-columns:repeat(3,1fr)}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>PEMDAS Calculator</h1>
+<p class="sub">Evaluate expressions using the correct order of operations</p>
+
+<div class="card">
+<div class="pemdas-info">
+<div class="pi-item"><span class="pi-letter">P</span>Parentheses</div>
+<div class="pi-item"><span class="pi-letter">E</span>Exponents</div>
+<div class="pi-item"><span class="pi-letter">M</span>Multiplication</div>
+<div class="pi-item"><span class="pi-letter">D</span>Division</div>
+<div class="pi-item"><span class="pi-letter">A</span>Addition</div>
+<div class="pi-item"><span class="pi-letter">S</span>Subtraction</div>
+</div>
+
+<div class="quick-examples">
+<span style="font-size:12px;color:var(--muted);margin-right:4px">Try:</span>
+<span class="qe-btn" onclick="setExpr('3 + 5 * 2')">3+5×2</span>
+<span class="qe-btn" onclick="setExpr('(3 + 5) * 2')">(3+5)×2</span>
+<span class="qe-btn" onclick="setExpr('10 / 2 + 3 * 4')">10/2+3×4</span>
+<span class="qe-btn" onclick="setExpr('2 ^ 3 + 4')">2^3+4</span>
+<span class="qe-btn" onclick="setExpr('(2 + 3) ^ 2')">(2+3)^2</span>
+<span class="qe-btn" onclick="setExpr('10 - 3 * 2 + 4')">10-3×2+4</span>
+</div>
+
+<label for="expression-input">Expression</label>
+<input id="expression-input" type="text" value="3 + 5 * 2" placeholder="e.g., 3 + 5 * 2" onkeydown="if(event.key==='Enter')calculatePEMDAS()"/>
+
+<button class="btn btn-green" onclick="calculatePEMDAS()">Evaluate</button>
+
+<div class="result-box" id="result">
+<div class="label">Result</div>
+<div class="result" id="expression-result">13</div>
+</div>
+
+<div class="steps-box" id="steps">
+<div class="step">Enter an expression and click Evaluate to see step-by-step.</div>
+</div>
+</div>
+</div>
+
+<script>
+function setExpr(val) {
+document.getElementById('expression-input').value = val;
+calculatePEMDAS();
+}
+
+function calculatePEMDAS() {
+const expr = document.getElementById('expression-input').value.trim();
+if (!expr) {
+document.getElementById('expression-result').textContent = 'Enter an expression';
+document.getElementById('steps').innerHTML = '<div class="step">Please enter a valid expression.</div>';
+return;
+}
+
+try {
+// Tokenize and evaluate with step tracking
+const result = evaluateWithSteps(expr);
+document.getElementById('expression-result').textContent = result.final;
+document.getElementById('steps').innerHTML = result.steps.map(s => 
+'<div class="step">' + s + '</div>'
+).join('');
+} catch(e) {
+document.getElementById('expression-result').textContent = 'Error';
+document.getElementById('steps').innerHTML = '<div class="step">Error: ' + e.message + '</div>';
+}
+}
+
+function evaluateWithSteps(expr) {
+let steps = [];
+let current = expr;
+
+// Replace display symbols
+let display = expr.replace(/\*/g, '×').replace(/\//g, '÷').replace(/\^/g, '^');
+steps.push('📝 Original: ' + display);
+
+// Step 1: Parentheses
+let hasParens = current.includes('(');
+while (current.includes('(')) {
+const match = current.match(/\(([^()]+)\)/);
+if (match) {
+const inner = match[1];
+const result = evaluateSimple(inner);
+const before = current;
+current = current.replace('(' + inner + ')', result.toString());
+const after = current;
+steps.push('🔵 P: (' + inner + ') = ' + result);
+steps.push('  → ' + formatDisplay(before) + ' → ' + formatDisplay(after));
+}
+}
+
+// Step 2: Exponents
+while (current.includes('^')) {
+const match = current.match(/(\d+\.?\d*)\s*\^\s*(\d+\.?\d*)/);
+if (match) {
+const base = parseFloat(match[1]);
+const exp = parseFloat(match[2]);
+const result = Math.pow(base, exp);
+const before = current;
+current = current.replace(match[0], result.toString());
+steps.push('🟡 E: ' + match[1] + '^' + match[2] + ' = ' + result);
+steps.push('  → ' + formatDisplay(before) + ' → ' + formatDisplay(current));
+}
+}
+
+// Step 3: Multiplication & Division (left to right)
+while (current.match(/(\d+\.?\d*)\s*[*/]\s*(\d+\.?\d*)/)) {
+const match = current.match(/(\d+\.?\d*)\s*([*/])\s*(\d+\.?\d*)/);
+if (match) {
+const left = parseFloat(match[1]);
+const op = match[2];
+const right = parseFloat(match[3]);
+const result = op === '*' ? left * right : left / right;
+const before = current;
+current = current.replace(match[0], result.toString());
+const symbol = op === '*' ? '×' : '÷';
+steps.push('🟠 MD: ' + match[1] + ' ' + symbol + ' ' + match[3] + ' = ' + result);
+steps.push('  → ' + formatDisplay(before) + ' → ' + formatDisplay(current));
+}
+}
+
+// Step 4: Addition & Subtraction (left to right)
+while (current.match(/(\d+\.?\d*)\s*[+-]\s*(\d+\.?\d*)/)) {
+const match = current.match(/(\d+\.?\d*)\s*([+-])\s*(\d+\.?\d*)/);
+if (match) {
+const left = parseFloat(match[1]);
+const op = match[2];
+const right = parseFloat(match[3]);
+const result = op === '+' ? left + right : left - right;
+const before = current;
+current = current.replace(match[0], result.toString());
+const symbol = op === '+' ? '+' : '−';
+steps.push('🟢 AS: ' + match[1] + ' ' + symbol + ' ' + match[3] + ' = ' + result);
+steps.push('  → ' + formatDisplay(before) + ' → ' + formatDisplay(current));
+}
+}
+
+// Clean up
+current = current.trim();
+const final = parseFloat(current);
+if (isNaN(final)) {
+steps.push('⚠️ Final result: ' + current);
+} else {
+steps.push('✅ Final result: ' + final);
+}
+
+return { final: final, steps: steps };
+}
+
+function evaluateSimple(expr) {
+// Evaluate a simple expression without parentheses
+let e = expr.trim();
+// Handle exponents
+while (e.includes('^')) {
+const match = e.match(/(\d+\.?\d*)\s*\^\s*(\d+\.?\d*)/);
+if (match) {
+const result = Math.pow(parseFloat(match[1]), parseFloat(match[2]));
+e = e.replace(match[0], result.toString());
+}
+}
+// Handle multiplication and division
+while (e.match(/(\d+\.?\d*)\s*[*/]\s*(\d+\.?\d*)/)) {
+const match = e.match(/(\d+\.?\d*)\s*([*/])\s*(\d+\.?\d*)/);
+if (match) {
+const result = match[2] === '*' ? 
+parseFloat(match[1]) * parseFloat(match[3]) : 
+parseFloat(match[1]) / parseFloat(match[3]);
+e = e.replace(match[0], result.toString());
+}
+}
+// Handle addition and subtraction
+while (e.match(/(\d+\.?\d*)\s*[+-]\s*(\d+\.?\d*)/)) {
+const match = e.match(/(\d+\.?\d*)\s*([+-])\s*(\d+\.?\d*)/);
+if (match) {
+const result = match[2] === '+' ? 
+parseFloat(match[1]) + parseFloat(match[3]) : 
+parseFloat(match[1]) - parseFloat(match[3]);
+e = e.replace(match[0], result.toString());
+}
+}
+return parseFloat(e.trim());
+}
+
+function formatDisplay(str) {
+return str.replace(/\*/g, '×').replace(/\//g, '÷').replace(/\^/g, '^');
+}
+
+calculatePEMDAS();
+</script>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

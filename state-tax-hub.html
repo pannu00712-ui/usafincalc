@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+<meta content="USAFinCalc" name="author"/>
+<title id="pageTitle">State Tax Hub 2026 | USAFinCalc</title>
+<meta content="Income tax, property tax, and payroll tax calculators for your state — all in one place." id="pageDesc" name="description"/>
+<link href="https://usafincalc.com/tax-by-state" id="pageCanonical" rel="canonical"/>
+<link href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'&gt;&lt;rect width='32' height='32' rx='8' fill='%23050810'/&gt;&lt;text x='16' y='22' text-anchor='middle' font-size='18' fill='%233b9eff' font-family='monospace' font-weight='700'&gt;F&lt;/text&gt;&lt;/svg&gt;" rel="icon" type="image/svg+xml"/>
+<meta content="#0F2A4A" name="theme-color"/>
+
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+    --text:#FAF9F6; --text2:#a8b0c8; --text3:#6b738f;
+    --blue:#C99A3B; --blue2:#1a7dd8; --accent:#C99A3B;
+    --income:#C99A3B; --property:#C97A3B; --payroll:#C99A3B;
+    --font:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+    --r:14px; --rs:8px;
+  }
+  body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+  a{color:var(--blue);text-decoration:none}
+  .container{max-width:900px;margin:0 auto;padding:0 24px}
+
+  /* NAV */
+  .site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+  .logo{font-size:18px;font-weight:700;color:#E8C878}
+  .logo span{color:var(--blue)}
+  .nav-links{display:flex;gap:24px;list-style:none}
+  .nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:500}
+  .nav-links a:hover{color:var(--text)}
+
+  .breadcrumb{padding:20px 0 0;font-size:13px;color:var(--text3)}
+  .breadcrumb a{color:var(--text3)}
+  .breadcrumb a:hover{color:var(--blue)}
+
+  .hero{padding:16px 0 28px}
+  .hero h1{font-size:clamp(26px,4.5vw,42px);font-weight:700;line-height:1.15;margin-bottom:10px}
+  .hero p{color:var(--text2);font-size:16px;max-width:640px}
+
+  /* TABS */
+  .tabs{display:flex;gap:8px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
+  .tab-btn{background:none;border:none;color:var(--text2);font-family:inherit;font-size:14px;font-weight:600;padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
+  .tab-btn:hover{color:var(--text)}
+  .tab-btn.active{color:var(--text)}
+  .tab-btn[data-type="income"].active{border-color:var(--income);color:var(--income)}
+  .tab-btn[data-type="property"].active{border-color:var(--property);color:var(--property)}
+  .tab-btn[data-type="payroll"].active{border-color:var(--payroll);color:var(--payroll)}
+
+  .tab-panel{display:none}
+  .tab-panel.active{display:block}
+
+  .summary-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:28px;margin-bottom:20px}
+  .summary-card .ico{font-size:32px;margin-bottom:10px}
+  .summary-card h2{font-size:20px;font-weight:700;margin-bottom:8px;color:var(--text)}
+  .summary-card p{color:var(--text2);font-size:14px;line-height:1.75;margin-bottom:18px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 22px;border-radius:var(--rs);font-weight:600;font-size:14px;border:none;cursor:pointer;transition:opacity .2s;text-decoration:none}
+  .btn:hover{opacity:.85;text-decoration:none}
+
+  .not-available{background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--r);padding:32px;text-align:center;color:var(--text3);font-size:14px}
+
+  .state-not-found{padding:60px 0;text-align:center}
+  .state-not-found h1{font-size:24px;margin-bottom:12px}
+  .state-not-found p{color:var(--text2);margin-bottom:20px}
+
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:32px 24px;text-align:center;color:var(--text3);font-size:13px;margin-top:40px}
+  footer a{color:var(--text3);margin:0 8px}
+  footer a:hover{color:var(--text)}
+
+  @media(max-width:720px){.nav-links{display:none}}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="/" class="logo">USA<span>FinCalc</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+    <li><a href="/tax-calculator-usa">Tax</a></li>
+    <li><a href="/paycheck-calculator">Paycheck</a></li>
+    <li><a href="/salary-calculator-usa">Salary</a></li>
+    <li><a href="/tax-by-state">States</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/">All Tools</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/tax-by-state">Tax by State</a> › <span id="crumbState">…</span></div>
+
+<div id="stateContent"></div>
+
+<div class="state-not-found" id="notFound" style="display:none">
+  <h1>State not found</h1>
+  <p>We don't have a page for that state yet. Pick one from the full list.</p>
+  <a class="btn" href="/tax-by-state">← Back to Tax by State</a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:12px">
+    <a href="/">Home</a>
+    <a href="/tax-calculator-usa">Tax Calculator</a>
+    <a href="/salary-calculator-usa">Salary Calculator</a>
+    <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+    <a href="/paycheck-calculator">Paycheck Calculator</a>
+    <a href="/tax-by-state">Tax by State</a>
+    <a href="/about">About</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/contact">Contact</a>
+  </div>
+  <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+</footer>
+
+<script src="js/state-tax-config.js"></script>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('state');
+  var states = window.STATE_TAX_CONFIG || [];
+  var state = states.find(function(s){ return s.slug === slug; });
+
+  var contentEl = document.getElementById('stateContent');
+  var notFoundEl = document.getElementById('notFound');
+  var crumbEl = document.getElementById('crumbState');
+
+  if (!state) {
+    notFoundEl.style.display = 'block';
+    contentEl.style.display = 'none';
+    crumbEl.textContent = 'Not found';
+    return;
+  }
+
+  document.title = state.name + ' Tax by State 2026 — Income, Property & Payroll | USAFinCalc';
+  document.getElementById('pageDesc').setAttribute('content',
+    state.name + ' income tax, property tax, and payroll tax calculators — all in one place.');
+  document.getElementById('pageCanonical').setAttribute('href',
+    'https://usafincalc.com/state-tax-hub.html?state=' + state.slug);
+  crumbEl.textContent = state.name;
+
+  var TYPES = [
+    { key:'income',   icon:'🧾', label:'Income Tax',   ico2:'🧾', desc:'Estimate your state income tax, brackets, and effective rate for ' + state.name + '.' },
+    { key:'property',  icon:'🏠', label:'Property Tax', ico2:'🏠', desc:'Estimate your annual property tax bill in ' + state.name + ' based on assessed home value.' },
+    { key:'payroll',   icon:'💵', label:'Payroll Tax',  ico2:'💵', desc:'See your ' + state.name + ' paycheck breakdown — federal, state, FICA, and take-home pay.' }
+  ];
+
+  var available = TYPES.filter(function(t){ return !!state[t.key]; });
+
+  // Tabs
+  var tabsHtml = '<div class="tabs">' + available.map(function(t, i){
+    return '<button class="tab-btn' + (i===0?' active':'') + '" data-type="' + t.key + '">' + t.icon + ' ' + t.label + '</button>';
+  }).join('') + '</div>';
+
+  // Panels — one per available type; unavailable types are simply omitted from the tab bar
+  var panelsHtml = available.map(function(t, i){
+    return '<div class="tab-panel' + (i===0?' active':'') + '" data-panel="' + t.key + '">' +
+      '<div class="summary-card">' +
+        '<div class="ico">' + t.ico2 + '</div>' +
+        '<h2>' + state.name + ' ' + t.label + '</h2>' +
+        '<p>' + t.desc + '</p>' +
+        '<a class="btn" href="' + state[t.key] + '">Open full ' + t.label + ' calculator →</a>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+
+  contentEl.innerHTML =
+    '<div class="hero"><h1>' + state.name + ' Tax <span style="color:var(--blue)">by Type</span></h1>' +
+    '<p>Income tax, property tax, and payroll tax calculators for ' + state.name + ' — switch tabs to see each one.</p></div>' +
+    tabsHtml + panelsHtml;
+
+  // Tab switching
+  contentEl.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var type = btn.getAttribute('data-type');
+      contentEl.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+      contentEl.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      contentEl.querySelector('.tab-panel[data-panel="' + type + '"]').classList.add('active');
+    });
+  });
+})();
+</script>
+</body>
+</html>

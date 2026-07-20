@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Slope Calculator — Find Slope, Intercept & Line Equation</title>
+<link rel="canonical" href="https://usafincalc.com/slope-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate slope, y-intercept, and line equation from two points. Free online slope calculator with step-by-step results."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--orange:#B5652E;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:700px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:var(--mono);outline:none;margin-bottom:8px}
+input:focus{border-color:var(--accent)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px}
+.result-box .result{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent)}
+.result-box .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.result-box .detail{font-size:14px;color:var(--muted);margin-top:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:8px}
+.result-grid .rg-item{background:var(--bg2);border-radius:var(--rs);padding:10px;text-align:center}
+.result-grid .rg-item .rg-value{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--text)}
+.result-grid .rg-item .rg-label{font-size:11px;color:var(--muted)}
+.graph-container{background:var(--bg3);border-radius:var(--rs);padding:12px;margin-top:12px;min-height:180px;position:relative;overflow:hidden}
+.graph-container canvas{width:100%;height:180px;display:block}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 16px;cursor:pointer;font-size:13px;color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(201,154,59,0.12);border-color:var(--accent);color:var(--accent)}
+.tab:hover{background:rgba(15,42,74,0.05)}
+@media(max-width:600px){.grid-2,.grid-4{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Slope Calculator</h1>
+<p class="sub">Find slope, y-intercept, and line equation from two points</p>
+
+<div class="card">
+<div class="tabs">
+<span class="tab active" data-mode="twopoint" onclick="switchMode('twopoint')">Two Points</span>
+<span class="tab" data-mode="slopeintercept" onclick="switchMode('slopeintercept')">Slope-Intercept</span>
+</div>
+
+<div id="twopoint-section">
+<div class="grid-4">
+<div><label>Point 1 - x₁</label><input id="x1" type="number" value="1" step="any" oninput="calculateSlope()"/></div>
+<div><label>Point 1 - y₁</label><input id="y1" type="number" value="2" step="any" oninput="calculateSlope()"/></div>
+<div><label>Point 2 - x₂</label><input id="x2" type="number" value="4" step="any" oninput="calculateSlope()"/></div>
+<div><label>Point 2 - y₂</label><input id="y2" type="number" value="6" step="any" oninput="calculateSlope()"/></div>
+</div>
+</div>
+
+<div id="slopeintercept-section" style="display:none">
+<div class="grid-2">
+<div><label>Slope (m)</label><input id="m-input" type="number" value="2" step="any" oninput="calculateFromSlope()"/></div>
+<div><label>Y-Intercept (b)</label><input id="b-input" type="number" value="3" step="any" oninput="calculateFromSlope()"/></div>
+</div>
+</div>
+
+<button class="btn btn-green" onclick="calculateSlope()">Calculate</button>
+
+<div class="result-box" id="result">
+<div class="label">Line Equation</div>
+<div class="result" id="equation">y = 1.3333x + 0.6667</div>
+<div class="detail" id="slope-detail">Slope: 1.3333 · Y-intercept: 0.6667</div>
+<div class="result-grid">
+<div class="rg-item"><div class="rg-value" id="slope-val">1.3333</div><div class="rg-label">Slope (m)</div></div>
+<div class="rg-item"><div class="rg-value" id="intercept-val">0.6667</div><div class="rg-label">Y-Intercept (b)</div></div>
+<div class="rg-item"><div class="rg-value" id="angle-val">53.13°</div><div class="rg-label">Angle of Inclination</div></div>
+</div>
+</div>
+
+<div class="graph-container">
+<canvas id="graph" height="180"></canvas>
+</div>
+</div>
+</div>
+
+<script>
+let currentMode = 'twopoint';
+
+function switchMode(mode) {
+currentMode = mode;
+document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active', el.dataset.mode === mode));
+document.getElementById('twopoint-section').style.display = mode === 'twopoint' ? 'block' : 'none';
+document.getElementById('slopeintercept-section').style.display = mode === 'slopeintercept' ? 'block' : 'none';
+if (mode === 'twopoint') calculateSlope();
+else calculateFromSlope();
+}
+
+function calculateSlope() {
+const x1 = parseFloat(document.getElementById('x1').value) || 0;
+const y1 = parseFloat(document.getElementById('y1').value) || 0;
+const x2 = parseFloat(document.getElementById('x2').value) || 0;
+const y2 = parseFloat(document.getElementById('y2').value) || 0;
+
+const dx = x2 - x1;
+const dy = y2 - y1;
+const slope = dx !== 0 ? dy / dx : (dy > 0 ? Infinity : -Infinity);
+const intercept = dx !== 0 ? y1 - slope * x1 : 0;
+
+displayResults(slope, intercept, x1, y1, x2, y2);
+drawGraph(x1, y1, x2, y2, slope, intercept);
+}
+
+function calculateFromSlope() {
+const m = parseFloat(document.getElementById('m-input').value) || 0;
+const b = parseFloat(document.getElementById('b-input').value) || 0;
+displayResults(m, b);
+drawGraphFromLine(m, b);
+}
+
+function displayResults(slope, intercept, x1, y1, x2, y2) {
+const eqEl = document.getElementById('equation');
+const detailEl = document.getElementById('slope-detail');
+const slopeEl = document.getElementById('slope-val');
+const interceptEl = document.getElementById('intercept-val');
+const angleEl = document.getElementById('angle-val');
+
+if (!isFinite(slope)) {
+eqEl.textContent = 'x = ' + (x1 || 0);
+detailEl.textContent = 'Vertical line (undefined slope)';
+slopeEl.textContent = '∞';
+interceptEl.textContent = '—';
+angleEl.textContent = '90°';
+return;
+}
+
+const mFormatted = slope.toFixed(4);
+const bFormatted = intercept.toFixed(4);
+let eq = 'y = ';
+if (slope === 0) eq += bFormatted;
+else if (slope === 1) eq += 'x';
+else if (slope === -1) eq += '-x';
+else eq += mFormatted + 'x';
+if (intercept > 0) eq += ' + ' + bFormatted;
+else if (intercept < 0) eq += ' - ' + Math.abs(intercept).toFixed(4);
+
+eqEl.textContent = eq;
+detailEl.textContent = 'Slope: ' + mFormatted + ' · Y-intercept: ' + bFormatted;
+slopeEl.textContent = mFormatted;
+interceptEl.textContent = bFormatted;
+const angle = Math.atan(slope) * 180 / Math.PI;
+angleEl.textContent = angle.toFixed(2) + '°';
+}
+
+function drawGraph(x1, y1, x2, y2, slope, intercept) {
+const canvas = document.getElementById('graph');
+const ctx = canvas.getContext('2d');
+const rect = canvas.parentElement.getBoundingClientRect();
+const dpr = window.devicePixelRatio || 1;
+const w = Math.max(200, rect.width - 24);
+const h = 180;
+canvas.width = w * dpr;
+canvas.height = h * dpr;
+canvas.style.width = w + 'px';
+canvas.style.height = h + 'px';
+ctx.scale(dpr, dpr);
+
+const pad = 30;
+const graphW = w - 2 * pad;
+const graphH = h - 2 * pad;
+
+// Determine range
+let xMin = Math.min(x1, x2) - 1, xMax = Math.max(x1, x2) + 1;
+if (xMax - xMin < 4) { const c = (xMin + xMax)/2; xMin = c - 2.5; xMax = c + 2.5; }
+const yMinVal = Math.min(y1, y2) - 1, yMaxVal = Math.max(y1, y2) + 1;
+const yCenter = (yMinVal + yMaxVal)/2;
+const yRange = Math.max(4, yMaxVal - yMinVal + 2);
+const yMin = yCenter - yRange/2;
+const yMax = yCenter + yRange/2;
+
+function toX(x) { return pad + (x - xMin) / (xMax - xMin) * graphW; }
+function toY(y) { return pad + graphH - (y - yMin) / (yMax - yMin) * graphH; }
+
+// Clear
+ctx.fillStyle = '#F2EFE8';
+ctx.fillRect(0, 0, w, h);
+
+// Grid
+ctx.strokeStyle = 'rgba(15,42,74,0.05)';
+ctx.lineWidth = 0.5;
+for (let i = 0; i <= 10; i++) {
+const x = xMin + (xMax - xMin) * (i / 10);
+const px = toX(x);
+ctx.beginPath(); ctx.moveTo(px, pad); ctx.lineTo(px, pad + graphH); ctx.stroke();
+const y = yMin + (yMax - yMin) * (i / 10);
+const py = toY(y);
+ctx.beginPath(); ctx.moveTo(pad, py); ctx.lineTo(pad + graphW, py); ctx.stroke();
+}
+
+// Axes
+ctx.strokeStyle = 'rgba(15,42,74,0.25)';
+ctx.lineWidth = 1;
+const zeroX = toX(0);
+if (zeroX >= pad && zeroX <= pad + graphW) {
+ctx.beginPath(); ctx.moveTo(zeroX, pad); ctx.lineTo(zeroX, pad + graphH); ctx.stroke();
+}
+const zeroY = toY(0);
+if (zeroY >= pad && zeroY <= pad + graphH) {
+ctx.beginPath(); ctx.moveTo(pad, zeroY); ctx.lineTo(pad + graphW, zeroY); ctx.stroke();
+}
+
+// Draw line
+if (isFinite(slope)) {
+ctx.strokeStyle = '#C99A3B';
+ctx.lineWidth = 2.5;
+ctx.beginPath();
+const xStart = xMin, xEnd = xMax;
+const yStart = slope * xStart + intercept;
+const yEnd = slope * xEnd + intercept;
+ctx.moveTo(toX(xStart), toY(yStart));
+ctx.lineTo(toX(xEnd), toY(yEnd));
+ctx.stroke();
+}
+
+// Draw points
+if (x1 !== undefined && y1 !== undefined) {
+ctx.fillStyle = '#C97A3B';
+ctx.beginPath();
+ctx.arc(toX(x1), toY(y1), 6, 0, 2*Math.PI);
+ctx.fill();
+ctx.fillStyle = '#B5495A';
+ctx.beginPath();
+ctx.arc(toX(x2), toY(y2), 6, 0, 2*Math.PI);
+ctx.fill();
+}
+
+// Labels
+ctx.fillStyle = 'rgba(15,42,74,0.4)';
+ctx.font = '10px sans-serif';
+ctx.textAlign = 'left';
+ctx.fillText('x', pad + graphW - 12, pad + graphH - 4);
+ctx.textAlign = 'right';
+ctx.fillText('y', pad + 12, pad + 14);
+}
+
+function drawGraphFromLine(m, b) {
+const canvas = document.getElementById('graph');
+const ctx = canvas.getContext('2d');
+const rect = canvas.parentElement.getBoundingClientRect();
+const dpr = window.devicePixelRatio || 1;
+const w = Math.max(200, rect.width - 24);
+const h = 180;
+canvas.width = w * dpr;
+canvas.height = h * dpr;
+canvas.style.width = w + 'px';
+canvas.style.height = h + 'px';
+ctx.scale(dpr, dpr);
+
+const pad = 30;
+const graphW = w - 2 * pad;
+const graphH = h - 2 * pad;
+
+// Determine range
+const xMin = -5, xMax = 5;
+const yVals = [m * xMin + b, m * xMax + b];
+const yMin = Math.min(-4, ...yVals) - 1;
+const yMax = Math.max(4, ...yVals) + 1;
+
+function toX(x) { return pad + (x - xMin) / (xMax - xMin) * graphW; }
+function toY(y) { return pad + graphH - (y - yMin) / (yMax - yMin) * graphH; }
+
+ctx.fillStyle = '#F2EFE8';
+ctx.fillRect(0, 0, w, h);
+
+// Grid
+ctx.strokeStyle = 'rgba(15,42,74,0.05)';
+ctx.lineWidth = 0.5;
+for (let i = 0; i <= 10; i++) {
+const x = xMin + (xMax - xMin) * (i / 10);
+const px = toX(x);
+ctx.beginPath(); ctx.moveTo(px, pad); ctx.lineTo(px, pad + graphH); ctx.stroke();
+const y = yMin + (yMax - yMin) * (i / 10);
+const py = toY(y);
+ctx.beginPath(); ctx.moveTo(pad, py); ctx.lineTo(pad + graphW, py); ctx.stroke();
+}
+
+// Axes
+ctx.strokeStyle = 'rgba(15,42,74,0.25)';
+ctx.lineWidth = 1;
+const zeroX = toX(0);
+if (zeroX >= pad && zeroX <= pad + graphW) {
+ctx.beginPath(); ctx.moveTo(zeroX, pad); ctx.lineTo(zeroX, pad + graphH); ctx.stroke();
+}
+const zeroY = toY(0);
+if (zeroY >= pad && zeroY <= pad + graphH) {
+ctx.beginPath(); ctx.moveTo(pad, zeroY); ctx.lineTo(pad + graphW, zeroY); ctx.stroke();
+}
+
+// Draw line
+ctx.strokeStyle = '#C99A3B';
+ctx.lineWidth = 2.5;
+ctx.beginPath();
+const xStart = xMin, xEnd = xMax;
+const yStart = m * xStart + b;
+const yEnd = m * xEnd + b;
+ctx.moveTo(toX(xStart), toY(yStart));
+ctx.lineTo(toX(xEnd), toY(yEnd));
+ctx.stroke();
+
+ctx.fillStyle = 'rgba(15,42,74,0.4)';
+ctx.font = '10px sans-serif';
+ctx.textAlign = 'left';
+ctx.fillText('x', pad + graphW - 12, pad + graphH - 4);
+ctx.textAlign = 'right';
+ctx.fillText('y', pad + 12, pad + 14);
+}
+
+// Initialize
+calculateSlope();
+</script>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

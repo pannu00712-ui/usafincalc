@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+    <title>New Jersey Property Tax Calculator 2026 | NJ Property Tax Estimator</title>
+    <meta content="Calculate your New Jersey property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rates (1.0%–3.0%+), and homestead rebate." name="description"/>
+    <meta content="new jersey property tax calculator, nj property tax, new jersey property tax rate, homestead rebate nj, property tax estimator, nj property tax 2026" name="keywords"/>
+    <meta content="USAFinCalc" name="author"/>
+    <meta content="#0F2A4A" name="theme-color"/>
+    <link href="https://usafincalc.com/new-jersey-property-tax-calculator" rel="canonical"/>
+    <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23f87171' font-family='monospace' font-weight='700'>NJ</text></svg>" rel="icon" type="image/svg+xml"/>
+    <meta content="New Jersey Property Tax Calculator 2026 | NJ Property Tax Estimator" property="og:title"/>
+    <meta content="Calculate your New Jersey property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rates (1.0%–3.0%+), and homestead rebate." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://usafincalc.com/new-jersey-property-tax-calculator" property="og:url"/>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "New Jersey Property Tax Calculator 2026",
+      "description": "Calculate your New Jersey property tax liability based on assessed value, county tax rate, and homestead rebate. Free, no sign-up.",
+      "url": "https://usafincalc.com/new-jersey-property-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isAccessibleForFree": true
+    }
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+          --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+          --text:#FAF9F6; --muted:#B8C4D6;
+          --accent:#C99A3B; --federal:#5C87B8; --state:#B5495A; --fica:#C97A3B; --takehome:#E8C878;
+          --font:'Sora',sans-serif; --mono:'DM Mono',monospace;
+          --r:14px; --rs:8px;
+        }
+        body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav.site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-size:16px;font-weight:600;color:#E8C878}
+        .nav-links{display:flex;gap:20px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:13px}
+        .nav-links a:hover{color:var(--text)}
+
+        .hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+        .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(248,113,113,0.1);color:var(--state);border:1px solid rgba(248,113,113,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+        .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--state)}
+        h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+        h1 span{color:var(--state)}
+        .hero-sub{color:var(--muted);font-size:14px;max-width:700px;line-height:1.8}
+        .hero-author{display:flex;align-items:center;gap:14px;margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+        .hero-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#B5495A,#8B3A47);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+        .hero-author-text{font-weight:600;font-size:13px}
+        .hero-author-text a{color:#B8C4D6;text-decoration:none}
+        .hero-author-text a:hover{color:var(--text)}
+
+        .qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+        .qa{background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+        .qa strong{color:var(--state)}
+
+        .main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+        @media(max-width:760px){.main{grid-template-columns:1fr}}
+        .wide{grid-column:1/-1}
+
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+        label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+        input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;margin-bottom:12px}
+        input:focus,select:focus{border-color:var(--state)}
+        .pfx{position:relative;margin-bottom:12px}
+        .pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px}
+        .pfx input{padding-left:26px;margin-bottom:0}
+        .sfx{position:relative;margin-bottom:12px}
+        .sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px}
+        .sfx input{padding-right:28px;margin-bottom:0}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:6px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+        .btn{width:100%;background:var(--state);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px;transition:background .2s}
+        .btn:hover{background:#8B3A47}
+
+        .net-card{background:linear-gradient(135deg,rgba(248,113,113,0.12),rgba(220,38,38,0.04));border:1px solid rgba(248,113,113,0.25);border-radius:var(--r);padding:20px;text-align:center}
+        .nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+        .na{font-size:38px;font-weight:600;color:var(--state);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+        .nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+        .nm span{color:var(--text)}
+
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+        @media(max-width:500px){.pay-grid{grid-template-columns:1fr 1fr}}
+        .pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+        .pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+        .pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+
+        .bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+        .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+        .brows{display:flex;flex-direction:column;gap:7px}
+        .br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+        .bl{display:flex;align-items:center;gap:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .blbl{color:var(--muted)}
+        .ba{font-family:var(--mono);font-weight:500}
+        .divider{height:1px;background:var(--border);margin:7px 0}
+
+        .dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+        .dr:last-child{border-bottom:none}
+        .dk{color:var(--muted)}
+        .dv{font-family:var(--mono);font-weight:500}
+
+        .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+
+        .state-data-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:12px}
+        .state-data-card h2{font-size:18px;font-weight:600;color:var(--text);margin-bottom:12px}
+        .state-data-card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+        .state-data-card ul{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 8px 20px}
+        .state-data-card .source{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+
+        .faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+        .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+        .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+        .faq-q::after{content:"+";color:var(--state);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+        .faq-item.open .faq-a{max-height:400px;padding-top:10px}
+
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+
+        .related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+        .related-section h2{font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px}
+        .related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+        .related-links li{list-style:none}
+        .related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1F4670;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#C99A3B!important;text-decoration:none!important;font-size:13px;font-weight:500}
+
+        .meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+        .meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+        footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+        footer a:hover{color:var(--accent)}
+
+        .nj-tax-badge{display:inline-block;background:rgba(248,113,113,0.15);border:1px solid rgba(248,113,113,0.3);border-radius:20px;padding:2px 14px;font-size:12px;color:var(--state);font-family:var(--mono);margin-left:8px}
+        .quick-table{width:100%;border-collapse:collapse;font-size:13px}
+        .quick-table th,.quick-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+        .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+
+        @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+        input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <span class="logo">USA<span style="color:#C99A3B">FinCalc</span></span>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+        <li><a href="/tax-calculator-usa">Tax</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/salary-calculator-usa">Salary</a></li>
+        <li><a href="/#states-h">States</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/">All Tools</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="badge">🏠 New Jersey Property Tax 2026 • Estimator</div>
+    <h1>New Jersey Property <span>Tax Calculator</span></h1>
+    <div class="hero-author">
+        <div class="hero-avatar">NJ</div>
+        <div>
+            <div class="hero-author-text">Written by the <strong>USAFinCalc Team</strong></div>
+            <div style="font-size:12px;color:#B8C4D6"><a href="/editorial-policy">Editorial Policy</a> · <a href="/methodology">Methodology</a></div>
+        </div>
+    </div>
+    <p class="hero-sub"><strong>Estimate your New Jersey property tax</strong> for the 2026 tax year. Enter your home's assessed value and county to see your annual property tax bill, including the <strong>average tax rate (1.0%–3.0%+)</strong>, <strong>homestead rebate</strong>, and <strong>senior/disabled exemptions</strong>.<span class="nj-tax-badge">Updated 2026</span></p>
+</div>
+
+<!-- QA -->
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your property value below to calculate your New Jersey property tax.</div></div>
+
+<!-- MAIN -->
+<div class="main">
+    <div>
+        <div class="card">
+            <div class="ct">🏡 Property Details</div>
+            <label for="property-value">Assessed Property Value <span style="color:var(--muted);font-weight:400;">(market value)</span></label>
+            <div class="pfx"><span>$</span><input id="property-value" type="number" min="0" value="450000" oninput="calculateTax()"/></div>
+
+            <div class="row2">
+                <div>
+                    <label for="county">County</label>
+                    <select id="county" onchange="calculateTax()">
+                        <option value="atlantic">Atlantic</option>
+                        <option value="bergen" selected>Bergen</option>
+                        <option value="burlington">Burlington</option>
+                        <option value="camden">Camden</option>
+                        <option value="cape-may">Cape May</option>
+                        <option value="cumberland">Cumberland</option>
+                        <option value="essex">Essex</option>
+                        <option value="gloucester">Gloucester</option>
+                        <option value="hudson">Hudson</option>
+                        <option value="hunterdon">Hunterdon</option>
+                        <option value="mercer">Mercer</option>
+                        <option value="middlesex">Middlesex</option>
+                        <option value="monmouth">Monmouth</option>
+                        <option value="morris">Morris</option>
+                        <option value="ocean">Ocean</option>
+                        <option value="passaic">Passaic</option>
+                        <option value="salem">Salem</option>
+                        <option value="somerset">Somerset</option>
+                        <option value="sussex">Sussex</option>
+                        <option value="union">Union</option>
+                        <option value="warren">Warren</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prop-type">Property Type</label>
+                    <select id="prop-type" onchange="calculateTax()">
+                        <option value="primary">Primary Residence</option>
+                        <option value="secondary">Secondary/Vacation</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment/Rental</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label for="homestead-rebate">Homestead Rebate (Annual)</label>
+                    <div class="pfx"><span>$</span><input id="homestead-rebate" type="number" min="0" value="1000" oninput="calculateTax()"/></div>
+                </div>
+                <div>
+                    <label for="additional-exemptions">Additional Exemptions <span style="color:var(--muted);font-weight:400;">(senior, veteran, etc.)</span></label>
+                    <div class="pfx"><span>$</span><input id="additional-exemptions" type="number" min="0" value="0" oninput="calculateTax()"/></div>
+                </div>
+            </div>
+
+            <div class="sec-label">📍 New Jersey — <span style="color:var(--state)">1.0%–3.0%+ Effective Rate</span></div>
+            <div style="background:rgba(248,113,113,0.06);border:1px solid rgba(248,113,113,0.15);border-radius:var(--rs);padding:8px 14px;font-size:11px;color:var(--muted);margin-bottom:12px">
+                <strong style="color:var(--state)">📊 Highest property taxes in the US</strong> · Average rate: 2.23% · Homestead rebate: up to $1,500 · Senior freeze program · Veterans exemption
+            </div>
+            <button class="btn" onclick="calculateTax()">Calculate Property Tax →</button>
+        </div>
+    </div>
+
+    <div id="result-col">
+        <div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your property details</div><div style="font-size:12px;font-family:var(--mono)">See your annual property tax</div></div>
+    </div>
+
+    <div class="wide" id="detail-col" style="display:none">
+        <div class="dcard">
+            <div class="bt">📋 Property Tax Breakdown — New Jersey</div>
+            <div id="detail-rows"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Reference Table -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>New Jersey Property Tax Estimator — Quick Look</h2>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Estimated annual property tax for common home values (primary residence, with $1,000 homestead rebate).</p>
+        <div style="overflow-x:auto">
+            <table class="quick-table">
+                <thead>
+                    <tr><th>Assessed Value</th><th>County</th><th>Tax Rate</th><th>Annual Tax</th><th>Monthly</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$250,000</td><td>Camden (2.8%)</td><td>2.80%</td><td>$6,000</td><td>$500</td></tr>
+                    <tr><td>$350,000</td><td>Bergen (2.2%)</td><td>2.20%</td><td>$6,700</td><td>$558</td></tr>
+                    <tr><td><strong>$450,000</strong></td><td><strong>Bergen (2.2%)</strong></td><td><strong>2.20%</strong></td><td><strong>$8,900</strong></td><td><strong>$742</strong></td></tr>
+                    <tr><td>$450,000</td><td>Essex (2.5%)</td><td>2.50%</td><td>$10,250</td><td>$854</td></tr>
+                    <tr><td>$450,000</td><td>Salem (2.0%)</td><td>2.00%</td><td>$8,000</td><td>$667</td></tr>
+                    <tr><td>$650,000</td><td>Bergen (2.2%)</td><td>2.20%</td><td>$13,300</td><td>$1,108</td></tr>
+                    <tr><td>$1,000,000</td><td>Bergen (2.2%)</td><td>2.20%</td><td>$21,000</td><td>$1,750</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="source" style="margin-top:10px;font-size:11px">* Estimates for primary residence with $1,000 homestead rebate. Actual tax varies by municipality and school district.</p>
+    </div>
+</div>
+
+<!-- State Data Block -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>New Jersey Property Tax Information 2026</h2>
+        <p><strong>Average Effective Rate:</strong> <span style="color:var(--state)">2.23%</span> (highest in the United States) <span class="nj-tax-badge">#1 in the Nation</span></p>
+        <p><strong>Homestead Rebate (2026):</strong> Up to <strong>$1,500</strong> for eligible homeowners with income under $250,000. Amount varies by income and property tax bill.</p>
+        <p><strong>Senior Freeze (Property Tax Reimbursement):</strong> Reimburses eligible seniors 65+ for property tax increases. Income limit: $110,000 (married) / $87,000 (single).</p>
+        <p><strong>Key Exemptions:</strong></p>
+        <ul>
+            <li><strong>Veterans Exemption:</strong> Up to $250 reduction in annual taxes for honorably discharged veterans</li>
+            <li><strong>Senior Citizen Exemption:</strong> $250 reduction for seniors 65+ with income under $30,000</li>
+            <li><strong>Disabled Persons Exemption:</strong> $250 reduction for permanently disabled individuals</li>
+            <li><strong>Surviving Spouse Exemption:</strong> $250 reduction for widows/widowers</li>
+        </ul>
+        <p><strong>Property Tax Composition:</strong> Municipal (local government) ~30%, School District ~50%, County ~15%, Special Districts ~5%</p>
+        <p><strong>Assessment Ratio:</strong> Most counties assess at 100% of market value. Some municipalities use a ratio (e.g., 50% in some cities).</p>
+        <p class="source"><strong>Source:</strong> New Jersey Division of Taxation — <a href="https://www.nj.gov/treasury/taxation/" style="color:var(--accent);" target="_blank">nj.gov/treasury/taxation</a> · Updated July 2026</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2>Frequently Asked Questions — New Jersey Property Tax</h2>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the New Jersey property tax rate for 2026?</div><div class="faq-a">New Jersey has the <strong>highest property taxes in the United States</strong> with an average effective rate of <strong>2.23%</strong>. County rates range from <strong>1.0% in Salem</strong> to over <strong>3.0% in Essex and Passaic</strong> counties. The total rate includes municipal, school, county, and special district taxes.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Homestead Rebate in New Jersey?</div><div class="faq-a">The <strong>Homestead Rebate</strong> is an annual property tax credit for eligible homeowners. For 2026, the maximum rebate is <strong>$1,500</strong> for homeowners with income under $250,000. The actual rebate amount is based on your income and property tax bill.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is New Jersey property tax calculated?</div><div class="faq-a">Property tax is calculated as: <br><strong>Tax = (Assessed Value × Effective Tax Rate) - Exemptions - Rebates</strong> <br>Example: $450,000 home in Bergen County (2.2% rate) with $1,000 rebate: ($450,000 × 0.022) - $1,000 = <strong>$8,900</strong> annual tax.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the Senior Freeze program in New Jersey?</div><div class="faq-a">The <strong>Senior Freeze (Property Tax Reimbursement)</strong> program reimburses eligible seniors 65+ for property tax increases from one year to the next. Income limits for 2026: <strong>$110,000 for married couples</strong> and <strong>$87,000 for single filers</strong>.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which New Jersey county has the highest property taxes?</div><div class="faq-a"><strong>Essex, Passaic, and Union</strong> counties typically have the highest effective tax rates, often exceeding <strong>2.5%–3.0%</strong>. <strong>Bergen, Morris, and Somerset</strong> have moderate rates around 2.0%–2.3%. <strong>Salem and Cumberland</strong> have the lowest rates around 1.0%–1.5%.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the veterans property tax exemption in New Jersey?</div><div class="faq-a">Honorably discharged New Jersey veterans may be eligible for a <strong>$250 reduction</strong> in annual property taxes. Disabled veterans may qualify for a <strong>full property tax exemption</strong> depending on the severity of their disability.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How often are New Jersey properties reassessed?</div><div class="faq-a">Most New Jersey counties conduct <strong>annual reassessments</strong> of all properties. However, some municipalities use a <strong>4–5 year reassessment cycle</strong>. If your assessment is too high, you can appeal to your county Board of Taxation.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">When are New Jersey property taxes due?</div><div class="faq-a">Property taxes are typically due <strong>quarterly</strong>: February 1, May 1, August 1, and November 1. Most municipalities offer a <strong>2% discount</strong> for full payment by the first quarter deadline.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I deduct New Jersey property taxes on my federal return?</div><div class="faq-a">Yes. New Jersey property tax is deductible on your federal income tax return if you itemize. However, the <strong>SALT (State And Local Tax) deduction is capped at $10,000</strong> ($5,000 for married filing separately) for the 2026 tax year.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Why are property taxes so high in New Jersey?</div><div class="faq-a">New Jersey property taxes are high due to several factors: <strong>high cost of education</strong> (school taxes account for ~50% of the bill), <strong>home rule</strong> (566 municipalities with their own governments), <strong>limited state aid</strong>, and <strong>high local service costs</strong> (police, fire, infrastructure).</div></div>
+</div>
+
+<!-- Related Calculators -->
+<section class="related-section">
+    <div class="related">
+        <h2>Related Calculators & Tools</h2>
+        <div class="rel-grid">
+            <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
+            <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
+            <a class="rel-card" href="/new-jersey-income-tax-calculator"><div class="rt">💰 New Jersey Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/new-jersey-paycheck-calculator"><div class="rt">📄 New Jersey Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare New Jersey to your city</div></a>
+        </div>
+    </div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-section">
+    <h2>Related Articles</h2>
+    <ul class="related-links">
+        <li><a href="/blog/new-jersey-property-tax-guide-2026">New Jersey Property Tax Guide 2026: What Homeowners Need to Know</a></li>
+        <li><a href="/blog/homestead-rebate-new-jersey-2026">New Jersey Homestead Rebate 2026: How to Claim Your Credit</a></li>
+        <li><a href="/blog/new-jersey-vs-new-york-property-tax">New Jersey vs. New York Property Tax: Which State Is More Expensive?</a></li>
+    </ul>
+</section>
+
+<!-- Methodology -->
+<div class="meth">
+    <div class="meth-box">
+        <p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+        <p>New Jersey property tax calculations use county-specific effective tax rates from the New Jersey Division of Taxation and county tax boards. The average rate of 2.23% is the highest in the nation. Homestead rebate estimates are based on 2026 program guidelines. Source: <a href="https://www.nj.gov/treasury/taxation/" target="_blank">NJ Division of Taxation</a> · Updated July 2026</p>
+    </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
+        <a href="/">Home</a>
+        <a href="/tax-calculator-usa">Tax Calculator</a>
+        <a href="/salary-calculator-usa">Salary Calculator</a>
+        <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+        <a href="/paycheck-calculator">Paycheck Calculator</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0">
+        <span style="background:rgba(248,113,113,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--state)">✅ Calculators: 0 Data Stored</span>
+        <span style="background:rgba(245,158,11,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--fica)">⚠️ Ads & Affiliate Links: Third-Party Cookies</span>
+    </div>
+    <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// County-specific effective tax rates (combined municipal + school + county + special)
+const countyRates = {
+    atlantic: 0.026,
+    bergen: 0.022,
+    burlington: 0.024,
+    camden: 0.028,
+    'cape-may': 0.019,
+    cumberland: 0.022,
+    essex: 0.025,
+    gloucester: 0.025,
+    hudson: 0.021,
+    hunterdon: 0.020,
+    mercer: 0.023,
+    middlesex: 0.023,
+    monmouth: 0.022,
+    morris: 0.021,
+    ocean: 0.023,
+    passaic: 0.026,
+    salem: 0.020,
+    somerset: 0.020,
+    sussex: 0.021,
+    union: 0.024,
+    warren: 0.022
+};
+
+function calculateTax(){
+    const value = +document.getElementById('property-value').value || 0;
+    const county = document.getElementById('county').value;
+    const propType = document.getElementById('prop-type').value;
+    let homesteadRebate = +document.getElementById('homestead-rebate').value || 0;
+    let additionalExemptions = +document.getElementById('additional-exemptions').value || 0;
+
+    const rate = countyRates[county] || 0.023;
+    const countyName = county.replace('-',' ').toUpperCase();
+
+    // Calculate base tax
+    let baseTax = value * rate;
+
+    // Apply exemptions (senior, veteran, etc.)
+    let taxableValue = Math.max(0, value - additionalExemptions);
+    let adjustedTax = taxableValue * rate;
+
+    // Apply homestead rebate (only for primary residence)
+    let rebate = 0;
+    if (propType === 'primary') {
+        rebate = Math.min(homesteadRebate, adjustedTax * 0.3); // rebate capped at 30% of tax
+        rebate = Math.min(rebate, 1500); // max rebate $1,500
+    }
+
+    const totalTax = Math.max(0, adjustedTax - rebate);
+
+    // Effective rate on market value
+    const effectiveRateDisplay = value > 0 ? (totalTax / value) * 100 : 0;
+
+    // Update QA
+    document.getElementById('qa-box').innerHTML =
+        `New Jersey property tax: <strong>$${Math.round(totalTax).toLocaleString()}</strong> per year · Effective rate: <strong>${effectiveRateDisplay.toFixed(2)}%</strong> · ${countyName} County`;
+
+    // Result card
+    document.getElementById('result-col').innerHTML = `
+        <div class="net-card">
+            <div class="nl">Annual Property Tax</div>
+            <div class="na">$${Math.round(totalTax).toLocaleString()}</div>
+            <div class="nm">Effective rate: <span>${effectiveRateDisplay.toFixed(2)}%</span> · Monthly: <span>$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        </div>
+        <div class="pay-grid">
+            <div class="pay-box"><div class="pay-l">Taxable Value</div><div class="pay-v" style="color:var(--federal)">$${taxableValue.toLocaleString()}</div></div>
+            <div class="pay-box"><div class="pay-l">Tax Rate</div><div class="pay-v" style="color:var(--state)">${(rate*100).toFixed(2)}%</div></div>
+            <div class="pay-box"><div class="pay-l">Homestead Rebate</div><div class="pay-v" style="color:var(--takehome)">$${Math.round(rebate).toLocaleString()}</div></div>
+        </div>
+        <div class="bcard">
+            <div class="bt">New Jersey Property Tax Breakdown</div>
+            <div class="sbar">
+                <div class="seg" style="width:${Math.min(100, (totalTax/(value+1)*100)).toFixed(1)}%;background:var(--federal)"></div>
+                <div class="seg" style="width:${Math.max(0, 100 - (totalTax/(value+1)*100)).toFixed(1)}%;background:var(--takehome)"></div>
+            </div>
+            <div class="brows">
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--federal)"></div><div class="blbl">Gross Tax (${(rate*100).toFixed(2)}% rate)</div></div><div class="ba">$${Math.round(adjustedTax).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--state)"></div><div class="blbl">Homestead Rebate</div></div><div class="ba" style="color:var(--state)">-$${Math.round(rebate).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--takehome)"></div><div class="blbl">Exemptions</div></div><div class="ba" style="color:var(--takehome)">$${additionalExemptions.toLocaleString()}</div></div>
+                <div class="divider"></div>
+                <div class="br"><div class="bl"><div class="blbl"><strong>Total Annual Tax</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">$${Math.round(totalTax).toLocaleString()}</div></div>
+            </div>
+        </div>
+        <div style="margin-top:10px;background:rgba(248,113,113,0.04);border:1px solid rgba(248,113,113,0.1);border-radius:var(--rs);padding:8px 14px;font-size:10px;color:var(--muted)">
+            📊 <strong style="color:var(--text)">Quick Facts:</strong> #1 highest property tax in US · Avg rate: 2.23% · Homestead rebate up to $1,500 · Senior freeze program
+        </div>
+    `;
+
+    // Detail rows
+    document.getElementById('detail-col').style.display='block';
+    document.getElementById('detail-rows').innerHTML = `
+        <div class="dr"><span class="dk">Market Value</span><span class="dv">$${value.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Additional Exemptions</span><span class="dv" style="color:var(--state)">$${additionalExemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Taxable Value</span><span class="dv">$${taxableValue.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Tax Rate (${countyName} County)</span><span class="dv" style="color:var(--state)">${(rate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Gross Tax</span><span class="dv" style="color:var(--federal)">$${Math.round(adjustedTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Homestead Rebate</span><span class="dv" style="color:var(--state)">-$${Math.round(rebate).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk"><strong>Total Annual Property Tax</strong></span><span class="dv" style="color:var(--accent);font-size:16px">$${Math.round(totalTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Monthly Payment</span><span class="dv">$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Tax Rate (on market value)</span><span class="dv">${effectiveRateDisplay.toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">County</span><span class="dv">${countyName}</span></div>
+        <div class="dr"><span class="dk">Property Type</span><span class="dv">${propType.charAt(0).toUpperCase()+propType.slice(1)}</span></div>
+        <div class="dr"><span class="dk">Homestead Rebate Applied</span><span class="dv">${rebate > 0 ? 'Yes ($' + Math.round(rebate).toLocaleString() + ')' : 'No'}</span></div>
+    `;
+}
+
+calculateTax();
+</script>
+</body>
+</html>

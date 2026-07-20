@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Scientific Calculator — Free Online Tool</title>
+<link rel="canonical" href="https://usafincalc.com/scientific-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Full scientific calculator with trigonometric, logarithmic, and exponential functions. Free online calculator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.container{max-width:500px;width:100%}
+h1{font-size:28px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:20px}
+.display{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:20px 24px;text-align:right;font-size:36px;font-family:'Courier New',monospace;margin-bottom:16px;min-height:80px;overflow-x:auto;color:var(--text)}
+.display .expr{font-size:16px;color:var(--muted);display:block;min-height:24px}
+.buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.btn{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;font-size:16px;color:var(--text);cursor:pointer;transition:background .15s;text-align:center;font-weight:500}
+.btn:hover{background:rgba(15,42,74,0.05)}
+.btn.op{color:var(--accent)}
+.btn.fn{color:#C97A3B}
+.btn.eq{background:var(--accent);color:#FFFFFF;font-weight:700}
+.btn.eq:hover{background:#B8862F}
+.btn.span2{grid-column:span 2}
+@media(max-width:450px){.btn{padding:12px;font-size:14px}.display{font-size:28px}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Scientific Calculator</h1>
+<p class="sub">Trigonometry · Logarithms · Exponents · More</p>
+<div class="display"><span class="expr" id="expr"></span><span id="result">0</span></div>
+<div class="buttons">
+<button class="btn fn" onclick="clearAll()">AC</button>
+<button class="btn fn" onclick="backspace()">⌫</button>
+<button class="btn fn" onclick="insert('Math.PI')">π</button>
+<button class="btn fn" onclick="insert('Math.E')">e</button>
+<button class="btn op" onclick="insert('/')">÷</button>
+
+<button class="btn fn" onclick="insert('Math.sin(')">sin</button>
+<button class="btn fn" onclick="insert('Math.cos(')">cos</button>
+<button class="btn fn" onclick="insert('Math.tan(')">tan</button>
+<button class="btn fn" onclick="insert('Math.log(')">log</button>
+<button class="btn op" onclick="insert('*')">×</button>
+
+<button class="btn fn" onclick="insert('Math.asin(')">sin⁻¹</button>
+<button class="btn fn" onclick="insert('Math.acos(')">cos⁻¹</button>
+<button class="btn fn" onclick="insert('Math.atan(')">tan⁻¹</button>
+<button class="btn fn" onclick="insert('Math.log10(')">log₁₀</button>
+<button class="btn op" onclick="insert('-')">−</button>
+
+<button class="btn" onclick="insert('7')">7</button>
+<button class="btn" onclick="insert('8')">8</button>
+<button class="btn" onclick="insert('9')">9</button>
+<button class="btn fn" onclick="insert('Math.sqrt(')">√</button>
+<button class="btn op" onclick="insert('+')">+</button>
+
+<button class="btn" onclick="insert('4')">4</button>
+<button class="btn" onclick="insert('5')">5</button>
+<button class="btn" onclick="insert('6')">6</button>
+<button class="btn fn" onclick="insert('**2')">x²</button>
+<button class="btn fn" onclick="insert('**')">xⁿ</button>
+
+<button class="btn" onclick="insert('1')">1</button>
+<button class="btn" onclick="insert('2')">2</button>
+<button class="btn" onclick="insert('3')">3</button>
+<button class="btn fn" onclick="insert('Math.exp(')">eˣ</button>
+<button class="btn eq" onclick="calculate()">=</button>
+
+<button class="btn" onclick="insert('0')">0</button>
+<button class="btn" onclick="insert('.')">.</button>
+<button class="btn" onclick="insert('(')">(</button>
+<button class="btn" onclick="insert(')')">)</button>
+<button class="btn fn" onclick="insert('!')">!</button>
+</div>
+</div>
+<script>
+let expr='';
+function updateDisplay(){document.getElementById('expr').textContent=expr||'\u200B';}
+function insert(val){expr+=val;updateDisplay();}
+function clearAll(){expr='';document.getElementById('result').textContent='0';updateDisplay();}
+function backspace(){expr=expr.slice(0,-1);updateDisplay();}
+function calculate(){
+try{
+let e=expr.replace(/Math\.log\(/g,'Math.log(').replace(/Math\.log10\(/g,'Math.log10(');
+let result=Function('"use strict"; return ('+e+')')();
+if(typeof result==='number'&&!isNaN(result)&&isFinite(result)){
+document.getElementById('result').textContent=Number.isInteger(result)?result:result.toFixed(8).replace(/\.?0+$/,'');
+expr='';
+updateDisplay();
+}else{document.getElementById('result').textContent='Error';}
+}catch(e){document.getElementById('result').textContent='Error';}
+}
+document.addEventListener('keydown',e=>{
+if(e.key==='Enter')calculate();
+else if(e.key==='Backspace')backspace();
+else if(e.key==='Escape')clearAll();
+else if(e.key.match(/[0-9.+\-*/()]/))insert(e.key);
+});
+</script>
+</body>
+</html>

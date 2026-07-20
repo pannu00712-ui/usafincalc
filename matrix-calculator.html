@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Matrix Calculator — Add, Subtract, Multiply, Determinant, Inverse</title>
+<link rel="canonical" href="https://usafincalc.com/matrix-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Perform matrix operations: addition, subtraction, multiplication, determinant, inverse, and transpose. Free online matrix calculator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--red:#B5495A;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:950px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:8px 10px;font-family:var(--mono);outline:none;margin-bottom:8px}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:10px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.btn-gold{background:var(--gold);color:#FFFFFF}
+.btn-gold:hover{background:#A5691E}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 16px;cursor:pointer;font-size:13px;color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(201,154,59,0.12);border-color:var(--accent);color:var(--accent)}
+.tab:hover{background:rgba(15,42,74,0.05)}
+.matrix-input{display:grid;gap:4px;margin:8px 0}
+.matrix-input input{width:60px;padding:6px;text-align:center;font-size:14px;margin:0;display:inline-block}
+.matrix-row{display:flex;gap:4px;justify-content:center;flex-wrap:wrap}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px;overflow-x:auto}
+.result-box .result{font-family:var(--mono);font-size:16px;color:var(--text);white-space:pre;line-height:1.8}
+.result-box .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.result-box .detail{font-size:14px;color:var(--muted);margin-top:4px}
+.matrix-dim{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.matrix-dim label{font-size:12px;color:var(--muted);margin:0}
+.matrix-dim input{width:50px;padding:4px;font-size:13px;margin:0}
+@media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}.matrix-input input{width:45px;font-size:12px}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Matrix Calculator</h1>
+<p class="sub">Add, subtract, multiply, find determinant, inverse, and transpose</p>
+
+<div class="card">
+<div class="tabs">
+<span class="tab active" data-mode="add" onclick="switchMode('add')">Add</span>
+<span class="tab" data-mode="subtract" onclick="switchMode('subtract')">Subtract</span>
+<span class="tab" data-mode="multiply" onclick="switchMode('multiply')">Multiply</span>
+<span class="tab" data-mode="det" onclick="switchMode('det')">Determinant</span>
+<span class="tab" data-mode="inverse" onclick="switchMode('inverse')">Inverse</span>
+<span class="tab" data-mode="transpose" onclick="switchMode('transpose')">Transpose</span>
+</div>
+
+<div id="matrix-input-area">
+<div id="matrix-a-section">
+<div class="matrix-dim">
+<label>Matrix A</label>
+<label>Rows: <input id="a-rows" type="number" value="2" min="1" max="5" onchange="buildMatrices()"/></label>
+<label>Cols: <input id="a-cols" type="number" value="2" min="1" max="5" onchange="buildMatrices()"/></label>
+</div>
+<div id="matrix-a" class="matrix-input"></div>
+</div>
+
+<div id="matrix-b-section" style="display:none">
+<div class="matrix-dim">
+<label>Matrix B</label>
+<label>Rows: <input id="b-rows" type="number" value="2" min="1" max="5" onchange="buildMatrices()"/></label>
+<label>Cols: <input id="b-cols" type="number" value="2" min="1" max="5" onchange="buildMatrices()"/></label>
+</div>
+<div id="matrix-b" class="matrix-input"></div>
+</div>
+</div>
+
+<button class="btn btn-green" onclick="calculateMatrix()">Calculate →</button>
+<div class="result-box" id="result">
+<div class="label">Result</div>
+<div class="result" id="matrix-result">Enter matrices and click Calculate</div>
+<div class="detail" id="matrix-detail"></div>
+</div>
+</div>
+</div>
+
+<script>
+let currentMode = 'add';
+
+function switchMode(mode) {
+currentMode = mode;
+document.querySelectorAll('.tab').forEach(el => el.classList.toggle('active', el.dataset.mode === mode));
+const showB = !['det', 'inverse', 'transpose'].includes(mode);
+document.getElementById('matrix-b-section').style.display = showB ? 'block' : 'none';
+document.getElementById('matrix-a-section').style.display = 'block';
+if (mode === 'transpose') {
+document.getElementById('a-cols').value = document.getElementById('a-rows').value;
+document.getElementById('a-rows').value = document.getElementById('a-cols').value;
+}
+buildMatrices();
+}
+
+function buildMatrices() {
+buildMatrix('a');
+if (document.getElementById('matrix-b-section').style.display !== 'none') buildMatrix('b');
+}
+
+function buildMatrix(prefix) {
+const rows = parseInt(document.getElementById(prefix + '-rows').value) || 2;
+const cols = parseInt(document.getElementById(prefix + '-cols').value) || 2;
+const container = document.getElementById('matrix-' + prefix);
+container.innerHTML = '';
+for (let i = 0; i < rows; i++) {
+const row = document.createElement('div');
+row.className = 'matrix-row';
+for (let j = 0; j < cols; j++) {
+const input = document.createElement('input');
+input.type = 'number';
+input.step = 'any';
+input.value = (i === j) ? '1' : '0';
+input.id = prefix + '_' + i + '_' + j;
+input.style.width = '60px';
+row.appendChild(input);
+}
+container.appendChild(row);
+}
+}
+
+function getMatrix(prefix) {
+const rows = parseInt(document.getElementById(prefix + '-rows').value) || 2;
+const cols = parseInt(document.getElementById(prefix + '-cols').value) || 2;
+const matrix = [];
+for (let i = 0; i < rows; i++) {
+matrix[i] = [];
+for (let j = 0; j < cols; j++) {
+const val = parseFloat(document.getElementById(prefix + '_' + i + '_' + j).value);
+matrix[i][j] = isNaN(val) ? 0 : val;
+}
+}
+return matrix;
+}
+
+function formatMatrix(m) {
+if (!m || m.length === 0) return '[]';
+return m.map(row => '[' + row.map(v => v.toFixed(4)).join(' ') + ']').join('\n');
+}
+
+function determinant(m) {
+const n = m.length;
+if (n === 0) return 0;
+if (n === 1) return m[0][0];
+if (n === 2) return m[0][0]*m[1][1] - m[0][1]*m[1][0];
+let det = 0;
+for (let j = 0; j < n; j++) {
+const sub = m.slice(1).map(row => [...row.slice(0,j), ...row.slice(j+1)]);
+det += (j % 2 === 0 ? 1 : -1) * m[0][j] * determinant(sub);
+}
+return det;
+}
+
+function transpose(m) {
+const rows = m.length, cols = m[0]?.length || 0;
+const result = [];
+for (let j = 0; j < cols; j++) {
+result[j] = [];
+for (let i = 0; i < rows; i++) {
+result[j][i] = m[i][j];
+}
+}
+return result;
+}
+
+function inverse(m) {
+const n = m.length;
+const det = determinant(m);
+if (Math.abs(det) < 1e-10) return null;
+if (n === 1) return [[1/m[0][0]]];
+if (n === 2) {
+return [
+[m[1][1]/det, -m[0][1]/det],
+[-m[1][0]/det, m[0][0]/det]
+];
+}
+// For 3x3 and above, use adjugate method
+const adj = [];
+for (let i = 0; i < n; i++) {
+adj[i] = [];
+for (let j = 0; j < n; j++) {
+const sub = m.filter((_, r) => r !== i).map(row => row.filter((_, c) => c !== j));
+adj[i][j] = ((i + j) % 2 === 0 ? 1 : -1) * determinant(sub);
+}
+}
+return transpose(adj).map(row => row.map(v => v / det));
+}
+
+function multiply(m1, m2) {
+const r1 = m1.length, c1 = m1[0]?.length || 0;
+const r2 = m2.length, c2 = m2[0]?.length || 0;
+if (c1 !== r2) return null;
+const result = [];
+for (let i = 0; i < r1; i++) {
+result[i] = [];
+for (let j = 0; j < c2; j++) {
+let sum = 0;
+for (let k = 0; k < c1; k++) sum += m1[i][k] * m2[k][j];
+result[i][j] = sum;
+}
+}
+return result;
+}
+
+function add(m1, m2) {
+const r = m1.length, c = m1[0]?.length || 0;
+if (r !== m2.length || c !== (m2[0]?.length || 0)) return null;
+const result = [];
+for (let i = 0; i < r; i++) {
+result[i] = [];
+for (let j = 0; j < c; j++) result[i][j] = m1[i][j] + m2[i][j];
+}
+return result;
+}
+
+function subtract(m1, m2) {
+const r = m1.length, c = m1[0]?.length || 0;
+if (r !== m2.length || c !== (m2[0]?.length || 0)) return null;
+const result = [];
+for (let i = 0; i < r; i++) {
+result[i] = [];
+for (let j = 0; j < c; j++) result[i][j] = m1[i][j] - m2[i][j];
+}
+return result;
+}
+
+function calculateMatrix() {
+const A = getMatrix('a');
+const B = currentMode !== 'transpose' && !['det','inverse'].includes(currentMode) ? getMatrix('b') : null;
+const resultEl = document.getElementById('matrix-result');
+const detailEl = document.getElementById('matrix-detail');
+
+let result = null, detail = '';
+
+switch(currentMode) {
+case 'add':
+result = add(A, B);
+detail = 'A + B (matrix addition)';
+break;
+case 'subtract':
+result = subtract(A, B);
+detail = 'A - B (matrix subtraction)';
+break;
+case 'multiply':
+result = multiply(A, B);
+if (!result) { resultEl.textContent = 'Error: Columns of A must equal rows of B'; detailEl.textContent = ''; return; }
+detail = 'A × B (matrix multiplication)';
+break;
+case 'det':
+const det = determinant(A);
+resultEl.textContent = 'det(A) = ' + det.toFixed(6);
+detailEl.textContent = 'Determinant of matrix A';
+return;
+case 'inverse':
+const inv = inverse(A);
+if (!inv) { resultEl.textContent = 'Matrix is singular (det = 0) — inverse does not exist'; detailEl.textContent = ''; return; }
+result = inv;
+detail = 'A⁻¹ (inverse of matrix A)';
+break;
+case 'transpose':
+result = transpose(A);
+detail = 'Aᵀ (transpose of matrix A)';
+break;
+default: result = A;
+}
+
+if (!result) {
+resultEl.textContent = 'Error: Matrices must have compatible dimensions';
+detailEl.textContent = '';
+return;
+}
+
+resultEl.textContent = formatMatrix(result);
+detailEl.textContent = detail + ' (' + result.length + '×' + (result[0]?.length || 0) + ')';
+}
+
+// Initialize
+buildMatrices();
+</script>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

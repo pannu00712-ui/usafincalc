@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+    <title>New York Property Tax Calculator 2026 | NY Property Tax Estimator</title>
+    <meta content="Calculate your New York property tax for 2026. Free estimator shows your annual property tax based on assessed value, county/city tax rates (0.5%–3.0%+), and STAR exemption." name="description"/>
+    <meta content="new york property tax calculator, ny property tax, new york property tax rate, star exemption ny, property tax estimator, nyc property tax 2026" name="keywords"/>
+    <meta content="USAFinCalc" name="author"/>
+    <meta content="#0F2A4A" name="theme-color"/>
+    <link href="https://usafincalc.com/new-york-property-tax-calculator" rel="canonical"/>
+    <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%2360a5fa' font-family='monospace' font-weight='700'>NY</text></svg>" rel="icon" type="image/svg+xml"/>
+    <meta content="New York Property Tax Calculator 2026 | NY Property Tax Estimator" property="og:title"/>
+    <meta content="Calculate your New York property tax for 2026. Free estimator shows your annual property tax based on assessed value, county/city tax rates (0.5%–3.0%+), and STAR exemption." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://usafincalc.com/new-york-property-tax-calculator" property="og:url"/>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "New York Property Tax Calculator 2026",
+      "description": "Calculate your New York property tax liability based on assessed value, county/city tax rate, and STAR exemption. Free, no sign-up.",
+      "url": "https://usafincalc.com/new-york-property-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isAccessibleForFree": true
+    }
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+          --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+          --text:#FAF9F6; --muted:#B8C4D6;
+          --accent:#C99A3B; --federal:#5C87B8; --state:#5C87B8; --fica:#C97A3B; --takehome:#E8C878;
+          --font:'Sora',sans-serif; --mono:'DM Mono',monospace;
+          --r:14px; --rs:8px;
+        }
+        body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav.site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-size:16px;font-weight:600;color:#E8C878}
+        .nav-links{display:flex;gap:20px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:13px}
+        .nav-links a:hover{color:var(--text)}
+
+        .hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+        .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(96,165,250,0.1);color:var(--state);border:1px solid rgba(96,165,250,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+        .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--state)}
+        h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+        h1 span{color:var(--state)}
+        .hero-sub{color:var(--muted);font-size:14px;max-width:700px;line-height:1.8}
+        .hero-author{display:flex;align-items:center;gap:14px;margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+        .hero-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#5C87B8,#C99A3B);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+        .hero-author-text{font-weight:600;font-size:13px}
+        .hero-author-text a{color:#B8C4D6;text-decoration:none}
+        .hero-author-text a:hover{color:var(--text)}
+
+        .qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+        .qa{background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+        .qa strong{color:var(--state)}
+
+        .main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+        @media(max-width:760px){.main{grid-template-columns:1fr}}
+        .wide{grid-column:1/-1}
+
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+        label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+        input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;margin-bottom:12px}
+        input:focus,select:focus{border-color:var(--state)}
+        .pfx{position:relative;margin-bottom:12px}
+        .pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px}
+        .pfx input{padding-left:26px;margin-bottom:0}
+        .sfx{position:relative;margin-bottom:12px}
+        .sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px}
+        .sfx input{padding-right:28px;margin-bottom:0}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:6px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+        .btn{width:100%;background:var(--state);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px;transition:background .2s}
+        .btn:hover{background:#C99A3B}
+
+        .net-card{background:linear-gradient(135deg,rgba(96,165,250,0.12),rgba(59,130,246,0.04));border:1px solid rgba(96,165,250,0.25);border-radius:var(--r);padding:20px;text-align:center}
+        .nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+        .na{font-size:38px;font-weight:600;color:var(--state);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+        .nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+        .nm span{color:var(--text)}
+
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+        @media(max-width:500px){.pay-grid{grid-template-columns:1fr 1fr}}
+        .pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+        .pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+        .pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+
+        .bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+        .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+        .brows{display:flex;flex-direction:column;gap:7px}
+        .br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+        .bl{display:flex;align-items:center;gap:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .blbl{color:var(--muted)}
+        .ba{font-family:var(--mono);font-weight:500}
+        .divider{height:1px;background:var(--border);margin:7px 0}
+
+        .dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+        .dr:last-child{border-bottom:none}
+        .dk{color:var(--muted)}
+        .dv{font-family:var(--mono);font-weight:500}
+
+        .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+
+        .state-data-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:12px}
+        .state-data-card h2{font-size:18px;font-weight:600;color:var(--text);margin-bottom:12px}
+        .state-data-card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+        .state-data-card ul{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 8px 20px}
+        .state-data-card .source{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+
+        .faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+        .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+        .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+        .faq-q::after{content:"+";color:var(--state);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+        .faq-item.open .faq-a{max-height:400px;padding-top:10px}
+
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+
+        .related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+        .related-section h2{font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px}
+        .related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+        .related-links li{list-style:none}
+        .related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1F4670;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#C99A3B!important;text-decoration:none!important;font-size:13px;font-weight:500}
+
+        .meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+        .meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+        footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+        footer a:hover{color:var(--accent)}
+
+        .ny-tax-badge{display:inline-block;background:rgba(96,165,250,0.15);border:1px solid rgba(96,165,250,0.3);border-radius:20px;padding:2px 14px;font-size:12px;color:var(--state);font-family:var(--mono);margin-left:8px}
+        .quick-table{width:100%;border-collapse:collapse;font-size:13px}
+        .quick-table th,.quick-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+        .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+
+        @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+        input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+    <span class="logo">USA<span style="color:#C99A3B">FinCalc</span></span>
+    <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/mortgage-calculator-usa">Mortgage</a></li>
+        <li><a href="/tax-calculator-usa">Tax</a></li>
+        <li><a href="/paycheck-calculator">Paycheck</a></li>
+        <li><a href="/salary-calculator-usa">Salary</a></li>
+        <li><a href="/#states-h">States</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/">All Tools</a></li>
+    </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="badge">🗽 New York Property Tax 2026 • Estimator</div>
+    <h1>New York Property <span>Tax Calculator</span></h1>
+    <div class="hero-author">
+        <div class="hero-avatar">NY</div>
+        <div>
+            <div class="hero-author-text">Written by the <strong>USAFinCalc Team</strong></div>
+            <div style="font-size:12px;color:#B8C4D6"><a href="/editorial-policy">Editorial Policy</a> · <a href="/methodology">Methodology</a></div>
+        </div>
+    </div>
+    <p class="hero-sub"><strong>Estimate your New York property tax</strong> for the 2026 tax year. Enter your home's assessed value and location to see your annual property tax bill, including <strong>county/city tax rates (0.5%–3.0%+)</strong>, <strong>STAR exemption</strong>, and <strong>school tax</strong>.<span class="ny-tax-badge">Updated 2026</span></p>
+</div>
+
+<!-- QA -->
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your property value below to calculate your New York property tax.</div></div>
+
+<!-- MAIN -->
+<div class="main">
+    <div>
+        <div class="card">
+            <div class="ct">🏡 Property Details</div>
+            <label for="property-value">Assessed Property Value <span style="color:var(--muted);font-weight:400;">(market value)</span></label>
+            <div class="pfx"><span>$</span><input id="property-value" type="number" min="0" value="500000" oninput="calculateTax()"/></div>
+
+            <div class="row2">
+                <div>
+                    <label for="location">Location</label>
+                    <select id="location" onchange="calculateTax()">
+                        <optgroup label="🏙️ NYC Boroughs">
+                            <option value="nyc-manhattan">Manhattan</option>
+                            <option value="nyc-brooklyn">Brooklyn</option>
+                            <option value="nyc-queens">Queens</option>
+                            <option value="nyc-bronx">Bronx</option>
+                            <option value="nyc-staten-island">Staten Island</option>
+                        </optgroup>
+                        <optgroup label="🌆 Upstate/NYC Suburbs">
+                            <option value="westchester">Westchester</option>
+                            <option value="nassau">Nassau (Long Island)</option>
+                            <option value="suffolk">Suffolk (Long Island)</option>
+                            <option value="rockland">Rockland</option>
+                            <option value="putnam">Putnam</option>
+                            <option value="dutchess">Dutchess</option>
+                            <option value="orange">Orange</option>
+                            <option value="ulster">Ulster</option>
+                            <option value="albany" selected>Albany</option>
+                            <option value="erie">Erie (Buffalo)</option>
+                            <option value="monroe">Monroe (Rochester)</option>
+                            <option value="onondaga">Onondaga (Syracuse)</option>
+                            <option value="oneida">Oneida (Utica)</option>
+                            <option value="broome">Broome (Binghamton)</option>
+                            <option value="saratoga">Saratoga</option>
+                            <option value="schenectady">Schenectady</option>
+                            <option value="niagara">Niagara</option>
+                            <option value="chautauqua">Chautauqua</option>
+                            <option value="st-lawrence">St. Lawrence</option>
+                            <option value="tompkins">Tompkins (Ithaca)</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div>
+                    <label for="prop-type">Property Type</label>
+                    <select id="prop-type" onchange="calculateTax()">
+                        <option value="primary">Primary Residence</option>
+                        <option value="secondary">Secondary/Vacation</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment/Rental</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label for="star-exemption">STAR Exemption</label>
+                    <select id="star-exemption" onchange="calculateTax()">
+                        <option value="basic">Basic STAR (Income &lt; $250,000)</option>
+                        <option value="enhanced">Enhanced STAR (Seniors 65+)</option>
+                        <option value="none">No STAR Exemption</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="additional-exemptions">Additional Exemptions <span style="color:var(--muted);font-weight:400;">(veteran, disability, etc.)</span></label>
+                    <div class="pfx"><span>$</span><input id="additional-exemptions" type="number" min="0" value="0" oninput="calculateTax()"/></div>
+                </div>
+            </div>
+
+            <div class="sec-label">📍 New York — <span style="color:var(--state)">0.5%–3.0%+ Effective Rate</span></div>
+            <div style="background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.15);border-radius:var(--rs);padding:8px 14px;font-size:11px;color:var(--muted);margin-bottom:12px">
+                <strong style="color:var(--state)">📊 STAR Exemption: Basic ($30,000) / Enhanced ($65,000)</strong> · NYC: ~0.9%–1.2% · Suburbs: ~1.5%–2.5% · Upstate: ~2.0%–3.0%+
+            </div>
+            <button class="btn" onclick="calculateTax()">Calculate Property Tax →</button>
+        </div>
+    </div>
+
+    <div id="result-col">
+        <div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your property details</div><div style="font-size:12px;font-family:var(--mono)">See your annual property tax</div></div>
+    </div>
+
+    <div class="wide" id="detail-col" style="display:none">
+        <div class="dcard">
+            <div class="bt">📋 Property Tax Breakdown — New York</div>
+            <div id="detail-rows"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Reference Table -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>New York Property Tax Estimator — Quick Look</h2>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Estimated annual property tax for common home values (primary residence, Basic STAR exemption).</p>
+        <div style="overflow-x:auto">
+            <table class="quick-table">
+                <thead>
+                    <tr><th>Assessed Value</th><th>Location</th><th>STAR Exemption</th><th>Total Tax</th><th>Monthly</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$300,000</td><td>Albany (2.0%)</td><td>$30,000</td><td>$5,400</td><td>$450</td></tr>
+                    <tr><td>$500,000</td><td>Albany (2.0%)</td><td>$30,000</td><td>$9,400</td><td>$783</td></tr>
+                    <tr><td>$500,000</td><td>Westchester (1.8%)</td><td>$30,000</td><td>$8,460</td><td>$705</td></tr>
+                    <tr><td>$500,000</td><td>Nassau (1.9%)</td><td>$30,000</td><td>$8,930</td><td>$744</td></tr>
+                    <tr><td>$750,000</td><td>NYC (1.0%)</td><td>$30,000</td><td>$7,200</td><td>$600</td></tr>
+                    <tr><td>$1,000,000</td><td>NYC (1.0%)</td><td>$30,000</td><td>$9,700</td><td>$808</td></tr>
+                    <tr><td>$1,000,000</td><td>Westchester (1.8%)</td><td>$30,000</td><td>$17,460</td><td>$1,455</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="source" style="margin-top:10px;font-size:11px">* Estimates for primary residence with Basic STAR exemption ($30,000). Actual tax varies by school district, village/city taxes, and additional exemptions.</p>
+    </div>
+</div>
+
+<!-- State Data Block -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>New York Property Tax Information 2026</h2>
+        <p><strong>Average Effective Rate:</strong> <span style="color:var(--state)">0.5%–3.0%+</span> depending on location <span class="ny-tax-badge">County + City + School</span></p>
+        <p><strong>STAR Exemption (2026):</strong></p>
+        <ul>
+            <li><strong>Basic STAR:</strong> $30,000 exemption from assessed value (income limit: $250,000)</li>
+            <li><strong>Enhanced STAR:</strong> $65,000 exemption for seniors 65+ with income under $98,700</li>
+        </ul>
+        <p><strong>New York City Property Tax:</strong></p>
+        <ul>
+            <li>Class 1 (1-3 family homes): ~0.9% effective rate (limited assessment increases)</li>
+            <li>Class 2 (condos/co-ops): ~1.2% effective rate</li>
+            <li>Class 4 (commercial): ~1.0% effective rate</li>
+        </ul>
+        <p><strong>Additional Exemptions:</strong></p>
+        <ul>
+            <li><strong>Veterans Exemption:</strong> Up to $15,000–$30,000 off assessed value (county-dependent)</li>
+            <li><strong>Senior Citizen Exemption:</strong> Additional 5%–50% reduction for low-income seniors 65+ (county-dependent)</li>
+            <li><strong>Disabled Persons Exemption:</strong> 5%–50% reduction for permanently disabled (county-dependent)</li>
+            <li><strong>Cold War Veterans Exemption:</strong> Up to 15% reduction (county-dependent)</li>
+        </ul>
+        <p><strong>School Tax:</strong> In many upstate districts, school taxes can be 60%–70% of total property tax bill.</p>
+        <p class="source"><strong>Source:</strong> New York State Department of Taxation and Finance — <a href="https://www.tax.ny.gov/" style="color:var(--accent);" target="_blank">tax.ny.gov</a> · Updated July 2026</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2>Frequently Asked Questions — New York Property Tax</h2>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the New York property tax rate for 2026?</div><div class="faq-a">New York's property tax rate varies significantly by location. The <strong>average effective rate</strong> ranges from <strong>0.9% in New York City</strong> to <strong>2.0%–3.0% in upstate counties</strong>. Rates are a combination of county, city/town, school district, and special district taxes, typically expressed as "mills" (1 mill = $1 per $1,000 of assessed value).</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the STAR exemption in New York?</div><div class="faq-a">The <strong>STAR (School Tax Relief) Exemption</strong> reduces your property's assessed value for school taxes. <strong>Basic STAR</strong> exempts $30,000 for homeowners with income under $250,000. <strong>Enhanced STAR</strong> exempts $65,000 for seniors 65+ with income under $98,700. This saves homeowners hundreds to thousands per year.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is New York property tax calculated?</div><div class="faq-a">Property tax is calculated as: <br><strong>Tax = (Assessed Value - Exemptions) × (Total Millage Rate / 1,000)</strong> <br>Example: $500,000 home in Albany with $30,000 STAR exemption and 20 mills rate: ($470,000 × 20) / 1,000 = <strong>$9,400</strong> annual tax.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the difference between assessed value and market value in New York?</div><div class="faq-a">In New York, <strong>assessed value</strong> is a percentage of market value determined by the local assessor. Many municipalities use an <strong>assessment ratio</strong> (e.g., 100% in NYC, 50% in some upstate counties). The taxable value is the assessed value minus exemptions.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does New York City have the highest property taxes?</div><div class="faq-a">No. While NYC has high property values, the <strong>effective tax rate is relatively low (0.9%–1.2%)</strong> compared to upstate counties. <strong>Counties like Albany, Erie, and Monroe often have effective rates above 2.0%</strong>, meaning homeowners pay a higher percentage of their home's value.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the senior citizen exemption in New York?</div><div class="faq-a">Many New York counties offer an <strong>additional 5%–50% reduction</strong> in assessed value for homeowners <strong>65 years or older</strong> with limited income (typically under $37,400–$50,000). This is in addition to Enhanced STAR. Check with your county assessor for eligibility.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the veterans exemption in New York?</div><div class="faq-a">New York offers several veterans exemptions: <strong>Standard Veterans Exemption</strong> ($5,000–$15,000 reduction), <strong>Combat Zone Veterans Exemption</strong> ($10,000–$30,000 reduction), and <strong>Cold War Veterans Exemption</strong> (up to 15% reduction, county-dependent).</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How often are New York properties reassessed?</div><div class="faq-a">New York City reassesses annually. <strong>Most upstate counties reassess on a 4–8 year cycle</strong>, though some are moving to annual reassessment. If you disagree with your assessment, you can file a grievance (appeal) with your local assessor or Board of Assessment Review.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">When are New York property taxes due?</div><div class="faq-a">School taxes are typically due in <strong>September</strong>. County and town taxes are due in <strong>January</strong>. Payment schedules vary by county. Most offer payment plans and partial payment options.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I deduct New York property taxes on my federal return?</div><div class="faq-a">Yes. New York property tax is deductible on your federal income tax return if you itemize. However, the <strong>SALT (State And Local Tax) deduction is capped at $10,000</strong> ($5,000 for married filing separately) for the 2026 tax year.</div></div>
+</div>
+
+<!-- Related Calculators -->
+<section class="related-section">
+    <div class="related">
+        <h2>Related Calculators & Tools</h2>
+        <div class="rel-grid">
+            <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
+            <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
+            <a class="rel-card" href="/new-york-income-tax-calculator"><div class="rt">💰 New York Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/new-york-paycheck-calculator"><div class="rt">📄 New York Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare New York to your city</div></a>
+        </div>
+    </div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-section">
+    <h2>Related Articles</h2>
+    <ul class="related-links">
+        <li><a href="/blog/new-york-property-tax-guide-2026">New York Property Tax Guide 2026: What Homeowners Need to Know</a></li>
+        <li><a href="/blog/star-exemption-new-york-2026">New York STAR Exemption 2026: How to Save on School Taxes</a></li>
+        <li><a href="/blog/new-york-vs-new-jersey-property-tax">New York vs. New Jersey Property Tax: Which State Is More Expensive?</a></li>
+    </ul>
+</section>
+
+<!-- Methodology -->
+<div class="meth">
+    <div class="meth-box">
+        <p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+        <p>New York property tax calculations use location-specific effective tax rates from the New York State Department of Taxation and Finance and county assessor offices. STAR exemptions: Basic ($30,000) and Enhanced ($65,000) are applied based on selection. Additional county-specific exemptions and school tax variations are estimated. Source: <a href="https://www.tax.ny.gov/" target="_blank">NY State DTF</a> · Updated July 2026</p>
+    </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
+        <a href="/">Home</a>
+        <a href="/tax-calculator-usa">Tax Calculator</a>
+        <a href="/salary-calculator-usa">Salary Calculator</a>
+        <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+        <a href="/paycheck-calculator">Paycheck Calculator</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0">
+        <span style="background:rgba(96,165,250,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--state)">✅ Calculators: 0 Data Stored</span>
+        <span style="background:rgba(248,113,113,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--fica)">⚠️ Ads & Affiliate Links: Third-Party Cookies</span>
+    </div>
+    <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// Location-specific effective tax rates (combined county + city + school)
+const locationRates = {
+    'nyc-manhattan': { rate: 0.011, label: 'Manhattan (NYC)' },
+    'nyc-brooklyn': { rate: 0.011, label: 'Brooklyn (NYC)' },
+    'nyc-queens': { rate: 0.011, label: 'Queens (NYC)' },
+    'nyc-bronx': { rate: 0.011, label: 'Bronx (NYC)' },
+    'nyc-staten-island': { rate: 0.011, label: 'Staten Island (NYC)' },
+    'westchester': { rate: 0.018, label: 'Westchester' },
+    'nassau': { rate: 0.019, label: 'Nassau (Long Island)' },
+    'suffolk': { rate: 0.019, label: 'Suffolk (Long Island)' },
+    'rockland': { rate: 0.020, label: 'Rockland' },
+    'putnam': { rate: 0.018, label: 'Putnam' },
+    'dutchess': { rate: 0.021, label: 'Dutchess' },
+    'orange': { rate: 0.022, label: 'Orange' },
+    'ulster': { rate: 0.022, label: 'Ulster' },
+    'albany': { rate: 0.020, label: 'Albany' },
+    'erie': { rate: 0.025, label: 'Erie (Buffalo)' },
+    'monroe': { rate: 0.024, label: 'Monroe (Rochester)' },
+    'onondaga': { rate: 0.023, label: 'Onondaga (Syracuse)' },
+    'oneida': { rate: 0.022, label: 'Oneida (Utica)' },
+    'broome': { rate: 0.021, label: 'Broome (Binghamton)' },
+    'saratoga': { rate: 0.019, label: 'Saratoga' },
+    'schenectady': { rate: 0.022, label: 'Schenectady' },
+    'niagara': { rate: 0.023, label: 'Niagara' },
+    'chautauqua': { rate: 0.022, label: 'Chautauqua' },
+    'st-lawrence': { rate: 0.020, label: 'St. Lawrence' },
+    'tompkins': { rate: 0.021, label: 'Tompkins (Ithaca)' }
+};
+
+function calculateTax(){
+    const value = +document.getElementById('property-value').value || 0;
+    const location = document.getElementById('location').value;
+    const propType = document.getElementById('prop-type').value;
+    const starType = document.getElementById('star-exemption').value;
+    let additionalExemptions = +document.getElementById('additional-exemptions').value || 0;
+
+    const locData = locationRates[location] || { rate: 0.020, label: 'New York' };
+    const effectiveRate = locData.rate;
+
+    // STAR Exemption amounts
+    let starExemption = 0;
+    if (propType === 'primary') {
+        if (starType === 'basic') starExemption = 30000;
+        else if (starType === 'enhanced') starExemption = 65000;
+        else starExemption = 0;
+    }
+
+    // Total exemptions
+    const totalExemptions = starExemption + additionalExemptions;
+    const taxableValue = Math.max(0, value - totalExemptions);
+
+    // Calculate tax
+    const annualTax = taxableValue * effectiveRate;
+
+    // Effective rate on market value
+    const effectiveRateDisplay = value > 0 ? (annualTax / value) * 100 : 0;
+
+    // Update QA
+    document.getElementById('qa-box').innerHTML =
+        `New York property tax: <strong>$${Math.round(annualTax).toLocaleString()}</strong> per year · Effective rate: <strong>${effectiveRateDisplay.toFixed(2)}%</strong> · ${locData.label}`;
+
+    // Result card
+    document.getElementById('result-col').innerHTML = `
+        <div class="net-card">
+            <div class="nl">Annual Property Tax</div>
+            <div class="na">$${Math.round(annualTax).toLocaleString()}</div>
+            <div class="nm">Effective rate: <span>${effectiveRateDisplay.toFixed(2)}%</span> · Monthly: <span>$${Math.round(annualTax/12).toLocaleString()}</span></div>
+        </div>
+        <div class="pay-grid">
+            <div class="pay-box"><div class="pay-l">Taxable Value</div><div class="pay-v" style="color:var(--federal)">$${taxableValue.toLocaleString()}</div></div>
+            <div class="pay-box"><div class="pay-l">Tax Rate</div><div class="pay-v" style="color:var(--state)">${(effectiveRate*100).toFixed(2)}%</div></div>
+            <div class="pay-box"><div class="pay-l">STAR Exemption</div><div class="pay-v" style="color:var(--takehome)">$${starExemption.toLocaleString()}</div></div>
+        </div>
+        <div class="bcard">
+            <div class="bt">New York Property Tax Breakdown</div>
+            <div class="sbar">
+                <div class="seg" style="width:${(annualTax/(value+1)*100).toFixed(1)}%;background:var(--federal)"></div>
+                <div class="seg" style="width:${Math.max(0, 100 - (annualTax/(value+1)*100)).toFixed(1)}%;background:var(--takehome)"></div>
+            </div>
+            <div class="brows">
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--federal)"></div><div class="blbl">Total Property Tax</div></div><div class="ba" style="color:var(--state)">$${Math.round(annualTax).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--takehome)"></div><div class="blbl">Value After Tax</div></div><div class="ba" style="color:var(--takehome)">$${Math.round(value - annualTax).toLocaleString()}</div></div>
+                <div class="divider"></div>
+                <div class="br"><div class="bl"><div class="blbl"><strong>Location</strong></div></div><div class="ba" style="color:var(--state);font-size:14px">${locData.label}</div></div>
+                <div class="br"><div class="bl"><div class="blbl"><strong>STAR Type</strong></div></div><div class="ba" style="color:var(--takehome);font-size:14px">${starType === 'basic' ? 'Basic ($30,000)' : starType === 'enhanced' ? 'Enhanced ($65,000)' : 'None'}</div></div>
+            </div>
+        </div>
+        <div style="margin-top:10px;background:rgba(96,165,250,0.04);border:1px solid rgba(96,165,250,0.1);border-radius:var(--rs);padding:8px 14px;font-size:10px;color:var(--muted)">
+            📊 <strong style="color:var(--text)">Quick Facts:</strong> Basic STAR: $30,000 · Enhanced STAR: $65,000 · NYC: ~0.9%–1.2% · Upstate: ~2.0%–3.0%
+        </div>
+    `;
+
+    // Detail rows
+    document.getElementById('detail-col').style.display='block';
+    document.getElementById('detail-rows').innerHTML = `
+        <div class="dr"><span class="dk">Market Value</span><span class="dv">$${value.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">STAR Exemption (${starType})</span><span class="dv" style="color:var(--state)">$${starExemption.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Additional Exemptions</span><span class="dv" style="color:var(--state)">$${additionalExemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Total Exemptions</span><span class="dv" style="color:var(--state)">$${totalExemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Taxable Value</span><span class="dv">$${taxableValue.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Tax Rate</span><span class="dv" style="color:var(--state)">${(effectiveRate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk"><strong>Total Annual Property Tax</strong></span><span class="dv" style="color:var(--accent);font-size:16px">$${Math.round(annualTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Monthly Payment</span><span class="dv">$${Math.round(annualTax/12).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Rate (on market value)</span><span class="dv">${effectiveRateDisplay.toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Location</span><span class="dv">${locData.label}</span></div>
+        <div class="dr"><span class="dk">Property Type</span><span class="dv">${propType.charAt(0).toUpperCase()+propType.slice(1)}</span></div>
+    `;
+}
+
+calculateTax();
+</script>
+</body>
+</html>
