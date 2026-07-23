@@ -164,6 +164,7 @@
         input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/search.css">
   <link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
@@ -611,22 +612,13 @@
         <div class="rel-grid">
             <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
             <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
-            <a class="rel-card" href="/california-income-tax-calculator"><div class="rt">💰 California Income Tax</div><div class="rd">Estimate your state income tax</div></a>
-            <a class="rel-card" href="/california-paycheck-calculator"><div class="rt">📄 California Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/california-tax-calculator"><div class="rt">💰 California Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/paycheck-calculator-by-state"><div class="rt">📄 California Paycheck</div><div class="rd">See your take-home pay</div></a>
             <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare California to your city</div></a>
         </div>
     </div>
 </section>
 
-<!-- Related Articles -->
-<section class="related-section">
-    <h2>Related Articles</h2>
-    <ul class="related-links">
-        <li><a href="/blog/california-property-tax-guide-2026">California Property Tax Guide 2026: What Homeowners Need to Know</a></li>
-        <li><a href="/blog/proposition-19-explained-2026">Proposition 19 Explained: How It Affects Your Property Tax in 2026</a></li>
-        <li><a href="/blog/california-property-tax-vs-texas">California vs. Texas Property Tax: Which State Is More Expensive?</a></li>
-    </ul>
-</section>
 
 <!-- Methodology -->
 <div class="meth">
@@ -774,6 +766,7 @@ function calculateTax(){
 
 calculateTax();
 </script>
+<script defer src="/js/search.js"></script>
 <script src="/js/navbar.js" defer></script>
 </body>
 </html>
