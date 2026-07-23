@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fraction Calculator — Free Online Tool</title>
+<link rel="canonical" href="https://usafincalc.com/fraction-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Add, subtract, multiply, and divide fractions. Simplify fractions and convert between mixed numbers and improper fractions."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.container{max-width:700px;width:100%}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+.fraction-input{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:center}
+.fraction-input input{width:70px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:18px;padding:10px;text-align:center;font-family:var(--font)}
+.fraction-input .op{font-size:24px;color:var(--accent);font-weight:700}
+.fraction-input .line{display:flex;flex-direction:column;align-items:center}
+.fraction-input .line hr{width:70px;border:2px solid var(--border);margin:2px 0}
+.result{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:16px;font-size:20px;font-weight:600;text-align:center;color:var(--green)}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:10px 24px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:12px;width:100%}
+.btn:hover{background:#B8862F}
+@media(max-width:500px){.fraction-input{flex-direction:column;gap:8px}.fraction-input input{width:100px}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Fraction Calculator</h1>
+<p class="sub">Add, subtract, multiply, and divide fractions. Results are simplified.</p>
+
+<div class="card">
+<div class="fraction-input" id="frac-input">
+<div class="line"><input id="n1" type="number" value="2"/><hr/><input id="d1" type="number" value="3"/></div>
+<span class="op" id="op-display">+</span>
+<div class="line"><input id="n2" type="number" value="1"/><hr/><input id="d2" type="number" value="4"/></div>
+</div>
+<div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;justify-content:center">
+<button class="btn" style="width:auto;padding:8px 20px" onclick="setOp('+')">+</button>
+<button class="btn" style="width:auto;padding:8px 20px" onclick="setOp('-')">−</button>
+<button class="btn" style="width:auto;padding:8px 20px" onclick="setOp('*')">×</button>
+<button class="btn" style="width:auto;padding:8px 20px" onclick="setOp('/')">÷</button>
+<button class="btn" style="width:auto;padding:8px 20px;background:var(--green);color:#FFFFFF" onclick="calculate()">= Calculate</button>
+</div>
+<div class="result" id="result">2/3 + 1/4 = 11/12</div>
+</div>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:8px;color:var(--muted)">Simplify a Fraction</h3>
+<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+<input id="sn" type="number" value="12" style="width:80px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:18px;padding:10px;text-align:center"/>
+<span style="font-size:20px;color:var(--muted)">/</span>
+<input id="sd" type="number" value="16" style="width:80px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:18px;padding:10px;text-align:center"/>
+<button class="btn" style="width:auto;padding:8px 20px;background:var(--green);color:#FFFFFF" onclick="simplify()">Simplify</button>
+</div>
+<div class="result" id="simplify-result" style="font-size:16px">12/16 = 3/4</div>
+</div>
+</div>
+<script>
+let op='+';
+function setOp(o){op=o;document.getElementById('op-display').textContent=o;calculate();}
+function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){[a,b]=[b,a%b];}return a;}
+function fracStr(n,d){if(n===0)return '0';if(d<0){n=-n;d=-d;}const g=gcd(Math.abs(n),d);n/=g;d/=g;return n+'/'+d;}
+function calculate(){
+const n1=+document.getElementById('n1').value||0,d1=+document.getElementById('d1').value||1;
+const n2=+document.getElementById('n2').value||0,d2=+document.getElementById('d2').value||1;
+if(d1===0||d2===0){document.getElementById('result').textContent='Error: Denominator cannot be zero';return;}
+let rn,rd;
+switch(op){
+case '+': rn=n1*d2+n2*d1; rd=d1*d2; break;
+case '-': rn=n1*d2-n2*d1; rd=d1*d2; break;
+case '*': rn=n1*n2; rd=d1*d2; break;
+case '/': rn=n1*d2; rd=d1*n2; break;
+default: rn=0;rd=1;
+}
+if(rd<0){rn=-rn;rd=-rd;}
+const g=rd!==0?gcd(Math.abs(rn),rd):1;
+rn/=g;rd/=g;
+document.getElementById('result').textContent=fracStr(n1,d1)+' '+op+' '+fracStr(n2,d2)+' = '+fracStr(rn,rd);
+}
+function simplify(){
+const n=+document.getElementById('sn').value||0,d=+document.getElementById('sd').value||1;
+if(d===0){document.getElementById('simplify-result').textContent='Error: Denominator cannot be zero';return;}
+const g=gcd(Math.abs(n),d);
+document.getElementById('simplify-result').textContent=n+'/'+d+' = '+fracStr(n/g,d/g);
+}
+calculate();simplify();
+</script>
+</body>
+</html>

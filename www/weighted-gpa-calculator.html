@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Weighted GPA Calculator — Semester & Cumulative GPA</title>
+<link rel="canonical" href="https://usafincalc.com/weighted-gpa-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate semester GPA with weighted courses. Add classes, credits, and grades. Free online GPA calculator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:850px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:var(--font);outline:none;margin-bottom:8px}
+input:focus,select:focus{border-color:var(--accent)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-4{display:grid;grid-template-columns:2fr 1fr 1fr 40px;gap:8px;align-items:center}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px 20px;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s}
+.btn:hover{background:#B8862F}
+.btn-sm{background:var(--bg3);color:var(--muted);border:1px solid var(--border);padding:6px 12px;font-size:12px;border-radius:var(--rs);cursor:pointer}
+.btn-sm:hover{background:rgba(15,42,74,0.05)}
+.btn-danger{color:#B5495A}
+.btn-danger:hover{background:rgba(181,73,90,0.1)}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:20px;text-align:center;margin-top:12px}
+.result-box .gpa{font-size:48px;font-weight:700;color:var(--accent);font-family:var(--mono)}
+.result-box .label{font-size:13px;color:var(--muted)}
+.result-box .detail{font-size:14px;color:var(--muted);margin-top:8px}
+.grade-scale{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:6px;margin-bottom:12px;font-size:12px;color:var(--muted)}
+.grade-scale span{background:var(--bg3);padding:4px 8px;border-radius:var(--rs);text-align:center}
+.course-row{display:grid;grid-template-columns:2fr 1fr 1fr 40px;gap:8px;margin-bottom:8px;align-items:center}
+.course-row input,.course-row select{padding:8px;font-size:14px;margin-bottom:0}
+.course-row input[type="number"]{width:70px}
+.semester-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:16px;margin-bottom:12px}
+.semester-box .semester-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.semester-box .semester-header h3{font-size:15px;color:var(--text)}
+.semester-box .semester-gpa{font-size:14px;color:var(--accent);font-family:var(--mono)}
+.cumulative-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:12px}
+.cumulative-grid .cg-item{background:var(--bg3);border-radius:var(--rs);padding:12px;text-align:center}
+.cumulative-grid .cg-item .cg-value{font-family:var(--mono);font-size:22px;font-weight:600;color:var(--accent)}
+.cumulative-grid .cg-item .cg-label{font-size:11px;color:var(--muted)}
+@media(max-width:600px){.grid-2,.grid-4,.course-row{grid-template-columns:1fr}.course-row input[type="number"]{width:100%}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Weighted GPA Calculator</h1>
+<p class="sub">Calculate semester GPA with weighted courses. Supports AP, IB, and honors weights.</p>
+
+<div class="card">
+<div class="grade-scale">
+<span>A = 4.0</span><span>B = 3.0</span><span>C = 2.0</span><span>D = 1.0</span><span>F = 0.0</span>
+<span style="color:var(--gold)">AP/IB +1.0</span>
+<span style="color:var(--green)">Honors +0.5</span>
+</div>
+
+<div id="semester-container">
+<!-- Semester 1 -->
+<div class="semester-box" data-semester="1">
+<div class="semester-header">
+<h3>Semester 1</h3>
+<span class="semester-gpa" id="sem-gpa-1">GPA: 0.00</span>
+<button class="btn-sm btn-danger" onclick="removeSemester(this)">✕</button>
+</div>
+<div class="courses" id="courses-1">
+<div class="course-row">
+<input placeholder="Course Name" value="Mathematics"/>
+<select class="grade-select">
+<option value="4.0">A (4.0)</option>
+<option value="3.7">A- (3.7)</option>
+<option value="3.3">B+ (3.3)</option>
+<option value="3.0" selected>B (3.0)</option>
+<option value="2.7">B- (2.7)</option>
+<option value="2.3">C+ (2.3)</option>
+<option value="2.0">C (2.0)</option>
+<option value="1.7">C- (1.7)</option>
+<option value="1.0">D (1.0)</option>
+<option value="0.0">F (0.0)</option>
+</select>
+<input type="number" class="credits-input" value="3" min="0.5" step="0.5" style="width:70px"/>
+<select class="weight-select" style="width:80px">
+<option value="0">Regular</option>
+<option value="0.5">Honors</option>
+<option value="1.0">AP/IB</option>
+</select>
+<button class="btn-sm btn-danger" onclick="removeCourse(this)">✕</button>
+</div>
+<div class="course-row">
+<input placeholder="Course Name" value="English"/>
+<select class="grade-select">
+<option value="4.0">A (4.0)</option>
+<option value="3.7">A- (3.7)</option>
+<option value="3.3">B+ (3.3)</option>
+<option value="3.0">B (3.0)</option>
+<option value="2.7">B- (2.7)</option>
+<option value="2.3">C+ (2.3)</option>
+<option value="2.0" selected>C (2.0)</option>
+<option value="1.7">C- (1.7)</option>
+<option value="1.0">D (1.0)</option>
+<option value="0.0">F (0.0)</option>
+</select>
+<input type="number" class="credits-input" value="3" min="0.5" step="0.5" style="width:70px"/>
+<select class="weight-select" style="width:80px">
+<option value="0" selected>Regular</option>
+<option value="0.5">Honors</option>
+<option value="1.0">AP/IB</option>
+</select>
+<button class="btn-sm btn-danger" onclick="removeCourse(this)">✕</button>
+</div>
+<div class="course-row">
+<input placeholder="Course Name" value="Science"/>
+<select class="grade-select">
+<option value="4.0" selected>A (4.0)</option>
+<option value="3.7">A- (3.7)</option>
+<option value="3.3">B+ (3.3)</option>
+<option value="3.0">B (3.0)</option>
+<option value="2.7">B- (2.7)</option>
+<option value="2.3">C+ (2.3)</option>
+<option value="2.0">C (2.0)</option>
+<option value="1.7">C- (1.7)</option>
+<option value="1.0">D (1.0)</option>
+<option value="0.0">F (0.0)</option>
+</select>
+<input type="number" class="credits-input" value="4" min="0.5" step="0.5" style="width:70px"/>
+<select class="weight-select" style="width:80px">
+<option value="0">Regular</option>
+<option value="0.5" selected>Honors</option>
+<option value="1.0">AP/IB</option>
+</select>
+<button class="btn-sm btn-danger" onclick="removeCourse(this)">✕</button>
+</div>
+</div>
+<button class="btn-sm" onclick="addCourse(this)">+ Add Course</button>
+</div>
+</div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
+<button class="btn" style="width:auto" onclick="addSemester()">+ Add Semester</button>
+<button class="btn btn-green" style="width:auto" onclick="calculateGPA()">Calculate All GPAs</button>
+</div>
+
+<div class="result-box" id="result">
+<div class="label">Cumulative GPA</div>
+<div class="gpa" id="cumulative-gpa">3.17</div>
+<div class="detail" id="gpa-detail">Total Credits: 10 · Grade Points: 31.7</div>
+<div class="cumulative-grid" id="cumulative-grid">
+<div class="cg-item"><div class="cg-value" id="total-credits">10</div><div class="cg-label">Total Credits</div></div>
+<div class="cg-item"><div class="cg-value" id="total-points">31.7</div><div class="cg-label">Total Points</div></div>
+<div class="cg-item"><div class="cg-value" id="semester-count">1</div><div class="cg-label">Semesters</div></div>
+</div>
+</div>
+</div>
+
+<script>
+let semesterCount = 1;
+
+function addCourse(btn) {
+const container = btn.closest('.courses') || document.getElementById('courses-1');
+const row = document.createElement('div');
+row.className = 'course-row';
+row.innerHTML = `
+<input placeholder="Course Name"/>
+<select class="grade-select">
+<option value="4.0">A (4.0)</option>
+<option value="3.7">A- (3.7)</option>
+<option value="3.3">B+ (3.3)</option>
+<option value="3.0" selected>B (3.0)</option>
+<option value="2.7">B- (2.7)</option>
+<option value="2.3">C+ (2.3)</option>
+<option value="2.0">C (2.0)</option>
+<option value="1.7">C- (1.7)</option>
+<option value="1.0">D (1.0)</option>
+<option value="0.0">F (0.0)</option>
+</select>
+<input type="number" class="credits-input" value="3" min="0.5" step="0.5" style="width:70px"/>
+<select class="weight-select" style="width:80px">
+<option value="0" selected>Regular</option>
+<option value="0.5">Honors</option>
+<option value="1.0">AP/IB</option>
+</select>
+<button class="btn-sm btn-danger" onclick="removeCourse(this)">✕</button>
+`;
+container.appendChild(row);
+}
+
+function removeCourse(btn) {
+const row = btn.closest('.course-row');
+if (row.parentElement.children.length > 1) row.remove();
+}
+
+function addSemester() {
+semesterCount++;
+const container = document.getElementById('semester-container');
+const box = document.createElement('div');
+box.className = 'semester-box';
+box.dataset.semester = semesterCount;
+box.innerHTML = `
+<div class="semester-header">
+<h3>Semester ${semesterCount}</h3>
+<span class="semester-gpa" id="sem-gpa-${semesterCount}">GPA: 0.00</span>
+<button class="btn-sm btn-danger" onclick="removeSemester(this)">✕</button>
+</div>
+<div class="courses" id="courses-${semesterCount}">
+<div class="course-row">
+<input placeholder="Course Name" value="Course 1"/>
+<select class="grade-select">
+<option value="4.0" selected>A (4.0)</option>
+<option value="3.7">A- (3.7)</option>
+<option value="3.3">B+ (3.3)</option>
+<option value="3.0">B (3.0)</option>
+<option value="2.7">B- (2.7)</option>
+<option value="2.3">C+ (2.3)</option>
+<option value="2.0">C (2.0)</option>
+<option value="1.7">C- (1.7)</option>
+<option value="1.0">D (1.0)</option>
+<option value="0.0">F (0.0)</option>
+</select>
+<input type="number" class="credits-input" value="3" min="0.5" step="0.5" style="width:70px"/>
+<select class="weight-select" style="width:80px">
+<option value="0" selected>Regular</option>
+<option value="0.5">Honors</option>
+<option value="1.0">AP/IB</option>
+</select>
+<button class="btn-sm btn-danger" onclick="removeCourse(this)">✕</button>
+</div>
+</div>
+<button class="btn-sm" onclick="addCourse(this)">+ Add Course</button>
+`;
+container.appendChild(box);
+calculateGPA();
+}
+
+function removeSemester(btn) {
+const box = btn.closest('.semester-box');
+if (document.querySelectorAll('.semester-box').length > 1) box.remove();
+calculateGPA();
+}
+
+function calculateGPA() {
+const boxes = document.querySelectorAll('.semester-box');
+let totalCreditsAll = 0, totalPointsAll = 0;
+
+boxes.forEach((box, idx) => {
+const rows = box.querySelectorAll('.course-row');
+let semPoints = 0, semCredits = 0;
+
+rows.forEach(row => {
+const grade = parseFloat(row.querySelector('.grade-select').value) || 0;
+const credits = parseFloat(row.querySelector('.credits-input').value) || 0;
+const weight = parseFloat(row.querySelector('.weight-select').value) || 0;
+const weightedGrade = Math.min(grade + weight, 4.0);
+semPoints += weightedGrade * credits;
+semCredits += credits;
+});
+
+const semGPA = semCredits > 0 ? semPoints / semCredits : 0;
+const gpaEl = document.getElementById('sem-gpa-' + (idx + 1));
+if (gpaEl) gpaEl.textContent = 'GPA: ' + semGPA.toFixed(2);
+
+totalPointsAll += semPoints;
+totalCreditsAll += semCredits;
+});
+
+const cumulativeGPA = totalCreditsAll > 0 ? totalPointsAll / totalCreditsAll : 0;
+document.getElementById('cumulative-gpa').textContent = cumulativeGPA.toFixed(2);
+document.getElementById('gpa-detail').textContent = 'Total Credits: ' + totalCreditsAll + ' · Grade Points: ' + totalPointsAll.toFixed(1);
+document.getElementById('total-credits').textContent = totalCreditsAll;
+document.getElementById('total-points').textContent = totalPointsAll.toFixed(1);
+document.getElementById('semester-count').textContent = boxes.length;
+}
+
+calculateGPA();
+</script>
+</div>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

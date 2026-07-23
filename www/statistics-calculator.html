@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Statistics Calculator — Confidence Intervals & Hypothesis Testing</title>
+<link rel="canonical" href="https://usafincalc.com/statistics-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate confidence intervals, z-tests, t-tests, and p-values. Free online statistics calculator for students and researchers."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--border2:#D8D2C4;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--gold:#C97A3B;--orange:#B5652E;--red:#B5495A;--font:'Inter',sans-serif;--display:'Fraunces',serif;--mono:'DM Mono',monospace;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center;min-height:100vh}
+.container{max-width:900px;width:100%}
+h1{font-size:32px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);font-size:14px;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+input,select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:15px;padding:10px 14px;font-family:var(--font);outline:none;margin-bottom:12px}
+input:focus,select:focus{border-color:var(--accent)}
+select option{background:var(--bg3)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px 24px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);padding:8px 16px;cursor:pointer;font-size:13px;color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(201,154,59,0.12);border-color:var(--accent);color:var(--accent)}
+.tab:hover{background:rgba(15,42,74,0.05)}
+.result-box{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px}
+.result-box .result{font-size:24px;font-weight:700;color:var(--accent)}
+.result-box .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.result-box .detail{font-size:14px;color:var(--muted);margin-top:4px}
+.result-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.result-grid .rg-item{background:var(--bg2);border-radius:var(--rs);padding:10px 14px;text-align:center}
+.result-grid .rg-item .rg-value{font-family:var(--mono);font-size:18px;font-weight:600;color:var(--text)}
+.result-grid .rg-item .rg-label{font-size:11px;color:var(--muted)}
+.highlight-green{color:var(--green)}
+.highlight-gold{color:var(--gold)}
+.highlight-orange{color:var(--orange)}
+.highlight-red{color:var(--red)}
+.data-input textarea{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:10px;font-family:var(--mono);min-height:80px;resize:vertical;outline:none}
+.data-input textarea:focus{border-color:var(--accent)}
+@media(max-width:600px){.grid-2,.grid-3{grid-template-columns:1fr}.result-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Statistics Calculator</h1>
+<p class="sub">Confidence intervals, hypothesis testing, and descriptive statistics</p>
+
+<div class="card">
+<div class="tabs">
+<span class="tab active" data-mode="ci" onclick="switchMode('ci')">Confidence Interval</span>
+<span class="tab" data-mode="ztest" onclick="switchMode('ztest')">Z-Test</span>
+<span class="tab" data-mode="ttest" onclick="switchMode('ttest')">T-Test</span>
+<span class="tab" data-mode="descriptive" onclick="switchMode('descriptive')">Descriptive</span>
+</div>
+
+<!-- Confidence Interval -->
+<div id="ci-section">
+<div class="grid-2">
+<div><label>Sample Mean (x̄)</label><input id="ci-mean" type="number" value="100" step="any" oninput="calcCI()"/></div>
+<div><label>Standard Deviation (σ)</label><input id="ci-sd" type="number" value="15" step="any" oninput="calcCI()"/></div>
+<div><label>Sample Size (n)</label><input id="ci-n" type="number" value="30" oninput="calcCI()"/></div>
+<div><label>Confidence Level</label>
+<select id="ci-level" onchange="calcCI()">
+<option value="90">90%</option>
+<option value="95" selected>95%</option>
+<option value="99">99%</option>
+</select>
+</div>
+</div>
+<button class="btn" onclick="calcCI()">Calculate Confidence Interval</button>
+<div id="ci-result" class="result-box" style="display:none">
+<div class="label">Confidence Interval</div>
+<div class="result" id="ci-interval">(94.63, 105.37)</div>
+<div class="detail" id="ci-detail">95% CI for population mean using z = 1.96</div>
+<div class="result-grid">
+<div class="rg-item"><div class="rg-value" id="ci-margin">5.37</div><div class="rg-label">Margin of Error</div></div>
+<div class="rg-item"><div class="rg-value" id="ci-se">2.74</div><div class="rg-label">Standard Error</div></div>
+</div>
+</div>
+</div>
+
+<!-- Z-Test -->
+<div id="ztest-section" style="display:none">
+<div class="grid-2">
+<div><label>Sample Mean (x̄)</label><input id="z-mean" type="number" value="105" step="any" oninput="calcZTest()"/></div>
+<div><label>Population Mean (μ₀)</label><input id="z-mu" type="number" value="100" step="any" oninput="calcZTest()"/></div>
+<div><label>Population SD (σ)</label><input id="z-sd" type="number" value="15" step="any" oninput="calcZTest()"/></div>
+<div><label>Sample Size (n)</label><input id="z-n" type="number" value="30" oninput="calcZTest()"/></div>
+</div>
+<div><label>Alternative Hypothesis</label>
+<select id="z-alt" onchange="calcZTest()">
+<option value="two">μ ≠ μ₀ (two-tailed)</option>
+<option value="greater">μ > μ₀ (right-tailed)</option>
+<option value="less">μ < μ₀ (left-tailed)</option>
+</select>
+</div>
+<button class="btn" onclick="calcZTest()">Run Z-Test</button>
+<div id="ztest-result" class="result-box" style="display:none">
+<div class="label">Z-Test Results</div>
+<div class="result" id="z-stat">z = 1.83</div>
+<div class="detail" id="z-detail">p-value = 0.0672 · Not significant at α = 0.05</div>
+<div class="result-grid">
+<div class="rg-item"><div class="rg-value" id="z-p">0.0672</div><div class="rg-label">p-value</div></div>
+<div class="rg-item"><div class="rg-value" id="z-decision">Fail to reject H₀</div><div class="rg-label">Decision</div></div>
+</div>
+</div>
+</div>
+
+<!-- T-Test -->
+<div id="ttest-section" style="display:none">
+<div class="grid-2">
+<div><label>Sample Mean (x̄)</label><input id="t-mean" type="number" value="105" step="any" oninput="calcTTest()"/></div>
+<div><label>Population Mean (μ₀)</label><input id="t-mu" type="number" value="100" step="any" oninput="calcTTest()"/></div>
+<div><label>Sample SD (s)</label><input id="t-sd" type="number" value="15" step="any" oninput="calcTTest()"/></div>
+<div><label>Sample Size (n)</label><input id="t-n" type="number" value="25" oninput="calcTTest()"/></div>
+</div>
+<div><label>Alternative Hypothesis</label>
+<select id="t-alt" onchange="calcTTest()">
+<option value="two">μ ≠ μ₀ (two-tailed)</option>
+<option value="greater">μ > μ₀ (right-tailed)</option>
+<option value="less">μ < μ₀ (left-tailed)</option>
+</select>
+</div>
+<button class="btn" onclick="calcTTest()">Run T-Test</button>
+<div id="ttest-result" class="result-box" style="display:none">
+<div class="label">T-Test Results</div>
+<div class="result" id="t-stat">t = 1.67</div>
+<div class="detail" id="t-detail">df = 24 · p-value = 0.108 · Not significant at α = 0.05</div>
+<div class="result-grid">
+<div class="rg-item"><div class="rg-value" id="t-p">0.108</div><div class="rg-label">p-value</div></div>
+<div class="rg-item"><div class="rg-value" id="t-df">24</div><div class="rg-label">Degrees of Freedom</div></div>
+</div>
+</div>
+</div>
+
+<!-- Descriptive Statistics -->
+<div id="descriptive-section" style="display:none">
+<div class="data-input">
+<label>Enter Data (comma or space separated)</label>
+<textarea id="data-input" oninput="calcDescriptive()">10, 15, 20, 25, 30, 35, 40, 45, 50, 55</textarea>
+</div>
+<button class="btn btn-green" onclick="calcDescriptive()">Analyze Data</button>
+<div id="descriptive-result" class="result-box" style="display:none">
+<div class="label">Descriptive Statistics</div>
+<div class="result-grid" id="descriptive-grid">
+<div class="rg-item"><div class="rg-value" id="d-count">10</div><div class="rg-label">Count (n)</div></div>
+<div class="rg-item"><div class="rg-value" id="d-mean">32.50</div><div class="rg-label">Mean</div></div>
+<div class="rg-item"><div class="rg-value" id="d-median">32.50</div><div class="rg-label">Median</div></div>
+<div class="rg-item"><div class="rg-value" id="d-mode">No mode</div><div class="rg-label">Mode</div></div>
+<div class="rg-item"><div class="rg-value" id="d-sd">15.14</div><div class="rg-label">Std Dev (sample)</div></div>
+<div class="rg-item"><div class="rg-value" id="d-var">229.17</div><div class="rg-label">Variance</div></div>
+<div class="rg-item"><div class="rg-value" id="d-min">10</div><div class="rg-label">Min</div></div>
+<div class="rg-item"><div class="rg-value" id="d-max">55</div><div class="rg-label">Max</div></div>
+<div class="rg-item"><div class="rg-value" id="d-range">45</div><div class="rg-label">Range</div></div>
+<div class="rg-item"><div class="rg-value" id="d-q1">21.25</div><div class="rg-label">Q1 (25th %ile)</div></div>
+<div class="rg-item"><div class="rg-value" id="d-q3">43.75</div><div class="rg-label">Q3 (75th %ile)</div></div>
+<div class="rg-item"><div class="rg-value" id="d-iqr">22.50</div><div class="rg-label">IQR</div></div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+function switchMode(mode){
+document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.dataset.mode===mode));
+document.getElementById('ci-section').style.display=mode==='ci'?'block':'none';
+document.getElementById('ztest-section').style.display=mode==='ztest'?'block':'none';
+document.getElementById('ttest-section').style.display=mode==='ttest'?'block':'none';
+document.getElementById('descriptive-section').style.display=mode==='descriptive'?'block':'none';
+if(mode==='ci')calcCI();else if(mode==='ztest')calcZTest();else if(mode==='ttest')calcTTest();else calcDescriptive();
+}
+
+function zScore(level){return level===90?1.645:(level===95?1.96:2.576);}
+function tScore(df,level){const t={90:[6.314,2.92,2.353,2.132,2.015,1.943,1.895,1.86,1.833,1.812,1.796,1.782,1.771,1.761,1.753,1.746,1.74,1.734,1.729,1.725,1.721,1.717,1.714,1.711,1.708,1.706,1.703,1.701,1.699,1.697],95:[12.706,4.303,3.182,2.776,2.571,2.447,2.365,2.306,2.262,2.228,2.201,2.179,2.16,2.145,2.131,2.12,2.11,2.101,2.093,2.086,2.08,2.074,2.069,2.064,2.06,2.056,2.052,2.048,2.045,2.042],99:[63.657,9.925,5.841,4.604,4.032,3.707,3.499,3.355,3.25,3.169,3.106,3.055,3.012,2.977,2.947,2.921,2.898,2.878,2.861,2.845,2.831,2.819,2.807,2.797,2.787,2.779,2.771,2.763,2.756,2.75]};const lvl=level===90?0:(level===95?1:2);return df>30?t[lvl][29]:(t[lvl][Math.min(df-1,29)]||t[lvl][29]);}
+
+function calcCI(){
+const mean=+document.getElementById('ci-mean').value||0,sd=+document.getElementById('ci-sd').value||0,n=+document.getElementById('ci-n').value||1,lvl=+document.getElementById('ci-level').value||95;
+if(n<2){document.getElementById('ci-result').style.display='none';return;}
+const z=zScore(lvl),se=sd/Math.sqrt(n),margin=z*se,lower=mean-margin,upper=mean+margin;
+document.getElementById('ci-interval').textContent='('+lower.toFixed(4)+', '+upper.toFixed(4)+')';
+document.getElementById('ci-detail').textContent=lvl+'% CI for population mean using z = '+z.toFixed(3);
+document.getElementById('ci-margin').textContent=margin.toFixed(4);
+document.getElementById('ci-se').textContent=se.toFixed(4);
+document.getElementById('ci-result').style.display='block';
+}
+
+function calcZTest(){
+const mean=+document.getElementById('z-mean').value||0,mu=+document.getElementById('z-mu').value||0,sd=+document.getElementById('z-sd').value||1,n=+document.getElementById('z-n').value||1,alt=document.getElementById('z-alt').value;
+if(n<2){document.getElementById('ztest-result').style.display='none';return;}
+const z=(mean-mu)/(sd/Math.sqrt(n));
+let p=0;
+if(alt==='two'){p=2*(1-normalCDF(Math.abs(z)));}
+else if(alt==='greater'){p=1-normalCDF(z);}
+else{p=normalCDF(z);}
+const sig=p<0.05;
+document.getElementById('z-stat').textContent='z = '+z.toFixed(4);
+document.getElementById('z-detail').textContent='p-value = '+p.toFixed(4)+' · '+(sig?'Significant at α = 0.05':'Not significant at α = 0.05');
+document.getElementById('z-p').textContent=p.toFixed(4);
+document.getElementById('z-decision').textContent=sig?'Reject H₀':'Fail to reject H₀';
+document.getElementById('z-decision').style.color=sig?'var(--green)':'var(--muted)';
+document.getElementById('ztest-result').style.display='block';
+}
+
+function calcTTest(){
+const mean=+document.getElementById('t-mean').value||0,mu=+document.getElementById('t-mu').value||0,sd=+document.getElementById('t-sd').value||1,n=+document.getElementById('t-n').value||1,alt=document.getElementById('t-alt').value;
+if(n<2){document.getElementById('ttest-result').style.display='none';return;}
+const df=n-1,t=(mean-mu)/(sd/Math.sqrt(n));
+let p=0;
+if(alt==='two'){p=2*tCDF(-Math.abs(t),df);}
+else if(alt==='greater'){p=1-tCDF(t,df);}
+else{p=tCDF(t,df);}
+const sig=p<0.05;
+document.getElementById('t-stat').textContent='t = '+t.toFixed(4);
+document.getElementById('t-detail').textContent='df = '+df+' · p-value = '+p.toFixed(4)+' · '+(sig?'Significant at α = 0.05':'Not significant at α = 0.05');
+document.getElementById('t-p').textContent=p.toFixed(4);
+document.getElementById('t-df').textContent=df;
+document.getElementById('ttest-result').style.display='block';
+}
+
+function normalCDF(x){const a1=0.254829592,a2=-0.284496736,a3=1.421413741,a4=-1.453152027,a5=1.061405429,p=0.3275911;const sign=x<0?-1:1;x=Math.abs(x);const t=1/(1+p*x);const y=1-((((a5*t+a4)*t+a3)*t+a2)*t+a1)*t*Math.exp(-x*x/2);return sign<0?1-y:y;}
+
+function tCDF(t,df){const x=df/(df+t*t);const a=df/2;const b=0.5;return 0.5*(1+incompleteBeta(x,a,b));}
+function incompleteBeta(x,a,b){let result=1;for(let i=0;i<100;i++){result*=((a+i)/(a+b+i))*x;}return result*Math.pow(x,a)*Math.pow(1-x,b-1)*a/(a+b);}
+
+function calcDescriptive(){
+const raw=document.getElementById('data-input').value;
+const nums=raw.split(/[,\s]+/).map(Number).filter(n=>!isNaN(n)&&n!==undefined);
+if(nums.length<2){document.getElementById('descriptive-result').style.display='none';return;}
+const sorted=[...nums].sort((a,b)=>a-b),n=nums.length;
+const sum=nums.reduce((a,b)=>a+b,0),mean=sum/n;
+const median=n%2===1?sorted[Math.floor(n/2)]:(sorted[n/2-1]+sorted[n/2])/2;
+const freq={};nums.forEach(x=>freq[x]=(freq[x]||0)+1);let maxF=0,modes=[];for(let k in freq){if(freq[k]>maxF){maxF=freq[k];modes=[k];}else if(freq[k]===maxF){modes.push(k);}}
+const modeStr=modes.length===nums.length?'No mode':(modes.length===1?modes[0]:modes.join(', '));
+const variance=nums.reduce((a,b)=>a+(b-mean)**2,0)/(n-1),sd=Math.sqrt(variance);
+const min=sorted[0],max=sorted[n-1],range=max-min;
+const q1=sorted[Math.floor(n*0.25)],q3=sorted[Math.floor(n*0.75)],iqr=q3-q1;
+document.getElementById('d-count').textContent=n;
+document.getElementById('d-mean').textContent=mean.toFixed(2);
+document.getElementById('d-median').textContent=median.toFixed(2);
+document.getElementById('d-mode').textContent=modeStr;
+document.getElementById('d-sd').textContent=sd.toFixed(2);
+document.getElementById('d-var').textContent=variance.toFixed(2);
+document.getElementById('d-min').textContent=min.toFixed(1);
+document.getElementById('d-max').textContent=max.toFixed(1);
+document.getElementById('d-range').textContent=range.toFixed(1);
+document.getElementById('d-q1').textContent=q1.toFixed(2);
+document.getElementById('d-q3').textContent=q3.toFixed(2);
+document.getElementById('d-iqr').textContent=iqr.toFixed(2);
+document.getElementById('descriptive-result').style.display='block';
+}
+
+// Initialize
+calcCI();
+</script>
+</div>
+<footer style="background:#0F2A4A;color:rgba(255,255,255,.55);padding:24px;text-align:center;font-size:12px;font-family:monospace;margin:24px -20px -20px -20px">
+© 2026 USAFinCalc — For educational purposes only.<br>
+<a href="/" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Home</a>·
+<a href="/about" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">About</a>·
+<a href="/contact" style="color:rgba(255,255,255,.7);text-decoration:none;margin:0 6px">Contact</a>
+</footer>
+</body>
+</html>

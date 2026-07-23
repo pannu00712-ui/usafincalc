@@ -120,21 +120,276 @@ footer a:hover{color:var(--accent)}
 input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/search.css">
+  <link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
-<nav class="site-nav">
-<span class="logo">USA<span>FinCalc</span></span>
-<ul class="nav-links">
-<li><a href="/">Home</a></li>
-<li><a href="/mortgage-calculator-usa">Mortgage</a></li>
-<li><a href="/tax-calculator-usa">Tax</a></li>
-<li><a href="/paycheck-calculator">Paycheck</a></li>
-<li><a href="/salary-calculator-usa">Salary</a></li>
-<li><a href="/#states-h">States</a></li>
-<li><a href="/blog">Blog</a></li>
-<li><a href="/">All Tools</a></li>
-</ul>
+<nav class="nb" id="nb" aria-label="Main navigation">
+  <div class="nb-inner">
+
+    <!-- LEFT: Logo -->
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+        <span class="nb-logo-sub">USA Financial Calculators</span>
+      </span>
+    </a>
+
+    <!-- CENTER: Primary nav -->
+    <ul class="nb-links" role="list">
+
+      <li class="nb-item">
+        <a href="/#calculators" class="nb-link">Calculators</a>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-taxes" id="dd-taxes-btn">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-taxes" role="menu" aria-labelledby="dd-taxes-btn">
+          <a href="/tax-calculator-usa" role="menuitem" class="nb-dd-link">Federal Tax Calculator</a>
+          <a href="/capital-gains-tax-calculator" role="menuitem" class="nb-dd-link">Capital Gains Tax</a>
+          <a href="/self-employment-tax-calculator" role="menuitem" class="nb-dd-link">Self-Employment Tax</a>
+          <a href="/crypto-tax-calculator" role="menuitem" class="nb-dd-link">Crypto Tax Calculator</a>
+          <a href="/sales-tax-calculator" role="menuitem" class="nb-dd-link">Sales Tax Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-salary" id="dd-salary-btn">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-salary" role="menu" aria-labelledby="dd-salary-btn">
+          <a href="/salary-calculator-usa" role="menuitem" class="nb-dd-link">Salary Calculator</a>
+          <a href="/hourly-to-salary-calculator" role="menuitem" class="nb-dd-link">Hourly to Salary</a>
+          <a href="/cost-of-living-calculator" role="menuitem" class="nb-dd-link">Cost of Living</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-mortgage" id="dd-mortgage-btn">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-mortgage" role="menu" aria-labelledby="dd-mortgage-btn">
+          <a href="/mortgage-calculator-usa" role="menuitem" class="nb-dd-link">Mortgage Calculator</a>
+          <a href="/home-affordability-calculator-usa" role="menuitem" class="nb-dd-link">Home Affordability</a>
+          <a href="/refinance-calculator" role="menuitem" class="nb-dd-link">Refinance Calculator</a>
+          <a href="/rent-vs-buy-calculator" role="menuitem" class="nb-dd-link">Rent vs Buy</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-investing" id="dd-investing-btn">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-investing" role="menu" aria-labelledby="dd-investing-btn">
+          <a href="/compound-interest-calculator" role="menuitem" class="nb-dd-link">Compound Interest</a>
+          <a href="/stock-return-calculator-usa" role="menuitem" class="nb-dd-link">Stock Return</a>
+          <a href="/net-worth-calculator" role="menuitem" class="nb-dd-link">Net Worth</a>
+          <a href="/currency-converter" role="menuitem" class="nb-dd-link">Currency Converter</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-retirement" id="dd-retirement-btn">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-retirement" role="menu" aria-labelledby="dd-retirement-btn">
+          <a href="/401k-calculator-usa" role="menuitem" class="nb-dd-link">401(k) Calculator</a>
+          <a href="/roth-ira-calculator" role="menuitem" class="nb-dd-link">Roth IRA Calculator</a>
+          <a href="/social-security-calculator" role="menuitem" class="nb-dd-link">Social Security</a>
+          <a href="/fire-calculator" role="menuitem" class="nb-dd-link">FIRE Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item">
+        <a href="/blog" class="nb-link">Blog</a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT: Search, dark mode, AI, hamburger -->
+    <div class="nb-actions">
+
+      <div class="nb-search" role="search">
+        <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          type="search"
+          id="fc-search"
+          class="nb-search-input"
+          placeholder="Search calculators..."
+          autocomplete="off"
+          aria-label="Search all calculators"
+        >
+        <kbd class="nb-search-kbd" aria-hidden="true">/</kbd>
+      </div>
+
+      <button type="button" class="nb-icon-btn" id="nb-theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button type="button" class="nb-ai-btn" id="nb-ai-btn">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+        </svg>
+        <span class="nb-ai-label">AI Assistant</span>
+        <span class="nb-badge">Coming Soon</span>
+      </button>
+
+      <button
+        type="button"
+        class="nb-hamburger"
+        id="nb-hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nb-drawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nb-overlay" id="nb-overlay" hidden></div>
+<div class="nb-drawer" id="nb-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nb-drawer-head">
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+      </span>
+    </a>
+    <button type="button" class="nb-icon-btn" id="nb-drawer-close" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="nb-search nb-search-drawer" role="search">
+    <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input type="search" id="fc-search-m" class="nb-search-input" placeholder="Search calculators..." autocomplete="off" aria-label="Search all calculators">
+  </div>
+
+  <nav class="nb-drawer-nav" aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="/#calculators" class="nb-drawer-link">Calculators</a></li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-taxes">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-taxes" role="list">
+          <li><a href="/tax-calculator-usa">Federal Tax Calculator</a></li>
+          <li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li>
+          <li><a href="/self-employment-tax-calculator">Self-Employment Tax</a></li>
+          <li><a href="/crypto-tax-calculator">Crypto Tax Calculator</a></li>
+          <li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-salary">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-salary" role="list">
+          <li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+          <li><a href="/hourly-to-salary-calculator">Hourly to Salary</a></li>
+          <li><a href="/cost-of-living-calculator">Cost of Living</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-mortgage">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-mortgage" role="list">
+          <li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li>
+          <li><a href="/home-affordability-calculator-usa">Home Affordability</a></li>
+          <li><a href="/refinance-calculator">Refinance Calculator</a></li>
+          <li><a href="/rent-vs-buy-calculator">Rent vs Buy</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-investing">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-investing" role="list">
+          <li><a href="/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="/stock-return-calculator-usa">Stock Return</a></li>
+          <li><a href="/net-worth-calculator">Net Worth</a></li>
+          <li><a href="/currency-converter">Currency Converter</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-retirement">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-retirement" role="list">
+          <li><a href="/401k-calculator-usa">401(k) Calculator</a></li>
+          <li><a href="/roth-ira-calculator">Roth IRA Calculator</a></li>
+          <li><a href="/social-security-calculator">Social Security</a></li>
+          <li><a href="/fire-calculator">FIRE Calculator</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/blog" class="nb-drawer-link">Blog</a></li>
+    </ul>
+  </nav>
+
+  <div class="nb-drawer-foot">
+    <button type="button" class="nb-icon-btn" id="nb-theme-toggle-m" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Dark mode</span>
+    </button>
+    <button type="button" class="nb-ai-btn nb-ai-btn-drawer" id="nb-ai-btn-m">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+        <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+      </svg>
+      AI Assistant
+      <span class="nb-badge">Coming Soon</span>
+    </button>
+  </div>
+</div>
 <main>
 <div class="hero">
 <div class="badge">🧀 Wisconsin Property Tax 2026 • Estimator</div>
@@ -314,5 +569,7 @@ document.getElementById('detail-rows').innerHTML='<div class="dr"><span class="d
 }
 calculateTax();
 </script>
+<script defer src="/js/search.js"></script>
+<script src="/js/navbar.js" defer></script>
 </body>
 </html>

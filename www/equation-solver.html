@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Equation Solver — Free Online Tool</title>
+<link rel="canonical" href="https://usafincalc.com/equation-solver"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Solve linear, quadratic, and systems of equations. Free online equation solver for students."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.container{max-width:700px;width:100%}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:16px;padding:10px;font-family:'Courier New',monospace;outline:none}
+input:focus{border-color:var(--accent)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%}
+.btn:hover{background:#B8862F}
+.btn-green{background:var(--green);color:#FFFFFF}
+.btn-green:hover{background:#245A40}
+.result{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:16px;font-size:18px;text-align:center;color:var(--green);line-height:1.8}
+.result .x{font-size:22px;font-weight:600;color:var(--accent)}
+.result .detail{font-size:14px;color:var(--muted)}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:8px 16px;cursor:pointer;font-size:13px;color:var(--muted);transition:all .2s}
+.tab.active{background:rgba(201,154,59,0.12);border-color:var(--accent);color:var(--accent)}
+@media(max-width:500px){.grid-2,.grid-3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Equation Solver</h1>
+<p class="sub">Solve linear equations, quadratic equations, and systems of equations.</p>
+
+<div class="card">
+<div class="tabs" id="tabs">
+<span class="tab active" data-type="linear" onclick="switchType('linear')">Linear</span>
+<span class="tab" data-type="quadratic" onclick="switchType('quadratic')">Quadratic</span>
+<span class="tab" data-type="system" onclick="switchType('system')">System of 2</span>
+</div>
+
+<div id="linear-section">
+<div style="font-size:18px;text-align:center;color:var(--muted);margin-bottom:12px">ax + b = 0</div>
+<div class="grid-2">
+<div><label>a</label><input id="l-a" type="number" value="2" oninput="solveLinear()"/></div>
+<div><label>b</label><input id="l-b" type="number" value="-4" oninput="solveLinear()"/></div>
+</div>
+<div class="result" id="linear-result">x = 2</div>
+</div>
+
+<div id="quadratic-section" style="display:none">
+<div style="font-size:18px;text-align:center;color:var(--muted);margin-bottom:12px">ax² + bx + c = 0</div>
+<div class="grid-3">
+<div><label>a</label><input id="q-a" type="number" value="1" oninput="solveQuadratic()"/></div>
+<div><label>b</label><input id="q-b" type="number" value="-5" oninput="solveQuadratic()"/></div>
+<div><label>c</label><input id="q-c" type="number" value="6" oninput="solveQuadratic()"/></div>
+</div>
+<div class="result" id="quadratic-result">x = 2 and x = 3</div>
+</div>
+
+<div id="system-section" style="display:none">
+<div style="font-size:18px;text-align:center;color:var(--muted);margin-bottom:12px">a₁x + b₁y = c₁ &nbsp;&nbsp;|&nbsp;&nbsp; a₂x + b₂y = c₂</div>
+<div class="grid-3">
+<div><label>a₁</label><input id="s-a1" type="number" value="2" oninput="solveSystem()"/></div>
+<div><label>b₁</label><input id="s-b1" type="number" value="3" oninput="solveSystem()"/></div>
+<div><label>c₁</label><input id="s-c1" type="number" value="8" oninput="solveSystem()"/></div>
+<div><label>a₂</label><input id="s-a2" type="number" value="3" oninput="solveSystem()"/></div>
+<div><label>b₂</label><input id="s-b2" type="number" value="-2" oninput="solveSystem()"/></div>
+<div><label>c₂</label><input id="s-c2" type="number" value="12" oninput="solveSystem()"/></div>
+</div>
+<div class="result" id="system-result">x = 4, y = 0</div>
+</div>
+</div>
+</div>
+<script>
+function switchType(type){
+document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.dataset.type===type));
+document.getElementById('linear-section').style.display=type==='linear'?'block':'none';
+document.getElementById('quadratic-section').style.display=type==='quadratic'?'block':'none';
+document.getElementById('system-section').style.display=type==='system'?'block':'none';
+if(type==='linear')solveLinear();
+else if(type==='quadratic')solveQuadratic();
+else solveSystem();
+}
+function solveLinear(){
+const a=parseFloat(document.getElementById('l-a').value)||0,b=parseFloat(document.getElementById('l-b').value)||0;
+if(a===0){document.getElementById('linear-result').innerHTML='No solution (a=0)';return;}
+const x=-b/a;
+document.getElementById('linear-result').innerHTML='x = '+x.toFixed(4);
+}
+function solveQuadratic(){
+const a=parseFloat(document.getElementById('q-a').value)||0,b=parseFloat(document.getElementById('q-b').value)||0,c=parseFloat(document.getElementById('q-c').value)||0;
+if(a===0){document.getElementById('quadratic-result').innerHTML='Not quadratic (a=0)';return;}
+const d=b*b-4*a*c;
+let result;
+if(d<0){
+const real=(-b/(2*a)).toFixed(4);
+const imag=(Math.sqrt(-d)/(2*a)).toFixed(4);
+result='x = '+real+' ± '+imag+'i';
+}else if(d===0){
+const x=(-b/(2*a)).toFixed(4);
+result='x = '+x+' (double root)';
+}else{
+const x1=((-b+Math.sqrt(d))/(2*a)).toFixed(4);
+const x2=((-b-Math.sqrt(d))/(2*a)).toFixed(4);
+result='x = '+x1+' and x = '+x2;
+}
+document.getElementById('quadratic-result').innerHTML=result;
+}
+function solveSystem(){
+const a1=parseFloat(document.getElementById('s-a1').value)||0,b1=parseFloat(document.getElementById('s-b1').value)||0,c1=parseFloat(document.getElementById('s-c1').value)||0;
+const a2=parseFloat(document.getElementById('s-a2').value)||0,b2=parseFloat(document.getElementById('s-b2').value)||0,c2=parseFloat(document.getElementById('s-c2').value)||0;
+const det=a1*b2-a2*b1;
+if(det===0){document.getElementById('system-result').innerHTML='No unique solution (det=0)';return;}
+const x=(c1*b2-c2*b1)/det;
+const y=(a1*c2-a2*c1)/det;
+document.getElementById('system-result').innerHTML='x = '+x.toFixed(4)+', y = '+y.toFixed(4);
+}
+solveLinear();
+</script>
+</body>
+</html>

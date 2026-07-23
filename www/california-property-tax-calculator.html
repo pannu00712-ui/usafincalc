@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
+    <title>California Property Tax Calculator 2026 | CA Property Tax Estimator</title>
+    <meta content="Calculate your California property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rate (1% base + local assessments), and Proposition 19 rules." name="description"/>
+    <meta content="california property tax calculator, ca property tax, california property tax rate, prop 19 california, property tax estimator, california property tax 2026" name="keywords"/>
+    <meta content="USAFinCalc" name="author"/>
+    <meta content="#0F2A4A" name="theme-color"/>
+    <link href="https://usafincalc.com/california-property-tax-calculator" rel="canonical"/>
+    <link href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230d0f14'/><text x='16' y='22' text-anchor='middle' font-size='18' fill='%23f59e0b' font-family='monospace' font-weight='700'>CA</text></svg>" rel="icon" type="image/svg+xml"/>
+    <meta content="California Property Tax Calculator 2026 | CA Property Tax Estimator" property="og:title"/>
+    <meta content="Calculate your California property tax for 2026. Free estimator shows your annual property tax based on assessed value, county tax rate (1% base + local assessments), and Proposition 19 rules." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://usafincalc.com/california-property-tax-calculator" property="og:url"/>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "California Property Tax Calculator 2026",
+      "description": "Calculate your California property tax liability based on assessed value, county tax rate, and Proposition 19 rules. Free, no sign-up.",
+      "url": "https://usafincalc.com/california-property-tax-calculator",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "All",
+      "offers": {"@type":"Offer","price":"0","priceCurrency":"USD"},
+      "isAccessibleForFree": true
+    }
+    </script>
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{
+          --bg:#0F2A4A; --bg2:#16385E; --bg3:#1F4670; --card:#16385E;
+          --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.14);
+          --text:#FAF9F6; --muted:#B8C4D6;
+          --accent:#C99A3B; --federal:#5C87B8; --state:#C97A3B; --fica:#B5495A; --takehome:#E8C878;
+          --font:'Sora',sans-serif; --mono:'DM Mono',monospace;
+          --r:14px; --rs:8px;
+        }
+        body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.6}
+        a{color:var(--accent);text-decoration:none}
+        a:hover{text-decoration:underline}
+
+        nav.site-nav{background:var(--bg2);border-bottom:1px solid var(--border);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+        .logo{font-size:16px;font-weight:600;color:#E8C878}
+        .nav-links{display:flex;gap:20px;list-style:none}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:13px}
+        .nav-links a:hover{color:var(--text)}
+
+        .hero{padding:48px 24px 20px;max-width:980px;margin:0 auto}
+        .badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.1);color:var(--state);border:1px solid rgba(245,158,11,0.2);border-radius:20px;padding:4px 12px;font-size:12px;font-weight:500;margin-bottom:16px;font-family:var(--mono)}
+        .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--state)}
+        h1{font-size:clamp(24px,5vw,38px);font-weight:600;line-height:1.2;letter-spacing:-.5px;margin-bottom:10px}
+        h1 span{color:var(--state)}
+        .hero-sub{color:var(--muted);font-size:14px;max-width:700px;line-height:1.8}
+        .hero-author{display:flex;align-items:center;gap:14px;margin:24px 0;padding:14px 18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+        .hero-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#C97A3B,#A5691E);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+        .hero-author-text{font-weight:600;font-size:13px}
+        .hero-author-text a{color:#B8C4D6;text-decoration:none}
+        .hero-author-text a:hover{color:var(--text)}
+
+        .qa-wrap{max-width:980px;margin:0 auto;padding:0 24px 16px}
+        .qa{background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.2);border-radius:var(--r);padding:12px 18px;font-size:13px;color:var(--muted)}
+        .qa strong{color:var(--state)}
+
+        .main{max-width:980px;margin:0 auto;padding:0 24px 40px;display:grid;grid-template-columns:380px 1fr;gap:20px;align-items:start}
+        @media(max-width:760px){.main{grid-template-columns:1fr}}
+        .wide{grid-column:1/-1}
+
+        .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+        .ct{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;font-family:var(--mono)}
+        label{display:block;font-size:13px;color:var(--muted);margin-bottom:4px}
+        input[type=number],select{width:100%;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rs);color:var(--text);font-size:14px;padding:9px 12px;font-family:var(--mono);outline:none;margin-bottom:12px}
+        input:focus,select:focus{border-color:var(--state)}
+        .pfx{position:relative;margin-bottom:12px}
+        .pfx span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:13px}
+        .pfx input{padding-left:26px;margin-bottom:0}
+        .sfx{position:relative;margin-bottom:12px}
+        .sfx span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:12px}
+        .sfx input{padding-right:28px;margin-bottom:0}
+        .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+        .sec-label{font-size:11px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px;margin:6px 0 10px;padding-top:10px;border-top:1px solid var(--border)}
+        .btn{width:100%;background:var(--state);color:#fff;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;margin-top:6px;transition:background .2s}
+        .btn:hover{background:#A5691E}
+
+        .net-card{background:linear-gradient(135deg,rgba(245,158,11,0.12),rgba(217,119,6,0.04));border:1px solid rgba(245,158,11,0.25);border-radius:var(--r);padding:20px;text-align:center}
+        .nl{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+        .na{font-size:38px;font-weight:600;color:var(--state);font-family:var(--mono);letter-spacing:-1px;line-height:1}
+        .nm{font-size:12px;color:var(--muted);margin-top:5px;font-family:var(--mono)}
+        .nm span{color:var(--text)}
+
+        .pay-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+        @media(max-width:500px){.pay-grid{grid-template-columns:1fr 1fr}}
+        .pay-box{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:10px;text-align:center}
+        .pay-l{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+        .pay-v{font-family:var(--mono);font-size:13px;font-weight:600}
+
+        .bcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .bt{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+        .sbar{height:10px;border-radius:6px;overflow:hidden;display:flex;margin-bottom:14px;background:var(--bg3)}
+        .seg{height:100%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+        .brows{display:flex;flex-direction:column;gap:7px}
+        .br{display:flex;align-items:center;justify-content:space-between;font-size:13px}
+        .bl{display:flex;align-items:center;gap:8px}
+        .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+        .blbl{color:var(--muted)}
+        .ba{font-family:var(--mono);font-weight:500}
+        .divider{height:1px;background:var(--border);margin:7px 0}
+
+        .dcard{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;margin-top:12px}
+        .dr{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+        .dr:last-child{border-bottom:none}
+        .dk{color:var(--muted)}
+        .dv{font-family:var(--mono);font-weight:500}
+
+        .placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:40px 20px;color:var(--muted);font-size:14px;text-align:center;min-height:300px;background:var(--card);border:1px dashed var(--border2);border-radius:var(--r)}
+
+        .state-data-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:20px;margin-top:12px}
+        .state-data-card h2{font-size:18px;font-weight:600;color:var(--text);margin-bottom:12px}
+        .state-data-card p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:8px}
+        .state-data-card ul{color:var(--muted);font-size:13px;line-height:1.8;margin:8px 0 8px 20px}
+        .state-data-card .source{font-size:12px;color:var(--muted);border-top:1px solid var(--border);padding-top:12px;margin-top:12px}
+
+        .faq{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .faq h2{font-size:19px;font-weight:600;margin-bottom:18px}
+        .faq-item{border-bottom:1px solid var(--border);padding:14px 0}
+        .faq-q{font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+        .faq-q::after{content:"+";color:var(--state);font-size:18px;font-weight:300;flex-shrink:0;transition:transform .3s}
+        .faq-item.open .faq-q::after{transform:rotate(45deg)}
+        .faq-a{font-size:13px;color:var(--muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .4s,padding .3s}
+        .faq-item.open .faq-a{max-height:400px;padding-top:10px}
+
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+
+        .related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+        .related-section h2{font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px}
+        .related-links{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+        .related-links li{list-style:none}
+        .related-links a{display:inline-flex;align-items:center;padding:7px 14px;background:#1F4670;border:1px solid rgba(255,255,255,0.14);border-radius:8px;color:#C99A3B!important;text-decoration:none!important;font-size:13px;font-weight:500}
+
+        .meth{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .meth-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:16px}
+        .meth-box p{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:4px}
+
+        footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px;text-align:center;font-size:13px;color:var(--muted)}
+        footer a{color:var(--muted);text-decoration:none;margin:0 10px}
+        footer a:hover{color:var(--accent)}
+
+        .ca-tax-badge{display:inline-block;background:rgba(245,158,11,0.15);border:1px solid rgba(245,158,11,0.3);border-radius:20px;padding:2px 14px;font-size:12px;color:var(--state);font-family:var(--mono);margin-left:8px}
+        .quick-table{width:100%;border-collapse:collapse;font-size:13px}
+        .quick-table th,.quick-table td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+        .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+
+        @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+        input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nb" id="nb" aria-label="Main navigation">
+  <div class="nb-inner">
+
+    <!-- LEFT: Logo -->
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+        <span class="nb-logo-sub">USA Financial Calculators</span>
+      </span>
+    </a>
+
+    <!-- CENTER: Primary nav -->
+    <ul class="nb-links" role="list">
+
+      <li class="nb-item">
+        <a href="/#calculators" class="nb-link">Calculators</a>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-taxes" id="dd-taxes-btn">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-taxes" role="menu" aria-labelledby="dd-taxes-btn">
+          <a href="/tax-calculator-usa" role="menuitem" class="nb-dd-link">Federal Tax Calculator</a>
+          <a href="/capital-gains-tax-calculator" role="menuitem" class="nb-dd-link">Capital Gains Tax</a>
+          <a href="/self-employment-tax-calculator" role="menuitem" class="nb-dd-link">Self-Employment Tax</a>
+          <a href="/crypto-tax-calculator" role="menuitem" class="nb-dd-link">Crypto Tax Calculator</a>
+          <a href="/sales-tax-calculator" role="menuitem" class="nb-dd-link">Sales Tax Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-salary" id="dd-salary-btn">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-salary" role="menu" aria-labelledby="dd-salary-btn">
+          <a href="/salary-calculator-usa" role="menuitem" class="nb-dd-link">Salary Calculator</a>
+          <a href="/hourly-to-salary-calculator" role="menuitem" class="nb-dd-link">Hourly to Salary</a>
+          <a href="/cost-of-living-calculator" role="menuitem" class="nb-dd-link">Cost of Living</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-mortgage" id="dd-mortgage-btn">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-mortgage" role="menu" aria-labelledby="dd-mortgage-btn">
+          <a href="/mortgage-calculator-usa" role="menuitem" class="nb-dd-link">Mortgage Calculator</a>
+          <a href="/home-affordability-calculator-usa" role="menuitem" class="nb-dd-link">Home Affordability</a>
+          <a href="/refinance-calculator" role="menuitem" class="nb-dd-link">Refinance Calculator</a>
+          <a href="/rent-vs-buy-calculator" role="menuitem" class="nb-dd-link">Rent vs Buy</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-investing" id="dd-investing-btn">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-investing" role="menu" aria-labelledby="dd-investing-btn">
+          <a href="/compound-interest-calculator" role="menuitem" class="nb-dd-link">Compound Interest</a>
+          <a href="/stock-return-calculator-usa" role="menuitem" class="nb-dd-link">Stock Return</a>
+          <a href="/net-worth-calculator" role="menuitem" class="nb-dd-link">Net Worth</a>
+          <a href="/currency-converter" role="menuitem" class="nb-dd-link">Currency Converter</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-retirement" id="dd-retirement-btn">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-retirement" role="menu" aria-labelledby="dd-retirement-btn">
+          <a href="/401k-calculator-usa" role="menuitem" class="nb-dd-link">401(k) Calculator</a>
+          <a href="/roth-ira-calculator" role="menuitem" class="nb-dd-link">Roth IRA Calculator</a>
+          <a href="/social-security-calculator" role="menuitem" class="nb-dd-link">Social Security</a>
+          <a href="/fire-calculator" role="menuitem" class="nb-dd-link">FIRE Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item">
+        <a href="/blog" class="nb-link">Blog</a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT: Search, dark mode, AI, hamburger -->
+    <div class="nb-actions">
+
+      <div class="nb-search" role="search">
+        <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          type="search"
+          id="fc-search"
+          class="nb-search-input"
+          placeholder="Search calculators..."
+          autocomplete="off"
+          aria-label="Search all calculators"
+        >
+        <kbd class="nb-search-kbd" aria-hidden="true">/</kbd>
+      </div>
+
+      <button type="button" class="nb-icon-btn" id="nb-theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button type="button" class="nb-ai-btn" id="nb-ai-btn">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+        </svg>
+        <span class="nb-ai-label">AI Assistant</span>
+        <span class="nb-badge">Coming Soon</span>
+      </button>
+
+      <button
+        type="button"
+        class="nb-hamburger"
+        id="nb-hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nb-drawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nb-overlay" id="nb-overlay" hidden></div>
+<div class="nb-drawer" id="nb-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nb-drawer-head">
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+      </span>
+    </a>
+    <button type="button" class="nb-icon-btn" id="nb-drawer-close" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="nb-search nb-search-drawer" role="search">
+    <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input type="search" id="fc-search-m" class="nb-search-input" placeholder="Search calculators..." autocomplete="off" aria-label="Search all calculators">
+  </div>
+
+  <nav class="nb-drawer-nav" aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="/#calculators" class="nb-drawer-link">Calculators</a></li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-taxes">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-taxes" role="list">
+          <li><a href="/tax-calculator-usa">Federal Tax Calculator</a></li>
+          <li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li>
+          <li><a href="/self-employment-tax-calculator">Self-Employment Tax</a></li>
+          <li><a href="/crypto-tax-calculator">Crypto Tax Calculator</a></li>
+          <li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-salary">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-salary" role="list">
+          <li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+          <li><a href="/hourly-to-salary-calculator">Hourly to Salary</a></li>
+          <li><a href="/cost-of-living-calculator">Cost of Living</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-mortgage">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-mortgage" role="list">
+          <li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li>
+          <li><a href="/home-affordability-calculator-usa">Home Affordability</a></li>
+          <li><a href="/refinance-calculator">Refinance Calculator</a></li>
+          <li><a href="/rent-vs-buy-calculator">Rent vs Buy</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-investing">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-investing" role="list">
+          <li><a href="/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="/stock-return-calculator-usa">Stock Return</a></li>
+          <li><a href="/net-worth-calculator">Net Worth</a></li>
+          <li><a href="/currency-converter">Currency Converter</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-retirement">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-retirement" role="list">
+          <li><a href="/401k-calculator-usa">401(k) Calculator</a></li>
+          <li><a href="/roth-ira-calculator">Roth IRA Calculator</a></li>
+          <li><a href="/social-security-calculator">Social Security</a></li>
+          <li><a href="/fire-calculator">FIRE Calculator</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/blog" class="nb-drawer-link">Blog</a></li>
+    </ul>
+  </nav>
+
+  <div class="nb-drawer-foot">
+    <button type="button" class="nb-icon-btn" id="nb-theme-toggle-m" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Dark mode</span>
+    </button>
+    <button type="button" class="nb-ai-btn nb-ai-btn-drawer" id="nb-ai-btn-m">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+        <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+      </svg>
+      AI Assistant
+      <span class="nb-badge">Coming Soon</span>
+    </button>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<div class="hero">
+    <div class="badge">🏠 California Property Tax 2026 • Estimator</div>
+    <h1>California Property <span>Tax Calculator</span></h1>
+    <div class="hero-author">
+        <div class="hero-avatar">CA</div>
+        <div>
+            <div class="hero-author-text">Written by the <strong>USAFinCalc Team</strong></div>
+            <div style="font-size:12px;color:#B8C4D6"><a href="/editorial-policy">Editorial Policy</a> · <a href="/methodology">Methodology</a></div>
+        </div>
+    </div>
+    <p class="hero-sub"><strong>Estimate your California property tax</strong> for the 2026 tax year. Enter your home's assessed value and county to see your annual property tax bill, including the <strong>1% base rate (Proposition 13)</strong>, local assessments, and special taxes.<span class="ca-tax-badge">Updated 2026</span></p>
+</div>
+
+<!-- QA -->
+<div class="qa-wrap"><div class="qa" id="qa-box">Enter your property value below to calculate your California property tax.</div></div>
+
+<!-- MAIN -->
+<div class="main">
+    <div>
+        <div class="card">
+            <div class="ct">🏡 Property Details</div>
+            <label for="property-value">Assessed Property Value <span style="color:var(--muted);font-weight:400;">(Prop 13 base)</span></label>
+            <div class="pfx"><span>$</span><input id="property-value" type="number" min="0" value="500000" oninput="calculateTax()"/></div>
+
+            <div class="row2">
+                <div>
+                    <label for="county">County</label>
+                    <select id="county" onchange="calculateTax()">
+                        <option value="alameda">Alameda</option>
+                        <option value="butte">Butte</option>
+                        <option value="contra_costa">Contra Costa</option>
+                        <option value="fresno">Fresno</option>
+                        <option value="kern">Kern</option>
+                        <option value="los_angeles" selected>Los Angeles</option>
+                        <option value="marin">Marin</option>
+                        <option value="napa">Napa</option>
+                        <option value="orange">Orange</option>
+                        <option value="placer">Placer</option>
+                        <option value="riverside">Riverside</option>
+                        <option value="sacramento">Sacramento</option>
+                        <option value="san_bernardino">San Bernardino</option>
+                        <option value="san_diego">San Diego</option>
+                        <option value="san_francisco">San Francisco</option>
+                        <option value="san_joaquin">San Joaquin</option>
+                        <option value="san_mateo">San Mateo</option>
+                        <option value="santa_clara">Santa Clara</option>
+                        <option value="solano">Solano</option>
+                        <option value="sonoma">Sonoma</option>
+                        <option value="stanislaus">Stanislaus</option>
+                        <option value="ventura">Ventura</option>
+                        <option value="yolo">Yolo</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="prop-type">Property Type</label>
+                    <select id="prop-type" onchange="calculateTax()">
+                        <option value="primary">Primary Residence</option>
+                        <option value="secondary">Secondary/Vacation</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment/Rental</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div>
+                    <label for="local-assessments">Local Assessments & Bonds <span style="color:var(--muted);font-weight:400;">(annual)</span></label>
+                    <div class="pfx"><span>$</span><input id="local-assessments" type="number" min="0" value="1200" oninput="calculateTax()"/></div>
+                </div>
+                <div>
+                    <label for="exemptions">Exemptions <span style="color:var(--muted);font-weight:400;">(e.g., Homeowner's)</span></label>
+                    <div class="pfx"><span>$</span><input id="exemptions" type="number" min="0" value="7000" oninput="calculateTax()"/></div>
+                </div>
+            </div>
+
+            <div class="sec-label">📍 California — <span style="color:var(--state)">1% Base Rate (Prop 13)</span></div>
+            <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);border-radius:var(--rs);padding:8px 14px;font-size:11px;color:var(--muted);margin-bottom:12px">
+                <strong style="color:var(--state)">📊 1% base + local assessments</strong> · Prop 13 limits annual increases to 2% · Average combined rate: 1.02%–1.45% · Homeowner's exemption: $7,000
+            </div>
+            <button class="btn" onclick="calculateTax()">Calculate Property Tax →</button>
+        </div>
+    </div>
+
+    <div id="result-col">
+        <div class="placeholder"><div style="font-size:36px;opacity:.4">🏠</div><div>Enter your property details</div><div style="font-size:12px;font-family:var(--mono)">See your annual property tax</div></div>
+    </div>
+
+    <div class="wide" id="detail-col" style="display:none">
+        <div class="dcard">
+            <div class="bt">📋 Property Tax Breakdown — California</div>
+            <div id="detail-rows"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Reference Table -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>California Property Tax Estimator — Quick Look</h2>
+        <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Estimated annual property tax for common home values (Los Angeles County, primary residence, with homeowner's exemption).</p>
+        <div style="overflow-x:auto">
+            <table class="quick-table">
+                <thead>
+                    <tr><th>Assessed Value</th><th>Base Tax (1%)</th><th>Local Assessments</th><th>Total Tax</th><th>Effective Rate</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>$200,000</td><td>$2,000</td><td>$1,200</td><td>$3,200</td><td>1.60%</td></tr>
+                    <tr><td>$350,000</td><td>$3,500</td><td>$1,200</td><td>$4,700</td><td>1.34%</td></tr>
+                    <tr><td><strong>$500,000</strong></td><td><strong>$5,000</strong></td><td><strong>$1,200</strong></td><td><strong>$6,200</strong></td><td><strong>1.24%</strong></td></tr>
+                    <tr><td>$650,000</td><td>$6,500</td><td>$1,200</td><td>$7,700</td><td>1.18%</td></tr>
+                    <tr><td>$800,000</td><td>$8,000</td><td>$1,200</td><td>$9,200</td><td>1.15%</td></tr>
+                    <tr><td>$1,000,000</td><td>$10,000</td><td>$1,200</td><td>$11,200</td><td>1.12%</td></tr>
+                    <tr><td>$1,500,000</td><td>$15,000</td><td>$1,200</td><td>$16,200</td><td>1.08%</td></tr>
+                    <tr><td>$2,000,000</td><td>$20,000</td><td>$1,200</td><td>$21,200</td><td>1.06%</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="source" style="margin-top:10px;font-size:11px">* Estimates for primary residence with $7,000 homeowner's exemption. Actual tax varies by county, local assessments, and special districts.</p>
+    </div>
+</div>
+
+<!-- State Data Block -->
+<div style="max-width:980px;margin:0 auto;padding:0 24px 20px">
+    <div class="state-data-card">
+        <h2>California Property Tax Information 2026</h2>
+        <p><strong>Base Property Tax Rate:</strong> <span style="color:var(--state)">1.00%</span> (Proposition 13) <span class="ca-tax-badge">Constitutional Limit</span></p>
+        <p><strong>Proposition 13 (1978):</strong> Limits property tax to 1% of assessed value at time of purchase. Annual assessed value increases are capped at 2% (or inflation, whichever is lower).</p>
+        <p><strong>Proposition 19 (2020):</strong> Allows homeowners aged 55+, severely disabled, or victims of wildfires/natural disasters to transfer their Proposition 13 tax base to a new home (up to 3 times).</p>
+        <p><strong>Proposition 1 (2024):</strong> Authorized $10 billion in bonds for affordable housing and infrastructure projects, which may affect local assessment rates.</p>
+        <p><strong>Key Exemptions:</strong></p>
+        <ul>
+            <li><strong>Homeowner's Exemption:</strong> $7,000 reduction in assessed value for primary residences (saves ~$70–$100 per year)</li>
+            <li><strong>Disabled Veterans Exemption:</strong> Up to $150,000 reduction for qualifying disabled veterans</li>
+            <li><strong>Senior Citizen Exemption:</strong> Some local jurisdictions offer additional property tax postponement programs for seniors</li>
+        </ul>
+        <p><strong>Local Assessments:</strong> Voter-approved bonds, parcel taxes, Mello-Roos districts, and special assessments can add 0.02%–0.45% to the effective rate.</p>
+        <p class="source"><strong>Source:</strong> California State Board of Equalization — <a href="https://www.boe.ca.gov/" style="color:var(--accent);" target="_blank">boe.ca.gov</a> · Updated July 2026</p>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq">
+    <h2>Frequently Asked Questions — California Property Tax</h2>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the California property tax rate for 2026?</div><div class="faq-a">The base property tax rate in California is <strong>1.00%</strong> of the assessed value, mandated by Proposition 13 (1978). Local voter-approved bonds, Mello-Roos taxes, and special assessments can increase the total effective rate to anywhere from <strong>1.02% to 1.45%</strong>, depending on the county and city.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How does Proposition 13 affect my property taxes?</div><div class="faq-a">Proposition 13 does two things: (1) It caps property taxes at <strong>1% of the assessed value</strong> at the time of purchase, and (2) it limits annual increases in assessed value to <strong>2% or the rate of inflation</strong>, whichever is lower. This means your property tax bill stays relatively predictable as long as you own the home.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the homeowner's exemption in California?</div><div class="faq-a">California offers a <strong>$7,000</strong> reduction in assessed value for owner-occupied primary residences. This translates to a savings of about <strong>$70–$100 per year</strong> on your property tax bill. You must file a claim with your county assessor to receive this exemption.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How is California property tax calculated?</div><div class="faq-a">Property tax is calculated as: <br><strong>Total Tax = (Assessed Value × 1%) + Local Assessments - Exemptions</strong> <br>For example, on a $500,000 home with $1,200 in local assessments and $7,000 exemption: Tax = ($493,000 × 1%) + $1,200 = $6,130.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does California have a property tax exemption for seniors?</div><div class="faq-a">California offers a <strong>Property Tax Postponement program</strong> for seniors aged 62+, blind, or disabled with annual household income under certain limits. This program allows eligible homeowners to defer their property tax payments. Additionally, some counties offer local senior exemptions.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the average property tax rate in California?</div><div class="faq-a">The average effective property tax rate in California is <strong>0.71%</strong> of the home's market value, which is actually below the national average of 0.99%. However, this is because assessments are based on purchase price (Prop 13) rather than current market value.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Which California county has the highest property tax rate?</div><div class="faq-a">The highest effective property tax rates are typically found in counties with high local assessments like <strong>Alameda, Contra Costa, and San Francisco</strong>, where rates can reach 1.30%–1.45%. Counties with fewer local bonds like <strong>Kern, Butte, and Stanislaus</strong> tend to have rates closer to the 1% base.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Does California tax property at market value or assessed value?</div><div class="faq-a">California taxes property at <strong>assessed value</strong>, which is typically the purchase price plus up to 2% annual increases (Prop 13). This is different from market value, which can be significantly higher — especially in hot real estate markets.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I deduct California property tax on my federal return?</div><div class="faq-a">Yes. California property tax is deductible on your federal income tax return if you itemize. However, the SALT (State And Local Tax) deduction is capped at <strong>$10,000</strong> ($5,000 for married filing separately) for the 2026 tax year.</div></div>
+
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What happens to property taxes when I sell my home in California?</div><div class="faq-a">When you sell your home, the property is reassessed at its <strong>current market value</strong> for the new buyer (Proposition 13). This means the new owner's property tax will be based on the sale price, not your assessed value. Your tax liability ends when you sell.</div></div>
+</div>
+
+<!-- Related Calculators -->
+<section class="related-section">
+    <div class="related">
+        <h2>Related Calculators & Tools</h2>
+        <div class="rel-grid">
+            <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
+            <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
+            <a class="rel-card" href="/california-income-tax-calculator"><div class="rt">💰 California Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/california-paycheck-calculator"><div class="rt">📄 California Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare California to your city</div></a>
+        </div>
+    </div>
+</section>
+
+<!-- Related Articles -->
+<section class="related-section">
+    <h2>Related Articles</h2>
+    <ul class="related-links">
+        <li><a href="/blog/california-property-tax-guide-2026">California Property Tax Guide 2026: What Homeowners Need to Know</a></li>
+        <li><a href="/blog/proposition-19-explained-2026">Proposition 19 Explained: How It Affects Your Property Tax in 2026</a></li>
+        <li><a href="/blog/california-property-tax-vs-texas">California vs. Texas Property Tax: Which State Is More Expensive?</a></li>
+    </ul>
+</section>
+
+<!-- Methodology -->
+<div class="meth">
+    <div class="meth-box">
+        <p><strong style="color:var(--text)">📊 Data Methodology</strong></p>
+        <p>California property tax calculations use the 1% base rate established by Proposition 13 (1978). County-specific local assessment data is based on published rates from the California State Board of Equalization and county assessor offices. Homeowner's exemption of $7,000 is included as default. Proposition 19 and Proposition 1 (2024) provisions are reflected in local assessment estimates. Source: <a href="https://www.boe.ca.gov/" target="_blank">California BOE</a> · <a href="https://www.californiataxdata.com/" target="_blank">California Tax Data</a> · Updated July 2026</p>
+    </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
+        <a href="/">Home</a>
+        <a href="/tax-calculator-usa">Tax Calculator</a>
+        <a href="/salary-calculator-usa">Salary Calculator</a>
+        <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+        <a href="/paycheck-calculator">Paycheck Calculator</a>
+        <a href="/about">About</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/contact">Contact</a>
+    </div>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:8px 0">
+        <span style="background:rgba(245,158,11,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--state)">✅ Calculators: 0 Data Stored</span>
+        <span style="background:rgba(248,113,113,0.1);padding:4px 16px;border-radius:20px;font-size:12px;color:var(--fica)">⚠️ Ads & Affiliate Links: Third-Party Cookies</span>
+    </div>
+    <p>© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+// County-specific local assessment rates (above 1% base)
+const countyRates = {
+    alameda: 0.0035,
+    butte: 0.0015,
+    contra_costa: 0.0032,
+    fresno: 0.0018,
+    kern: 0.0012,
+    los_angeles: 0.0025,
+    marin: 0.0038,
+    napa: 0.0022,
+    orange: 0.0024,
+    placer: 0.0019,
+    riverside: 0.0018,
+    sacramento: 0.0020,
+    san_bernardino: 0.0016,
+    san_diego: 0.0026,
+    san_francisco: 0.0040,
+    san_joaquin: 0.0017,
+    san_mateo: 0.0033,
+    santa_clara: 0.0030,
+    solano: 0.0018,
+    sonoma: 0.0021,
+    stanislaus: 0.0015,
+    ventura: 0.0022,
+    yolo: 0.0017
+};
+
+function calculateTax(){
+    const value=+document.getElementById('property-value').value||0;
+    const county=document.getElementById('county').value;
+    const propType=document.getElementById('prop-type').value;
+    let localAssessments=+document.getElementById('local-assessments').value||0;
+    let exemptions=+document.getElementById('exemptions').value||0;
+    
+    // County-specific rate adjustment
+    const countyRate = countyRates[county] || 0.0025;
+    
+    // Property type adjustment (some types have different assessment rules)
+    let typeMultiplier = 1.0;
+    if(propType === 'secondary') typeMultiplier = 1.0;
+    else if(propType === 'commercial') typeMultiplier = 1.0;
+    else if(propType === 'investment') typeMultiplier = 1.0;
+    
+    const baseRate = 0.01; // 1% Proposition 13
+    const totalRate = baseRate + countyRate;
+    
+    // Apply exemptions to assessed value
+    const assessedValue = Math.max(0, value - exemptions);
+    
+    // Calculate base tax (1% + county rate) on assessed value
+    const baseTax = assessedValue * totalRate;
+    
+    // Add local assessments (Mello-Roos, bonds, etc.)
+    const totalTax = baseTax + localAssessments;
+    
+    // Effective rate on market value
+    const effectiveRate = value > 0 ? (totalTax / value) * 100 : 0;
+    
+    // Update QA
+    document.getElementById('qa-box').innerHTML =
+        `California property tax: <strong>$${Math.round(totalTax).toLocaleString()}</strong> per year · Effective rate: <strong>${effectiveRate.toFixed(2)}%</strong> · Total rate: <strong>${(totalRate*100).toFixed(2)}%</strong>`;
+
+    // Result card
+    document.getElementById('result-col').innerHTML = `
+        <div class="net-card">
+            <div class="nl">Annual Property Tax</div>
+            <div class="na">$${Math.round(totalTax).toLocaleString()}</div>
+            <div class="nm">Effective rate: <span>${effectiveRate.toFixed(2)}%</span> · Monthly: <span>$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        </div>
+        <div class="pay-grid">
+            <div class="pay-box"><div class="pay-l">Assessed Value</div><div class="pay-v" style="color:var(--federal)">$${assessedValue.toLocaleString()}</div></div>
+            <div class="pay-box"><div class="pay-l">Total Tax Rate</div><div class="pay-v" style="color:var(--state)">${(totalRate*100).toFixed(2)}%</div></div>
+            <div class="pay-box"><div class="pay-l">County</div><div class="pay-v" style="color:var(--takehome)">${county.replace('_',' ').toUpperCase()}</div></div>
+        </div>
+        <div class="bcard">
+            <div class="bt">California Property Tax Breakdown</div>
+            <div class="sbar">
+                <div class="seg" style="width:${(baseTax/totalTax*100).toFixed(1)}%;background:var(--federal)"></div>
+                <div class="seg" style="width:${((countyRate*assessedValue)/totalTax*100).toFixed(1)}%;background:var(--state)"></div>
+                <div class="seg" style="width:${(localAssessments/totalTax*100).toFixed(1)}%;background:var(--fica)"></div>
+            </div>
+            <div class="brows">
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--federal)"></div><div class="blbl">Base Tax (1% — Prop 13)</div></div><div class="ba">$${Math.round(baseTax).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--state)"></div><div class="blbl">County Rate (${(countyRate*100).toFixed(2)}%)</div></div><div class="ba">$${Math.round(countyRate*assessedValue).toLocaleString()}</div></div>
+                <div class="br"><div class="bl"><div class="dot" style="background:var(--fica)"></div><div class="blbl">Local Assessments (Bonds, Mello-Roos)</div></div><div class="ba">$${Math.round(localAssessments).toLocaleString()}</div></div>
+                <div class="divider"></div>
+                <div class="br"><div class="bl"><div class="blbl"><strong>Total Annual Tax</strong></div></div><div class="ba" style="color:var(--accent);font-size:15px">$${Math.round(totalTax).toLocaleString()}</div></div>
+            </div>
+        </div>
+        <div style="margin-top:10px;background:rgba(245,158,11,0.04);border:1px solid rgba(245,158,11,0.1);border-radius:var(--rs);padding:8px 14px;font-size:10px;color:var(--muted)">
+            📊 <strong style="color:var(--text)">Quick Facts:</strong> 1% Prop 13 base · 2% annual increase cap · Homeowner's exemption: $7,000 · Prop 19 allows tax base transfer for 55+
+        </div>
+    `;
+
+    // Detail rows
+    document.getElementById('detail-col').style.display='block';
+    document.getElementById('detail-rows').innerHTML = `
+        <div class="dr"><span class="dk">Market Value</span><span class="dv">$${value.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Exemptions Applied</span><span class="dv" style="color:var(--state)">$${exemptions.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Assessed Value (after exemptions)</span><span class="dv">$${assessedValue.toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Base Tax Rate (Prop 13)</span><span class="dv">1.00%</span></div>
+        <div class="dr"><span class="dk">County Assessment Rate</span><span class="dv" style="color:var(--state)">${(countyRate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Total Tax Rate</span><span class="dv" style="color:var(--state)">${(totalRate*100).toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Base Tax (1% × Assessed Value)</span><span class="dv" style="color:var(--federal)">$${Math.round(baseTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">County Tax (${(countyRate*100).toFixed(2)}% × Assessed Value)</span><span class="dv" style="color:var(--state)">$${Math.round(countyRate*assessedValue).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Local Assessments (Bonds, Mello-Roos)</span><span class="dv" style="color:var(--fica)">$${Math.round(localAssessments).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk"><strong>Total Annual Property Tax</strong></span><span class="dv" style="color:var(--accent);font-size:16px">$${Math.round(totalTax).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Monthly Payment</span><span class="dv">$${Math.round(totalTax/12).toLocaleString()}</span></div>
+        <div class="dr"><span class="dk">Effective Tax Rate (on market value)</span><span class="dv">${effectiveRate.toFixed(2)}%</span></div>
+        <div class="dr"><span class="dk">Property Type</span><span class="dv">${propType.charAt(0).toUpperCase()+propType.slice(1)}</span></div>
+    `;
+}
+
+calculateTax();
+</script>
+<script src="/js/navbar.js" defer></script>
+</body>
+</html>

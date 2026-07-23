@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Probability Calculator — Free Online Tool</title>
+<link rel="canonical" href="https://usafincalc.com/probability-calculator"/>
+<meta name="robots" content="index, follow"/>
+<meta name="description" content="Calculate probability of events, combinations, and permutations. Free online probability calculator."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+.container{max-width:700px;width:100%}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--muted);margin-bottom:20px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
+label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:16px;padding:10px 14px;font-family:var(--font);outline:none}
+input:focus{border-color:var(--accent)}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:10px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;margin-top:8px;width:100%}
+.btn:hover{background:#B8862F}
+.result{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px;font-size:18px;font-weight:600;color:var(--green);text-align:center}
+@media(max-width:500px){.grid-2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
+<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
+<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
+<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
+</a>
+<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+</nav>
+<div class="container">
+<h1>Probability Calculator</h1>
+<p class="sub">Calculate event probability, combinations (nCr), and permutations (nPr).</p>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:12px">Single Event Probability</h3>
+<div class="grid-2">
+<div><label>Favorable Outcomes</label><input id="fav" type="number" value="3" oninput="calcProb()"/></div>
+<div><label>Total Outcomes</label><input id="tot" type="number" value="10" oninput="calcProb()"/></div>
+</div>
+<div class="result" id="prob-result">Probability: 0.3000 (30.00%)</div>
+</div>
+
+<div class="card">
+<h3 style="font-size:15px;margin-bottom:12px">Combinations (nCr) &amp; Permutations (nPr)</h3>
+<div class="grid-2">
+<div><label>n (total items)</label><input id="n" type="number" value="10" oninput="calcComb()"/></div>
+<div><label>r (choose)</label><input id="r" type="number" value="3" oninput="calcComb()"/></div>
+</div>
+<div class="result" id="comb-result" style="font-size:16px">nCr = 120 &nbsp;|&nbsp; nPr = 720</div>
+</div>
+</div>
+<script>
+function calcProb(){
+const f=+document.getElementById('fav').value||0,t=+document.getElementById('tot').value||1;
+const p=t>0?f/t:0;
+document.getElementById('prob-result').textContent='Probability: '+p.toFixed(4)+' ('+(p*100).toFixed(2)+'%)';
+}
+function factorial(n){if(n<2)return 1;let r=1;for(let i=2;i<=n;i++)r*=i;return r;}
+function calcComb(){
+const n=+document.getElementById('n').value||0,r=+document.getElementById('r').value||0;
+if(r>n){document.getElementById('comb-result').textContent='Error: r cannot be greater than n';return;}
+const nCr=factorial(n)/(factorial(r)*factorial(n-r));
+const nPr=factorial(n)/factorial(n-r);
+document.getElementById('comb-result').textContent='nCr = '+nCr+' &nbsp;|&nbsp; nPr = '+nPr;
+}
+calcProb();calcComb();
+</script>
+</body>
+</html>

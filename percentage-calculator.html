@@ -9,6 +9,7 @@
 <meta name="description" content="Calculate percentages easily. Find what percent of a number, percentage increase/decrease, and more. Free online percentage calculator."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/search.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
@@ -39,7 +40,8 @@ input:focus{border-color:var(--accent)}
 <div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
 <span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
 </a>
-<a href="/#math-h" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Math Calculators</a>
+<div class="site-nav-search" role="search" style="margin:0 16px;max-width:220px"><input type="search" id="fc-search" placeholder="Search calculators..." autocomplete="off" aria-label="Search all calculators" style="padding:7px 12px;font-size:13px"></div>
+<a href="/" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Calculators</a>
 </nav>
 <div class="container">
 <h1>Percentage Calculator</h1>
@@ -84,5 +86,6 @@ function calc2(){const x=+document.getElementById('num2a').value||0,y=+document.
 function calc3(){const o=+document.getElementById('num3a').value||0,n=+document.getElementById('num3b').value||0;const r=o?((n-o)/o*100):0;const label=r>=0?'increase':'decrease';document.getElementById('res3').innerHTML=Math.abs(r).toFixed(2)+'% '+label+' <span>from '+o+' to '+n+'</span>'}
 calc1();calc2();calc3();
 </script>
+<script defer src="/js/search.js"></script>
 </body>
 </html>
