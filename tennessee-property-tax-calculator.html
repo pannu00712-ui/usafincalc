@@ -119,7 +119,16 @@ footer a:hover{color:var(--accent)}
 .quick-table th{color:var(--muted);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
 input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-offset:2px}
-</style>
+        .related{max-width:980px;margin:0 auto;padding:0 24px 50px}
+        .related h2{font-size:18px;font-weight:600;margin-bottom:14px}
+        .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+        .rel-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;display:block;transition:all .2s}
+        .rel-card:hover{border-color:var(--state);transform:translateY(-2px)}
+        .rel-card .rt{font-size:13px;font-weight:500;color:var(--text);margin-bottom:3px}
+        .rel-card .rd{font-size:11px;color:var(--muted)}
+        .related-section{max-width:980px;margin:0 auto;padding:0 24px 28px}
+        .related-section h2{font-size:18px;font-weight:700;color:#FAF9F6;margin-bottom:14px}
+    </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/search.css">
   <link rel="stylesheet" href="/css/navbar.css">
@@ -547,6 +556,20 @@ input:focus-visible,select:focus-visible{outline:2px solid currentColor;outline-
 <p>Tennessee property tax calculations use county-specific rates from the Tennessee Department of Revenue. Assessment ratio: 25% for residential property. Homestead exemption of $7,500 for primary residences. Senior tax freeze program — freezes tax at base year amount for homeowners 65+. Source: <a href="https://www.tn.gov/revenue.html" target="_blank">TN DOR</a> · Updated July 2026</p>
 </div>
 </div>
+<!-- Related Calculators -->
+<section class="related-section">
+    <div class="related">
+        <h2>Related Calculators &amp; Tools</h2>
+        <div class="rel-grid">
+            <a class="rel-card" href="/mortgage-calculator-usa"><div class="rt">🏠 Mortgage Calculator</div><div class="rd">Calculate your monthly mortgage payment</div></a>
+            <a class="rel-card" href="/property-tax-calculator"><div class="rt">📊 Property Tax Calculator</div><div class="rd">Compare property tax across states</div></a>
+            <a class="rel-card" href="/tennessee-tax-calculator"><div class="rt">💰 Tennessee Income Tax</div><div class="rd">Estimate your state income tax</div></a>
+            <a class="rel-card" href="/paycheck-calculator-by-state"><div class="rt">📄 Tennessee Paycheck</div><div class="rd">See your take-home pay</div></a>
+            <a class="rel-card" href="/cost-of-living-calculator"><div class="rt">🏠 Cost of Living</div><div class="rd">Compare Tennessee to your city</div></a>
+        </div>
+    </div>
+</section>
+
 </main>
 <footer>
 <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:12px">
@@ -675,6 +698,7 @@ function calculateTax(){
 
 calculateTax();
 </script>
+<div style="text-align:center;font-size:11px;color:var(--text3,#8B96A8);padding:8px 0;">Last updated: July 26, 2026</div>
 <script defer src="/js/search.js"></script>
 <script src="/js/navbar.js" defer></script>
 </body>
