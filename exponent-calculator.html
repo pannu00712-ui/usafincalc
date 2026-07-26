@@ -3,19 +3,70 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
 <title>Exponent Calculator — Free Online Tool</title>
-<link rel="canonical" href="https://usafincalc.com/exponent-calculator"/>
-<meta name="robots" content="index, follow"/>
 <meta name="description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/search.css">
+<meta name="keywords" content="exponent calculator, power calculator, exponentiation, negative exponents, fractional exponents"/>
+<meta name="author" content="USAFinCalc Editorial Team"/>
+<link rel="canonical" href="https://usafincalc.com/exponent-calculator"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Exponent Calculator — Free Online Tool"/>
+<meta property="og:description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
+<meta property="og:url" content="https://usafincalc.com/exponent-calculator"/>
+<meta property="og:image" content="https://usafincalc.com/og-image.png"/>
+<meta property="og:site_name" content="USAFinCalc"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Exponent Calculator — Free Online Tool"/>
+<meta name="twitter:description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
+<meta name="twitter:image" content="https://usafincalc.com/og-image.png"/>
+<meta name="date" content="2026-07-26"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/></noscript>
+<link rel="stylesheet" href="/css/design-system.css"/>
+<link rel="stylesheet" href="/css/privacy-disclosure.css"/>
+<link rel="stylesheet" href="/css/search.css"/>
+<link rel="stylesheet" href="/css/navbar.css"/>
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="VmqStOhNtLiTsE983txKMA" async></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a negative exponent mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A negative exponent means take the reciprocal of the base raised to the positive version of that exponent. For example, 2⁻³ = 1/2³ = 1/8."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a fractional exponent mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A fractional exponent represents a root. b^(1/2) is the square root of b, and more generally b^(m/n) is the n-th root of b raised to the m-th power."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does any number to the power of 0 equal 1?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It follows from the pattern of dividing consecutive powers of the same base (b³/b²=b, b²/b¹=b, b¹/b⁰=b) — for the pattern to hold consistently, b⁰ must equal 1 for any nonzero b."
+      }
+    }
+  ]
+}
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#FAF9F6;--bg2:#FFFFFF;--bg3:#F2EFE8;--card:#FFFFFF;--border:#E4E0D6;--text:#1A2433;--muted:#5C6B7F;--accent:#C99A3B;--green:#2E6B4F;--font:'Inter',sans-serif;--display:'Fraunces',serif;--r:14px;--rs:8px}
-body{font-family:var(--font);background:var(--bg);color:var(--text);padding:20px;display:flex;justify-content:center}
+:root{--bg:#0d0f14;--bg2:#13161e;--bg3:#1a1e2a;--card:#181c26;--border:rgba(255,255,255,0.08);--text:#f0f2f8;--muted:#7e859f;--accent:#10b981;--green:#00e676;--font:'Sora',sans-serif;--display:'Sora',sans-serif;--r:14px;--rs:8px}
+body{font-family:var(--font);background:var(--bg);color:var(--text);padding:24px 0 0;display:flex;justify-content:center}
 .container{max-width:600px;width:100%}
-h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#C99A3B,#0F2A4A);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{color:var(--muted);margin-bottom:20px}
 .card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);box-shadow:0 12px 30px -10px rgba(15,42,74,.12);padding:24px;margin-bottom:16px}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -23,22 +74,285 @@ label{font-size:13px;color:var(--muted);display:block;margin-bottom:4px}
 input{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);color:var(--text);font-size:18px;padding:10px;font-family:var(--font);text-align:center;outline:none}
 input:focus{border-color:var(--accent)}
 .btn{background:var(--accent);color:#FFFFFF;border:none;border-radius:var(--rs);padding:12px;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;width:100%;margin-top:8px}
-.btn:hover{background:#B8862F}
+.btn:hover{background:#0d9488}
 .result{background:var(--bg3);border-radius:var(--rs);padding:16px;margin-top:12px;font-size:24px;font-weight:600;text-align:center;color:var(--green)}
 .result .small{font-size:14px;font-weight:400;color:var(--muted)}
 @media(max-width:450px){.grid-2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<nav style="background:#0F2A4A;color:#fff;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;margin:-20px -20px 20px -20px">
-<a href="/" style="display:flex;align-items:center;gap:9px;text-decoration:none;color:#fff">
-<div style="width:28px;height:28px;border-radius:6px;background:#C99A3B;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#0F2A4A;font-size:14px">$</div>
-<span style="font-family:'Fraunces',serif;font-weight:600;font-size:16px">USA<span style="color:#E8C878">FinCalc</span></span>
-</a>
-<div class="site-nav-search" role="search" style="margin:0 16px;max-width:220px"><input type="search" id="fc-search" placeholder="Search calculators..." autocomplete="off" aria-label="Search all calculators" style="padding:7px 12px;font-size:13px"></div>
-<a href="/" style="color:rgba(255,255,255,.8);text-decoration:none;font-size:13px;font-weight:500">← All Calculators</a>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<a class="a11y-skip" href="#main-content">Skip to main content</a>
+<nav class="nb" id="nb" aria-label="Main navigation">
+  <div class="nb-inner">
+
+    <!-- LEFT: Logo -->
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="30" height="30" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+        <span class="nb-logo-sub">USA Financial Calculators</span>
+      </span>
+    </a>
+
+    <!-- CENTER: Primary nav -->
+    <ul class="nb-links" role="list">
+
+      <li class="nb-item">
+        <a href="/#calculators" class="nb-link">Calculators</a>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-taxes" id="dd-taxes-btn">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-taxes" role="menu" aria-labelledby="dd-taxes-btn">
+          <a href="/tax-calculator-usa" role="menuitem" class="nb-dd-link">Federal Tax Calculator</a>
+          <a href="/capital-gains-tax-calculator" role="menuitem" class="nb-dd-link">Capital Gains Tax</a>
+          <a href="/self-employment-tax-calculator" role="menuitem" class="nb-dd-link">Self-Employment Tax</a>
+          <a href="/crypto-tax-calculator" role="menuitem" class="nb-dd-link">Crypto Tax Calculator</a>
+          <a href="/sales-tax-calculator" role="menuitem" class="nb-dd-link">Sales Tax Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-salary" id="dd-salary-btn">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-salary" role="menu" aria-labelledby="dd-salary-btn">
+          <a href="/salary-calculator-usa" role="menuitem" class="nb-dd-link">Salary Calculator</a>
+          <a href="/hourly-to-salary-calculator" role="menuitem" class="nb-dd-link">Hourly to Salary</a>
+          <a href="/cost-of-living-calculator" role="menuitem" class="nb-dd-link">Cost of Living</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-mortgage" id="dd-mortgage-btn">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-mortgage" role="menu" aria-labelledby="dd-mortgage-btn">
+          <a href="/mortgage-calculator-usa" role="menuitem" class="nb-dd-link">Mortgage Calculator</a>
+          <a href="/home-affordability-calculator-usa" role="menuitem" class="nb-dd-link">Home Affordability</a>
+          <a href="/refinance-calculator" role="menuitem" class="nb-dd-link">Refinance Calculator</a>
+          <a href="/rent-vs-buy-calculator" role="menuitem" class="nb-dd-link">Rent vs Buy</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-investing" id="dd-investing-btn">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-investing" role="menu" aria-labelledby="dd-investing-btn">
+          <a href="/compound-interest-calculator" role="menuitem" class="nb-dd-link">Compound Interest</a>
+          <a href="/stock-return-calculator-usa" role="menuitem" class="nb-dd-link">Stock Return</a>
+          <a href="/net-worth-calculator" role="menuitem" class="nb-dd-link">Net Worth</a>
+          <a href="/currency-converter" role="menuitem" class="nb-dd-link">Currency Converter</a>
+        </div>
+      </li>
+
+      <li class="nb-item nb-has-dd">
+        <button type="button" class="nb-link nb-dd-trigger" aria-expanded="false" aria-controls="dd-retirement" id="dd-retirement-btn">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nb-dd" id="dd-retirement" role="menu" aria-labelledby="dd-retirement-btn">
+          <a href="/401k-calculator-usa" role="menuitem" class="nb-dd-link">401(k) Calculator</a>
+          <a href="/roth-ira-calculator" role="menuitem" class="nb-dd-link">Roth IRA Calculator</a>
+          <a href="/social-security-calculator" role="menuitem" class="nb-dd-link">Social Security</a>
+          <a href="/fire-calculator" role="menuitem" class="nb-dd-link">FIRE Calculator</a>
+        </div>
+      </li>
+
+      <li class="nb-item">
+        <a href="/blog" class="nb-link">Blog</a>
+      </li>
+
+    </ul>
+
+    <!-- RIGHT: Search, dark mode, AI, hamburger -->
+    <div class="nb-actions">
+
+      <div class="nb-search" role="search">
+        <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <input
+          type="search"
+          id="fc-search"
+          class="nb-search-input"
+          placeholder="Search calculators..."
+          autocomplete="off"
+          aria-label="Search all calculators"
+        >
+        <kbd class="nb-search-kbd" aria-hidden="true">/</kbd>
+      </div>
+
+      <button type="button" class="nb-icon-btn" id="nb-theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+        <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button type="button" class="nb-ai-btn" id="nb-ai-btn">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+          <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+        </svg>
+        <span class="nb-ai-label">AI Assistant</span>
+        <span class="nb-badge">Coming Soon</span>
+      </button>
+
+      <button
+        type="button"
+        class="nb-hamburger"
+        id="nb-hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nb-drawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="nb-overlay" id="nb-overlay" hidden></div>
+<div class="nb-drawer" id="nb-drawer" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+  <div class="nb-drawer-head">
+    <a href="/" class="nb-logo" aria-label="USAFinCalc Home">
+      <svg class="nb-logo-mark" width="26" height="26" viewBox="0 0 30 30" fill="none" aria-hidden="true">
+        <rect x="1" y="1" width="28" height="28" rx="8" stroke="var(--nb-blue)" stroke-width="2"/>
+        <path d="M9 20V13.5M15 20V10M21 20V16" stroke="var(--nb-blue)" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="nb-logo-text">
+        <span class="nb-logo-title">Fin<span class="nb-logo-accent">Calc</span></span>
+      </span>
+    </a>
+    <button type="button" class="nb-icon-btn" id="nb-drawer-close" aria-label="Close menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="nb-search nb-search-drawer" role="search">
+    <svg class="nb-search-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <circle cx="7" cy="7" r="5.25" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M14 14l-2.9-2.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    <input type="search" id="fc-search-m" class="nb-search-input" placeholder="Search calculators..." autocomplete="off" aria-label="Search all calculators">
+  </div>
+
+  <nav class="nb-drawer-nav" aria-label="Mobile navigation">
+    <ul role="list">
+      <li><a href="/#calculators" class="nb-drawer-link">Calculators</a></li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-taxes">
+          Taxes
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-taxes" role="list">
+          <li><a href="/tax-calculator-usa">Federal Tax Calculator</a></li>
+          <li><a href="/capital-gains-tax-calculator">Capital Gains Tax</a></li>
+          <li><a href="/self-employment-tax-calculator">Self-Employment Tax</a></li>
+          <li><a href="/crypto-tax-calculator">Crypto Tax Calculator</a></li>
+          <li><a href="/sales-tax-calculator">Sales Tax Calculator</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-salary">
+          Salary
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-salary" role="list">
+          <li><a href="/salary-calculator-usa">Salary Calculator</a></li>
+          <li><a href="/hourly-to-salary-calculator">Hourly to Salary</a></li>
+          <li><a href="/cost-of-living-calculator">Cost of Living</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-mortgage">
+          Mortgage
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-mortgage" role="list">
+          <li><a href="/mortgage-calculator-usa">Mortgage Calculator</a></li>
+          <li><a href="/home-affordability-calculator-usa">Home Affordability</a></li>
+          <li><a href="/refinance-calculator">Refinance Calculator</a></li>
+          <li><a href="/rent-vs-buy-calculator">Rent vs Buy</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-investing">
+          Investing
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-investing" role="list">
+          <li><a href="/compound-interest-calculator">Compound Interest</a></li>
+          <li><a href="/stock-return-calculator-usa">Stock Return</a></li>
+          <li><a href="/net-worth-calculator">Net Worth</a></li>
+          <li><a href="/currency-converter">Currency Converter</a></li>
+        </ul>
+      </li>
+
+      <li class="nb-drawer-group">
+        <button type="button" class="nb-drawer-trigger" aria-expanded="false" aria-controls="dd-m-retirement">
+          Retirement
+          <svg class="nb-caret" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="nb-drawer-sub" id="dd-m-retirement" role="list">
+          <li><a href="/401k-calculator-usa">401(k) Calculator</a></li>
+          <li><a href="/roth-ira-calculator">Roth IRA Calculator</a></li>
+          <li><a href="/social-security-calculator">Social Security</a></li>
+          <li><a href="/fire-calculator">FIRE Calculator</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/blog" class="nb-drawer-link">Blog</a></li>
+    </ul>
+  </nav>
+
+  <div class="nb-drawer-foot">
+    <button type="button" class="nb-icon-btn" id="nb-theme-toggle-m" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="nb-icon-sun" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <circle cx="9" cy="9" r="4" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M9 1v2M9 15v2M17 9h-2M3 9H1M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <svg class="nb-icon-moon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+        <path d="M15.5 10.8A6.5 6.5 0 017.2 2.5a6.5 6.5 0 108.3 8.3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      <span>Dark mode</span>
+    </button>
+    <button type="button" class="nb-ai-btn nb-ai-btn-drawer" id="nb-ai-btn-m">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+        <path d="M7.5 1l1.4 4.1L13 6.5l-4.1 1.4L7.5 12l-1.4-4.1L2 6.5l4.1-1.4L7.5 1z" fill="currentColor"/>
+      </svg>
+      AI Assistant
+      <span class="nb-badge">Coming Soon</span>
+    </button>
+  </div>
+</div>
+<main id="main-content">
 <div class="container">
+<div class="calc-badge">Arithmetic • Powers & Roots</div>
+
 <h1>Exponent Calculator</h1>
 <p class="sub">Calculate powers, square roots, cube roots, and nth roots.</p>
 <div class="card">
@@ -59,7 +373,58 @@ input:focus{border-color:var(--accent)}
 <div class="result" id="root-result">³√27 = 3</div>
 </div>
 </div>
+</main>
+<section class="related-section">
+<h2>Related Calculators</h2>
+<div class="related"><a href="/fraction-calculator">Fraction Calculator</a><a href="/scientific-calculator">Scientific Calculator</a><a href="/derivative-integral-calculator">Derivative & Integral Calculator</a><a href="/pemdas-calculator">PEMDAS Calculator</a></div>
+</section>
+<section class="content-block">
+<h2>What This Exponent Calculator Does</h2><p>Enter a base and an exponent (including negative or fractional exponents) and this calculator returns the result instantly, along with a plain-language explanation of what the exponent means.</p>
+<h2>How It Works</h2>
+<p><strong>Positive exponent:</strong> b<sup>n</sup> means b multiplied by itself n times.</p>
+<p><strong>Negative exponent:</strong> b<sup>-n</sup> equals 1 / b<sup>n</sup>, flipping the base into the denominator.</p>
+<p><strong>Fractional exponent:</strong> b<sup>1/n</sup> is the same as the n-th root of b (b<sup>1/2</sup> is the square root, b<sup>1/3</sup> is the cube root, and so on).</p>
+<p><strong>Zero exponent:</strong> any nonzero base raised to the power of 0 equals 1.</p>
+<h2>Frequently Asked Questions</h2>
+<div class="faq-list">
+<div class="faq-item"><h3 class="faq-q">What does a negative exponent mean?</h3><p class="faq-a">A negative exponent means take the reciprocal of the base raised to the positive version of that exponent. For example, 2⁻³ = 1/2³ = 1/8.</p></div><div class="faq-item"><h3 class="faq-q">What does a fractional exponent mean?</h3><p class="faq-a">A fractional exponent represents a root. b^(1/2) is the square root of b, and more generally b^(m/n) is the n-th root of b raised to the m-th power.</p></div><div class="faq-item"><h3 class="faq-q">Why does any number to the power of 0 equal 1?</h3><p class="faq-a">It follows from the pattern of dividing consecutive powers of the same base (b³/b²=b, b²/b¹=b, b¹/b⁰=b) — for the pattern to hold consistently, b⁰ must equal 1 for any nonzero b.</p></div>
+</div>
+</section>
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer-inner">
+    <nav class="site-footer-links" aria-label="Footer navigation">
+      <a href="/">Home</a>
+      <a href="/tax-calculator-usa">Tax Calculator</a>
+      <a href="/salary-calculator-usa">Salary Calculator</a>
+      <a href="/mortgage-calculator-usa">Mortgage Calculator</a>
+      <a href="/paycheck-calculator">Paycheck Calculator</a>
+      <a href="/about">About</a>
+      <a href="/methodology">Methodology</a>
+      <a href="/editorial-policy">Editorial Policy</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/disclaimer">Disclaimer</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="fc-priv-badges" style="justify-content:center;" aria-label="Privacy quick facts">
+  <span class="fc-priv-badge fc-priv-badge--safe" title="Calculator inputs never leave your browser">
+    ✅ Calculators: 0 Data Stored
+  </span>
+  <span class="fc-priv-badge fc-priv-badge--ads" title="Ads and affiliate links use third-party cookies">
+    ⚠️ Ads &amp; Affiliate Links: Third-Party Cookies
+  </span>
+  <span class="fc-priv-badge">
+    <a href="/privacy">Full Privacy Policy →</a>
+  </span>
+</div>
+
+    <p class="site-footer-copy">© 2026 USAFinCalc. For educational purposes only. Not financial advice. Consult a qualified professional.</p>
+  </div>
+</footer>
+
 <script>
+
 function calcPow(){
 const b=+document.getElementById('base').value||0,n=+document.getElementById('exp').value||0;
 const r=Math.pow(b,n);
@@ -73,7 +438,10 @@ const label=n===2?'√':(n===3?'³√':n+'√');
 document.getElementById('root-result').innerHTML=label+x+' = '+ (Number.isInteger(r)?r:r.toFixed(6));
 }
 calcPow();calcRoot();
+
 </script>
+
 <script defer src="/js/search.js"></script>
+<script src="/js/navbar.js" defer></script>
 </body>
 </html>
