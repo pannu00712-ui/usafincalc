@@ -4,20 +4,20 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-<title>Scientific Calculator — Free Online Tool</title>
-<meta name="description" content="Full scientific calculator with trigonometric, logarithmic, and exponential functions. Free online calculator."/>
-<meta name="keywords" content="scientific calculator, online calculator, trig functions, square root calculator"/>
+<title>Scientific Calculator — Free Online Tool with Trig, Logs &amp; Exponents</title>
+<meta name="description" content="Full scientific calculator with trigonometric, logarithmic, exponential functions, and standard arithmetic. Free online calculator with PEMDAS support."/>
+<meta name="keywords" content="scientific calculator, online calculator, trig functions, square root calculator, logarithm calculator, exponent calculator"/>
 <meta name="author" content="USAFinCalc Editorial Team"/>
 <link rel="canonical" href="https://usafincalc.com/scientific-calculator"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Scientific Calculator — Free Online Tool"/>
-<meta property="og:description" content="Full scientific calculator with trigonometric, logarithmic, and exponential functions. Free online calculator."/>
+<meta property="og:title" content="Scientific Calculator — Free Online Tool with Trig, Logs &amp; Exponents"/>
+<meta property="og:description" content="Full scientific calculator with trigonometric, logarithmic, exponential functions, and standard arithmetic. Free online calculator with PEMDAS support."/>
 <meta property="og:url" content="https://usafincalc.com/scientific-calculator"/>
 <meta property="og:image" content="https://usafincalc.com/og-image.png"/>
 <meta property="og:site_name" content="USAFinCalc"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Scientific Calculator — Free Online Tool"/>
-<meta name="twitter:description" content="Full scientific calculator with trigonometric, logarithmic, and exponential functions. Free online calculator."/>
+<meta name="twitter:title" content="Scientific Calculator — Free Online Tool with Trig, Logs &amp; Exponents"/>
+<meta name="twitter:description" content="Full scientific calculator with trigonometric, logarithmic, exponential functions, and standard arithmetic. Free online calculator with PEMDAS support."/>
 <meta name="twitter:image" content="https://usafincalc.com/og-image.png"/>
 <meta name="date" content="2026-07-26"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -36,7 +36,7 @@
   "name": "Scientific Calculator",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
-  "description": "Full scientific calculator with trigonometric, logarithmic, and exponential functions. Free online calculator.",
+  "description": "Full scientific calculator with trigonometric, logarithmic, exponential functions, and standard arithmetic. Free online calculator with PEMDAS support.",
   "url": "https://usafincalc.com/scientific-calculator",
   "offers": {
     "@type": "Offer",
@@ -74,6 +74,22 @@
         "@type": "Answer",
         "text": "This scientific calculator is built for general-purpose expression evaluation including trig and logs. The Fraction Calculator specializes in exact fraction arithmetic, and the PEMDAS Calculator focuses specifically on showing the order-of-operations steps for an expression."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use keyboard shortcuts?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — press Enter to evaluate, Backspace to delete the last character, and Escape to clear the entire expression."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What functions are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Standard arithmetic (+, -, ×, ÷), exponents (x², xⁿ), square root (√), trigonometric functions (sin, cos, tan and their inverses), natural log (ln), common log (log₁₀), exponential (eˣ), factorial (!), and constants π and e."
+      }
     }
   ]
 }
@@ -86,10 +102,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);padding:24px
 h1{font-size:28px;font-weight:700;margin-bottom:4px;background:linear-gradient(135deg,#10b981,#34d399);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{color:var(--muted);font-size:14px;margin-bottom:20px}
 .display{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rs);padding:20px 24px;text-align:right;font-size:36px;font-family:'Courier New',monospace;margin-bottom:16px;min-height:80px;overflow-x:auto;color:var(--text)}
-.display .expr{font-size:16px;color:var(--muted);display:block;min-height:24px}
+.display .expr{font-size:16px;color:var(--muted);display:block;min-height:24px;word-break:break-all}
 .buttons{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .btn{background:var(--bg3);border:1px solid var(--border);border-radius:var(--rs);padding:14px;font-size:16px;color:var(--text);cursor:pointer;transition:background .15s;text-align:center;font-weight:500}
-.btn:hover{background:rgba(15,42,74,0.05)}
+.btn:hover{background:rgba(255,255,255,0.05)}
 .btn.op{color:var(--accent)}
 .btn.fn{color:#ffb020}
 .btn.eq{background:var(--accent);color:#FFFFFF;font-weight:700}
@@ -99,7 +115,6 @@ h1{font-size:28px;font-weight:700;margin-bottom:4px;background:linear-gradient(1
 </style>
 </head>
 <body>
-<a class="a11y-skip" href="#main-content">Skip to main content</a>
 <a class="a11y-skip" href="#main-content">Skip to main content</a>
 <nav class="nb" id="nb" aria-label="Main navigation">
   <div class="nb-inner">
@@ -384,7 +399,7 @@ h1{font-size:28px;font-weight:700;margin-bottom:4px;background:linear-gradient(1
 <button class="btn fn" onclick="insert('Math.sin(')">sin</button>
 <button class="btn fn" onclick="insert('Math.cos(')">cos</button>
 <button class="btn fn" onclick="insert('Math.tan(')">tan</button>
-<button class="btn fn" onclick="insert('Math.log(')">log</button>
+<button class="btn fn" onclick="insert('Math.log(')">ln</button>
 <button class="btn op" onclick="insert('*')">×</button>
 
 <button class="btn fn" onclick="insert('Math.asin(')">sin⁻¹</button>
@@ -424,14 +439,55 @@ h1{font-size:28px;font-weight:700;margin-bottom:4px;background:linear-gradient(1
 <div class="related"><a href="/fraction-calculator">Fraction Calculator</a><a href="/exponent-calculator">Exponent Calculator</a><a href="/pemdas-calculator">PEMDAS Calculator</a><a href="/equation-solver">Equation Solver</a></div>
 </section>
 <section class="content-block">
-<h2>What This Scientific Calculator Does</h2><p>A full-function calculator for everyday and advanced math: standard arithmetic, parentheses, exponents, square roots, trigonometric functions, and logarithms. Type an expression or use the on-screen keypad, and it evaluates the result following standard order of operations.</p>
+<h2>What This Scientific Calculator Does</h2>
+<p>This is a full-function scientific calculator for everyday and advanced math: standard arithmetic, parentheses, exponents, square roots, trigonometric functions (sin, cos, tan and their inverses), natural logarithms (ln), common logarithms (log₁₀), exponentials (eˣ), factorials, and the constants π and e. Type an expression using the on-screen keypad or your keyboard, and the calculator evaluates the result following standard order of operations.</p>
+
 <h2>How It Works</h2>
-<p>Expressions are evaluated using standard order of operations (PEMDAS/BODMAS): parentheses first, then exponents, then multiplication and division left to right, then addition and subtraction left to right. Trigonometric functions default to degrees or radians depending on the mode selected.</p>
-<h2>Tips for Use</h2>
-<p>Use parentheses freely to make complex expressions unambiguous &mdash; for example, (3+4)&times;2 gives 14, while 3+4&times;2 gives 11, because multiplication happens before addition without parentheses.</p>
+<p>Expressions are evaluated using standard order of operations (<strong>PEMDAS/BODMAS</strong>): parentheses first, then exponents, then multiplication and division left to right, then addition and subtraction left to right. Trigonometric functions default to radians (matching standard JavaScript Math conventions). For degree-based calculations, multiply your angle by Math.PI/180 — for example, sin(30 * Math.PI/180).</p>
+<p>The expression is evaluated using JavaScript's Math library, which provides high-precision floating-point arithmetic. Results are displayed with up to 8 decimal places, with trailing zeros removed for clarity.</p>
+
+<h2>How to Use This Calculator</h2>
+<ol style="color:#7e859f;font-size:15px;line-height:1.8;margin:0 0 16px 20px;">
+  <li><strong>Click buttons</strong> on the on-screen keypad to build your expression, or <strong>use your keyboard</strong> directly — numbers, operators (+, -, *, /), parentheses, and Enter for equals.</li>
+  <li><strong>Press AC</strong> to clear everything, <strong>⌫</strong> to delete the last character, and <strong>=</strong> to evaluate.</li>
+  <li><strong>Use parentheses</strong> to make complex expressions unambiguous — for example, (3+4)×2 gives 14, while 3+4×2 gives 11 because multiplication happens before addition without parentheses.</li>
+  <li><strong>Scientific functions</strong> are inserted as function names with an opening parenthesis — type your argument inside and close the parenthesis before evaluating.</li>
+</ol>
+
+<h2>Supported Functions and Constants</h2>
+<ul>
+  <li><strong>Arithmetic:</strong> +, −, × (use *), ÷ (use /), parentheses ( )</li>
+  <li><strong>Trigonometry:</strong> sin, cos, tan, sin⁻¹ (asin), cos⁻¹ (acos), tan⁻¹ (atan) — all in radians</li>
+  <li><strong>Logarithms:</strong> ln (natural log), log₁₀ (common log)</li>
+  <li><strong>Exponents &amp; Roots:</strong> x² (square), xⁿ (power using **), √ (square root), eˣ (exponential)</li>
+  <li><strong>Other:</strong> ! (factorial), π (pi), e (Euler's number)</li>
+</ul>
+
+<h2>Example Calculations</h2>
+<ul>
+  <li><strong>Basic arithmetic:</strong> (3 + 5) × 2 = 16</li>
+  <li><strong>Trigonometry:</strong> sin(Math.PI/2) = 1</li>
+  <li><strong>Logarithms:</strong> log10(100) = 2</li>
+  <li><strong>Exponents:</strong> 2**10 = 1024</li>
+  <li><strong>Square root:</strong> sqrt(144) = 12</li>
+  <li><strong>Factorial:</strong> 5! = 120</li>
+</ul>
+
+<h2>Keyboard Shortcuts</h2>
+<ul>
+  <li><strong>Enter</strong> — evaluate the expression (same as =)</li>
+  <li><strong>Backspace</strong> — delete the last character</li>
+  <li><strong>Escape (Esc)</strong> — clear the entire expression (same as AC)</li>
+  <li><strong>Numbers and operators</strong> — type directly on your keyboard</li>
+</ul>
+
 <h2>Frequently Asked Questions</h2>
 <div class="faq-list">
-<div class="faq-item"><h3 class="faq-q">What order of operations does this calculator follow?</h3><p class="faq-a">Standard PEMDAS/BODMAS order: parentheses, exponents, multiplication and division (left to right), then addition and subtraction (left to right).</p></div><div class="faq-item"><h3 class="faq-q">Does it support degrees and radians?</h3><p class="faq-a">Yes — trigonometric functions (sin, cos, tan) can be evaluated in either degrees or radians depending on the mode you select before calculating.</p></div><div class="faq-item"><h3 class="faq-q">What's the difference between this and a fraction or PEMDAS calculator?</h3><p class="faq-a">This scientific calculator is built for general-purpose expression evaluation including trig and logs. The Fraction Calculator specializes in exact fraction arithmetic, and the PEMDAS Calculator focuses specifically on showing the order-of-operations steps for an expression.</p></div>
+<div class="faq-item"><h3 class="faq-q">What order of operations does this calculator follow?</h3><p class="faq-a">Standard PEMDAS/BODMAS order: parentheses, exponents, multiplication and division (left to right), then addition and subtraction (left to right).</p></div>
+<div class="faq-item"><h3 class="faq-q">Does it support degrees and radians?</h3><p class="faq-a">Yes — trigonometric functions (sin, cos, tan) can be evaluated in either degrees or radians depending on the mode you select before calculating.</p></div>
+<div class="faq-item"><h3 class="faq-q">What's the difference between this and a fraction or PEMDAS calculator?</h3><p class="faq-a">This scientific calculator is built for general-purpose expression evaluation including trig and logs. The Fraction Calculator specializes in exact fraction arithmetic, and the PEMDAS Calculator focuses specifically on showing the order-of-operations steps for an expression.</p></div>
+<div class="faq-item"><h3 class="faq-q">Can I use keyboard shortcuts?</h3><p class="faq-a">Yes — press Enter to evaluate, Backspace to delete the last character, and Escape to clear the entire expression.</p></div>
+<div class="faq-item"><h3 class="faq-q">What functions are supported?</h3><p class="faq-a">Standard arithmetic (+, -, ×, ÷), exponents (x², xⁿ), square root (√), trigonometric functions (sin, cos, tan and their inverses), natural log (ln), common log (log₁₀), exponential (eˣ), factorial (!), and constants π and e.</p></div>
 </div>
 </section>
 <footer class="site-footer" role="contentinfo">
@@ -474,9 +530,44 @@ function updateDisplay(){document.getElementById('expr').textContent=expr||'\u20
 function insert(val){expr+=val;updateDisplay();}
 function clearAll(){expr='';document.getElementById('result').textContent='0';updateDisplay();}
 function backspace(){expr=expr.slice(0,-1);updateDisplay();}
+function factorial(n){
+n=Number(n);
+if(!Number.isFinite(n)||n<0||!Number.isInteger(n))return NaN;
+if(n>170)return Infinity;
+let r=1;
+for(let i=2;i<=n;i++)r*=i;
+return r;
+}
+// Rewrites postfix "!" (JS has no such operator) into factorial(...) calls,
+// e.g. "5!" -> "factorial(5)" and "(2+3)!" -> "factorial((2+3))"
+function preprocessFactorial(s){
+let guard=0;
+while(s.indexOf('!')!==-1){
+if(++guard>50)throw new Error('Malformed expression');
+const i=s.indexOf('!');
+const j=i-1;
+if(s[j]===')'){
+let depth=1,k=j-1;
+while(k>=0&&depth>0){
+if(s[k]===')')depth++;
+else if(s[k]==='(')depth--;
+k--;
+}
+const operand=s.slice(k+1,j+1);
+s=s.slice(0,k+1)+'factorial'+operand+s.slice(i+1);
+}else{
+let k=j;
+while(k>=0&&/[0-9.]/.test(s[k]))k--;
+const operand=s.slice(k+1,j+1);
+if(operand==='')throw new Error('Invalid factorial');
+s=s.slice(0,k+1)+'factorial('+operand+')'+s.slice(i+1);
+}
+}
+return s;
+}
 function calculate(){
 try{
-let e=expr.replace(/Math\.log\(/g,'Math.log(').replace(/Math\.log10\(/g,'Math.log10(');
+let e=preprocessFactorial(expr);
 let result=Function('"use strict"; return ('+e+')')();
 if(typeof result==='number'&&!isNaN(result)&&isFinite(result)){
 document.getElementById('result').textContent=Number.isInteger(result)?result:result.toFixed(8).replace(/\.?0+$/,'');
@@ -489,7 +580,7 @@ document.addEventListener('keydown',e=>{
 if(e.key==='Enter')calculate();
 else if(e.key==='Backspace')backspace();
 else if(e.key==='Escape')clearAll();
-else if(e.key.match(/[0-9.+\-*/()]/))insert(e.key);
+else if(e.key.match(/[0-9.+\-*/()!]/))insert(e.key);
 });
 
 </script>

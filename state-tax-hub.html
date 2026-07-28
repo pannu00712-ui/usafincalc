@@ -5,26 +5,26 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" name="robots"/>
 <meta content="USAFinCalc" name="author"/>
-<title id="pageTitle">State Tax Hub 2026 | USAFinCalc</title>
-<meta content="Income tax, property tax, and payroll tax calculators for your state — all in one place." id="pageDesc" name="description"/>
+<title id="pageTitle">State Tax Hub 2026 — Income, Property &amp; Payroll Tax Calculators by State | USAFinCalc</title>
+<meta content="Find income tax, property tax, and payroll tax calculators for all 50 states. Compare state tax rates, take-home pay, and property tax bills. Updated for 2026." id="pageDesc" name="description"/>
 <link href="https://usafincalc.com/tax-by-state" id="pageCanonical" rel="canonical"/>
-<meta content="State Tax Hub 2026 | USAFinCalc" property="og:title"/>
-<meta content="Income tax, property tax, and payroll tax calculators for your state — all in one place." property="og:description"/>
+<meta content="State Tax Hub 2026 — Income, Property &amp; Payroll Tax Calculators by State" property="og:title"/>
+<meta content="Find income tax, property tax, and payroll tax calculators for all 50 states. Compare state tax rates, take-home pay, and property tax bills. Updated for 2026." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="https://usafincalc.com/tax-by-state" property="og:url"/>
 <meta content="https://usafincalc.com/og-image.png" property="og:image"/>
 <meta content="USAFinCalc" property="og:site_name"/>
 <meta content="en_US" property="og:locale"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="State Tax Hub 2026 | USAFinCalc" name="twitter:title"/>
-<meta content="Income tax, property tax, and payroll tax calculators for your state — all in one place." name="twitter:description"/>
+<meta content="State Tax Hub 2026 — Income, Property &amp; Payroll Tax Calculators by State" name="twitter:title"/>
+<meta content="Find income tax, property tax, and payroll tax calculators for all 50 states. Compare state tax rates, take-home pay, and property tax bills. Updated for 2026." name="twitter:description"/>
 <meta content="https://usafincalc.com/og-image.png" name="twitter:image"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "State Tax Hub 2026",
-  "description": "Income tax, property tax, and payroll tax calculators for your state — all in one place.",
+  "description": "Find income tax, property tax, and payroll tax calculators for all 50 states. Compare state tax rates, take-home pay, and property tax bills. Updated for 2026.",
   "url": "https://usafincalc.com/tax-by-state",
   "isPartOf": {
     "@type": "WebSite",
@@ -67,6 +67,11 @@
   .hero h1{font-size:clamp(26px,4.5vw,42px);font-weight:700;line-height:1.15;margin-bottom:10px}
   .hero p{color:var(--text2);font-size:16px;max-width:640px}
 
+  /* STATE GRID */
+  .state-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:20px 0 32px}
+  .state-grid a{display:block;padding:10px 12px;background:var(--bg2);border:1px solid var(--border);border-radius:6px;color:var(--text2);text-decoration:none;font-size:13px;text-align:center;transition:border-color .2s,background .2s}
+  .state-grid a:hover{border-color:var(--blue);background:rgba(201,154,59,0.08);color:var(--text)}
+
   /* TABS */
   .tabs{display:flex;gap:8px;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap}
   .tab-btn{background:none;border:none;color:var(--text2);font-family:inherit;font-size:14px;font-weight:600;padding:12px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:all .15s}
@@ -86,6 +91,10 @@
   .btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;padding:11px 22px;border-radius:var(--rs);font-weight:600;font-size:14px;border:none;cursor:pointer;transition:opacity .2s;text-decoration:none}
   .btn:hover{opacity:.85;text-decoration:none}
 
+  .info-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);padding:24px;margin-bottom:32px}
+  .info-box h2{font-size:18px;margin:0 0 8px;color:var(--text)}
+  .info-box p{color:var(--text2);font-size:14px;line-height:1.8;margin:0}
+
   .not-available{background:var(--bg2);border:1px dashed var(--border2);border-radius:var(--r);padding:32px;text-align:center;color:var(--text3);font-size:14px}
 
   .state-not-found{padding:60px 0;text-align:center}
@@ -96,11 +105,11 @@
   footer a{color:var(--text3);margin:0 8px}
   footer a:hover{color:var(--text)}
 
-  @media(max-width:720px){.nav-links{display:none}}
+  @media(max-width:720px){.nav-links{display:none}.state-grid{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/search.css">
-  <link rel="stylesheet" href="/css/navbar.css">
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/navbar.css">
 </head>
 <body>
 
@@ -373,13 +382,79 @@
 </div>
 
 <main class="container">
-<div class="breadcrumb"><a href="/">Home</a> › <a href="/tax-by-state">Tax by State</a> › <span id="crumbState">…</span></div>
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/tax-by-state">Tax by State</a> › <span id="crumbState">All States</span></div>
+
+<div class="hero">
+  <h1>State Tax Hub <span style="color:var(--blue)">2026</span></h1>
+  <p>Find income tax, property tax, and payroll tax calculators for your state. Select a state below to see its calculators.</p>
+</div>
+
+<!-- All 50 States + DC Grid -->
+<div class="state-grid">
+  <a href="/state-tax-hub.html?state=alabama">Alabama</a>
+  <a href="/state-tax-hub.html?state=alaska">Alaska</a>
+  <a href="/state-tax-hub.html?state=arizona">Arizona</a>
+  <a href="/state-tax-hub.html?state=arkansas">Arkansas</a>
+  <a href="/state-tax-hub.html?state=california">California</a>
+  <a href="/state-tax-hub.html?state=colorado">Colorado</a>
+  <a href="/state-tax-hub.html?state=connecticut">Connecticut</a>
+  <a href="/state-tax-hub.html?state=delaware">Delaware</a>
+  <a href="/state-tax-hub.html?state=florida">Florida</a>
+  <a href="/state-tax-hub.html?state=georgia">Georgia</a>
+  <a href="/state-tax-hub.html?state=hawaii">Hawaii</a>
+  <a href="/state-tax-hub.html?state=idaho">Idaho</a>
+  <a href="/state-tax-hub.html?state=illinois">Illinois</a>
+  <a href="/state-tax-hub.html?state=indiana">Indiana</a>
+  <a href="/state-tax-hub.html?state=iowa">Iowa</a>
+  <a href="/state-tax-hub.html?state=kansas">Kansas</a>
+  <a href="/state-tax-hub.html?state=kentucky">Kentucky</a>
+  <a href="/state-tax-hub.html?state=louisiana">Louisiana</a>
+  <a href="/state-tax-hub.html?state=maine">Maine</a>
+  <a href="/state-tax-hub.html?state=maryland">Maryland</a>
+  <a href="/state-tax-hub.html?state=massachusetts">Massachusetts</a>
+  <a href="/state-tax-hub.html?state=michigan">Michigan</a>
+  <a href="/state-tax-hub.html?state=minnesota">Minnesota</a>
+  <a href="/state-tax-hub.html?state=mississippi">Mississippi</a>
+  <a href="/state-tax-hub.html?state=missouri">Missouri</a>
+  <a href="/state-tax-hub.html?state=montana">Montana</a>
+  <a href="/state-tax-hub.html?state=nebraska">Nebraska</a>
+  <a href="/state-tax-hub.html?state=nevada">Nevada</a>
+  <a href="/state-tax-hub.html?state=new-hampshire">New Hampshire</a>
+  <a href="/state-tax-hub.html?state=new-jersey">New Jersey</a>
+  <a href="/state-tax-hub.html?state=new-mexico">New Mexico</a>
+  <a href="/state-tax-hub.html?state=new-york">New York</a>
+  <a href="/state-tax-hub.html?state=north-carolina">North Carolina</a>
+  <a href="/state-tax-hub.html?state=north-dakota">North Dakota</a>
+  <a href="/state-tax-hub.html?state=ohio">Ohio</a>
+  <a href="/state-tax-hub.html?state=oklahoma">Oklahoma</a>
+  <a href="/state-tax-hub.html?state=oregon">Oregon</a>
+  <a href="/state-tax-hub.html?state=pennsylvania">Pennsylvania</a>
+  <a href="/state-tax-hub.html?state=rhode-island">Rhode Island</a>
+  <a href="/state-tax-hub.html?state=south-carolina">South Carolina</a>
+  <a href="/state-tax-hub.html?state=south-dakota">South Dakota</a>
+  <a href="/state-tax-hub.html?state=tennessee">Tennessee</a>
+  <a href="/state-tax-hub.html?state=texas">Texas</a>
+  <a href="/state-tax-hub.html?state=utah">Utah</a>
+  <a href="/state-tax-hub.html?state=vermont">Vermont</a>
+  <a href="/state-tax-hub.html?state=virginia">Virginia</a>
+  <a href="/state-tax-hub.html?state=washington">Washington</a>
+  <a href="/state-tax-hub.html?state=west-virginia">West Virginia</a>
+  <a href="/state-tax-hub.html?state=wisconsin">Wisconsin</a>
+  <a href="/state-tax-hub.html?state=wyoming">Wyoming</a>
+  <a href="/state-tax-hub.html?state=district-of-columbia">Washington DC</a>
+</div>
+
+<div class="info-box">
+  <h2>About This Tax Hub</h2>
+  <p>Each state page provides access to three calculators: <strong>Income Tax</strong> (brackets and effective rates), <strong>Property Tax</strong> (annual bill estimates based on home value), and <strong>Payroll Tax</strong> (paycheck breakdown with federal, state, and FICA deductions). Select your state above to get started. All calculators are free, private, and updated for 2026 tax brackets.</p>
+  <p style="margin-top:8px;font-size:13px;color:var(--text3);">States with no income tax: Alaska, Florida, Nevada, New Hampshire, South Dakota, Tennessee, Texas, Washington, Wyoming. (New Hampshire taxes only interest and dividends.)</p>
+</div>
 
 <div id="stateContent"></div>
 
 <div class="state-not-found" id="notFound" style="display:none">
   <h1>State not found</h1>
-  <p>We don't have a page for that state yet. Pick one from the full list.</p>
+  <p>We don't have a page for that state yet. Pick one from the list above.</p>
   <a class="btn" href="/tax-by-state">← Back to Tax by State</a>
 </div>
 
@@ -453,7 +528,7 @@
   }).join('');
 
   contentEl.innerHTML =
-    '<div class="hero"><h1>' + state.name + ' Tax <span style="color:var(--blue)">by Type</span></h1>' +
+    '<div class="hero" style="padding-top:0;"><h1>' + state.name + ' Tax <span style="color:var(--blue)">by Type</span></h1>' +
     '<p>Income tax, property tax, and payroll tax calculators for ' + state.name + ' — switch tabs to see each one.</p></div>' +
     tabsHtml + panelsHtml;
 

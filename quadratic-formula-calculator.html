@@ -74,6 +74,22 @@
         "@type": "Answer",
         "text": "Yes — the quadratic formula works for any equation in the form ax² + bx + c = 0 as long as a is not zero (if a = 0, the equation is linear, not quadratic)."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I enter a = 0?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The calculator will show a message that it's not a quadratic equation. If a = 0, the equation becomes bx + c = 0, which is linear and has a single solution x = −c/b."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use fractions as inputs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — enter fractions as decimals. For example, 1/2 = 0.5, 2/3 ≈ 0.6667. The calculator will handle decimal inputs accurately."
+      }
     }
   ]
 }
@@ -99,7 +115,6 @@ input:focus{border-color:var(--accent)}
 </style>
 </head>
 <body>
-<a class="a11y-skip" href="#main-content">Skip to main content</a>
 <a class="a11y-skip" href="#main-content">Skip to main content</a>
 <nav class="nb" id="nb" aria-label="Main navigation">
   <div class="nb-inner">
@@ -389,13 +404,54 @@ input:focus{border-color:var(--accent)}
 <div class="related"><a href="/equation-solver">Equation Solver</a><a href="/slope-calculator">Slope Calculator</a><a href="/derivative-integral-calculator">Derivative & Integral Calculator</a><a href="/matrix-calculator">Matrix Calculator</a></div>
 </section>
 <section class="content-block">
-<h2>What This Quadratic Formula Calculator Does</h2><p>Enter the coefficients a, b, and c from a quadratic equation in the form ax&sup2; + bx + c = 0, and this calculator solves for x using the quadratic formula, including complex (imaginary) roots when the discriminant is negative.</p>
-<h2>How It Works</h2>
-<p><strong>x = (&minus;b &plusmn; &radic;(b&sup2; &minus; 4ac)) / 2a</strong></p>
-<p>The expression under the square root, b&sup2; &minus; 4ac, is called the discriminant. A positive discriminant gives two distinct real roots, a discriminant of exactly zero gives one repeated real root, and a negative discriminant gives two complex (imaginary) roots.</p>
+<h2>What Is the Quadratic Formula?</h2>
+<p>The quadratic formula is a closed-form algebraic solution for any equation of the form <strong>ax² + bx + c = 0</strong>, where a, b, and c are real numbers and a ≠ 0. It gives the value(s) of x that satisfy the equation using the expression:</p>
+<p style="text-align:center;font-size:20px;font-family:'DM Mono',monospace;color:var(--text);padding:12px 0;"><strong>x = (−b ± √(b² − 4ac)) / 2a</strong></p>
+<p>This formula is derived by completing the square on the general quadratic equation. It is one of the most frequently used algebraic tools across mathematics, physics, engineering, economics, and data science — any field that involves parabolic relationships, optimization, or root-finding.</p>
+
+<h2>How to Use This Calculator</h2>
+<ol style="color:#7e859f;font-size:15px;line-height:1.8;margin:0 0 16px 20px;">
+  <li><strong>Enter coefficient a</strong> — the quadratic coefficient (cannot be zero). If a = 0, the equation is linear, not quadratic.</li>
+  <li><strong>Enter coefficient b</strong> — the linear coefficient. Can be positive, negative, or zero.</li>
+  <li><strong>Enter coefficient c</strong> — the constant term. Can be positive, negative, or zero.</li>
+  <li><strong>Read the result</strong> — the calculator displays the root(s) in real or complex form, including the discriminant's effect on the solution type.</li>
+</ol>
+<p>The inputs accept decimals, negative values, and fractions (entered as decimals). The calculator automatically updates as you type — no button press required.</p>
+
+<h2>What the Discriminant Tells You</h2>
+<p>The discriminant is the part under the square root: <strong>D = b² − 4ac</strong>. Its sign determines the nature of the roots <em>before</em> you finish calculating:</p>
+<ul>
+  <li><strong>D &gt; 0</strong> — two distinct real roots. The parabola crosses the x-axis at two points. This is the most common case in applied math.</li>
+  <li><strong>D = 0</strong> — one repeated real root (also called a double root). The parabola touches the x-axis at exactly one point (its vertex).</li>
+  <li><strong>D &lt; 0</strong> — two complex conjugate roots (involving i, where i² = −1). The parabola never crosses the x-axis; the equation has no real-number solution.</li>
+</ul>
+
+<h2>Worked Example: 2x² + 5x − 3 = 0</h2>
+<p>Using the coefficients a = 2, b = 5, c = −3 from the default inputs:</p>
+<ol style="color:#7e859f;font-size:15px;line-height:1.8;margin:0 0 16px 20px;">
+  <li><strong>Calculate the discriminant:</strong> D = 5² − 4(2)(−3) = 25 + 24 = 49</li>
+  <li><strong>Take the square root:</strong> √49 = 7</li>
+  <li><strong>Apply the formula:</strong> x = (−5 ± 7) / (2 × 2) = (−5 ± 7) / 4</li>
+  <li><strong>Solve both cases:</strong> x = (−5 + 7)/4 = 2/4 = 0.5 and x = (−5 − 7)/4 = −12/4 = −3</li>
+</ol>
+<p>The roots are <strong>x = 0.5 and x = −3</strong>. You can verify by plugging either value back into the original equation — both will satisfy 2x² + 5x − 3 = 0.</p>
+
+<h2>Common Use Cases</h2>
+<ul>
+  <li><strong>Physics:</strong> Solving projectile motion equations (height vs. time) to find when an object hits the ground.</li>
+  <li><strong>Engineering:</strong> Finding natural frequencies, breakpoints, and stability thresholds in control systems.</li>
+  <li><strong>Finance:</strong> Solving for breakeven points in quadratic revenue/cost models.</li>
+  <li><strong>Data Science:</strong> Computing closed-form solutions for least-squares regression and optimization problems.</li>
+  <li><strong>Algebra/Education:</strong> Checking homework answers and understanding the relationship between coefficients and roots.</li>
+</ul>
+
 <h2>Frequently Asked Questions</h2>
 <div class="faq-list">
-<div class="faq-item"><h3 class="faq-q">What is the discriminant and why does it matter?</h3><p class="faq-a">The discriminant (b² − 4ac) determines the nature of the roots before you even finish solving: positive means two real solutions, zero means one repeated real solution, and negative means two complex solutions with no real x-intercepts.</p></div><div class="faq-item"><h3 class="faq-q">What does it mean if the roots are complex?</h3><p class="faq-a">A negative discriminant means the parabola never crosses the x-axis, so there's no real number solution — the roots involve the imaginary unit i (where i² = −1).</p></div><div class="faq-item"><h3 class="faq-q">Can every quadratic equation be solved with this formula?</h3><p class="faq-a">Yes — the quadratic formula works for any equation in the form ax² + bx + c = 0 as long as a is not zero (if a = 0, the equation is linear, not quadratic).</p></div>
+  <div class="faq-item"><h3 class="faq-q">What is the discriminant and why does it matter?</h3><p class="faq-a">The discriminant (b² − 4ac) determines the nature of the roots before you even finish solving: positive means two real solutions, zero means one repeated real solution, and negative means two complex solutions with no real x-intercepts.</p></div>
+  <div class="faq-item"><h3 class="faq-q">What does it mean if the roots are complex?</h3><p class="faq-a">A negative discriminant means the parabola never crosses the x-axis, so there's no real number solution — the roots involve the imaginary unit i (where i² = −1).</p></div>
+  <div class="faq-item"><h3 class="faq-q">Can every quadratic equation be solved with this formula?</h3><p class="faq-a">Yes — the quadratic formula works for any equation in the form ax² + bx + c = 0 as long as a is not zero (if a = 0, the equation is linear, not quadratic).</p></div>
+  <div class="faq-item"><h3 class="faq-q">What if I enter a = 0?</h3><p class="faq-a">The calculator will show a message that it's not a quadratic equation. If a = 0, the equation becomes bx + c = 0, which is linear and has a single solution x = −c/b.</p></div>
+  <div class="faq-item"><h3 class="faq-q">Can I use fractions as inputs?</h3><p class="faq-a">Yes — enter fractions as decimals. For example, 1/2 = 0.5, 2/3 ≈ 0.6667. The calculator will handle decimal inputs accurately.</p></div>
 </div>
 </section>
 <footer class="site-footer" role="contentinfo">
@@ -439,7 +495,7 @@ if(a===0){document.getElementById('result').innerHTML='Not a quadratic equation 
 const d=b*b-4*a*c;
 if(d<0){
 const real=(-b/(2*a)).toFixed(4);
-const imag=(Math.sqrt(-d)/(2*a)).toFixed(4);
+const imag=Math.abs(Math.sqrt(-d)/(2*a)).toFixed(4);
 document.getElementById('result').innerHTML='x = '+real+' ± '+imag+'i';
 }else if(d===0){
 const x=(-b/(2*a)).toFixed(4);

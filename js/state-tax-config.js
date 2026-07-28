@@ -227,4 +227,53 @@ window.STATE_TAX_CONFIG = [
     property: '/wisconsin-property-tax-calculator',
     payroll: null
   },
+  {
+    slug: 'alabama',
+    name: 'Alabama',
+    income: '/alabama-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'connecticut',
+    name: 'Connecticut',
+    income: '/connecticut-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'iowa',
+    name: 'Iowa',
+    income: '/iowa-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'kentucky',
+    name: 'Kentucky',
+    income: '/kentucky-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'nevada',
+    name: 'Nevada',
+    income: '/nevada-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'oregon',
+    name: 'Oregon',
+    income: '/oregon-tax-calculator',
+    property: null,
+    payroll: null
+  },
+  {
+    slug: 'utah',
+    name: 'Utah',
+    income: '/utah-tax-calculator',
+    property: null,
+    payroll: null
+  },
 ];

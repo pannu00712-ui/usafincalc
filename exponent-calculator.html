@@ -4,20 +4,20 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
-<title>Exponent Calculator — Free Online Tool</title>
-<meta name="description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
-<meta name="keywords" content="exponent calculator, power calculator, exponentiation, negative exponents, fractional exponents"/>
+<title>Exponent Calculator — Free Online Tool for Powers, Roots &amp; Fractional Exponents</title>
+<meta name="description" content="Calculate powers, square roots, cube roots, and nth roots. Supports negative exponents, fractional exponents, and scientific notation. Free online exponent calculator."/>
+<meta name="keywords" content="exponent calculator, power calculator, exponentiation, negative exponents, fractional exponents, nth root calculator, square root calculator, cube root calculator"/>
 <meta name="author" content="USAFinCalc Editorial Team"/>
 <link rel="canonical" href="https://usafincalc.com/exponent-calculator"/>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="Exponent Calculator — Free Online Tool"/>
-<meta property="og:description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
+<meta property="og:title" content="Exponent Calculator — Free Online Tool for Powers, Roots &amp; Fractional Exponents"/>
+<meta property="og:description" content="Calculate powers, square roots, cube roots, and nth roots. Supports negative exponents, fractional exponents, and scientific notation. Free online exponent calculator."/>
 <meta property="og:url" content="https://usafincalc.com/exponent-calculator"/>
 <meta property="og:image" content="https://usafincalc.com/og-image.png"/>
 <meta property="og:site_name" content="USAFinCalc"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="Exponent Calculator — Free Online Tool"/>
-<meta name="twitter:description" content="Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator."/>
+<meta name="twitter:title" content="Exponent Calculator — Free Online Tool for Powers, Roots &amp; Fractional Exponents"/>
+<meta name="twitter:description" content="Calculate powers, square roots, cube roots, and nth roots. Supports negative exponents, fractional exponents, and scientific notation. Free online exponent calculator."/>
 <meta name="twitter:image" content="https://usafincalc.com/og-image.png"/>
 <meta name="date" content="2026-07-26"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -36,7 +36,7 @@
   "name": "Exponent Calculator",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "Any",
-  "description": "Calculate powers, square roots, cube roots, and nth roots. Free online exponent calculator.",
+  "description": "Calculate powers, square roots, cube roots, and nth roots. Supports negative exponents, fractional exponents, and scientific notation.",
   "url": "https://usafincalc.com/exponent-calculator",
   "offers": {
     "@type": "Offer",
@@ -74,6 +74,22 @@
         "@type": "Answer",
         "text": "It follows from the pattern of dividing consecutive powers of the same base (b³/b²=b, b²/b¹=b, b¹/b⁰=b) — for the pattern to hold consistently, b⁰ must equal 1 for any nonzero b."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when I raise a negative number to an exponent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A negative base raised to an even exponent gives a positive result. A negative base raised to an odd exponent gives a negative result. For fractional exponents, the result may be complex if the root index is even and the base is negative."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is scientific notation and how does it relate to exponents?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scientific notation expresses numbers as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer exponent. It's a compact way to write very large or very small numbers — for example, 3.0 × 10⁸ = 300,000,000."
+      }
     }
   ]
 }
@@ -98,7 +114,6 @@ input:focus{border-color:var(--accent)}
 </style>
 </head>
 <body>
-<a class="a11y-skip" href="#main-content">Skip to main content</a>
 <a class="a11y-skip" href="#main-content">Skip to main content</a>
 <nav class="nb" id="nb" aria-label="Main navigation">
   <div class="nb-inner">
@@ -368,10 +383,10 @@ input:focus{border-color:var(--accent)}
 </div>
 <main id="main-content">
 <div class="container">
-<div class="calc-badge">Arithmetic • Powers & Roots</div>
+<div class="calc-badge">Arithmetic • Powers &amp; Roots</div>
 
 <h1>Exponent Calculator</h1>
-<p class="sub">Calculate powers, square roots, cube roots, and nth roots.</p>
+<p class="sub">Calculate powers, square roots, cube roots, and nth roots. Supports negative and fractional exponents.</p>
 <div class="card">
 <h3 style="font-size:15px;margin-bottom:12px">Power (xⁿ)</h3>
 <div class="grid-2">
@@ -393,18 +408,55 @@ input:focus{border-color:var(--accent)}
 </main>
 <section class="related-section">
 <h2>Related Calculators</h2>
-<div class="related"><a href="/fraction-calculator">Fraction Calculator</a><a href="/scientific-calculator">Scientific Calculator</a><a href="/derivative-integral-calculator">Derivative & Integral Calculator</a><a href="/pemdas-calculator">PEMDAS Calculator</a></div>
+<div class="related"><a href="/fraction-calculator">Fraction Calculator</a><a href="/scientific-calculator">Scientific Calculator</a><a href="/derivative-integral-calculator">Derivative &amp; Integral Calculator</a><a href="/pemdas-calculator">PEMDAS Calculator</a></div>
 </section>
 <section class="content-block">
-<h2>What This Exponent Calculator Does</h2><p>Enter a base and an exponent (including negative or fractional exponents) and this calculator returns the result instantly, along with a plain-language explanation of what the exponent means.</p>
-<h2>How It Works</h2>
-<p><strong>Positive exponent:</strong> b<sup>n</sup> means b multiplied by itself n times.</p>
-<p><strong>Negative exponent:</strong> b<sup>-n</sup> equals 1 / b<sup>n</sup>, flipping the base into the denominator.</p>
-<p><strong>Fractional exponent:</strong> b<sup>1/n</sup> is the same as the n-th root of b (b<sup>1/2</sup> is the square root, b<sup>1/3</sup> is the cube root, and so on).</p>
-<p><strong>Zero exponent:</strong> any nonzero base raised to the power of 0 equals 1.</p>
+<h2>What This Exponent Calculator Does</h2>
+<p>This exponent calculator evaluates expressions of the form <strong>xⁿ</strong> and <strong>ⁿ√x</strong> for any real numbers. It supports positive exponents, negative exponents (which produce reciprocals), fractional exponents (which produce roots), and zero exponents. The calculator also handles square roots (√), cube roots (³√), and arbitrary nth roots, making it a complete tool for all exponentiation and root operations.</p>
+
+<h2>How Exponents Work</h2>
+<p>Exponentiation is repeated multiplication: <strong>xⁿ</strong> means x multiplied by itself n times. For example, 2³ = 2 × 2 × 2 = 8. But exponents can be more than just whole numbers:</p>
+<ul>
+  <li><strong>Positive exponent:</strong> xⁿ means x multiplied by itself n times. Example: 5³ = 125</li>
+  <li><strong>Negative exponent:</strong> x⁻ⁿ = 1/xⁿ. Example: 2⁻³ = 1/8 = 0.125</li>
+  <li><strong>Zero exponent:</strong> x⁰ = 1 (for any x ≠ 0). Example: 7⁰ = 1</li>
+  <li><strong>Fractional exponent:</strong> x^(1/n) = ⁿ√x. Example: 27^(1/3) = ³√27 = 3</li>
+  <li><strong>General fractional exponent:</strong> x^(m/n) = (ⁿ√x)ᵐ = ⁿ√(xᵐ). Example: 8^(2/3) = (³√8)² = 2² = 4</li>
+</ul>
+
+<h2>How to Use This Calculator</h2>
+<ol style="color:#7e859f;font-size:15px;line-height:1.8;margin:0 0 16px 20px;">
+  <li><strong>For powers (xⁿ):</strong> Enter the base (x) and the exponent (n). The exponent can be any real number — positive, negative, fractional, or zero.</li>
+  <li><strong>For roots (ⁿ√x):</strong> Enter the number (x) and the root degree (n). For square roots, enter n = 2; for cube roots, n = 3; for any other root, enter the corresponding degree.</li>
+  <li><strong>Read the result:</strong> The calculator displays the result in both numeric and symbolic form (e.g., 2³ = 8 or ³√27 = 3).</li>
+</ol>
+
+<h2>Example Calculations</h2>
+<ul>
+  <li><strong>Basic power:</strong> 2³ = 2 × 2 × 2 = 8</li>
+  <li><strong>Negative exponent:</strong> 2⁻³ = 1/2³ = 1/8 = 0.125</li>
+  <li><strong>Fractional exponent (square root):</strong> 9^(1/2) = √9 = 3</li>
+  <li><strong>Fractional exponent (cube root):</strong> 27^(1/3) = ³√27 = 3</li>
+  <li><strong>Zero exponent:</strong> 5⁰ = 1</li>
+  <li><strong>Scientific notation:</strong> 10⁶ = 1,000,000; 10⁻⁶ = 0.000001</li>
+</ul>
+
+<h2>Common Applications</h2>
+<ul>
+  <li><strong>Compound Interest:</strong> A = P(1 + r/n)^(nt) — the exponent represents the number of compounding periods.</li>
+  <li><strong>Scientific Notation:</strong> Numbers expressed as a × 10ⁿ, where n is an integer exponent representing order of magnitude.</li>
+  <li><strong>Growth and Decay:</strong> Exponential growth models use exponents to represent growth rates and time periods.</li>
+  <li><strong>Physics:</strong> Inverse square laws (like gravity and light intensity) use negative exponents to represent diminishing effects.</li>
+  <li><strong>Computer Science:</strong> Powers of 2 (2¹⁰ = 1024) are fundamental to digital storage and computing.</li>
+</ul>
+
 <h2>Frequently Asked Questions</h2>
 <div class="faq-list">
-<div class="faq-item"><h3 class="faq-q">What does a negative exponent mean?</h3><p class="faq-a">A negative exponent means take the reciprocal of the base raised to the positive version of that exponent. For example, 2⁻³ = 1/2³ = 1/8.</p></div><div class="faq-item"><h3 class="faq-q">What does a fractional exponent mean?</h3><p class="faq-a">A fractional exponent represents a root. b^(1/2) is the square root of b, and more generally b^(m/n) is the n-th root of b raised to the m-th power.</p></div><div class="faq-item"><h3 class="faq-q">Why does any number to the power of 0 equal 1?</h3><p class="faq-a">It follows from the pattern of dividing consecutive powers of the same base (b³/b²=b, b²/b¹=b, b¹/b⁰=b) — for the pattern to hold consistently, b⁰ must equal 1 for any nonzero b.</p></div>
+<div class="faq-item"><h3 class="faq-q">What does a negative exponent mean?</h3><p class="faq-a">A negative exponent means take the reciprocal of the base raised to the positive version of that exponent. For example, 2⁻³ = 1/2³ = 1/8.</p></div>
+<div class="faq-item"><h3 class="faq-q">What does a fractional exponent mean?</h3><p class="faq-a">A fractional exponent represents a root. b^(1/2) is the square root of b, and more generally b^(m/n) is the n-th root of b raised to the m-th power.</p></div>
+<div class="faq-item"><h3 class="faq-q">Why does any number to the power of 0 equal 1?</h3><p class="faq-a">It follows from the pattern of dividing consecutive powers of the same base (b³/b²=b, b²/b¹=b, b¹/b⁰=b) — for the pattern to hold consistently, b⁰ must equal 1 for any nonzero b.</p></div>
+<div class="faq-item"><h3 class="faq-q">What happens when I raise a negative number to an exponent?</h3><p class="faq-a">A negative base raised to an even exponent gives a positive result. A negative base raised to an odd exponent gives a negative result. For fractional exponents, the result may be complex if the root index is even and the base is negative.</p></div>
+<div class="faq-item"><h3 class="faq-q">What is scientific notation and how does it relate to exponents?</h3><p class="faq-a">Scientific notation expresses numbers as a × 10ⁿ, where 1 ≤ a < 10 and n is an integer exponent. It's a compact way to write very large or very small numbers — for example, 3.0 × 10⁸ = 300,000,000.</p></div>
 </div>
 </section>
 <footer class="site-footer" role="contentinfo">
@@ -450,8 +502,19 @@ document.getElementById('pow-result').innerHTML=b+'<sup>'+n+'</sup> = '+ (Number
 function calcRoot(){
 const x=+document.getElementById('root-num').value||0,n=+document.getElementById('root-n').value||1;
 if(n===0){document.getElementById('root-result').textContent='Error: Root cannot be zero';return;}
-const r=Math.pow(x,1/n);
 const label=n===2?'√':(n===3?'³√':n+'√');
+let r;
+if(x<0){
+  if(Number.isInteger(n)&&Math.abs(n)%2===1){
+    // odd root of a negative number has a real result, e.g. cube root of -27 = -3
+    r=-Math.pow(-x,1/n);
+  }else{
+    document.getElementById('root-result').textContent='Error: no real result (even root of a negative number)';
+    return;
+  }
+}else{
+  r=Math.pow(x,1/n);
+}
 document.getElementById('root-result').innerHTML=label+x+' = '+ (Number.isInteger(r)?r:r.toFixed(6));
 }
 calcPow();calcRoot();
